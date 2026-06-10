@@ -5,21 +5,30 @@ import { env } from '~/lib/env';
 <!--
   Newsletter signup form
   Integrates with Buttondown embed API
-  Uses a simple form submission to avoid needing a server endpoint
+  Action URL: https://buttondown.email/{username}
+  POST email field → Buttondown handles double opt-in automatically
 -->
-<div class="rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 sm:p-8 shadow-lg shadow-brand-500/5">
+<div class="rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+  <div class="mb-3 flex items-center gap-2">
+    <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
+      <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
+      Gratis
+    </span>
+    <span class="text-xs text-dark-300">~ 5 min de lectura cada sábado</span>
+  </div>
+
   <h3 class="font-display text-2xl font-bold text-white">
     Únete a la newsletter
   </h3>
   <p class="mt-2 text-sm text-dark-200">
-    Cada sábado por la mañana: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Gratis.
+    <strong class="text-white">1 video destacado</strong>, 2-3 noticias de IA, 1 prompt útil. Sin clickbait, sin AI slop.
   </p>
 
   <form
     action={`https://buttondown.email/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}`}
     method="post"
     target="_blank"
-    class="mt-4 flex flex-col gap-2 sm:flex-row"
+    class="mt-5 flex flex-col gap-2 sm:flex-row"
   >
     <label for="bd-email" class="sr-only">Email</label>
     <input
@@ -33,13 +42,31 @@ import { env } from '~/lib/env';
     />
     <button
       type="submit"
-      class="rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+      class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
     >
-      Suscribirme
+      <span>Suscribirme</span>
+      <span aria-hidden="true">→</span>
     </button>
   </form>
 
-  <p class="mt-3 text-xs text-dark-300">
-    Sin spam. Te puedes dar de baja cuando quieras.
-  </p>
+  <ul class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-dark-300">
+    <li class="flex items-center gap-1.5">
+      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+      </svg>
+      Sin spam
+    </li>
+    <li class="flex items-center gap-1.5">
+      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+      </svg>
+      Darse de baja con 1 click
+    </li>
+    <li class="flex items-center gap-1.5">
+      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+      </svg>
+      Nunca comparto tu email
+    </li>
+  </ul>
 </div>
