@@ -39,7 +39,7 @@ import { siteConfig } from '~/lib/site-config';
             ▶ Ver canal de YouTube
           </a>
           <a
-            href="/decodifica.net/blog/"
+            href="/blog/"
             class="inline-flex items-center justify-center gap-2 rounded-lg border border-dark-500 bg-dark-700 px-7 py-3.5 text-lg font-semibold text-white transition-all hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-900"
           >
             Leer el blog
@@ -71,12 +71,12 @@ import { siteConfig } from '~/lib/site-config';
               {pilar.description}
             </p>
             <div class="mt-6 pt-4">
-              <a
-                href={`/decodifica.net/blog/?pilar=${pilar.id}`}
-                class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
-              >
-                Explorar →
-              </a>
+            <a
+              href={`/blog/?pilar=${pilar.id}`}
+              class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+            >
+              Explorar →
+            </a>
             </div>
           </article>
         ))}
