@@ -53,3 +53,6 @@ supabase/.temp
 ehthumbs.db
 Icon?
 $RECYCLE.BIN/
+
+# Local scratch
+__trash__/
