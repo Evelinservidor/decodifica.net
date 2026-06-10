@@ -1,0 +1,53 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Button from '~/components/Button.astro';
+import { siteConfig } from '~/lib/site-config';
+---
+
+<BaseLayout
+  title="El canal"
+  description="Canal de YouTube sobre IA en español. Videos prácticos, sin fluff, con fuentes verificadas."
+>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="text-center">
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        El canal Decodifica
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        Videos de 3-7 minutos sobre IA. Prácticos, verificados, sin clickbait.
+      </p>
+    </header>
+
+    <div class="mt-12 rounded-2xl border border-dark-600 bg-dark-800 p-8">
+      <h2 class="font-display text-2xl font-bold">Sobre el canal</h2>
+      <div class="prose prose-invert mt-4 max-w-none text-dark-200">
+        <p>
+          Decodifica es un canal de YouTube dedicado a la inteligencia artificial en español.
+          Cubrimos dos cosas y las hacemos bien:
+        </p>
+        <ul>
+          {siteConfig.pillars.map((pilar) => (
+            <li><strong>{pilar.title}:</strong> {pilar.description}</li>
+          ))}
+        </ul>
+        <p>
+          <strong>Lo que NO hacemos:</strong>
+        </p>
+        <ul>
+          {siteConfig.antiTopics.map((topic) => (
+            <li>{topic}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <Button href={siteConfig.social.youtube} variant="primary" size="lg" external>
+        Suscribirme al canal
+      </Button>
+      <Button href="/blog" variant="secondary" size="lg">
+        Leer análisis escritos
+      </Button>
+    </div>
+  </article>
+</BaseLayout>

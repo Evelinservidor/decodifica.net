@@ -1,0 +1,70 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Política de privacidad"
+  description="Cómo recopilamos, usamos y protegemos tus datos personales."
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <h1>Política de privacidad</h1>
+    <p><em>Última actualización: 10 de junio de 2026</em></p>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      Decodifica (en adelante, "nosotros" o "el sitio") es el responsable del tratamiento de los datos
+      personales que se recogen a través de este sitio web.
+    </p>
+
+    <h2>2. Qué datos recopilamos</h2>
+    <ul>
+      <li><strong>Datos de cuenta</strong>: si te registras con Google o email, recopilamos tu email y nombre.</li>
+      <li><strong>Contenido generado por ti</strong>: posts, comentarios y mensajes que publiques en la comunidad.</li>
+      <li><strong>Datos de uso</strong>: páginas visitadas, tiempo en la web, clics (vía Plausible Analytics, sin cookies).</li>
+    </ul>
+
+    <h2>3. Para qué los usamos</h2>
+    <ul>
+      <li>Gestionar tu cuenta y autenticación.</li>
+      <li>Mostrar tu contenido público en la comunidad.</li>
+      <li>Enviarte la newsletter si te suscribes (vía Buttondown).</li>
+      <li>Analizar el uso del sitio de forma agregada y anónima.</li>
+    </ul>
+
+    <h2>4. Base legal</h2>
+    <p>
+      Tratamos tus datos en base a tu consentimiento (registro, suscripción a newsletter) y nuestro
+      interés legítimo (analítica web agregada, seguridad).
+    </p>
+
+    <h2>5. Terceros</h2>
+    <ul>
+      <li><strong>Supabase</strong>: almacena tu cuenta y datos de la comunidad. Servidores en EU.</li>
+      <li><strong>Buttondown</strong>: gestiona la newsletter. Ver su <a href="https://buttondown.com/privacy" target="_blank" rel="noopener">política de privacidad</a>.</li>
+      <li><strong>Plausible</strong>: analytics sin cookies, datos agregados y anónimos. Ver su <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">política</a>.</li>
+      <li><strong>Google</strong>: si usas "Sign in with Google", Google actúa como responsable. Ver su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política</a>.</li>
+    </ul>
+
+    <h2>6. Tus derechos</h2>
+    <p>
+      Puedes acceder, rectificar, suprimir, limitar el tratamiento, oponerte al tratamiento y solicitar
+      la portabilidad de tus datos. Para ejercer estos derechos, escríbenos a hola@decodifica.net.
+    </p>
+
+    <h2>7. Retención de datos</h2>
+    <p>
+      Conservamos tus datos mientras tu cuenta esté activa. Si la eliminas, los borramos en 30 días.
+    </p>
+
+    <h2>8. Seguridad</h2>
+    <p>
+      Usamos HTTPS, Row Level Security en la base de datos, y hashing de contraseñas gestionado por
+      Supabase Auth. Ningún sistema es 100% seguro, pero hacemos lo razonable para proteger tus datos.
+    </p>
+
+    <h2>9. Cambios en esta política</h2>
+    <p>
+      Si cambiamos algo material, te avisaremos por email y publicaremos la nueva versión aquí.
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Button from '~/components/Button.astro';
+
+const recursos = [
+  {
+    title: '50 prompts IA para creadores de contenido',
+    description: 'Plantillas listas para usar. Categorizadas por objetivo: hooks, ideas, escritura, investigación.',
+    type: 'PDF',
+    pages: 5,
+    icon: '📝',
+  },
+  {
+    title: 'Comparativa: ChatGPT vs Claude vs Gemini 2026',
+    description: 'Tabla con precios, fortalezas, casos de uso, y cuál elegir según tu perfil.',
+    type: 'PDF',
+    pages: 3,
+    icon: '⚖️',
+  },
+  {
+    title: 'Checklist: cómo elegir tu stack IA personal',
+    description: '8 preguntas para saber qué herramientas necesitas. Sin overwhelm.',
+    type: 'PDF',
+    pages: 1,
+    icon: '✅',
+  },
+];
+---
+
+<BaseLayout
+  title="Recursos gratis"
+  description="PDFs, plantillas y herramientas gratis para sacar más partido a la IA."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mx-auto max-w-2xl text-center">
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">Recursos gratis</h1>
+      <p class="mt-4 text-lg text-dark-200">
+        PDFs, plantillas y herramientas. Para descargar, deja tu email.
+      </p>
+    </header>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {recursos.map((recurso) => (
+        <article class="group overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition-all hover:border-brand-500/50">
+          <div class="text-4xl">{recurso.icon}</div>
+          <div class="mt-3 flex items-center gap-2 text-xs text-dark-300">
+            <span class="rounded-full bg-brand-500/10 px-2 py-0.5 text-brand-400">{recurso.type}</span>
+            <span>·</span>
+            <span>{recurso.pages} pág</span>
+          </div>
+          <h2 class="mt-3 font-display text-lg font-bold text-white group-hover:text-brand-400">
+            {recurso.title}
+          </h2>
+          <p class="mt-2 text-sm text-dark-200">
+            {recurso.description}
+          </p>
+          <div class="mt-4">
+            <Button href="/" variant="ghost" size="sm">
+              Descargar gratis
+            </Button>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

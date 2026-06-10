@@ -1,0 +1,40 @@
+---
+export interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  external?: boolean;
+}
+
+const { href, variant = 'primary', size = 'md', class: className = '', external = false } = Astro.props;
+
+const variantClasses = {
+  primary: 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/20',
+  secondary: 'bg-dark-700 hover:bg-dark-600 text-white border border-dark-500',
+  ghost: 'bg-transparent hover:bg-dark-700 text-brand-300 border border-brand-700',
+};
+
+const sizeClasses = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-base',
+  lg: 'px-7 py-3.5 text-lg',
+};
+
+const classes = [
+  'inline-flex items-center justify-center gap-2 font-semibold rounded-lg transition-all duration-200',
+  'focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800',
+  'disabled:opacity-50 disabled:cursor-not-allowed',
+  variantClasses[variant],
+  sizeClasses[size],
+  className,
+].join(' ');
+---
+
+<a
+  href={href}
+  class={classes}
+  {...external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+>
+  <slot />
+</a>
