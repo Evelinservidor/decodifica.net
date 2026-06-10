@@ -24,9 +24,6 @@ export default defineConfig({
     build: {
       cssCodeSplit: true,
     },
-    ssr: {
-      noExternal: ['@supabase/ssr', '@supabase/supabase-js'],
-    },
   },
   security: {
     checkOrigin: true,

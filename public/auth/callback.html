@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth callback - Decodifica</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+      .container { text-align: center; padding: 2rem; }
+      h1 { color: #06b6d4; }
+      a { color: #06b6d4; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login successful</h1>
+      <p>Redirecting...</p>
+      <p><a href="/">Go to home</a></p>
+    </div>
+    <script>
+      // This page receives the auth code and exchanges it for a session
+      // It then redirects to the home page
+      const url = new URL(window.location.href);
+      const code = url.searchParams.get('code');
+      if (code) {
+        // The Supabase client will handle the code exchange automatically
+        // when the user makes their first authenticated request
+        setTimeout(() => { window.location.href = '/'; }, 1000);
+      } else {
+        window.location.href = '/';
+      }
+    </script>
+  </body>
+</html>

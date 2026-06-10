@@ -1,34 +1,6 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import Button from '~/components/Button.astro';
-import { createSupabaseServerClient } from '~/lib/supabase';
-
-const supabase = createSupabaseServerClient(Astro.cookies);
-const { data: { user } } = await supabase.auth.getUser();
-
-// Fetch recent posts from the community feed
-let posts: Array<{
-  id: string;
-  title: string;
-  body: string;
-  created_at: string;
-  author_display_name: string | null;
-  author_avatar_url: string | null;
-  comments_count: number;
-  likes_count: number;
-}> = [];
-
-if (user) {
-  const { data, error } = await supabase
-    .from('posts_with_author')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(20);
-
-  if (!error && data) {
-    posts = data;
-  }
-}
+import { env } from '~/lib/env';
 ---
 
 <BaseLayout
@@ -43,49 +15,96 @@ if (user) {
       </p>
     </header>
 
-    {user ? (
-      <div class="mt-8 rounded-2xl border border-dark-600 bg-dark-800 p-4 text-center">
-        <p class="text-sm text-dark-200">
-          Conectado como <strong>{user.email}</strong>
-        </p>
-        <form action="/api/auth/signout" method="POST" class="mt-2">
-          <Button type="submit" variant="ghost" size="sm">Cerrar sesión</Button>
-        </form>
-      </div>
-    ) : (
-      <div class="mt-8 rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-950/50 to-dark-800 p-6 text-center">
-        <p class="text-dark-200">Necesitas iniciar sesión para participar.</p>
-        <div class="mt-4">
-          <Button href="/login" variant="primary">Iniciar sesión</Button>
-        </div>
-      </div>
-    )}
+    <div id="user-info" class="mt-8 hidden rounded-2xl border border-dark-600 bg-dark-800 p-4 text-center">
+      <p class="text-sm text-dark-200">
+        Conectado como <strong id="user-email"></strong>
+      </p>
+      <button
+        id="signout"
+        type="button"
+        class="mt-2 text-sm text-brand-400 hover:text-brand-300"
+      >
+        Cerrar sesión
+      </button>
+    </div>
 
-    <!-- Feed placeholder -->
-    {user && posts.length > 0 && (
-      <div class="mt-8 space-y-4">
-        {posts.map((post) => (
-          <article class="rounded-2xl border border-dark-600 bg-dark-800 p-6">
-            <h2 class="font-display text-lg font-bold">{post.title}</h2>
-            <p class="mt-2 text-sm text-dark-200">{post.body.slice(0, 200)}...</p>
-            <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
-              <span>{post.author_display_name || 'Anónimo'}</span>
-              <span>·</span>
-              <time>{new Date(post.created_at).toLocaleDateString('es-ES')}</time>
-              <span>·</span>
-              <span>💬 {post.comments_count}</span>
-              <span>·</span>
-              <span>♥ {post.likes_count}</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    )}
+    <div id="login-prompt" class="mt-8 rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-950/50 to-dark-800 p-6 text-center">
+      <p class="text-dark-200">Necesitas iniciar sesión para participar.</p>
+      <a
+        href="/login"
+        class="mt-4 inline-block rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600"
+      >
+        Iniciar sesión
+      </a>
+    </div>
 
-    {user && posts.length === 0 && (
-      <div class="mt-8 rounded-2xl border border-dark-600 bg-dark-800 p-12 text-center">
-        <p class="text-dark-200">Aún no hay posts. ¡Sé el primero!</p>
-      </div>
-    )}
+    <div id="feed" class="mt-8 space-y-4 hidden"></div>
+
+    <div id="empty-state" class="mt-8 hidden rounded-2xl border border-dark-600 bg-dark-800 p-12 text-center">
+      <p class="text-dark-200">Aún no hay posts. ¡Sé el primero!</p>
+    </div>
   </div>
+
+  <script define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
+    import { createBrowserClient } from 'https://esm.sh/@supabase/ssr@0.5.2';
+
+    const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+
+    async function init() {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (user) {
+        document.getElementById('login-prompt')?.classList.add('hidden');
+        const userInfo = document.getElementById('user-info');
+        userInfo?.classList.remove('hidden');
+        document.getElementById('user-email').textContent = user.email;
+
+        document.getElementById('signout')?.addEventListener('click', async () => {
+          await supabase.auth.signOut();
+          window.location.reload();
+        });
+
+        // Fetch posts
+        const { data: posts, error } = await supabase
+          .from('posts_with_author')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(20);
+
+        if (error) {
+          console.error('Error loading posts:', error);
+        }
+
+        if (posts && posts.length > 0) {
+          const feed = document.getElementById('feed');
+          feed.classList.remove('hidden');
+          feed.innerHTML = posts.map((post) => `
+            <article class="rounded-2xl border border-dark-600 bg-dark-800 p-6">
+              <h2 class="font-display text-lg font-bold">${escapeHtml(post.title)}</h2>
+              <p class="mt-2 text-sm text-dark-200">${escapeHtml(post.body.slice(0, 200))}...</p>
+              <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
+                <span>${escapeHtml(post.author_display_name || 'Anónimo')}</span>
+                <span>·</span>
+                <span>${new Date(post.created_at).toLocaleDateString('es-ES')}</span>
+                <span>·</span>
+                <span>💬 ${post.comments_count}</span>
+                <span>·</span>
+                <span>♥ ${post.likes_count}</span>
+              </div>
+            </article>
+          `).join('');
+        } else {
+          document.getElementById('empty-state')?.classList.remove('hidden');
+        }
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    init();
+  </script>
 </BaseLayout>

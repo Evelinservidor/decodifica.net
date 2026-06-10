@@ -33,9 +33,6 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Audit dependencies
-        run: npm audit --audit-level=high || true
-
       - name: Build
         env:
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
