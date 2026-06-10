@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://decodifica.net',
+  base: '/decodifica.net',
   output: 'static',
   integrations: [
     tailwind({
