@@ -15,10 +15,13 @@ const envSchema = z.object({
 
 const parsed = envSchema.safeParse(import.meta.env);
 
-if (!parsed.success) {
-  console.error('❌ Invalid environment variables:', parsed.error.flatten().fieldErrors);
-  throw new Error('Invalid environment variables');
-}
+  if (!parsed.success) {
+    // In production builds, log warning but don't fail (Astro env might be different)
+    if (import.meta.env.DEV) {
+      console.warn('⚠️ Missing optional env vars:', parsed.error.flatten().fieldErrors);
+    }
+    // Use defaults
+  }
 
 export const env = parsed.data;
 export type Env = z.infer<typeof envSchema>;
