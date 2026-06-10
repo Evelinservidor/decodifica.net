@@ -15,7 +15,7 @@ export async function signInWithOAuth(
   provider: 'google' = 'google',
   redirectTo: string = '/'
 ): Promise<AuthResult> {
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const { error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
       redirectTo: `${window.location.origin}${redirectTo}`,
@@ -37,7 +37,7 @@ export async function signInWithMagicLink(
   email: string,
   redirectTo: string = '/'
 ): Promise<AuthResult> {
-  const { data, error } = await supabase.auth.signInWithOtp({
+  const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
       emailRedirectTo: `${window.location.origin}${redirectTo}`,
