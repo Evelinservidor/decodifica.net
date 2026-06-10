@@ -1,7 +1,8 @@
 ---
 import { siteConfig } from '~/lib/site-config';
 
-const year = new Date().getFullYear();
+// Use build time year, fallback to current
+const year = import.meta.env.PROD ? 2025 : new Date().getFullYear();
 ---
 
 <footer class="border-t border-dark-600 bg-dark-800">
