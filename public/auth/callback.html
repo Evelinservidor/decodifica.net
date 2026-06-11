@@ -6,29 +6,102 @@
     <title>Auth callback - Decodifica</title>
     <style>
       body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-      .container { text-align: center; padding: 2rem; }
-      h1 { color: #06b6d4; }
+      .container { text-align: center; padding: 2rem; max-width: 480px; }
+      h1 { color: #06b6d4; margin-bottom: 1rem; }
       a { color: #06b6d4; text-decoration: none; }
       a:hover { text-decoration: underline; }
+      .error { color: #fca5a5; background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-family: monospace; font-size: 0.85rem; text-align: left; white-space: pre-wrap; word-break: break-word; }
+      .spinner { display: inline-block; width: 1.5rem; height: 1.5rem; border: 3px solid #1e293b; border-top-color: #06b6d4; border-radius: 50%; animation: spin 1s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Login successful</h1>
-      <p>Redirecting...</p>
-      <p><a href="/">Go to home</a></p>
+      <h1 id="title">Iniciando sesión…</h1>
+      <div class="spinner" id="spinner"></div>
+      <p id="status" style="margin-top: 1rem; color: #94a3b8;">Intercambiando código de autenticación con Supabase.</p>
+      <div id="error-box" class="error hidden"></div>
+      <p style="margin-top: 1.5rem;"><a href="/" id="home-link">Volver al inicio</a></p>
     </div>
-    <script>
-      // This page receives the auth code and exchanges it for a session
-      // It then redirects to the home page
-      const url = new URL(window.location.href);
-      const code = url.searchParams.get('code');
-      if (code) {
-        // The Supabase client will handle the code exchange automatically
-        // when the user makes their first authenticated request
-        setTimeout(() => { window.location.href = '/'; }, 1000);
-      } else {
-        window.location.href = '/';
+
+    <script type="module">
+      // Capture errors and show them on screen (lesson 2026-06-11: silent failures are the worst UX)
+      const titleEl = document.getElementById('title');
+      const statusEl = document.getElementById('status');
+      const errorBox = document.getElementById('error-box');
+      const spinner = document.getElementById('spinner');
+      const homeLink = document.getElementById('home-link');
+
+      function showError(message, detail) {
+        spinner.classList.add('hidden');
+        titleEl.textContent = 'Error de autenticación';
+        statusEl.textContent = 'No se pudo completar el inicio de sesión.';
+        errorBox.classList.remove('hidden');
+        errorBox.textContent = message + (detail ? '\n\nDetalle:\n' + detail : '');
+        console.error('[auth-callback] Error:', message, detail || '');
+      }
+
+      try {
+        const url = new URL(window.location.href);
+
+        // Detect error params from Supabase (e.g. ?error=access_denied&error_description=...)
+        const errorParam = url.searchParams.get('error');
+        const errorDesc = url.searchParams.get('error_description');
+        if (errorParam) {
+          showError(
+            'Supabase rechazó el callback. Esto suele ser porque la URL de retorno no está en la whitelist del proyecto Supabase.',
+            `${errorParam}${errorDesc ? ': ' + errorDesc : ''}`
+          );
+          throw new Error('oauth_error');
+        }
+
+        const code = url.searchParams.get('code');
+        if (!code) {
+          showError(
+            'No se recibió código de autenticación en la URL.',
+            'URL actual: ' + window.location.href
+          );
+          throw new Error('no_code');
+        }
+
+        // Exchange code for session using Supabase JS v2 (PKCE flow)
+        const SUPABASE_URL = window.location.origin.includes('localhost')
+          ? null
+          : null; // Will be set by env or hardcoded below
+
+        // We import from the same Supabase project used elsewhere.
+        // The anon key is the same one inlined in /login — load it from the same define:vars pattern.
+        // For the static callback page, we read it from a small JSON file at /auth/callback-config.json
+        // (no secrets, just public anon key + project URL, both safe to expose).
+        const cfgRes = await fetch('/auth/callback-config.json', { cache: 'no-store' });
+        if (!cfgRes.ok) {
+          showError('No se pudo cargar la configuración de Supabase.', 'Status: ' + cfgRes.status);
+          throw new Error('config_load_failed');
+        }
+        const cfg = await cfgRes.json();
+
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
+        const supabase = createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+          auth: { flowType: 'pkce', detectSessionInUrl: false }
+        });
+
+        const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+        if (error) {
+          showError('Error al intercambiar código por sesión.', error.message);
+          throw error;
+        }
+
+        // Success: cookies are set by Supabase, redirect to /comunidad
+        statusEl.textContent = '¡Listo! Redirigiendo a la comunidad…';
+        spinner.classList.add('hidden');
+        setTimeout(() => { window.location.href = '/comunidad'; }, 600);
+
+      } catch (err) {
+        if (err && err.message === 'oauth_error' || err && err.message === 'no_code' || err && err.message === 'config_load_failed') {
+          // already shown
+        } else {
+          showError('Error inesperado durante el callback.', err && err.message ? err.message : String(err));
+        }
       }
     </script>
   </body>
