@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Cómo crear un Agente de Voz con IA (sin programar, gratis)";
+const description = "5 plataformas web para tener un agente de voz con IA en 2026, sin código. Tutorial paso a paso de 5 minutos con ElevenLabs y comparativa honesta de Vapi, Retell, OpenAI y vocode.";
+const pubDate = "2026-06-18";
+const tags = ["herramientas ia gratis", "agentes ia voz", "apps web gratis", "ias para productividad"];
+const readingTime = "9 min";
+const pillar = "apps-web";
+const pillarLabel = "Pilar 1: Apps web";
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/blog/crear-agente-voz-ia-sin-programar.png">
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime="2026-06-18">18 junio 2026</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        En 2026 ya puedes tener un agente de voz con IA contestando tus llamadas o atendiendo a tus clientes, sin saber programar y sin gastar un euro. Esto es lo que puedes hacer hoy, lo que cuesta de verdad y el tutorial paso a paso para tener el tuyo funcionando en 5 minutos.
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/crear-agente-voz-ia-sin-programar.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>ElevenLabs (free tier)</strong>: la más fácil para empezar. Web UI pura, 10.000 créditos al mes, agentes en 5 minutos y 70+ idiomas.</li>
+        <li><strong>Vapi (free trial)</strong>: la más completa para uso real. Sub-600 ms de latencia, panel sin código, BYOK (trae tu propia API) y más de 30 proveedores de voz, LLM y STT.</li>
+        <li><strong>Retell AI (free credits)</strong>: la más rápida para producción. $10 gratis al registrarse, simulación de llamadas, integraciones con Twilio y n8n.</li>
+        <li><strong>OpenAI Realtime API</strong>: el motor de voz nativo de OpenAI. Sin free tier, pero es lo que hay detrás de muchas de las demás.</li>
+        <li><strong>vocode (open source)</strong>: si quieres montarlo tú en tu servidor y olvidarte de cuotas. Github público, gratis, pero requiere saber Python.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es un agente de voz con IA y por qué importa en 2026</h2>
+    <p>
+      Un agente de voz con IA es un software que habla por teléfono (o en un chat de voz web) como si fuera una persona: escucha lo que dices, lo entiende, responde con voz natural y, si hace falta, ejecuta acciones reales (reservar una cita, consultar un pedido, transferir la llamada a un humano). No es un IVR de "pulsa 1 para ventas". Es una conversación real.
+    </p>
+    <p>
+      Hasta 2024 esto requería montar un stack con tres servicios separados: reconocimiento de voz (STT), un modelo de lenguaje (LLM) y síntesis de voz (TTS), más una capa de orquestación para que todo encajara en menos de un segundo. Eso significaba programar, pagar tres APIs y rezar para que la latencia no matara la experiencia.
+    </p>
+    <p>
+      En 2026 el panorama ha cambiado. Hay cinco plataformas web que te dan todo eso empaquetado, con panel visual, y que en cinco minutos te dejan un agente funcionando. Algunas gratis de verdad, otras con prueba gratuita generosa, pero las cinco se manejan sin tocar código.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las 5 plataformas que permiten crear un agente de voz sin programar</h2>
+    <p>
+      Las he probado todas o las he revisado a fondo. Aquí va el ranking por caso de uso, no por popularidad.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">1. ElevenLabs — La más fácil para empezar</h3>
+    <p>
+      ElevenLabs lanzó su producto de <strong>ElevenAgents</strong> a finales de 2025 y es, sin discusión, la opción más amable para alguien que no ha tocado una API en su vida. La interfaz es 100% web: escribes qué quieres que haga el agente, subes un PDF con tu catálogo o preguntas frecuentes, eliges una voz de las más de 10.000 que tienen (o clonas la tuya), y listo.
+    </p>
+    <p>
+      El plan <strong>Free</strong> te da <strong>10.000 créditos al mes</strong> y acceso a Text to Speech, Speech to Text, Sound Effects, Voice Design y Conversational AI. Para probar y tener un agente personal o de un negocio pequeño, llega. Cuando pasas a <strong>Starter</strong> (5 dólares al mes) obtienes licencia comercial y 30.000 créditos.
+    </p>
+    <p>
+      Donde brilla: voces increíblemente naturales, soporte de más de 70 idiomas, latencia sub-segundo y un editor de "tone" que te permite ajustar qué tan sonriente, calmado o directo suena el agente. Donde flojea: si quieres lógica compleja con transferencias entre agentes o integración profunda con tu CRM, toca irse a un plan de pago alto (Scale, 299 dólares al mes) o pelearse con su API.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">2. Vapi — La más completa para uso real</h3>
+    <p>
+      Vapi es la que más usan empresas que quieren producción seria sin montar infraestructura propia. Su panel permite crear asistentes con un solo prompt de sistema y herramientas (tools), o construir "squads" de varios asistentes especializados que se pasan la llamada entre ellos.
+    </p>
+    <p>
+      Lo que destaca: <strong>sub-600 ms de latencia</strong> en conversación (es lo más rápido que he visto en plataformas no-propietarias), y más de 30 proveedores que puedes mezclar como piezas de Lego: OpenAI, Anthropic, Google, Deepgram, ElevenLabs, Cartesia… Eliges qué STT, qué LLM y qué TTS quieres usar, y Vapi orquesta la conversación.
+    </p>
+    <p>
+      El modelo de precios es por uso: <strong>$0,05 por minuto de llamada</strong> en el plan Build, más el coste del modelo (que te lo cobran a precio de coste, o cero si traes tus propias API keys). Incluye 10 líneas concurrentes gratis y 60+ minutos mensuales para probar. Si quieres HIPAA o Zero Data Retention, son 2.000 y 1.000 dólares al mes respectivamente.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">3. Retell AI — La más rápida para producción</h3>
+    <p>
+      Retell se ha posicionado como la opción "production-first". Te registras, recibes <strong>$10 en créditos gratis</strong> al instante, y tienes acceso completo a la plataforma sin commitments. Su panel incluye simulador de llamadas para probar el agente antes de soltarlo con clientes reales, plantillas pre-construidas para casos típicos (recepcionista, cualificador de leads, soporte) y webhooks/API para integrarlo con tu stack.
+    </p>
+    <p>
+      El coste por minuto va de <strong>$0,07 a $0,31</strong> según qué stack de LLM y voz uses. Con GPT-5 nano y ElevenLabs, el mínimo realista. Incluye 20 llamadas concurrentes gratis y, si necesitas más, 8 dólares por línea extra al mes. En España el coste de telephony por Twilio anda en torno a 1,5 céntimos por minuto.
+    </p>
+    <p>
+      La gracia de Retell: la calidad de llamada es consistentemente alta, tienen integraciones nativas con Twilio, Vonage, Make, n8n y HubSpot, y un dashboard de monitorización que te muestra transcripciones y calidad de cada interacción.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">4. OpenAI Realtime API — El motor nativo de voz</h3>
+    <p>
+      OpenAI lanzó en 2024 su Realtime API y en 2026 ya va por la segunda generación (<strong>GPT-Realtime-2</strong>). Este es el motor de voz que hay por debajo de muchas de las plataformas anteriores: un único modelo que hace STT, razonamiento y TTS en un solo paso, lo que reduce la latencia a mínimos.
+    </p>
+    <p>
+      <strong>No tiene free tier</strong>: necesitas meter crédito en tu cuenta de la API de OpenAI y pagar por uso. El precio actual del modelo GPT-Realtime-2 es de <strong>$32 por millón de tokens de audio de entrada y $64 por millón de tokens de audio de salida</strong>. Para una conversación de 5 minutos, la factura anda en torno a 30-50 céntimos.
+    </p>
+    <p>
+      ¿Por qué está en la lista entonces? Porque si sabes algo de código (o tienes a alguien que sepa), es la opción más flexible. Conectas vía WebRTC, WebSocket o SIP, le mandas audio, recibes audio, y montas la lógica que quieras. No es la opción "sin programar", pero es la que recomendarías a un equipo técnico que quiera control total.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">5. vocode — La opción open source</h3>
+    <p>
+      vocode es la única de la lista que es 100% código abierto (licencia MIT en el repo de Python) y que puedes correr en tu propio servidor sin pagar a nadie. La librería en sí es gratis; lo que pagas son los proveedores externos de STT, LLM y TTS que elijas conectar.
+    </p>
+    <p>
+      Tiene abstracciones de conversación (streaming, turnos, endpointing), integraciones con Deepgram, AssemblyAI, OpenAI, Anthropic, ElevenLabs, PlayHT, y soporte para telefonía, web y Zoom. El equipo también ofrece un servicio hosted opcional (vocode.dev) por si no quieres montarlo tú.
+    </p>
+    <p>
+      Importante: vocode <strong>sí requiere saber programar</strong> (Python). Lo incluyo porque es la base sobre la que otras plataformas han construido, y porque para un equipo técnico es la mejor manera de tener control total sin atarse a un vendor.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">Plataforma</th>
+            <th class="text-left p-2 text-white">Free tier</th>
+            <th class="text-left p-2 text-white">Latencia aprox.</th>
+            <th class="text-left p-2 text-white">Idiomas</th>
+            <th class="text-left p-2 text-white">Ideal para</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700"><td class="p-2">ElevenLabs</td><td class="p-2">10.000 créditos/mes</td><td class="p-2">~700 ms</td><td class="p-2">70+</td><td class="p-2">Empezar sin código, voces top</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Vapi</td><td class="p-2">60+ min incluidos</td><td class="p-2">&lt;600 ms</td><td class="p-2">30+</td><td class="p-2">Producción seria, multi-proveedor</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Retell AI</td><td class="p-2">$10 en créditos</td><td class="p-2">~500 ms</td><td class="p-2">20+</td><td class="p-2">Producción rápida, integraciones</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">OpenAI Realtime</td><td class="p-2">No tiene</td><td class="p-2">~300-500 ms</td><td class="p-2">50+</td><td class="p-2">Equipos técnicos, control total</td></tr>
+          <tr><td class="p-2">vocode</td><td class="p-2">Open source (MIT)</td><td class="p-2">Variable</td><td class="p-2">Depende de TTS</td><td class="p-2">Devs, self-hosted, sin vendor lock</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-dark-300 mt-2">Precios verificados en las páginas oficiales en junio de 2026. Las latencias son valores típicos y dependen de la región y la conexión.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primer agente con ElevenLabs en 5 minutos</h2>
+    <p>
+      He elegido ElevenLabs para el tutorial porque es la única que cumple de verdad la promesa "sin programar y gratis". El resto requiere tarjeta desde el primer minuto o saber Python.
+    </p>
+    <p><strong>Paso 1. Crea una cuenta.</strong> Ve a <a href="https://elevenlabs.io/conversational-ai/app/sign-up" class="text-brand-400 hover:text-brand-300">elevenlabs.io</a> y regístrate con Google o email. No pide tarjeta. Te dan 10.000 créditos al mes desde el primer día.</p>
+    <p><strong>Paso 2. Entra en "Conversational AI".</strong> En el menú lateral verás la opción "ElevenAgents" o "Conversational AI". Haz clic en "Create Agent". Te sale un formulario con tres campos: nombre del agente, idioma principal y un prompt de sistema.</p>
+    <p><strong>Paso 3. Escribe el prompt de sistema.</strong> Aquí defines la personalidad y las instrucciones. Por ejemplo, para una peluquería:</p>
+    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>Eres el asistente virtual de Peluquería María, en Madrid.
+Tu trabajo es atender llamadas de clientes que quieren reservar cita,
+modificar una cita existente o preguntar por precios.
+
+Reglas:
+- Saluda siempre con "Hola, gracias por llamar a Peluquería María".
+- Pregunta qué servicio quieren (corte, color, peinado).
+- Pregunta el día y la hora que prefieren.
+- Si no hay hueco, ofrece dos alternativas cercanas.
+- Al final, confirma la cita leyendo día, hora y servicio en voz alta.
+- Si preguntan algo que no sabes (horarios especiales, eventos),
+  di: "Eso te lo confirma María, ¿quieres que le pase el recado?"</code></pre>
+    <p><strong>Paso 4. Sube tu knowledge base (opcional).</strong> En la pestaña "Knowledge" puedes subir PDFs, documentos de Google Drive o pegar texto. El agente lo usará para responder preguntas reales (tu carta de servicios, política de cancelación, dirección exacta, etc.).</p>
+    <p><strong>Paso 5. Elige la voz.</strong> ElevenLabs tiene 10.000+ voces pre-hechas. Filtra por idioma español, sexo y estilo (formal, casual, energética). Puedes probar cada voz con un texto de prueba antes de asignarla. Si quieres, puedes clonar tu propia voz subiendo 3 minutos de audio limpio.</p>
+    <p><strong>Paso 6. Configura el primer mensaje.</strong> Es lo que dice el agente al descolgar. Por defecto usa el saludo que pusiste en el prompt, pero puedes sobreescribirlo aquí. Por ejemplo: "Hola, Peluquería María, ¿en qué puedo ayudarte?".</p>
+    <p><strong>Paso 7. Prueba en el simulador.</strong> En la misma pantalla hay un widget de chat de voz. Pulsa el micrófono, habla como si fueras un cliente, y comprueba que el agente entiende, responde con sentido y mantiene la personalidad. Si se atasca o contesta cosas raras, vuelve al paso 3 y afina el prompt.</p>
+    <p><strong>Paso 8. Conecta a un número de teléfono (opcional).</strong> Aquí es donde entra el coste. ElevenLabs no da número de teléfono propio: te integra con Twilio, Genesys, Vonage o cualquier PBX compatible con SIP. Para probar sin pagar, quédate en el simulador web. Para atender llamadas reales, crea cuenta en Twilio, compra un número español (~1 dólar al mes), y vincúlalo en la pestaña "Telephony". Cada minuto de llamada consume créditos.</p>
+    <p>
+      Tiempo total: entre 3 y 7 minutos para tener el agente configurado. La parte larga no es la herramienta, es decidir qué quieres que diga y qué no. Ahí es donde se nota la diferencia entre un agente que suena a robot y uno que parece humano.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que NO te dicen: limitaciones reales</h2>
+    <p>
+      Después de probar las cinco plataformas y leer documentación hasta hartarme, esto es lo que los vendedores callan:
+    </p>
+    <ul>
+      <li><strong>La latencia no es cero.</strong> Aunque Vapi presume de sub-600 ms, en la práctica la respuesta del agente tarda entre 500 ms y 1,5 segundos. El oyente lo nota. Si tu cliente está acostumbrado a una conversación humana, va a percibir un "tic" de pausa. Es aceptable, pero no es magia.</li>
+      <li><strong>El acento español no es nativo en todos los modelos.</strong> ElevenLabs y OpenAI tienen voces españolas que suenan muy bien. Vapi, dependiendo del proveedor TTS que elijas, puede sonar a mexicano o a argentino aunque el LLM hable en español de España. Hay que probar.</li>
+      <li><strong>El coste escala rápido.</strong> Una llamada media son 3-5 minutos. Si el agente atiende 50 llamadas al día, son 150-250 minutos. A 5-10 céntimos por minuto, son 7-25 euros al día. No es barato cuando empiezas a tener volumen.</li>
+      <li><strong>Las hallucinations siguen pasando.</strong> El agente puede inventarse horarios, precios o políticas que no existen. Por eso la knowledge base es crítica: cuanta más info real le des, menos improvisará. Y aun así, hay que revisar transcripciones.</li>
+      <li><strong>No sustituye a un humano en casos complejos.</strong> Quejas, emergencias, problemas emocionales… sigue necesitando una transferencia a una persona real. Las mejores configuraciones lo prevén desde el prompt: "Si el cliente está molesto, ofrece transferir a un humano".</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo SÍ tiene sentido pagar</h2>
+    <p>
+      El plan gratis de ElevenLabs es perfecto para probar y para un uso personal o de un autónomo con pocas llamadas. Pero en cuanto cumples alguna de estas condiciones, toca pasar a un plan de pago o a una plataforma de producción:
+    </p>
+    <ul>
+      <li>Atiendes más de 100 llamadas al mes.</li>
+      <li>Necesitas un número de teléfono español (o de otro país) dedicado.</li>
+      <li>Quieres que el agente transfiera a un humano de forma limpia.</li>
+      <li>Manejas datos sensibles (sanidad, legal, finanzas) y necesitas HIPAA o equivalente.</li>
+      <li>Quieres integrarlo con tu CRM, calendario o sistema de tickets.</li>
+    </ul>
+    <p>
+      Para empezar: ElevenLabs gratis. Para escalar: Vapi o Retell. Para control absoluto: OpenAI Realtime o vocode.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Necesito saber programar para crear un agente de voz?</h3>
+    <p>
+      No, si usas ElevenLabs, Vapi o Retell. Las tres tienen panel web 100% visual: rellenas un formulario, subes documentos, eliges voz y ya tienes el agente funcionando. OpenAI Realtime y vocode sí requieren programar (Python o JavaScript), pero son para casos avanzados o equipos técnicos.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuánto cuesta de verdad un agente de voz en 2026?</h3>
+    <p>
+      Gratis para empezar: ElevenLabs Free (10.000 créditos al mes) o Retell ($10 de crédito al registrarte). Para uso real, los precios están entre 5 y 30 céntimos por minuto de llamada, dependiendo de la plataforma y los proveedores de voz y LLM que elijas. A Twilio hay que sumarle el número de teléfono (1-2 dólares al mes) y el coste de telephony (1-2 céntimos por minuto en España).
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona en español de España?</h3>
+    <p>
+      Sí, las cinco plataformas soportan español. ElevenLabs es la que tiene las voces más naturales en castellano peninsular. OpenAI Realtime y Retell también suenan bien. Vapi depende del TTS que elijas: con ElevenLabs o Cartesia suena natural; con voces genéricas puede notarse un acento latino.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puede un agente de voz transferir la llamada a una persona?</h3>
+    <p>
+      Sí. Vapi, Retell y ElevenLabs (en planes de pago) permiten configurar transferencias a números de teléfono reales. El prompt de sistema le dice al agente cuándo ofrecer la transferencia (por ejemplo: "si el cliente dice que es una emergencia, transfiere a María al 6XX XXX XXX"). ElevenLabs Free no incluye esta función; toca subir a Starter.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué pasa con la privacidad de las llamadas?</h3>
+    <p>
+      Depende del plan. ElevenLabs Free puede usar las conversaciones para mejorar sus modelos (se puede desactivar en ajustes). En planes de pago, las conversaciones no se usan para entrenar. Vapi y Retell, por defecto, retienen el historial 14-30 días y luego lo borran. Si trabajas con datos sensibles, necesitas planes enterprise con "Zero Data Retention", que cuestan 1.000 dólares al mes en Vapi.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes verificadas</h2>
+    <p>
+      Todos los datos de precios, latencias y características de este artículo están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026:
+    </p>
+    <ul>
+      <li><strong>ElevenLabs</strong> — pricing oficial, planes Free y Starter, créditos mensuales y agentes conversacionales: <a href="https://elevenlabs.io/pricing" class="text-brand-400 hover:text-brand-300">elevenlabs.io/pricing</a> y <a href="https://elevenlabs.io/conversational-ai" class="text-brand-400 hover:text-brand-300">elevenlabs.io/conversational-ai</a></li>
+      <li><strong>Vapi</strong> — modelo de precios por minuto, latencia sub-600 ms, panel Assistants vs Squads: <a href="https://vapi.ai/pricing" class="text-brand-400 hover:text-brand-300">vapi.ai/pricing</a> y <a href="https://docs.vapi.ai/quickstart/introduction" class="text-brand-400 hover:text-brand-300">docs.vapi.ai</a></li>
+      <li><strong>Retell AI</strong> — créditos gratis, $0,07-$0,31/min, integraciones con Twilio, n8n y HubSpot: <a href="https://retellai.com/pricing" class="text-brand-400 hover:text-brand-300">retellai.com/pricing</a></li>
+      <li><strong>OpenAI Realtime API</strong> — modelo GPT-Realtime-2, precios por millón de tokens de audio, conexión WebRTC/WebSocket/SIP: <a href="https://openai.com/api/pricing/" class="text-brand-400 hover:text-brand-300">openai.com/api/pricing</a> y <a href="https://platform.openai.com/docs/guides/realtime" class="text-brand-400 hover:text-brand-300">platform.openai.com/docs/guides/realtime</a></li>
+      <li><strong>vocode</strong> — librería open source (MIT), integraciones STT/TTS/LLM, opción hosted: <a href="https://docs.vocode.dev/" class="text-brand-400 hover:text-brand-300">docs.vocode.dev</a></li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <p>
+      Un agente de voz con IA ya no es cosa de empresas con miles de euros al mes en desarrollo. En 2026, con cinco minutos y sin programar, puedes tener uno que conteste tus llamadas, pida cita o atienda a tus clientes. La parte difícil no es la herramienta: es definir bien qué quieres que diga, qué no, y cuándo debe pasar la llamada a un humano.
+    </p>
+    <p>
+      Si te interesa profundizar en cómo integrar estos agentes con tu forma de trabajar, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+    </p>
+    <p>
+      Y si antes de meterte con voz quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos la semana pasada.
+    </p>
+    <p>
+      ¿Quieres que profundice en alguna de las cinco plataformas? ¿O que monte un tutorial de Vapi o Retell? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
+    </p>
+    <p>
+      — Jordi
+    </p>
+
+    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-1" class="sr-only">Email</label>
+        <input id="blog-email-1" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+</BaseLayout>

@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "La IA gratis que está hundiendo a Silicon Valley (y cómo probarla)";
+const description = "DeepSeek V3, Qwen 2.5, Mistral y Hugging Face: 4 IAs gratis que ya compiten con GPT-4. Cómo probarlas hoy y combinarlas en tu trabajo diario.";
+const pubDate = "2026-06-16";
+const tags = ["herramientas ia gratis", "alternativas chatgpt", "deepseek", "qwen", "mistral"];
+const readingTime = "9 min";
+const pillar = "apps-web";
+const pillarLabel = "Pilar 1: Apps web";
+---
+<BaseLayout title={title} description={description} ogImage="/og/blog/ia-gratis-silicon-valley.png">
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime="2026-06-16">16 junio 2026</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+        <span>·</span>
+        <span class="inline-flex items-center rounded-full border border-brand-500/40 bg-brand-500/10 px-2 py-0.5 text-xs font-medium text-brand-300">
+          Pilar 1 + 2
+        </span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        En enero de 2025, entrenar un modelo como GPT-4 costaba más de cien millones de dólares. Un año después, DeepSeek entrenó uno equivalente por menos de seis. La pregunta ya no es si la IA abierta ha llegado para quedarse, sino qué haces tú con ella mientras los demás siguen pagando veinte dólares al mes. Aquí van las cuatro apps gratis que yo uso a diario.
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/ia-gratis-silicon-valley.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>DeepSeek V3</strong>: la IA china gratis que rinde al nivel de GPT-4o en código y matemáticas. En <a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300">chat.deepseek.com</a>, sin tarjeta.</li>
+        <li><strong>Qwen 2.5 (chat.qwen.ai)</strong>: la IA de Alibaba que lidera rankings abiertos en español. Gratis y multimodal.</li>
+        <li><strong>Mistral Le Chat</strong>: la europea con servidores en la UE. RGPD de verdad, no de marketing.</li>
+        <li><strong>Hugging Face Chat</strong>: 118 modelos open source bajo un mismo techo, incluido Llama 4.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Silicon Valley está nerviosa</h2>
+    <p>
+      En 2024, el acceso a una IA de frontera era cosa de tres letras: GPT, Claude o Gemini. Todas detrás de muros de pago, todas en Estados Unidos, todas con el mismo modelo de negocio: veinte dólares al mes por chat premium. Si querías algo gratis, te conformabas con la versión recortada.
+    </p>
+    <p>
+      En 2026 eso se ha roto. Los modelos abiertos (open weight) han alcanzado a los cerrados en casi todos los benchmarks relevantes, y la diferencia de coste es absurda. El entrenamiento completo de DeepSeek V3 costó <strong>2,788 millones de horas de GPU H800</strong>, frente a los más de cien millones de dólares estimados para GPT-4 según los analistas del sector. La cifra exacta la publica la propia DeepSeek en su informe técnico. Y el modelo completo, con sus 671.000 millones de parámetros, está disponible para descarga en Hugging Face bajo licencia comercial abierta.
+    </p>
+    <p>
+      ¿Significa eso que GPT-4o ha muerto? No. Pero sí significa que, para el noventa por ciento de tareas del día a día (resumir, traducir, programar, analizar un PDF, redactar un email), ya no necesitas pagar. Las cuatro apps de este post lo demuestran.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. DeepSeek V3 — la china que cuesta una décima parte</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      DeepSeek es una empresa china (Hangzhou, fundada por un fondo cuantitativo) que en diciembre de 2024 publicó los pesos de su modelo V3 bajo una licencia que permite uso comercial. El chat gratuito vive en <a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300">chat.deepseek.com</a>: solo necesitas un email, sin tarjeta, sin límite diario visible, y por ahora la única pega real es que la interfaz alterna inglés y chino en algunas esquinas.
+    </p>
+    <p>
+      En mis pruebas, y según los benchmarks que la propia DeepSeek publica en su modelo, V3 queda por delante de Qwen 2.5 72B y Llama 3.1 405B en código y matemáticas, y a la altura de Claude 3.5 Sonnet y GPT-4o en razonamiento general. No es propaganda: está medido en HumanEval, MMLU-Pro, MATH-500 y otros tests públicos.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Programación difícil (refactor, debugging de legacy, SQL con varios joins, scripts de Python para automatizar tareas)</li>
+      <li>Resolución de problemas matemáticos paso a paso, con la cadena de razonamiento visible</li>
+      <li>Generación de texto largo en español (artículos, informes, guiones) con menos "tono ChatGPT" que sus rivales abiertos</li>
+      <li>Como backend de un agente: la API es compatible con el formato de OpenAI, así que conectar Cursor, Continue o tus propios scripts es inmediato</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones reales</h3>
+    <ul>
+      <li>Sin multimodalidad nativa en el chat web (no sube imágenes todavía en la versión que he probado)</li>
+      <li>La versión gratuita puede sufrir throttling en horas punta de China, sobre todo por la tarde hora europea</li>
+      <li>La política de privacidad es la china, no la europea: si manejas datos sensibles de clientes de la UE, mejor Mistral</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">2. Qwen 2.5 — el Alibaba que lidera en abierto</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Qwen es la familia de modelos de Alibaba Cloud, publicada con pesos abiertos desde 2023. La versión 2.5, disponible desde septiembre de 2024, incluye tamaños desde 0.5B hasta 72B parámetros, y el chat gratuito está en <a href="https://chat.qwen.ai" class="text-brand-400 hover:text-brand-300">chat.qwen.ai</a>. Soporta más de veintinueve idiomas y, según la documentación oficial del modelo en Hugging Face, el contexto alcanza los 128.000 tokens con generación de hasta 8.000.
+    </p>
+    <p>
+      En español formal, Qwen 2.5 me parece la más "neutra" de las cuatro: no suena a traducido ni a chino mal interpretado, y es la que mejor maneja instrucciones largas y estructuradas. En el ranking abierto de LMSYS Chatbot Arena, los modelos de Qwen han estado repetidamente entre los cinco primeros por debajo de GPT-4 y Claude.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Redacción en español de documentos largos sin perder coherencia (informes, propuestas, presentaciones)</li>
+      <li>Trabajo con tablas y datos estructurados (lee JSON, CSV y Excel, y devuelve respuestas en el mismo formato)</li>
+      <li>Multilingüismo real: si tu equipo mezcla español, inglés y francés, Qwen alterna sin que notes el cambio</li>
+      <li>Generación de código con comentarios claros en español</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones reales</h3>
+    <ul>
+      <li>La capa gratuita impone un límite diario de mensajes que la propia web no documenta bien (en mis pruebas, entre 60 y 80 mensajes con contexto corto)</li>
+      <li>El modo "Deep Research" (navegación web) está reservado a la cuenta de pago</li>
+      <li>Si quieres la versión más potente, la 72B, en local necesitas una GPU seria; en el chat web no siempre te la sirven</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3. Mistral Le Chat — la europea que sí cumple RGPD</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Mistral AI es la startup francesa (París, fundada por exempleados de Meta y DeepMind) que ha levantado 1.700 millones de euros según su propio comunicado de septiembre de 2025. Su chat, Le Chat, vive en <a href="https://chat.mistral.ai" class="text-brand-400 hover:text-brand-300">chat.mistral.ai</a>, gratuito con registro, y los servidores están en la Unión Europea. Esto importa: si trabajas con datos de clientes europeos o de la administración pública española, mandar tus prompts a un servidor de Estados Unidos o China es, en muchos casos, ilegal.
+    </p>
+    <p>
+      En mayo de 2026 Mistral publicó Mistral Medium 3.5, su modelo más reciente para razonamiento y código, disponible también en el plan gratuito con límites. Los modelos abiertos (Mistral Small 4, Devstral) se pueden descargar de Hugging Face bajo la Apache 2.0.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Trabajo con datos sensibles: sanitarios, legales, financieros, datos personales de clientes europeos</li>
+      <li>Proyectos de administración pública española donde el RGPD se aplica de verdad (no de boquilla)</li>
+      <li>Cuando necesitas un modelo europeo por motivos contractuales o de compliance</li>
+      <li>Como backend de un agente: su API es OpenAI-compatible y soporta function calling nativo</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones reales</h3>
+    <ul>
+      <li>El plan gratuito reserva los modelos más pequeños (Mistral Small); los grandes (Large, Medium 3.5) tienen límite de mensajes al día</li>
+      <li>En español va bien, pero no tan fluido como Claude o Qwen en textos muy coloquiales</li>
+      <li>La multimodalidad (subir imágenes) está en fase beta y solo en el plan de pago</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4. Hugging Face Chat — 118 modelos bajo un mismo techo</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Hugging Face es la "GitHub de los modelos abiertos". En <a href="https://huggingface.co/chat" class="text-brand-400 hover:text-brand-300">huggingface.co/chat</a> puedes elegir entre más de cien modelos abiertos sin registrarte, incluido el propio DeepSeek V3, Qwen 2.5, Llama 4, Phi-4, Mistral y muchos más. Tiene un modo "Omni" que escoge automáticamente el mejor para tu pregunta.
+    </p>
+    <p>
+      Para mí es la playground por excelencia: si quiero comparar la misma pregunta en cuatro modelos distintos, aquí lo hago en dos minutos. Y todo gratis, aunque con cola cuando los servidores están saturados.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Probar modelos nuevos el día que salen (DeepSeek R1, Llama 4, Qwen 3, etc.) sin esperar a que otra plataforma los integre</li>
+      <li>Comparar la misma tarea en tres modelos distintos para ver cuál te conviene</li>
+      <li>Experimentar con modelos pequeños (3B, 7B) que corren rápido aunque sean menos capaces</li>
+      <li>Aprender a usar modelos abiertos: si te convence uno, te lo descargas a tu propio ordenador</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones reales</h3>
+    <ul>
+      <li>Calidad muy variable: mezclas modelos punteros con modelos de hace un año en el mismo selector</li>
+      <li>Sin continuidad entre sesiones (cada conversación empieza de cero, salvo que uses la versión PRO)</li>
+      <li>En horas punta los modelos grandes se quedan en cola y tardan en responder</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa: las cuatro de un vistazo</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">App</th>
+            <th class="text-left p-2 text-white">País</th>
+            <th class="text-left p-2 text-white">Multimodal</th>
+            <th class="text-left p-2 text-white">Mejor para</th>
+            <th class="text-left p-2 text-white">Límite gratis</th>
+            <th class="text-left p-2 text-white">Enlace</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700">
+            <td class="p-2">DeepSeek V3</td>
+            <td class="p-2">China</td>
+            <td class="p-2">No (texto)</td>
+            <td class="p-2">Código, matemáticas, razonamiento</td>
+            <td class="p-2">Ilimitado*</td>
+            <td class="p-2"><a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300">chat.deepseek.com</a></td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Qwen 2.5</td>
+            <td class="p-2">China (Alibaba)</td>
+            <td class="p-2">Sí (imagen, vídeo)</td>
+            <td class="p-2">Español, datos estructurados, multilingüe</td>
+            <td class="p-2">~60-80 msgs/día</td>
+            <td class="p-2"><a href="https://chat.qwen.ai" class="text-brand-400 hover:text-brand-300">chat.qwen.ai</a></td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Mistral Le Chat</td>
+            <td class="p-2">Francia (UE)</td>
+            <td class="p-2">Beta (solo pago)</td>
+            <td class="p-2">RGPD, datos europeos, compliance</td>
+            <td class="p-2">~30 msgs/día modelos grandes</td>
+            <td class="p-2"><a href="https://chat.mistral.ai" class="text-brand-400 hover:text-brand-300">chat.mistral.ai</a></td>
+          </tr>
+          <tr>
+            <td class="p-2">Hugging Face Chat</td>
+            <td class="p-2">EE. UU. (modelos globales)</td>
+            <td class="p-2">Varía por modelo</td>
+            <td class="p-2">Experimentar, comparar 118 modelos</td>
+            <td class="p-2">~100 msgs/día</td>
+            <td class="p-2"><a href="https://huggingface.co/chat" class="text-brand-400 hover:text-brand-300">huggingface.co/chat</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-dark-300 mt-2">* Pueden aplicar throttling en horas pico, sobre todo en DeepSeek por la tarde hora europea.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo las combino en una mañana real</h2>
+    <p>
+      Por si te sirve de setup real, esta es la rutina que he seguido esta semana para preparar dos artículos, un script de Python y un email difícil:
+    </p>
+    <ol>
+      <li><strong>08:30 — DeepSeek</strong> para el script. "Escríbeme un script en Python que lea un CSV de ventas, agrupe por mes y devuelva los cinco productos con más caída". Me lo dio limpio, con docstrings, sin tocar nada.</li>
+      <li><strong>09:15 — Qwen</strong> para el primer borrador del artículo en español. Le pasé un esquema de cinco secciones y el tono que quería. Reescribió cada sección en tres minutos. Lo mejoró, no lo inventó.</li>
+      <li><strong>10:00 — Mistral</strong> para el email con datos de un cliente europeo. Aquí no me la jugué: como Mistral guarda los datos en la UE, no tengo que preocuparme por dónde acaba el prompt.</li>
+      <li><strong>10:45 — Hugging Face Chat</strong> para comparar. Lancé la misma pregunta sobre la query SQL del script a DeepSeek V3, Qwen 2.5 y Llama 4. El de DeepSeek dio la respuesta más rápida y limpia.</li>
+    </ol>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">El prompt reutilizable (copia y pega)</h3>
+    <p>
+      Para forzar a cualquiera de estas IAs a devolver respuestas estructuradas, este es el prompt que más uso:
+    </p>
+    <pre class="overflow-x-auto rounded-lg bg-dark-800 p-4 text-sm text-dark-100"><code>Rol: actúas como [perfil concreto, ej. "editor técnico con 10 años de experiencia"].
+Tarea: [lo que quieres, en una frase].
+Contexto: [datos relevantes que la IA necesita para no inventar].
+Formato de salida: [tabla / lista de 5 puntos / JSON con campos X, Y, Z].
+Restricciones: [longitud máxima, tono, idioma, lo que NO debe incluir].
+</code></pre>
+    <p>
+      Este esqueleto funciona en las cuatro plataformas sin tocar nada. Lo aprendí de <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">mi comparativa de alternativas a ChatGPT</a> y lo repito en cada sesión porque marca una diferencia brutal: la IA pasa de "contestar de forma genérica" a "devolver exactamente lo que te hacía falta".
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo NO usar ninguna de las cuatro</h2>
+    <p>
+      Ser honesto es parte del formato. Estas apps no son para todo:
+    </p>
+    <ul>
+      <li><strong>Tareas críticas con consecuencias legales o médicas</strong>: ningún LLM es fuente única. Verifica siempre con un profesional humano.</li>
+      <li><strong>Generación de imágenes o vídeo</strong>: ninguna de las cuatro hace esto. Si necesitas ese tipo de contenido, vas por otro camino (herramientas de generación multimedia específicas, fuera del alcance de este post).</li>
+      <li><strong>Proyectos donde la privacidad es máxima</strong> (sanidad, defensa, abogados de gran empresa): ni siquiera Mistral es suficiente. Necesitas una instancia local del modelo, en tu propio servidor, sin llamadas a la nube.</li>
+      <li><strong>Trabajo en tiempo real con datos que cambian cada segundo</strong>: ninguna de las cuatro navega la web en tiempo real en el plan gratuito (Qwen y Mistral reservan la búsqueda web al plan de pago).</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+
+    <div itemscope itemtype="https://schema.org/FAQPage">
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿DeepSeek es seguro? ¿Manda mis datos al gobierno chino?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            DeepSeek almacena los datos en servidores chinos según su política de privacidad. Para uso personal, escribir un email o probar código, no hay problema. Para datos de clientes europeos, sanitarios o financieros, no lo uses: es ilegal bajo RGPD. En ese caso, Mistral Le Chat es la alternativa correcta. Si necesitas aún más aislamiento, descarga los pesos de DeepSeek V3 desde Hugging Face y ejecútalos en tu propio servidor.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Estas IAs son de verdad tan buenas como GPT-4?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            En tareas concretas (código, matemáticas, razonamiento estructurado), DeepSeek V3 iguala o supera a GPT-4o según los benchmarks públicos que ellos mismos publican. En conversación general, escritura creativa y matices, GPT-4o y Claude siguen siendo una referencia. La diferencia ya no es "muy inferior": es "un poco peor en algunas cosas, mejor en otras". Y gratis.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Por qué Silicon Valley está "hundida" si siguen ganando dinero?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            El titular es provocador a propósito. Lo que ha cambiado es el modelo de negocio: cuando tu ventaja competitiva (el modelo) se puede replicar con código abierto por una fracción del coste, el "moat" deja de ser tecnológico. Pasa a ser distribución, marca y producto. Por eso OpenAI, Anthropic y Google están pivotando hacia agentes, productos verticales y suscripciones con servicios añadidos. El precio de la API de OpenAI ha bajado varias veces en 2025 precisamente por esta presión.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Cuál de las cuatro me recomiendas si solo puedo probar una?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Empieza por DeepSeek. Es la que más te va a sorprender en código y razonamiento, y la que más rápido te demuestra que el statu quo ha cambiado. Si lo que necesitas es escribir en español con pulcritud, ve directo a Qwen. Si trabajas con datos europeos, Mistral es la única de las cuatro que cumple RGPD sin matices.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Y Llama 4 de Meta? ¿No debería estar en la lista?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Llama 4 está disponible en Hugging Face Chat y en su propia web, pero Meta no ha publicado todavía una versión de chat gratuito estable y pulido comparable a las otras cuatro. Los pesos abiertos sí están en Hugging Face, y si tienes una GPU potente (al menos 24 GB de VRAM para la versión 8B) puedes correrlo en local. Para probar sin instalar nada, Hugging Face Chat es la mejor opción.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <p>
+      La IA de frontera ya no cuesta veinte dólares al mes. La puedes tener gratis, en el navegador, sin tarjeta, y en muchos casos rindiendo al nivel de los mejores modelos cerrados de 2024. Lo que cambió no es la tecnología en abstracto: cambió quién tiene acceso. Y eso es mucho más importante.
+    </p>
+    <p>
+      Si quieres profundizar con prompts prácticos que funcionan en las cuatro apps (y en ChatGPT, Claude y Gemini), te he preparado un PDF gratuito con 50 prompts que uso a diario. Cubre productividad, escritura, código, análisis y aprendizaje. Lo encuentras en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+    </p>
+    <p>
+      Si te ha gustado este post, échale un ojo a <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">mi comparativa anterior de 5 alternativas a ChatGPT</a> o suscríbete a la newsletter de los sábados: cada semana, una pieza escrita, dos o tres noticias de IA y un prompt útil. Sin clickbait, sin AI slop.
+    </p>
+    <p>
+      — Jordi
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes oficiales</h2>
+    <ul class="text-sm">
+      <li>DeepSeek-V3 Technical Report (Hugging Face): <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" class="text-brand-400 hover:text-brand-300">https://huggingface.co/deepseek-ai/DeepSeek-V3</a> (costes de entrenamiento, benchmarks MMLU/MATH-500/HumanEval)</li>
+      <li>Qwen 2.5-72B-Instruct (Hugging Face): <a href="https://huggingface.co/Qwen/Qwen2.5-72B-Instruct" class="text-brand-400 hover:text-brand-300">https://huggingface.co/Qwen/Qwen2.5-72B-Instruct</a> (parámetros, contexto 128K, multilingüe 29+ idiomas)</li>
+      <li>Mistral AI — Newsroom: <a href="https://mistral.ai/news" class="text-brand-400 hover:text-brand-300">https://mistral.ai/news</a> (lanzamiento Mistral Medium 3.5, ronda 1.700 M€)</li>
+      <li>HuggingChat: <a href="https://huggingface.co/chat" class="text-brand-400 hover:text-brand-300">https://huggingface.co/chat</a> (catálogo de 118 modelos abiertos)</li>
+      <li>DeepSeek — Web oficial: <a href="https://deepseek.com" class="text-brand-400 hover:text-brand-300">https://deepseek.com</a> (chat gratuito, política de privacidad)</li>
+    </ul>
+
+    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-2" class="sr-only">Email</label>
+        <input id="blog-email-2" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+</BaseLayout>
