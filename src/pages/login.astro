@@ -85,10 +85,16 @@ import { env } from '~/lib/env';
         // Google OAuth
         document.getElementById('google-login')?.addEventListener('click', async () => {
           try {
-            const { error } = await supabase.auth.signInWithOAuth({
+            // Force absolute production URL to avoid localhost confusion
+            // (lesson 2026-06-11: window.location.origin was localhost:3000 in test env,
+            //  which sent a localhost redirect_uri to Google and broke the flow).
+            const redirectTo = 'https://decodifica.net/auth/callback.html';
+            console.log('[login] signInWithOAuth redirectTo:', redirectTo);
+            const { error, data } = await supabase.auth.signInWithOAuth({
               provider: 'google',
-              options: { redirectTo: window.location.origin + '/auth/callback.html' },
+              options: { redirectTo },
             });
+            console.log('[login] signInWithOAuth result:', { error, data });
             if (error) showError('Error: ' + error.message);
           } catch (err) {
             showError('Excepción: ' + (err && err.message ? err.message : String(err)));
@@ -102,7 +108,7 @@ import { env } from '~/lib/env';
           try {
             const { error } = await supabase.auth.signInWithOtp({
               email,
-              options: { emailRedirectTo: window.location.origin + '/auth/callback.html' },
+              options: { emailRedirectTo: 'https://decodifica.net/auth/callback.html' },
             });
             if (error) {
               showError('Error: ' + error.message);
