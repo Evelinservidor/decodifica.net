@@ -1,7 +1,7 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "CÃ³mo configurar Claude para escribir emails sin que suene a robot";
+const title = "Cómo configurar Claude para escribir emails sin que suene a robot";
 const description = "Tutorial paso a paso para usar Claude (o cualquier LLM) y escribir emails profesionales que suenan humanos, no generados por IA. Con prompts reales.";
 const pubDate = "2026-06-19";
 const readingTime = "6 min";
@@ -13,16 +13,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
         <span class="rounded-full bg-accent-orange/10 px-3 py-1 text-accent-orange">{pillarLabel}</span>
-        <span>Â·</span>
+        <span>÷</span>
         <time datetime="2026-06-19">19 junio 2026</time>
-        <span>Â·</span>
+        <span>÷</span>
         <span>~ {readingTime} lectura</span>
       </div>
       <h1 class="font-display text-4xl font-bold sm:text-5xl">
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Te voy a enseÃ±ar el setup exacto que uso yo para que Claude me escriba emails que mi destinatario no detecta como IA. Con prompts reales, no genÃ©ricos.
+        Te voy a enseñar el setup exacto que uso yo para que Claude me escriba emails que mi destinatario no detecta como IA. Con prompts reales, no genéricos.
       </p>
     </header>
 
@@ -36,7 +36,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <div class="rounded-2xl border border-accent-orange/20 bg-accent-orange/5 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
       <p class="text-dark-200 text-sm">
-        Los emails suenan a robot cuando pides a Claude "escribe un email profesional". El truco estÃ¡ en darle <strong>contexto humano</strong>: tu voz, tu relaciÃ³n con el destinatario, y un ejemplo de un email anterior tuyo que le gustÃ³. Toma 10 minutos configurarlo una vez. Funciona siempre.
+        Los emails suenan a robot cuando pides a Claude "escribe un email profesional". El truco está en darle <strong>contexto humano</strong>: tu voz, tu relación con el destinatario, y un ejemplo de un email anterior tuyo que le gustó. Toma 10 minutos configurarlo una vez. Funciona siempre.
       </p>
     </div>
 
@@ -46,107 +46,107 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </p>
     <blockquote class="border-l-4 border-dark-600 pl-4 italic text-dark-300 my-4">
       "Estimado [nombre],<br/>
-      Me dirijo a usted para solicitar formalmente una revisiÃ³n de mi compensaciÃ³n econÃ³mica. Considero que mi desempeÃ±o durante el Ãºltimo aÃ±o ha sido excepcional..."
+      Me dirijo a usted para solicitar formalmente una revisión de mi compensación económica. Considero que mi desempeño durante el último año ha sido excepcional..."
     </blockquote>
     <p>
-      Â¿Te suena? Es el email perfecto segÃºn un manual de negocios de 1995. Pero ningÃºn humano de 2026 escribe asÃ­. Y tu jefe lo detecta a la primera.
+      ÿTe suena? Es el email perfecto según un manual de negocios de 1995. Pero ningún humano de 2026 escribe así. Y tu jefe lo detecta a la primera.
     </p>
     <p>
-      Claude no es malo escribiendo. El problema es que <strong>sin contexto, improvisa el tono "profesional genÃ©rico"</strong>. Tienes que darle el tuyo.
+      Claude no es malo escribiendo. El problema es que <strong>sin contexto, improvisa el tono "profesional genérico"</strong>. Tienes que darle el tuyo.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">El mÃ©todo en 4 pasos</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">El método en 4 pasos</h2>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 1: Crea un "system prompt" con tu voz</h3>
     <p>
-      Esto es lo que Claude lee antes de cada conversaciÃ³n. Es tu "personalidad por defecto". Pega esto en "Custom Instructions" o como primer mensaje del chat:
+      Esto es lo que Claude lee antes de cada conversación. Es tu "personalidad por defecto". Pega esto en "Custom Instructions" o como primer mensaje del chat:
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
       <pre class="whitespace-pre-wrap">Mi estilo de email:
 - Directo al grano, sin rodeos
 - Tono profesional pero cercano
-- 1-2 frases por pÃ¡rrafo, mÃ¡ximo
+- 1-2 frases por párrafo, máximo
 - Empiezo siempre con un "Hola [nombre]," (nunca "Estimado")
 - Cierro con un siguiente paso concreto (no con "Quedo a la espera")
-- A veces uso humor seco si la situaciÃ³n lo permite
+- A veces uso humor seco si la situación lo permite
 - Si es para un cliente, evito tecnicismos
 - Si es para mi jefe, voy al grano en la primera frase
 - Si es un rechazo, soy firme pero ofrezco alternativa</pre>
     </div>
     <p>
-      Ajusta esto con tu propio estilo. La clave es ser especÃ­fico: no "soy profesional", sino "voy al grano en la primera frase".
+      Ajusta esto con tu propio estilo. La clave es ser específico: no "soy profesional", sino "voy al grano en la primera frase".
     </p>
 
-    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 2: Define tu relaciÃ³n con cada destinatario</h3>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 2: Define tu relación con cada destinatario</h3>
     <p>
-      Antes de pedir el email, dile a Claude quiÃ©n es el destinatario y quÃ© relaciÃ³n tenÃ©is. No es lo mismo escribir a tu jefe de toda la vida que a un cliente nuevo.
+      Antes de pedir el email, dile a Claude quién es el destinatario y qué relación tenéis. No es lo mismo escribir a tu jefe de toda la vida que a un cliente nuevo.
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap">Destinatario: MarÃ­a, mi jefa desde hace 3 aÃ±os.
-RelaciÃ³n: confianza alta, hablamos de tÃº, ella valora la franqueza.
-Contexto: Acabo de cerrar un proyecto grande que liderÃ©. Quiero pedir aumento del 8%.</pre>
+      <pre class="whitespace-pre-wrap">Destinatario: María, mi jefa desde hace 3 años.
+Relación: confianza alta, hablamos de tú, ella valora la franqueza.
+Contexto: Acabo de cerrar un proyecto grande que lideré. Quiero pedir aumento del 8%.</pre>
     </div>
 
-    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Pega un email anterior que te gustÃ³</h3>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Pega un email anterior que te gustó</h3>
     <p>
-      Este es el truco clave. Claude necesita <strong>ver</strong> cÃ³mo escribes, no que le digas cÃ³mo escribes. Pega un email real tuyo (de cuando estabas contento con el resultado) y dile "usa este tono, estructura y longitud, pero adapta al contexto nuevo".
+      Este es el truco clave. Claude necesita <strong>ver</strong> cómo escribes, no que le digas cómo escribes. Pega un email real tuyo (de cuando estabas contento con el resultado) y dile "usa este tono, estructura y longitud, pero adapta al contexto nuevo".
     </p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 4: El prompt completo</h3>
     <p>
-      Juntando todo, tu prompt real serÃ­a:
+      Juntando todo, tu prompt real sería:
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
       <pre class="whitespace-pre-wrap">Necesito escribir un email.
 
 Destinatario: [nombre y cargo]
-RelaciÃ³n: [quÃ© confianza hay, cÃ³mo os tratÃ¡is]
-Objetivo: [quÃ© quiero conseguir con el email, en una frase]
+Relación: [qué confianza hay, cómo os tratáis]
+Objetivo: [qué quiero conseguir con el email, en una frase]
 Mi borrador de puntos clave: [lista de 3-5 ideas desordenadas, sin forma]
 
-[Si tienes un email anterior que te gustÃ³, pÃ©galo aquÃ­]
+[Si tienes un email anterior que te gustó, pégalo aquí]
 
-Reglas: no suenes a plantilla, no uses frases hechas, no te disculpes mÃ¡s de una vez. Si rechazas algo, sÃ© firme y ofrece alternativa concreta.</pre>
+Reglas: no suenes a plantilla, no uses frases hechas, no te disculpes más de una vez. Si rechazas algo, sé firme y ofrece alternativa concreta.</pre>
     </div>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo real: pedir un aumento</h2>
     <p>
-      Aplicando el mÃ©todo, el prompt fue:
+      Aplicando el método, el prompt fue:
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap">Destinatario: MarÃ­a, mi jefa desde hace 3 aÃ±os.
-RelaciÃ³n: confianza alta, hablamos de tÃº.
+      <pre class="whitespace-pre-wrap">Destinatario: María, mi jefa desde hace 3 años.
+Relación: confianza alta, hablamos de tú.
 Objetivo: pedir aumento del 8% por el proyecto Atlas que acabo de liderar.
-Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente renovÃ³ por 2 aÃ±os mÃ¡s, Ãºltima subida hace 18 meses.</pre>
+Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente renovó por 2 años más, última subida hace 18 meses.</pre>
     </div>
     <p>
       La respuesta de Claude (resumida):
     </p>
     <blockquote class="border-l-4 border-dark-600 pl-4 italic text-dark-200 my-4">
-      Hola MarÃ­a,<br/><br/>
-      Te escribo para hablar del proyecto Atlas. Lo cerramos en plazo, renovÃ³ el cliente por 2 aÃ±os, y liderÃ© un equipo de 4 que nunca habÃ­a trabajado junto. Hace 18 meses desde la Ãºltima revisiÃ³n salarial.<br/><br/>
-      Me gustarÃ­a proponer una subida del 8%. Â¿Tienes 20 min esta semana para sentarnos?<br/><br/>
+      Hola María,<br/><br/>
+      Te escribo para hablar del proyecto Atlas. Lo cerramos en plazo, renovó el cliente por 2 años, y lideré un equipo de 4 que nunca había trabajado junto. Hace 18 meses desde la última revisión salarial.<br/><br/>
+      Me gustaría proponer una subida del 8%. ÿTienes 20 min esta semana para sentarnos?<br/><br/>
       Jordi
     </blockquote>
     <p>
-      Corto, directo, con la informaciÃ³n clave, y termina con acciÃ³n concreta. No suena a robot porque <strong>no le pedÃ­ que sonara profesional, le di datos y contexto</strong>.
+      Corto, directo, con la información clave, y termina con acción concreta. No suena a robot porque <strong>no le pedí que sonara profesional, le di datos y contexto</strong>.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Errores tÃ­picos que haces sin darte cuenta</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Errores típicos que haces sin darte cuenta</h2>
     
     <h3 class="font-display text-xl font-bold mt-6 mb-3">âŒ Pedir el email completo de golpe</h3>
     <p>
-      "EscrÃ­beme un email completo". Mejor: "dame 3 versiones (corta, media, larga) y elijo".
+      "Escríbeme un email completo". Mejor: "dame 3 versiones (corta, media, larga) y elijo".
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">âŒ No decir quÃ© quieres conseguir</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">âŒ No decir qué quieres conseguir</h3>
     <p>
-      Sin objetivo claro, Claude escribe un email "general". Siempre di el objetivo en una frase: "conseguir que me devuelva el dinero", "cerrar la reuniÃ³n del viernes", "rechazar amablemente la propuesta".
+      Sin objetivo claro, Claude escribe un email "general". Siempre di el objetivo en una frase: "conseguir que me devuelva el dinero", "cerrar la reunión del viernes", "rechazar amablemente la propuesta".
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">âŒ Aceptar el primer borrador</h3>
     <p>
-      Siempre pide una segunda versiÃ³n mÃ¡s corta, o mÃ¡s directa, o mÃ¡s formal. La segunda iteraciÃ³n suele ser mejor que la primera.
+      Siempre pide una segunda versión más corta, o más directa, o más formal. La segunda iteración suele ser mejor que la primera.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">âŒ Olvidar el siguiente paso</h3>
@@ -156,41 +156,41 @@ Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente reno
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Â¿Y si el destinatario ya sabe que uso IA?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">ÿY si el destinatario ya sabe que uso IA?</h3>
     <p>
       Da igual. La pregunta no es si usas IA, sino si el email es claro, profesional y humano. Si cumple eso, nadie se queja de la herramienta.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Â¿Funciona con GPT en vez de Claude?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">ÿFunciona con GPT en vez de Claude?</h3>
     <p>
-      SÃ­, pero Claude es mejor con texto. GPT es mejor con cÃ³digo y razonamiento tÃ©cnico. Para emails, Claude gana.
+      Sí, pero Claude es mejor con texto. GPT es mejor con código y razonamiento técnico. Para emails, Claude gana.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Â¿Debo leer el email antes de enviarlo?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">ÿDebo leer el email antes de enviarlo?</h3>
     <p>
-      Siempre. La IA te da un borrador, tÃº le das el toque final. Lee en voz alta: si suena a ti, envÃ­a. Si no, itera.
+      Siempre. La IA te da un borrador, tú le das el toque final. Lee en voz alta: si suena a ti, envía. Si no, itera.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Â¿CuÃ¡nto tarda esto vs. escribirlo yo?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">ÿCuánto tarda esto vs. escribirlo yo?</h3>
     <p>
-      Setup inicial: 10 minutos (una sola vez). Por email: 1-2 minutos para tener un borrador decente vs. 10-15 escribiendo desde cero. ROI brutal si escribes mÃ¡s de 3 emails profesionales al dÃ­a.
+      Setup inicial: 10 minutos (una sola vez). Por email: 1-2 minutos para tener un borrador decente vs. 10-15 escribiendo desde cero. ROI brutal si escribes más de 3 emails profesionales al día.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">ConclusiÃ³n</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
     <p>
-      La IA no te va a escribir emails "perfectos" con un prompt vago. Te va a escribir emails <strong>tan buenos como el contexto que le des</strong>. El mÃ©todo que te he enseÃ±ado toma 10 minutos configurarlo una vez, y te ahorra 30-60 minutos al dÃ­a si escribes emails profesionales con regularidad.
+      La IA no te va a escribir emails "perfectos" con un prompt vago. Te va a escribir emails <strong>tan buenos como el contexto que le des</strong>. El método que te he enseñado toma 10 minutos configurarlo una vez, y te ahorra 30-60 minutos al día si escribes emails profesionales con regularidad.
     </p>
     <p>
-      Si quieres el PDF con 50 prompts listos para copiar-pegar (incluye este prompt completo + 49 mÃ¡s), lo tienes en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si quieres el PDF con 50 prompts listos para copiar-pegar (incluye este prompt completo + 49 más), lo tienes en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
     <p>
-      Â¿Lo pruebas y me cuentas quÃ© tal? Responde a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
+      ÿLo pruebas y me cuentas qué tal? Responde a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
     </p>
     <p>â€” Jordi</p>
 
     <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Ãšnete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sÃ¡bado: 1 video destacado, 2-3 noticias IA, 1 prompt Ãºtil. Sin clickbait, sin AI slop.</p>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
         <label for="blog-email-2" class="sr-only">Email</label>
         <input id="blog-email-2" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
