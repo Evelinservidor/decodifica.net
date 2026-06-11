@@ -26,11 +26,18 @@
     </div>
 
     <script type="module">
+      // Lesson 2026-06-11 (round 4): Stop fighting @supabase/ssr.
+      // That lib is for SSR (Next.js, SvelteKit, Astro SSR). Our pages are
+      // STATIC (Astro output: 'static'), and for client-only PKCE flows
+      // Supabase recommends @supabase/supabase-js@2 with flowType: 'pkce' and
+      // detectSessionInUrl: true. That's what we use here.
+      // /login also needs to be migrated from @supabase/ssr to this same
+      // client so both write and read the verifier under the same key.
+
       const titleEl = document.getElementById('title');
       const statusEl = document.getElementById('status');
       const errorBox = document.getElementById('error-box');
       const spinner = document.getElementById('spinner');
-      const homeLink = document.getElementById('home-link');
 
       function showError(message, detail) {
         spinner.classList.add('hidden');
@@ -43,28 +50,19 @@
 
       try {
         const url = new URL(window.location.href);
-
-        // Detect error params from Supabase
         const errorParam = url.searchParams.get('error');
         const errorDesc = url.searchParams.get('error_description');
         if (errorParam) {
-          showError(
-            'Supabase rechazó el callback. La URL de retorno puede no estar en la whitelist.',
-            `${errorParam}${errorDesc ? ': ' + errorDesc : ''}`
-          );
+          showError('Supabase rechazó el callback.', `${errorParam}${errorDesc ? ': ' + errorDesc : ''}`);
           throw new Error('oauth_error');
         }
 
         const code = url.searchParams.get('code');
         if (!code) {
-          showError(
-            'No se recibió código de autenticación en la URL.',
-            'URL actual: ' + window.location.href
-          );
+          showError('No se recibió código de autenticación.', 'URL: ' + window.location.href);
           throw new Error('no_code');
         }
 
-        // Load the same Supabase config used in /login
         const cfgRes = await fetch('/auth/callback-config.json', { cache: 'no-store' });
         if (!cfgRes.ok) {
           showError('No se pudo cargar la configuración de Supabase.', 'Status: ' + cfgRes.status);
@@ -72,17 +70,22 @@
         }
         const cfg = await cfgRes.json();
 
-        // CRITICAL: use the SAME package (@supabase/ssr) as login.astro so the
-        // PKCE code_verifier storage key matches. Lesson 2026-06-11: mixing
-        // @supabase/ssr in login with plain @supabase/supabase-js in callback
-        // causes "PKCE code verifier not found in storage" because the two
-        // packages use different localStorage key names.
-        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
-        const supabase = createBrowserClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+        // Use plain @supabase/supabase-js@2 with PKCE — the recommended
+        // approach for static client-side sites (no SSR).
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
+        const supabase = createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+          auth: {
+            flowType: 'pkce',
+            detectSessionInUrl: true,  // <-- CRITICAL: auto-exchange ?code= for session
+            persistSession: true,
+            autoRefreshToken: true,
+            storage: window.localStorage,
+            storageKey: 'sb-' + cfg.supabaseUrl.split('//')[1].split('.')[0] + '-auth-token',
+          },
+        });
 
-        // @supabase/ssr's createBrowserClient automatically detects the `?code=`
-        // in the URL and calls exchangeCodeForSession for us if we use
-        // detectSessionInUrl: true. But to be safe, also call it explicitly.
+        // detectSessionInUrl should auto-exchange, but we also call it
+        // explicitly to be safe and to capture the result.
         const { data, error } = await supabase.auth.exchangeCodeForSession(code);
         if (error) {
           showError('Error al intercambiar código por sesión.', error.message);

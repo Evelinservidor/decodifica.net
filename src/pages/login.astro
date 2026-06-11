@@ -66,13 +66,20 @@ import { env } from '~/lib/env';
   <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
     (async () => {
       try {
-        // Dynamic import from ESM CDN so the IIFE is not blocked by a SyntaxError
-        // if a transitive module fails. Lesson 2026-06-11: a failed top-level import
-        // in a non-module script kills the whole script silently.
-        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
-        const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+        // Use plain @supabase/supabase-js@2 with PKCE — matches callback.html
+        // so both write/read the code_verifier under the same localStorage key.
+        // Lesson 2026-06-11: @supabase/ssr is for SSR, our site is static.
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
+        const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+          auth: {
+            flowType: 'pkce',
+            persistSession: true,
+            autoRefreshToken: true,
+            storage: window.localStorage,
+            storageKey: 'sb-' + supabaseUrl.split('//')[1].split('.')[0] + '-auth-token',
+          },
+        });
 
-        // Visible status element
         const status = document.getElementById('status');
 
         function showError(message) {
@@ -85,16 +92,12 @@ import { env } from '~/lib/env';
         // Google OAuth
         document.getElementById('google-login')?.addEventListener('click', async () => {
           try {
-            // Force absolute production URL to avoid localhost confusion
-            // (lesson 2026-06-11: window.location.origin was localhost:3000 in test env,
-            //  which sent a localhost redirect_uri to Google and broke the flow).
             const redirectTo = 'https://decodifica.net/auth/callback.html';
             console.log('[login] signInWithOAuth redirectTo:', redirectTo);
-            const { error, data } = await supabase.auth.signInWithOAuth({
+            const { error } = await supabase.auth.signInWithOAuth({
               provider: 'google',
               options: { redirectTo },
             });
-            console.log('[login] signInWithOAuth result:', { error, data });
             if (error) showError('Error: ' + error.message);
           } catch (err) {
             showError('Excepción: ' + (err && err.message ? err.message : String(err)));
@@ -121,7 +124,6 @@ import { env } from '~/lib/env';
           }
         });
       } catch (err) {
-        // Surface the failure to the user instead of dying silently
         const status = document.getElementById('status');
         if (status) {
           status.className = 'mt-4 text-sm text-red-400';

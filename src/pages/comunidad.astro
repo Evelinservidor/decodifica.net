@@ -48,10 +48,18 @@ import { env } from '~/lib/env';
   <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
     (async () => {
       try {
-        // Dynamic import — top-level import in a non-module <script> throws
-        // SyntaxError and the whole script dies silently. Lesson 2026-06-11.
-        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
-        const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+        // Match login.astro + callback.html: use plain @supabase/supabase-js@2
+        // with the same storageKey. Lesson 2026-06-11.
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
+        const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+          auth: {
+            flowType: 'pkce',
+            persistSession: true,
+            autoRefreshToken: true,
+            storage: window.localStorage,
+            storageKey: 'sb-' + supabaseUrl.split('//')[1].split('.')[0] + '-auth-token',
+          },
+        });
 
         const { data: { user } } = await supabase.auth.getUser();
 
