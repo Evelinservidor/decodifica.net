@@ -1,30 +1,37 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Claude Skills desde cero: crea tu primer skill personalizado en 30 min";
-const description = "Qué son los Claude Skills, para qué sirven, y cómo crear el tuyo propio paso a paso con un ejemplo real: un analizador de emails.";
+const description = "QuÃ© son los Claude Skills, para quÃ© sirven, y cÃ³mo crear el tuyo propio paso a paso con un ejemplo real: un analizador de emails.";
 const pubDate = "2026-06-20";
 const readingTime = "10 min";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} ogImage="/og/blog/claude-skills-desde-cero.png">
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
         <span class="rounded-full bg-accent-orange/10 px-3 py-1 text-accent-orange">{pillarLabel}</span>
-        <span>·</span>
+        <span>Â·</span>
         <time datetime="2026-06-20">20 junio 2026</time>
-        <span>·</span>
+        <span>Â·</span>
         <span>~ {readingTime} lectura</span>
       </div>
       <h1 class="font-display text-4xl font-bold sm:text-5xl">
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Te voy a enseñar a crear un Claude Skill desde cero, con un ejemplo real que uso yo a diario: un analizador de emails que extrae tareas, fechas y personas. Tiempo total: 30 minutos.
+        Te voy a enseÃ±ar a crear un Claude Skill desde cero, con un ejemplo real que uso yo a diario: un analizador de emails que extrae tareas, fechas y personas. Tiempo total: 30 minutos.
       </p>
     </header>
+
+    <img
+      src="/og/blog/claude-skills-desde-cero.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
 
     <div class="rounded-2xl border border-accent-orange/20 bg-accent-orange/5 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
@@ -164,7 +171,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         <input id="blog-email-3" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
         <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
           <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
+          <span aria-hidden="true">â†’</span>
         </button>
       </form>
     </aside>
