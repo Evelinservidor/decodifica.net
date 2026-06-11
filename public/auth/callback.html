@@ -11,6 +11,7 @@
       a { color: #06b6d4; text-decoration: none; }
       a:hover { text-decoration: underline; }
       .error { color: #fca5a5; background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-family: monospace; font-size: 0.85rem; text-align: left; white-space: pre-wrap; word-break: break-word; }
+      .hidden { display: none !important; }
       .spinner { display: inline-block; width: 1.5rem; height: 1.5rem; border: 3px solid #1e293b; border-top-color: #06b6d4; border-radius: 50%; animation: spin 1s linear infinite; }
       @keyframes spin { to { transform: rotate(360deg); } }
     </style>
@@ -25,7 +26,6 @@
     </div>
 
     <script type="module">
-      // Capture errors and show them on screen (lesson 2026-06-11: silent failures are the worst UX)
       const titleEl = document.getElementById('title');
       const statusEl = document.getElementById('status');
       const errorBox = document.getElementById('error-box');
@@ -44,12 +44,12 @@
       try {
         const url = new URL(window.location.href);
 
-        // Detect error params from Supabase (e.g. ?error=access_denied&error_description=...)
+        // Detect error params from Supabase
         const errorParam = url.searchParams.get('error');
         const errorDesc = url.searchParams.get('error_description');
         if (errorParam) {
           showError(
-            'Supabase rechazó el callback. Esto suele ser porque la URL de retorno no está en la whitelist del proyecto Supabase.',
+            'Supabase rechazó el callback. La URL de retorno puede no estar en la whitelist.',
             `${errorParam}${errorDesc ? ': ' + errorDesc : ''}`
           );
           throw new Error('oauth_error');
@@ -64,15 +64,7 @@
           throw new Error('no_code');
         }
 
-        // Exchange code for session using Supabase JS v2 (PKCE flow)
-        const SUPABASE_URL = window.location.origin.includes('localhost')
-          ? null
-          : null; // Will be set by env or hardcoded below
-
-        // We import from the same Supabase project used elsewhere.
-        // The anon key is the same one inlined in /login — load it from the same define:vars pattern.
-        // For the static callback page, we read it from a small JSON file at /auth/callback-config.json
-        // (no secrets, just public anon key + project URL, both safe to expose).
+        // Load the same Supabase config used in /login
         const cfgRes = await fetch('/auth/callback-config.json', { cache: 'no-store' });
         if (!cfgRes.ok) {
           showError('No se pudo cargar la configuración de Supabase.', 'Status: ' + cfgRes.status);
@@ -80,24 +72,29 @@
         }
         const cfg = await cfgRes.json();
 
-        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
-        const supabase = createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
-          auth: { flowType: 'pkce', detectSessionInUrl: false }
-        });
+        // CRITICAL: use the SAME package (@supabase/ssr) as login.astro so the
+        // PKCE code_verifier storage key matches. Lesson 2026-06-11: mixing
+        // @supabase/ssr in login with plain @supabase/supabase-js in callback
+        // causes "PKCE code verifier not found in storage" because the two
+        // packages use different localStorage key names.
+        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
+        const supabase = createBrowserClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
 
+        // @supabase/ssr's createBrowserClient automatically detects the `?code=`
+        // in the URL and calls exchangeCodeForSession for us if we use
+        // detectSessionInUrl: true. But to be safe, also call it explicitly.
         const { data, error } = await supabase.auth.exchangeCodeForSession(code);
         if (error) {
           showError('Error al intercambiar código por sesión.', error.message);
           throw error;
         }
 
-        // Success: cookies are set by Supabase, redirect to /comunidad
         statusEl.textContent = '¡Listo! Redirigiendo a la comunidad…';
         spinner.classList.add('hidden');
         setTimeout(() => { window.location.href = '/comunidad'; }, 600);
 
       } catch (err) {
-        if (err && err.message === 'oauth_error' || err && err.message === 'no_code' || err && err.message === 'config_load_failed') {
+        if (err && (err.message === 'oauth_error' || err.message === 'no_code' || err.message === 'config_load_failed')) {
           // already shown
         } else {
           showError('Error inesperado durante el callback.', err && err.message ? err.message : String(err));
