@@ -1,14 +1,23 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Cómo configurar Claude para escribir emails sin que suene a robot";
 const description = "Tutorial paso a paso para usar Claude (o cualquier LLM) y escribir emails profesionales que suenan humanos, no generados por IA. Con prompts reales.";
 const pubDate = "2026-06-19";
 const readingTime = "6 min";
+const tags = ["emails con ia", "claude prompts", "productividad email"];
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
 
-<BaseLayout title={title} description={description} ogImage="/og/blog/claude-emails-sonar-humanos.png">
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/claude-emails-sonar-humanos.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">

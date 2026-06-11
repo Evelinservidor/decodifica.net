@@ -7,9 +7,30 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  // Article-specific (pass-through to SEO for JSON-LD)
+  type?: 'website' | 'article';
+  pubDate?: string;
+  modifiedDate?: string;
+  authorName?: string;
+  authorUrl?: string;
+  imageAlt?: string;
+  keywords?: string[];
+  section?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  type,
+  pubDate,
+  modifiedDate,
+  authorName,
+  authorUrl,
+  imageAlt,
+  keywords,
+  section,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +45,19 @@ const { title, description, ogImage } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- SEO -->
-    <SEO title={title} description={description} ogImage={ogImage} />
+    <SEO
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      type={type}
+      pubDate={pubDate}
+      modifiedDate={modifiedDate}
+      authorName={authorName}
+      authorUrl={authorUrl}
+      imageAlt={imageAlt}
+      keywords={keywords}
+      section={section}
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

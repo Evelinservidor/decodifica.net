@@ -7,6 +7,14 @@ export interface Props {
   ogImage?: string;
   canonical?: string;
   type?: 'website' | 'article';
+  // Article-specific props
+  pubDate?: string; // ISO 8601
+  modifiedDate?: string; // ISO 8601
+  authorName?: string;
+  authorUrl?: string;
+  imageAlt?: string;
+  keywords?: string[];
+  section?: string; // Pilar 1 / Pilar 2
 }
 
 const {
@@ -15,17 +23,84 @@ const {
   ogImage = siteConfig.ogImage,
   canonical = Astro.url.pathname,
   type = 'website',
+  pubDate,
+  modifiedDate,
+  authorName = siteConfig.author.name,
+  authorUrl = `${siteConfig.url}/decodifica`,
+  imageAlt,
+  keywords = [],
+  section,
 } = Astro.props;
 
 const fullTitle = title ? `${title} · ${siteConfig.name}` : `${siteConfig.name} · ${siteConfig.tagline}`;
 const canonicalUrl = new URL(canonical, siteConfig.url).toString();
 const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
+
+// JSON-LD Organization (site-wide identity) - emitted on every page
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: new URL('/og-default.png', siteConfig.url).toString(),
+  sameAs: [
+    siteConfig.social.youtube,
+    siteConfig.social.tiktok,
+    siteConfig.social.x,
+    siteConfig.social.linkedin,
+  ],
+};
+
+// JSON-LD WebSite (search box + sitelinks) - emitted on every page
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  inLanguage: 'es-ES',
+  publisher: { '@id': `${siteConfig.url}#org` },
+};
+
+// JSON-LD Article (only when type=article and pubDate is present)
+const articleLd = type === 'article' && pubDate
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${canonicalUrl}#article`,
+      headline: title ?? fullTitle,
+      description,
+      image: {
+        '@type': 'ImageObject',
+        url: ogImageUrl,
+        ...(imageAlt ? { caption: imageAlt } : {}),
+      },
+      datePublished: pubDate,
+      ...(modifiedDate ? { dateModified: modifiedDate } : {}),
+      author: {
+        '@type': 'Person',
+        name: authorName,
+        url: authorUrl,
+      },
+      publisher: {
+        '@id': `${siteConfig.url}#org`,
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      },
+      ...(section ? { articleSection: section } : {}),
+      ...(keywords.length ? { keywords: keywords.join(', ') } : {}),
+      inLanguage: 'es-ES',
+    }
+  : null;
 ---
 
 <!-- Primary Meta Tags -->
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonicalUrl} />
 
 <!-- Open Graph / Facebook -->
@@ -35,6 +110,10 @@ const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageUrl} />
 <meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:locale" content="es_ES" />
+{type === 'article' && pubDate && <meta property="article:published_time" content={pubDate} />}
+{type === 'article' && modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+{type === 'article' && section && <meta property="article:section" content={section} />}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -43,7 +122,17 @@ const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 <meta name="twitter:site" content={siteConfig.author.twitter} />
+<meta name="twitter:creator" content={siteConfig.author.twitter} />
 
 <!-- Theme -->
 <meta name="theme-color" content="#06b6d4" />
 <meta name="color-scheme" content="dark" />
+
+<!-- JSON-LD: Organization (site identity) -->
+<script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+
+<!-- JSON-LD: WebSite (sitelinks search box) -->
+<script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+
+<!-- JSON-LD: Article (only on blog posts) -->
+{articleLd && <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />}

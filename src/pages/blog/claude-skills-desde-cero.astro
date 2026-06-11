@@ -1,14 +1,23 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Claude Skills desde cero: crea tu primer skill personalizado en 30 min";
 const description = "Qué son los Claude Skills, para qué sirven, y cómo crear el tuyo propio paso a paso con un ejemplo real: un analizador de emails.";
 const pubDate = "2026-06-20";
 const readingTime = "10 min";
+const tags = ["claude skills", "automatizaciones ia", "tutorial claude"];
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
 
-<BaseLayout title={title} description={description} ogImage="/og/blog/claude-skills-desde-cero.png">
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/claude-skills-desde-cero.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
