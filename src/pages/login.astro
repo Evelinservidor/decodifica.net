@@ -63,40 +63,66 @@ import { env } from '~/lib/env';
     </p>
   </div>
 
-  <script define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
-    import { createBrowserClient } from 'https://esm.sh/@supabase/ssr@0.5.2';
+  <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
+    (async () => {
+      try {
+        // Dynamic import from ESM CDN so the IIFE is not blocked by a SyntaxError
+        // if a transitive module fails. Lesson 2026-06-11: a failed top-level import
+        // in a non-module script kills the whole script silently.
+        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
+        const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
-    const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
-
-    // Google OAuth
-    document.getElementById('google-login')?.addEventListener('click', async () => {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: { redirectTo: window.location.origin + '/auth/callback.html' },
-      });
-      if (error) {
+        // Visible status element
         const status = document.getElementById('status');
-        status.className = 'mt-4 text-sm text-red-400';
-        status.textContent = 'Error: ' + error.message;
-      }
-    });
 
-    // Magic link
-    document.getElementById('magic-link-form')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = e.target.email.value;
-      const { error } = await supabase.auth.signInWithOtp({
-        email,
-        options: { emailRedirectTo: window.location.origin + '/auth/callback.html' },
-      });
-      const status = document.getElementById('status');
-      if (error) {
-        status.className = 'mt-4 text-sm text-red-400';
-        status.textContent = 'Error: ' + error.message;
-      } else {
-        status.className = 'mt-4 text-sm text-green-400';
-        status.textContent = '¡Listo! Revisa tu email.';
+        function showError(message) {
+          if (!status) return;
+          status.className = 'mt-4 text-sm text-red-400';
+          status.textContent = message;
+          console.error('[login] error:', message);
+        }
+
+        // Google OAuth
+        document.getElementById('google-login')?.addEventListener('click', async () => {
+          try {
+            const { error } = await supabase.auth.signInWithOAuth({
+              provider: 'google',
+              options: { redirectTo: window.location.origin + '/auth/callback.html' },
+            });
+            if (error) showError('Error: ' + error.message);
+          } catch (err) {
+            showError('Excepción: ' + (err && err.message ? err.message : String(err)));
+          }
+        });
+
+        // Magic link
+        document.getElementById('magic-link-form')?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = e.target.email.value;
+          try {
+            const { error } = await supabase.auth.signInWithOtp({
+              email,
+              options: { emailRedirectTo: window.location.origin + '/auth/callback.html' },
+            });
+            if (error) {
+              showError('Error: ' + error.message);
+            } else if (status) {
+              status.className = 'mt-4 text-sm text-green-400';
+              status.textContent = '¡Listo! Revisa tu email.';
+            }
+          } catch (err) {
+            showError('Excepción: ' + (err && err.message ? err.message : String(err)));
+          }
+        });
+      } catch (err) {
+        // Surface the failure to the user instead of dying silently
+        const status = document.getElementById('status');
+        if (status) {
+          status.className = 'mt-4 text-sm text-red-400';
+          status.textContent = 'Error cargando Supabase: ' + (err && err.message ? err.message : String(err));
+        }
+        console.error('[login] failed to init Supabase:', err);
       }
-    });
+    })();
   </script>
 </BaseLayout>

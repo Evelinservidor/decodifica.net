@@ -45,66 +45,69 @@ import { env } from '~/lib/env';
     </div>
   </div>
 
-  <script define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
-    import { createBrowserClient } from 'https://esm.sh/@supabase/ssr@0.5.2';
+  <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
+    (async () => {
+      try {
+        // Dynamic import — top-level import in a non-module <script> throws
+        // SyntaxError and the whole script dies silently. Lesson 2026-06-11.
+        const { createBrowserClient } = await import('https://esm.sh/@supabase/ssr@0.5.2');
+        const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
-    const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+        const { data: { user } } = await supabase.auth.getUser();
 
-    async function init() {
-      const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          document.getElementById('login-prompt')?.classList.add('hidden');
+          const userInfo = document.getElementById('user-info');
+          userInfo?.classList.remove('hidden');
+          document.getElementById('user-email').textContent = user.email;
 
-      if (user) {
-        document.getElementById('login-prompt')?.classList.add('hidden');
-        const userInfo = document.getElementById('user-info');
-        userInfo?.classList.remove('hidden');
-        document.getElementById('user-email').textContent = user.email;
+          document.getElementById('signout')?.addEventListener('click', async () => {
+            await supabase.auth.signOut();
+            window.location.reload();
+          });
 
-        document.getElementById('signout')?.addEventListener('click', async () => {
-          await supabase.auth.signOut();
-          window.location.reload();
-        });
+          // Fetch posts
+          const { data: posts, error } = await supabase
+            .from('posts_with_author')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(20);
 
-        // Fetch posts
-        const { data: posts, error } = await supabase
-          .from('posts_with_author')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(20);
+          if (error) {
+            console.error('Error loading posts:', error);
+          }
 
-        if (error) {
-          console.error('Error loading posts:', error);
+          if (posts && posts.length > 0) {
+            const feed = document.getElementById('feed');
+            feed.classList.remove('hidden');
+            feed.innerHTML = posts.map((post) => `
+              <article class="rounded-2xl border border-dark-600 bg-dark-800 p-6">
+                <h2 class="font-display text-lg font-bold">${escapeHtml(post.title)}</h2>
+                <p class="mt-2 text-sm text-dark-200">${escapeHtml(post.body.slice(0, 200))}...</p>
+                <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
+                  <span>${escapeHtml(post.author_display_name || 'Anónimo')}</span>
+                  <span>·</span>
+                  <span>${new Date(post.created_at).toLocaleDateString('es-ES')}</span>
+                  <span>·</span>
+                  <span>💬 ${post.comments_count}</span>
+                  <span>·</span>
+                  <span>♥ ${post.likes_count}</span>
+                </div>
+              </article>
+            `).join('');
+          } else {
+            document.getElementById('empty-state')?.classList.remove('hidden');
+          }
         }
-
-        if (posts && posts.length > 0) {
-          const feed = document.getElementById('feed');
-          feed.classList.remove('hidden');
-          feed.innerHTML = posts.map((post) => `
-            <article class="rounded-2xl border border-dark-600 bg-dark-800 p-6">
-              <h2 class="font-display text-lg font-bold">${escapeHtml(post.title)}</h2>
-              <p class="mt-2 text-sm text-dark-200">${escapeHtml(post.body.slice(0, 200))}...</p>
-              <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
-                <span>${escapeHtml(post.author_display_name || 'Anónimo')}</span>
-                <span>·</span>
-                <span>${new Date(post.created_at).toLocaleDateString('es-ES')}</span>
-                <span>·</span>
-                <span>💬 ${post.comments_count}</span>
-                <span>·</span>
-                <span>♥ ${post.likes_count}</span>
-              </div>
-            </article>
-          `).join('');
-        } else {
-          document.getElementById('empty-state')?.classList.remove('hidden');
-        }
+      } catch (err) {
+        console.error('[comunidad] init failed:', err);
       }
-    }
+    })();
 
     function escapeHtml(text) {
       const div = document.createElement('div');
       div.textContent = text;
       return div.innerHTML;
     }
-
-    init();
   </script>
 </BaseLayout>
