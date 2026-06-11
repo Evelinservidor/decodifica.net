@@ -13,7 +13,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: weekly-gsc
@@ -40,16 +40,16 @@ jobs:
           GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
           GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
           GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
-          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GSC_SITE_URLS: ${{ secrets.GSC_SITE_URLS }}
           DAYS_BACK: ${{ inputs.days || '7' }}
+          OUTPUT_DIR: ${{ github.workspace }}/data/gsc_weekly
         run: python scripts/weekly_gsc_report.py
 
-      - name: Save report as artifact (debug)
+      - name: Commit outputs to repo
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gsc-report
-          path: gsc-report.txt
-          if-no-files-found: ignore
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/gsc_weekly/
+          git diff --cached --quiet || git commit -m "data: weekly GSC report $(date -u +%Y-%m-%d)" || true
+          git push origin main
