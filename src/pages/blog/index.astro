@@ -1,5 +1,39 @@
 ---
-import BaseLayout from '~/layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Posts del blog - fuente única de verdad
+const posts = [
+  {
+    slug: 'alternativas-gratis-chatgpt-2026',
+    title: '5 alternativas gratuitas a ChatGPT en 2026 (probadas, sin tarjeta)',
+    excerpt: 'Comparativa honesta de Gemini 2.0 Flash, Claude, DeepSeek V3, Mistral y Hugging Face. Con casos de uso reales, no marketing.',
+    pubDate: '2026-06-15',
+    pillar: 'apps-web',
+    pillarLabel: 'Pilar 1: Apps web',
+    readTime: '8 min',
+    cover: '/og/blog/alternativas-gratis-chatgpt-2026.png',
+  },
+  {
+    slug: 'claude-emails-sonar-humanos',
+    title: 'Cómo configurar Claude para escribir emails sin que suene a robot',
+    excerpt: 'El setup exacto que uso yo para que mis emails con IA parezcan 100% humanos. Con prompts reales, no genéricos.',
+    pubDate: '2026-06-19',
+    pillar: 'tips-productividad',
+    pillarLabel: 'Pilar 2: Tips productividad',
+    readTime: '6 min',
+    cover: '/og/blog/claude-emails-sonar-humanos.png',
+  },
+  {
+    slug: 'claude-skills-desde-cero',
+    title: 'Claude Skills desde cero: crea tu primer skill personalizado en 30 min',
+    excerpt: 'Qué son, para qué sirven, y cómo crear uno paso a paso. Ejemplo real: un analizador de emails que extrae tareas, fechas y personas.',
+    pubDate: '2026-06-20',
+    pillar: 'tips-productividad',
+    pillarLabel: 'Pilar 2: Tips productividad',
+    readTime: '10 min',
+    cover: '/og/blog/claude-skills-desde-cero.png',
+  },
+];
 ---
 
 <BaseLayout
@@ -15,29 +49,64 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
     </header>
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Placeholder cards - en producción se generan desde src/content/blog/ -->
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <article class="group overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 transition-all hover:border-brand-500/50">
-          <div class="aspect-video bg-gradient-to-br from-brand-500/20 to-dark-700"></div>
+      {posts.map((post) => (
+        <a
+          href={`/blog/${post.slug}/`}
+          class="group block overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 transition-all hover:border-brand-500/50"
+        >
+          <div class="aspect-video bg-gradient-to-br from-brand-500/20 to-dark-700 flex items-center justify-center">
+            <span class="text-4xl font-display font-bold text-white/20 group-hover:text-white/30 transition-colors">
+              {post.title.charAt(0)}
+            </span>
+          </div>
           <div class="p-6">
             <div class="mb-2 flex items-center gap-2 text-xs text-dark-300">
-              <span class="rounded-full bg-brand-500/10 px-2 py-0.5 text-brand-400">Pilar 1</span>
+              <span class={`rounded-full px-2 py-0.5 ${
+                post.pillar === 'apps-web' 
+                  ? 'bg-brand-500/10 text-brand-400' 
+                  : 'bg-accent-orange/10 text-accent-orange'
+              }`}>
+                {post.pillarLabel}
+              </span>
               <span>·</span>
-              <time>Hace {i} día{i === 1 ? '' : 's'}</time>
+              <time datetime={post.pubDate}>
+                {new Date(post.pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
+              </time>
+              <span>·</span>
+              <span>{post.readTime}</span>
             </div>
-            <h2 class="font-display text-xl font-bold text-white group-hover:text-brand-400">
-              Post #{i} — Próximamente
+            <h2 class="font-display text-xl font-bold text-white group-hover:text-brand-400 transition-colors">
+              {post.title}
             </h2>
-            <p class="mt-2 text-sm text-dark-200">
-              Estamos preparando el contenido. Pronto verás análisis detallados de las mejores herramientas de IA.
-            </p>
+            <p class="mt-2 text-sm text-dark-200 line-clamp-3">{post.excerpt}</p>
+            <div class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-400 group-hover:gap-2 transition-all">
+              Leer artículo
+              <span aria-hidden="true">→</span>
+            </div>
           </div>
-        </article>
+        </a>
       ))}
     </div>
 
-    <div class="mt-12 text-center text-sm text-dark-300">
-      Suscríbete a la <a href="/" class="text-brand-400 hover:text-brand-300">newsletter</a> para no perderte ningún post.
+    <div class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <div class="mb-3 flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
+          <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
+          Gratis
+        </span>
+        <span class="text-xs text-dark-300">Para no perderte nada, suscríbete</span>
+      </div>
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+
+      <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-index-email" class="sr-only">Email</label>
+        <input id="blog-index-email" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
     </div>
   </div>
 </BaseLayout>

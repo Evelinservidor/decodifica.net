@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "5 alternativas gratuitas a ChatGPT en 2026 (probadas, sin tarjeta)";
+const description = "Comparativa honesta de las 5 mejores alternativas gratuitas a ChatGPT en 2026. Probadas con casos de uso reales. Sin tarjeta, sin letra pequeña.";
+const pubDate = "2026-06-15";
+const tags = ["Pilar 1", "apps web gratis", "alternativas chatgpt", "herramientas ia"];
+const readingTime = "8 min";
+const pillar = "apps-web";
+const pillarLabel = "Pilar 1: Apps web";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <span class="rounded-full bg-brand-500/10 px-3 py-1 text-brand-400">{pillarLabel}</span>
+        <span>·</span>
+        <time datetime="2026-06-15">15 junio 2026</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        Si ChatGPT se te queda corto o quieres alternativas sin pagar, esta comparativa es para ti. He probado las 5 opciones gratuitas más serias de 2026, con código y sin marketing.
+      </p>
+    </header>
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Google Gemini 2.0 Flash</strong>: la mejor alternativa gratuita si necesitas velocidad y multimodalidad</li>
+        <li><strong>Claude Sonnet (free tier)</strong>: la mejor para análisis de texto largo y razonamiento cuidadoso</li>
+        <li><strong>DeepSeek V3</strong>: la mejor para código y razonamiento técnico, en chino pero excelente</li>
+        <li><strong>Mistral Le Chat</strong>: la mejor alternativa europea (cumple GDPR de verdad)</li>
+        <li><strong>Hugging Face Chat</strong>: la mejor para experimentar con modelos open source</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué buscar alternativas a ChatGPT</h2>
+    <p>
+      ChatGPT sigue siendo el rey, pero tiene tres problemas reales:
+    </p>
+    <ol>
+      <li><strong>Rate limits agresivos en el plan gratuito</strong>: si haces más de 10-15 consultas por hora, te quedas sin servicio hasta el día siguiente.</li>
+      <li><strong>Privacidad cuestionable</strong>: OpenAI entrena con tus conversaciones por defecto (hay que desactivarlo manualmente).</li>
+      <li><strong>Una sola perspectiva</strong>: cada modelo tiene sesgos y fortalezas distintas. Usar varios te da respuestas más ricas.</li>
+    </ol>
+    <p>
+      La buena noticia: en 2026 ya no tienes que elegir uno. Aquí van las 5 mejores alternativas gratuitas que he probado, ordenadas por casos de uso reales.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Google Gemini 2.0 Flash — La más rápida y multimodal</h2>
+    
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      La versión gratuita de Gemini es absurdamente rápida (responde en 1-2 segundos) y acepta imágenes, PDFs, videos, código y texto. Es la IA más versátil para tareas multimodales del día a día.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Subir una foto de un producto y pedir que lo describa</li>
+      <li>Analizar PDFs largos (extracto, resumen, responde preguntas)</li>
+      <li>Generar código con contexto visual</li>
+      <li>Búsqueda con Google integrada (cuando cita fuentes, ves los enlaces)</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones del plan gratuito</h3>
+    <ul>
+      <li>~60 consultas por minuto, 1.000 por día</li>
+      <li>Acceso a Gemini 2.0 Flash, no Pro</li>
+      <li>Las conversaciones se usan para entrenar (hay que desactivar en Settings)</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Cuándo NO usarla</h3>
+    <p>
+      Razonamiento ético, análisis filosófico profundo, o cualquier cosa que requiera "pensar antes de responder". Gemini Flash es veloz pero a veces salta a conclusiones.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">2. Claude (Sonnet 4, free tier) — La más inteligente en texto</h2>
+    
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Anthropic da acceso gratuito a Claude Sonnet 4 con límite de mensajes por día. Es la IA con mejor razonamiento escrito, mejor comprensión de contexto largo, y menos "alucinaciones" en mis pruebas.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Escribir emails que suenen humanos, no a ChatGPT</li>
+      <li>Resumir documentos de +20 páginas sin perder matices</li>
+      <li>Code review crítico (te dice qué está mal sin rodeos)</li>
+      <li>Análisis de texto legal o técnico</li>
+      <li>Brainstorming de ideas poco convencionales</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones del plan gratuito</h3>
+    <ul>
+      <li>~50 mensajes por día (suficiente para uso personal, corto para trabajo)</li>
+      <li>Sin acceso a Skills (solo en plan de pago)</li>
+      <li>Sin acceso a web search en tiempo real</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3. DeepSeek V3 — La bestia del código y las matemáticas</h2>
+    
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Un modelo chino open source (DeepSeek-V3) que compite con GPT-4o en benchmarks de código y razonamiento matemático. El chat gratuito está en <a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300">chat.deepseek.com</a>.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Programación avanzada (refactor, debugging, code review)</li>
+      <li>Resolución de problemas matemáticos paso a paso</li>
+      <li>Razonamiento lógico estructurado</li>
+      <li>Generar SQL complejo con joins múltiples</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
+    <ul>
+      <li>La interfaz está en chino (se puede usar en español sin problema, pero el menú confunde)</li>
+      <li>Sin multimodalidad (solo texto)</li>
+      <li>A veces tarda más que Gemini en respuestas simples</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4. Mistral Le Chat — La europea (RGPD-friendly)</h2>
+    
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Mistral AI es la startup francesa que está compitiendo con los americanos. Le Chat es su interfaz gratuita, con servidores en Europa (cumple RGPD de verdad, no como las demás que dicen "RGPD" pero guardan datos en USA).
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
+    <ul>
+      <li>Trabajo con datos sensibles de clientes europeos</li>
+      <li>Empresas que necesitan cumplir RGPD estricto</li>
+      <li>Cuando quieres evitar enviar datos a servers de USA/China</li>
+    </ul>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
+    <ul>
+      <li>Modelos más pequeños (Mistral Small, Medium) en el plan gratuito</li>
+      <li>Sin acceso a su flagship (Mistral Large) sin pagar</li>
+      <li>Menos refinado que Claude en tareas largas</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">5. Hugging Face Chat — La playground open source</h2>
+    
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
+    <p>
+      Hugging Face aloja +100.000 modelos open source. Su chat te deja probar Llama, Mistral, Qwen, DeepSeek, Phi, y muchos más, gratis, sin registro (con límites).
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
+    <ul>
+      <li>Calidad variable: hay modelos brillantes y modelos pésimos mezclados</li>
+      <li>Sin continuity entre sesiones</li>
+      <li>Interfaz más técnica, menos pulida</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa rápida</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">IA</th>
+            <th class="text-left p-2 text-white">Velocidad</th>
+            <th class="text-left p-2 text-white">Multimodal</th>
+            <th class="text-left p-2 text-white">Mejor para</th>
+            <th class="text-left p-2 text-white">Límite free</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700"><td class="p-2">Gemini 2.0 Flash</td><td class="p-2">⚡⚡⚡</td><td class="p-2">✅ Sí</td><td class="p-2">Velocidad + multimodalidad</td><td class="p-2">1.000/día</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Claude Sonnet 4</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Texto largo, razonamiento</td><td class="p-2">~50/día</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">DeepSeek V3</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Código + matemáticas</td><td class="p-2">Ilimitado*</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Mistral Le Chat</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Privacidad + RGPD</td><td class="p-2">Ilimitado*</td></tr>
+          <tr><td class="p-2">HuggingFace Chat</td><td class="p-2">⚡</td><td class="p-2">Varía</td><td class="p-2">Experimentar</td><td class="p-2">~100/día</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-dark-300 mt-2">* Pueden aplicar throttling en horas pico o con prompts muy largos</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Mi setup personal (lo que uso yo)</h2>
+    <p>
+      Por si te sirve de referencia, en mi día a día alterno entre:
+    </p>
+    <ul>
+      <li><strong>Gemini 2.0 Flash</strong> para cosas rápidas (resumir emails, búsquedas)</li>
+      <li><strong>Claude</strong> cuando necesito pensar (escribir posts, code review, decisiones)</li>
+      <li><strong>DeepSeek</strong> para código complejo</li>
+      <li><strong>Mistral</strong> cuando manejo datos de clientes europeos</li>
+    </ul>
+    <p>
+      No uso ChatGPT casi nunca. Y tú tampoco necesitas ceñirte a uno.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuál es mejor para programar gratis?</h3>
+    <p>
+      DeepSeek V3 en mis pruebas. Le sigue Claude (gratis) y luego Gemini. Para proyectos serios, sigue mereciendo la pena Cursor o Copilot de pago, pero para scripts puntuales, DeepSeek basta.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y para escribir en español?</h3>
+    <p>
+      Claude es el más natural en español de los 5. Gemini suena un poco "traducido" en textos largos. DeepSeek es correcto pero menos fluido.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Estas alternativas usan mis datos para entrenar?</h3>
+    <p>
+      Gemini: sí por defecto, hay que desactivarlo. Claude: sí por defecto, se puede desactivar pero se mantienen 30 días por seguridad. DeepSeek y Mistral: política más clara, no usan tus datos para entrenar. HuggingFace: depende del modelo, pero la plataforma en sí no.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo combinar varias en un solo workflow?</h3>
+    <p>
+      Sí, de hecho es lo que hago yo. Por ejemplo: uso Gemini para transcribir una reunión, Claude para resumir los puntos clave y DeepSeek para generar el código que automatiza las acciones decididas. Cada uno en lo que destaca.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <p>
+      La pregunta correcta en 2026 no es "qué IA uso" sino "qué IA uso para esto". Cada una tiene su fuerte. La mejor estrategia es no casarse con ninguna y aprender a combinar.
+    </p>
+    <p>
+      Si quieres profundizar en prompts prácticos para cada una de estas herramientas, te he preparado un PDF gratuito con 50 prompts que uso a diario: cubre productividad, escritura, código, análisis y aprendizaje. Lo encuentras en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+    </p>
+    <p>
+      ¿Quieres que profundice en alguna de las 5? Responde por email o en <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
+    </p>
+    <p>
+      — Jordi
+    </p>
+
+    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-1" class="sr-only">Email</label>
+        <input id="blog-email-1" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+</BaseLayout>
