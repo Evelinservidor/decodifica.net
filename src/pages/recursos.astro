@@ -42,7 +42,7 @@ const recursos = [
     <header class="mx-auto max-w-2xl text-center">
       <h1 class="font-display text-4xl font-bold sm:text-5xl">Recursos gratis</h1>
       <p class="mt-4 text-lg text-dark-200">
-        PDFs, plantillas y herramientas. Para descargar, deja tu email.
+        PDFs, plantillas y herramientas. Te los envío por email en 30 segundos.
       </p>
     </header>
 
@@ -74,11 +74,10 @@ const recursos = [
               </span>
             ) : (
               <a
-                href={recurso.downloadUrl}
-                download
+                href="/recursos/?email=1#newsletter"
                 class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
               >
-                Descargar gratis ↓
+                Quiero este PDF ↓
               </a>
             )}
           </div>
@@ -86,7 +85,7 @@ const recursos = [
       ))}
     </div>
 
-    <div class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <div id="newsletter" class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <div class="mb-3 flex items-center gap-2">
         <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
           <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
@@ -121,7 +120,7 @@ const recursos = [
           type="submit"
           class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
         >
-          <span>Quiero el PDF</span>
+          <span>Recibir el PDF ahora</span>
           <span aria-hidden="true">→</span>
         </button>
       </form>
