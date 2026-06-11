@@ -70,13 +70,16 @@
         }
         const cfg = await cfgRes.json();
 
-        // Use plain @supabase/supabase-js@2 with PKCE — the recommended
-        // approach for static client-side sites (no SSR).
+        // Lesson 2026-06-11 (round 5): with detectSessionInUrl: true, the
+        // @supabase/supabase-js@2 client AUTOMATICALLY exchanges the ?code=
+        // for a session on init. Calling exchangeCodeForSession(code) again
+        // AFTER init throws "PKCE code verifier not found" because the
+        // code has already been consumed. We let the auto-handler do it.
         const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
         const supabase = createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
           auth: {
             flowType: 'pkce',
-            detectSessionInUrl: true,  // <-- CRITICAL: auto-exchange ?code= for session
+            detectSessionInUrl: true,  // <-- auto-exchange ?code= on init
             persistSession: true,
             autoRefreshToken: true,
             storage: window.localStorage,
@@ -84,20 +87,23 @@
           },
         });
 
-        // detectSessionInUrl should auto-exchange, but we also call it
-        // explicitly to be safe and to capture the result.
-        const { data, error } = await supabase.auth.exchangeCodeForSession(code);
-        if (error) {
-          showError('Error al intercambiar código por sesión.', error.message);
-          throw error;
+        // Wait a tick for auto-exchange to complete, then check the session
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        if (sessionError) {
+          showError('Error al obtener sesión tras el callback.', sessionError.message);
+          throw sessionError;
+        }
+        if (!session) {
+          showError('No se pudo crear la sesión tras el callback.', 'La sesión quedó vacía.');
+          throw new Error('no_session');
         }
 
         statusEl.textContent = '¡Listo! Redirigiendo a la comunidad…';
         spinner.classList.add('hidden');
-        setTimeout(() => { window.location.href = '/comunidad'; }, 600);
+        setTimeout(() => { window.location.href = '/comunidad'; }, 400);
 
       } catch (err) {
-        if (err && (err.message === 'oauth_error' || err.message === 'no_code' || err.message === 'config_load_failed')) {
+        if (err && (err.message === 'oauth_error' || err.message === 'no_code' || err.message === 'config_load_failed' || err.message === 'no_session')) {
           // already shown
         } else {
           showError('Error inesperado durante el callback.', err && err.message ? err.message : String(err));
