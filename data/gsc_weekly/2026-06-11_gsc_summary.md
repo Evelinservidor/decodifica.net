@@ -1,0 +1,12 @@
+# GSC Weekly Summary — 2026-06-11
+
+_Current: 2026-06-02 → 2026-06-08  |  Previous: 2026-05-26 → 2026-06-01_
+Sites: 5 requested, 5 fetched OK
+
+| Site | Clicks | Clicks Δ | Impressions | Impr Δ | CTR | Avg Pos |
+|---|---|---|---|---|---|---|
+| sc-domain:decodifica.net | 0 | +0 | 0 | +0 | 0.0% | 0.0 |
+| https://drulenterror.blogspot.com/ | 0 | +0 | 0 | +0 | 0.0% | 0.0 |
+| https://calm-mind-meditation-souns.blogspot.com/ | 0 | +0 | 0 | +0 | 0.0% | 0.0 |
+| https://pergaminosprohibidos.blogspot.com/ | 0 | +0 | 3 | +3 | 0.0% | 14.7 |
+| https://jc-automation-n8n.blogspot.com/ | 0 | +0 | 1 | +1 | 0.0% | 9.0 |
