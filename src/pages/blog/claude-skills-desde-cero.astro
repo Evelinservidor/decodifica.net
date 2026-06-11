@@ -29,13 +29,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <div class="rounded-2xl border border-accent-orange/20 bg-accent-orange/5 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
       <p class="text-dark-200 text-sm">
-        Un Claude Skill es un paquete con instrucciones + scripts que Claude carga automáticamente cuando detecta que es relevante. Es como darle a Claude un "modo especializado" para tareas repetitivas. Se crean en markdown + opcionalmente algo de código. No necesitas programar para el 90% de los casos.
+        Un Claude Skill es un paquete con instrucciones y scripts que Claude carga automaticamente cuando detecta que es relevante. Es como darle a Claude un "modo especializado" para tareas repetitivas. Se crean en markdown y opcionalmente algo de codigo. No necesitas programar para el 90% de los casos.
       </p>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es un Claude Skill (en 60 segundos)</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que es un Claude Skill (en 60 segundos)</h2>
     <p>
-      Un Skill es un bundle de instrucciones, código y configuración que Claude carga cuando detecta que tu petición encaja con la especialidad del Skill. Piénsalo como:
+      Un Skill es un bundle de instrucciones, codigo y configuracion que Claude carga cuando detecta que tu peticion encaja con la especialidad del Skill. Piensa en el como:
     </p>
     <ul>
       <li><strong>Custom Instructions</strong>: se aplican siempre, son globales</li>
@@ -43,216 +43,122 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Projects</strong>: con contexto persistente (archivos, knowledge base)</li>
     </ul>
     <p>
-      La gracia de los Skills es que <strong>no tienes que acordarte de activarlos</strong>. Tú dices "analiza este email" y Claude automáticamente carga el Skill de análisis de emails.
+      La gracia de los Skills es que <strong>no tienes que acordarte de activarlos</strong>. Tu dices "analiza este email" y Claude automaticamente carga el Skill de analisis de emails.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo SÍ vale la pena crear un Skill</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuando SI vale la pena crear un Skill</h2>
     <p>
       Crea un Skill si cumples al menos 2 de estas:
     </p>
     <ul>
-      <li>Haces la misma tarea más de 3 veces por semana</li>
+      <li>Haces la misma tarea mas de 3 veces por semana</li>
       <li>La tarea tiene un output estructurado (tabla, JSON, lista)</li>
-      <li>Tienes que recordar instrucciones específicas cada vez ("primero analiza, luego resume, luego sugiere")</li>
+      <li>Tienes que recordar instrucciones especificas cada vez</li>
       <li>Quieres que otros (equipo, comunidad) usen tu mismo flujo</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo NO vale la pena</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuando NO vale la pena</h2>
     <ul>
-      <li>La tarea es única o muy variable</li>
+      <li>La tarea es unica o muy variable</li>
       <li>Un Custom Instruction te basta</li>
       <li>No tienes claro el output que quieres</li>
       <li>Lo haces 1 vez al mes</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial: Skill "Email Triage" en 30 min</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial: Skill Email Triage en 30 min</h2>
     <p>
-      Te voy a enseñar a crear un Skill que uso yo: extraer de un email quién escribe, qué pide, y qué tengo que hacer. Lo aplico a ~30 emails al día y me ahorra 20 minutos.
+      Te voy a ensenar a crear un Skill que uso yo: extraer de un email quien escribe, que pide, y que tengo que hacer. Lo aplico a ~30 emails al dia y me ahorra 20 minutos.
     </p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 1: Crea la carpeta del Skill</h3>
     <p>
-      En <code>~/.claude/skills/</code> (o donde tengas los Skills), crea:
+      En <code>~/.claude/skills/</code> (o donde tengas los Skills), crea una carpeta llamada <code>email-triage</code> con esta estructura: <code>SKILL.md</code> en la raiz, una carpeta <code>examples/</code> opcional, y una carpeta <code>scripts/</code> opcional para codigo auxiliar.
     </p>
-    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap">email-triage/
-├── SKILL.md          (obligatorio, lo carga Claude)
-├── examples/         (opcional, ejemplos de emails)
-└── scripts/          (opcional, código auxiliar)</pre>
-    </div>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 2: Escribe SKILL.md</h3>
     <p>
-      Este es el corazón del Skill. Tiene un formato fijo:
+      Este es el corazon del Skill. Tiene un formato fijo: frontmatter YAML con <code>name</code>, <code>description</code> (lo que usa Claude para decidir si cargar el Skill), y luego markdown con instrucciones, formato de salida, reglas y ejemplos.
     </p>
-    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap">---
-name: email-triage
-description: Extrae de emails quién escribe, qué pide, y mis acciones. Usar cuando el usuario pegue un email, reenvío, o pida "analizar email" / "qué tengo que hacer con esto".
----
-
-# Email Triage
-
-Cuando el usuario pegue un email o reenvío, analiza:
-
-## Salida estructurada (SIEMPRE este formato)
-
-**De**: [nombre del remitente, empresa]
-**Para**: [a mí o a otros]
-**Asunto**: [resumen del asunto en 1 línea]
-**Tarea principal**: [en imperativo: "Responder con X", "Programar reunión", "Pagar factura"]
-**Deadline**: [fecha explícita o "No mentioned"]
-**Urgencia**: [Alta/Media/Baja + razón]
-**Adjuntos importantes**: [lista o "ninguno"]
-
-## Después, sugiere
-
-1. **Respuesta sugerida** (3 versiones: corta/media/larga)
-2. **Acción inmediata** que debería hacer (responder ahora / archivar / delegar)
-3. **Si requiere programación**, dame slots libres de mi calendario (si tengo el Skill calendar)
-
-## Reglas
-
-- Si el email está en otro idioma, traduce implícitamente al español en el output
-- Si hay ambigüedad, marca "⚠️ REVISAR" en el campo afectado
-- Si detectas un email de phishing, marca "🔴 SOSPECHA" al inicio
-- No asumas tono: si es urgente/frío/cordial, indícalo
-
-## Ejemplo de input esperado
-
-El usuario pega un email completo (con o sin headers).
-
-## Ejemplo de output esperado
-
-**De**: María González, ACME Corp
-**Para**: Jordi
-**Asunto**: Renovación del contrato Atlas
-**Tarea principal**: Responder confirmando renovación con nuevas condiciones
-**Deadline**: 15 de junio 2026
-**Urgencia**: Alta (cliente renovando, no perder)
-**Adjuntos importantes**: propuesta_v2.pdf</pre>
-    </div>
     <p>
-      Las claves: <strong>descripción clara en el frontmatter</strong> (es lo que usa Claude para decidir si cargar el Skill), <strong>output estructurado</strong>, y <strong>ejemplos</strong>.
+      Las claves: descripcion clara en el frontmatter, output estructurado (tabla, JSON, lista), y ejemplos concretos de input y output esperado.
     </p>
 
-    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Añade scripts opcionales</h3>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Anade scripts opcionales</h3>
     <p>
-      Si tu Skill necesita ejecutar código, lo metes en <code>scripts/</code>. Por ejemplo, un script que lea emails de un inbox via IMAP:
-    </p>
-    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap"># scripts/fetch_emails.py
-import imaplib
-import email
-from email import policy
-
-def fetch_unread(host: str, user: str, password: str, limit: int = 10):
-    """Lee los últimos N emails no leídos del inbox."""
-    with imaplib.IMAP4_SSL(host) as imap:
-        imap.login(user, password)
-        imap.select('INBOX')
-        _, data = imap.search(None, 'UNSEEN')
-        for num in data[0].split()[:limit]:
-            _, msg_data = imap.fetch(num, '(RFC822)')
-            msg = email.message_from_bytes(msg_data[0][1], policy=policy.default)
-            yield {
-                'from': msg['From'],
-                'subject': msg['Subject'],
-                'date': msg['Date'],
-                'body': msg.get_body(preferencelist=('plain',)).get_content(),
-            }</pre>
-    </div>
-    <p>
-      Claude invocará este script automáticamente cuando detecte que necesita emails reales.
+      Si tu Skill necesita ejecutar codigo, lo metes en <code>scripts/</code>. Por ejemplo, un script que lea emails de un inbox via IMAP. Claude invocara este script automaticamente cuando detecte que necesita emails reales.
     </p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 4: Prueba el Skill</h3>
     <p>
-      En Claude, escribe:
-    </p>
-    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
-      <pre class="whitespace-pre-wrap">Analiza este email:
-
-Asunto: Renovación Atlas
-De: Maria <maria@acme.com>
-Para: jordi@tudominio.com
-
-Hola Jordi,
-
-Queríamos confirmar la renovación del contrato Atlas por 12 meses más...
-
-[resto del email]</pre>
-    </div>
-    <p>
-      Claude debería cargar el Skill automáticamente y devolverte el output estructurado. Si no lo carga, revisa que el campo <code>description</code> del frontmatter sea claro y contenga keywords como "email", "analizar", "triage".
+      En Claude, escribe algo como: "Analiza este email: Asunto: Renovacion Atlas. De: Maria...". Claude deberia cargar el Skill automaticamente y devolverte el output estructurado. Si no lo carga, revisa que el campo description del frontmatter sea claro y contenga keywords relevantes.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Errores típicos al crear Skills</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Errores tipicos al crear Skills</h2>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ Description vaga</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Description vaga</h3>
     <p>
-      "Procesa emails" → Claude no sabe cuándo activarlo. Mejor: "Extrae remitente, tarea y deadline de emails pegados. Usar cuando el usuario pegue un email o pida 'qué tengo que hacer con esto'".
+      "Procesa emails" no le dice a Claude cuando activarlo. Mejor: "Extrae remitente, tarea y deadline de emails pegados. Usar cuando el usuario pegue un email o pida que tiene que hacer con esto".
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ Sin ejemplos</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Sin ejemplos</h3>
     <p>
-      Claude improvisa el formato. Siempre incluye input esperado + output esperado. Cuanto más concreto, mejor.
+      Claude improvisa el formato. Siempre incluye input esperado y output esperado. Cuanto mas concreto, mejor.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ Skills demasiado grandes</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Skills demasiado grandes</h3>
     <p>
-      Si el SKILL.md pasa de 500 líneas, Claude no lo lee entero. Mejor 3-4 Skills pequeños y específicos que 1 mega-Skill.
+      Si el SKILL.md pasa de 500 lineas, Claude no lo lee entero. Mejor 3-4 Skills pequenos y especificos que 1 mega-Skill.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ No iterar</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">No iterar</h3>
     <p>
-      El primer borrador de un Skill casi nunca es el bueno. Úsalo 5-10 veces y ve ajustando las instrucciones según los fallos.
+      El primer borrador de un Skill casi nunca es el bueno. Usalo 5-10 veces y ve ajustando las instrucciones segun los fallos.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ideas de Skills para empezar</h2>
     <ul>
-      <li><strong>Meeting notes</strong>: pegas transcripción, te devuelve resumen + action items</li>
-      <li><strong>Code review</strong>: pegas diff, te da feedback crítico con severidad</li>
+      <li><strong>Meeting notes</strong>: pegas transcripcion, te devuelve resumen y action items</li>
+      <li><strong>Code review</strong>: pegas diff, te da feedback critico con severidad</li>
       <li><strong>Article outline</strong>: pides tema, te devuelve outline SEO-optimizado con H1/H2</li>
-      <li><strong>Customer feedback</strong>: pegas review de cliente, extrae sentiment + temas + prioridades</li>
-      <li><strong>Spanish proofread</strong>: pegas texto, te devuelve versión corregida con explicación de cambios</li>
+      <li><strong>Customer feedback</strong>: pegas review de cliente, extrae sentiment y temas y prioridades</li>
+      <li><strong>Spanish proofread</strong>: pegas texto, te devuelve version corregida con explicacion de cambios</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Los Skills están en plan gratuito?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Los Skills estan en plan gratuito?</h3>
     <p>
-      Sí, parcialmente. Anthropic lanzó Skills para todos los usuarios (incluso free tier) en 2025. Pero hay límites de uso más estrictos que en el plan de pago.
+      Si, parcialmente. Anthropic lanzo Skills para todos los usuarios (incluso free tier) en 2025. Pero hay limites de uso mas estrictos que en el plan de pago.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuántos Skills puedo crear?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Cuantos Skills puedo crear?</h3>
     <p>
-      Sin límite técnico. Pero por la propia ventana de contexto, más de 50-100 Skills activos empieza a degradar el rendimiento. Mejor tener 5-10 buenos.
+      Sin limite tecnico. Pero por la propia ventana de contexto, mas de 50-100 Skills activos empieza a degradar el rendimiento. Mejor tener 5-10 buenos.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funcionan con otros LLMs (GPT, Gemini)?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Funcionan con otros LLMs (GPT, Gemini)?</h3>
     <p>
-      El formato es propietario de Anthropic. GPT tiene "Custom GPTs" con filosofía similar, y Gemini tiene "Gems". Pero no son intercambiables.
+      El formato es propietario de Anthropic. GPT tiene Custom GPTs con filosofia similar, y Gemini tiene Gems. Pero no son intercambiables.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Hay un marketplace oficial?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">Hay un marketplace oficial?</h3>
     <p>
-      No todavía. Anthropic tiene "Skills oficiales" para tareas comunes (PDF, código, datos) y la comunidad comparte en GitHub. Es probable que lancen marketplace en 2026.
+      No todavia. Anthropic tiene Skills oficiales para tareas comunes (PDF, codigo, datos) y la comunidad comparte en GitHub. Es probable que lancen marketplace en 2026.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusion</h2>
     <p>
-      Los Skills son la feature más infravalorada de Claude en 2026. Te permiten construir un "segundo cerebro" de instrucciones especializadas que se activan solas. Toma 30 minutos crear el primero, y te ahorra horas a la semana.
+      Los Skills son la feature mas infravalorada de Claude en 2026. Te permiten construir un segundo cerebro de instrucciones especializadas que se activan solas. Toma 30 minutos crear el primero, y te ahorra horas a la semana.
     </p>
     <p>
-      Si quieres ver más ejemplos de Skills y los 50 prompts que uso a diario, tienes el PDF en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si quieres ver mas ejemplos de Skills y los 50 prompts que uso a diario, tienes el PDF en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
-    <p>¿Qué Skill vas a crear primero? Cuéntame en <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.</p>
-    <p>— Jordi</p>
+    <p>Que Skill vas a crear primero? Cuentame en <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.</p>
+    <p>Jordi</p>
 
     <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <h3 class="font-display text-2xl font-bold text-white">Unete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sabado: 1 video destacado, 2-3 noticias IA, 1 prompt util. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
         <label for="blog-email-3" class="sr-only">Email</label>
         <input id="blog-email-3" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
