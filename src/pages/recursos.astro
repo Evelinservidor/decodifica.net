@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import Button from '~/components/Button.astro';
+import { env } from '~/lib/env';
+
+const pdfUrl = `${env.PUBLIC_SUPABASE_URL}/storage/v1/object/public/recursos/50-prompts-ia.pdf`;
 
 const recursos = [
   {
-    title: '50 prompts IA para creadores de contenido',
-    description: 'Plantillas listas para usar. Categorizadas por objetivo: hooks, ideas, escritura, investigación.',
+    title: '50 prompts para IA',
+    description: 'Plantillas listas para usar en ChatGPT, Claude o Gemini. Productividad, escritura, código, análisis y aprendizaje. Probadas en la vida real.',
     type: 'PDF',
-    pages: 5,
+    pages: 13,
     icon: '📝',
+    downloadUrl: pdfUrl,
   },
   {
     title: 'Comparativa: ChatGPT vs Claude vs Gemini 2026',
@@ -16,6 +19,8 @@ const recursos = [
     type: 'PDF',
     pages: 3,
     icon: '⚖️',
+    downloadUrl: '/blog/comparativa-llms-2026',
+    comingSoon: true,
   },
   {
     title: 'Checklist: cómo elegir tu stack IA personal',
@@ -23,6 +28,8 @@ const recursos = [
     type: 'PDF',
     pages: 1,
     icon: '✅',
+    downloadUrl: '/blog/checklist-stack-ia',
+    comingSoon: true,
   },
 ];
 ---
@@ -41,26 +48,83 @@ const recursos = [
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {recursos.map((recurso) => (
-        <article class="group overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition-all hover:border-brand-500/50">
+        <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition-all hover:border-brand-500/50">
           <div class="text-4xl">{recurso.icon}</div>
           <div class="mt-3 flex items-center gap-2 text-xs text-dark-300">
             <span class="rounded-full bg-brand-500/10 px-2 py-0.5 text-brand-400">{recurso.type}</span>
             <span>·</span>
             <span>{recurso.pages} pág</span>
+            {recurso.comingSoon && (
+              <>
+                <span>·</span>
+                <span class="rounded-full bg-accent-orange/10 px-2 py-0.5 text-accent-orange">Pronto</span>
+              </>
+            )}
           </div>
-          <h2 class="mt-3 font-display text-lg font-bold text-white group-hover:text-brand-400">
+          <h2 class="mt-3 grow font-display text-lg font-bold text-white group-hover:text-brand-400">
             {recurso.title}
           </h2>
           <p class="mt-2 text-sm text-dark-200">
             {recurso.description}
           </p>
           <div class="mt-4">
-            <Button href="/" variant="ghost" size="sm">
-              Descargar gratis
-            </Button>
+            {recurso.comingSoon ? (
+              <span class="inline-flex items-center gap-2 rounded-lg border border-dark-500 bg-dark-600 px-3 py-1.5 text-sm font-semibold text-dark-300">
+                Próximamente
+              </span>
+            ) : (
+              <a
+                href={recurso.downloadUrl}
+                download
+                class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+              >
+                Descargar gratis ↓
+              </a>
+            )}
           </div>
         </article>
       ))}
+    </div>
+
+    <div class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <div class="mb-3 flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
+          <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
+          Gratis
+        </span>
+        <span class="text-xs text-dark-300">Para descargar todo, deja tu email</span>
+      </div>
+      <h3 class="font-display text-2xl font-bold text-white">
+        Únete a la newsletter
+      </h3>
+      <p class="mt-2 text-sm text-dark-200">
+        Cada sábado por la mañana: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.
+      </p>
+
+      <form
+        action="https://buttondown.email/decodifica"
+        method="post"
+        target="_blank"
+        class="mt-5 flex flex-col gap-2 sm:flex-row"
+      >
+        <label for="recursos-email" class="sr-only">Email</label>
+        <input
+          id="recursos-email"
+          type="email"
+          name="email"
+          placeholder="tu@email.com"
+          required
+          autocomplete="email"
+          class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20"
+        />
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+        >
+          <span>Quiero el PDF</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
     </div>
   </div>
 </BaseLayout>
