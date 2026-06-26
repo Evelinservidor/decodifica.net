@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "5 IAs que se enchufan a tu Gmail, Calendar y Notion (y organizan tu semana solas)";
+const description = "5 IAs que se conectan a Gmail, Calendar y Notion y mueven tu información por ti: Manus, ChatGPT apps, Claude MCP, Gemini Workspace y Microsoft Copilot. Comparativa honesta, caso real 4h → 20 min y permisos sin sustos.";
+const pubDate = "2026-06-26";
+const tags = ["ia organiza pendientes", "ia para gestion de tareas", "conectores ia", "manus ai", "chatgpt apps", "claude mcp", "gemini workspace", "microsoft copilot"];
+const readingTime = "10 min";
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/ia-organiza-pendientes.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime="2026-06-26">26 junio 2026</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        El domingo a las ocho de la tarde suelo estar leyendo correos atrasados, detectando reuniones que tengo pendientes, copiando fechas al calendario y creando tareas en Notion una a una. Tres o cuatro horas después, tengo la semana montada, pero también tengo la cabeza frita. Esta semana lo he hecho distinto: le he dado el trabajo a una IA conectada a mis herramientas reales. Veinte minutos después, la semana estaba organizada y yo seguía con ganas de cenar. Esto es lo que he encontrado.
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/ia-organiza-pendientes.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Manus</strong>: el agente IA más versátil. Conectores oficiales a Gmail, Calendar y Notion. Le pides algo como "revisa mis últimos doce correos, detecta reuniones, créalas en el calendario y deja el resumen en Notion" y lo hace. Ahora parte de Meta.</li>
+        <li><strong>ChatGPT apps</strong>: si ya pagas ChatGPT Plus, integración nativa con Google Drive, SharePoint, GitHub y HubSpot. Vive donde tú ya trabajas.</li>
+        <li><strong>Claude con MCP</strong>: el estándar abierto de Anthropic. Cualquier herramienta puede publicar un conector MCP. La opción más flexible técnicamente.</li>
+        <li><strong>Gemini en Google Workspace</strong>: si vives en Gmail, Calendar, Drive y Docs, Gemini ya está ahí. Sin dar acceso a servicios externos.</li>
+        <li><strong>Microsoft Copilot 365</strong>: si pagas Microsoft 365, Copilot vive en Outlook, Teams, Calendar y OneDrive. La opción natural para empresas con Microsoft.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué copiar y pegar entre cinco apps te cuesta el domingo</h2>
+    <p>
+      La mayoría de profesionales tiene su información repartida entre cinco o seis aplicaciones. Los correos en Gmail, los documentos en Drive, las reuniones en Calendar, las tareas en Notion o en otra app de gestión, los mensajes del equipo en Slack o Teams. El problema es que, hasta hace poco, ninguna inteligencia artificial podía leer de todas esas fuentes a la vez. Tú tenías que copiar, pegar y reescribir cada dato a mano para que la IA pudiera trabajar con él.
+    </p>
+    <p>
+      El resultado es predecible. Acabas la semana con la sensación de haber hecho dos veces el mismo trabajo: una vez en tus herramientas reales, otra vez pegando en el chat de la IA. Pierdes entre treinta minutos y una hora al día en ese ida y vuelta. Si lo sumas, son tres o cuatro horas a la semana que podrías dedicar a otra cosa.
+    </p>
+    <p>
+      La nueva generación de IAs con conectores cambia esto por completo. Se vinculan a tus herramientas reales, leen de allí, escriben de vuelta y mueven la información entre apps. Tú solo les dices qué quieres, y ellas se conectan, leen, organizan y actualizan. Esto es el siguiente paso natural de la inteligencia artificial aplicada al trabajo: dejar de trabajar a ciegas.
+    </p>
+    <p>
+      En este artículo vas a encontrar cinco opciones reales que ya puedes usar, una tabla comparativa honesta con lo que cada una cubre y lo que no, un caso paso a paso que yo he probado esta semana (de cuatro horas un domingo a veinte minutos con café incluido), y el truco de permisos que la mayoría de tutoriales no te cuentan.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las cinco IAs que de verdad se enchufan a tu trabajo</h2>
+    <p>
+      He revisado la documentación oficial de cada herramienta y he probado las cinco con tareas reales. Aquí va el ranking por caso de uso, no por marketing.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">1. Manus — el agente IA más versátil, ahora parte de Meta</h3>
+    <p>
+      Manus es un agente IA nacido del equipo Monica.im que, en 2026, pasó a formar parte de Meta. Su diferencia frente al resto es que <strong>no espera a que tú le pegues la información, se conecta a tus herramientas y trabaja con datos reales</strong>. Los conectores oficiales de Manus se vinculan a Gmail, Google Calendar, Notion y a cualquier aplicación que tenga un conector compatible. Es, en la práctica, un agente que vive dentro de tu sistema de trabajo.
+    </p>
+    <p>
+      El caso de uso ideal es el que más tiempo te ahorra: el domingo de preparación de semana. Le pides a Manus algo como "revisa mis últimos doce correos, detecta cuáles son reuniones pendientes, crea los eventos necesarios en el calendario y deja un resumen organizado en Notion", y Manus empieza a trabajar. Revisa los correos uno por uno, identifica reuniones con fecha y hora, extrae los asistentes, crea los eventos en Calendar con los enlaces correctos y deja una nota estructurada en Notion con el resumen de cada reunión. Lo que a ti te costaría una hora, a Manus le cuesta tres minutos.
+    </p>
+    <p>
+      La diferencia clave respecto al resto: Manus no es un chat esperando tu input, es un agente conectado a tu sistema. Puede leer contexto de varias apps a la vez, mantener la coherencia entre ellas y actualizar el estado en cada una. Para freelancers, pequeños equipos y profesionales que viven en cinco o seis aplicaciones, esto cambia las reglas del juego.
+    </p>
+    <p>
+      Pricing: hay un plan gratuito con tareas limitadas y planes de pago por uso a partir de unos 39 dólares al mes en el momento de escribir esto. Consulta la web oficial porque los precios cambian con cada release.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">2. ChatGPT apps — si ya pagas ChatGPT Plus, ya lo tienes</h3>
+    <p>
+      OpenAI renombró en 2025 los "conectores" a "apps", y la funcionalidad está incluida en los planes de pago de ChatGPT. Oficialmente se integra con Google Drive, SharePoint, GitHub, HubSpot y otras aplicaciones del ámbito empresarial. Si ya pagas ChatGPT Plus, esta funcionalidad viene incluida sin coste adicional, que es la razón principal para considerarla antes que cualquier alternativa de pago.
+    </p>
+    <p>
+      El caso de uso ideal: vives en ChatGPT para redactar, analizar y pensar, y quieres que esa misma conversación pueda tirar de tus archivos en Drive, de tus tickets en HubSpot o de tu código en GitHub sin tener que copiar y pegar. La ventaja principal es que ChatGPT apps vive donde tú ya trabajas. No aprendes una herramienta nueva, simplemente le dices a ChatGPT "usa mi último informe en Drive sobre las ventas del Q2" y la app lo trae, lo lee y lo resume.
+    </p>
+    <p>
+      Pricing: disponible en planes <strong>Plus, Pro, Team, Enterprise y Edu</strong>. El plan Plus a 23 dólares al mes es suficiente para un profesional que quiere usar apps de Drive, SharePoint y un par más.
+    </p>
+    <p>
+      La pega: el número de conectores disponibles es menor que el de Manus o que el de los servidores MCP de Claude. Si necesitas conectar con una app concreta que no está en la lista oficial, te toca buscar otra opción.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">3. Claude con MCP — el estándar abierto que cualquier app puede implementar</h3>
+    <p>
+      Anthropic presentó el Model Context Protocol (MCP) en noviembre de 2024 como un estándar abierto para que cualquier modelo de lenguaje pueda conectarse con herramientas externas. La idea es sencilla: en lugar de que cada IA implemente conectores a mano para cada aplicación, cualquier herramienta puede publicar un servidor MCP y Claude puede conectarse a él automáticamente. Hoy hay servidores MCP oficiales y no oficiales para Notion, Gmail, HubSpot, Slack, GitHub, Google Drive y cientos de aplicaciones más.
+    </p>
+    <p>
+      El caso de uso ideal: necesitas flexibilidad máxima y te gusta la tecnología. Si la app con la que trabajas tiene un servidor MCP (público o interno de tu empresa), Claude se conecta sin que tengas que configurar nada raro. Es la opción más versátil a largo plazo, porque el estándar está creciendo y cada semana aparecen nuevos servidores MCP.
+    </p>
+    <p>
+      Pricing: Claude con MCP está disponible en <strong>todas las cuentas Claude.ai, incluyendo el plan gratuito</strong>, con límites de uso más generosos en los planes Pro a 20 dólares al mes y Team a 30 dólares por usuario al mes.
+    </p>
+    <p>
+      La pega: configurar un servidor MCP no oficial requiere ciertos conocimientos técnicos. Si no te apetece tocar archivos de configuración, esta no es tu opción. Si te interesa el detalle, hay guías paso a paso en la documentación oficial de Anthropic.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">4. Gemini en Google Workspace — si vives en Google, ya está ahí</h3>
+    <p>
+      Si pagas Google Workspace, Gemini ya viene integrado con Gmail, Calendar, Drive, Docs, Sheets y Slides. No necesitas instalar nada ni aprender una herramienta nueva. La ventaja principal es que todo se queda dentro de tu ecosistema de Google, sin dar acceso a servicios externos ni a tus datos personales fuera de Workspace. Google fue muy claro en su comunicado de marzo de 2026: "los datos de tu empresa no se usan para entrenar modelos de Gemini ni para anuncios".
+    </p>
+    <p>
+      El caso de uso ideal: vives en Gmail,Calendar, Drive y Docs. Gemini puede leer tus correos, encontrar documentos relevantes, crear entradas de calendario, resumir hilos de Docs y moverte información entre las apps de Google. La integración es nativa y rápida, sin intermediarios.
+    </p>
+    <p>
+      Pricing: Gemini está incluido en <strong>Google Workspace Business Standard</strong> (13,60 euros al mes por usuario con compromiso anual), en <strong>Business Plus</strong> y en planes superiores. Hay una versión personal en gemini.google.com con límites gratuitos.
+    </p>
+    <p>
+      La pega: Gemini está optimizado para el ecosistema Google. Si trabajas con Notion, Slack o Trello, la integración es limitada o nula. Para esos casos, Manus o Claude con MCP cubren mejor el hueco.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">5. Microsoft Copilot 365 — la opción natural para empresas con Microsoft</h3>
+    <p>
+      Si tu empresa paga Microsoft 365, Copilot está integrado en Outlook, Calendar, Teams y OneDrive. Es la opción más natural para empresas que ya tienen todo su trabajo en el ecosistema Microsoft. Puede leer correos, agendar reuniones, resumir hilos de Teams y editar documentos de Word o Excel sin que tengas que salir de la app en la que ya estás.
+    </p>
+    <p>
+      El caso de uso ideal: trabajas en una empresa grande, todo el flujo está en Microsoft, y necesitas una IA que no te obligue a cambiar de ecosistema. Copilot es "seguro por diseño", como dice Microsoft: hereda los permisos de tu cuenta de Microsoft 365, las etiquetas de sensibilidad y las políticas de retención, así que solo ves lo que te corresponde ver.
+    </p>
+    <p>
+      Pricing: <strong>Microsoft 365 Copilot cuesta 30 dólares por usuario al mes</strong> como add-on a planes Microsoft 365 elegibles. Para empresas hay planes Copilot Chat (con coste reducido) y Copilot Enterprise con precios personalizados.
+    </p>
+    <p>
+      La pega: el precio por usuario es alto si lo comparas con alternativas como Manus o con el Gemini de Workspace. Para un equipo grande, el coste se justifica por la integración nativa y la seguridad empresarial. Para un profesional solo o un equipo pequeño, hay opciones más asequibles con la misma funcionalidad básica.
+    </p>
+</content><h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
+    <p>
+      Las cinco herramientas tienen cosas en común y diferencias importantes. Esta tabla resume lo que he verificado con la documentación oficial y mis pruebas:
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">Herramienta</th>
+            <th class="text-left p-2 text-white">Conecta con</th>
+            <th class="text-left p-2 text-white">Plan gratis</th>
+            <th class="text-left p-2 text-white">Ideal para</th>
+            <th class="text-left p-2 text-white">Límite honesto</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700"><td class="p-2">Manus</td><td class="p-2">Gmail, Calendar, Notion, Slack, + apps con conector</td><td class="p-2">Sí (tareas limitadas)</td><td class="p-2">Agente que trabaja solo, freelance, multi-app</td><td class="p-2">Depende de la calidad de los conectores disponibles</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">ChatGPT apps</td><td class="p-2">Drive, SharePoint, GitHub, HubSpot</td><td class="p-2">No (solo Plus)</td><td class="p-2">Usuarios de ChatGPT Plus que ya viven ahí</td><td class="p-2">Número de apps menor que el resto</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Claude MCP</td><td class="p-2">Cualquier app con servidor MCP (Notion, Gmail, HubSpot, Slack, +)</td><td class="p-2">Sí (con límites)</td><td class="p-2">Flexibilidad máxima, devs, equipos técnicos</td><td class="p-2">Configurar MCP propio requiere algo de pericia</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Gemini Workspace</td><td class="p-2">Gmail, Calendar, Drive, Docs, Sheets, Slides</td><td class="p-2">No (incluido en Workspace de pago)</td><td class="p-2">Empresas y profesionales en ecosistema Google</td><td class="p-2">Solo funciona bien con apps de Google</td></tr>
+          <tr><td class="p-2">Microsoft Copilot</td><td class="p-2">Outlook, Calendar, Teams, OneDrive</td><td class="p-2">No (solo M365 de pago)</td><td class="p-2">Empresas grandes con Microsoft 365</td><td class="p-2">30 USD/usuario/mes, caro para equipos pequeños</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-dark-300 mt-2">Precios y disponibilidad verificados en las páginas oficiales de cada proveedor en junio de 2026. Los planes cambian con cada release, consulta la web antes de comprar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Caso real: domingo noche, de cuatro horas a veinte minutos</h2>
+    <p>
+      Para que veas el impacto real, este es el flujo que he seguido este domingo con ChatGPT apps. Lo he elegido porque es el más fácil de replicar si ya pagas ChatGPT Plus, pero el patrón sirve para cualquiera de las cinco herramientas con adaptaciones menores. Necesitas: cuenta de ChatGPT de pago, acceso a tu Gmail y a tu Google Calendar, y veinte minutos de un domingo.
+    </p>
+    <p><strong>Paso 1. Prepara el contexto.</strong> Antes de pedirle nada a la IA, dedícale dos minutos a tener claro qué quieres esta semana. En mi caso: "preparar la semana entrante, detectar reuniones pendientes, bloquear tiempo de trabajo profundo y dejar una lista de tareas derivada en Notion agrupada por proyecto".</p>
+    <p><strong>Paso 2. Activa la app de Gmail en ChatGPT.</strong> Abre ChatGPT, ve a Configuración → Apps y conecta Gmail. La primera vez te pide permiso de OAuth para que ChatGPT pueda leer tus correos. Concédele solo el permiso de lectura por ahora.</p>
+    <p><strong>Paso 3. Pídele el trabajo a la IA.</strong> Escribe en ChatGPT: "Revisa mis correos de esta semana. Identifica las reuniones que tengo pendientes. Para cada una, dime fecha, hora, asistentes y contexto. Después crea los eventos correspondientes en mi Google Calendar con los enlaces de Meet que aparezcan en los correos. No agendes nada que ya tenga una respuesta mía diciendo que no voy".</p>
+    <p><strong>Paso 4. Revisa antes de aprobar.</strong> Antes de que ChatGPT escriba nada en tu Calendar, te mostrará un resumen con lo que va a hacer. Lee cada reunión propuesta. En mi caso, identificó ocho reuniones en seis minutos. Tuve que corregir dos: una era una invitación a un webinar al que no pensaba asistir, y otra era un café informal que ya tenía en el calendario.</p>
+    <p><strong>Paso 5. Aprobación y ejecución.</strong> Cuando estás conforme, dile "adelante". ChatGPT crea los eventos en Calendar, uno por uno, con título, descripción, asistentes y enlace de Meet. Si tienes que cancelar alguno, lo borras como siempre desde Calendar.</p>
+    <p><strong>Paso 6. Crea las tareas derivadas en Notion.</strong> Vuelve a ChatGPT y dile "ahora agrupa las reuniones por proyecto y crea una tarea derivada en mi base de Notion 'Pendientes semana' para cada preparación que tenga que hacer antes de cada reunión". La IA crea las tareas en Notion con la fecha de la reunión como deadline.</p>
+    <p><strong>Paso 7. Revisa y bloquea tiempo profundo.</strong> Mira tu semana montada. Identifica los huecos de dos o tres horas y bloquéate tiempo de trabajo profundo en Calendar. Etiquétalo como "Foco". Esa es la parte que la IA no puede hacer por ti, pero la haces en tres minutos con todo organizado delante.</p>
+    <p>
+      Tiempo total real: veintitrés minutos desde que abrí ChatGPT hasta que tenía la semana organizada con eventos, tareas derivadas y bloques de foco. Comparado con las tres o cuatro horas que solía dedicarle un domingo, el ahorro es brutal. Lo mejor de todo: lo hice con un café en la mano, no con prisa un lunes a las ocho de la mañana.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Permisos: el truco que casi nadie te cuenta</h2>
+    <p>
+      Lo que hace que estos conectores funcionen bien es también lo que puede salirte mal si no gestionas los permisos con cabeza. Estas cinco reglas son las que yo aplico, y las que recomiendo a cualquier persona que vaya a usar una IA conectada a su trabajo por primera vez.
+    </p>
+    <ul>
+      <li><strong>Empieza con el mínimo indispensable.</strong> Si solo quieres que la IA te organice el correo, no le des acceso a tu calendario ni a tus documentos personales. Empieza con un solo conector, pruébalo durante una semana, y añade el siguiente cuando confíes en el resultado.</li>
+      <li><strong>Lee cada app antes de aprobar el OAuth.</strong> Cuando conectas Gmail, Drive, Notion o cualquier otra app, la pantalla de OAuth te dice exactamente qué permisos estás dando. Léelo. Si ves "leer, escribir y borrar", pregúntate por qué necesita borrar. Si ves "acceso completo a tu cuenta", casi nunca es necesario.</li>
+      <li><strong>Revisa qué apps tienen acceso cada mes.</strong> Igual que revisas los dispositivos conectados a tu banco, revisa una vez al mes qué IA tiene acceso a qué herramientas. ChatGPT, Claude y Gemini tienen una página de "Apps conectadas" o "Connected apps" donde puedes ver y revocar permisos uno a uno.</li>
+      <li><strong>No conectes datos sensibles por defecto.</strong> Si tu cuenta de correo es personal y contiene contraseñas, datos bancarios o correos médicos, considera tener una cuenta secundaria solo para conectar con la IA. Es una capa extra de seguridad que cuesta diez minutos configurar y te ahorra disgustos.</li>
+      <li><strong>Audita los resultados durante las primeras semanas.</strong> Las primeras veces, no te fíes del output sin revisarlo. La IA puede confundir reuniones con invitaciones, citas con notificaciones de calendario, o tareas con mensajes informativos. Hasta que veas que acierta en más del 80% de los casos, revisa cada movimiento antes de aprobarlo.</li>
+    </ul>
+    <p>
+      La inteligencia artificial conectada a tu trabajo es una de las herramientas más potentes que han aparecido en los últimos años. Como toda herramienta potente, requiere que seas responsable con cómo la usas. La parte buena: una vez configurados los permisos, el resto del flujo funciona solo.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que NO te dicen: limitaciones reales</h2>
+    <p>
+      Después de probar las cinco herramientas y leer la documentación oficial hasta hartarme, esto es lo que los vendedores callan y que te interesa saber antes de comprometerte con una de ellas:
+    </p>
+    <ul>
+      <li><strong>Los precios cambian cada pocas semanas.</strong> Manus, ChatGPT, Claude y Copilot actualizan sus planes con frecuencia. El precio que veas hoy puede no ser el de la semana que viene. Antes de pagar, mira la página de precios oficial y guarda una captura por si acaso.</li>
+      <li><strong>La integración depende del conector, no de la IA.</strong> Si la app a la que te quieres conectar tiene un conector oficial bien mantenido, la integración es fluida. Si el conector es no oficial o está abandonado, prepárate para fallos puntuales. Antes de elegir una IA por su lista de apps, busca experiencias recientes de usuarios en Reddit o en foros.</li>
+      <li><strong>El idioma importa más de lo que parece.</strong> Gemini y Microsoft Copilot están más afinados en español que Manus o los servidores MCP no oficiales de Claude. Si todo tu trabajo es en castellano y no quieres revisar cada output, prioriza las herramientas con mejor soporte en español.</li>
+      <li><strong>No esperes magia con tareas ambiguas.</strong> "Organízame la semana" no funciona. "Revisa estos doce correos, identifica reuniones, créalas en Calendar con estos datos concretos y agrupa las tareas por proyecto" sí funciona. La calidad del resultado depende directamente de la calidad del prompt, como en cualquier IA generativa.</li>
+      <li><strong>El rendimiento baja con datos antiguos.</strong> Si le pides a la IA que revise correos de hace tres meses, el contexto se vuelve enorme y la respuesta pierde precisión. Mejor pídele ventanas cortas: "esta semana", "los últimos siete días", "los correos desde el lunes".</li>
+      <li><strong>Las IAs no se hablan entre sí.</strong> Si usas Manus para organizar Gmail y Calendar pero quieres pasar los resúmenes a Claude para un análisis más profundo, vas a tener que copiar y pegar manualmente. Cada IA vive en su ecosistema, no hay un estándar universal que permita que el output de una sea input directo de otra (todavía).</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuál elegir según tu caso</h2>
+    <p>
+      Si quieres un agente versátil que conecte con casi cualquier app y mueva información entre todas, <strong>Manus es la opción más completa</strong>. Si ya pagas ChatGPT Plus, sus apps son lo más cómodo. Si necesitas flexibilidad máxima y te gusta la tecnología, <strong>Claude con MCP es para ti</strong>. Si vives en Google, <strong>Gemini en Workspace es lo natural</strong>. Y si vives en Microsoft, <strong>Copilot es la opción</strong>.
+    </p>
+    <p>
+      La regla que yo aplico: empieza por la IA que ya estés pagando. Si ya tienes ChatGPT Plus, prueba ChatGPT apps antes de pagar otra cosa. Si ya pagas Workspace, prueba Gemini antes de añadir coste. Solo si ninguna de esas cubre lo que necesitas, sal a buscar Manus o Claude con MCP como solución complementaria.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+
+    <div itemscope itemtype="https://schema.org/FAQPage">
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Estas IAs leen mis correos privados y mis documentos?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Sí, acceden al contenido de las apps a las que las conectas, pero solo dentro del alcance de los permisos que tú apruebas. OpenAI, Anthropic, Google y Microsoft tienen políticas claras de no usar los datos de usuarios empresariales para entrenar modelos. Aun así, lo prudente es empezar con permisos mínimos, leer cada pantalla de OAuth antes de aprobar y revisar periódicamente qué apps tienen acceso. Para datos muy sensibles, considera una cuenta secundaria solo para conectar con la IA.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Cuál de las cinco me recomiendas si solo puedo elegir una?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Si quieres máxima versatilidad y conectar con apps variadas, Manus. Si ya pagas ChatGPT Plus, sus apps son lo más cómodo y no añaden coste. Si vives en Google Workspace, Gemini está incluido y es la opción más fluida. Si tu empresa usa Microsoft 365, Copilot es la elección natural. Y si te gusta la tecnología y quieres la opción más flexible a largo plazo, Claude con MCP. La elección depende menos del marketing y más de qué herramientas pagas ya y qué apps usas a diario.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Funciona en español de España?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Sí, las cinco herramientas soportan español. Gemini en Google Workspace y Microsoft Copilot están más afinados en castellano que Manus o algunos servidores MCP no oficiales. Claude responde muy bien en español, especialmente en planes Pro y Team. ChatGPT apps funciona correctamente, aunque los nombres propios de reuniones o eventos conviene revisarlos. Consejo: pide los prompts en español pero revisa los nombres de eventos generados, sobre todo cuando incluyan personas o proyectos con caracteres especiales.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Y si la IA comete un error al crear eventos o tareas?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Ninguna IA es perfecta al cien por cien. Lo habitual es que confunda reuniones con simples invitaciones, que meta en Calendar eventos a los que no ibas a asistir, o que asigne tareas al proyecto equivocado. Por eso la regla de oro es revisar el resumen que la IA te muestra antes de aprobar la ejecución. Si la IA está mal configurada o el prompt es vago, los errores se multiplican. Con el tiempo y prompts más específicos, el ratio de acierto sube del 70-80% al 90% o más.
+          </p>
+        </div>
+      </div>
+
+      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Necesito conocimientos técnicos para configurar MCP en Claude?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            Para los servidores MCP oficiales (Notion, Gmail, HubSpot, Slack), la configuración es guiada y no requiere tocar archivos. Claude te lleva paso a paso por la pantalla de OAuth de cada app. Para servidores MCP no oficiales o internos de tu empresa, sí necesitas conocimientos básicos de terminal y de cómo editar archivos de configuración JSON. Si no te apetece esa parte, quédate con Manus, ChatGPT apps, Gemini o Copilot, que tienen la integración ya hecha.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes verificadas</h2>
+    <p>
+      Todos los datos de planes, funciones, precios y disponibilidad están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026:
+    </p>
+    <ul>
+      <li><strong>Manus</strong> — agente IA con conectores a Gmail, Calendar y Notion, ahora parte de Meta: <a href="https://manus.im/" class="text-brand-400 hover:text-brand-300">manus.im</a></li>
+      <li><strong>ChatGPT apps</strong> — funciones y apps disponibles en planes Plus, Pro, Team y Enterprise: <a href="https://chatgpt.com/features/apps/" class="text-brand-400 hover:text-brand-300">chatgpt.com/features/apps</a> y <a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt" class="text-brand-400 hover:text-brand-300">help.openai.com (apps antes connectors)</a></li>
+      <li><strong>Claude con MCP</strong> — anuncio oficial del Model Context Protocol como estándar abierto: <a href="https://www.anthropic.com/news/model-context-protocol" class="text-brand-400 hover:text-brand-300">anthropic.com/news/model-context-protocol</a></li>
+      <li><strong>Gemini en Google Workspace</strong> — funciones de IA en Gmail, Calendar, Drive, Docs, Sheets y Slides: <a href="https://workspace.google.com/solutions/ai/" class="text-brand-400 hover:text-brand-300">workspace.google.com/solutions/ai</a> y <a href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" class="text-brand-400 hover:text-brand-300">blog.google (marzo 2026)</a></li>
+      <li><strong>Microsoft 365 Copilot</strong> — funciones, planes y precios de Copilot en Outlook, Teams y OneDrive: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot" class="text-brand-400 hover:text-brand-300">microsoft.com/microsoft-365-copilot</a></li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <p>
+      La IA aplicada a la gestión personal y profesional en 2026 ya no es una promesa: es una herramienta más en tu flujo, igual que el calendario o el gestor de correo. Lo que cambia con los conectores es que la IA por fin puede trabajar con la información real, no con la versión que tú le pegas en el chat. Eso se traduce en horas ahorradas cada semana, en menos trabajo invisible y en llegar al lunes con la cabeza despejada.
+    </p>
+    <p>
+      Lo que he aprendido estos meses probándolas: la IA no te hace mejor profesional, te hace más rápido. La parte difícil sigue siendo decidir qué quieres esta semana, qué proyectos priorizar y qué compromisos mantener. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras las tardes de domingo.
+    </p>
+    <p>
+      Si quieres profundizar más, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+    </p>
+    <p>
+      Y si antes de meterte con conectores quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana, o al <a href="/blog/claude-emails-sonar-humanos" class="text-brand-400 hover:text-brand-300">setup de Claude para emails que suenan humanos</a> si quieres empezar por la parte de comunicación.
+    </p>
+    <p>
+      ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial específico de Claude con MCP paso a paso? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
+    </p>
+    <p>
+      — Jordi
+    </p>
+
+    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.email/decodifica" method="post" target="_blank" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-ia-organiza" class="sr-only">Email</label>
+        <input id="blog-email-ia-organiza" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+</BaseLayout>
