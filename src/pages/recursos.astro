@@ -101,12 +101,12 @@ const recursos = [
       </p>
 
       <form
-        action="https://buttondown.email/decodifica"
+        action="https://buttondown.com/api/emails/embed-subscribe/decodifica"
         method="post"
-        target="_blank"
         class="mt-5 flex flex-col gap-2 sm:flex-row"
       >
         <label for="recursos-email" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
         <input
           id="recursos-email"
           type="email"

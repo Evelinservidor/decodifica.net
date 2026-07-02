@@ -4,9 +4,9 @@ import { env } from '~/lib/env';
 
 <!--
   Newsletter signup form
-  Integrates with Buttondown embed API
-  Action URL: https://buttondown.email/{username}
-  POST email field → Buttondown handles double opt-in automatically
+  Integrates with Buttondown embed API (public endpoint, no API key needed)
+  https://docs.buttondown.com/building-your-subscriber-base
+  POST email + embed=1 → Buttondown handles double opt-in and confirmation email
 -->
 <div class="rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
   <div class="mb-3 flex items-center gap-2">
@@ -25,12 +25,12 @@ import { env } from '~/lib/env';
   </p>
 
   <form
-    action={`https://buttondown.email/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}`}
+    action={`https://buttondown.com/api/emails/embed-subscribe/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}`}
     method="post"
-    target="_blank"
     class="mt-5 flex flex-col gap-2 sm:flex-row"
   >
     <label for="bd-email" class="sr-only">Email</label>
+    <input type="hidden" name="embed" value="1" />
     <input
       id="bd-email"
       type="email"
