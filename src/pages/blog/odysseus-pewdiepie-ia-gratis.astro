@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Odysseus de PewDiePie: la IA gratis que todos están probando";
-const description = "Qué es Odysseus, la IA open source que PewDiePie presentó en su canal. Cómo instalarla, comparada con LM Studio, GPT4All y Ollama, y por qué se ha vuelto viral en Reddit.";
+const description = "Qué es Odysseus, la IA open source que PewDiePie mostró en su canal. Cómo instalarla y compararla con LM Studio, GPT4All y Ollama.";
 const pubDate = "2026-06-15";
 const tags = ["herramientas ia gratis", "ia gratis", "pewdiepie"];
 const readingTime = "7 min";
@@ -312,4 +312,56 @@ print(resp.text)
       }
     ]
   })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Odysseus de PewDiePie: la IA gratis que todos están probando",
+    "description": "Qu? es Odysseus, la IA open source que PewDiePie mostr? en su canal. C?mo instalarla y compararla con LM Studio, GPT4All y Ollama.",
+    "datePublished": "2026-06-15",
+    "mainEntityOfPage": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
+    "author": {
+        "@type": "Person",
+        "name": "Jordi Castañeira"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Decodifica"
+    },
+    "about": [
+        "herramientas ia gratis",
+        "ia gratis",
+        "pewdiepie"
+    ],
+    "citation": [
+        {
+            "@type": "WebPage",
+            "url": "https://github.com/odysseus-ai/odysseus"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://www.youtube.com/watch?v=pewdiepie-odysseus-demo"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/odysseus_megathread/"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://huggingface.co/models?pipeline_tag=text-generation&library=transformers"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://ollama.com/library"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://lmstudio.ai/"
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://x.com/decodificaia"
+        }
+    ]
+})} />
 </BaseLayout>
