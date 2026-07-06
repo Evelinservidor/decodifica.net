@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Emergent: esta IA te crea una aplicacion completa con un solo prompt (asi la pruebas)";
+const description = "Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte...";
+const pubDate = "2026-07-06";
+const readingTime = "4 min";
+const tags = ["ia", "herramientas ia", "Emergent: esta IA te crea una aplicacion completa con un solo prompt (asi la pruebas)"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/crear-app-web-ias-chinas-open-source.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/crear-app-web-ias-chinas-open-source.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
+        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
+        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
+        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
+        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
+        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
+        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
+        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
+      </div>
+    </div>
+
+    <p>Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este articulo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
+    <p>La pregunta util es esta: La pregunta util es si esto merece entrar en tu flujo real o si solo es otra demo llamativa.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por que importa</h2>
+    <p>La idea es separar lo que parece una novedad mas de lo que realmente puede cambiar una rutina de trabajo.</p>
+    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decision, reducir friccion o ayudarte a probar algo que antes daba pereza.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que cambia realmente</h2>
+    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha tecnica. Lo importante es traducir esas funciones a consecuencias practicas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
+    <p>El giro esta en no quedarse con la funcion vistosa, sino mirar si encaja en tareas repetibles y decisiones concretas.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraria antes de usarlo</h2>
+    <ul class="space-y-2">
+      <li>Si resuelve un problema que ya tienes.</li>
+      <li>Si reduce pasos sin quitarte control.</li>
+      <li>Si el resultado se puede revisar con facilidad.</li>
+    </ul>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Donde esta el valor</h2>
+    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar mas de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decision o a una version revisable, entonces ya empieza a tener sentido.</p>
+    <p>Yo lo probaria primero en un caso pequeño, con salida verificable y poco riesgo. Si ahi funciona, se puede subir el nivel. Si falla en lo basico, al menos no has construido todo tu sistema encima de una promesa.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraria todavia</h2>
+    <p>No lo venderia como piloto automatico. Si una herramienta toca archivos, codigo o acciones del sistema, la supervision sigue siendo parte del trabajo.</p>
+    <p>Esta parte importa porque en IA es muy facil confundir potencial con resultado. Una demo puede ser espectacular y aun asi no encajar en tu dia a dia. Por eso conviene separar tres cosas: lo que la herramienta dice que hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decision Decodifica</h2>
+    <p>La decision Decodifica es mirarlo por utilidad real: que te ahorra, que te permite hacer y que riesgos mantiene.</p>
+    <p>Mi recomendacion es tratarlo como una oportunidad de mejora, no como una solucion automatica. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
+    <p>Si quieres seguir este tipo de analisis con fuentes, recursos y decisiones practicas, la web de Decodifica ira reuniendo la version ampliada de cada video.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li><a href="https://www.ycombinator.com/companies/emergent" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.ycombinator.com/companies/emergent</a></li>
+      <li><a href="https://www.mg21.com/emergent.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.mg21.com/emergent.html</a></li>
+      <li><a href="https://emergent.sh/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://emergent.sh/pricing</a></li>
+      <li><a href="https://emergent.sh/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://emergent.sh/</a></li>
+      <li><a href="https://api-docs.deepseek.com/updates" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/updates</a></li>
+      <li><a href="https://qwenlm.github.io/blog/qwen3-coder/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/blog/qwen3-coder/</a></li>
+      <li><a href="https://juejin.cn/post/7631569095843217417" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/7631569095843217417</a></li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-crear-app-web-ias-chinas-open-source" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-crear-app-web-ias-chinas-open-source" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://www.ycombinator.com/companies/emergent"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://www.mg21.com/emergent.html"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://emergent.sh/pricing"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://emergent.sh/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://api-docs.deepseek.com/updates"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://qwenlm.github.io/blog/qwen3-coder/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://juejin.cn/post/7631569095843217417"
+      }
+]
+  })} />
+</BaseLayout>
