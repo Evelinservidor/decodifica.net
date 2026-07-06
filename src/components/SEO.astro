@@ -45,10 +45,10 @@ const orgLd = {
   logo: new URL('/og-default.png', siteConfig.url).toString(),
   sameAs: [
     siteConfig.social.youtube,
+    siteConfig.social.facebook,
+    siteConfig.social.bluesky,
     siteConfig.social.tiktok,
-    siteConfig.social.x,
-    siteConfig.social.linkedin,
-  ],
+  ].filter(Boolean),
 };
 
 // JSON-LD WebSite (search box + sitelinks) - emitted on every page
@@ -121,8 +121,6 @@ const articleLd = type === 'article' && pubDate
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
-<meta name="twitter:site" content={siteConfig.author.twitter} />
-<meta name="twitter:creator" content={siteConfig.author.twitter} />
 
 <!-- Theme -->
 <meta name="theme-color" content="#06b6d4" />

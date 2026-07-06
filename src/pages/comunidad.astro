@@ -6,51 +6,69 @@ import { env } from '~/lib/env';
 
 <BaseLayout
   title="Comunidad Decodifica"
-  description="Comunidad de Decodifica para preguntas, recursos y decisiones prácticas sobre herramientas de IA."
+  description="Comunidad de Decodifica para preguntas, recursos y decisiones practicas sobre herramientas de IA."
 >
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
     <header class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
       <div>
-        <p class="mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
           La web es la casa de Decodifica
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
-          Pregunta, propone temas y guarda lo que sí merece la pena.
+          Pregunta, propone temas y sigue las pruebas de Decodifica.
         </h1>
         <p class="mt-4 text-lg text-dark-200">
-          La comunidad empieza simple: preguntas, ideas para próximos vídeos, recursos y seguimiento de herramientas que ya hemos analizado.
+          La comunidad empieza simple: dudas sobre herramientas, ideas para proximos videos, recursos compartidos y seguimiento de lo que ya hemos analizado.
         </p>
         <div class="mt-6 grid gap-3 text-sm text-dark-200 sm:grid-cols-3">
-          <div class="rounded-xl border border-dark-600 bg-dark-800 p-4">Preguntas sobre herramientas</div>
-          <div class="rounded-xl border border-dark-600 bg-dark-800 p-4">Ideas para vídeos y guías</div>
-          <div class="rounded-xl border border-dark-600 bg-dark-800 p-4">Recursos y decisiones guardadas</div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Preguntas sobre herramientas</div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Ideas para videos y guias</div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Recursos y decisiones guardadas</div>
         </div>
       </div>
       <NewsletterForm
-        title="Entra primero por la newsletter"
-        description="Mientras la comunidad crece, la newsletter será el canal estable para recibir recursos, avisos y próximos temas."
+        title="Entra primero por el email"
+        description="La newsletter es la puerta estable: recursos, avisos y preguntas que despues alimentan la comunidad."
         buttonLabel="Unirme gratis"
       />
     </header>
 
-    <section class="mt-12 rounded-2xl border border-dark-600 bg-dark-800 p-6">
+    <section class="mt-12 grid gap-5 lg:grid-cols-3">
+      <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <p class="text-sm font-semibold text-brand-300">1</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Recibe el filtro</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">La newsletter resume que probar, que evitar y que recurso guardar cada semana.</p>
+      </article>
+      <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <p class="text-sm font-semibold text-brand-300">2</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Trae una duda real</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Preguntas sobre herramientas, prompts, workflows o limites que merecen una prueba.</p>
+      </article>
+      <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <p class="text-sm font-semibold text-brand-300">3</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Convierte dudas en temas</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Las mejores preguntas se convierten en guias, recursos o proximos videos.</p>
+      </article>
+    </section>
+
+    <section class="mt-8 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 class="font-display text-2xl font-bold">Acceso a comunidad</h2>
           <p class="mt-2 text-sm text-dark-200">
-            Si ya tienes cuenta, puedes entrar con Google. Si aún no hay actividad, deja una pregunta o usa la newsletter para seguir el proyecto.
+            Si ya tienes cuenta, puedes entrar con Google. Si aun no hay actividad, usa la newsletter como entrada principal y responde con tu duda.
           </p>
         </div>
         <a
           href="/login"
           class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition hover:bg-brand-600"
         >
-          Iniciar sesión
+          Iniciar sesion
         </a>
       </div>
     </section>
 
-    <div id="user-info" class="mt-8 hidden rounded-2xl border border-dark-600 bg-dark-800 p-4 text-center">
+    <div id="user-info" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-4 text-center">
       <p class="text-sm text-dark-200">
         Conectado como <strong id="user-email"></strong>
       </p>
@@ -59,16 +77,16 @@ import { env } from '~/lib/env';
         type="button"
         class="mt-2 text-sm text-brand-400 hover:text-brand-300"
       >
-        Cerrar sesión
+        Cerrar sesion
       </button>
     </div>
 
     <div id="feed" class="mt-8 space-y-4 hidden"></div>
 
-    <div id="empty-state" class="mt-8 hidden rounded-2xl border border-dark-600 bg-dark-800 p-12 text-center">
-      <h2 class="font-display text-2xl font-bold">Todavía no hay publicaciones</h2>
+    <div id="empty-state" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-12 text-center">
+      <h2 class="font-display text-2xl font-bold">Todavia no hay publicaciones</h2>
       <p class="mt-2 text-dark-200">
-        La comunidad está preparada. El siguiente paso es traer preguntas reales desde YouTube, Facebook, Bluesky y la newsletter.
+        La comunidad esta preparada. El siguiente paso es traer preguntas reales desde YouTube, la newsletter, Facebook, Bluesky y TikTok.
       </p>
     </div>
   </div>
@@ -111,16 +129,16 @@ import { env } from '~/lib/env';
             const feed = document.getElementById('feed');
             feed.classList.remove('hidden');
             feed.innerHTML = posts.map((post) => `
-              <article class="rounded-2xl border border-dark-600 bg-dark-800 p-6">
+              <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
                 <h2 class="font-display text-lg font-bold">${escapeHtml(post.title)}</h2>
                 <p class="mt-2 text-sm text-dark-200">${escapeHtml(post.body.slice(0, 200))}...</p>
                 <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
-                  <span>${escapeHtml(post.author_display_name || 'Anónimo')}</span>
-                  <span>·</span>
+                  <span>${escapeHtml(post.author_display_name || 'Anonimo')}</span>
+                  <span>-</span>
                   <span>${new Date(post.created_at).toLocaleDateString('es-ES')}</span>
-                  <span>·</span>
+                  <span>-</span>
                   <span>${post.comments_count} comentarios</span>
-                  <span>·</span>
+                  <span>-</span>
                   <span>${post.likes_count} me gusta</span>
                 </div>
               </article>

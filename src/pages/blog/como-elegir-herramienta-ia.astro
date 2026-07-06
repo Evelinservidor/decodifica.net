@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+
+const title = 'Como elegir una herramienta de IA sin perder tiempo';
+const description = 'Un metodo practico para decidir que IA probar, que descartar y como medir si una herramienta merece entrar en tu flujo de trabajo.';
+const pubDate = '2026-07-06';
+const readingTime = '8 min';
+const tags = ['herramientas IA', 'productividad con IA', 'prompts', 'workflow IA', 'Decodifica'];
+const pillarLabel = 'Pilar 2: Productividad practica';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og-default.svg"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>-</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">{title}</h1>
+      <p class="mt-4 text-lg text-dark-200">{description}</p>
+    </header>
+
+    <div class="not-prose mb-10 rounded-lg border border-brand-500/20 bg-dark-800 p-6">
+      <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+      <p class="mt-3 text-sm leading-6 text-dark-200">
+        No empieces preguntando cual es la mejor IA. Empieza con una tarea concreta, una prueba de 20 minutos y un criterio de salida: si no mejora tiempo, calidad o claridad, no entra en tu sistema.
+      </p>
+    </div>
+
+    <p>
+      El problema de la IA en 2026 no es que falten herramientas. Es que sobran. Cada semana aparece una app nueva, un modelo nuevo, una extension nueva y una promesa nueva. Si pruebas todo, pierdes el dia. Si no pruebas nada, te quedas atras.
+    </p>
+    <p>
+      En Decodifica usamos una regla simple: una herramienta de IA solo importa si cambia una tarea real. No una demo perfecta. No un hilo viral. Una tarea que ya haces: escribir, resumir, planificar, analizar datos, preparar una presentacion, revisar codigo, aprender algo o automatizar un paso repetido.
+    </p>
+
+    <h2>1. Define la tarea antes de elegir la IA</h2>
+    <p>
+      La mayoria empieza al reves: abre una herramienta y busca para que usarla. Eso suele acabar en pruebas bonitas y cero adopcion. Empieza con esta frase:
+    </p>
+    <blockquote>
+      Quiero usar IA para convertir [entrada] en [salida] con menos tiempo, menos errores o mas claridad.
+    </blockquote>
+    <p>
+      Ejemplos buenos: convertir diez emails en tres tareas claras, transformar notas de reunion en un resumen enviable, sacar una primera version de una presentacion, explicar una hoja de calculo, preparar preguntas para estudiar un PDF.
+    </p>
+    <p>
+      Si no puedes escribir la tarea en una frase, todavia no necesitas una herramienta. Necesitas acotar el problema.
+    </p>
+
+    <h2>2. Haz una prueba pequena y comparable</h2>
+    <p>
+      Una prueba util no dura una semana. Dura 20 o 30 minutos y usa material real, aunque sea poco. El objetivo es comparar contra tu forma actual de trabajar.
+    </p>
+    <ul>
+      <li><strong>Entrada:</strong> usa un email, documento, tabla o briefing real.</li>
+      <li><strong>Salida esperada:</strong> define formato, longitud y nivel de detalle.</li>
+      <li><strong>Tiempo limite:</strong> si se alarga demasiado, la herramienta ya esta fallando.</li>
+      <li><strong>Revision:</strong> mide cuanta correccion humana necesita.</li>
+    </ul>
+    <p>
+      La pregunta no es "ha respondido bien". La pregunta es "me deja mas cerca del resultado final que mi metodo anterior".
+    </p>
+
+    <h2>3. Mira tres senales: friccion, control y reutilizacion</h2>
+    <p>
+      Una herramienta puede impresionar en una demo y aun asi ser mala para tu dia a dia. Antes de adoptarla, mira estas tres senales.
+    </p>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+        <h3 class="font-display text-lg font-bold text-white">Friccion</h3>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Cuantos pasos exige antes de darte algo util.</p>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+        <h3 class="font-display text-lg font-bold text-white">Control</h3>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Si puedes revisar, corregir y limitar lo que hace.</p>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+        <h3 class="font-display text-lg font-bold text-white">Reutilizacion</h3>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Si el flujo sirve la semana que viene, no solo hoy.</p>
+      </div>
+    </div>
+
+    <h2>4. No metas datos sensibles en la primera prueba</h2>
+    <p>
+      Para probar una IA no necesitas darle tus datos mas delicados. Usa documentos anonimizados, ejemplos recortados o informacion que no comprometa a clientes, cuentas, salud, contratos ni material interno sensible.
+    </p>
+    <p>
+      Si una herramienta exige acceso completo a tu correo, calendario, Drive o repositorio, la pregunta cambia. Ya no estas probando solo calidad de respuesta: estas evaluando permisos, privacidad, reversibilidad y confianza.
+    </p>
+
+    <h2>5. Decide con una tabla de cuatro filas</h2>
+    <p>
+      No hace falta una auditoria enorme. Para decidir si una herramienta entra en tu flujo, basta una tabla breve:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Criterio</th>
+          <th>Pregunta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tiempo</td>
+          <td>Me ahorra minutos reales despues de revisar?</td>
+        </tr>
+        <tr>
+          <td>Calidad</td>
+          <td>La salida es mejor, igual o peor que mi primer borrador?</td>
+        </tr>
+        <tr>
+          <td>Confianza</td>
+          <td>Puedo detectar errores antes de usarlos?</td>
+        </tr>
+        <tr>
+          <td>Repeticion</td>
+          <td>La usaria otra vez la semana que viene?</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>6. Cuando descartarla</h2>
+    <p>
+      Descartar rapido tambien es una habilidad. Una herramienta no merece tu tiempo si necesita demasiada preparacion, si inventa datos que no puedes detectar, si pide permisos excesivos para una tarea menor o si la salida parece buena pero exige tanta revision que no ahorra nada.
+    </p>
+    <p>
+      Tambien conviene descartar las herramientas que solo funcionan en demos ideales. La IA que sirve es la que aguanta tus datos desordenados, tus restricciones y tus plazos.
+    </p>
+
+    <h2>7. Cuando adoptarla</h2>
+    <p>
+      Una herramienta entra en tu sistema cuando supera tres pruebas: funciona con material real, reduce friccion y puedes repetir el flujo. Si ademas permite guardar instrucciones, plantillas, proyectos, memoria o pasos reutilizables, mejor.
+    </p>
+    <p>
+      La adopcion no significa pagar de inmediato ni cambiar todo tu flujo. Puede ser tan simple como guardarla para una tarea concreta: "esta IA para resumir PDFs", "esta para emails", "esta para presentaciones", "esta para codigo revisable".
+    </p>
+
+    <h2>Checklist de Decodifica</h2>
+    <ul>
+      <li>Tarea concreta en una frase.</li>
+      <li>Material real, pero no sensible.</li>
+      <li>Prueba de 20-30 minutos.</li>
+      <li>Salida esperada definida antes de empezar.</li>
+      <li>Revision humana incluida en el tiempo total.</li>
+      <li>Decision final: adoptar, guardar para mas tarde o descartar.</li>
+    </ul>
+
+    <h2>Que leer despues</h2>
+    <ul>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos IA de Decodifica</a>, para empezar con prompts y workflows copiables.</li>
+      <li><a href="/blog/claude-skills-desde-cero/" class="text-brand-400 hover:text-brand-300">Claude Skills desde cero</a>, si quieres convertir instrucciones repetidas en sistema.</li>
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IA para organizar pendientes</a>, si buscas herramientas conectadas a tu flujo real.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Siguiente paso"
+      title="Convierte esta guia en una prueba real"
+      description="Guarda los recursos IA de Decodifica y usa la newsletter para recibir nuevas pruebas, prompts y decisiones practicas."
+      primaryHref="/recursos#newsletter"
+      primaryLabel="Recibir recursos"
+      secondaryHref="/comunidad"
+      secondaryLabel="Entrar en comunidad"
+    />
+
+    <div class="not-prose mt-8">
+      <NewsletterForm
+        title="Recibe el filtro semanal de Decodifica"
+        description="Una herramienta que merece la pena, una decision practica y un recurso para probarla sin empezar de cero."
+        buttonLabel="Apuntarme gratis"
+      />
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: pubDate,
+    author: {
+      '@type': 'Person',
+      name: 'Jordi Castaneira',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Decodifica',
+    },
+    about: tags,
+  })} />
+</BaseLayout>

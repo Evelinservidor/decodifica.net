@@ -21,20 +21,28 @@ const year = new Date().getFullYear();
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Web</h3>
         <ul class="mt-4 space-y-2 text-sm">
           <li><a href="/blog" class="text-dark-200 hover:text-brand-400">Blog</a></li>
-          <li><a href="/recursos" class="text-dark-200 hover:text-brand-400">Recursos</a></li>
+          <li><a href="/recursos" class="text-dark-200 hover:text-brand-400">Recursos IA</a></li>
           <li><a href="/comunidad" class="text-dark-200 hover:text-brand-400">Comunidad</a></li>
           <li><a href="/sobre" class="text-dark-200 hover:text-brand-400">Sobre Decodifica</a></li>
-          <li><a href="/decodifica" class="text-dark-200 hover:text-brand-400">Canal</a></li>
+          <li><a href="/contacto" class="text-dark-200 hover:text-brand-400">Contacto</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Social</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Seguir</h3>
         <ul class="mt-4 space-y-2 text-sm">
           <li><a href={siteConfig.social.youtube} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href={siteConfig.social.tiktok} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">TikTok</a></li>
-          <li><a href={siteConfig.social.x} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">X / Twitter</a></li>
-          <li><a href={siteConfig.social.linkedin} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">LinkedIn</a></li>
+          {siteConfig.social.facebook && (
+            <li><a href={siteConfig.social.facebook} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Facebook</a></li>
+          )}
+          {siteConfig.social.bluesky && (
+            <li><a href={siteConfig.social.bluesky} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Bluesky</a></li>
+          )}
+          {siteConfig.social.tiktok && (
+            <li><a href={siteConfig.social.tiktok} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">TikTok</a></li>
+          )}
+          <li><a href={siteConfig.newsletter.url} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Newsletter</a></li>
+          <li><a href={`mailto:${siteConfig.author.email}`} class="text-dark-200 hover:text-brand-400">{siteConfig.author.publicEmailLabel}</a></li>
         </ul>
       </div>
     </div>

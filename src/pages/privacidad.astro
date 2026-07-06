@@ -1,71 +1,71 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import { siteConfig } from '~/lib/site-config';
 ---
 
 <BaseLayout
-  title="Política de privacidad"
-  description="Cómo recopilamos, usamos y protegemos tus datos personales."
+  title="Politica de privacidad"
+  description="Como recopilamos, usamos y protegemos tus datos personales en Decodifica."
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <h1>Política de privacidad</h1>
-    <p><em>Última actualización: 6 de julio de 2026</em></p>
+    <h1>Politica de privacidad</h1>
+    <p><em>Ultima actualizacion: 6 de julio de 2026</em></p>
 
     <h2>1. Responsable del tratamiento</h2>
     <p>
-      Decodifica es un proyecto editorial gestionado por Jordi Castañeira. Para cualquier consulta sobre privacidad puedes escribir a hola@decodifica.net.
+      Decodifica es un proyecto editorial gestionado por Jordi Castaneira. Para cualquier consulta sobre privacidad puedes escribir a <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.publicEmailLabel}</a>.
     </p>
 
-    <h2>2. Qué datos recopilamos</h2>
+    <h2>2. Que datos recopilamos</h2>
     <ul>
-      <li><strong>Datos de cuenta</strong>: si te registras con Google o email, recopilamos tu email y nombre.</li>
-      <li><strong>Contenido generado por ti</strong>: posts, comentarios y mensajes que publiques en la comunidad.</li>
-      <li><strong>Newsletter</strong>: si te suscribes, tratamos tu email y los datos necesarios para gestionar el envío y la baja.</li>
-      <li><strong>Datos de uso agregados</strong>: si aceptas la analítica, podemos medir páginas vistas y uso general mediante Plausible Analytics.</li>
-      <li><strong>Datos técnicos</strong>: dirección IP, navegador, dispositivo y registros técnicos necesarios para seguridad, funcionamiento y prevención de abuso.</li>
+      <li><strong>Datos de cuenta:</strong> si te registras con Google o email, recopilamos tu email y nombre.</li>
+      <li><strong>Contenido generado por ti:</strong> posts, comentarios y mensajes que publiques en la comunidad.</li>
+      <li><strong>Newsletter:</strong> si te suscribes, tratamos tu email y los datos necesarios para gestionar el envio y la baja.</li>
+      <li><strong>Datos de uso agregados:</strong> si aceptas la analitica, podemos medir paginas vistas y uso general mediante Plausible Analytics.</li>
+      <li><strong>Datos tecnicos:</strong> direccion IP, navegador, dispositivo y registros necesarios para seguridad, funcionamiento y prevencion de abuso.</li>
     </ul>
 
-    <h2>3. Para qué los usamos</h2>
+    <h2>3. Para que los usamos</h2>
     <ul>
-      <li>Gestionar tu cuenta y autenticación.</li>
-      <li>Mostrar tu contenido público en la comunidad.</li>
-      <li>Enviarte la newsletter si te suscribes (vía Buttondown).</li>
-      <li>Analizar el uso del sitio de forma agregada si aceptas la analítica.</li>
+      <li>Gestionar tu cuenta y autenticacion.</li>
+      <li>Mostrar tu contenido publico en la comunidad.</li>
+      <li>Enviarte la newsletter si te suscribes mediante Buttondown.</li>
+      <li>Analizar el uso del sitio de forma agregada si aceptas la analitica.</li>
       <li>Proteger la web, detectar errores y evitar usos abusivos.</li>
     </ul>
 
     <h2>4. Base legal</h2>
     <p>
-      Tratamos tus datos en base a tu consentimiento (registro, suscripción a newsletter, analítica opcional), la ejecución de servicios solicitados por ti y nuestro interés legítimo en mantener la web segura y funcionando correctamente.
+      Tratamos tus datos en base a tu consentimiento, la ejecucion de servicios solicitados por ti y nuestro interes legitimo en mantener la web segura y funcionando correctamente.
     </p>
 
     <h2>5. Terceros</h2>
     <ul>
-      <li><strong>Supabase</strong>: almacena tu cuenta y datos de la comunidad. Servidores en EU.</li>
-      <li><strong>Buttondown</strong>: gestiona la newsletter. Ver su <a href="https://buttondown.com/privacy" target="_blank" rel="noopener">política de privacidad</a>.</li>
-      <li><strong>Plausible</strong>: analítica agregada y sin perfiles publicitarios. Ver su <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">política</a>.</li>
-      <li><strong>Google</strong>: si usas "Sign in with Google", Google actúa como responsable. Ver su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política</a>.</li>
-      <li><strong>YouTube</strong>: algunos artículos incluyen vídeos embebidos. Usamos el modo de privacidad mejorada cuando es posible.</li>
+      <li><strong>Supabase:</strong> almacena tu cuenta y datos de la comunidad.</li>
+      <li><strong>Buttondown:</strong> gestiona la newsletter. Ver su <a href="https://buttondown.com/privacy" target="_blank" rel="noopener">politica de privacidad</a>.</li>
+      <li><strong>Plausible:</strong> analitica agregada y sin perfiles publicitarios. Ver su <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">politica</a>.</li>
+      <li><strong>Google:</strong> si usas inicio de sesion con Google, Google actua como responsable. Ver su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politica</a>.</li>
+      <li><strong>YouTube:</strong> algunos articulos incluyen videos embebidos en modo de privacidad mejorada cuando es posible.</li>
     </ul>
 
     <h2>6. Tus derechos</h2>
     <p>
-      Puedes acceder, rectificar, suprimir, limitar el tratamiento, oponerte al tratamiento y solicitar
-      la portabilidad de tus datos. Para ejercer estos derechos, escríbenos a hola@decodifica.net.
+      Puedes acceder, rectificar, suprimir, limitar el tratamiento, oponerte al tratamiento y solicitar la portabilidad de tus datos. Para ejercer estos derechos, escribenos a <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.publicEmailLabel}</a>.
     </p>
 
-    <h2>7. Retención de datos</h2>
+    <h2>7. Retencion de datos</h2>
     <p>
-      Conservamos tus datos mientras tu cuenta esté activa, mientras sigas suscrito a la newsletter o mientras sean necesarios para la finalidad para la que se recogieron. Si solicitas la eliminación, la tramitaremos salvo que exista una obligación legal de conservación.
+      Conservamos tus datos mientras tu cuenta este activa, mientras sigas suscrito a la newsletter o mientras sean necesarios para la finalidad para la que se recogieron. Si solicitas la eliminacion, la tramitaremos salvo que exista una obligacion legal de conservacion.
     </p>
 
     <h2>8. Seguridad</h2>
     <p>
-      Usamos HTTPS, autenticación gestionada por Supabase, controles de acceso y medidas razonables para proteger los datos. Ningún sistema es 100% seguro, pero revisamos la configuración y reducimos la exposición de datos al mínimo necesario.
+      Usamos HTTPS, autenticacion gestionada por Supabase, controles de acceso y medidas razonables para proteger los datos. Ningun sistema es 100% seguro, pero reducimos la exposicion de datos al minimo necesario.
     </p>
 
-    <h2>9. Cambios en esta política</h2>
+    <h2>9. Cambios en esta politica</h2>
     <p>
-      Si cambiamos algo material, te avisaremos por email y publicaremos la nueva versión aquí.
+      Si cambiamos algo material, lo indicaremos en esta pagina y, cuando proceda, avisaremos por email.
     </p>
   </article>
 </BaseLayout>

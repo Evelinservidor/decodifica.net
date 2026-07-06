@@ -1,83 +1,101 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
+import ConversionBand from '~/components/ConversionBand.astro';
 import { siteConfig } from '~/lib/site-config';
+
+const latestGuides = [
+  {
+    title: 'Elegir una herramienta de IA sin perder tiempo',
+    href: '/blog/como-elegir-herramienta-ia/',
+    description: 'Un metodo corto para decidir que probar, que descartar y que revisar antes de meter una IA en tu flujo.',
+  },
+  {
+    title: 'Claude Skills desde cero',
+    href: '/blog/claude-skills-desde-cero/',
+    description: 'Como pasar de prompts sueltos a instrucciones reutilizables para trabajar mejor con Claude.',
+  },
+  {
+    title: 'IA para organizar pendientes',
+    href: '/blog/ia-organiza-pendientes/',
+    description: 'Conectores, agentes y limites practicos para ordenar tareas con menos friccion.',
+  },
+];
 ---
 
 <BaseLayout
-  title="IA útil en español"
-  description="Decodifica filtra herramientas de IA, modelos y workflows para que sepas qué probar, qué evitar y cómo aplicarlo."
+  title="IA util en espanol"
+  description="Decodifica filtra herramientas de IA, modelos y workflows para que sepas que probar, que evitar y como aplicarlo."
 >
-  <section class="relative overflow-hidden border-b border-dark-600 bg-dark-900">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.12),_transparent_35%)]"></div>
-    <div class="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:py-24">
-      <div>
-        <p class="mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          IA práctica para gente que quiere resultados, no ruido
+  <section class="border-b border-dark-600 bg-dark-900">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[1fr_420px] lg:px-8 lg:py-20">
+      <div class="max-w-3xl">
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          IA practica para decidir mejor
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          {siteConfig.tagline}
+          Herramientas de IA filtradas antes de que pierdas la tarde probandolas.
         </h1>
-        <p class="mt-6 max-w-2xl text-lg text-dark-200 sm:text-xl">
-          Cada vídeo, guía y recurso responde a una pregunta simple: qué herramienta de IA merece tu tiempo y cómo usarla en una tarea real.
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-dark-200">
+          Decodifica separa lo util del ruido: que merece la pena probar, como aplicarlo en una tarea real y que limites conviene tener claros antes de depender de una herramienta.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
-            href="/recursos"
-            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-7 py-3.5 text-lg font-semibold text-white shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-600"
+            href="#newsletter"
+            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-600"
           >
-            Descargar recursos gratis
+            Recibir el filtro semanal
           </a>
           <a
-            href="/comunidad"
-            class="inline-flex items-center justify-center rounded-lg border border-dark-500 bg-dark-700 px-7 py-3.5 text-lg font-semibold text-white transition-all hover:bg-dark-600"
+            href="/recursos"
+            class="inline-flex items-center justify-center rounded-lg border border-dark-500 bg-dark-800 px-6 py-3 text-base font-semibold text-white transition-all hover:bg-dark-700"
           >
-            Entrar en la comunidad
+            Ver recursos IA
           </a>
         </div>
-        <dl class="mt-10 grid max-w-2xl grid-cols-3 gap-4 text-sm">
-          <div>
-            <dt class="text-2xl font-bold text-white">2</dt>
-            <dd class="text-dark-300">pilares editoriales</dd>
-          </div>
-          <div>
-            <dt class="text-2xl font-bold text-white">0</dt>
-            <dd class="text-dark-300">hype gratuito</dd>
-          </div>
-          <div>
+        <dl class="mt-10 grid max-w-2xl gap-4 text-sm sm:grid-cols-3">
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
             <dt class="text-2xl font-bold text-white">1</dt>
-            <dd class="text-dark-300">decisión clara por tema</dd>
+            <dd class="mt-1 text-dark-300">decision practica por tema</dd>
+          </div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
+            <dt class="text-2xl font-bold text-white">0</dt>
+            <dd class="mt-1 text-dark-300">hype gratuito</dd>
+          </div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
+            <dt class="text-2xl font-bold text-white">2</dt>
+            <dd class="mt-1 text-dark-300">pilares: herramientas y productividad</dd>
           </div>
         </dl>
       </div>
 
-      <div class="rounded-2xl border border-dark-600 bg-dark-800/80 p-5 shadow-xl shadow-black/20">
+      <div id="newsletter">
         <NewsletterForm
-          title="Convierte el ruido de IA en decisiones"
-          description="Te enviamos lo que merece la pena probar, cuándo usarlo y qué recurso guardar para aplicarlo."
-          buttonLabel="Recibir el filtro"
+          title="Recibe el filtro Decodifica"
+          description="Una vez por semana: una herramienta que merece la pena, una decision practica y un recurso para probarla sin empezar de cero."
+          buttonLabel="Apuntarme gratis"
         />
       </div>
     </div>
   </section>
 
-  <section class="border-b border-dark-600 bg-dark-800/50 py-14 sm:py-16">
+  <section class="border-b border-dark-600 bg-dark-800/50 py-12 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid gap-5 md:grid-cols-3">
-        <a href="/blog" class="rounded-2xl border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
-          <p class="text-sm font-semibold text-brand-300">Blog</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">Guías que responden búsquedas reales</h2>
-          <p class="mt-3 text-sm text-dark-200">No transcripciones: decisiones, pasos y contexto para usar IA mejor.</p>
+        <a href="/recursos" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
+          <p class="text-sm font-semibold text-brand-300">Recursos IA</p>
+          <h2 class="mt-2 font-display text-2xl font-bold">Prompts, workflows y guias descargables</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">El primer paso si vienes desde YouTube y quieres aplicar algo hoy, no solo leer otra noticia.</p>
         </a>
-        <a href="/recursos" class="rounded-2xl border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
-          <p class="text-sm font-semibold text-brand-300">Recursos</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">PDFs, prompts y workflows</h2>
-          <p class="mt-3 text-sm text-dark-200">Material descargable para convertir vídeos en uso práctico.</p>
+        <a href="/blog/como-elegir-herramienta-ia/" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
+          <p class="text-sm font-semibold text-brand-300">Guia evergreen</p>
+          <h2 class="mt-2 font-display text-2xl font-bold">Un metodo para elegir bien</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">La pieza base para convertir curiosidad en criterio antes de probar cualquier herramienta nueva.</p>
         </a>
-        <a href="/comunidad" class="rounded-2xl border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
+        <a href="/comunidad" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
           <p class="text-sm font-semibold text-brand-300">Comunidad</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">Preguntas, dudas y próximos temas</h2>
-          <p class="mt-3 text-sm text-dark-200">El lugar para convertir comentarios sueltos en una audiencia propia.</p>
+          <h2 class="mt-2 font-display text-2xl font-bold">Preguntas y proximos temas</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">Un lugar simple para seguir el proyecto, proponer pruebas y no depender solo del algoritmo.</p>
         </a>
       </div>
     </div>
@@ -85,33 +103,63 @@ import { siteConfig } from '~/lib/site-config';
 
   <section class="py-14 sm:py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="font-display text-3xl font-bold sm:text-4xl">
-          Dos pilares. Una función: ahorrar decisiones.
-        </h2>
-        <p class="mt-4 text-dark-200">
-          Decodifica no cubre toda la IA. Filtra lo que puede convertirse en uso real.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        {siteConfig.pillars.map((pilar) => (
-          <article class="flex h-full flex-col rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-8">
-            <h3 class="font-display text-2xl font-bold text-white">
-              {pilar.title}
-            </h3>
-            <p class="mt-3 grow text-dark-200">
-              {pilar.description}
+      <div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Como funciona el embudo</p>
+          <h2 class="mt-2 font-display text-3xl font-bold sm:text-4xl">
+            YouTube descubre. La web ordena. El email retiene.
+          </h2>
+          <p class="mt-4 text-dark-200">
+            Cada contenido importante debe dejar una ruta clara: ver el analisis, guardar un recurso, apuntarse al filtro semanal y entrar en comunidad cuando haya una duda real.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {siteConfig.pillars.map((pilar) => (
+            <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+              <h3 class="font-display text-xl font-bold text-white">{pilar.title}</h3>
+              <p class="mt-3 text-sm leading-6 text-dark-200">{pilar.description}</p>
+            </article>
+          ))}
+          <article class="rounded-lg border border-dark-600 bg-dark-800 p-6 sm:col-span-2">
+            <h3 class="font-display text-xl font-bold text-white">Lo que no entra</h3>
+            <p class="mt-3 text-sm leading-6 text-dark-200">
+              No cubrimos IA como espectaculo: evitamos comparativas genericas, humo de lanzamiento y temas que no acaban en una decision util.
             </p>
-            <a
-              href="/blog/"
-              class="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700"
-            >
-              Ver guías →
-            </a>
           </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-dark-600 bg-dark-800/50 py-14 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Lecturas para empezar</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">Guias con decision, no transcripciones</h2>
+        </div>
+        <a href="/blog" class="text-sm font-semibold text-brand-300 hover:text-brand-200">Ver todo el blog</a>
+      </div>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {latestGuides.map((guide) => (
+          <a href={guide.href} class="rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/60">
+            <h3 class="font-display text-xl font-bold text-white">{guide.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-dark-200">{guide.description}</p>
+          </a>
         ))}
       </div>
     </div>
   </section>
+
+  <div class="mx-auto max-w-7xl px-4 pb-14 pt-4 sm:px-6 lg:px-8">
+    <ConversionBand
+      eyebrow="Siguiente paso"
+      title="Empieza por el filtro semanal"
+      description="Si un video te interesa, la newsletter te da la version corta: que probar, que evitar y que recurso guardar para aplicarlo."
+      primaryHref="/recursos#newsletter"
+      primaryLabel="Apuntarme gratis"
+      secondaryHref="/comunidad"
+      secondaryLabel="Ver comunidad"
+    />
+  </div>
 </BaseLayout>

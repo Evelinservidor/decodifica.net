@@ -8,86 +8,106 @@ const pdfUrl = `${env.PUBLIC_SUPABASE_URL}/storage/v1/object/public/recursos/50-
 const recursos = [
   {
     title: '50 prompts para IA',
-    description:
-      'Plantillas para escribir, investigar, resumir, planificar y trabajar mejor con ChatGPT, Claude o Gemini.',
+    description: 'Plantillas para escribir, investigar, resumir, planificar, aprender y trabajar mejor con ChatGPT, Claude o Gemini.',
     type: 'PDF',
     pages: 13,
-    icon: 'PDF',
-    downloadUrl: pdfUrl,
+    href: pdfUrl,
+    status: 'Disponible',
   },
   {
-    title: 'Workflows de IA para el día a día',
-    description:
-      'Cinco flujos prácticos para convertir tareas repetidas en procesos con IA.',
+    title: 'Workflows de IA para el dia a dia',
+    description: 'Cinco flujos practicos para convertir tareas repetidas en procesos con IA: email, planificacion, analisis y aprendizaje.',
     type: 'PDF',
     pages: 8,
-    icon: 'Workflow',
-    downloadUrl: '/lead-magnets/workflows-ia-dia-a-dia.pdf',
+    href: '/lead-magnets/workflows-ia-dia-a-dia.pdf',
+    status: 'Disponible',
   },
   {
-    title: 'Mini curso: usar IA con más contexto',
-    description:
-      'Cinco lecciones breves para pasar de prompts sueltos a un sistema de trabajo más estable.',
+    title: 'Mini curso: usar IA con mas contexto',
+    description: 'Cinco lecciones breves para pasar de prompts sueltos a un sistema de trabajo mas estable.',
     type: 'Curso',
     pages: 5,
-    icon: 'Curso',
-    downloadUrl: '/comunidad',
-    comingSoon: true,
+    href: '#newsletter',
+    status: 'Proximo envio',
   },
+];
+
+const categorias = [
+  'Prompts copiables',
+  'Workflows de productividad',
+  'Guias para elegir herramientas',
+  'Material de apoyo de los videos',
 ];
 ---
 
 <BaseLayout
-  title="Recursos gratis de IA"
-  description="PDFs, prompts y workflows gratis para aplicar IA en tareas reales sin perder tiempo."
+  title="Recursos IA gratis"
+  description="Biblioteca de recursos IA de Decodifica: prompts, workflows y guias practicas para aplicar inteligencia artificial en tareas reales."
 >
   <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
-    <header class="mx-auto max-w-3xl text-center">
-      <p class="mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-        Biblioteca práctica
-      </p>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">Recursos gratis para usar IA mejor</h1>
-      <p class="mt-4 text-lg text-dark-200">
-        Descarga prompts, workflows y guías que convierten los vídeos de Decodifica en acciones concretas.
-      </p>
+    <header class="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          Recursos IA
+        </p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+          Prompts, workflows y guias para usar IA sin empezar de cero.
+        </h1>
+        <p class="mt-4 max-w-2xl text-lg leading-8 text-dark-200">
+          Esta es la biblioteca practica de Decodifica: materiales cortos para convertir un video o una idea en una prueba real. El objetivo no es coleccionar PDFs, sino ahorrar decisiones.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {categorias.map((categoria) => (
+            <span class="rounded-lg border border-dark-600 bg-dark-800 px-3 py-1.5 text-sm text-dark-200">{categoria}</span>
+          ))}
+        </div>
+      </div>
+      <NewsletterForm
+        title="Recibe nuevos recursos"
+        description="Te enviamos los recursos nuevos y el filtro semanal de herramientas IA que merece la pena probar."
+        buttonLabel="Recibir recursos"
+      />
     </header>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section class="mt-12 grid gap-6 lg:grid-cols-3">
       {recursos.map((recurso) => (
-        <article class="flex h-full flex-col rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition hover:border-brand-500/50">
+        <article class="flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/50">
           <div class="flex items-center justify-between gap-3">
-            <span class="rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{recurso.icon}</span>
-            <span class="text-xs text-dark-300">{recurso.pages} pág.</span>
+            <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{recurso.type}</span>
+            <span class="text-xs text-dark-300">{recurso.status}</span>
           </div>
-          <h2 class="mt-4 font-display text-xl font-bold text-white">
-            {recurso.title}
-          </h2>
-          <p class="mt-2 grow text-sm text-dark-200">
-            {recurso.description}
-          </p>
-          <div class="mt-5">
-            {recurso.comingSoon ? (
-              <span class="inline-flex items-center gap-2 rounded-lg border border-dark-500 bg-dark-600 px-3 py-1.5 text-sm font-semibold text-dark-300">
-                Próximamente
-              </span>
-            ) : (
-              <a
-                href="#newsletter"
-                class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700"
-              >
-                Recibir por email →
-              </a>
-            )}
+          <h2 class="mt-4 font-display text-xl font-bold text-white">{recurso.title}</h2>
+          <p class="mt-2 grow text-sm leading-6 text-dark-200">{recurso.description}</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="text-xs text-dark-300">{recurso.pages} pag.</span>
+            <a
+              href={recurso.href}
+              class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700"
+            >
+              Abrir recurso
+            </a>
           </div>
         </article>
       ))}
-    </div>
+    </section>
+
+    <section class="mt-12 grid gap-5 rounded-lg border border-dark-600 bg-dark-800 p-6 lg:grid-cols-[.8fr_1.2fr] lg:p-8">
+      <div>
+        <p class="text-sm font-semibold text-brand-300">Ruta recomendada</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">De recurso a sistema</h2>
+      </div>
+      <ol class="grid gap-4 sm:grid-cols-3">
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">1. Guarda un prompt.</strong> Empieza por una tarea concreta, no por una herramienta de moda.</li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">2. Pruebalo en tu contexto.</strong> Cambia datos, restricciones y formato de salida.</li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">3. Trae la duda.</strong> Usa la comunidad o responde a la newsletter cuando algo no encaje.</li>
+      </ol>
+    </section>
 
     <div id="newsletter" class="mt-14">
       <NewsletterForm
-        title="Recibe los recursos y próximos envíos"
-        description="Apúntate y usa esta biblioteca como punto de entrada a guías, prompts y workflows de Decodifica."
-        buttonLabel="Enviar recursos"
+        title="Que recurso te enviamos primero"
+        description="Apuntate y usa esta biblioteca como punto de entrada a guias, prompts y workflows de Decodifica."
+        buttonLabel="Apuntarme gratis"
       />
     </div>
   </div>

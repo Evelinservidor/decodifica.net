@@ -12,13 +12,17 @@ export const siteConfig = {
   author: {
     name: 'Jordi',
     email: 'hola@decodifica.net',
-    twitter: '@decodificaia',
+    publicEmailLabel: 'hola@decodifica.net',
   },
   social: {
-    youtube: 'https://youtube.com/@decodificaia',
-    tiktok: 'https://tiktok.com/@decodificaia',
-    x: 'https://x.com/decodificaia',
-    linkedin: 'https://linkedin.com/in/decodificaia',
+    youtube: 'https://www.youtube.com/@decodificaia',
+    facebook: 'https://www.facebook.com/JCAutomatizacionesIA',
+    bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
+    tiktok: 'https://www.tiktok.com/@decodificalaia',
+  },
+  newsletter: {
+    url: 'https://buttondown.email/decodifica',
+    username: 'decodifica',
   },
   pillars: [
     {

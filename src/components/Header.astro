@@ -7,10 +7,9 @@ const currentPath = Astro.url.pathname;
 const navItems = [
   { href: '/', label: 'Inicio' },
   { href: '/blog', label: 'Blog' },
-  { href: '/recursos', label: 'Recursos' },
+  { href: '/recursos', label: 'Recursos IA' },
   { href: '/comunidad', label: 'Comunidad' },
   { href: '/sobre', label: 'Sobre' },
-  { href: '/decodifica', label: 'Canal' },
 ];
 ---
 
@@ -40,11 +39,11 @@ const navItems = [
     </ul>
 
     <div class="flex items-center gap-2">
-      <Button href="/recursos" variant="ghost" size="sm" class="hidden sm:inline-flex">
-        Recursos gratis
+      <Button href="/recursos#newsletter" variant="ghost" size="sm" class="hidden sm:inline-flex">
+        Newsletter
       </Button>
       <Button href="/comunidad" variant="primary" size="sm">
-        Entrar
+        Comunidad
       </Button>
     </div>
   </nav>
