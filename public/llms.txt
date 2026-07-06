@@ -1,0 +1,49 @@
+# Decodifica
+
+> Decodifica es una web y canal en espanol sobre inteligencia artificial practica: herramientas, modelos y flujos de trabajo que una persona puede probar, entender y aplicar sin perderse en hype.
+
+Decodifica prioriza contenido util, verificable y accionable para usuarios de Espana, Latinoamerica e hispanohablantes de Estados Unidos. El foco editorial esta en dos areas: aplicaciones y modelos de IA que se pueden usar o probar, y productividad practica con IA.
+
+El tono de Decodifica es directo, claro y con criterio propio. La web no publica transcripciones literales de los videos: convierte cada tema en una guia escrita con contexto, decision practica, limites relevantes, enlaces internos y una invitacion clara a seguir aprendiendo en la comunidad o newsletter.
+
+## Main pages
+
+- [Home](https://decodifica.net/): entrada principal a Decodifica, con ultimos contenidos, recursos y propuesta de valor.
+- [Blog](https://decodifica.net/blog/): guias y articulos practicos sobre herramientas de IA, productividad y modelos utiles.
+- [Recursos](https://decodifica.net/recursos/): materiales descargables, prompts, flujos y recursos para aplicar IA en el dia a dia.
+- [Comunidad](https://decodifica.net/comunidad/): punto de entrada para seguir Decodifica, participar y recibir contenidos seleccionados.
+- [Contacto](https://decodifica.net/contacto/): contacto editorial y colaboraciones.
+
+## Core guides
+
+- [NotebookLM 2026: la IA de Google que solo lee tus documentos](https://decodifica.net/blog/notebooklm-guia-2026/): guia practica para usar NotebookLM con documentos propios, estudiar, investigar y trabajar con fuentes cerradas.
+- [5 alternativas gratuitas a ChatGPT en 2026](https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/): comparativa de alternativas gratuitas a ChatGPT con casos de uso reales.
+- [5 IAs para organizar Gmail, Calendar y Notion en 2026](https://decodifica.net/blog/ia-organiza-pendientes/): decision practica sobre asistentes para organizar tareas, correo, calendario y herramientas de trabajo.
+- [5 IAs para Excel en 2026](https://decodifica.net/blog/ia-mejora-excel/): comparativa de herramientas de IA para formulas, hojas de calculo y analisis de datos.
+- [5 IAs para crear presentaciones en 2026](https://decodifica.net/blog/ia-crea-presentaciones-completas/): guia para elegir herramientas de presentaciones con IA sin perder control del resultado.
+
+## AI tools and model analysis
+
+- [Qwen Code ya no es solo un CLI](https://decodifica.net/blog/qwen-code-agent-terminal/): analisis de Qwen Code como capa de trabajo para terminal, agentes, modelos y aprobaciones.
+- [Claude Skills desde cero](https://decodifica.net/blog/claude-skills-desde-cero/): introduccion practica a Claude Skills y como crear un primer skill personalizado.
+- [Como configurar Claude para escribir emails sin que suene a robot](https://decodifica.net/blog/claude-emails-sonar-humanos/): guia de prompts y criterio para escribir emails profesionales con IA.
+- [Como crear un Agente de Voz con IA sin programar](https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/): comparativa de plataformas para crear agentes de voz sin codigo.
+- [La IA gratis que esta hundiendo a Silicon Valley](https://decodifica.net/blog/ia-gratis-silicon-valley/): guia sobre modelos y herramientas gratuitas que compiten con alternativas comerciales.
+- [Odysseus de PewDiePie](https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/): explicacion de Odysseus, alternativas locales y como probar este tipo de IA.
+
+## Editorial policy
+
+- Decodifica separa hechos, declaraciones de fabricantes, pruebas propias e inferencias.
+- Las fuentes preferidas son documentacion oficial, repositorios, anuncios primarios, benchmarks con metodologia publica y prensa especializada para contexto.
+- YouTube puede inspirar un tema, pero no valida especificaciones ni claims por si solo.
+- Los contenidos deben ayudar al lector a decidir que probar, que evitar y como aplicar una herramienta en una situacion real.
+- Decodifica evita el hype vacio, las comparativas genericas y la divulgacion sin una accion practica clara.
+
+## Technical discovery
+
+- [Sitemap](https://decodifica.net/sitemap-index.xml): sitemap XML canonico de la web.
+- [Robots.txt](https://decodifica.net/robots.txt): politica de rastreo publica.
+
+## Optional
+
+- [Canal de YouTube Decodifica](https://www.youtube.com/@DecodificaIA): videos principales de Decodifica sobre inteligencia artificial practica.
