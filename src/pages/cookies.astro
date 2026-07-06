@@ -1,0 +1,44 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { siteConfig } from '~/lib/site-config';
+---
+
+<BaseLayout
+  title="Politica de cookies"
+  description="Como usa Decodifica cookies, almacenamiento local, analitica y contenidos de terceros."
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <h1>Politica de cookies</h1>
+    <p><em>Ultima actualizacion: 6 de julio de 2026</em></p>
+
+    <h2>1. Que son las cookies y tecnologias similares</h2>
+    <p>
+      Las cookies y tecnologias similares permiten guardar o leer informacion en tu navegador. En Decodifica usamos el minimo necesario para que la web funcione y, solo si lo aceptas, para medir el uso de forma agregada.
+    </p>
+
+    <h2>2. Cookies o almacenamiento necesario</h2>
+    <p>
+      Guardamos tu preferencia de privacidad en el navegador para no preguntarte en cada visita. Si accedes a la comunidad, Supabase puede usar almacenamiento local para mantener tu sesion.
+    </p>
+
+    <h2>3. Analitica</h2>
+    <p>
+      Podemos usar Plausible Analytics para medir visitas, paginas vistas y rendimiento general del contenido. Plausible esta orientado a analitica sin cookies y sin perfiles publicitarios. En Decodifica lo cargamos solo si aceptas la analitica en el banner de privacidad.
+    </p>
+
+    <h2>4. Contenido de terceros</h2>
+    <p>
+      Algunos articulos incluyen videos de YouTube. Usamos el dominio de privacidad mejorada de YouTube cuando es posible, pero al reproducir un video Google puede recibir informacion tecnica de tu visita.
+    </p>
+
+    <h2>5. Newsletter y formularios</h2>
+    <p>
+      Si te suscribes a la newsletter, el formulario envia tu email a Buttondown para gestionar el alta, baja y envio de correos. Esta accion ocurre cuando envias el formulario.
+    </p>
+
+    <h2>6. Cambiar o retirar el consentimiento</h2>
+    <p>
+      Puedes borrar la preferencia guardada eliminando los datos del sitio en tu navegador. Tambien puedes escribirnos a <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.email}</a> si tienes dudas.
+    </p>
+  </article>
+</BaseLayout>

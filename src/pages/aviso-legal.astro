@@ -1,0 +1,52 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { siteConfig } from '~/lib/site-config';
+---
+
+<BaseLayout
+  title="Aviso legal"
+  description="Informacion legal basica de Decodifica.net."
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <h1>Aviso legal</h1>
+    <p><em>Ultima actualizacion: 6 de julio de 2026</em></p>
+
+    <h2>1. Titular del sitio</h2>
+    <p>
+      Este sitio web, disponible en <strong>decodifica.net</strong>, es un proyecto editorial gestionado por <strong>Jordi Castaneira</strong> bajo la marca Decodifica.
+    </p>
+    <p>
+      Email de contacto: <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.email}</a>.
+    </p>
+
+    <h2>2. Finalidad</h2>
+    <p>
+      Decodifica publica contenidos informativos y practicos sobre inteligencia artificial, herramientas digitales, productividad y recursos relacionados.
+    </p>
+
+    <h2>3. Uso del sitio</h2>
+    <p>
+      El usuario se compromete a usar la web de forma licita, respetuosa y sin intentar danar, sobrecargar o interferir en su funcionamiento.
+    </p>
+
+    <h2>4. Propiedad intelectual</h2>
+    <p>
+      Los textos, estructura, marca y contenidos propios de Decodifica pertenecen a su titular salvo que se indique lo contrario. Las marcas, herramientas o productos mencionados pertenecen a sus respectivos propietarios.
+    </p>
+
+    <h2>5. Enlaces externos</h2>
+    <p>
+      Decodifica enlaza a documentacion, productos, servicios y fuentes externas. No controlamos esos sitios ni somos responsables de sus contenidos, politicas o cambios posteriores.
+    </p>
+
+    <h2>6. Responsabilidad del contenido</h2>
+    <p>
+      El contenido se publica con vocacion informativa y practica. No constituye asesoramiento profesional legal, fiscal, medico, financiero ni tecnico critico. Antes de tomar decisiones importantes, verifica la informacion en fuentes oficiales o consulta a un profesional.
+    </p>
+
+    <h2>7. Contacto legal</h2>
+    <p>
+      Para consultas legales, privacidad, colaboraciones o solicitudes relacionadas con contenidos publicados, escribe a <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.email}</a>.
+    </p>
+  </article>
+</BaseLayout>

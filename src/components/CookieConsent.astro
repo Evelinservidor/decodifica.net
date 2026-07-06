@@ -1,0 +1,146 @@
+---
+export interface Props {
+  plausibleDomain?: string;
+}
+
+const { plausibleDomain } = Astro.props;
+---
+
+<div
+  id="cookie-consent"
+  class="fixed inset-x-0 bottom-0 z-[80] hidden border-t border-dark-600 bg-dark-900/95 px-4 py-4 shadow-2xl backdrop-blur sm:px-6"
+  role="dialog"
+  aria-live="polite"
+  aria-label="Preferencias de privacidad"
+>
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold text-white">Privacidad en Decodifica</p>
+      <p class="mt-1 text-sm leading-6 text-dark-200">
+        Usamos almacenamiento necesario para recordar esta decision y, si aceptas, analitica agregada para saber que contenidos funcionan. Los videos externos se cargan en modo privacidad.
+      </p>
+      <div id="cookie-settings" class="mt-3 hidden rounded-lg border border-dark-600 bg-dark-800 p-3">
+        <label class="flex items-start gap-3 text-sm text-dark-200">
+          <input
+            id="cookie-analytics"
+            type="checkbox"
+            class="mt-1 h-4 w-4 rounded border-dark-500 bg-dark-900 text-brand-500 focus:ring-brand-400"
+          />
+          <span>
+            <strong class="text-white">Analitica agregada</strong><br />
+            Nos ayuda a medir paginas vistas sin crear perfiles publicitarios.
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 md:justify-end">
+      <button
+        id="cookie-reject"
+        type="button"
+        class="rounded-lg border border-dark-500 px-4 py-2 text-sm font-semibold text-dark-100 transition hover:border-dark-300 hover:text-white"
+      >
+        Rechazar
+      </button>
+      <button
+        id="cookie-configure"
+        type="button"
+        class="rounded-lg border border-brand-500/40 px-4 py-2 text-sm font-semibold text-brand-300 transition hover:border-brand-400 hover:text-brand-200"
+      >
+        Configurar
+      </button>
+      <button
+        id="cookie-save"
+        type="button"
+        class="hidden rounded-lg bg-dark-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-dark-600"
+      >
+        Guardar
+      </button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ plausibleDomain }}>
+  (() => {
+    const STORAGE_KEY = 'decodifica_cookie_consent_v1';
+    const banner = document.getElementById('cookie-consent');
+    const settings = document.getElementById('cookie-settings');
+    const analyticsInput = document.getElementById('cookie-analytics');
+    const rejectButton = document.getElementById('cookie-reject');
+    const configureButton = document.getElementById('cookie-configure');
+    const saveButton = document.getElementById('cookie-save');
+    const acceptButton = document.getElementById('cookie-accept');
+
+    function readConsent() {
+      try {
+        const raw = window.localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function writeConsent(options) {
+      const value = {
+        necessary: true,
+        analytics: Boolean(options.analytics),
+        savedAt: new Date().toISOString(),
+      };
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+      return value;
+    }
+
+    function loadPlausible() {
+      if (!plausibleDomain || document.querySelector('script[data-domain="' + plausibleDomain + '"]')) {
+        return;
+      }
+      const script = document.createElement('script');
+      script.defer = true;
+      script.dataset.domain = plausibleDomain;
+      script.src = 'https://plausible.io/js/script.js';
+      document.head.appendChild(script);
+    }
+
+    function applyConsent(consent) {
+      if (consent && consent.analytics) {
+        loadPlausible();
+      }
+    }
+
+    const existing = readConsent();
+    if (existing) {
+      applyConsent(existing);
+      return;
+    }
+
+    banner?.classList.remove('hidden');
+
+    rejectButton?.addEventListener('click', () => {
+      writeConsent({ analytics: false });
+      banner?.classList.add('hidden');
+    });
+
+    acceptButton?.addEventListener('click', () => {
+      const consent = writeConsent({ analytics: true });
+      applyConsent(consent);
+      banner?.classList.add('hidden');
+    });
+
+    configureButton?.addEventListener('click', () => {
+      settings?.classList.toggle('hidden');
+      saveButton?.classList.toggle('hidden');
+    });
+
+    saveButton?.addEventListener('click', () => {
+      const consent = writeConsent({ analytics: Boolean(analyticsInput?.checked) });
+      applyConsent(consent);
+      banner?.classList.add('hidden');
+    });
+  })();
+</script>
