@@ -13,6 +13,7 @@ export const siteConfig = {
     name: 'Jordi',
     email: 'hola@decodifica.net',
     publicEmailLabel: 'hola@decodifica.net',
+    collaborationsEmail: 'colaboraciones@decodifica.net',
   },
   social: {
     youtube: 'https://www.youtube.com/@decodificaia',

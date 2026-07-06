@@ -23,7 +23,16 @@ import { siteConfig } from '~/lib/site-config';
       >
         <div class="text-sm text-dark-300">Email principal</div>
         <div class="mt-1 text-lg font-semibold text-white">{siteConfig.author.publicEmailLabel}</div>
-        <p class="mt-2 text-sm text-dark-200">Consultas, colaboraciones, privacidad, correcciones y contacto legal.</p>
+        <p class="mt-2 text-sm text-dark-200">Consultas generales, privacidad, correcciones, dudas de lectores y contacto legal.</p>
+      </a>
+
+      <a
+        href={`mailto:${siteConfig.author.collaborationsEmail}`}
+        class="block rounded-lg border border-dark-600 bg-dark-800 p-6 transition-colors hover:border-brand-500/50"
+      >
+        <div class="text-sm text-dark-300">Colaboraciones</div>
+        <div class="mt-1 text-lg font-semibold text-white">{siteConfig.author.collaborationsEmail}</div>
+        <p class="mt-2 text-sm text-dark-200">Promociones, marcas, herramientas IA, partners y propuestas comerciales.</p>
       </a>
 
       <a
