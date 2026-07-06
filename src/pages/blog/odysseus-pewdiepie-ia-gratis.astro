@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Odysseus de PewDiePie: la IA gratis que todos están probando";
 const description = "Qué es Odysseus, la IA open source que PewDiePie mostró en su canal. Cómo instalarla y compararla con LM Studio, GPT4All y Ollama.";
 const pubDate = "2026-06-15";
 const tags = ["herramientas ia gratis", "ia gratis", "pewdiepie"];
-const readingTime = "7 min";
+const readingTime = "8 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -51,6 +52,38 @@ const pillarLabel = "Pilar 1: Apps web";
         <li>Si ya tienes 8 GB de RAM y una GPU de 6 GB VRAM, puedes correr modelos de 7B-13B en local gratis, sin nube y sin enviar nada a internet.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes de instalar: ¿Odysseus o una alternativa?</h2>
+    <p>
+      Si vienes por el vídeo de PewDiePie, la tentación es instalarlo sin pensar. Yo lo decidiría así:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero probar rápido</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Odysseus</h3>
+        <p class="mt-2 text-sm text-dark-200">Tiene sentido si quieres una instalación guiada, UI incluida y pocos pasos.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero una app pulida</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">LM Studio</h3>
+        <p class="mt-2 text-sm text-dark-200">Mejor si prefieres interfaz de escritorio y selector de modelos más maduro.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero terminal</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Ollama</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción natural para devs, servidores locales y automatizaciones.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero máxima privacidad</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">GPT4All</h3>
+        <p class="mt-2 text-sm text-dark-200">Buena alternativa si quieres algo veterano, local y sin depender de servicios externos.</p>
+      </div>
+    </div>
+
+    <p>
+      La clave no es cuál es "mejor", sino cuál te quita menos fricción. Para empezar desde cero, Odysseus tiene sentido. Para quedarte meses, LM Studio u Ollama pueden encajar mejor según tu perfil.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Odysseus y por qué PewDiePie la ha puesto en el mapa</h2>
     <p>
@@ -153,6 +186,18 @@ print(resp.text)
       Una cosa que poca gente comenta: <strong>la primera ejecución de cada modelo es lenta</strong> porque se carga en RAM/VRAM. Las siguientes son instantáneas. Si solo vas a usar un modelo, no hay problema. Si quieres probar cinco, prepárate para esperar entre 20 segundos y 2 minutos por cada cambio.
     </p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Checklist rápido antes de meter datos sensibles</h2>
+    <p>
+      Que una IA sea local no significa que puedas olvidarte de la seguridad. Antes de usarla con documentos reales:
+    </p>
+    <ul>
+      <li><strong>Descarga modelos desde fuentes conocidas:</strong> Hugging Face oficial, Ollama Library o enlaces del proyecto.</li>
+      <li><strong>Revisa si hay telemetría:</strong> mira ajustes, logs y conexiones salientes si trabajas con datos sensibles.</li>
+      <li><strong>No pegues secretos:</strong> claves API, contraseñas, datos bancarios o documentos legales completos siguen siendo delicados.</li>
+      <li><strong>Separa perfiles:</strong> usa una carpeta/proyecto distinto para trabajo, pruebas y datos personales.</li>
+      <li><strong>Actualiza con calma:</strong> en proyectos nuevos, espera unas horas o días antes de instalar releases recién salidas si lo usas para trabajo.</li>
+    </ul>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que está bien y lo que todavía no</h2>
     <p>
       Después de una semana probándolo a fondo, esto es lo que brilla y lo que chirría.
@@ -243,6 +288,17 @@ print(resp.text)
     <p>
       Y si todavía no has salido de ChatGPT y quieres comparar opciones online (sin instalar nada), échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas gratuitas a ChatGPT en 2026</a> que publicamos hace dos semanas.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si te interesa la IA gratis y local, seguiría por estas piezas:
+    </p>
+    <ul>
+      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que compiten con GPT-4</a>, si prefieres probar en navegador antes de instalar nada.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, para una comparación más general.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si quieres llevar modelos abiertos a trabajo técnico.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+    </ul>
     <p>
       ¿Lo has probado? ¿Qué modelo te ha funcionado mejor con tu hardware? Déjamelo en comentarios, en <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a> o apúntate a la newsletter de los sábados.
     </p>
@@ -250,7 +306,13 @@ print(resp.text)
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
@@ -317,7 +379,7 @@ print(resp.text)
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Odysseus de PewDiePie: la IA gratis que todos están probando",
-    "description": "Qu? es Odysseus, la IA open source que PewDiePie mostr? en su canal. C?mo instalarla y compararla con LM Studio, GPT4All y Ollama.",
+    "description": "Qué es Odysseus, la IA open source que PewDiePie mostró en su canal. Cómo instalarla y compararla con LM Studio, GPT4All y Ollama.",
     "datePublished": "2026-06-15",
     "mainEntityOfPage": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
     "author": {

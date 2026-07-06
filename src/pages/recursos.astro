@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
 import { env } from '~/lib/env';
 
 const pdfUrl = `${env.PUBLIC_SUPABASE_URL}/storage/v1/object/public/recursos/50-prompts-ia.pdf`;
@@ -7,77 +8,74 @@ const pdfUrl = `${env.PUBLIC_SUPABASE_URL}/storage/v1/object/public/recursos/50-
 const recursos = [
   {
     title: '50 prompts para IA',
-    description: 'Plantillas listas para usar en ChatGPT, Claude o Gemini. Productividad, escritura, código, análisis y aprendizaje. Probadas en la vida real.',
+    description:
+      'Plantillas para escribir, investigar, resumir, planificar y trabajar mejor con ChatGPT, Claude o Gemini.',
     type: 'PDF',
     pages: 13,
-    icon: '📝',
+    icon: 'PDF',
     downloadUrl: pdfUrl,
   },
   {
-    title: 'Comparativa: ChatGPT vs Claude vs Gemini 2026',
-    description: 'Tabla con precios, fortalezas, casos de uso, y cuál elegir según tu perfil.',
+    title: 'Workflows de IA para el día a día',
+    description:
+      'Cinco flujos prácticos para convertir tareas repetidas en procesos con IA.',
     type: 'PDF',
-    pages: 3,
-    icon: '⚖️',
-    downloadUrl: '/blog/comparativa-llms-2026',
-    comingSoon: true,
+    pages: 8,
+    icon: 'Workflow',
+    downloadUrl: '/lead-magnets/workflows-ia-dia-a-dia.pdf',
   },
   {
-    title: 'Checklist: cómo elegir tu stack IA personal',
-    description: '8 preguntas para saber qué herramientas necesitas. Sin overwhelm.',
-    type: 'PDF',
-    pages: 1,
-    icon: '✅',
-    downloadUrl: '/blog/checklist-stack-ia',
+    title: 'Mini curso: usar IA con más contexto',
+    description:
+      'Cinco lecciones breves para pasar de prompts sueltos a un sistema de trabajo más estable.',
+    type: 'Curso',
+    pages: 5,
+    icon: 'Curso',
+    downloadUrl: '/comunidad',
     comingSoon: true,
   },
 ];
 ---
 
 <BaseLayout
-  title="Recursos gratis"
-  description="PDFs, plantillas y herramientas gratis para sacar más partido a la IA."
+  title="Recursos gratis de IA"
+  description="PDFs, prompts y workflows gratis para aplicar IA en tareas reales sin perder tiempo."
 >
-  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mx-auto max-w-2xl text-center">
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">Recursos gratis</h1>
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <header class="mx-auto max-w-3xl text-center">
+      <p class="mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        Biblioteca práctica
+      </p>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">Recursos gratis para usar IA mejor</h1>
       <p class="mt-4 text-lg text-dark-200">
-        PDFs, plantillas y herramientas. Te los envío por email en 30 segundos.
+        Descarga prompts, workflows y guías que convierten los vídeos de Decodifica en acciones concretas.
       </p>
     </header>
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {recursos.map((recurso) => (
-        <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition-all hover:border-brand-500/50">
-          <div class="text-4xl">{recurso.icon}</div>
-          <div class="mt-3 flex items-center gap-2 text-xs text-dark-300">
-            <span class="rounded-full bg-brand-500/10 px-2 py-0.5 text-brand-400">{recurso.type}</span>
-            <span>·</span>
-            <span>{recurso.pages} pág</span>
-            {recurso.comingSoon && (
-              <>
-                <span>·</span>
-                <span class="rounded-full bg-accent-orange/10 px-2 py-0.5 text-accent-orange">Pronto</span>
-              </>
-            )}
+        <article class="flex h-full flex-col rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800 p-6 transition hover:border-brand-500/50">
+          <div class="flex items-center justify-between gap-3">
+            <span class="rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{recurso.icon}</span>
+            <span class="text-xs text-dark-300">{recurso.pages} pág.</span>
           </div>
-          <h2 class="mt-3 grow font-display text-lg font-bold text-white group-hover:text-brand-400">
+          <h2 class="mt-4 font-display text-xl font-bold text-white">
             {recurso.title}
           </h2>
-          <p class="mt-2 text-sm text-dark-200">
+          <p class="mt-2 grow text-sm text-dark-200">
             {recurso.description}
           </p>
-          <div class="mt-4">
+          <div class="mt-5">
             {recurso.comingSoon ? (
               <span class="inline-flex items-center gap-2 rounded-lg border border-dark-500 bg-dark-600 px-3 py-1.5 text-sm font-semibold text-dark-300">
                 Próximamente
               </span>
             ) : (
               <a
-                href="/recursos/?email=1#newsletter"
-                class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+                href="#newsletter"
+                class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700"
               >
-                Quiero este PDF ↓
+                Recibir por email →
               </a>
             )}
           </div>
@@ -85,45 +83,12 @@ const recursos = [
       ))}
     </div>
 
-    <div id="newsletter" class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <div class="mb-3 flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
-          <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
-          Gratis
-        </span>
-        <span class="text-xs text-dark-300">Para descargar todo, deja tu email</span>
-      </div>
-      <h3 class="font-display text-2xl font-bold text-white">
-        Únete a la newsletter
-      </h3>
-      <p class="mt-2 text-sm text-dark-200">
-        Cada sábado por la mañana: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.
-      </p>
-
-      <form
-        action="https://buttondown.com/api/emails/embed-subscribe/decodifica"
-        method="post"
-        class="mt-5 flex flex-col gap-2 sm:flex-row"
-      >
-        <label for="recursos-email" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input
-          id="recursos-email"
-          type="email"
-          name="email"
-          placeholder="tu@email.com"
-          required
-          autocomplete="email"
-          class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20"
-        />
-        <button
-          type="submit"
-          class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
-        >
-          <span>Recibir el PDF ahora</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
+    <div id="newsletter" class="mt-14">
+      <NewsletterForm
+        title="Recibe los recursos y próximos envíos"
+        description="Apúntate y usa esta biblioteca como punto de entrada a guías, prompts y workflows de Decodifica."
+        buttonLabel="Enviar recursos"
+      />
     </div>
   </div>
 </BaseLayout>

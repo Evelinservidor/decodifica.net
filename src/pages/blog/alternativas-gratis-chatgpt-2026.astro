@@ -1,11 +1,12 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "5 alternativas gratuitas a ChatGPT en 2026 (probadas, sin tarjeta)";
 const description = "Comparativa honesta de las 5 mejores alternativas gratuitas a ChatGPT en 2026. Probadas con casos de uso reales. Sin tarjeta, sin letra pequeña.";
 const pubDate = "2026-06-15";
 const tags = ["apps web gratis", "alternativas chatgpt", "herramientas ia"];
-const readingTime = "8 min";
+const readingTime = "9 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -51,6 +52,38 @@ const pillarLabel = "Pilar 1: Apps web";
         <li><strong>Hugging Face Chat</strong>: la mejor para experimentar con modelos open source</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuál elegir según tu caso</h2>
+    <p>
+      Si vienes buscando una respuesta rápida, esta sería mi elección sin darle muchas vueltas:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Uso diario rápido</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini 2.0 Flash</h3>
+        <p class="mt-2 text-sm text-dark-200">Para resumir, buscar, analizar imágenes, leer PDFs y resolver tareas cortas sin esperar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Texto serio</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Claude</h3>
+        <p class="mt-2 text-sm text-dark-200">Para escribir mejor, revisar documentos largos, preparar emails y pensar con más calma.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Código y lógica</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">DeepSeek V3</h3>
+        <p class="mt-2 text-sm text-dark-200">Para scripts, debugging, SQL, matemáticas y problemas técnicos donde necesitas pasos claros.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Privacidad europea</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Mistral Le Chat</h3>
+        <p class="mt-2 text-sm text-dark-200">Para datos más sensibles, empresas europeas o casos donde prefieres evitar enviar todo a EEUU o China.</p>
+      </div>
+    </div>
+
+    <p>
+      Mi recomendación práctica: no busques “la mejor IA gratis” en abstracto. Elige una para cada tipo de tarea. Gemini para velocidad, Claude para texto, DeepSeek para código, Mistral para privacidad y Hugging Face para probar modelos abiertos.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué buscar alternativas a ChatGPT</h2>
     <p>
@@ -204,7 +237,7 @@ const pillarLabel = "Pilar 1: Apps web";
           <tr class="border-b border-dark-700"><td class="p-2">Claude Sonnet 4</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Texto largo, razonamiento</td><td class="p-2">~50/día</td></tr>
           <tr class="border-b border-dark-700"><td class="p-2">DeepSeek V3</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Código + matemáticas</td><td class="p-2">Ilimitado*</td></tr>
           <tr class="border-b border-dark-700"><td class="p-2">Mistral Le Chat</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Privacidad + RGPD</td><td class="p-2">Ilimitado*</td></tr>
-          <tr><td class="p-2">HuggingFace Chat</td><td class="p-2">âš¡</td><td class="p-2">Varía</td><td class="p-2">Experimentar</td><td class="p-2">~100/día</td></tr>
+          <tr><td class="p-2">HuggingFace Chat</td><td class="p-2">Rápida</td><td class="p-2">Varía</td><td class="p-2">Experimentar</td><td class="p-2">~100/día</td></tr>
         </tbody>
       </table>
     </div>
@@ -224,6 +257,16 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>
       No uso ChatGPT casi nunca. Y tú tampoco necesitas ceñirte a uno.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si quieres convertir esta comparativa en un flujo de trabajo real, yo seguiría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que no suenen a robot</a>, si tu prioridad es comunicación.</li>
+      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IAs para Excel</a>, si quieres ahorrar tiempo en hojas de cálculo.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, si prefieres empezar con prompts y workflows copiables.</li>
+    </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
 
@@ -261,7 +304,13 @@ const pillarLabel = "Pilar 1: Apps web";
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">

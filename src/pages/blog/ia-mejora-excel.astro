@@ -1,11 +1,12 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "5 IAs para Excel en 2026: ahorra horas con tus fórmulas";
 const description = "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.";
 const pubDate = "2026-06-23";
 const tags = ["ia para excel", "microsoft copilot", "excel ia", "quadratic", "productividad ia"];
-const readingTime = "11 min";
+const readingTime = "12 min";
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -51,6 +52,38 @@ const pillarLabel = "Pilar 2: Tips productividad";
         <li><strong>Equals</strong>: para empresas con datos en Snowflake, BigQuery o HubSpot. Pensado para equipos de finanzas que ya gastan $24k al año en herramientas, no para un usuario normal.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA para Excel elegir según tu caso</h2>
+    <p>
+      Si quieres ir directo a la decisión, yo lo separaría así:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Excel de empresa</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Microsoft =COPILOT()</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción más natural si ya trabajas en Excel y tu empresa paga Microsoft 365 Copilot.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Google Workspace</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini en Sheets</h3>
+        <p class="mt-2 text-sm text-dark-200">La mejor si tu hoja vive en Google Sheets y quieres rellenar columnas sin pelearte con fórmulas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Datos + código</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Quadratic</h3>
+        <p class="mt-2 text-sm text-dark-200">Para analistas que mezclan hojas, SQL, Python y modelos de IA en un mismo trabajo.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Finance enterprise</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Equals</h3>
+        <p class="mt-2 text-sm text-dark-200">Sólo tiene sentido si tu empresa ya trabaja con stack de datos serio y reporting recurrente.</p>
+      </div>
+    </div>
+
+    <p>
+      Mi regla rápida: si ya pagas Microsoft 365 Copilot, empieza por <code>=COPILOT()</code>. Si no, prueba Gemini en Sheets o Quadratic antes de gastar dinero. Y si tu problema es puntual, ChatGPT sigue sirviendo para explicar fórmulas, aunque no viva dentro de la hoja.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Excel sigue siendo un cuello de botella en 2026</h2>
     <p>
@@ -170,6 +203,19 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <p class="text-sm text-dark-300 mt-2">Precios verificados en las páginas oficiales en junio de 2026. La disponibilidad geográfica y los límites de uso cambian con cada release; consulta la web del proveedor antes de comprar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3 prompts útiles para empezar</h2>
+    <p>
+      Antes de montar un sistema entero, prueba con tareas pequeñas. Estos tres prompts te dicen rápido si la IA te está ahorrando trabajo real:
+    </p>
+    <ul>
+      <li><strong>Clasificar comentarios:</strong> "Clasifica este comentario como positivo, neutro o negativo y devuelve sólo una palabra".</li>
+      <li><strong>Limpiar datos:</strong> "Normaliza estos nombres de empresa: elimina sufijos legales, espacios dobles y devuelve el nombre comercial".</li>
+      <li><strong>Detectar anomalías:</strong> "Revisa esta fila y dime si el importe parece fuera de rango comparado con el histórico".</li>
+    </ul>
+    <p>
+      La clave es pedir una salida cerrada: una palabra, una categoría, una prioridad o una frase corta. Cuanto más libre sea la respuesta, más difícil será usarla dentro de una hoja.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primera fórmula con =COPILOT() en 5 minutos</h2>
     <p>
@@ -295,6 +341,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>
       Y si antes de meterte con Excel quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si quieres seguir por productividad práctica con IA, iría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si tu problema no es sólo Excel sino toda la semana.</li>
+      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails humanos</a>, si necesitas comunicar mejor los análisis que salen de tus hojas.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+    </ul>
     <p>
       ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial de Quadratic o de Gemini en Sheets? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
     </p>
@@ -302,7 +358,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
@@ -321,8 +383,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "5 IAs para Excel en 2026: ahorra horas con tus f?rmulas",
-    "description": "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y l?mites reales.",
+    "headline": "5 IAs para Excel en 2026: ahorra horas con tus fórmulas",
+    "description": "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.",
     "datePublished": "2026-06-23",
     "mainEntityOfPage": "https://decodifica.net/blog/ia-mejora-excel/",
     "author": {

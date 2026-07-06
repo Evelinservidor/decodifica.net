@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "La IA gratis que está hundiendo a Silicon Valley (y cómo probarla)";
 const description = "DeepSeek V3, Qwen 2.5, Mistral y Hugging Face: 4 IAs gratis que ya compiten con GPT-4. Cómo probarlas hoy y combinarlas en tu trabajo diario.";
 const pubDate = "2026-06-16";
 const tags = ["herramientas ia gratis", "alternativas chatgpt", "deepseek", "qwen", "mistral"];
-const readingTime = "9 min";
+const readingTime = "10 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -53,6 +54,38 @@ const pillarLabel = "Pilar 1: Apps web";
         <li><strong>Hugging Face Chat</strong>: 118 modelos open source bajo un mismo techo, incluido Llama 4.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA gratis elegir según tu uso</h2>
+    <p>
+      Si has llegado buscando "mejores IA gratis 2026", esta es la decisión rápida. No hay una ganadora universal; hay una mejor opción según lo que quieras hacer:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Código y lógica</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">DeepSeek</h3>
+        <p class="mt-2 text-sm text-dark-200">La probaría primero para scripts, SQL, debugging y problemas con pasos claros.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Texto en español</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Qwen</h3>
+        <p class="mt-2 text-sm text-dark-200">Muy buena para documentos largos, esquemas, tablas y respuestas estructuradas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Datos europeos</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Mistral</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción prudente si trabajas con clientes europeos, privacidad o entorno profesional.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Experimentar</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Hugging Face Chat</h3>
+        <p class="mt-2 text-sm text-dark-200">El mejor laboratorio para probar modelos nuevos sin instalar nada.</p>
+      </div>
+    </div>
+
+    <p>
+      Mi regla: usa DeepSeek para razonar, Qwen para escribir, Mistral cuando haya datos sensibles y Hugging Face cuando quieras comparar modelos. Así evitas elegir por hype y eliges por tarea.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Silicon Valley está nerviosa</h2>
     <p>
@@ -327,6 +360,17 @@ Restricciones: [longitud máxima, tono, idioma, lo que NO debe incluir].
     <p>
       Si te ha gustado este post, échale un ojo a <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">mi comparativa anterior de 5 alternativas a ChatGPT</a> o suscríbete a la newsletter de los sábados: cada semana, una pieza escrita, dos o tres noticias de IA y un prompt útil. Sin clickbait, sin AI slop.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si quieres seguir probando herramientas sin pagar de más, iría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, para comparar más opciones de uso diario.</li>
+      <li><a href="/blog/odysseus-pewdiepie-ia-gratis/" class="text-brand-400 hover:text-brand-300">Odysseus y modelos locales</a>, si quieres ejecutar IA en tu propio PC.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa llevar Qwen a tareas técnicas.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+    </ul>
     <p>
       — Jordi
     </p>
@@ -340,7 +384,13 @@ Restricciones: [longitud máxima, tono, idioma, lo que NO debe incluir].
       <li>DeepSeek — Web oficial: <a href="https://deepseek.com" class="text-brand-400 hover:text-brand-300">https://deepseek.com</a> (chat gratuito, política de privacidad)</li>
     </ul>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">

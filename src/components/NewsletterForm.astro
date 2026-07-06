@@ -1,27 +1,33 @@
 ---
 import { env } from '~/lib/env';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  buttonLabel?: string;
+}
+
+const {
+  title = 'Recibe el filtro Decodifica',
+  description = 'Una vez por semana: una herramienta que merece la pena, una decisión práctica y un prompt o recurso para usarla mejor.',
+  buttonLabel = 'Apuntarme gratis',
+} = Astro.props;
 ---
 
-<!--
-  Newsletter signup form
-  Integrates with Buttondown embed API (public endpoint, no API key needed)
-  https://docs.buttondown.com/building-your-subscriber-base
-  POST email + embed=1 → Buttondown handles double opt-in and confirmation email
--->
 <div class="rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-  <div class="mb-3 flex items-center gap-2">
+  <div class="mb-3 flex flex-wrap items-center gap-2">
     <span class="inline-flex items-center gap-1.5 rounded-full border border-accent-green/30 bg-accent-green/10 px-2.5 py-0.5 text-xs font-medium text-accent-green">
       <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-green"></span>
       Gratis
     </span>
-    <span class="text-xs text-dark-300">~ 5 min de lectura cada sábado</span>
+    <span class="text-xs text-dark-300">Lectura corta, decisiones útiles, cero spam.</span>
   </div>
 
   <h3 class="font-display text-2xl font-bold text-white">
-    Únete a la newsletter
+    {title}
   </h3>
   <p class="mt-2 text-sm text-dark-200">
-    <strong class="text-white">1 video destacado</strong>, 2-3 noticias de IA, 1 prompt útil. Sin clickbait, sin AI slop.
+    {description}
   </p>
 
   <form
@@ -44,29 +50,14 @@ import { env } from '~/lib/env';
       type="submit"
       class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
     >
-      <span>Suscribirme</span>
+      <span>{buttonLabel}</span>
       <span aria-hidden="true">→</span>
     </button>
   </form>
 
   <ul class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-dark-300">
-    <li class="flex items-center gap-1.5">
-      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-      </svg>
-      Sin spam
-    </li>
-    <li class="flex items-center gap-1.5">
-      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-      </svg>
-      Darse de baja con 1 click
-    </li>
-    <li class="flex items-center gap-1.5">
-      <svg class="h-3 w-3 text-accent-green" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-      </svg>
-      Nunca comparto tu email
-    </li>
+    <li>✓ Sin spam</li>
+    <li>✓ Baja en 1 clic</li>
+    <li>✓ Recursos prácticos</li>
   </ul>
 </div>

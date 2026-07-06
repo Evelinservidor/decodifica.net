@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Cómo crear un Agente de Voz con IA (sin programar, gratis)";
 const description = "5 plataformas para crear un agente de voz con IA en 2026 sin código. Tutorial con ElevenLabs y comparativa de Vapi, Retell, OpenAI y vocode.";
 const pubDate = "2026-06-18";
 const tags = ["herramientas ia gratis", "agentes ia voz", "apps web gratis", "ias para productividad"];
-const readingTime = "9 min";
+const readingTime = "11 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -51,6 +52,38 @@ const pillarLabel = "Pilar 1: Apps web";
         <li><strong>vocode (open source)</strong>: si quieres montarlo tú en tu servidor y olvidarte de cuotas. Github público, gratis, pero requiere saber Python.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué plataforma elegir según tu caso</h2>
+    <p>
+      Si quieres decidir rápido, no empieces por la lista de features. Empieza por el uso real que quieres cubrir:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Probar hoy</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">ElevenLabs</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción más directa si quieres crear un agente sin código, escucharlo y entender si el caso tiene sentido.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Llamadas reales</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Vapi o Retell</h3>
+        <p class="mt-2 text-sm text-dark-200">Mejor si ya quieres medir llamadas, integraciones, transferencias y coste por minuto.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Equipo técnico</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">OpenAI Realtime</h3>
+        <p class="mt-2 text-sm text-dark-200">Tiene sentido cuando quieres control total y alguien puede montar WebRTC, SIP o WebSocket.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Control propio</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">vocode</h3>
+        <p class="mt-2 text-sm text-dark-200">Para equipos que prefieren open source, self-hosting y no depender de una plataforma cerrada.</p>
+      </div>
+    </div>
+
+    <p>
+      Mi recomendación práctica: empieza en ElevenLabs para validar el guion y la voz. Si el agente resuelve algo real, entonces comparas Vapi, Retell u OpenAI por coste, privacidad e integraciones.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es un agente de voz con IA y por qué importa en 2026</h2>
     <p>
@@ -162,6 +195,42 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <p class="text-sm text-dark-300 mt-2">Precios verificados en las páginas oficiales en junio de 2026. Las latencias son valores típicos y dependen de la región y la conexión.</p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Coste y privacidad: la tabla que miraría antes de pagar</h2>
+    <p>
+      En agentes de voz, el precio de entrada engaña. Lo importante es qué pasa cuando conectas teléfono, grabas llamadas o manejas datos de clientes:
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">Plataforma</th>
+            <th class="text-left p-2 text-white">Coste inicial</th>
+            <th class="text-left p-2 text-white">Riesgo principal</th>
+            <th class="text-left p-2 text-white">Antes de usar con clientes</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700"><td class="p-2">ElevenLabs</td><td class="p-2">Gratis para probar</td><td class="p-2">Créditos, telefonía y uso de conversaciones según plan</td><td class="p-2">Revisar ajustes de datos y límites de uso</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Vapi</td><td class="p-2">Pago por minuto</td><td class="p-2">Coste acumulado por llamada + proveedor de voz/LLM</td><td class="p-2">Definir límites, transferencia humana y retención de datos</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Retell AI</td><td class="p-2">Créditos iniciales</td><td class="p-2">Integraciones y grabaciones con datos sensibles</td><td class="p-2">Probar simulaciones y auditar transcripciones</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">OpenAI Realtime</td><td class="p-2">API de pago</td><td class="p-2">Necesita control técnico y diseño de privacidad propio</td><td class="p-2">Registrar consentimiento y política de retención</td></tr>
+          <tr><td class="p-2">vocode</td><td class="p-2">Open source</td><td class="p-2">La seguridad depende de tu despliegue</td><td class="p-2">Monitorizar logs, proveedores y servidor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Checklist de permisos antes de ponerlo en producción</h2>
+    <p>
+      Antes de que un agente hable con clientes reales, revisaría esto:
+    </p>
+    <ul>
+      <li><strong>Consentimiento:</strong> avisa si la llamada se graba o la atiende una IA.</li>
+      <li><strong>Transferencia:</strong> define cuándo debe pasar a una persona: queja, emergencia, pago o dato sensible.</li>
+      <li><strong>Datos prohibidos:</strong> dile explícitamente qué no debe pedir: contraseñas, tarjetas completas, datos médicos o documentos privados.</li>
+      <li><strong>Knowledge base:</strong> sube sólo información correcta y actualizada; si no sabe algo, que lo escale.</li>
+      <li><strong>Revisión:</strong> audita las primeras 20-30 conversaciones antes de dejarlo solo.</li>
+    </ul>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primer agente con ElevenLabs en 5 minutos</h2>
     <p>
       He elegido ElevenLabs para el tutorial porque es la única que cumple de verdad la promesa "sin programar y gratis". El resto requiere tarjeta desde el primer minuto o saber Python.
@@ -266,6 +335,17 @@ Reglas:
     <p>
       Y si antes de meterte con voz quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos la semana pasada.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si quieres conectar este agente de voz con un flujo de trabajo real, seguiría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres convertir llamadas en tareas y citas.</li>
+      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para emails humanos</a>, si el agente necesita dejar seguimientos escritos después de cada llamada.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, si quieres comparar modelos antes de pagar herramientas de voz.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+    </ul>
     <p>
       ¿Quieres que profundice en alguna de las cinco plataformas? ¿O que monte un tutorial de Vapi o Retell? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
     </p>
@@ -273,7 +353,13 @@ Reglas:
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
@@ -293,7 +379,7 @@ Reglas:
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Cómo crear un Agente de Voz con IA (sin programar, gratis)",
-    "description": "5 plataformas para crear un agente de voz con IA en 2026 sin c?digo. Tutorial con ElevenLabs y comparativa de Vapi, Retell, OpenAI y vocode.",
+    "description": "5 plataformas para crear un agente de voz con IA en 2026 sin código. Tutorial con ElevenLabs y comparativa de Vapi, Retell, OpenAI y vocode.",
     "datePublished": "2026-06-18",
     "mainEntityOfPage": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/",
     "author": {

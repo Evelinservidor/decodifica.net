@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "5 IAs para organizar Gmail, Calendar y Notion en 2026";
 const description = "Manus, ChatGPT apps, Claude MCP, Gemini Workspace y Microsoft Copilot comparadas para organizar pendientes, permisos y tareas sin sustos.";
 const pubDate = "2026-06-26";
 const tags = ["ia organiza pendientes", "ia para gestion de tareas", "conectores ia", "manus ai", "chatgpt apps", "claude mcp", "gemini workspace", "microsoft copilot"];
-const readingTime = "10 min";
+const readingTime = "11 min";
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -50,6 +51,38 @@ const pillarLabel = "Pilar 2: Tips productividad";
         <li><strong>Microsoft Copilot 365</strong>: si pagas Microsoft 365, Copilot vive en Outlook, Teams, Calendar y OneDrive. La opción natural para empresas con Microsoft.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA elegir para organizar tu semana</h2>
+    <p>
+      La decisión no depende de cuál tenga más conectores en la página de marketing. Depende de dónde vive ya tu trabajo y de cuánta confianza quieres darle a la IA:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Todo en Google</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini Workspace</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción más limpia si Gmail, Calendar, Drive y Docs ya son tu oficina real.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Todo en Microsoft</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Copilot 365</h3>
+        <p class="mt-2 text-sm text-dark-200">Tiene sentido si Outlook, Teams y OneDrive son obligatorios en tu empresa.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Varias apps mezcladas</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Manus</h3>
+        <p class="mt-2 text-sm text-dark-200">Más interesante si trabajas entre Gmail, Calendar, Notion y herramientas sueltas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Control técnico</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Claude MCP</h3>
+        <p class="mt-2 text-sm text-dark-200">La vía flexible si quieres elegir conectores, permisos y flujo con más precisión.</p>
+      </div>
+    </div>
+
+    <p>
+      Mi regla práctica: empieza por la IA que ya estás pagando y limita permisos al mínimo. Si con eso resuelves el 70% de la semana, no necesitas montar un sistema más complejo.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué copiar y pegar entre cinco apps te cuesta el domingo</h2>
     <p>
@@ -153,7 +186,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>
       La pega: el precio por usuario es alto si lo comparas con alternativas como Manus o con el Gemini de Workspace. Para un equipo grande, el coste se justifica por la integración nativa y la seguridad empresarial. Para un profesional solo o un equipo pequeño, hay opciones más asequibles con la misma funcionalidad básica.
     </p>
-</content><h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
     <p>
       Las cinco herramientas tienen cosas en común y diferencias importantes. Esta tabla resume lo que he verificado con la documentación oficial y mis pruebas:
     </p>
@@ -178,6 +211,45 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </table>
     </div>
     <p class="text-sm text-dark-300 mt-2">Precios y disponibilidad verificados en las páginas oficiales de cada proveedor en junio de 2026. Los planes cambian con cada release, consulta la web antes de comprar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Matriz rápida: privacidad, dificultad y utilidad</h2>
+    <p>
+      Para elegir sin liarte, miraría estas tres variables antes que el número total de integraciones:
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">Herramienta</th>
+            <th class="text-left p-2 text-white">Privacidad</th>
+            <th class="text-left p-2 text-white">Dificultad</th>
+            <th class="text-left p-2 text-white">Utilidad real</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700"><td class="p-2">Gemini Workspace</td><td class="p-2">Alta si ya estás en Google</td><td class="p-2">Baja</td><td class="p-2">Correo, documentos y calendario sin salir del ecosistema</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Microsoft Copilot</td><td class="p-2">Alta en empresas Microsoft</td><td class="p-2">Baja-media</td><td class="p-2">Outlook, Teams, reuniones y documentos internos</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">ChatGPT apps</td><td class="p-2">Media, depende de cada app conectada</td><td class="p-2">Baja</td><td class="p-2">Buen punto de partida si ya usas ChatGPT Plus</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Manus</td><td class="p-2">Media, exige revisar permisos</td><td class="p-2">Media</td><td class="p-2">Potente cuando tu semana vive entre varias apps</td></tr>
+          <tr><td class="p-2">Claude MCP</td><td class="p-2">Variable según servidor MCP</td><td class="p-2">Media-alta</td><td class="p-2">Muy flexible si tienes criterio técnico o equipo interno</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Checklist de domingo en 15 minutos</h2>
+    <p>
+      Si quieres probar esto sin entregar toda tu vida digital a una IA, empieza con un flujo pequeño:
+    </p>
+    <ol>
+      <li><strong>Elige una sola fuente:</strong> Gmail, Outlook o Calendar. No conectes cinco apps el primer día.</li>
+      <li><strong>Limita la ventana:</strong> pide sólo los últimos siete días o la semana que entra.</li>
+      <li><strong>Pide una propuesta, no ejecución directa:</strong> primero resumen, luego aprobación.</li>
+      <li><strong>Convierte en tareas:</strong> reuniones, respuestas pendientes y documentos que preparar.</li>
+      <li><strong>Revoca lo que no uses:</strong> si una app no aporta nada, quítale permiso esa misma semana.</li>
+    </ol>
+    <p>
+      Este enfoque es menos espectacular que decir "organízame la vida", pero es el que mejor funciona. Te da ahorro real sin perder control.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Caso real: domingo noche, de cuatro horas a veinte minutos</h2>
     <p>
@@ -304,6 +376,17 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>
       Y si antes de meterte con conectores quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana, o al <a href="/blog/claude-emails-sonar-humanos" class="text-brand-400 hover:text-brand-300">setup de Claude para emails que suenan humanos</a> si quieres empezar por la parte de comunicación.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si quieres convertir esto en un sistema de productividad más completo, iría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IAs para Excel</a>, si tus pendientes nacen de hojas de cálculo, reporting o datos semanales.</li>
+      <li><a href="/blog/ia-crea-presentaciones-completas/" class="text-brand-400 hover:text-brand-300">IAs para presentaciones</a>, si el objetivo final de organizar la semana es preparar un deck o una reunión.</li>
+      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">NotebookLM</a>, si necesitas resumir documentos largos antes de decidir qué tareas salen de ellos.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+    </ul>
     <p>
       ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial específico de Claude con MCP paso a paso? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
     </p>
@@ -311,7 +394,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">

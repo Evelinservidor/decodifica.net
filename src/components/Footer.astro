@@ -1,17 +1,15 @@
 ---
 import { siteConfig } from '~/lib/site-config';
 
-// Use build time year, fallback to current
-const year = import.meta.env.PROD ? 2025 : new Date().getFullYear();
+const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-dark-600 bg-dark-800">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
-      <!-- Brand -->
       <div class="col-span-1 md:col-span-2">
         <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
-          <span class="text-brand-400">⬢</span>
+          <span class="text-brand-400">●</span>
           <span class="font-display">{siteConfig.name}</span>
         </a>
         <p class="mt-3 max-w-md text-sm text-dark-200">
@@ -19,18 +17,16 @@ const year = import.meta.env.PROD ? 2025 : new Date().getFullYear();
         </p>
       </div>
 
-      <!-- Links -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Web</h3>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="/decodifica" class="text-dark-200 hover:text-brand-400">Canal</a></li>
           <li><a href="/blog" class="text-dark-200 hover:text-brand-400">Blog</a></li>
           <li><a href="/recursos" class="text-dark-200 hover:text-brand-400">Recursos</a></li>
           <li><a href="/comunidad" class="text-dark-200 hover:text-brand-400">Comunidad</a></li>
+          <li><a href="/decodifica" class="text-dark-200 hover:text-brand-400">Canal</a></li>
         </ul>
       </div>
 
-      <!-- Social -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Social</h3>
         <ul class="mt-4 space-y-2 text-sm">
@@ -44,7 +40,7 @@ const year = import.meta.env.PROD ? 2025 : new Date().getFullYear();
 
     <div class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-dark-600 pt-6 sm:flex-row">
       <p class="text-xs text-dark-300">
-        © {year} {siteConfig.name}. Hecho con ☕ y 🤖.
+        © {year} {siteConfig.name}. IA práctica, sin ruido.
       </p>
       <ul class="flex gap-4 text-xs">
         <li><a href="/privacidad" class="text-dark-300 hover:text-brand-400">Privacidad</a></li>

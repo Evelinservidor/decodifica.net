@@ -6,22 +6,20 @@ const currentPath = Astro.url.pathname;
 
 const navItems = [
   { href: '/', label: 'Inicio' },
-  { href: '/decodifica', label: 'Canal' },
   { href: '/blog', label: 'Blog' },
   { href: '/recursos', label: 'Recursos' },
   { href: '/comunidad', label: 'Comunidad' },
+  { href: '/decodifica', label: 'Canal' },
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-dark-600 bg-dark-800/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 border-b border-dark-600 bg-dark-800/90 backdrop-blur-md">
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-    <!-- Logo -->
     <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
-      <span class="text-brand-400">⬢</span>
+      <span class="text-brand-400">●</span>
       <span class="font-display">{siteConfig.name}</span>
     </a>
 
-    <!-- Desktop nav -->
     <ul class="hidden items-center gap-6 md:flex">
       {navItems.map((item) => (
         <li>
@@ -29,7 +27,7 @@ const navItems = [
             href={item.href}
             class:list={[
               'text-sm font-medium transition-colors',
-              currentPath === item.href
+              currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
                 ? 'text-brand-400'
                 : 'text-dark-200 hover:text-white',
             ]}
@@ -40,13 +38,12 @@ const navItems = [
       ))}
     </ul>
 
-    <!-- CTA -->
     <div class="flex items-center gap-2">
-      <Button href="/login" variant="ghost" size="sm" class="hidden sm:inline-flex">
-        Login
+      <Button href="/recursos" variant="ghost" size="sm" class="hidden sm:inline-flex">
+        Recursos gratis
       </Button>
-      <Button href={siteConfig.social.youtube} variant="primary" size="sm" external>
-        YouTube
+      <Button href="/comunidad" variant="primary" size="sm">
+        Entrar
       </Button>
     </div>
   </nav>

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "5 IAs para crear presentaciones en 2026 sin perder domingos";
-const description = "Comparativa de Gamma, Beautiful.ai, SlidesAI, Plus AI y Canva para crear presentaciones con IA. Tutorial con Gamma, precios y limites reales.";
+const description = "Comparativa de Gamma, Beautiful.ai, SlidesAI, Plus AI y Canva para crear presentaciones con IA. Tutorial con Gamma, precios y límites reales.";
 const pubDate = "2026-06-24";
 const tags = ["ia presentaciones gamma", "gamma app", "beautiful.ai", "slidesai", "crear presentaciones con ia"];
-const readingTime = "10 min";
+const readingTime = "11 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -50,6 +51,38 @@ const pillarLabel = "Pilar 1: Apps web";
         <li><strong>Canva Magic Design</strong>: si ya tienes cuenta de Canva, su Magic Design genera presentaciones desde un prompt. Limitado en texto largo, pero muy bueno para presentaciones cortas con mucho visual.</li>
       </ul>
     </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué herramienta elegir según tu presentación</h2>
+    <p>
+      Si tienes que decidir rápido, yo no empezaría comparando veinte funciones. Empezaría por el tipo de presentación que tienes delante:
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Desde cero</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gamma</h3>
+        <p class="mt-2 text-sm text-dark-200">La mejor si sólo tienes una idea y necesitas convertirla en una presentación completa sin abrir PowerPoint en blanco.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Contenido ya escrito</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Beautiful.ai</h3>
+        <p class="mt-2 text-sm text-dark-200">Ideal cuando el problema no es qué decir, sino que las diapositivas respiren y no parezcan un documento pegado.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Google Workspace</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">SlidesAI</h3>
+        <p class="mt-2 text-sm text-dark-200">La opción más cómoda si tu equipo ya vive en Google Slides y quieres evitar otra herramienta más.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">PowerPoint para clientes</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Plus AI</h3>
+        <p class="mt-2 text-sm text-dark-200">Más útil cuando el archivo final tiene que seguir siendo .pptx y necesitas editar dentro del flujo de siempre.</p>
+      </div>
+    </div>
+
+    <p>
+      Canva queda como la quinta opción clara: úsalo si ya pagas Canva Pro o si la presentación es corta, visual y pensada para marketing. Para un deck largo con narrativa y mucho texto, Gamma suele dar una primera versión más aprovechable.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué PowerPoint sigue siendo un agujero negro de tiempo en 2026</h2>
     <p>
@@ -176,6 +209,20 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <p class="text-sm text-dark-300 mt-2">Precios verificados en las páginas oficiales en junio de 2026. La disponibilidad geográfica y los límites de uso cambian con cada release; consulta la web del proveedor antes de comprar.</p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Flujo de 10 minutos para no perderte</h2>
+    <p>
+      La forma más rápida de aprovechar estas herramientas no es pedir "hazme una presentación". Es dividir el trabajo en cuatro pasos:
+    </p>
+    <ol>
+      <li><strong>Minuto 0-2:</strong> escribe para quién es la presentación, qué decisión quieres provocar y qué tres ideas no pueden faltar.</li>
+      <li><strong>Minuto 2-4:</strong> genera el primer borrador en Gamma, SlidesAI o Plus AI con número de diapositivas cerrado.</li>
+      <li><strong>Minuto 4-7:</strong> borra lo genérico. Si una diapositiva no aporta una decisión, un dato o un ejemplo, fuera.</li>
+      <li><strong>Minuto 7-10:</strong> revisa títulos. Cada slide debería poder entenderse leyendo sólo el titular.</li>
+    </ol>
+    <p>
+      El error típico es obsesionarse con el diseño antes de arreglar la historia. Primero estructura, luego diseño. La IA acelera la maqueta, pero la claridad sigue saliendo de ti.
+    </p>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primera presentación con Gamma en 5 minutos</h2>
     <p>
       Elijo Gamma para el tutorial porque es la única que cumple la promesa "desde el prompt hasta el export". El resto o no genera contenido o se queda dentro de otra herramienta. Necesitas: una cuenta de correo para registrarte en gamma.app y una idea de qué quieres contar.
@@ -296,6 +343,17 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>
       Y si antes de meterte con presentaciones quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si este tema te interesa por productividad, seguiría por estas piezas:
+    </p>
+    <ul>
+      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IAs para Excel</a>, si tus presentaciones nacen de datos y hojas de cálculo.</li>
+      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">NotebookLM</a>, si primero necesitas resumir documentos, PDFs o fuentes largas antes de convertirlas en diapositivas.</li>
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar pendientes</a>, si el problema real no es crear el deck, sino ordenar el trabajo antes de llegar a él.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows listos para copiar.</li>
+    </ul>
     <p>
       ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial de Beautiful.ai o de SlidesAI? Déjamelo en comentarios o escríbeme a <a href="https://x.com/decodificaia" class="text-brand-400 hover:text-brand-300">@decodificaia</a>.
     </p>
@@ -303,7 +361,13 @@ const pillarLabel = "Pilar 1: Apps web";
       — Jordi
     </p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
@@ -323,7 +387,7 @@ const pillarLabel = "Pilar 1: Apps web";
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "5 IAs para crear presentaciones en 2026 sin perder domingos",
-    "description": "Comparativa de Gamma, Beautiful.ai, SlidesAI, Plus AI y Canva para crear presentaciones con IA. Tutorial con Gamma, precios y limites reales.",
+    "description": "Comparativa de Gamma, Beautiful.ai, SlidesAI, Plus AI y Canva para crear presentaciones con IA. Tutorial con Gamma, precios y límites reales.",
     "datePublished": "2026-06-24",
     "mainEntityOfPage": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
     "author": {

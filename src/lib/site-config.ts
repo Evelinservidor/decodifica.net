@@ -1,11 +1,12 @@
 /**
  * Site configuration
- * Single source of truth for site-wide constants
+ * Single source of truth for site-wide constants.
  */
 export const siteConfig = {
   name: 'Decodifica',
-  tagline: 'IA en español, sin fluff.',
-  description: 'Cada semana curamos las mejores herramientas de IA y te enseñamos a usarlas de verdad. Todo gratis en la web.',
+  tagline: 'IA útil, probada y explicada en español.',
+  description:
+    'Cada semana filtramos herramientas, modelos y flujos de IA para que sepas qué merece la pena probar y cómo aplicarlo sin perder tiempo.',
   url: 'https://decodifica.net',
   ogImage: '/og-default.png',
   author: {
@@ -22,23 +23,25 @@ export const siteConfig = {
   pillars: [
     {
       id: 'apps-web',
-      title: 'Pilar 1: Curación de apps web',
-      description: 'Las mejores IAs gratis, accesibles desde el navegador, sin coste de entrada.',
+      title: 'Herramientas y modelos que puedes probar',
+      description:
+        'Apps web, modelos abiertos, alternativas gratuitas y productos nuevos con utilidad real.',
       icon: 'apps',
     },
     {
       id: 'tips-productividad',
-      title: 'Pilar 2: Tips de productividad',
-      description: 'Prompts, trucos y workflows para aplicar IA a tu día a día.',
+      title: 'Productividad práctica con IA',
+      description:
+        'Prompts, workflows y decisiones para ahorrar tiempo en tareas reales.',
       icon: 'lightning',
     },
   ],
   antiTopics: [
-    'Cortometrajes IA / video artístico',
+    'Cortometrajes IA / vídeo artístico',
     'Wearables / Ray-Ban Meta',
-    'Geopolítica IA',
-    'Modelos chinos específicos',
-    'Tutoriales técnicos profundos (n8n, Claude Code, agentes)',
+    'Geopolítica IA como tema central',
+    'Tutorial técnico profundo sin utilidad inmediata',
+    'Comparativa genérica sin prueba ni decisión',
   ],
 } as const;
 

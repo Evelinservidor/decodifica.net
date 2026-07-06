@@ -1,0 +1,45 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  eyebrow = 'Siguiente paso',
+  title = 'Convierte esta lectura en acción',
+  description = 'Guarda los recursos útiles, entra en la comunidad y recibe el filtro semanal de Decodifica para no depender solo del algoritmo.',
+  primaryHref = '/recursos',
+  primaryLabel = 'Ver recursos gratis',
+  secondaryHref = '/comunidad',
+  secondaryLabel = 'Entrar en comunidad',
+} = Astro.props;
+---
+
+<aside class="not-prose mt-14 rounded-2xl border border-brand-500/20 bg-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+  <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">{eyebrow}</p>
+  <div class="mt-3 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
+    <div>
+      <h2 class="font-display text-2xl font-bold text-white">{title}</h2>
+      <p class="mt-2 max-w-2xl text-sm leading-6 text-dark-200">{description}</p>
+    </div>
+    <div class="flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+      <a
+        href={primaryHref}
+        class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+      >
+        {primaryLabel}
+      </a>
+      <a
+        href={secondaryHref}
+        class="inline-flex items-center justify-center rounded-lg border border-dark-500 px-4 py-2.5 text-sm font-semibold text-dark-100 transition-colors hover:border-brand-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+      >
+        {secondaryLabel}
+      </a>
+    </div>
+  </div>
+</aside>

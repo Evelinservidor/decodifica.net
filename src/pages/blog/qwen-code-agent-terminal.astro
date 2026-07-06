@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
-const title = "Qwen Code ya no es solo un CLI: asi cambia tu flujo";
-const description = "Qwen Code ya no encaja bien en la categoria de \"otro chat para programar\". La parte interesante es que empieza a comportarse como una capa de trabajo:...";
+const title = "Qwen Code ya no es solo un CLI: así cambia tu flujo";
+const description = "Qwen Code empieza a parecer menos un chat para programar y más una capa de trabajo: terminal, Skills, modelos y aprobaciones en un mismo flujo.";
 const pubDate = "2026-07-05";
-const readingTime = "4 min";
+const readingTime = "6 min";
 const tags = ["Decodifica", "Qwen Code", "Qwen Code español", "qwen code tutorial", "qwen code agent", "Qwen terminal", "agente de terminal IA", "Computer Use"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -41,58 +43,106 @@ const pillarLabel = "Pilar 2: Tips productividad";
       loading="eager"
     />
 
-    <p>Qwen Code ya no encaja bien en la categoria de "otro chat para programar". La parte interesante es que empieza a comportarse como una capa de trabajo: vive en el terminal, entiende proyectos, permite Skills reutilizables y ahora suma Computer Use integrado segun la actualizacion oficial del 4 de junio de 2026.</p>
-    <p>La pregunta util no es si puede escribir codigo. Eso ya lo hacen muchas herramientas. La pregunta es esta: ¿Es solo otra demo de IA para programadores o ya es una herramienta que cambia el flujo de trabajo?</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por que importa</h2>
-    <p>El espectador entiende si Qwen Code sirve de verdad para automatizar trabajo diario en terminal y escritorio, y qué gana frente a un chat normal.</p>
-    <p>Si usas IA para trabajar con repositorios, automatizar tareas o repetir procesos, el salto no esta en una funcion aislada. Esta en juntar varias piezas que normalmente van separadas: terminal, modelos intercambiables, Skills, aprobaciones y Computer Use.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que cambia en Qwen Code</h2>
-    <p>La documentacion oficial presenta Qwen Code como un agente de codificacion que trabaja desde el terminal. Hasta ahi, podria sonar familiar. El giro es que la ultima actualizacion oficial coloca Computer Use como capacidad integrada y sin configuracion, no como una demo suelta.</p>
-    <p>Eso cambia el marco: ya no hablamos solo de pedirle respuestas a una IA. Hablamos de montar flujos donde la herramienta puede entender contexto, ejecutar partes repetibles y pedir control cuando toca una operacion sensible.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las tres piezas que hacen que sea mas serio</h2>
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qwen Code</strong> no es sólo otro chat para programar: intenta vivir dentro del terminal y del flujo de trabajo.</li>
+        <li>Lo interesante es la combinación: contexto del proyecto, Skills reutilizables, cambio de modelos, approval mode y Computer Use integrado.</li>
+        <li>No lo usaría para soltarle medio proyecto el primer día. Lo probaría con tareas pequeñas, repetibles y fáciles de revisar.</li>
+        <li>Si ya trabajas con repositorios, scripts, refactors o procesos técnicos repetidos, merece entrar en tu lista de pruebas.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <p>
+      Si vienes buscando una respuesta corta: Qwen Code tiene sentido si quieres que la IA trabaje más cerca del proyecto y menos como una pestaña separada de chat.
+    </p>
+
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Repites tareas técnicas</h3>
+        <p class="mt-2 text-sm text-dark-200">Refactors pequeños, revisión de estructura, scripts, documentación o checks que haces cada semana.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un cambio revisable</h3>
+        <p class="mt-2 text-sm text-dark-200">Una tarea con diff claro. Si no puedes revisar el resultado, no es buen primer test.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Permisos y acciones</h3>
+        <p class="mt-2 text-sm text-dark-200">Approval mode importa. Una IA que toca archivos necesita frenos, no sólo velocidad.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Mi lectura</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Herramienta de flujo</h3>
+        <p class="mt-2 text-sm text-dark-200">No lo veo como magia. Lo veo como una forma de convertir tareas sueltas en procesos más estables.</p>
+      </div>
+    </div>
+
+    <p>Qwen Code me interesa por una razón muy concreta: no intenta ser sólo otra ventana donde le pides código a una IA. La propuesta va más por otro lado: meter el agente dentro del flujo donde ya trabajas, con terminal, contexto del proyecto, Skills reutilizables, cambio de modelos y aprobaciones antes de tocar cosas delicadas.</p>
+    <p>Eso no lo convierte automáticamente en imprescindible. Pero sí cambia la pregunta. Ya no es “¿escribe código mejor que un chat?”. La pregunta buena es: ¿puede quitarte fricción real cuando trabajas con repositorios, tareas repetidas o proyectos que no tienes frescos en la cabeza?</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué me parece interesante</h2>
+    <p>Hay una diferencia enorme entre una IA que responde bien y una IA que encaja en una rutina. La primera impresiona cinco minutos. La segunda te ahorra trabajo todas las semanas.</p>
+    <p>Qwen Code apunta a esa segunda categoría. Si abre una carpeta, entiende el contexto, te ayuda a convertir una tarea repetida en una Skill y además te pide permiso antes de una operación sensible, ya estamos hablando de algo más útil que “otro chat para programar”.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">El cambio importante</h2>
+    <p>La parte que más me llama la atención es la combinación. Terminal por un lado, Skills por otro, modelos intercambiables y ahora Computer Use integrado según la actualización oficial del 4 de junio de 2026.</p>
+    <p>Por separado, cada pieza suena normal. Junta, la historia cambia: puedes empezar a construir pequeños flujos de trabajo. No una automatización gigante y peligrosa, sino procesos concretos: revisar una estructura, preparar un cambio, repetir una comprobación, documentar una decisión o pedir una propuesta antes de editar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las tres piezas que vigilaría</h2>
     <ol>
-      <li><strong>Skills reutilizables.</strong> Sirven para empaquetar capacidades y no repetir instrucciones manuales cada vez que haces una tarea parecida.</li>
-      <li><strong>Proveedores de modelo intercambiables.</strong> La documentacion permite configurar varios proveedores y cambiar el modelo con <code>/model</code>, algo util cuando no todas las tareas necesitan el mismo tipo de razonamiento.</li>
-      <li><strong>Modo de aprobacion.</strong> Esta es la pieza menos vistosa, pero la mas madura: separa lo que puede analizar, lo que puede autoeditar y lo que necesita permiso.</li>
+      <li><strong>Skills reutilizables.</strong> Si una instrucción la repites cada semana, no debería vivir sólo en tu cabeza ni en un prompt perdido.</li>
+      <li><strong>Cambio de modelo.</strong> No todas las tareas necesitan el mismo tipo de IA. Poder elegir modelo por trabajo puede ahorrar coste, tiempo o errores.</li>
+      <li><strong>Approval mode.</strong> Es menos vistoso que una demo, pero para mí es clave: la IA puede proponer, pero tú decides cuándo toca tocar archivos o ejecutar algo sensible.</li>
     </ol>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Donde esta el valor real</h2>
-    <p>La historia no es que escriba código; es que junta terminal, Computer Use, Skills y selección de modelos para actuar como una capa real de trabajo.</p>
-    <p>En un proyecto real esto puede traducirse en menos friccion: entrar en un repositorio desconocido, pedir ayuda para entender la estructura, convertir tareas repetidas en Skills, elegir modelo segun el trabajo y mantener permisos antes de cambios importantes.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Limites que conviene no ignorar</h2>
-    <ul class="space-y-2">
-      <li>No hay demo local propia ejecutada en esta corrida.</li>
-      <li>No se afirma rendimiento comparado ni precio porque no se verificó aquí.</li>
-      <li>Approval mode sigue siendo necesario para operaciones sensibles; no se vende como automatización total.</li>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde puede aportar de verdad</h2>
+    <p>Yo lo veo especialmente útil en esos momentos en los que abrir un proyecto da pereza: no recuerdas la estructura, no sabes por dónde empezar, tienes que revisar cambios o necesitas convertir una tarea manual en algo más repetible.</p>
+    <p>Ahí una herramienta así puede ganar minutos, pero sobre todo puede reducir fricción. Y eso en productividad importa mucho. No porque la IA haga magia, sino porque te ayuda a empezar antes y con menos bloqueo.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraría todavía</h2>
+    <p>No lo vendería como piloto automático. Si una herramienta toca código, archivos o acciones del sistema, la supervisión sigue siendo parte del trabajo. Approval mode no es una molestia: es una red de seguridad.</p>
+    <p>Tampoco sacaría conclusiones de precio o rendimiento sin probarlo en un caso concreto. Para mí la prueba real sería sencilla: darle una tarea pequeña, revisar el diff, medir si ahorra tiempo y ver si el resultado se puede mantener sin estar corrigiendo cada paso.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>Qwen Code merece estar en el radar si trabajas con repositorios, automatización ligera o tareas repetidas. No porque prometa hacerlo todo, sino porque empieza a juntar las piezas que hacen falta para trabajar con IA de forma más ordenada.</p>
+    <p>Mi lectura: no lo usaría para soltarle medio proyecto el primer día. Lo probaría con tareas pequeñas, repetibles y fáciles de verificar. Si ahí funciona, entonces sí puede convertirse en una herramienta seria dentro del flujo.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
+    <p>
+      Si te interesa este tipo de flujo con agentes y Skills, seguiría por aquí:
+    </p>
+    <ul>
+      <li><a href="/blog/claude-skills-desde-cero/" class="text-brand-400 hover:text-brand-300">Claude Skills desde cero</a>, para entender cómo empaquetar flujos repetibles.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, si quieres comparar modelos antes de elegir herramienta.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, si prefieres prompts y workflows listos para probar.</li>
     </ul>
-    <p>Computer Use integrado no significa autonomia total. Skills no garantizan que un flujo salga bien. Y cambiar de modelo no convierte cualquier tarea en una victoria automatica.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decision Decodifica</h2>
-    <p>Computer Use pasa a ser una capacidad integrada y sin configuración, no una demo aparte.</p>
-    <p>Qwen Code merece entrar en el radar si buscas automatizacion ligera, refactors, ayuda en proyectos grandes o flujos repetibles. No lo venderia como magia sin supervision. Lo miraria como una herramienta para convertir tareas sueltas en procesos mas estables.</p>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/overview/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/qwen-code-docs/en/users/overview/</a></li>
-      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/blog/weekly-update-2026-06-04/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/qwen-code-docs/en/blog/weekly-update-2026-06-04/</a></li>
-      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/</a></li>
-      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/</a></li>
-      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/</a></li>
+      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/overview/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Documentación oficial de Qwen Code</a></li>
+      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/blog/weekly-update-2026-06-04/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Actualización oficial del 4 de junio de 2026</a></li>
+      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Skills en Qwen Code</a></li>
+      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Configuración de proveedores de modelo</a></li>
+      <li><a href="https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Approval mode</a></li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">CTA</h2>
-    <p>Si quieres que sigamos probando herramientas de IA con este enfoque practico, la web de Decodifica ira reuniendo los analisis, fuentes y recursos utiles de cada video.</p>
-    <p>Tambien puedes leer la guia de <a href="/blog/claude-skills-desde-cero/" class="text-brand-400 hover:text-brand-300">Claude Skills desde cero</a> si quieres comparar como encajan los Skills en otros flujos de trabajo con IA.</p>
 
-    <aside class="mt-16 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-qwen-code-agent-terminal" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-qwen-code-agent-terminal" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <div class="not-prose mt-8">
+      <NewsletterForm
+        title="Recibe el filtro semanal de Decodifica"
+        description="Cada semana: una herramienta probada, una decisión práctica y un recurso útil para aplicar IA sin ruido."
+        buttonLabel="Recibir gratis"
+      />
+    </div>
   </article>
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -112,25 +162,25 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "about": tags,
     "citation": [
       {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview/"
+        "@type": "WebPage",
+        "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview/"
       },
       {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/weekly-update-2026-06-04/"
+        "@type": "WebPage",
+        "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/weekly-update-2026-06-04/"
       },
       {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/"
+        "@type": "WebPage",
+        "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/"
       },
       {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/"
+        "@type": "WebPage",
+        "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/"
       },
       {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/"
+        "@type": "WebPage",
+        "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/"
       }
-]
+    ]
   })} />
 </BaseLayout>
