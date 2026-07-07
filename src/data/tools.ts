@@ -52,6 +52,7 @@ export const tools: Tool[] = [
     tags: ['escritura', 'productividad', 'codigo', 'analisis'],
     officialUrl: 'https://openai.com/chatgpt/pricing/',
     relatedLinks: [
+      { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
       { label: 'Como elegir una herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'Recursos IA', href: '/recursos/' },
@@ -105,6 +106,7 @@ export const tools: Tool[] = [
     tags: ['documentos', 'escritura', 'prompts', 'contexto'],
     officialUrl: 'https://claude.com/pricing',
     relatedLinks: [
+      { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
       { label: 'Claude Skills desde cero', href: '/blog/claude-skills-desde-cero/' },
       { label: 'Emails con Claude sin sonar a robot', href: '/blog/claude-emails-sonar-humanos/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
