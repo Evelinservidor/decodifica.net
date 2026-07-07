@@ -1,138 +1,9 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
+import { tools } from '~/data/tools';
 
 const updatedAt = '7 julio 2026';
-
-const tools = [
-  {
-    name: 'ChatGPT',
-    summary: 'Asistente general para escribir, idear, resumir, programar y convertir tareas abiertas en borradores accionables.',
-    useCase: 'Asistente general',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Baja',
-    bestFor: 'Cuando necesitas pensar, escribir o desbloquear una tarea sin montar un sistema complejo.',
-    avoidIf: 'Vas a subir datos sensibles sin revisar ajustes, permisos o plan de empresa.',
-    tags: ['escritura', 'productividad', 'codigo', 'analisis'],
-    officialUrl: 'https://chatgpt.com/pricing/',
-    relatedHref: '/blog/como-elegir-herramienta-ia/',
-    relatedLabel: 'Como elegir una herramienta IA',
-  },
-  {
-    name: 'Claude',
-    summary: 'Modelo conversacional fuerte para documentos largos, escritura cuidada, razonamiento y trabajo con instrucciones reutilizables.',
-    useCase: 'Escritura y documentos',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Baja',
-    bestFor: 'Cuando necesitas transformar textos largos, preparar documentos o crear sistemas de prompts mas estables.',
-    avoidIf: 'Solo quieres respuestas cortas y no vas a aprovechar contexto, archivos o instrucciones.',
-    tags: ['documentos', 'escritura', 'prompts', 'contexto'],
-    officialUrl: 'https://claude.com/pricing',
-    relatedHref: '/blog/claude-skills-desde-cero/',
-    relatedLabel: 'Claude Skills desde cero',
-  },
-  {
-    name: 'NotebookLM',
-    summary: 'Herramienta de Google para trabajar con fuentes propias: PDFs, webs, videos, notas y materiales de estudio.',
-    useCase: 'Investigacion',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Baja',
-    bestFor: 'Cuando quieres preguntar a tus propias fuentes y mantener la respuesta anclada al material que has subido.',
-    avoidIf: 'Necesitas automatizar acciones fuera del cuaderno o trabajar con informacion muy confidencial sin revisar condiciones.',
-    tags: ['fuentes', 'investigacion', 'estudio', 'resumen'],
-    officialUrl: 'https://notebooklm.google/',
-    relatedHref: '/blog/notebooklm-guia-2026/',
-    relatedLabel: 'Guia NotebookLM',
-  },
-  {
-    name: 'Perplexity',
-    summary: 'Buscador con IA para explorar temas, encontrar fuentes y arrancar una investigacion sin partir de una pagina en blanco.',
-    useCase: 'Investigacion',
-    price: 'Freemium',
-    privacy: 'Baja',
-    difficulty: 'Baja',
-    bestFor: 'Cuando necesitas contexto rapido, fuentes y una primera comparacion antes de decidir que leer a fondo.',
-    avoidIf: 'Vas a aceptar la respuesta sin abrir fuentes o necesitas una verificacion legal, medica o financiera.',
-    tags: ['busqueda', 'fuentes', 'comparacion', 'contexto'],
-    officialUrl: 'https://www.perplexity.ai/pro',
-    relatedHref: '/blog/como-elegir-herramienta-ia/',
-    relatedLabel: 'Metodo de evaluacion',
-  },
-  {
-    name: 'Gamma',
-    summary: 'Creador de presentaciones, documentos y paginas visuales a partir de una idea o estructura inicial.',
-    useCase: 'Presentaciones',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Baja',
-    bestFor: 'Cuando necesitas un primer borrador visual rapido para ordenar una presentacion o propuesta.',
-    avoidIf: 'La pieza final exige identidad visual muy estricta o datos corporativos que no puedes subir a terceros.',
-    tags: ['presentaciones', 'diseño', 'propuestas', 'borradores'],
-    officialUrl: 'https://gamma.app/pricing',
-    relatedHref: '/blog/ia-crea-presentaciones-completas/',
-    relatedLabel: 'IA para presentaciones',
-  },
-  {
-    name: 'Canva AI',
-    summary: 'Suite visual con funciones de IA para crear piezas graficas, editar diseños y producir materiales de comunicacion.',
-    useCase: 'Diseño',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Baja',
-    bestFor: 'Cuando necesitas publicar una pieza visual decente sin abrir una herramienta profesional de diseño.',
-    avoidIf: 'Necesitas control fino de marca, trazabilidad completa o archivos de produccion complejos.',
-    tags: ['diseño', 'redes', 'presentaciones', 'marca'],
-    officialUrl: 'https://www.canva.com/en/pricing/',
-    relatedHref: '/recursos/',
-    relatedLabel: 'Recursos IA',
-  },
-  {
-    name: 'ElevenLabs',
-    summary: 'Herramienta de voz IA para generar locuciones, doblaje y audio sintetico con control de voces e idiomas.',
-    useCase: 'Audio y voz',
-    price: 'Freemium',
-    privacy: 'Alta',
-    difficulty: 'Media',
-    bestFor: 'Cuando necesitas probar voces, doblajes o narraciones con calidad suficiente para piezas publicas.',
-    avoidIf: 'No tienes claro el permiso de una voz, el uso comercial o la politica de datos del proyecto.',
-    tags: ['voz', 'audio', 'doblaje', 'video'],
-    officialUrl: 'https://elevenlabs.io/pricing',
-    relatedHref: '/blog/crear-agente-voz-ia-sin-programar/',
-    relatedLabel: 'Agentes de voz IA',
-  },
-  {
-    name: 'Qwen Code',
-    summary: 'Agente de codigo abierto para trabajar desde terminal con bases de codigo y tareas tecnicas.',
-    useCase: 'Codigo',
-    price: 'Open source',
-    privacy: 'Alta',
-    difficulty: 'Alta',
-    bestFor: 'Cuando sabes trabajar en terminal y quieres automatizar tareas tecnicas dentro de un proyecto real.',
-    avoidIf: 'Buscas una app visual sencilla o no puedes revisar lo que un agente cambia en tu codigo.',
-    tags: ['codigo', 'terminal', 'agentes', 'open source'],
-    officialUrl: 'https://qwen.ai/qwencode',
-    relatedHref: '/blog/qwen-code-agent-terminal/',
-    relatedLabel: 'Qwen Code en terminal',
-  },
-  {
-    name: 'DeepSeek',
-    summary: 'Asistente y modelos de IA con foco en coste bajo, razonamiento y opciones para uso por app o API.',
-    useCase: 'Asistente general',
-    price: 'Freemium',
-    privacy: 'Media',
-    difficulty: 'Media',
-    bestFor: 'Cuando quieres comparar respuestas, probar modelos alternativos o explorar opciones de bajo coste.',
-    avoidIf: 'La prioridad es cumplimiento corporativo estricto o no puedes revisar donde procesas los datos.',
-    tags: ['modelos', 'asistente', 'api', 'coste'],
-    officialUrl: 'https://www.deepseek.com/en/',
-    relatedHref: '/blog/deepseek-app-oficial-espanol/',
-    relatedLabel: 'DeepSeek en español',
-  },
-];
-
 const useCases = [...new Set(tools.map((tool) => tool.useCase))].sort();
 const prices = [...new Set(tools.map((tool) => tool.price))].sort();
 const privacyLevels = ['Baja', 'Media', 'Alta'];
@@ -169,11 +40,12 @@ const difficulties = ['Baja', 'Media', 'Alta'];
             <div class="mt-1 text-dark-300">ranking patrocinado</div>
           </div>
         </div>
+        <p class="mt-4 text-xs text-dark-400">Actualizado: {updatedAt}</p>
       </div>
 
       <NewsletterForm
         title="Recibe nuevas fichas"
-        description="Te avisamos cuando añadamos herramientas utiles, comparativas y recursos para probarlas mejor."
+        description="Te avisamos cuando anadamos herramientas utiles, comparativas y recursos para probarlas mejor."
         buttonLabel="Seguir la biblioteca"
       />
     </header>
@@ -227,53 +99,58 @@ const difficulties = ['Baja', 'Media', 'Alta'];
     </section>
 
     <section class="mt-8 grid gap-5 lg:grid-cols-3" id="tool-grid">
-      {tools.map((tool) => (
-        <article
-          class="tool-card flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/50"
-          data-name={tool.name.toLowerCase()}
-          data-summary={tool.summary.toLowerCase()}
-          data-tags={tool.tags.join(' ').toLowerCase()}
-          data-use-case={tool.useCase}
-          data-price={tool.price}
-          data-privacy={tool.privacy}
-          data-difficulty={tool.difficulty}
-        >
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{tool.useCase}</span>
-            <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.price}</span>
-            <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">Privacidad {tool.privacy}</span>
-            <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.difficulty}</span>
-          </div>
-          <h2 class="mt-4 font-display text-2xl font-bold text-white">{tool.name}</h2>
-          <p class="mt-3 text-sm leading-6 text-dark-200">{tool.summary}</p>
-
-          <div class="mt-5 grid gap-3 text-sm leading-6">
-            <div>
-              <div class="font-semibold text-white">Cuando usarla</div>
-              <p class="mt-1 text-dark-200">{tool.bestFor}</p>
+      {tools.map((tool) => {
+        const detailHref = `/herramientas/${tool.slug}/`;
+        const primaryHref = tool.hasDetailPage ? detailHref : tool.officialUrl;
+        const primaryLabel = tool.hasDetailPage ? 'Ver ficha practica' : 'Ver pagina oficial';
+        return (
+          <article
+            class="tool-card flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/50"
+            data-name={tool.name.toLowerCase()}
+            data-summary={tool.summary.toLowerCase()}
+            data-tags={tool.tags.join(' ').toLowerCase()}
+            data-use-case={tool.useCase}
+            data-price={tool.price}
+            data-privacy={tool.privacy}
+            data-difficulty={tool.difficulty}
+          >
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{tool.useCase}</span>
+              <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.price}</span>
+              <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">Privacidad {tool.privacy}</span>
+              <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.difficulty}</span>
             </div>
-            <div>
-              <div class="font-semibold text-white">Evitala si</div>
-              <p class="mt-1 text-dark-200">{tool.avoidIf}</p>
+            <h2 class="mt-4 font-display text-2xl font-bold text-white">{tool.name}</h2>
+            <p class="mt-3 text-sm leading-6 text-dark-200">{tool.summary}</p>
+
+            <div class="mt-5 grid gap-3 text-sm leading-6">
+              <div>
+                <div class="font-semibold text-white">Cuando usarla</div>
+                <p class="mt-1 text-dark-200">{tool.bestFor}</p>
+              </div>
+              <div>
+                <div class="font-semibold text-white">Evitala si</div>
+                <p class="mt-1 text-dark-200">{tool.avoidIf}</p>
+              </div>
             </div>
-          </div>
 
-          <div class="mt-5 flex flex-wrap gap-2">
-            {tool.tags.map((tag) => (
-              <span class="rounded-lg bg-dark-900 px-2.5 py-1 text-xs text-dark-300">{tag}</span>
-            ))}
-          </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+              {tool.tags.map((tag) => (
+                <span class="rounded-lg bg-dark-900 px-2.5 py-1 text-xs text-dark-300">{tag}</span>
+              ))}
+            </div>
 
-          <div class="mt-6 flex grow flex-col justify-end gap-3">
-            <a href={tool.relatedHref} class="text-sm font-semibold text-brand-300 hover:text-brand-200">
-              {tool.relatedLabel}
-            </a>
-            <a href={tool.officialUrl} target="_blank" rel="noopener" class="inline-flex w-fit rounded-lg border border-dark-600 bg-dark-900 px-3 py-2 text-sm font-semibold text-white transition hover:border-brand-500/60">
-              Ver pagina oficial
-            </a>
-          </div>
-        </article>
-      ))}
+            <div class="mt-6 flex grow flex-col justify-end gap-3">
+              <a href={primaryHref} target={tool.hasDetailPage ? undefined : '_blank'} rel={tool.hasDetailPage ? undefined : 'noopener'} class="inline-flex w-fit rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-600">
+                {primaryLabel}
+              </a>
+              <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} class="text-sm font-semibold text-brand-300 hover:text-brand-200">
+                {tool.relatedLinks[0]?.label ?? 'Como elegir una herramienta IA'}
+              </a>
+            </div>
+          </article>
+        );
+      })}
     </section>
 
     <p id="tool-empty" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-6 text-sm text-dark-200">
