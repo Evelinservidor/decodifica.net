@@ -7,6 +7,7 @@ const currentPath = Astro.url.pathname;
 const navItems = [
   { href: '/', label: 'Inicio' },
   { href: '/blog', label: 'Blog' },
+  { href: '/herramientas', label: 'Herramientas' },
   { href: '/recursos', label: 'Recursos IA' },
   { href: '/comunidad', label: 'Comunidad' },
   { href: '/quienes-somos', label: 'Quienes somos' },
@@ -20,7 +21,7 @@ const navItems = [
       <span class="font-display">{siteConfig.name}</span>
     </a>
 
-    <ul class="hidden items-center gap-6 md:flex">
+    <ul class="hidden items-center gap-5 lg:flex">
       {navItems.map((item) => (
         <li>
           <a
