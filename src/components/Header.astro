@@ -6,46 +6,137 @@ const currentPath = Astro.url.pathname;
 
 const navItems = [
   { href: '/', label: 'Inicio' },
-  { href: '/blog', label: 'Blog' },
   { href: '/herramientas', label: 'Herramientas' },
   { href: '/recursos', label: 'Recursos IA' },
+  { href: '/blog', label: 'Blog' },
   { href: '/comunidad', label: 'Comunidad' },
   { href: '/quienes-somos', label: 'Quienes somos' },
+  { href: '/contacto', label: 'Contacto' },
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b border-dark-600 bg-dark-800/90 backdrop-blur-md">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
-      <span class="text-brand-400">●</span>
-      <span class="font-display">{siteConfig.name}</span>
-    </a>
+  <nav class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+    <div class="flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
+        <span class="text-brand-400">●</span>
+        <span class="font-display">{siteConfig.name}</span>
+      </a>
 
-    <ul class="hidden items-center gap-5 lg:flex">
-      {navItems.map((item) => (
-        <li>
+      <ul class="hidden items-center gap-4 xl:flex">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'text-sm font-medium transition-colors',
+                currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                  ? 'text-brand-400'
+                  : 'text-dark-200 hover:text-white',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="hidden items-center gap-2 sm:flex">
+        <Button href="/recursos#newsletter" variant="ghost" size="sm" class="hidden lg:inline-flex">
+          Newsletter
+        </Button>
+        <Button href="/comunidad" variant="primary" size="sm">
+          Comunidad
+        </Button>
+      </div>
+
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-dark-600 bg-dark-900 text-white transition hover:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800 xl:hidden"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <span class="sr-only">Abrir menu</span>
+        <span class="relative h-4 w-5" aria-hidden="true">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded bg-current transition-transform"></span>
+          <span class="menu-line absolute left-0 top-1.5 h-0.5 w-5 rounded bg-current transition-opacity"></span>
+          <span class="menu-line absolute left-0 top-3 h-0.5 w-5 rounded bg-current transition-transform"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden">
+      <div class="mt-3 border-t border-dark-600 pb-2 pt-3">
+        <ul class="grid gap-1">
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'block rounded-lg px-3 py-2 text-base font-semibold transition-colors',
+                  currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                    ? 'bg-brand-500/10 text-brand-300'
+                    : 'text-dark-100 hover:bg-dark-700 hover:text-white',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-4 grid gap-2 sm:grid-cols-2">
           <a
-            href={item.href}
-            class:list={[
-              'text-sm font-medium transition-colors',
-              currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
-                ? 'text-brand-400'
-                : 'text-dark-200 hover:text-white',
-            ]}
+            href="/recursos#newsletter"
+            class="inline-flex items-center justify-center rounded-lg border border-brand-700 bg-transparent px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-700"
           >
-            {item.label}
+            Recibir el filtro semanal
           </a>
-        </li>
-      ))}
-    </ul>
-
-    <div class="flex items-center gap-2">
-      <Button href="/recursos#newsletter" variant="ghost" size="sm" class="hidden sm:inline-flex">
-        Newsletter
-      </Button>
-      <Button href="/comunidad" variant="primary" size="sm">
-        Comunidad
-      </Button>
+          <a
+            href="/comunidad"
+            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-600"
+          >
+            Entrar en comunidad
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+  const button = document.querySelector('#mobile-menu-button');
+  const menu = document.querySelector('#mobile-menu');
+
+  button?.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    button.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Cerrar menu');
+    menu?.classList.toggle('hidden', isOpen);
+    button.classList.toggle('is-open', !isOpen);
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      button?.setAttribute('aria-expanded', 'false');
+      button?.setAttribute('aria-label', 'Abrir menu');
+      button?.classList.remove('is-open');
+      menu.classList.add('hidden');
+    });
+  });
+</script>
+
+<style>
+  #mobile-menu-button.is-open .menu-line:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  #mobile-menu-button.is-open .menu-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu-button.is-open .menu-line:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+</style>
