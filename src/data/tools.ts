@@ -212,8 +212,44 @@ export const tools: Tool[] = [
     officialUrl: 'https://www.perplexity.ai/pro',
     relatedLinks: [
       { label: 'Metodo de evaluacion', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
+      { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
     ],
-    hasDetailPage: false,
+    hasDetailPage: true,
+    detail: {
+      verdict: 'Perplexity es util cuando necesitas orientarte rapido, encontrar fuentes y decidir que merece una lectura mas seria. No sustituye la verificacion: su valor esta en acelerar la primera fase de investigacion.',
+      idealFor: [
+        'Explorar un tema nuevo y sacar fuentes iniciales.',
+        'Comparar puntos de vista antes de escribir un articulo, guion o informe.',
+        'Encontrar documentos, paginas oficiales y contexto reciente.',
+        'Preparar una lista de lectura antes de tomar una decision.',
+      ],
+      notFor: [
+        'Aceptar una respuesta sin abrir y revisar las fuentes enlazadas.',
+        'Decisiones legales, medicas o financieras sin verificacion experta.',
+        'Trabajar con informacion privada cuando solo necesitas buscar en la web publica.',
+      ],
+      workflow: [
+        'Empieza con una pregunta concreta y pide fuentes primarias cuando existan.',
+        'Abre las fuentes importantes y descarta las que no validen el claim.',
+        'Pide una tabla de diferencias, dudas abiertas y terminos a revisar.',
+        'Lleva el material final a una herramienta de escritura o a NotebookLM si vas a trabajar con fuentes propias.',
+      ],
+      privacyNotes: [
+        'Funciona como buscador con IA: evita introducir datos privados si la tarea puede resolverse con informacion publica.',
+        'Para investigacion sensible, separa busqueda de contexto publico y analisis de documentos internos.',
+      ],
+      priceNotes: [
+        'Tiene plan gratuito y planes Pro/Max para uso mas intensivo.',
+        'Los planes de empresa tienen precios por asiento y controles adicionales; revisa la pagina oficial antes de contratar.',
+      ],
+      alternatives: ['NotebookLM para fuentes propias', 'ChatGPT para sintetizar y escribir', 'Claude para documentos largos', 'Google para busqueda manual'],
+      sources: [
+        { label: 'Planes oficiales de Perplexity', href: 'https://www.perplexity.ai/enterprise/pricing' },
+        { label: 'Perplexity Pro', href: 'https://www.perplexity.ai/pro' },
+        { label: 'FAQ de precios Enterprise', href: 'https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions.html' },
+      ],
+    },
   },
   {
     slug: 'gamma',
@@ -230,8 +266,42 @@ export const tools: Tool[] = [
     officialUrl: 'https://gamma.app/pricing',
     relatedLinks: [
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
+      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Recursos IA', href: '/recursos/' },
     ],
-    hasDetailPage: false,
+    hasDetailPage: true,
+    detail: {
+      verdict: 'Gamma es buena para convertir una idea o esquema en una primera presentacion visual. Su mejor uso no es reemplazar el criterio, sino desbloquear estructura, narrativa y borrador rapido.',
+      idealFor: [
+        'Preparar una presentacion inicial para ordenar una propuesta.',
+        'Transformar notas en una estructura visual que puedas revisar.',
+        'Crear documentos, paginas o decks internos sin empezar desde cero.',
+        'Probar varios enfoques de una misma idea antes de disenar a mano.',
+      ],
+      notFor: [
+        'Presentaciones finales con identidad visual muy estricta.',
+        'Material corporativo sensible que no puedes subir a una herramienta externa.',
+        'Decks donde cada grafico, dato y estilo debe estar auditado manualmente.',
+      ],
+      workflow: [
+        'Escribe primero el objetivo, publico y decision que quieres provocar.',
+        'Pide un esquema antes de generar el deck completo.',
+        'Edita titulares y orden de ideas antes de tocar colores o imagenes.',
+        'Exporta y revisa manualmente datos, claims y consistencia visual.',
+      ],
+      privacyNotes: [
+        'No subas informacion confidencial de clientes o estrategia sin revisar plan, permisos y politicas.',
+        'Para propuestas sensibles, usa datos anonimizados en el borrador y completa detalles fuera de la herramienta.',
+      ],
+      priceNotes: [
+        'Tiene plan gratuito y planes de pago para mas tarjetas por prompt, menos marca y funciones avanzadas.',
+        'Los limites de generacion, exportacion y modelos pueden cambiar segun el plan.',
+      ],
+      alternatives: ['Canva AI para piezas visuales y marca', 'PowerPoint o Google Slides para control final', 'ChatGPT o Claude para preparar el guion'],
+      sources: [
+        { label: 'Precios oficiales de Gamma', href: 'https://gamma.app/pricing' },
+      ],
+    },
   },
   {
     slug: 'canva-ai',
@@ -248,8 +318,43 @@ export const tools: Tool[] = [
     officialUrl: 'https://www.canva.com/en/pricing/',
     relatedLinks: [
       { label: 'Recursos IA', href: '/recursos/' },
+      { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
+      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
     ],
-    hasDetailPage: false,
+    hasDetailPage: true,
+    detail: {
+      verdict: 'Canva AI encaja cuando necesitas producir piezas visuales publicables con rapidez: posts, presentaciones, banners, miniaturas sencillas o materiales de marca. No sustituye a un sistema de diseno profesional cuando el control fino importa.',
+      idealFor: [
+        'Crear piezas de redes, presentaciones y materiales simples de comunicacion.',
+        'Probar variantes visuales antes de encargar o construir una version final.',
+        'Editar disenos existentes con ayuda de IA sin entrar en herramientas complejas.',
+        'Trabajar con plantillas, marca y formatos frecuentes de marketing.',
+      ],
+      notFor: [
+        'Produccion visual compleja donde necesitas archivos, capas y control profesional completo.',
+        'Material con datos o activos de marca que no puedes subir a terceros.',
+        'Piezas donde la originalidad visual es mas importante que la velocidad.',
+      ],
+      workflow: [
+        'Empieza desde una plantilla cercana al formato final.',
+        'Usa IA para generar variantes, no para cerrar la pieza sin revision.',
+        'Aplica colores, tipografia y assets de marca antes de exportar.',
+        'Comprueba legibilidad en movil y derechos de los recursos usados.',
+      ],
+      privacyNotes: [
+        'Revisa que imagenes, logos y materiales de clientes puedan subirse a Canva.',
+        'En equipos, usa espacios y permisos separados para no mezclar marcas o clientes.',
+      ],
+      priceNotes: [
+        'Canva mantiene plan gratuito y planes de pago para funciones Pro, Business o Enterprise.',
+        'Las funciones de IA usan allowances o limites segun plan; confirma el plan actual antes de depender de volumen.',
+      ],
+      alternatives: ['Gamma para decks generados desde texto', 'Adobe Express para piezas visuales rapidas', 'Figma para diseno colaborativo con mas control'],
+      sources: [
+        { label: 'Precios oficiales de Canva', href: 'https://www.canva.com/en/pricing/' },
+        { label: 'Canva Business', href: 'https://www.canva.com/newsroom/news/introducing-canva-business/' },
+      ],
+    },
   },
   {
     slug: 'elevenlabs',
@@ -266,8 +371,43 @@ export const tools: Tool[] = [
     officialUrl: 'https://elevenlabs.io/pricing',
     relatedLinks: [
       { label: 'Agentes de voz IA', href: '/blog/crear-agente-voz-ia-sin-programar/' },
+      { label: 'Recursos IA', href: '/recursos/' },
+      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
     ],
-    hasDetailPage: false,
+    hasDetailPage: true,
+    detail: {
+      verdict: 'ElevenLabs es una de las opciones fuertes para voz IA, locuciones y doblaje. Es potente, pero exige mas cuidado que una herramienta de texto: permisos de voz, uso comercial y contexto legal importan mucho.',
+      idealFor: [
+        'Probar locuciones para videos, demos, cursos o piezas internas.',
+        'Crear doblajes y versiones de audio con calidad suficiente para publicar.',
+        'Experimentar con voces, idiomas y estilos antes de producir a escala.',
+        'Construir prototipos de agentes de voz o productos con audio sintetico.',
+      ],
+      notFor: [
+        'Clonar o imitar voces sin permiso claro.',
+        'Publicar audio comercial sin revisar licencias, terminos y derechos.',
+        'Producciones masivas sin calcular creditos, coste por minuto y revision humana.',
+      ],
+      workflow: [
+        'Define primero el uso: prueba interna, video publico, doblaje o API.',
+        'Elige una voz con permisos adecuados y guarda el criterio de seleccion.',
+        'Genera una muestra corta y revisa naturalidad, ritmo y pronunciacion.',
+        'Antes de escalar, calcula creditos, derechos y proceso de aprobacion.',
+      ],
+      privacyNotes: [
+        'La voz es dato sensible: no uses voces reales sin consentimiento y documentacion.',
+        'Evita subir guiones privados o datos personales si no son necesarios para la locucion.',
+      ],
+      priceNotes: [
+        'Tiene plan gratuito y planes de pago basados en creditos incluidos.',
+        'El coste real depende del producto usado, modelo, volumen y posibles excedentes.',
+      ],
+      alternatives: ['OpenAI para voz integrada en flujos propios', 'PlayHT o Resemble AI para comparativas de voz', 'TTS local si priorizas control'],
+      sources: [
+        { label: 'Precios oficiales de ElevenLabs', href: 'https://elevenlabs.io/pricing' },
+        { label: 'Precios API de ElevenLabs', href: 'https://elevenlabs.io/pricing/api' },
+      ],
+    },
   },
   {
     slug: 'qwen-code',
