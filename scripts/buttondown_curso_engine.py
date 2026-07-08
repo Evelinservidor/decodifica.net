@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -29,17 +30,19 @@ from urllib.error import HTTPError, URLError
 
 
 BASE_URL = "https://api.buttondown.com/v1"
+ROOT = Path(__file__).resolve().parents[1]
 CRED_PATH = Path(os.environ.get(
     "BUTTONDOWN_TOKEN_FILE",
     Path.home() / ".codex" / "decodifica" / "credentials" / "buttondown_token.json",
 ))
-CURSO_EMAIL_IDS = {
-    1: "em_2p4nm9th4s8fvbenmnhgwfn9h1",
-    2: "em_083896cx5g9xbbs1w7kytejmva",
-    3: "em_6mn51pashc8rxsm56dramsqd57",
-    4: "em_2fsjs2q94y9g18ngefj1mathsf",
-    5: "em_1mwqdy32y89y0bveqabyey97x8",
+COURSE_FILES = {
+    1: ("dia-1-setup.md", "Día 1 de 5: el setup que cambia cómo ChatGPT te responde"),
+    2: ("dia-2-estructura-prompts.md", "Día 2 de 5: el framework RTF para escribir prompts que funcionan siempre"),
+    3: ("dia-3-contexto-archivos.md", "Día 3 de 5: cómo hacer que ChatGPT lea TUS documentos"),
+    4: ("dia-4-iteracion.md", "Día 4 de 5: el truco del segundo turno"),
+    5: ("dia-5-agentes.md", "Día 5 de 5: tu primer Custom GPT en 10 minutos"),
 }
+COURSE_DIR = ROOT / "lead-magnets" / "mini-curso"
 DAY_DELAY = timedelta(hours=24)
 COURSE_VERSION = "decodifica_codex_v2"
 
@@ -70,6 +73,31 @@ def api(method: str, path: str, token: str, body: dict | None = None, expect_jso
         return json.loads(raw)
 
 
+def parse_course_email(day: int) -> tuple[str, str]:
+    filename, fallback_subject = COURSE_FILES[day]
+    path = COURSE_DIR / filename
+    text = path.read_text(encoding="utf-8")
+    subject_match = re.search(r"\*\*Asunto:\*\*\s*(.+)", text)
+    subject = subject_match.group(1).strip() if subject_match else fallback_subject
+    parts = text.split("\n---\n", 1)
+    body = parts[1].strip() if len(parts) == 2 else text.strip()
+    return subject, body
+
+
+def subscriber_filter(subscriber_id: str) -> dict:
+    return {
+        "filters": [
+            {
+                "field": "subscriber.id",
+                "operator": "equals",
+                "value": subscriber_id,
+            }
+        ],
+        "groups": [],
+        "predicate": "and",
+    }
+
+
 def list_active_subscribers(token: str) -> list[dict]:
     subscribers = []
     page = 1
@@ -82,14 +110,25 @@ def list_active_subscribers(token: str) -> list[dict]:
     return subscribers
 
 
-def send_email_to_subscriber(token: str, email_id: str, subscriber_id: str) -> None:
-    api(
-        "POST",
-        f"/emails/{email_id}/send-draft",
-        token,
-        {"subscribers": [subscriber_id]},
-        expect_json=False,
-    )
+def send_course_email(token: str, day: int, subscriber_id: str) -> str:
+    subject, body = parse_course_email(day)
+    payload = {
+        "subject": subject,
+        "body": body,
+        "email_type": "private",
+        "archival_mode": "disabled",
+        "commenting_mode": "disabled",
+        "filters": subscriber_filter(subscriber_id),
+        "metadata": {
+            "source": "decodifica_codex_course",
+            "course_version": COURSE_VERSION,
+            "course_day": day,
+        },
+    }
+    created = api("POST", "/emails", token, {**payload, "status": "draft"})
+    email_id = created["id"]
+    api("POST", f"/emails/{email_id}/publish", token, payload)
+    return email_id
 
 
 def patch_metadata(token: str, subscriber_id: str, metadata: dict) -> None:
@@ -146,10 +185,10 @@ def process_subscriber(
         return {"action": "skip", "reason": "curso_completed", "subscriber_id": subscriber_id}
 
     if force_day is not None:
-        email_id = CURSO_EMAIL_IDS[force_day]
         day_key = f"curso_dia_{force_day}_sent_at"
+        email_id = None
         if execute:
-            send_email_to_subscriber(token, email_id, subscriber_id)
+            email_id = send_course_email(token, force_day, subscriber_id)
             new_metadata = {
                 **metadata,
                 "curso_version": COURSE_VERSION,
@@ -162,7 +201,7 @@ def process_subscriber(
         return {
             "action": f"{'sent' if execute else 'would_send'}_dia_{force_day}",
             "subscriber_id": subscriber_id,
-            "email_id": email_id,
+            "email_id": email_id or "fresh_private_email",
         }
 
     started = parse_iso(metadata.get("curso_started_at"))
@@ -186,17 +225,17 @@ def process_subscriber(
             continue
 
         if (now - last_sent) >= DAY_DELAY:
-            email_id = CURSO_EMAIL_IDS[day]
+            email_id = None
             if execute:
                 new_metadata = {**metadata, day_key: now.isoformat()}
                 if day == 5:
                     new_metadata["curso_completed_at"] = now.isoformat()
-                send_email_to_subscriber(token, email_id, subscriber_id)
+                email_id = send_course_email(token, day, subscriber_id)
                 patch_metadata(token, subscriber_id, new_metadata)
             return {
                 "action": f"{'sent' if execute else 'would_send'}_dia_{day}",
                 "subscriber_id": subscriber_id,
-                "email_id": email_id,
+                "email_id": email_id or "fresh_private_email",
             }
 
         return {

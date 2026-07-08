@@ -82,8 +82,9 @@ python scripts\buttondown_curso_engine.py --inspect
 python scripts\buttondown_curso_engine.py --execute
 ```
 
-El script usa los drafts creados en Buttondown, envía solo el email que toca y
-marca progreso en metadata:
+El script crea un email privado, no archivado y filtrado al suscriptor que toca.
+No usa `send-draft`, porque Buttondown añade `[PREVIEW]` al asunto de los drafts.
+Después marca progreso en metadata:
 
 - `curso_started_at`
 - `curso_version`

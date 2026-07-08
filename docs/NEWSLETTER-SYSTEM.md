@@ -43,12 +43,14 @@
 - **Trigger:** nueva suscripción + cron diario propio
 - **Formato:** 5 emails, 1 por día
 - **Contenido:** `lead-magnets/mini-curso/dia-1-setup.md` a `dia-5-agentes.md`
-- **Setup en Buttondown:** welcome email nativo + drafts del mini-curso
+- **Setup en Buttondown:** welcome email nativo + motor Codex para el mini-curso
 - **Estado:** listo para probar con email de Jordi y activar cron diario
 
 Buttondown Free no incluye Automations nativas para welcome sequences completas.
 Por eso la secuencia la gestiona `scripts/buttondown_curso_engine.py` usando la
-API gratuita y metadata de suscriptor.
+API gratuita y metadata de suscriptor. El motor crea emails privados y no
+archivados para evitar el prefijo `[PREVIEW]` que Buttondown añade al enviar
+drafts.
 
 Cron Codex activo:
 

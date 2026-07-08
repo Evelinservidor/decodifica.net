@@ -87,6 +87,10 @@ El mini-curso no se programa con Automations de Buttondown en el plan gratis.
 Se envía desde Codex con `scripts\buttondown_curso_engine.py`, que guarda el
 avance en metadata del suscriptor.
 
+El motor no usa `send-draft`: Buttondown añade `[PREVIEW]` al asunto de los
+drafts. En su lugar crea emails privados, no archivados y filtrados al
+suscriptor correspondiente.
+
 ## Lo que NO necesita Buttondown
 
 - La URL del PDF (`https://vsczmjjtesenlqruqoqv.supabase.co/...`) es pública, no requiere auth.
