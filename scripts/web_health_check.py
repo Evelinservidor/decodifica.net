@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import urllib.error
 import urllib.request
 from datetime import date, datetime
@@ -14,6 +15,9 @@ from pathlib import Path
 
 WEB_REPO = Path(__file__).resolve().parents[1]
 DEFAULT_OPS_CONFIG = Path(os.environ.get("DECODIFICA_WEB_CONFIG", r"D:\gpt decodifica\_web\config\web-targets.json"))
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 REQUIRED_PATHS = [
     "/",
