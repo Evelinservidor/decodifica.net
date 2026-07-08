@@ -1,0 +1,125 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { siteConfig } from '~/lib/site-config';
+
+const pageUrl = `${siteConfig.url}/newsletter/`;
+
+const includes = [
+  {
+    title: 'Una decision practica',
+    description: 'Que herramienta merece abrir esta semana, para que sirve y cuando no compensa usarla.',
+  },
+  {
+    title: 'Un recurso aplicable',
+    description: 'Un prompt, flujo, mapa o guia para pasar de ver un video a probar algo concreto.',
+  },
+  {
+    title: 'Un aviso de riesgo',
+    description: 'Precio, privacidad, fuentes, limites o datos sensibles que conviene revisar antes de depender de una IA.',
+  },
+];
+
+const paths = [
+  { label: 'Elegir una herramienta', href: '/herramientas/', description: 'Fichas filtrables por tarea, precio, privacidad y dificultad.' },
+  { label: 'Guardar un recurso', href: '/recursos/', description: 'Prompts, workflows y mapas para aplicar ideas sin empezar de cero.' },
+  { label: 'Comparar opciones', href: '/herramientas/chatgpt-vs-claude/', description: 'Guias de decision cuando dos herramientas parecen servir para lo mismo.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Newsletter Decodifica',
+  description: 'Newsletter semanal de Decodifica para recibir decisiones practicas sobre herramientas de IA, recursos y avisos de riesgo.',
+  url: pageUrl,
+  publisher: {
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+};
+---
+
+<BaseLayout
+  title="Newsletter Decodifica"
+  description="Recibe el filtro semanal de Decodifica: una herramienta de IA que merece mirar, una decision practica y un recurso para probarla mejor."
+>
+  <main class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <header class="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          Newsletter semanal
+        </p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+          El filtro Decodifica para probar IA sin perder tiempo.
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-8 text-dark-200">
+          Cada semana recibes una seleccion corta para decidir que herramienta mirar, que evitar y que recurso guardar. Sin depender de estar pendiente de YouTube, TikTok o redes.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm text-dark-200 sm:grid-cols-3">
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Herramientas utiles</div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Prompts y recursos</div>
+          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Criterio antes de pagar</div>
+        </div>
+      </div>
+
+      <NewsletterForm
+        title="Recibe el filtro semanal"
+        description="Una vez por semana: una herramienta que merece la pena, una decision practica y un recurso para usarla mejor."
+        buttonLabel="Apuntarme gratis"
+      />
+    </header>
+
+    <section class="mt-14 grid gap-5 lg:grid-cols-3">
+      {includes.map((item) => (
+        <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+          <h2 class="font-display text-xl font-bold text-white">{item.title}</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">{item.description}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="mt-12 rounded-lg border border-dark-600 bg-dark-800 p-6 lg:p-8">
+      <div class="grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Como encaja en la web</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">La newsletter no sustituye las guias: te dice por donde empezar.</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">
+            Si algo merece una prueba larga, lo desarrollamos en recursos, fichas o comparativas. El email sirve para volver a lo importante sin revisar todo el contenido publicado.
+          </p>
+        </div>
+        <div class="grid gap-4 md:grid-cols-3">
+          {paths.map((path) => (
+            <a href={path.href} class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+              <h3 class="font-display text-lg font-bold text-white">{path.label}</h3>
+              <p class="mt-2 text-sm leading-6 text-dark-300">{path.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 grid gap-5 rounded-lg border border-brand-500/30 bg-dark-800 p-6 lg:grid-cols-[.85fr_1.15fr] lg:p-8">
+      <div>
+        <p class="text-sm font-semibold text-brand-300">Promesa editorial</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">Corto, accionable y con baja en un clic.</h2>
+      </div>
+      <ul class="grid gap-3 text-sm leading-6 text-dark-200 sm:grid-cols-2">
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4">No enviamos una lista interminable de noticias.</li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4">No recomendamos una herramienta solo porque este de moda.</li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4">No escondemos limites de precio, privacidad o fuentes.</li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4">Si no te aporta, puedes darte de baja en un clic.</li>
+      </ul>
+    </section>
+
+    <div id="newsletter" class="mt-12">
+      <NewsletterForm
+        title="Apuntate al filtro Decodifica"
+        description="Empieza por el email semanal y usa la web como biblioteca cuando quieras profundizar."
+        buttonLabel="Recibir el filtro"
+      />
+    </div>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>

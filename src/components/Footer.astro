@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
       <div class="col-span-1 md:col-span-2">
         <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
-          <span class="text-brand-400">●</span>
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500 text-sm font-bold text-white">D</span>
           <span class="font-display">{siteConfig.name}</span>
         </a>
         <p class="mt-3 max-w-md text-sm text-dark-200">
@@ -23,6 +23,7 @@ const year = new Date().getFullYear();
           <li><a href="/blog" class="text-dark-200 hover:text-brand-400">Blog</a></li>
           <li><a href="/herramientas" class="text-dark-200 hover:text-brand-400">Herramientas IA</a></li>
           <li><a href="/recursos" class="text-dark-200 hover:text-brand-400">Recursos IA</a></li>
+          <li><a href="/newsletter" class="text-dark-200 hover:text-brand-400">Newsletter</a></li>
           <li><a href="/comunidad" class="text-dark-200 hover:text-brand-400">Comunidad</a></li>
           <li><a href="/quienes-somos" class="text-dark-200 hover:text-brand-400">Quienes somos</a></li>
           <li><a href="/contacto" class="text-dark-200 hover:text-brand-400">Contacto</a></li>
@@ -42,7 +43,7 @@ const year = new Date().getFullYear();
           {siteConfig.social.tiktok && (
             <li><a href={siteConfig.social.tiktok} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">TikTok</a></li>
           )}
-          <li><a href={siteConfig.newsletter.url} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Newsletter</a></li>
+          <li><a href={siteConfig.newsletter.url} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Archivo Buttondown</a></li>
           <li><a href={`mailto:${siteConfig.author.email}`} class="text-dark-200 hover:text-brand-400">{siteConfig.author.publicEmailLabel}</a></li>
         </ul>
       </div>
@@ -50,7 +51,7 @@ const year = new Date().getFullYear();
 
     <div class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-dark-600 pt-6 sm:flex-row">
       <p class="text-xs text-dark-300">
-        © {year} {siteConfig.name}. IA práctica, sin ruido.
+        Copyright {year} {siteConfig.name}. IA practica, sin ruido.
       </p>
       <ul class="flex gap-4 text-xs">
         <li><a href="/aviso-legal" class="text-dark-300 hover:text-brand-400">Aviso legal</a></li>
