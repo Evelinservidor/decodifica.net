@@ -1,0 +1,364 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { getToolBySlug } from '~/data/tools';
+import { siteConfig } from '~/lib/site-config';
+
+const gamma = getToolBySlug('gamma');
+const canva = getToolBySlug('canva-ai');
+
+const pageUrl = `${siteConfig.url}/herramientas/gamma-vs-canva-ai/`;
+const title = 'Gamma vs Canva AI: cual usar';
+const description = 'Comparativa practica entre Gamma y Canva AI: presentaciones, documentos visuales, marca, redes, precio, privacidad y flujo recomendado.';
+
+const rows = [
+  {
+    criterion: 'Crear desde una idea',
+    gamma: 'Muy fuerte para convertir un prompt, esquema o documento en una presentacion o pagina visual inicial.',
+    canva: 'Puede generar y editar, pero su ventaja aparece mas cuando ya estas trabajando dentro de formatos visuales concretos.',
+    winner: 'Gamma',
+  },
+  {
+    criterion: 'Control visual y marca',
+    gamma: 'Suficiente para borradores y piezas limpias, pero menos natural si necesitas un sistema visual amplio.',
+    canva: 'Mejor para plantillas, brand kits, formatos de redes, materiales repetibles y adaptaciones visuales.',
+    winner: 'Canva AI',
+  },
+  {
+    criterion: 'Presentaciones',
+    gamma: 'Gana para pasar de idea a deck rapido y con narrativa visual.',
+    canva: 'Gana si necesitas editar mucho el estilo, adaptar la pieza a marca o reutilizar elementos de diseno.',
+    winner: 'Depende del momento',
+  },
+  {
+    criterion: 'Redes y piezas de marketing',
+    gamma: 'Puede generar social content, pero no es su terreno mas diferencial.',
+    canva: 'Muy fuerte para formatos de redes, banners, miniaturas, carruseles y piezas reutilizables.',
+    winner: 'Canva AI',
+  },
+  {
+    criterion: 'Documentos visuales',
+    gamma: 'Buen encaje para one-pagers, white papers, paginas y documentos visuales estructurados.',
+    canva: 'Buen encaje si quieres una pieza mas disenada y ligada a marca o plantilla.',
+    winner: 'Empate segun salida',
+  },
+  {
+    criterion: 'Privacidad y equipos',
+    gamma: 'Revisa plan, workspace, archivos subidos y permisos antes de usar informacion sensible.',
+    canva: 'Ofrece controles de AI y permisos por plan; aun asi, revisa contenido, marca y datos de cliente antes de subirlos.',
+    winner: 'Revisar plan',
+  },
+];
+
+const decisions = [
+  {
+    title: 'Elige Gamma si...',
+    items: [
+      'Tienes una idea, texto o esquema y quieres convertirlo rapido en deck o documento visual.',
+      'Necesitas ordenar una propuesta antes de entrar en diseno fino.',
+      'Quieres generar varias estructuras de presentacion para comparar enfoques.',
+      'La velocidad del primer borrador importa mas que el control pixel a pixel.',
+    ],
+  },
+  {
+    title: 'Elige Canva AI si...',
+    items: [
+      'Necesitas piezas visuales listas para redes, marketing o marca.',
+      'Quieres adaptar una idea a varios formatos: presentacion, post, banner, miniatura o carrusel.',
+      'Trabajas con plantillas, brand kits o materiales recurrentes.',
+      'La edicion visual y la consistencia de marca pesan mas que el primer borrador.',
+    ],
+  },
+];
+
+const useCases = [
+  {
+    task: 'Tengo una idea y necesito una presentacion inicial',
+    choice: 'Gamma',
+    reason: 'Empieza con Gamma para convertir el concepto en estructura visual y narrativa.',
+  },
+  {
+    task: 'Tengo que publicar piezas en redes',
+    choice: 'Canva AI',
+    reason: 'Canva encaja mejor con formatos, plantillas, marca y adaptaciones visuales recurrentes.',
+  },
+  {
+    task: 'Tengo una propuesta comercial',
+    choice: 'Gamma primero, Canva despues',
+    reason: 'Usa Gamma para ordenar el argumento y Canva si necesitas pulir marca, portada o piezas derivadas.',
+  },
+  {
+    task: 'Tengo identidad visual estricta',
+    choice: 'Canva AI',
+    reason: 'Si la marca manda, necesitas plantillas, controles visuales y materiales reutilizables.',
+  },
+  {
+    task: 'Quiero un documento visual para explicar una idea',
+    choice: 'Gamma',
+    reason: 'Gamma es muy comodo para one-pagers, documentos y paginas visuales que nacen de texto.',
+  },
+];
+
+const workflow = [
+  'Empieza por el objetivo: vender, explicar, presentar o publicar.',
+  'Usa Gamma si necesitas estructura y narrativa desde texto.',
+  'Usa Canva si necesitas adaptar, maquetar y mantener marca.',
+  'Antes de publicar, revisa datos, derechos de recursos, legibilidad movil y exportacion final.',
+];
+
+const sources = [
+  { label: 'Web oficial de Gamma', href: 'https://gamma.app/' },
+  { label: 'Precios oficiales de Gamma', href: 'https://gamma.app/pricing' },
+  { label: 'Precios oficiales de Canva', href: 'https://www.canva.com/en/pricing/' },
+  { label: 'Canva AI', href: 'https://www.canva.com/canva-ai/' },
+  { label: 'Magic Studio y privacidad de Canva', href: 'https://www.canva.com/newsroom/news/magic-studio/' },
+  { label: 'Uso de IA en Canva', href: 'https://www.canva.com/help/ai-access/' },
+];
+
+const faq = [
+  {
+    question: 'Es mejor Gamma o Canva AI para presentaciones?',
+    answer: 'Gamma suele ser mejor para generar el primer deck desde una idea o documento. Canva AI suele ser mejor si necesitas controlar marca, plantilla, formato y piezas derivadas.',
+  },
+  {
+    question: 'Cual conviene para redes sociales?',
+    answer: 'Canva AI encaja mejor para redes porque su ecosistema esta pensado para formatos visuales, plantillas, brand kits y adaptaciones rapidas.',
+  },
+  {
+    question: 'Tiene sentido usar las dos?',
+    answer: 'Si. Un flujo practico es usar Gamma para ordenar una propuesta o presentacion y Canva para pulir diseno, marca y materiales de distribucion.',
+  },
+];
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: pageUrl,
+  datePublished: '2026-07-08',
+  dateModified: '2026-07-08',
+  author: {
+    '@type': 'Organization',
+    name: 'Decodifica',
+    url: siteConfig.url,
+  },
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  pubDate="2026-07-08"
+  modifiedDate="2026-07-08"
+  keywords={['Gamma vs Canva AI', 'Gamma', 'Canva AI', 'presentaciones IA', 'herramientas IA']}
+  section="Herramientas IA"
+>
+  <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
+      <a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a>
+      <span class="mx-2">/</span>
+      <span>Gamma vs Canva AI</span>
+    </nav>
+
+    <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          Comparativa practica
+        </p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+          Gamma vs Canva AI: cual usar para presentaciones y diseno
+        </h1>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
+          Gamma es mejor para convertir una idea en una presentacion o documento visual. Canva AI es mejor para producir, adaptar y mantener piezas visuales con marca. No compiten siempre por la misma fase: muchas veces se complementan.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/herramientas/gamma/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha Gamma</a>
+          <a href="/herramientas/canva-ai/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver ficha Canva AI</a>
+        </div>
+      </div>
+
+      <aside class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+        <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+        <dl class="mt-4 grid gap-4 text-sm leading-6">
+          <div>
+            <dt class="font-semibold text-brand-300">Primer borrador</dt>
+            <dd class="mt-1 text-dark-200">Gamma</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-brand-300">Marca y formatos</dt>
+            <dd class="mt-1 text-dark-200">Canva AI</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-brand-300">Flujo ideal</dt>
+            <dd class="mt-1 text-dark-200">Gamma para estructurar, Canva para pulir y distribuir.</dd>
+          </div>
+        </dl>
+        <a href="#newsletter" class="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
+          Recibir el filtro
+        </a>
+      </aside>
+    </header>
+
+    <section class="prose prose-invert mt-12 max-w-none text-dark-200">
+      <h2>Veredicto Decodifica</h2>
+      <p>
+        Si la tarea empieza con una idea en bruto, abre Gamma. Si la tarea termina en una pieza visual publicable, abre Canva. Para propuestas y presentaciones importantes, el flujo mas sensato es generar estructura en Gamma y terminar con criterio visual en Canva.
+      </p>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      {decisions.map((block) => (
+        <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+          <h2 class="font-display text-2xl font-bold text-white">{block.title}</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+            {block.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Comparativa por criterio</h2>
+      <div class="mt-5 overflow-x-auto">
+        <table class="min-w-full border-separate border-spacing-0 text-left text-sm">
+          <thead>
+            <tr class="text-xs uppercase text-dark-300">
+              <th class="border-b border-dark-600 px-3 py-3">Criterio</th>
+              <th class="border-b border-dark-600 px-3 py-3">Gamma</th>
+              <th class="border-b border-dark-600 px-3 py-3">Canva AI</th>
+              <th class="border-b border-dark-600 px-3 py-3">Mejor opcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr class="align-top text-dark-200">
+                <th class="border-b border-dark-700 px-3 py-4 font-semibold text-white">{row.criterion}</th>
+                <td class="border-b border-dark-700 px-3 py-4 leading-6">{row.gamma}</td>
+                <td class="border-b border-dark-700 px-3 py-4 leading-6">{row.canva}</td>
+                <td class="border-b border-dark-700 px-3 py-4 font-semibold text-brand-300">{row.winner}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Que abrir primero segun la tarea</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        {useCases.map((item) => (
+          <div class="rounded-lg border border-dark-600 bg-dark-900 p-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="font-display text-lg font-bold text-white">{item.task}</h3>
+              <span class="rounded-lg bg-brand-500/10 px-2.5 py-1 text-xs font-semibold text-brand-300">{item.choice}</span>
+            </div>
+            <p class="mt-2 text-sm leading-6 text-dark-200">{item.reason}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Flujo recomendado</h2>
+      <ol class="mt-5 grid gap-4 md:grid-cols-4">
+        {workflow.map((step, index) => (
+          <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">
+            <span class="text-xs font-semibold text-brand-300">Paso {index + 1}</span>
+            <p class="mt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Precio y limites</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          Gamma tiene plan gratuito y planes de pago que amplian modelos, tarjetas por prompt, marca, dominios, API y opciones de equipo. Canva tiene Free, Pro, Business y Enterprise, con limites de uso de herramientas IA y controles segun plan. En los dos casos, revisa exportacion, marca, creditos o allowances antes de montar un flujo recurrente.
+        </p>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          En estas herramientas el riesgo suele estar en subir propuestas, datos de clientes, logos, imagenes o material de marca. Canva publica controles de IA y permisos por plan; Gamma tambien debe revisarse por workspace, archivos y permisos. Si hay datos sensibles, usa material anonimizado para el borrador.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Fichas relacionadas</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6">
+          {gamma && <li><a href={`/herramientas/${gamma.slug}/`} class="text-brand-300 hover:text-brand-200">{gamma.name}: cuando usarla</a></li>}
+          {canva && <li><a href={`/herramientas/${canva.slug}/`} class="text-brand-300 hover:text-brand-200">{canva.name}: cuando usarla</a></li>}
+          <li><a href="/blog/ia-crea-presentaciones-completas/" class="text-brand-300 hover:text-brand-200">IA para crear presentaciones completas</a></li>
+          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Como elegir una herramienta IA</a></li>
+        </ul>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Fuentes</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6">
+          {sources.map((source) => (
+            <li><a href={source.href} target="_blank" rel="noopener" class="text-brand-300 hover:text-brand-200">{source.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Preguntas frecuentes</h2>
+      <div class="mt-5 grid gap-4">
+        {faq.map((item) => (
+          <details class="rounded-lg border border-dark-600 bg-dark-900 p-4">
+            <summary class="cursor-pointer font-semibold text-white">{item.question}</summary>
+            <p class="mt-3 text-sm leading-6 text-dark-200">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <div id="newsletter" class="mt-12">
+      <NewsletterForm
+        title="Recibe comparativas sin ruido"
+        description="Una vez por semana: que herramienta merece probar, cual evitar y que revisar antes de pagar o subir datos."
+        buttonLabel="Recibir el filtro"
+      />
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Herramientas IA',
+        item: `${siteConfig.url}/herramientas/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Gamma vs Canva AI',
+        item: pageUrl,
+      },
+    ],
+  })} />
+</BaseLayout>

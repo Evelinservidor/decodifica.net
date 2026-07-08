@@ -269,6 +269,7 @@ export const tools: Tool[] = [
     tags: ['presentaciones', 'diseno', 'propuestas', 'borradores'],
     officialUrl: 'https://gamma.app/pricing',
     relatedLinks: [
+      { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Recursos IA', href: '/recursos/' },
@@ -321,6 +322,7 @@ export const tools: Tool[] = [
     tags: ['diseno', 'redes', 'presentaciones', 'marca'],
     officialUrl: 'https://www.canva.com/en/pricing/',
     relatedLinks: [
+      { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/' },
       { label: 'Recursos IA', href: '/recursos/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
