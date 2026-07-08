@@ -32,6 +32,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Python/local generated files
+__pycache__/
+*.py[cod]
+
 # Coverage
 coverage/
 *.lcov
@@ -56,3 +60,7 @@ $RECYCLE.BIN/
 
 # Local scratch
 __trash__/
+docs/backups/
+data/buttondown_emails.json
+gsc-report.txt
+public/og/blog/_*.py
