@@ -83,6 +83,10 @@ python scripts\buttondown_curso_engine.py
 Sin `--execute` no crean drafts, no consultan suscriptores y no envían emails.
 Usar `--execute` solo cuando Jordi apruebe esa acción concreta.
 
+El mini-curso no se programa con Automations de Buttondown en el plan gratis.
+Se envía desde Codex con `scripts\buttondown_curso_engine.py`, que guarda el
+avance en metadata del suscriptor.
+
 ## Lo que NO necesita Buttondown
 
 - La URL del PDF (`https://vsczmjjtesenlqruqoqv.supabase.co/...`) es pública, no requiere auth.

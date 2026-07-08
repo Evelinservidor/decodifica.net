@@ -40,11 +40,27 @@
 
 ### 3. Mini-curso 5 días (sustituye al PDF genérico)
 
-- **Trigger:** nueva suscripción, secuencia automática
+- **Trigger:** nueva suscripción + cron diario propio
 - **Formato:** 5 emails, 1 por día
 - **Contenido:** `lead-magnets/mini-curso/dia-1-setup.md` a `dia-5-agentes.md`
-- **Setup en Buttondown:** Automations → trigger "New subscriber" + 5 emails con delay
-- **Estado:** 📋 Listo para activar (pendiente setup en Buttondown dashboard)
+- **Setup en Buttondown:** welcome email nativo + drafts del mini-curso
+- **Estado:** listo para probar con email de Jordi y activar cron diario
+
+Buttondown Free no incluye Automations nativas para welcome sequences completas.
+Por eso la secuencia la gestiona `scripts/buttondown_curso_engine.py` usando la
+API gratuita y metadata de suscriptor.
+
+Cron Codex activo:
+
+```text
+decodifica-newsletter-minicurso-diario
+```
+
+Horario: diario a las 11:20. Primero ejecuta `--inspect`; si no hay errores,
+ejecuta `--execute`. No usa `--force-day`.
+
+El engine usa `curso_version=decodifica_codex_v2`; si encuentra metadata antigua
+de curso, resetea solo las claves `curso_*` y empieza limpio.
 
 ---
 
@@ -125,6 +141,7 @@ Actualizar el prompt de la automatizacion desde Codex Automations
 
 - [ ] Activar cron `weekly-decodifica-newsletter-draft`
 - [ ] Configurar welcome email en Buttondown con PDF o mini-curso
-- [ ] Configurar secuencia mini-curso 5 días en Buttondown
+- [ ] Probar `scripts/buttondown_curso_engine.py --execute --test-email "<email>" --force-day 1`
+- [ ] Configurar cron diario del mini-curso en Codex
 - [ ] Probar el primer envío end-to-end
 - [ ] Validar métricas después de 4 semanas

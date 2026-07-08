@@ -72,30 +72,32 @@ lead-magnets/
 - **Contenido:** bienvenida + "Mañana recibes el primer email"
 - **Archivo:** `lead-magnets/mini-curso/README.md` (plantilla base)
 
-### Email día 1 (24h después)
-- **Trigger:** After 1 day since subscription
-- **Asunto:** "Día 1 de 5: el setup que cambia cómo ChatGPT te responde"
-- **Contenido:** `lead-magnets/mini-curso/dia-1-setup.md`
+### Emails día 1-5
 
-### Email día 2 (48h después)
-- **Trigger:** After 2 days since subscription
-- **Asunto:** "Día 2 de 5: el framework RTF para prompts que funcionan siempre"
-- **Contenido:** `lead-magnets/mini-curso/dia-2-estructura-prompts.md`
+Buttondown Free no incluye Automations nativas para secuencias relativas a cada
+suscriptor. La opción activa es gestionarlo desde Codex con:
 
-### Email día 3 (72h después)
-- **Trigger:** After 3 days since subscription
-- **Asunto:** "Día 3 de 5: cómo hacer que ChatGPT lea TUS documentos"
-- **Contenido:** `lead-magnets/mini-curso/dia-3-contexto-archivos.md`
+```powershell
+python scripts\buttondown_curso_engine.py --inspect
+python scripts\buttondown_curso_engine.py --execute
+```
 
-### Email día 4 (96h después)
-- **Trigger:** After 4 days since subscription
-- **Asunto:** "Día 4 de 5: el truco del segundo turno (el 90% no lo hace)"
-- **Contenido:** `lead-magnets/mini-curso/dia-4-iteracion.md`
+El script usa los drafts creados en Buttondown, envía solo el email que toca y
+marca progreso en metadata:
 
-### Email día 5 (120h después)
-- **Trigger:** After 5 days since subscription
-- **Asunto:** "Día 5 de 5: tu primer Custom GPT en 10 minutos"
-- **Contenido:** `lead-magnets/mini-curso/dia-5-agentes.md`
+- `curso_started_at`
+- `curso_version`
+- `curso_dia_1_sent_at` a `curso_dia_5_sent_at`
+- `curso_completed_at`
+
+Para probar solo con Jordi:
+
+```powershell
+python scripts\buttondown_curso_engine.py --inspect --test-email "<email>"
+python scripts\buttondown_curso_engine.py --execute --test-email "<email>" --force-day 1
+```
+
+`--force-day` requiere siempre `--test-email`.
 
 ### Después del día 5
 - El suscriptor pasa a recibir solo la newsletter semanal
@@ -121,7 +123,7 @@ Cada PDF adicional debe tener:
 ## Estado de activación (checklist)
 
 - [ ] Welcome email configurado en Buttondown (trigger "New subscriber")
-- [ ] Secuencia 5 días configurada en Buttondown (5 triggers "After N days")
+- [x] Cron diario del mini-curso configurado en Codex (`decodifica-newsletter-minicurso-diario`)
 - [ ] PDF de "50 prompts" desactivado (sustituido por mini-curso)
 - [ ] Primer envío de prueba a email de Jordi
 - [ ] Métricas abiertas después del primer envío real
