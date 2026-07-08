@@ -28,15 +28,15 @@ Este documento define el plan de crecimiento a 6 meses en 3 fases, con tareas co
 - Buttondown integrado en 11 páginas (home, /recursos, /blog, 9 posts)
 - Schema JSON-LD: `Article`, `WebSite`, `Organization` instalados
 - 9 posts con OG cover 1200×630 dark mode
-- Cron semanal de GSC instalado pero **DISABLED** — esperando OK para activar
-- 3 PDFs de lead magnet en `lead-magnets/` (sin commit)
+- Cron semanal de GSC documentado; los checks web principales viven en Codex Automations
+- Lead magnets, mini-curso y newsletter drafts versionados en `lead-magnets/`
 
 ### Problemas detectados
-- 20+ archivos untracked en local (lead-magnets, scripts OG)
-- 1 commit local sin push a `main`
+- Repo limpio tras separar scripts OG, docs, lead magnets y artefactos locales
 - Blog sigue los videos: ya posiciona bien, pero el contenido adicional (no atado a video) está ausente
-- Newsletter sin lead magnet activado (PDF de 50 prompts sigue pendiente de configurar)
-- Welcome email automatizado sin confirmar activación
+- Welcome email funcionando en Buttondown
+- Mini-curso 5 días activo con Codex + Buttondown Free
+- Newsletter semanal preparada como draft automático revisable
 - Sin acceso API directo a Plausible ni GSC desde la sesión del agente
 
 ---
@@ -65,18 +65,18 @@ El modelo de contenido se divide así:
 ### Tareas técnicas
 
 - [x] Verificar sitemap y robots.txt (sin discrepancia real — Astro genera el sitemap al build)
-- [ ] **Hacer commit de archivos untracked** (lead-magnets, scripts OG) — limpiar el repo
-- [ ] **Push del commit local** a `main`
+- [x] **Cerrar archivos pendientes** (lead-magnets, scripts OG) — limpiar el repo
+- [x] **Push del commit local** a `main`
 - [ ] Activar cron `weekly-decodifica-web-check` (reporte automático cada lunes)
-- [ ] Activar cron `weekly-decodifica-newsletter-draft` (sábado 8:00 Madrid)
+- [x] Activar cron `decodifica-newsletter-semanal-draft` (viernes 11:30 Madrid)
 - [ ] Auditar indexación GSC de las 11 páginas públicas
 - [ ] Validar schema y meta tags en cada página
-- [ ] Configurar welcome email automatizado en Buttondown (PDF de 50 prompts)
+- [x] Configurar welcome email automatizado en Buttondown
 
 ### Tareas de contenido
 
-- [ ] Activar newsletter semanal con Fórmula Rundown
-- [ ] Activar secuencia mini-curso 5 días (sustituye al PDF genérico)
+- [x] Activar newsletter semanal con Fórmula Rundown en modo draft revisable
+- [x] Activar secuencia mini-curso 5 días (sustituye al PDF genérico)
 - [ ] Primer listicle: candidato *"Las 7 mejores alternativas a ChatGPT gratuitas en 2026"*
 
 ### Métricas esperadas F1

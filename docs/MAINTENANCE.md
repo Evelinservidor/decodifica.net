@@ -110,13 +110,13 @@ Consultar detalles desde Codex Automations o el dashboard local
 |---|---|---|---|
 | `weekly-decodifica-web-check` | lunes 9:30 Madrid | DISABLED | Reporte GSC semanal |
 | `monthly-decodifica-web-refresh` | 1er lunes mes 10:00 Madrid | DISABLED | Refresco mensual |
-| `weekly-decodifica-newsletter-draft` | sábado 8:00 Madrid | DISABLED | Draft newsletter semanal |
+| `decodifica-newsletter-semanal-draft` | viernes 11:30 Madrid | ACTIVE | Draft newsletter semanal |
 
 **Para activar todos (cuando Jordi dé OK):**
 ```bash
 Activar desde Codex Automations: weekly-decodifica-web-check
 Activar desde Codex Automations: monthly-decodifica-web-refresh
-Activar desde Codex Automations: weekly-decodifica-newsletter-draft
+Newsletter semanal ya activa: decodifica-newsletter-semanal-draft
 ```
 
 **Para ver detalles:**

@@ -16,13 +16,14 @@
 
 ## Tipos de email
 
-### 1. Newsletter semanal (sábado 8:00 Madrid)
+### 1. Newsletter semanal (draft viernes 11:30 Madrid)
 
 - **Formato:** Fórmula Rundown (4 secciones fijas)
 - **Tiempo de lectura:** 5 min
 - **Plantilla:** `lead-magnets/newsletter-template.md`
 - **Ejemplo:** `lead-magnets/newsletter-ejemplo-numero-1.md`
-- **Generado por:** cron `weekly-decodifica-newsletter-draft` (DISABLED)
+- **Generado por:** cron Codex `decodifica-newsletter-semanal-draft` (ACTIVE)
+- **Envío:** manual desde Buttondown tras revisión de Jordi
 
 **Estructura Fórmula Rundown:**
 1. **El tema de la semana** — 1 tema top con el ángulo de Jordi (2-3 párrafos)
@@ -66,13 +67,13 @@ de curso, resetea solo las claves `curso_*` y empieza limpio.
 
 ---
 
-## Cron `weekly-decodifica-newsletter-draft`
+## Cron `decodifica-newsletter-semanal-draft`
 
-- **Schedule:** sábado 8:00 Madrid (`0 8 * * 6`)
-- **Modo:** sesión nueva (`session-mode new`)
-- **Estado actual:** DISABLED
+- **Schedule:** viernes 11:30 Madrid
+- **Modo:** Codex Automations, worktree del repo web
+- **Estado actual:** ACTIVE
 - **Reporta a:** root session (Jordi)
-- **Next run:** sábado 27/06/2026 8:00 (si se activa)
+- **Output:** `lead-magnets/newsletter-drafts/numero-YYYY-MM-DD.md`
 
 **Lo que hace cuando se activa:**
 1. Investiga novedades de IA con web_search + webfetch (8-10 fuentes)
@@ -83,26 +84,18 @@ de curso, resetea solo las claves `curso_*` y empieza limpio.
 6. Reporta al root con: path del archivo, resumen por sección, URLs fuente consultadas, tiempo de lectura estimado, observaciones y claims a verificar
 7. NO envía a Buttondown (Jordi valida y envía manualmente)
 
-**Para activar:**
-```bash
-Activar desde Codex Automations: weekly-decodifica-newsletter-draft
-```
-
-**Para ver detalles:**
-```bash
-Consultar desde Codex Automations: weekly-decodifica-newsletter-draft
-```
+El prompt del cron exige fuentes primarias cuando sea posible, evita temas fuera
+del canon de Decodifica y añade al final una checklist de revisión.
 
 ---
 
 ## Flujo semanal de Jordi
 
-1. **Sábado 8:00** — el cron investiga y redacta el número (sesión nueva)
-2. **Sábado ~9:00** — Jordi recibe el reporte del root en Telegram
-3. **Sábado mañana** — Jordi abre el draft en `lead-magnets/newsletter-drafts/`, revisa claims, ajusta lo necesario
-4. **Sábado mediodía** — Jordi copia-pega a Buttondown → New email → Draft → envía prueba a su email
-5. **Sábado tarde** — Jordi envía a la lista
-6. **Domingo-lunes** — Jordi revisa métricas en Plausible, feedback a la semana siguiente
+1. **Viernes 11:30** — el cron investiga y redacta el número.
+2. **Viernes tarde** — Jordi abre el draft en `lead-magnets/newsletter-drafts/`, revisa claims y ajusta tono.
+3. **Sábado mañana** — Jordi copia-pega a Buttondown → New email → Draft → envía prueba a su email.
+4. **Sábado tarde** — Jordi envía a la lista si todo está correcto.
+5. **Domingo-lunes** — Jordi revisa métricas y feedback para la semana siguiente.
 
 ---
 
@@ -141,9 +134,10 @@ Actualizar el prompt de la automatizacion desde Codex Automations
 
 ## Próximos pasos pendientes
 
-- [ ] Activar cron `weekly-decodifica-newsletter-draft`
+- [x] Activar cron `decodifica-newsletter-semanal-draft`
 - [ ] Configurar welcome email en Buttondown con PDF o mini-curso
 - [ ] Probar `scripts/buttondown_curso_engine.py --execute --test-email "<email>" --force-day 1`
 - [ ] Configurar cron diario del mini-curso en Codex
-- [ ] Probar el primer envío end-to-end
+- [ ] Revisar el primer draft semanal generado por Codex
+- [ ] Probar el primer envío semanal end-to-end
 - [ ] Validar métricas después de 4 semanas
