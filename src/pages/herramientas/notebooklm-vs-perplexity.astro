@@ -1,0 +1,364 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { getToolBySlug } from '~/data/tools';
+import { siteConfig } from '~/lib/site-config';
+
+const notebooklm = getToolBySlug('notebooklm');
+const perplexity = getToolBySlug('perplexity');
+
+const pageUrl = `${siteConfig.url}/herramientas/notebooklm-vs-perplexity/`;
+const title = 'NotebookLM vs Perplexity: cual usar';
+const description = 'Comparativa practica entre NotebookLM y Perplexity: fuentes propias, busqueda web, investigacion, privacidad, precio y flujo recomendado.';
+
+const rows = [
+  {
+    criterion: 'Punto de partida',
+    notebooklm: 'Trabaja mejor cuando ya tienes fuentes: PDFs, notas, enlaces, transcripciones o documentos que quieres entender.',
+    perplexity: 'Trabaja mejor cuando aun no sabes que fuentes leer y necesitas descubrir contexto en la web.',
+    winner: 'Depende de si ya tienes fuentes',
+  },
+  {
+    criterion: 'Fuentes propias',
+    notebooklm: 'Su ventaja principal es preguntar y organizar material que tu aportas al cuaderno.',
+    perplexity: 'Puede usar enlaces y archivos, pero su identidad principal sigue siendo busqueda y respuesta con fuentes web.',
+    winner: 'NotebookLM',
+  },
+  {
+    criterion: 'Busqueda web',
+    notebooklm: 'Puede ayudar con investigacion, pero no es el sustituto natural de un buscador con IA.',
+    perplexity: 'Esta pensado para buscar, citar y explorar informacion publica de forma rapida.',
+    winner: 'Perplexity',
+  },
+  {
+    criterion: 'Estudio y aprendizaje',
+    notebooklm: 'Muy fuerte para convertir materiales en resumen, preguntas, guias y audio sobre tus fuentes.',
+    perplexity: 'Bueno para entender un tema desde cero y encontrar lecturas, pero menos centrado en tu biblioteca propia.',
+    winner: 'NotebookLM',
+  },
+  {
+    criterion: 'Investigacion rapida',
+    notebooklm: 'Mejor cuando ya has reunido documentos y quieres interrogarlos.',
+    perplexity: 'Mejor para orientarte rapido, localizar fuentes y decidir que merece lectura profunda.',
+    winner: 'Perplexity',
+  },
+  {
+    criterion: 'Privacidad',
+    notebooklm: 'Depende de cuenta, configuracion y uso. Google publica condiciones especificas para NotebookLM y feedback.',
+    perplexity: 'Evita introducir datos privados si la tarea puede resolverse con fuentes publicas.',
+    winner: 'Revisar caso',
+  },
+];
+
+const decisions = [
+  {
+    title: 'Elige NotebookLM si...',
+    items: [
+      'Ya tienes PDFs, notas, webs, videos o documentos que quieres entender.',
+      'Necesitas respuestas ancladas a fuentes concretas.',
+      'Quieres estudiar, resumir o preparar una reunion con material propio.',
+      'Te interesa convertir fuentes en guias, preguntas o audio para repasar.',
+    ],
+  },
+  {
+    title: 'Elige Perplexity si...',
+    items: [
+      'Todavia no sabes que fuentes son relevantes.',
+      'Quieres contexto rapido antes de leer a fondo.',
+      'Necesitas encontrar paginas oficiales, articulos, informes o comparativas.',
+      'Buscas una primera respuesta con enlaces para abrir y verificar.',
+    ],
+  },
+];
+
+const useCases = [
+  {
+    task: 'Tengo un PDF largo y quiero entenderlo',
+    choice: 'NotebookLM',
+    reason: 'Sube el documento, pregunta por estructura, puntos clave y citas. Aqui gana trabajar sobre tu fuente.',
+  },
+  {
+    task: 'No se por donde empezar un tema',
+    choice: 'Perplexity',
+    reason: 'Empieza buscando contexto, fuentes primarias y terminos importantes antes de construir tu propio cuaderno.',
+  },
+  {
+    task: 'Preparar un guion o articulo con fuentes',
+    choice: 'Los dos',
+    reason: 'Usa Perplexity para descubrir fuentes y NotebookLM para trabajar despues con las que realmente importan.',
+  },
+  {
+    task: 'Estudiar para una clase o examen',
+    choice: 'NotebookLM',
+    reason: 'Cuando el material viene de apuntes, capitulos o PDFs, NotebookLM suele ordenar mejor el repaso.',
+  },
+  {
+    task: 'Comprobar una noticia o claim reciente',
+    choice: 'Perplexity',
+    reason: 'Primero necesitas encontrar fuentes actuales. Luego puedes guardar las buenas y analizarlas aparte.',
+  },
+];
+
+const workflow = [
+  'Empieza en Perplexity si no tienes fuentes claras.',
+  'Abre las fuentes importantes y descarta resultados flojos o secundarios.',
+  'Lleva las fuentes buenas a NotebookLM cuando necesites estudiar, resumir o escribir con base documental.',
+  'Antes de publicar o decidir, vuelve a las fuentes originales y verifica los claims importantes.',
+];
+
+const sources = [
+  { label: 'Web oficial de NotebookLM', href: 'https://notebooklm.google/' },
+  { label: 'Audio Overview en NotebookLM - Google Help', href: 'https://support.google.com/notebooklm/answer/16212820?hl=en' },
+  { label: 'Privacidad y terminos de NotebookLM - Google Help', href: 'https://support.google.com/notebooklm/answer/17004255?hl=en' },
+  { label: 'Perplexity Pro', href: 'https://www.perplexity.ai/pro' },
+  { label: 'Precios Enterprise de Perplexity', href: 'https://www.perplexity.ai/enterprise/pricing' },
+  { label: 'FAQ de precios Enterprise de Perplexity', href: 'https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions.html' },
+];
+
+const faq = [
+  {
+    question: 'Es mejor NotebookLM o Perplexity?',
+    answer: 'NotebookLM es mejor si ya tienes fuentes propias. Perplexity es mejor si necesitas encontrar fuentes y contexto en la web. Lo normal es usar Perplexity primero y NotebookLM despues.',
+  },
+  {
+    question: 'Cual conviene para estudiar?',
+    answer: 'NotebookLM suele encajar mejor para estudiar porque trabaja sobre tus materiales: documentos, notas, enlaces y fuentes concretas.',
+  },
+  {
+    question: 'Cual conviene para investigar un tema nuevo?',
+    answer: 'Perplexity suele ser mejor para arrancar un tema nuevo porque ayuda a descubrir fuentes, contexto y terminos importantes antes de profundizar.',
+  },
+];
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: pageUrl,
+  datePublished: '2026-07-08',
+  dateModified: '2026-07-08',
+  author: {
+    '@type': 'Organization',
+    name: 'Decodifica',
+    url: siteConfig.url,
+  },
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  pubDate="2026-07-08"
+  modifiedDate="2026-07-08"
+  keywords={['NotebookLM vs Perplexity', 'NotebookLM', 'Perplexity', 'investigacion IA', 'herramientas IA']}
+  section="Herramientas IA"
+>
+  <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
+      <a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a>
+      <span class="mx-2">/</span>
+      <span>NotebookLM vs Perplexity</span>
+    </nav>
+
+    <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          Comparativa practica
+        </p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+          NotebookLM vs Perplexity: cual usar para investigar
+        </h1>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
+          Perplexity es mejor para descubrir fuentes. NotebookLM es mejor para trabajar con fuentes que ya has elegido. La decision practica es sencilla: primero encuentra buen material, luego conviertelo en conocimiento util.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/herramientas/notebooklm/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha NotebookLM</a>
+          <a href="/herramientas/perplexity/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver ficha Perplexity</a>
+        </div>
+      </div>
+
+      <aside class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+        <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+        <dl class="mt-4 grid gap-4 text-sm leading-6">
+          <div>
+            <dt class="font-semibold text-brand-300">Encontrar fuentes</dt>
+            <dd class="mt-1 text-dark-200">Perplexity</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-brand-300">Trabajar tus fuentes</dt>
+            <dd class="mt-1 text-dark-200">NotebookLM</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-brand-300">Flujo ideal</dt>
+            <dd class="mt-1 text-dark-200">Perplexity para descubrir, NotebookLM para profundizar.</dd>
+          </div>
+        </dl>
+        <a href="#newsletter" class="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
+          Recibir el filtro
+        </a>
+      </aside>
+    </header>
+
+    <section class="prose prose-invert mt-12 max-w-none text-dark-200">
+      <h2>Veredicto Decodifica</h2>
+      <p>
+        Si estas empezando desde cero, abre Perplexity. Si ya tienes material fiable, abre NotebookLM. La combinacion buena es usar Perplexity como radar y NotebookLM como mesa de trabajo.
+      </p>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      {decisions.map((block) => (
+        <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+          <h2 class="font-display text-2xl font-bold text-white">{block.title}</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+            {block.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Comparativa por criterio</h2>
+      <div class="mt-5 overflow-x-auto">
+        <table class="min-w-full border-separate border-spacing-0 text-left text-sm">
+          <thead>
+            <tr class="text-xs uppercase text-dark-300">
+              <th class="border-b border-dark-600 px-3 py-3">Criterio</th>
+              <th class="border-b border-dark-600 px-3 py-3">NotebookLM</th>
+              <th class="border-b border-dark-600 px-3 py-3">Perplexity</th>
+              <th class="border-b border-dark-600 px-3 py-3">Mejor opcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr class="align-top text-dark-200">
+                <th class="border-b border-dark-700 px-3 py-4 font-semibold text-white">{row.criterion}</th>
+                <td class="border-b border-dark-700 px-3 py-4 leading-6">{row.notebooklm}</td>
+                <td class="border-b border-dark-700 px-3 py-4 leading-6">{row.perplexity}</td>
+                <td class="border-b border-dark-700 px-3 py-4 font-semibold text-brand-300">{row.winner}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Que abrir primero segun la tarea</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        {useCases.map((item) => (
+          <div class="rounded-lg border border-dark-600 bg-dark-900 p-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="font-display text-lg font-bold text-white">{item.task}</h3>
+              <span class="rounded-lg bg-brand-500/10 px-2.5 py-1 text-xs font-semibold text-brand-300">{item.choice}</span>
+            </div>
+            <p class="mt-2 text-sm leading-6 text-dark-200">{item.reason}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Flujo recomendado</h2>
+      <ol class="mt-5 grid gap-4 md:grid-cols-4">
+        {workflow.map((step, index) => (
+          <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">
+            <span class="text-xs font-semibold text-brand-300">Paso {index + 1}</span>
+            <p class="mt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Precio y limites</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          NotebookLM tiene acceso gratuito y opciones ampliadas dentro del ecosistema Google. Perplexity tiene plan gratuito, Pro, Max y planes Enterprise por asiento. En ambos casos, revisa limites de fuentes, busquedas, archivos y funciones antes de construir un flujo que dependa de volumen.
+        </p>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          En NotebookLM el riesgo principal esta en que subes material propio. En Perplexity, el riesgo aparece si metes datos privados en una herramienta pensada para investigar la web publica. En los dos casos: no subas material sensible sin revisar cuenta, plan, feedback, retencion y politica aplicable.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Fichas relacionadas</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6">
+          {notebooklm && <li><a href={`/herramientas/${notebooklm.slug}/`} class="text-brand-300 hover:text-brand-200">{notebooklm.name}: cuando usarlo</a></li>}
+          {perplexity && <li><a href={`/herramientas/${perplexity.slug}/`} class="text-brand-300 hover:text-brand-200">{perplexity.name}: cuando usarlo</a></li>}
+          <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-300 hover:text-brand-200">Guia NotebookLM 2026</a></li>
+          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Como elegir una herramienta IA</a></li>
+        </ul>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Fuentes</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6">
+          {sources.map((source) => (
+            <li><a href={source.href} target="_blank" rel="noopener" class="text-brand-300 hover:text-brand-200">{source.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <h2 class="font-display text-2xl font-bold text-white">Preguntas frecuentes</h2>
+      <div class="mt-5 grid gap-4">
+        {faq.map((item) => (
+          <details class="rounded-lg border border-dark-600 bg-dark-900 p-4">
+            <summary class="cursor-pointer font-semibold text-white">{item.question}</summary>
+            <p class="mt-3 text-sm leading-6 text-dark-200">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <div id="newsletter" class="mt-12">
+      <NewsletterForm
+        title="Recibe comparativas sin ruido"
+        description="Una vez por semana: que herramienta merece probar, cual evitar y que revisar antes de pagar o subir datos."
+        buttonLabel="Recibir el filtro"
+      />
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Herramientas IA',
+        item: `${siteConfig.url}/herramientas/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'NotebookLM vs Perplexity',
+        item: pageUrl,
+      },
+    ],
+  })} />
+</BaseLayout>

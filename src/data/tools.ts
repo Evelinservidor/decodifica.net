@@ -160,6 +160,7 @@ export const tools: Tool[] = [
     tags: ['fuentes', 'investigacion', 'estudio', 'resumen'],
     officialUrl: 'https://notebooklm.google/',
     relatedLinks: [
+      { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
       { label: 'Guia NotebookLM', href: '/blog/notebooklm-guia-2026/' },
       { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
@@ -213,6 +214,7 @@ export const tools: Tool[] = [
     tags: ['busqueda', 'fuentes', 'comparacion', 'contexto'],
     officialUrl: 'https://www.perplexity.ai/pro',
     relatedLinks: [
+      { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
       { label: 'Metodo de evaluacion', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
