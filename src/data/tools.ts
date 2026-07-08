@@ -376,6 +376,7 @@ export const tools: Tool[] = [
     tags: ['voz', 'audio', 'doblaje', 'video'],
     officialUrl: 'https://elevenlabs.io/pricing',
     relatedLinks: [
+      { label: 'Alternativas a ElevenLabs', href: '/herramientas/alternativas-elevenlabs/' },
       { label: 'Agentes de voz IA', href: '/blog/crear-agente-voz-ia-sin-programar/' },
       { label: 'Recursos IA', href: '/recursos/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
