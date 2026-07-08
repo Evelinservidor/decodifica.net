@@ -1,0 +1,109 @@
+<script is:inline>
+  (() => {
+    const STORAGE_KEY = 'decodifica_conversion_events_v1';
+    const sentReadEvents = new Set();
+
+    function eventName(name) {
+      return String(name || 'conversion_click')
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9_]+/g, '_')
+        .replace(/^_+|_+$/g, '');
+    }
+
+    function saveLocal(payload) {
+      try {
+        const current = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '[]');
+        current.push(payload);
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(current.slice(-100)));
+      } catch {
+        // Local fallback is best-effort only.
+      }
+    }
+
+    function emit(name, props = {}) {
+      const payload = {
+        event: eventName(name),
+        path: window.location.pathname,
+        title: document.title,
+        at: new Date().toISOString(),
+        ...props,
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', payload.event, payload);
+      }
+
+      if (typeof window.plausible === 'function') {
+        window.plausible(payload.event, { props: payload });
+      }
+
+      saveLocal(payload);
+    }
+
+    function inferClickEvent(link) {
+      const explicit = link.dataset.track;
+      if (explicit) return explicit;
+
+      const href = link.getAttribute('href') || '';
+      if (href.includes('/newsletter') || href.includes('#newsletter') || href.includes('buttondown.com')) return 'newsletter_click';
+      if (href.includes('/comunidad') || href.includes('/login')) return 'community_click';
+      if (href.includes('/herramientas/') && (href.includes('-vs-') || href.includes('alternativas-'))) return 'tool_to_comparison_click';
+      if (link.target === '_blank' && !href.includes(location.hostname)) return 'external_click';
+      return 'internal_click';
+    }
+
+    document.addEventListener('click', (event) => {
+      const target = event.target instanceof Element ? event.target.closest('a,button,[data-track]') : null;
+      if (!target) return;
+
+      const href = target instanceof HTMLAnchorElement ? target.href : '';
+      emit(inferClickEvent(target), {
+        label: target.dataset.trackLabel || target.textContent?.trim().slice(0, 80) || '',
+        href,
+        component: target.dataset.trackComponent || '',
+      });
+    });
+
+    document.addEventListener('submit', (event) => {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement)) return;
+      if (form.dataset.track || form.action.includes('buttondown.com')) {
+        emit(form.dataset.track || 'newsletter_submit', {
+          label: form.dataset.trackLabel || 'newsletter_form',
+          component: form.dataset.trackComponent || 'newsletter_form',
+        });
+      }
+    }, true);
+
+    function checkReadDepth() {
+      document.querySelectorAll('[data-track-read-min]').forEach((node) => {
+        const key = node.dataset.trackLabel || window.location.pathname;
+        if (sentReadEvents.has(key)) return;
+
+        const rect = node.getBoundingClientRect();
+        const documentTop = window.scrollY + rect.top;
+        const readableHeight = Math.max(node.scrollHeight, rect.height);
+        const viewed = window.scrollY + window.innerHeight - documentTop;
+        const ratio = readableHeight > 0 ? viewed / readableHeight : 0;
+
+        if (ratio >= 0.6) {
+          sentReadEvents.add(key);
+          emit(node.dataset.trackReadMin || 'read_minimum', {
+            label: key,
+            component: node.dataset.trackComponent || 'reading_depth',
+            depth: '60',
+          });
+        }
+      });
+    }
+
+    window.DecodificaTrack = { emit };
+    window.addEventListener('scroll', checkReadDepth, { passive: true });
+    window.addEventListener('load', checkReadDepth);
+    setTimeout(checkReadDepth, 30000);
+  })();
+</script>

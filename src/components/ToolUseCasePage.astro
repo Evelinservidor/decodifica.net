@@ -1,0 +1,126 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import type { ToolUseCase } from '~/data/tool-use-cases';
+import { getToolBySlug } from '~/data/tools';
+import { siteConfig } from '~/lib/site-config';
+
+export interface Props {
+  useCase: ToolUseCase;
+}
+
+const { useCase } = Astro.props;
+const selectedTools = useCase.tools.map((slug) => getToolBySlug(slug)).filter(Boolean);
+const pageUrl = `${siteConfig.url}/herramientas/${useCase.slug}/`;
+
+const itemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: useCase.title,
+  description: useCase.description,
+  url: pageUrl,
+  itemListElement: selectedTools.map((tool, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: `${siteConfig.url}/herramientas/${tool.slug}/`,
+    name: tool.name,
+  })),
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Herramientas IA', item: `${siteConfig.url}/herramientas/` },
+    { '@type': 'ListItem', position: 2, name: useCase.title, item: pageUrl },
+  ],
+};
+---
+
+<BaseLayout
+  title={useCase.title}
+  description={useCase.description}
+  keywords={['herramientas IA', useCase.title, 'Decodifica']}
+  section="Herramientas IA"
+>
+  <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_use_case_read_minimum" data-track-label={useCase.slug} data-track-component="tool_use_case">
+    <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
+      <a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a>
+      <span class="mx-2">/</span>
+      <span>{useCase.title}</span>
+    </nav>
+
+    <header class="grid gap-8 lg:grid-cols-[1fr_390px] lg:items-start">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+          Caso de uso
+        </p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">{useCase.h1}</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-8 text-dark-200">{useCase.intro}</p>
+      </div>
+      <NewsletterForm
+        title="Recibe el filtro por casos de uso"
+        description="Una vez por semana: que herramienta mirar, que riesgo revisar y que recurso guardar para probarla mejor."
+        buttonLabel="Recibir el filtro"
+      />
+    </header>
+
+    <section class="mt-12 grid gap-5 lg:grid-cols-2">
+      {selectedTools.map((tool) => (
+        <a href={`/herramientas/${tool.slug}/`} data-track="use_case_to_tool_click" data-track-label={`${useCase.slug}:${tool.slug}`} data-track-component="tool_use_case" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{tool.useCase}</span>
+            <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.price}</span>
+            <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">Privacidad {tool.privacy}</span>
+          </div>
+          <h2 class="mt-4 font-display text-2xl font-bold text-white">{tool.name}</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">{tool.bestFor}</p>
+        </a>
+      ))}
+    </section>
+
+    <section class="mt-12 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Reglas de decision</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+          {useCase.decisionRules.map((rule) => <li>{rule}</li>)}
+        </ul>
+      </div>
+      <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Riesgos a revisar</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+          {useCase.risks.map((risk) => <li>{risk}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-12 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <div class="grid gap-5 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Comparativas y recursos</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">Siguiente paso si dudas</h2>
+          <p class="mt-3 text-sm leading-6 text-dark-200">Estas piezas ayudan a pasar de lista de herramientas a decision concreta.</p>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {useCase.comparisons.map((comparison) => (
+            <a href={comparison.href} data-track="use_case_to_comparison_click" data-track-label={`${useCase.slug}:${comparison.label}`} data-track-component="tool_use_case" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+              <h3 class="font-display text-lg font-bold text-white">{comparison.label}</h3>
+              <p class="mt-2 text-sm leading-6 text-dark-300">{comparison.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div id="newsletter" class="mt-12">
+      <NewsletterForm
+        title={`Recibe decisiones sobre ${useCase.title.toLowerCase()}`}
+        description="Te avisamos cuando publiquemos nuevas fichas, comparativas o recursos que encajen con este caso de uso."
+        buttonLabel="Seguir este tema"
+      />
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+</BaseLayout>

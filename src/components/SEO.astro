@@ -32,7 +32,7 @@ const {
   section,
 } = Astro.props;
 
-const fullTitle = title ? `${title} · ${siteConfig.name}` : `${siteConfig.name} · ${siteConfig.tagline}`;
+const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline}`;
 const canonicalUrl = new URL(canonical, siteConfig.url).toString();
 const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 

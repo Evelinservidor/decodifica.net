@@ -43,7 +43,7 @@ const softwareLd = {
   keywords={tool.tags}
   section="Herramientas IA"
 >
-  <article class="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+  <article class="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_ficha_read_minimum" data-track-label={tool.slug} data-track-component="tool_detail">
     <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
       <a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a>
       <span class="mx-2">/</span>
@@ -73,7 +73,7 @@ const softwareLd = {
         <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
         <p class="mt-3 text-sm leading-6 text-dark-200">{tool.bestFor}</p>
         <div class="mt-5 grid gap-2">
-          <a href={tool.officialUrl} target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
+          <a href={tool.officialUrl} target="_blank" rel="noopener" data-track="official_tool_click" data-track-label={tool.slug} data-track-component="tool_detail" class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
             Ver pagina oficial
           </a>
           <a href="#newsletter" class="inline-flex items-center justify-center rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-700">
@@ -144,7 +144,7 @@ const softwareLd = {
         <h2 class="font-display text-2xl font-bold text-white">Guias relacionadas</h2>
         <ul class="mt-4 space-y-3 text-sm leading-6">
           {tool.relatedLinks.map((link) => (
-            <li><a href={link.href} class="text-brand-300 hover:text-brand-200">{link.label}</a></li>
+            <li><a href={link.href} data-track={link.href.includes('-vs-') || link.href.includes('alternativas-') ? 'tool_to_comparison_click' : 'tool_related_click'} data-track-label={`${tool.slug}:${link.label}`} data-track-component="tool_detail_related" class="text-brand-300 hover:text-brand-200">{link.label}</a></li>
           ))}
         </ul>
       </div>
@@ -152,7 +152,7 @@ const softwareLd = {
         <h2 class="font-display text-2xl font-bold text-white">Fuentes</h2>
         <ul class="mt-4 space-y-3 text-sm leading-6">
           {detail.sources.map((source) => (
-            <li><a href={source.href} target="_blank" rel="noopener" class="text-brand-300 hover:text-brand-200">{source.label}</a></li>
+            <li><a href={source.href} target="_blank" rel="noopener" data-track="tool_source_click" data-track-label={`${tool.slug}:${source.label}`} data-track-component="tool_detail_sources" class="text-brand-300 hover:text-brand-200">{source.label}</a></li>
           ))}
         </ul>
       </div>

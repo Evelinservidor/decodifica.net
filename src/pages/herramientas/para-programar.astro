@@ -1,0 +1,9 @@
+---
+import ToolUseCasePage from '~/components/ToolUseCasePage.astro';
+import { getToolUseCase } from '~/data/tool-use-cases';
+
+const useCase = getToolUseCase('para-programar');
+if (!useCase) throw new Error('Missing use case para-programar');
+---
+
+<ToolUseCasePage useCase={useCase} />

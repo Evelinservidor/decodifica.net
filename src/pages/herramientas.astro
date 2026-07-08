@@ -2,6 +2,7 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import { tools } from '~/data/tools';
+import { toolUseCases } from '~/data/tool-use-cases';
 
 const updatedAt = '7 julio 2026';
 const useCases = [...new Set(tools.map((tool) => tool.useCase))].sort();
@@ -98,6 +99,24 @@ const difficulties = ['Baja', 'Media', 'Alta'];
       </p>
     </section>
 
+    <section class="mt-8 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Por caso de uso</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">Empieza por la tarea, no por la marca</h2>
+        </div>
+        <a href="/recursos/mapa-herramientas-ia/" class="text-sm font-semibold text-brand-300 hover:text-brand-200">Ver mapa completo</a>
+      </div>
+      <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {toolUseCases.map((useCase) => (
+          <a href={`/herramientas/${useCase.slug}/`} data-track="tools_hub_use_case_click" data-track-label={useCase.slug} data-track-component="tools_hub" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+            <h3 class="font-display text-lg font-bold text-white">{useCase.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-dark-300">{useCase.intro}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <section class="mt-8 grid gap-5 lg:grid-cols-3" id="tool-grid">
       {tools.map((tool) => {
         const detailHref = `/herramientas/${tool.slug}/`;
@@ -141,10 +160,10 @@ const difficulties = ['Baja', 'Media', 'Alta'];
             </div>
 
             <div class="mt-6 flex grow flex-col justify-end gap-3">
-              <a href={primaryHref} target={tool.hasDetailPage ? undefined : '_blank'} rel={tool.hasDetailPage ? undefined : 'noopener'} class="inline-flex w-fit rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-600">
+              <a href={primaryHref} target={tool.hasDetailPage ? undefined : '_blank'} rel={tool.hasDetailPage ? undefined : 'noopener'} data-track={tool.hasDetailPage ? 'tool_card_click' : 'official_tool_click'} data-track-label={tool.slug} data-track-component="tools_hub" class="inline-flex w-fit rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-600">
                 {primaryLabel}
               </a>
-              <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} class="text-sm font-semibold text-brand-300 hover:text-brand-200">
+              <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} data-track="tool_to_comparison_click" data-track-label={`${tool.slug}:primary_related`} data-track-component="tools_hub" class="text-sm font-semibold text-brand-300 hover:text-brand-200">
                 {tool.relatedLinks[0]?.label ?? 'Como elegir una herramienta IA'}
               </a>
             </div>
@@ -238,8 +257,15 @@ const difficulties = ['Baja', 'Media', 'Alta'];
     const cards = Array.from(document.querySelectorAll('.tool-card'));
     const count = document.querySelector('#tool-count');
     const empty = document.querySelector('#tool-empty');
+    let filterTimer;
 
     const normalize = (value) => (value || '').toString().trim().toLowerCase();
+    const track = (event, props = {}) => {
+      window.DecodificaTrack?.emit?.(event, {
+        component: 'tools_filters',
+        ...props,
+      });
+    };
 
     function applyFilters() {
       const query = normalize(search?.value);
@@ -267,6 +293,18 @@ const difficulties = ['Baja', 'Media', 'Alta'];
 
       if (count) count.textContent = String(visible);
       empty?.classList.toggle('hidden', visible !== 0);
+
+      window.clearTimeout(filterTimer);
+      filterTimer = window.setTimeout(() => {
+        track('tools_filter_change', {
+          query,
+          useCase: selectedUseCase,
+          price: selectedPrice,
+          privacy: selectedPrivacy,
+          difficulty: selectedDifficulty,
+          visible,
+        });
+      }, 700);
     }
 
     [search, useCase, price, privacy, difficulty].forEach((control) => {
@@ -280,6 +318,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
       if (price) price.value = '';
       if (privacy) privacy.value = '';
       if (difficulty) difficulty.value = '';
+      track('tools_filter_reset');
       applyFilters();
     });
   </script>

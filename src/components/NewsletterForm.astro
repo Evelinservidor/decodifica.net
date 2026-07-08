@@ -33,6 +33,9 @@ const {
   <form
     action={`https://buttondown.com/api/emails/embed-subscribe/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}`}
     method="post"
+    data-track="newsletter_submit"
+    data-track-component="newsletter_form"
+    data-track-label={title}
     class="mt-5 flex flex-col gap-2 sm:flex-row"
   >
     <label for="bd-email" class="sr-only">Email</label>

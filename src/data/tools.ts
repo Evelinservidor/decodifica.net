@@ -53,6 +53,8 @@ export const tools: Tool[] = [
     officialUrl: 'https://openai.com/chatgpt/pricing/',
     relatedLinks: [
       { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
+      { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
+      { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
       { label: 'Como elegir una herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'Recursos IA', href: '/recursos/' },
@@ -107,6 +109,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://claude.com/pricing',
     relatedLinks: [
       { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
+      { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Claude Skills desde cero', href: '/blog/claude-skills-desde-cero/' },
       { label: 'Emails con Claude sin sonar a robot', href: '/blog/claude-emails-sonar-humanos/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
@@ -161,6 +164,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://notebooklm.google/',
     relatedLinks: [
       { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
+      { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Guia NotebookLM', href: '/blog/notebooklm-guia-2026/' },
       { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
@@ -215,6 +219,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://www.perplexity.ai/pro',
     relatedLinks: [
       { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
+      { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Metodo de evaluacion', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
@@ -270,6 +275,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://gamma.app/pricing',
     relatedLinks: [
       { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/' },
+      { label: 'Herramientas IA para presentaciones', href: '/herramientas/para-presentaciones/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Recursos IA', href: '/recursos/' },
@@ -323,6 +329,8 @@ export const tools: Tool[] = [
     officialUrl: 'https://www.canva.com/en/pricing/',
     relatedLinks: [
       { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/' },
+      { label: 'Herramientas IA para presentaciones', href: '/herramientas/para-presentaciones/' },
+      { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Recursos IA', href: '/recursos/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
@@ -377,6 +385,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://elevenlabs.io/pricing',
     relatedLinks: [
       { label: 'Alternativas a ElevenLabs', href: '/herramientas/alternativas-elevenlabs/' },
+      { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Agentes de voz IA', href: '/blog/crear-agente-voz-ia-sin-programar/' },
       { label: 'Recursos IA', href: '/recursos/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
@@ -431,6 +440,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://qwen.ai/qwencode',
     relatedLinks: [
       { label: 'Qwen Code en terminal', href: '/blog/qwen-code-agent-terminal/' },
+      { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
       { label: 'Crear app web con IAs chinas open source', href: '/blog/crear-app-web-ias-chinas-open-source/' },
       { label: 'Alternativas Fable 5', href: '/blog/alternativas-fable-5/' },
     ],
@@ -485,6 +495,7 @@ export const tools: Tool[] = [
     officialUrl: 'https://www.deepseek.com/en/',
     relatedLinks: [
       { label: 'DeepSeek en espanol', href: '/blog/deepseek-app-oficial-espanol/' },
+      { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'Alternativas Fable 5', href: '/blog/alternativas-fable-5/' },
     ],
