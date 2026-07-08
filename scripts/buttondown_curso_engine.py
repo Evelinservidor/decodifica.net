@@ -28,6 +28,7 @@ Output (stdout JSON): { ok, processed, sent, skipped, errors, sent_log: [...] }
 Reportado al root por el cron que invoca este script.
 """
 import json
+import os
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -35,7 +36,10 @@ from urllib import request as urlrequest
 from urllib.error import HTTPError, URLError
 
 BASE_URL = "https://api.buttondown.email/v1"
-CRED_PATH = Path(r"C:\Users\jordi\.mavis\credentials\buttondown_token.json")
+CRED_PATH = Path(os.environ.get(
+    "BUTTONDOWN_TOKEN_FILE",
+    Path.home() / ".codex" / "decodifica" / "credentials" / "buttondown_token.json",
+))
 WELCOME_EMAIL_ID = "em_246penk44n9gcahbdtrtwshmz2"  # 3 PDFs
 CURSO_EMAIL_IDS = {
     1: "em_2p4nm9th4s8fvbenmnhgwfn9h1",
@@ -49,6 +53,9 @@ DAY_DELAY = timedelta(hours=24)
 
 
 def get_token() -> str:
+    env_token = os.environ.get("BUTTONDOWN_API_TOKEN")
+    if env_token:
+        return env_token
     cred = json.loads(CRED_PATH.read_text(encoding="utf-8-sig"))
     return cred["api_token"]
 
@@ -105,7 +112,6 @@ def parse_iso(s: str | None) -> datetime | None:
 def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
     """Devuelve {action, email_id, metadata_after} o {action: 'skip', reason}."""
     sub_id = sub["id"]
-    email = sub["email_address"]
     metadata = sub.get("metadata") or {}
     creation = parse_iso(sub.get("creation_date"))
 
@@ -117,13 +123,13 @@ def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
     # con los PDFs y marcamos timestamp.
     if "welcome_sent_at" not in metadata:
         if creation and (now - creation) < MIN_DELAY_BEFORE_WELCOME:
-            return {"action": "skip", "reason": "too_new", "subscriber": email}
+            return {"action": "skip", "reason": "too_new", "subscriber_id": sub_id}
         send_email_to_subscriber(token, WELCOME_EMAIL_ID, sub_id)
         new_metadata = {**metadata, "welcome_sent_at": now.isoformat()}
         patch_metadata(token, sub_id, new_metadata)
         return {
             "action": "sent_welcome",
-            "subscriber": email,
+            "subscriber_id": sub_id,
             "email_id": WELCOME_EMAIL_ID,
             "metadata": new_metadata,
         }
@@ -131,11 +137,11 @@ def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
     welcome_sent = parse_iso(metadata.get("welcome_sent_at"))
     if not welcome_sent:
         # Metadata corrupta - la saltamos y reportamos
-        return {"action": "skip", "reason": "bad_welcome_metadata", "subscriber": email}
+        return {"action": "skip", "reason": "bad_welcome_metadata", "subscriber_id": sub_id}
 
     # --- CURS0 DÍAS 1-5 ---
     if "curso_completed_at" in metadata:
-        return {"action": "skip", "reason": "curso_completed", "subscriber": email}
+        return {"action": "skip", "reason": "curso_completed", "subscriber_id": sub_id}
 
     last_sent = welcome_sent
     for day in range(1, 6):
@@ -154,7 +160,7 @@ def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
             patch_metadata(token, sub_id, new_metadata)
             return {
                 "action": f"sent_dia_{day}",
-                "subscriber": email,
+                "subscriber_id": sub_id,
                 "email_id": email_id,
                 "metadata": new_metadata,
             }
@@ -162,7 +168,7 @@ def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
             return {
                 "action": "skip",
                 "reason": f"waiting_for_dia_{day}",
-                "subscriber": email,
+                "subscriber_id": sub_id,
                 "next_at": (last_sent + DAY_DELAY).isoformat(),
             }
 
@@ -172,12 +178,20 @@ def process_subscriber(sub: dict, now: datetime, token: str) -> dict:
     patch_metadata(token, sub_id, new_metadata)
     return {
         "action": "marked_completed",
-        "subscriber": email,
+        "subscriber_id": sub_id,
         "metadata": new_metadata,
     }
 
 
 def main():
+    execute = "--execute" in sys.argv
+    if not execute:
+        print(json.dumps({
+            "ok": True,
+            "dry_run": True,
+            "message": "No se han consultado suscriptores ni enviado emails. Ejecuta con --execute solo tras aprobacion explicita.",
+        }, ensure_ascii=False))
+        return
     token = get_token()
     now = datetime.now(timezone.utc)
     sent_log = []
@@ -203,7 +217,7 @@ def main():
             errors += 1
             sent_log.append({
                 "action": "error",
-                "subscriber": sub.get("email_address"),
+                "subscriber_id": sub.get("id"),
                 "error": str(e),
             })
 
