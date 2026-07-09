@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Tres prompts que funcionan mejor en DeepSeek y Qwen que en ChatGPT";
+const description = "Copiar un prompt de ChatGPT en DeepSeek o Qwen no siempre funciona. A veces la respuesta sale más rígida, otras se pierde parte de la instrucción y otras...";
+const pubDate = "2026-07-09";
+const readingTime = "4 min";
+const tags = ["ia", "herramientas ia", "Tres prompts que funcionan mejor en DeepSeek y Qwen que en ChatGPT"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/prompts-chinos-abiertos.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/prompts-chinos-abiertos.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
+        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
+        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
+        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
+        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
+        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
+        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
+        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
+      </div>
+    </div>
+
+    <p>Copiar un prompt de ChatGPT en DeepSeek o Qwen no siempre funciona. A veces la respuesta sale más rígida, otras se pierde parte de la instrucción y otras el modelo entiende mejor si le das una estructura distinta.</p>
+    <p>El video se centra en tres casos donde DeepSeek y Qwen pueden rendir especialmente bien: datos tabulares, traducción con matiz y tareas largas numeradas.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">La idea práctica</h2>
+    <p>No se trata de decir que un modelo sea mejor para todo. Se trata de usar el prompt adecuado para la tarea adecuada. ChatGPT puede seguir siendo más cómodo para conversación general, imágenes o integraciones. DeepSeek y Qwen pueden destacar cuando la tarea necesita estructura, razonamiento paso a paso o sensibilidad entre chino y español.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Prompt 1: datos tabulares</h2>
+    <p>Para tablas, el prompt útil no es "resúmeme esto". Es pedir patrón, valores atípicos y recomendación en un formato cerrado.</p>
+    <p>La estructura sería:</p>
+    <ul class="space-y-2">
+      <li>analiza la tabla;</li>
+      <li>piensa paso a paso qué patrones numéricos encuentras;</li>
+      <li>identifica los tres valores atípicos;</li>
+      <li>devuelve patrón principal, lista de atípicos y recomendación.</li>
+    </ul>
+    <p>Esto fuerza al modelo a mirar datos, no solo a escribir un párrafo convincente.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Prompt 2: traducción con tono</h2>
+    <p>Para traducir entre español y chino, el punto no es la literalidad. El prompt debe pedir que conserve tono, registro, modismos e intención.</p>
+    <p>La instrucción importante es: no traduzcas palabra por palabra, traduce intención. En textos de email, narrativa o comunicación profesional, eso puede marcar más diferencia que una traducción formalmente correcta pero plana.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Prompt 3: instrucciones largas</h2>
+    <p>Cuando tienes siete tareas en un mismo prompt, muchos modelos mezclan pasos o se saltan los últimos. La solución es imponer orden y separadores:</p>
+    <ul class="space-y-2">
+      <li>resuelve las tareas en orden;</li>
+      <li>después de cada tarea escribe <code>fin</code>;</li>
+      <li>no agrupes respuestas;</li>
+      <li>no resumas al final;</li>
+      <li>si una tarea depende de la anterior, indícalo.</li>
+    </ul>
+    <p>Ese formato hace más fácil comprobar si el modelo cumplio todo.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
+    <p>La prueba buena aquí es copiar los prompts en DeepSeek, Qwen y ChatGPT con la misma entrada. No cambies el texto a mitad de prueba, porque entonces no sabes qué modelo mejoró y cuál solo recibio una instrucción distinta.</p>
+    <p>Yo lo probaría así:</p>
+    <ol>
+      <li>Usa una tabla pequeña con datos reales o inventados pero verificables.</li>
+      <li>Prueba el prompt de traducción con un texto donde el tono importe.</li>
+      <li>Ejecuta el prompt de siete tareas y comprueba si respeta el orden.</li>
+      <li>Repite cada prueba al menos dos veces para evitar una respuesta casual.</li>
+      <li>Guarda el resultado que te obligó a corregir menos.</li>
+    </ol>
+    <p>Si un modelo gana solo porque responde más largo, no cuenta. Tiene que cumplir mejor la tarea.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Con qué lo compararía</h2>
+    <p>Lo compararía contra ChatGPT con la misma entrada, no contra una sensación general. En tablas miraría aciertos y errores. En traducción, tono. En instrucciones largas, cumplimiento paso a paso.</p>
+    <p>Si un modelo da una respuesta bonita pero falla el formato, pierde. Si otro es menos elegante pero cumple mejor la tarea, para ese caso gana.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
+    <p>Tiene sentido si trabajas con datos, textos bilingues, investigación, procesos largos o prompts donde necesitas trazabilidad. No tiene tanto sentido si solo quieres una respuesta conversacional rápida.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>DeepSeek y Qwen no sustituyen a ChatGPT en todo. Pero estos tres prompts son buenos candidatos para probarlos porque fuerzan justo lo que esos modelos pueden hacer bien: estructura, seguimiento de instrucciones y manejo de contexto técnico o bilingüe.</p>
+    <p>La recomendación es guardar los prompts, probarlos con tus propios datos y quedarte con el modelo que menos tengas que corregir.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li><a href="https://api-docs.deepseek.com/news/news260424" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/news/news260424</a></li>
+      <li><a href="https://qwen.ai/blog?id=qwen3.7" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/blog?id=qwen3.7</a></li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
+      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que estan cambiando el mercado</a>, si quieres mas contexto sobre herramientas utiles sin suscripcion.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte mas practica de agentes y modelos chinos.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-prompts-chinos-abiertos" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-prompts-chinos-abiertos" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://api-docs.deepseek.com/news/news260424"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://qwen.ai/blog?id=qwen3.7"
+      }
+]
+  })} />
+</BaseLayout>
