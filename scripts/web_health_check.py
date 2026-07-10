@@ -10,7 +10,9 @@ import sys
 import urllib.error
 import urllib.request
 from datetime import date, datetime
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 
 WEB_REPO = Path(__file__).resolve().parents[1]
@@ -41,6 +43,7 @@ REQUIRED_PATHS = [
     "/herramientas/qwen-code/",
     "/herramientas/deepseek/",
     "/recursos/",
+    "/lead-magnets/workflows-ia-dia-a-dia.pdf",
     "/newsletter/",
     "/comunidad/",
     "/contacto/",
@@ -50,6 +53,8 @@ REQUIRED_PATHS = [
     "/sitemap-index.xml",
     "/robots.txt",
 ]
+
+IGNORED_LINK_SCHEMES = {"data", "javascript", "mailto", "tel"}
 
 INTERNAL_COPY_PATTERNS = [
     "como funciona el embudo",
@@ -118,6 +123,27 @@ def load_config(path: Path | None) -> dict:
     }
 
 
+def load_public_env(repo: Path) -> dict[str, str]:
+    env_path = repo / ".env.local"
+    if not env_path.exists():
+        return {}
+
+    values: dict[str, str] = {}
+    for raw_line in env_path.read_text(encoding="utf-8-sig", errors="strict").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        if not key.startswith("PUBLIC_"):
+            continue
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+            value = value[1:-1]
+        values[key] = value
+    return values
+
+
 def run_build(repo: Path) -> dict:
     npm = shutil.which("npm") or shutil.which("npm.cmd")
     if not npm:
@@ -127,9 +153,12 @@ def run_build(repo: Path) -> dict:
             "stdout_tail": "",
             "stderr_tail": "npm executable not found in PATH",
         }
+    build_env = os.environ.copy()
+    build_env.update(load_public_env(repo))
     proc = subprocess.run(
         [npm, "run", "build"],
         cwd=str(repo),
+        env=build_env,
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -144,17 +173,89 @@ def run_build(repo: Path) -> dict:
     }
 
 
+class HrefParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "a":
+            return
+        for name, value in attrs:
+            if name.lower() == "href" and value:
+                self.hrefs.append(value)
+
+
+def normalize_internal_path(href: str, page_url: str, site_url: str) -> str | None:
+    href = href.strip()
+    if not href or href.startswith("#"):
+        return None
+
+    raw = urlparse(href)
+    if raw.scheme.lower() in IGNORED_LINK_SCHEMES:
+        return None
+
+    resolved = urlparse(urljoin(page_url, href))
+    site = urlparse(site_url)
+    allowed_hosts = {site.netloc.lower()}
+    if site.netloc.lower().startswith("www."):
+        allowed_hosts.add(site.netloc.lower()[4:])
+    else:
+        allowed_hosts.add(f"www.{site.netloc.lower()}")
+
+    if resolved.scheme not in {"http", "https"} or resolved.netloc.lower() not in allowed_hosts:
+        return None
+
+    return resolved.path or "/"
+
+
+def built_page_route(path: Path, dist: Path) -> str:
+    relative_path = path.relative_to(dist).as_posix()
+    if relative_path == "index.html":
+        return "/"
+    if relative_path.endswith("/index.html"):
+        return f"/{relative_path[:-len('index.html')]}"
+    return f"/{relative_path}"
+
+
+def collect_built_internal_paths(repo: Path, site_url: str) -> list[str]:
+    dist = repo / "dist"
+    if not dist.exists():
+        return []
+
+    discovered: set[str] = set()
+    for path in dist.rglob("*.html"):
+        page_route = built_page_route(path, dist)
+        page_url = urljoin(f"{site_url.rstrip('/')}/", page_route.lstrip("/"))
+        parser = HrefParser()
+        parser.feed(path.read_text(encoding="utf-8-sig", errors="replace"))
+        for href in parser.hrefs:
+            internal_path = normalize_internal_path(href, page_url, site_url)
+            if internal_path:
+                discovered.add(internal_path)
+
+    return sorted(discovered)
+
+
 def fetch_url(url: str, timeout: int = 15) -> dict:
     request = urllib.request.Request(url, headers={"User-Agent": "DecodificaWebHealth/1.0"})
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
-            body = response.read(200000).decode("utf-8", errors="replace")
+            raw_body = response.read(200000)
+            content_type = response.headers.get_content_type()
+            is_text = content_type.startswith("text/") or content_type in {
+                "application/json",
+                "application/javascript",
+                "application/xml",
+            }
+            body_sample = raw_body.decode(response.headers.get_content_charset() or "utf-8", errors="replace")[:1000] if is_text else ""
             return {
                 "url": url,
                 "ok": 200 <= response.status < 400,
                 "status": response.status,
-                "length": len(body),
-                "body_sample": body[:1000],
+                "length": len(raw_body),
+                "content_type": content_type,
+                "body_sample": body_sample,
             }
     except urllib.error.HTTPError as exc:
         return {"url": url, "ok": False, "status": exc.code, "error": str(exc)}
@@ -207,6 +308,8 @@ Generated: {report['generated_at']}
 
 - Overall ok: {report['ok']}
 - Build ok: {report['build']['ok']}
+- Production URLs checked: {len(production)}
+- Internal paths discovered from build: {len(report['discovered_internal_paths'])}
 - Production URL failures: {len(failed_urls)}
 - Internal copy matches: {len(copy_matches)}
 - Missing emails: {len(missing_emails)}
@@ -239,7 +342,9 @@ def main() -> int:
     site_url = str(config.get("site_url", "https://decodifica.net")).rstrip("/")
 
     build = {"ok": True, "skipped": True} if args.skip_build else run_build(repo)
-    production = [] if args.skip_production else [fetch_url(f"{site_url}{path}") for path in REQUIRED_PATHS]
+    discovered_internal_paths = collect_built_internal_paths(repo, site_url)
+    production_paths = sorted(set(REQUIRED_PATHS) | set(discovered_internal_paths))
+    production = [] if args.skip_production else [fetch_url(f"{site_url}{path}") for path in production_paths]
     copy_matches = scan_internal_copy(repo)
     emails = source_presence(repo, REQUIRED_EMAILS)
     socials = source_presence(repo, REQUIRED_SOCIALS)
@@ -273,6 +378,7 @@ def main() -> int:
         "config_path": config.get("_config_path"),
         "repo_path": str(repo),
         "build": build,
+        "discovered_internal_paths": discovered_internal_paths,
         "production": production,
         "internal_copy_matches": copy_matches,
         "emails": emails,
