@@ -4,9 +4,9 @@
  */
 export const siteConfig = {
   name: 'Decodifica',
-  tagline: 'IA util, probada y explicada en espanol.',
+  tagline: 'IA útil, probada y explicada en español.',
   description:
-    'Cada semana filtramos herramientas, modelos y flujos de IA para que sepas que merece la pena probar y como aplicarlo sin perder tiempo.',
+    'Cada semana filtramos herramientas, modelos y flujos de IA para que sepas qué merece la pena probar y cómo aplicarlo sin perder tiempo.',
   url: 'https://decodifica.net',
   ogImage: '/og-default.png',
   author: {
@@ -35,18 +35,18 @@ export const siteConfig = {
     },
     {
       id: 'tips-productividad',
-      title: 'Productividad practica con IA',
+      title: 'Productividad práctica con IA',
       description:
         'Prompts, workflows y decisiones para ahorrar tiempo en tareas reales.',
       icon: 'lightning',
     },
   ],
   antiTopics: [
-    'Cortometrajes IA / video artistico',
+    'Cortometrajes IA / vídeo artístico',
     'Wearables / Ray-Ban Meta',
-    'Geopolitica IA como tema central',
-    'Tutorial tecnico profundo sin utilidad inmediata',
-    'Comparativa generica sin prueba ni decision',
+    'Geopolítica IA como tema central',
+    'Tutorial técnico profundo sin utilidad inmediata',
+    'Comparativa genérica sin prueba ni decisión',
   ],
 } as const;
 

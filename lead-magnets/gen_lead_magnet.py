@@ -23,6 +23,10 @@ GREEN = HexColor('#10b981')
 DARK_GRAY = HexColor('#374151')
 
 OUTPUT = r'C:\Users\jordi\Documents\GitHub\decodifica.net\lead-magnets\50-prompts-ia.pdf'
+VERSION = '1.1'
+UPDATED = '10 de julio de 2026'
+UPDATED_SHORT = '10/07/2026'
+CANONICAL_URL = 'https://decodifica.net/recursos/'
 
 styles = getSampleStyleSheet()
 
@@ -52,7 +56,7 @@ def on_page(canvas, doc):
     canvas.drawCentredString(A4[0]/2, A4[1] - 0.7*cm, 'Decodifica · 50 Prompts para IA · decodifica.net')
     canvas.setFont('Helvetica', 8)
     canvas.setFillColor(GRAY)
-    canvas.drawCentredString(A4[0]/2, 0.6*cm, f'Página {doc.page} · decodifica.net')
+    canvas.drawCentredString(A4[0]/2, 0.6*cm, f'Página {doc.page} · v{VERSION} · {UPDATED_SHORT} · decodifica.net/recursos')
     canvas.setFillColor(CYAN)
     canvas.rect(0, 0, A4[0], 0.3*cm, fill=1, stroke=0)
     canvas.restoreState()
@@ -89,7 +93,7 @@ PROMPTS = {
         ('Título que NO sea clickbait', 'Tema del post: [TEMA]. Ángulo: [X]. Audiencia: [QUIÉN]. Genera 8 títulos que: 1) prometan valor real, 2) no usen "esto cambiará tu vida", 3) tengan entre 40-60 chars para SEO, 4) generen curiosidad legítima. Si usas números, que sean honestos.'),
         ('Comentario inteligente en post ajeno', 'Voy a comentar este post de LinkedIn/Twitter/HN: [PEGAR POST O LINK]. Quiero: 1) añadir valor, no solo "great post!", 2) no quedar como pelota, 3) posiblemente iniciar conversación con el autor, 4) que mi comentario aporte insight que otros no vean. Genera 3 versiones con distinto ángulo.'),
         ('Texto de bio / about me creíble', 'Necesito una bio para [perfil: LinkedIn/Twitter/Newsletter/about de la web]. Datos: trabajo en [X], me importa [Y], creo que [Z]. Genera 3 versiones (corta, media, larga) que: 1) no suenen a CV inflado, 2) tengan al menos un detalle específico, 3) inviten a conectar/contactar, 4) sean honestas, no aspiracionales.'),
-        ('Argumento contra posición popular', 'Quiero反驳 la idea popular de que [POSICIÓN POPULAR]. Mis razones: [X, Y, Z]. Genera un argumento de 200-300 palabras que: 1) reconozca la parte de razón de la otra postura, 2) presente mi反驳 sin sonar borde, 3) use un ejemplo o dato concreto, 4) cierre con una pregunta que abra diálogo, no que cierre.'),
+        ('Argumento contra posición popular', 'Quiero refutar la idea popular de que [POSICIÓN POPULAR]. Mis razones: [X, Y, Z]. Genera un argumento de 200-300 palabras que: 1) reconozca la parte de razón de la otra postura, 2) presente mi refutación sin sonar borde, 3) use un ejemplo o dato concreto, 4) cierre con una pregunta que abra diálogo, no que cierre.'),
         ('Newsletter body (cuerpo del email)', 'Tema: [TEMA]. Estructura: 1) apertura personal corta (1-2 frases), 2) 3 ideas principales con ejemplos, 3) "1 prompt que probé esta semana" (opcional, original), 4) cierre con pregunta o call to action. Tono: como si le escribieras a un amigo que sabe poco. Máximo 600 palabras.'),
     ],
     'Programación y código': [
@@ -131,23 +135,23 @@ PROMPTS = {
 }
 
 intro_text = """
-Este PDF es el lead magnet de Decodifica, una curacion semanal de herramientas de IA
-y trucos de productividad. Son prompts que yo (Jordi) uso a diario para trabajar,
-escribir, programar y tomar decisiones. Todos los prompts se han probado con
-ChatGPT, Claude y Gemini. Funcionan tal cual. Copia, pega, adapta.
+Esta colección reúne 50 plantillas para trabajar, escribir, programar, analizar
+y aprender con asistentes de IA. Úsalas como punto de partida: adapta el contexto,
+comprueba los datos y revisa siempre el resultado antes de utilizarlo o compartirlo.
 """
 
 cta_text = """
 ¿TE HA GUSTADO ESTE PDF?
 
-Si quieres recibir uno nuevo cada sábado, con prompts actualizados y los
-mejores trucos de la semana, suscribete a la newsletter:
+Cada semana compartimos una tarea real, las herramientas que merece la pena
+comparar, un proceso práctico y el fallo que conviene evitar. Suscríbete:
 
     https://buttondown.com/decodifica
 
-Si un prompt te ha ahorrado tiempo, escribeme por Twitter y lo cuento:
-@decodificaia
+Versión {version} · Actualizada el {updated}
+Recurso canónico: {canonical_url}
 """
+cta_text = cta_text.format(version=VERSION, updated=UPDATED, canonical_url=CANONICAL_URL)
 
 # Build PDF
 doc = SimpleDocTemplate(
@@ -156,7 +160,7 @@ doc = SimpleDocTemplate(
     topMargin=1.5*cm, bottomMargin=1.5*cm,
     title='50 Prompts para IA - Decodifica',
     author='Decodifica',
-    subject='Lead magnet Decodifica'
+    subject=f'Lead magnet Decodifica · versión {VERSION} · {UPDATED}'
 )
 
 story = []
@@ -168,14 +172,16 @@ story.append(Paragraph('para IA', cover_h))
 story.append(Spacer(1, 0.5*cm))
 story.append(Paragraph('Productividad, escritura, código, análisis y aprendizaje', cover_sub))
 story.append(Spacer(1, 1*cm))
-story.append(Paragraph('Una curacion de Decodifica · decodifica.net', cover_desc))
+story.append(Paragraph('Una selección práctica de Decodifica · decodifica.net', cover_desc))
 story.append(Spacer(1, 0.5*cm))
-story.append(Paragraph('Por Jordi · @decodificaia', cover_desc))
+story.append(Paragraph(f'Versión {VERSION} · Actualizada el {UPDATED}', cover_desc))
+story.append(Spacer(1, 0.3*cm))
+story.append(Paragraph('Por Jordi · Decodifica', cover_desc))
 story.append(PageBreak())
 
 # TOC
-story.append(Paragraph('Indice', h1))
-toc_data = [['#', 'Categoria', 'Prompts']]
+story.append(Paragraph('Índice', h1))
+toc_data = [['#', 'Categoría', 'Prompts']]
 for idx, (cat, prompts) in enumerate(PROMPTS.items(), 1):
     toc_data.append([str(idx), cat, str(len(prompts))])
 t = Table(toc_data, colWidths=[1*cm, 10*cm, 2*cm])
@@ -204,7 +210,7 @@ story.append(PageBreak())
 # CONTENT
 for category, prompts in PROMPTS.items():
     story.append(Paragraph(category, h1))
-    story.append(Paragraph(f'{len(prompts)} prompts en esta seccion', intro))
+    story.append(Paragraph(f'{len(prompts)} prompts en esta sección', intro))
     story.append(Spacer(1, 0.3*cm))
     for idx, (title, prompt_text) in enumerate(prompts, 1):
         story.append(Paragraph(f'{idx}. {title}', h2))
