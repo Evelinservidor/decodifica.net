@@ -7,6 +7,10 @@ const envSchema = z.object({
   PUBLIC_SUPABASE_ANON_KEY: z.preprocess(emptyToUndefined, z.string().optional().default('')),
   PUBLIC_BUTTONDOWN_USERNAME: z.preprocess(emptyToUndefined, z.string().optional().default('decodifica')),
   PUBLIC_PLAUSIBLE_DOMAIN: z.preprocess(emptyToUndefined, z.string().optional().default('')),
+  PUBLIC_PLAUSIBLE_SCRIPT_SRC: z.preprocess(
+    emptyToUndefined,
+    z.string().url().optional().default('https://plausible.io/js/pa-TFkwb8dTRJO4CcMozyCkC.js'),
+  ),
   PUBLIC_SITE_URL: z.preprocess(emptyToUndefined, z.string().url().default('https://decodifica.net')),
   PUBLIC_SITE_NAME: z.preprocess(emptyToUndefined, z.string().default('Decodifica')),
 });

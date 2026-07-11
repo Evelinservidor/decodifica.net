@@ -4,6 +4,7 @@ import Footer from '~/components/Footer.astro';
 import SEO from '~/components/SEO.astro';
 import CookieConsent from '~/components/CookieConsent.astro';
 import ConversionTracker from '~/components/ConversionTracker.astro';
+import { env } from '~/lib/env';
 import '~/styles/global.css';
 
 export interface Props {
@@ -83,6 +84,9 @@ const {
 
     <Footer />
     <ConversionTracker />
-    <CookieConsent plausibleDomain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN} />
+    <CookieConsent
+      plausibleDomain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN}
+      plausibleScriptSrc={env.PUBLIC_PLAUSIBLE_SCRIPT_SRC}
+    />
   </body>
 </html>
