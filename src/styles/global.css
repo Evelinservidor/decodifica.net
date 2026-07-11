@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme='dark'] {
+  --theme-50: 255 255 255;
+  --theme-100: 232 237 245;
+  --theme-200: 196 204 218;
+  --theme-300: 142 154 182;
+  --theme-400: 94 108 139;
+  --theme-500: 50 61 85;
+  --theme-600: 34 42 60;
+  --theme-700: 21 26 38;
+  --theme-800: 18 18 20;
+  --theme-900: 11 15 25;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --theme-50: 15 23 42;
+  --theme-100: 40 53 74;
+  --theme-200: 68 83 106;
+  --theme-300: 86 102 128;
+  --theme-400: 125 141 165;
+  --theme-500: 196 207 222;
+  --theme-600: 221 227 235;
+  --theme-700: 241 245 249;
+  --theme-800: 255 255 255;
+  --theme-900: 248 250 252;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,5 +40,37 @@
 
   body {
     text-rendering: optimizeLegibility;
+    transition: background-color 180ms ease, color 180ms ease;
   }
+}
+
+/* Orange is reserved for conversion actions. Violet remains the brand signal. */
+.cta-primary,
+a.bg-brand-500,
+button.bg-brand-500 {
+  background-color: #ff6b00 !important;
+  color: #0b0f19 !important;
+  box-shadow: 0 10px 24px rgb(255 107 0 / 18%);
+}
+
+.cta-primary:hover,
+a.bg-brand-500:hover,
+button.bg-brand-500:hover {
+  background-color: #fb7a1b !important;
+}
+
+.theme-brand-mark {
+  color: #fff !important;
+}
+
+:root[data-theme='light'] .text-white {
+  color: rgb(var(--theme-50)) !important;
+}
+
+:root[data-theme='light'] .hover\:text-white:hover {
+  color: rgb(var(--theme-50)) !important;
+}
+
+:root[data-theme='light'] .theme-brand-mark {
+  color: #fff !important;
 }

@@ -15,7 +15,7 @@ const navItems = [
   <nav class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegación principal">
     <div class="flex items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
-        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500 text-sm font-bold text-white">D</span>
+        <span class="theme-brand-mark inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500 text-sm font-bold text-white">D</span>
         <span class="font-display">{siteConfig.name}</span>
       </a>
 
@@ -37,10 +37,21 @@ const navItems = [
         ))}
       </ul>
 
-      <div class="hidden items-center xl:flex">
-        <Button href="/newsletter" variant="primary" size="sm">
-          Newsletter
-        </Button>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button
+          id="theme-toggle"
+          type="button"
+          class="inline-flex h-10 items-center gap-2 rounded-lg border border-dark-600 bg-dark-700 px-3 text-sm font-semibold text-white transition hover:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800"
+          aria-label="Cambiar a tema claro"
+          title="Cambiar tema"
+        >
+          <span aria-hidden="true">☼</span><span class="hidden sm:inline" data-theme-label>Tema claro</span>
+        </button>
+        <div class="hidden items-center xl:flex">
+          <Button href="/newsletter" variant="primary" size="sm">
+            Newsletter
+          </Button>
+        </div>
       </div>
 
       <button
@@ -82,7 +93,7 @@ const navItems = [
         <div class="mt-4">
           <a
             href="/newsletter"
-            class="inline-flex w-full items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-600"
+            class="cta-primary inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition"
           >
             Recibir el filtro semanal
           </a>
@@ -111,6 +122,25 @@ const navItems = [
       button?.classList.remove('is-open');
       menu.classList.add('hidden');
     });
+  });
+
+  const themeToggle = document.querySelector<HTMLButtonElement>('#theme-toggle');
+  const themeLabel = document.querySelector<HTMLElement>('[data-theme-label]');
+
+  const setTheme = (theme: 'dark' | 'light') => {
+    document.documentElement.dataset.theme = theme;
+    themeToggle?.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    if (themeLabel) themeLabel.textContent = theme === 'dark' ? 'Tema claro' : 'Tema oscuro';
+  };
+
+  setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+
+  themeToggle?.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    try {
+      localStorage.setItem('decodifica-theme', nextTheme);
+    } catch {}
   });
 </script>
 

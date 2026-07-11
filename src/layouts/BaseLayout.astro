@@ -38,12 +38,20 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es" class="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem('decodifica-theme');
+        document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+      } catch {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

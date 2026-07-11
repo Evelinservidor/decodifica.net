@@ -1,3 +1,5 @@
+const themeColor = (shade) => `rgb(var(--theme-${shade}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -5,19 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette: Cyan tech + dark base
+        // Brand palette: Violet trust + orange conversion
         brand: {
-          50: '#ecfeff',
-          100: '#cffafe',
-          200: '#a5f3fc',
-          300: '#67e8f9',
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
-          700: '#0e7490',
-          800: '#155e75',
-          900: '#164e63',
-          950: '#083344',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+          950: '#1e1b4b',
+        },
+        cta: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#ff6b00',
+          600: '#ea580c',
+          700: '#c2410c',
         },
         accent: {
           green: '#00FF88',
@@ -25,16 +37,16 @@ export default {
           pink: '#EC4899',
         },
         dark: {
-          50: '#f5f5f5',
-          100: '#e0e0e0',
-          200: '#b8b8b8',
-          300: '#8a8a8a',
-          400: '#5a5a5a',
-          500: '#2a2a2a',
-          600: '#1a1a1a',
-          700: '#0f0f0f',
-          800: '#0a0a0a',
-          900: '#000000',
+          50: themeColor(50),
+          100: themeColor(100),
+          200: themeColor(200),
+          300: themeColor(300),
+          400: themeColor(400),
+          500: themeColor(500),
+          600: themeColor(600),
+          700: themeColor(700),
+          800: themeColor(800),
+          900: themeColor(900),
         },
       },
       fontFamily: {
