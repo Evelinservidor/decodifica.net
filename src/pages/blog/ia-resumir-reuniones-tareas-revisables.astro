@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
+
+const title = "Cómo convertir una reunión en tareas revisables con IA";
+const description = "Un workflow de cinco pasos para transformar una transcripción en decisiones, tareas y dudas sin inventar acuerdos ni compromisos.";
+const pubDate = "2026-07-11";
+const readingTime = "7 min";
+const tags = ["actas con IA", "resumir reuniones", "tareas revisables", "workflow IA", "productividad con IA"];
+const pillarLabel = "Pilar 2: Productividad práctica";
+const conversionCtaStrategy = "diagnostic_only";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/ia-resumir-reuniones-tareas-revisables.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>11 julio 2026</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">{title}</h1>
+      <p class="mt-4 text-lg text-dark-200">{description}</p>
+    </header>
+
+    <img
+      src="/og/blog/ia-resumir-reuniones-tareas-revisables.png"
+      alt="Una transcripción se transforma en tareas revisables conectadas por un flujo"
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="convertir transcripciones en decisiones, tareas y dudas revisables" />
+
+    <p>
+      Una transcripción no es un acta. Puede mezclar propuestas, frases a medias, nombres mal reconocidos y asuntos sin cierre. La IA puede ordenar ese material, pero la persona que conoce la reunión debe seguir confirmando qué se acordó y qué se comunica.
+    </p>
+    <p>
+      Este workflow convierte una transcripción o unas notas en un borrador de cierre con decisiones, tareas y bloqueos. No envía nada, no crea recordatorios y no asigna trabajo por su cuenta.
+    </p>
+
+    <h2>El resultado que deberías obtener</h2>
+    <table>
+      <thead><tr><th>Elemento</th><th>Regla de calidad</th></tr></thead>
+      <tbody>
+        <tr><td>Decisiones confirmadas</td><td>Solo acuerdos expresos.</td></tr>
+        <tr><td>Tareas pendientes</td><td>Acción concreta con evidencia textual.</td></tr>
+        <tr><td>Responsable</td><td>Solo si se mencionó claramente; si no, <code>por confirmar</code>.</td></tr>
+        <tr><td>Fecha</td><td>Solo si aparece en la reunión; si no, <code>por confirmar</code>.</td></tr>
+        <tr><td>Dudas abiertas</td><td>Propuestas, contradicciones o asuntos sin cierre.</td></tr>
+      </tbody>
+    </table>
+    <p>Una salida prudente que deja una duda marcada vale más que un acta convincente que inventa un compromiso.</p>
+
+    <h2>El workflow en cinco pasos</h2>
+    <h3>1. Limita la entrada antes de pegarla</h3>
+    <p>Para la primera prueba, elige una reunión breve y no sensible. Elimina datos de clientes, importes, enlaces privados y detalles personales que no cambien el resultado. Si tu empresa ya tiene una herramienta aprobada, úsala antes de enviar información de trabajo a otra cuenta.</p>
+    <p>Escribe en una línea qué quieres cerrar: por ejemplo, “decisiones, tareas y bloqueos de la reunión semanal de proyecto”. Esa frase evita pedir un resumen genérico y recibir texto que nadie usa.</p>
+
+    <h3>2. Pide extracción, no interpretación</h3>
+    <pre><code>Convierte la transcripción siguiente en un borrador de cierre de reunión.
+
+Trabaja únicamente con información explícita en el texto. No inventes acuerdos, responsables, fechas ni prioridades. Si falta evidencia, escribe «por confirmar» y explica brevemente qué falta.
+
+Devuelve estas secciones:
+1. Decisiones confirmadas: lista breve. Incluye una cita o marca de tiempo si está disponible.
+2. Tareas pendientes: tabla con acción, responsable, fecha y evidencia textual.
+3. Fecha común de entrega: solo si el texto aplica un mismo plazo a las tareas; indícala como nota, nunca como una tarea adicional.
+4. Dudas o bloqueos abiertos: qué no quedó resuelto y quién debería confirmarlo.
+5. Resumen para enviar: máximo cinco líneas, sin añadir compromisos nuevos.
+
+Transcripción:
+[PEGA AQUÍ UNA TRANSCRIPCIÓN O NOTAS ANONIMIZADAS]</code></pre>
+    <p>El prompt permite responder “por confirmar”. Eso evita rellenar huecos cuando alguien propone algo sin aceptarlo o menciona una fecha sin asumirla.</p>
+
+    <h3>3. Contrasta tres tipos de error</h3>
+    <ol>
+      <li>Si una propuesta se ha convertido en acuerdo.</li>
+      <li>Si una tarea se ha atribuido a alguien que no la aceptó.</li>
+      <li>Si una fecha se ha deducido porque parecía lógica.</li>
+    </ol>
+    <p>Corrige el documento final, no solo la respuesta dentro del chat. Así nadie hereda una versión que ya sabes que era ambigua.</p>
+
+    <h3>4. Confirma antes de ejecutar</h3>
+    <p>El borrador no debe crear tareas, eventos, avisos ni mensajes externos. Primero revísalo con quien dirigió la reunión o con las personas afectadas. Después, si todo es correcto, conviértelo en el acta o en las tareas de tu sistema.</p>
+
+    <h3>5. Guarda solo lo que vas a reutilizar</h3>
+    <p>Después de tres o cuatro reuniones, conserva el prompt y la tabla de salida. Añade campos solo si los usas de verdad: proyecto, prioridad, enlace al documento o siguiente revisión. Un workflow breve y repetible es más útil que un prompt lleno de reglas que nadie mantiene.</p>
+
+    <h2>Prueba de 20 minutos</h2>
+    <ol>
+      <li><strong>Cinco minutos:</strong> prepara una transcripción de menos de una hora y elimina lo sensible.</li>
+      <li><strong>Diez minutos:</strong> ejecuta el prompt y compara decisiones, responsables y fechas con tus notas.</li>
+      <li><strong>Cinco minutos:</strong> marca cada fila como correcta, incompleta o inventada.</li>
+    </ol>
+    <p>Conserva el workflow si recupera los acuerdos reales, no añade compromisos y te deja una revisión más corta que redactar el cierre desde cero. Simplifícalo o descártalo si necesitas reconstruir la mayor parte de la salida.</p>
+
+    <h2>Qué hemos probado y qué no</h2>
+    <p>Documentamos dos pruebas antes de preparar esta guía. La primera usó un <a href="https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf" rel="noreferrer">fragmento público de una audiencia</a> con siete acciones y un plazo común: la primera salida convirtió el plazo en una tarea adicional y el prompt se corrigió para separarlo como nota.</p>
+    <p>La segunda usó un escenario sintético en español con dos decisiones, cinco acciones, dependencias, fechas presentes y ausentes, una propuesta sin aprobar y un responsable ambiguo. La salida conservó esos límites sin convertir el audio propuesto ni la herramienta pendiente en tareas.</p>
+    <p>Esto valida la estructura de salida, no demuestra que cualquier transcripción real vaya a quedar bien a la primera. Las grabaciones con varios hablantes, audio deficiente o acuerdos implícitos necesitan más revisión humana.</p>
+
+    <h2>Límites que no deberías saltarte</h2>
+    <ul>
+      <li>No subas información sensible a una herramienta que tu organización no haya aprobado.</li>
+      <li>No trates una propuesta como un acuerdo solo porque la frase suene segura.</li>
+      <li>No asignes tareas ni envíes el acta sin comprobar la fuente.</li>
+      <li>No confundas una fecha común con una tarea nueva.</li>
+    </ul>
+    <p>Si la reunión tiene consecuencias legales, financieras, médicas, laborales o contractuales, usa este proceso solo como borrador de trabajo y valida el texto con la persona responsable.</p>
+
+    <h2>Convierte otra tarea repetitiva en un workflow</h2>
+    <p>Si quieres aplicar el mismo criterio a investigación, documentos, emails, presentaciones u hojas de cálculo, empieza por la tarea concreta.</p>
+    <div class="not-prose mt-8 rounded-2xl border border-brand-500/20 bg-dark-800 p-6 sm:p-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
+      <h2 class="mt-3 font-display text-2xl font-bold text-white">Encuentra una ruta para tu tarea</h2>
+      <p class="mt-2 max-w-2xl text-sm leading-6 text-dark-200">Responde unas preguntas y recibe una herramienta inicial, una alternativa, un prompt y una prueba corta para decidir si merece entrar en tu sistema.</p>
+      <a href="/empieza" class="mt-5 inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600">Diagnosticar mi tarea</a>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: pubDate,
+    author: { '@type': 'Person', name: 'Jordi Castañeira' },
+    publisher: { '@type': 'Organization', name: 'Decodifica' },
+    about: tags,
+  })} />
+</BaseLayout>
