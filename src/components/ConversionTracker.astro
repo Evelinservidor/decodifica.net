@@ -1,7 +1,10 @@
 <script is:inline>
   (() => {
     const STORAGE_KEY = 'decodifica_conversion_events_v1';
+    const CONSENT_KEY = 'decodifica_cookie_consent_v1';
+    const LANDING_KEY = 'decodifica_attribution_landing_v1';
     const sentReadEvents = new Set();
+    let analyticsAllowed = readAnalyticsConsent();
 
     function eventName(name) {
       return String(name || 'conversion_click')
@@ -9,6 +12,64 @@
         .toLowerCase()
         .replace(/[^a-z0-9_]+/g, '_')
         .replace(/^_+|_+$/g, '');
+    }
+
+    function readAnalyticsConsent() {
+      try {
+        return Boolean(JSON.parse(window.localStorage.getItem(CONSENT_KEY) || 'null')?.analytics);
+      } catch {
+        return false;
+      }
+    }
+
+    function safeText(value, fallback = '') {
+      return String(value || fallback)
+        .toLowerCase()
+        .replace(/[^a-z0-9_./-]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 80) || fallback;
+    }
+
+    function getSource() {
+      const params = new URLSearchParams(window.location.search);
+      const utmSource = safeText(params.get('utm_source'));
+      if (utmSource) return `utm:${utmSource}`;
+      if (!document.referrer) return 'direct';
+      try {
+        return safeText(new URL(document.referrer).hostname, 'direct');
+      } catch {
+        return 'direct';
+      }
+    }
+
+    function getLanding() {
+      try {
+        const saved = window.sessionStorage.getItem(LANDING_KEY);
+        if (saved) return saved;
+        const landing = window.location.pathname;
+        window.sessionStorage.setItem(LANDING_KEY, landing);
+        return landing;
+      } catch {
+        return window.location.pathname;
+      }
+    }
+
+    function getSelectedTask(target) {
+      const explicit = target?.dataset?.trackTask;
+      if (explicit) return safeText(explicit, 'none');
+      const selected = document.querySelector('[data-task][aria-pressed="true"]');
+      if (selected?.dataset?.task) return safeText(selected.dataset.task, 'none');
+      return safeText(new URLSearchParams(window.location.search).get('task'), 'none');
+    }
+
+    function getDestination(href) {
+      if (!href) return 'none';
+      try {
+        const url = new URL(href, window.location.origin);
+        return url.origin === window.location.origin ? url.pathname : safeText(url.hostname, 'external');
+      } catch {
+        return 'none';
+      }
     }
 
     function saveLocal(payload) {
@@ -22,13 +83,16 @@
     }
 
     function emit(name, props = {}) {
+      if (!analyticsAllowed) return false;
       const payload = {
         event: eventName(name),
         path: window.location.pathname,
-        title: document.title,
-        at: new Date().toISOString(),
+        source: getSource(),
+        landing: getLanding(),
+        task: getSelectedTask(props.target),
         ...props,
       };
+      delete payload.target;
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(payload);
@@ -42,6 +106,7 @@
       }
 
       saveLocal(payload);
+      return true;
     }
 
     function inferClickEvent(link) {
@@ -59,12 +124,14 @@
     document.addEventListener('click', (event) => {
       const target = event.target instanceof Element ? event.target.closest('a,button,[data-track]') : null;
       if (!target) return;
+      if (target.closest('#cookie-consent')) return;
 
       const href = target instanceof HTMLAnchorElement ? target.href : '';
       emit(inferClickEvent(target), {
         label: target.dataset.trackLabel || target.textContent?.trim().slice(0, 80) || '',
-        href,
+        destination: getDestination(href),
         component: target.dataset.trackComponent || '',
+        target,
       });
     });
 
@@ -75,6 +142,7 @@
         emit(form.dataset.track || 'newsletter_submit', {
           label: form.dataset.trackLabel || 'newsletter_form',
           component: form.dataset.trackComponent || 'newsletter_form',
+          target: form,
         });
       }
     }, true);
@@ -96,12 +164,16 @@
             label: key,
             component: node.dataset.trackComponent || 'reading_depth',
             depth: '60',
+            target: node,
           });
         }
       });
     }
 
     window.DecodificaTrack = { emit };
+    window.addEventListener('decodifica:analytics-consent', (event) => {
+      analyticsAllowed = Boolean(event.detail?.analytics);
+    });
     window.addEventListener('scroll', checkReadDepth, { passive: true });
     window.addEventListener('load', checkReadDepth);
     setTimeout(checkReadDepth, 30000);

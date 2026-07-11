@@ -12,6 +12,14 @@ const {
   description = 'Una vez por semana: una herramienta que merece la pena, una decisión práctica y un prompt o recurso para usarla mejor.',
   buttonLabel = 'Apuntarme gratis',
 } = Astro.props;
+
+const emailInputId = `bd-email-${title
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-+|-+$/g, '')
+  .slice(0, 48) || 'form'}`;
 ---
 
 <div class="rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
@@ -38,10 +46,10 @@ const {
     data-track-label={title}
     class="mt-5 flex flex-col gap-2 sm:flex-row"
   >
-    <label for="bd-email" class="sr-only">Email</label>
+    <label for={emailInputId} class="sr-only">Email</label>
     <input type="hidden" name="embed" value="1" />
     <input
-      id="bd-email"
+      id={emailInputId}
       type="email"
       name="email"
       placeholder="tu@email.com"

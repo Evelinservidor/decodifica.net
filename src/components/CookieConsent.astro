@@ -100,6 +100,9 @@ const { plausibleDomain } = Astro.props;
       if (!plausibleDomain || document.querySelector('script[data-domain="' + plausibleDomain + '"]')) {
         return;
       }
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
       const script = document.createElement('script');
       script.defer = true;
       script.dataset.domain = plausibleDomain;
@@ -111,6 +114,9 @@ const { plausibleDomain } = Astro.props;
       if (consent && consent.analytics) {
         loadPlausible();
       }
+      window.dispatchEvent(new CustomEvent('decodifica:analytics-consent', {
+        detail: { analytics: Boolean(consent && consent.analytics) },
+      }));
     }
 
     const existing = readConsent();
