@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "GPT-Live cambia la voz de ChatGPT: ahora escucha mientras habla";
+const description = "Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte...";
+const pubDate = "2026-07-11";
+const readingTime = "5 min";
+const tags = ["Decodifica", "GPT-Live", "GPT Live", "ChatGPT", "voz de ChatGPT", "ChatGPT Voice", "nueva voz ChatGPT", "modo voz ChatGPT"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/gpt-live-voz-chatgpt.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/gpt-live-voz-chatgpt.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
+        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
+        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
+        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
+        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
+        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
+        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
+        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
+      </div>
+    </div>
+
+    <p>Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este articulo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
+    <p>La pregunta útil es esta: ¿GPT-Live convierte por fin la voz de ChatGPT en una conversación fluida o el cambio se queda en una voz más natural?</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué importa</h2>
+    <p>Decidir si merece cambiar a GPT-Live y comprobar en tres pruebas si la nueva voz de ChatGPT interrumpe menos, respeta las pausas y resuelve búsquedas sin romper la conversación.</p>
+    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir friccion o ayudarte a probar algo que antes daba pereza.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que cambia realmente</h2>
+    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha tecnica. Lo importante es traducir esas funciones a consecuencias practicas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
+    <p>La novedad atractiva no es una voz más bonita, sino que escucha mientras habla y delega búsquedas; el giro es que el despliegue, los planes y las funciones disponibles cambian según cuenta, región y superficie, y Live pierde vídeo y pantalla compartida en el lanzamiento.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraría antes de usarlo</h2>
+    <ul class="space-y-2">
+      <li>ChatGPT ya te escucha mientras habla y acepta interrupciones sin cortar la conversación.</li>
+      <li>OpenAI lo llama GPT-Live. En sus demos oficiales, la charla sigue aunque la persona haga una pausa, cambie de idea o pida una búsqueda en ese mismo momento.</li>
+      <li>Si ese número baja, GPT-Live no es una demo bonita; es una interfaz mejor. Si no baja, la arquitectura será nueva, pero tu trabajo seguirá igual.</li>
+      <li>Prueba hoy interrupción, pausa y búsqueda contextual. Tu número de repeticiones te dirá si merece el cambio.</li>
+    </ul>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
+    <p>La prueba buena no es abrir GPT-Live cambia la voz de ChatGPT: ahora escucha mientras habla cinco minutos y decidir por sensación. La prueba buena tiene una entrada clara, una salida revisable y un criterio de exito antes de empezar.</p>
+    <p>Yo lo haria así:</p>
+    <ol>
+      <li>Elige una tarea real que ya ibas a hacer esta semana.</li>
+      <li>Guarda el resultado que obtendrias sin la herramienta, aunque sea en una nota rápida.</li>
+      <li>Prueba la herramienta con el mismo objetivo, sin cambiar el problema a mitad de camino.</li>
+      <li>Compara tres cosas: tiempo, calidad y esfuerzo de revision.</li>
+      <li>Decide si lo repetiria mañana o si solo fue una demo curiosa.</li>
+    </ol>
+    <p>Ese ultimo punto es el importante. Una IA puede impresionar en pantalla y aun así no merecer entrar en tu rutina si después te obliga a corregir, revisar permisos o rehacer el resultado.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Con qué lo compararía</h2>
+    <p>Lo compararía contra lo que ya usas hoy. La pregunta no es si la novedad suena potente, sino si mejora una tarea concreta frente a ChatGPT, Claude, Gemini, una automatización sencilla o incluso una plantilla bien hecha.</p>
+    <p>La comparacion tiene que ser práctica. No basta con mirar el titular, el precio o el benchmark que más conviene a cada fabricante. Hay que mirar la tarea completa: preparacion, calidad de salida, revision, privacidad, dependencia y facilidad para repetir el resultado una semana después.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
+    <p>Tiene sentido si ya tienes una tarea repetida, un bloqueo claro o una decisión que puedas medir.</p>
+    <p>No tiene tanto sentido si solo buscas probar la herramienta porque esta de moda. En ese caso, mejor esperar a tener un caso real y evitar llenar tu flujo de pruebas que no se convierten en habito.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde esta el valor</h2>
+    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar más de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decisión o a una version revisable, entonces ya empieza a tener sentido.</p>
+    <p>Yo lo probaría primero en un caso pequeño, con salida verificable y poco riesgo. Si ahi funciona, se puede subir el nivel. Si falla en lo basico, al menos no has construido todo tu sistema encima de una promesa.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraria todavía</h2>
+    <p>El limite importante es no confundir potencial con resultado. Una herramienta puede sonar muy bien y aun así no encajar en tu dia a dia si te obliga a revisar más de lo que ahorra.</p>
+    <p>Esta parte importa porque en IA es muy fácil confundir potencial con resultado. Una demo puede ser espectacular y aun así no encajar en tu dia a dia. Por eso conviene separar tres cosas: lo que la herramienta dice qué hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>GPT-Live puede mantener la interacción de voz mientras delega búsqueda o razonamiento en GPT-5.5, separando la conversación rápida del trabajo más profundo.</p>
+    <p>Mi recomendación es tratarlo como una oportunidad de mejora, no como una solución automatica. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
+    <p>Si quieres seguir este tipo de analisis con fuentes, recursos y decisiones practicas, la web de Decodifica ira reuniendo la version ampliada de cada video.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li>Fuente oficial no registrada en el brief.</li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+      <li><a href="/comunidad" class="text-brand-400 hover:text-brand-300">Comunidad Decodifica</a>, para compartir pruebas, dudas y casos de uso con IA.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-gpt-live-voz-chatgpt" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-gpt-live-voz-chatgpt" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": []
+  })} />
+</BaseLayout>
