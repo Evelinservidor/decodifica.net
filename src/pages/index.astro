@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
-import ConversionBand from '~/components/ConversionBand.astro';
-import { siteConfig } from '~/lib/site-config';
 
 const latestGuides = [
   {
@@ -24,108 +22,96 @@ const latestGuides = [
 ---
 
 <BaseLayout
-  title="IA útil en español"
-  description="Decodifica filtra herramientas de IA, modelos y workflows para que sepas qué probar, qué evitar y cómo aplicarlo."
+  title="IA práctica para trabajo real"
+  description="Convierte una tarea repetitiva en un workflow de IA que puedas revisar y reutilizar cada semana."
 >
   <section class="border-b border-dark-600 bg-dark-900">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[1fr_420px] lg:px-8 lg:py-20">
       <div class="max-w-3xl">
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          IA práctica para decidir mejor
+          IA práctica para trabajo real
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          Herramientas de IA filtradas antes de que pierdas la tarde probándolas.
+          Convierte una tarea repetitiva en un workflow de IA que puedas reutilizar cada semana.
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-dark-200">
-          Decodifica separa lo útil del ruido: qué merece la pena probar, cómo aplicarlo en una tarea real y qué límites conviene tener claros antes de depender de una herramienta.
+          Elige una tarea, recibe una ruta para probarla en poco tiempo y conserva solo lo que puedas revisar y repetir. Sin empezar por una lista infinita de herramientas.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
-            href="/newsletter"
+            href="/empieza"
             class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-600"
           >
-            Recibir el filtro semanal
+            Diagnosticar mi tarea
           </a>
           <a
-            href="/herramientas"
+            href="#ejemplo"
             class="inline-flex items-center justify-center rounded-lg border border-dark-500 bg-dark-800 px-6 py-3 text-base font-semibold text-white transition-all hover:bg-dark-700"
           >
-            Ver herramientas IA
+            Ver un ejemplo
           </a>
         </div>
-        <dl class="mt-10 grid max-w-2xl gap-4 text-sm sm:grid-cols-3">
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
-            <dt class="text-2xl font-bold text-white">1</dt>
-            <dd class="mt-1 text-dark-300">decisión práctica por tema</dd>
-          </div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
-            <dt class="text-2xl font-bold text-white">0</dt>
-            <dd class="mt-1 text-dark-300">hype gratuito</dd>
-          </div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
-            <dt class="text-2xl font-bold text-white">2</dt>
-            <dd class="mt-1 text-dark-300">pilares: herramientas y productividad</dd>
-          </div>
-        </dl>
       </div>
 
-      <div id="newsletter">
-        <NewsletterForm
-          title="Recibe el filtro Decodifica"
-          description="Una vez por semana: una herramienta que merece la pena, una decisión práctica y un recurso para probarla sin empezar de cero."
-          buttonLabel="Apuntarme gratis"
-        />
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-6 shadow-xl shadow-black/10 sm:p-8">
+        <p class="text-sm font-semibold text-brand-300">Prueba de 20 minutos</p>
+        <h2 class="mt-2 font-display text-2xl font-bold text-white">Un resultado antes de pedirte nada</h2>
+        <ol class="mt-6 space-y-4 text-sm text-dark-200">
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">1</span><span>Elige una tarea que repites cada semana.</span></li>
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">2</span><span>Prueba una ruta con datos no sensibles.</span></li>
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">3</span><span>Comprueba calidad, permisos y tiempo de revisión.</span></li>
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">4</span><span>Guarda solo el flujo que puedas reutilizar.</span></li>
+        </ol>
       </div>
     </div>
   </section>
 
   <section class="border-b border-dark-600 bg-dark-800/50 py-12 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-5 md:grid-cols-3">
-        <a href="/herramientas" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
-          <p class="text-sm font-semibold text-brand-300">Herramientas IA</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">Biblioteca filtrable por tarea</h2>
-          <p class="mt-3 text-sm leading-6 text-dark-200">Compara herramientas por caso de uso, precio, privacidad, dificultad y momento adecuado.</p>
-        </a>
-        <a href="/recursos" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
-          <p class="text-sm font-semibold text-brand-300">Recursos IA</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">Prompts, flujos y guías descargables</h2>
-          <p class="mt-3 text-sm leading-6 text-dark-200">El primer paso si vienes desde YouTube y quieres aplicar algo hoy, no solo leer otra noticia.</p>
-        </a>
-        <a href="/blog/como-elegir-herramienta-ia/" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
-          <p class="text-sm font-semibold text-brand-300">Guía base</p>
-          <h2 class="mt-2 font-display text-2xl font-bold">Un método para elegir bien</h2>
-          <p class="mt-3 text-sm leading-6 text-dark-200">La pieza base para convertir curiosidad en criterio antes de probar cualquier herramienta nueva.</p>
-        </a>
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-brand-300">Tareas frecuentes</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">Empieza por el trabajo, no por la herramienta.</h2>
+      </div>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          ['Investigar con fuentes', 'Encontrar, contrastar y citar información.', 'investigar'],
+          ['Resumir documentos', 'Convertir material largo en algo revisable.', 'resumir'],
+          ['Preparar reuniones', 'Pasar de notas a decisiones y tareas.', 'reuniones'],
+          ['Redactar emails', 'Crear un borrador sin perder tu tono.', 'emails'],
+          ['Crear presentaciones', 'Pasar de briefing a estructura revisable.', 'presentaciones'],
+          ['Analizar hojas de cálculo', 'Probar fórmulas y análisis con control.', 'hojas'],
+        ].map(([title, description, task]) => (
+          <a href={`/empieza#${task}`} class="rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/60">
+            <h3 class="font-display text-xl font-bold text-white">{title}</h3>
+            <p class="mt-2 text-sm leading-6 text-dark-200">{description}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="py-14 sm:py-16">
+  <section id="ejemplo" class="py-14 sm:py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+      <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
         <div>
-          <p class="text-sm font-semibold text-brand-300">Por dónde empezar</p>
+          <p class="text-sm font-semibold text-brand-300">Ejemplo de resultado</p>
           <h2 class="mt-2 font-display text-3xl font-bold sm:text-4xl">
-            Elige mejor, prueba con criterio y guarda lo útil.
+            Una respuesta concreta antes de pedirte el email.
           </h2>
           <p class="mt-4 text-dark-200">
-            Si una herramienta te interesa, empieza por una guía, guarda el recurso que te ahorre trabajo y vuelve al filtro semanal cuando quieras seguir probando sin ruido.
+            Para una tarea de investigación con fuentes propias, esta sería una primera ruta. La versión completa del diagnóstico llegará después: primero importa que puedas probar algo útil.
           </p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          {siteConfig.pillars.map((pilar) => (
-            <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-              <h3 class="font-display text-xl font-bold text-white">{pilar.title}</h3>
-              <p class="mt-3 text-sm leading-6 text-dark-200">{pilar.description}</p>
-            </article>
-          ))}
-          <article class="rounded-lg border border-dark-600 bg-dark-800 p-6 sm:col-span-2">
-            <h3 class="font-display text-xl font-bold text-white">Lo que no entra</h3>
-            <p class="mt-3 text-sm leading-6 text-dark-200">
-              No cubrimos IA como espectáculo: evitamos comparativas genéricas, humo de lanzamiento y temas que no acaban en una decisión útil.
-            </p>
-          </article>
+        <div class="rounded-2xl border border-brand-500/30 bg-brand-500/5 p-6 sm:p-8">
+          <p class="text-sm font-semibold text-brand-300">Tarea: resumir un informe sin perder las fuentes</p>
+          <dl class="mt-6 grid gap-5 sm:grid-cols-2">
+            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Ruta inicial</dt><dd class="mt-1 font-semibold text-white">NotebookLM con las fuentes seleccionadas</dd></div>
+            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Alternativa</dt><dd class="mt-1 font-semibold text-white">Perplexity si todavía tienes que encontrar fuentes</dd></div>
+            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Primer prompt</dt><dd class="mt-1 text-sm text-dark-200">“Resume las conclusiones y cita la fuente de cada una.”</dd></div>
+            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Prueba</dt><dd class="mt-1 text-sm text-dark-200">Contrasta tres respuestas con el documento original.</dd></div>
+            <div class="sm:col-span-2"><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Límite que revisar</dt><dd class="mt-1 text-sm text-dark-200">Las citas ayudan a comprobar la respuesta; no sustituyen la lectura de las fuentes.</dd></div>
+          </dl>
+          <a href="/empieza#investigar" class="mt-7 inline-flex text-sm font-semibold text-brand-300 hover:text-brand-200">Ver rutas para mi tarea <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -151,15 +137,13 @@ const latestGuides = [
     </div>
   </section>
 
-  <div class="mx-auto max-w-7xl px-4 pb-14 pt-4 sm:px-6 lg:px-8">
-    <ConversionBand
-      eyebrow="Siguiente paso"
-      title="Empieza por el filtro semanal"
-      description="Si un vídeo te interesa, la newsletter te da la versión corta: qué probar, qué evitar y qué recurso guardar para aplicarlo."
-      primaryHref="/newsletter"
-      primaryLabel="Apuntarme gratis"
-      secondaryHref="/comunidad"
-      secondaryLabel="Ver comunidad"
-    />
-  </div>
+  <section class="border-t border-dark-600 bg-dark-800/50 py-14 sm:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <NewsletterForm
+        title="Una tarea, varias opciones y un workflow que puedas guardar"
+        description="Cada semana: una tarea real, las herramientas que se compararon, la ruta que probar y un límite que conviene revisar."
+        buttonLabel="Recibir el filtro semanal"
+      />
+    </div>
+  </section>
 </BaseLayout>

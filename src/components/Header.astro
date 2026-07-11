@@ -5,13 +5,9 @@ import Button from './Button.astro';
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', label: 'Inicio' },
+  { href: '/empieza', label: 'Empieza' },
+  { href: '/blog', label: 'Guías' },
   { href: '/herramientas', label: 'Herramientas' },
-  { href: '/recursos', label: 'Recursos IA' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/comunidad', label: 'Comunidad' },
-  { href: '/quienes-somos', label: 'Quiénes somos' },
-  { href: '/contacto', label: 'Contacto' },
 ];
 ---
 
@@ -41,12 +37,9 @@ const navItems = [
         ))}
       </ul>
 
-      <div class="hidden items-center gap-2 xl:flex">
-        <Button href="/newsletter" variant="ghost" size="sm">
+      <div class="hidden items-center xl:flex">
+        <Button href="/newsletter" variant="primary" size="sm">
           Newsletter
-        </Button>
-        <Button href="/comunidad" variant="primary" size="sm">
-          Comunidad
         </Button>
       </div>
 
@@ -86,18 +79,12 @@ const navItems = [
             </li>
           ))}
         </ul>
-        <div class="mt-4 grid gap-2 sm:grid-cols-2">
+        <div class="mt-4">
           <a
             href="/newsletter"
-            class="inline-flex items-center justify-center rounded-lg border border-brand-700 bg-transparent px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-700"
+            class="inline-flex w-full items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-600"
           >
             Recibir el filtro semanal
-          </a>
-          <a
-            href="/comunidad"
-            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-600"
-          >
-            Entrar en comunidad
           </a>
         </div>
       </div>
