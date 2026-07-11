@@ -1,0 +1,390 @@
+---
+import { env } from '~/lib/env';
+
+const diagnosticVersion = 'concierge-v0.1';
+const reviewedAt = '11 de julio de 2026';
+
+const tasks = [
+  {
+    id: 'investigar',
+    title: 'Investigar con fuentes',
+    description: 'Encontrar, contrastar y citar información antes de decidir.',
+    recommendation: 'NotebookLM',
+    alternative: 'Perplexity',
+    why: 'NotebookLM sirve cuando partes de fuentes que ya conoces; Perplexity puede ayudarte a localizar y contrastar fuentes antes de reunirlas.',
+    risk: 'Una cita no sustituye la lectura de la fuente original ni convierte una conclusión en una decisión verificada.',
+    steps: [
+      'Formula una pregunta concreta y un criterio de decisión.',
+      'Reúne tres fuentes primarias o documentos que puedas revisar.',
+      'Pide una conclusión con una cita para cada afirmación importante.',
+      'Abre las fuentes citadas y corrige los matices antes de compartir el resultado.',
+    ],
+    prompt: 'A partir de estas fuentes, responde a la pregunta indicada. Separa hechos, inferencias y dudas. Para cada afirmación importante, enlaza o cita el fragmento de origen. Si la fuente no basta, di qué falta en lugar de completarlo.',
+    test: 'Usa tres fuentes no sensibles y comprueba cinco afirmaciones contra el original.',
+    criterion: 'Conserva el flujo si puedes verificar rápido cada conclusión y detectas con claridad lo que sigue siendo una duda.',
+    notDelegate: 'La validación de una fuente original, una recomendación con impacto o la decisión final.',
+    link: '/herramientas/notebooklm-vs-perplexity/',
+    linkLabel: 'Ver la comparativa de investigación',
+  },
+  {
+    id: 'resumir',
+    title: 'Resumir documentos',
+    description: 'Convertir PDFs, notas o vídeos en material que puedas revisar.',
+    recommendation: 'NotebookLM',
+    alternative: 'Claude',
+    why: 'Empieza con una fuente acotada y un resultado que puedas contrastar línea a línea con el original.',
+    risk: 'Un resumen puede omitir condiciones, cifras o excepciones aunque parezca claro y completo.',
+    steps: [
+      'Elige un documento corto y define para qué vas a usar el resumen.',
+      'Pide cinco conclusiones, sus citas y una lista de dudas.',
+      'Comprueba cada conclusión en el documento original.',
+      'Guarda solo el formato que haya conservado los matices importantes.',
+    ],
+    prompt: 'Resume este documento para el objetivo indicado. Devuelve cinco conclusiones, una cita o sección de apoyo para cada una y una lista separada de matices, excepciones o datos que no estén claros.',
+    test: 'Resume un documento de cinco a diez páginas y revisa cinco conclusiones contra el original.',
+    criterion: 'Conserva el flujo si no pierdes cifras, condiciones ni excepciones relevantes y la revisión te ahorra tiempo.',
+    notDelegate: 'Citas exactas, datos que deban ser precisos o la interpretación final de un documento.',
+    link: '/blog/notebooklm-guia-2026/',
+    linkLabel: 'Ver la guía de NotebookLM',
+  },
+  {
+    id: 'reuniones',
+    title: 'Preparar reuniones',
+    description: 'Pasar de una transcripción a decisiones y tareas revisables.',
+    recommendation: 'Claude',
+    alternative: 'ChatGPT',
+    why: 'La IA puede ordenar una transcripción en decisiones, responsables y siguientes pasos; úsala como borrador, no como acta automática.',
+    risk: 'Puede atribuir acuerdos, responsables o fechas que nadie confirmó.',
+    steps: [
+      'Usa una transcripción sin información sensible para la primera prueba.',
+      'Pide decisiones, tareas, responsable propuesto y evidencia textual.',
+      'Compara la lista con tus notas o la grabación.',
+      'Confirma responsables y fechas antes de crear tareas o enviar un resumen.',
+    ],
+    prompt: 'Convierte esta transcripción en: decisiones confirmadas, tareas pendientes, responsable propuesto, fecha si aparece y dudas abiertas. No inventes responsables ni fechas: marca como “por confirmar” todo lo que no esté explícito.',
+    test: 'Procesa una reunión no sensible de menos de una hora y compara el resultado con tus notas.',
+    criterion: 'Conserva el flujo si recupera las decisiones reales sin añadir compromisos y reduces el tiempo de cierre.',
+    notDelegate: 'Asignar tareas, enviar datos o afirmar acuerdos sin revisión humana.',
+    link: '/blog/ia-organiza-pendientes/',
+    linkLabel: 'Ver opciones y permisos',
+  },
+  {
+    id: 'emails',
+    title: 'Redactar emails',
+    description: 'Crear un borrador claro sin delegar el tono ni el compromiso final.',
+    recommendation: 'Claude',
+    alternative: 'ChatGPT',
+    why: 'Un modelo puede convertir un objetivo y algunos límites de tono en un primer borrador más rápido de revisar.',
+    risk: 'El texto puede sonar seguro aunque introduzca compromisos, cifras o un tono que no aprobarías.',
+    steps: [
+      'Anonimiza el contexto y define destinatario, objetivo y límite de tono.',
+      'Aporta uno o dos ejemplos de redacción que sí representen tu voz.',
+      'Pide dos versiones breves y una lista de supuestos.',
+      'Reescribe el cierre, los compromisos y cualquier dato antes de enviarlo.',
+    ],
+    prompt: 'Redacta dos borradores de email para el objetivo indicado. Mantén un tono claro y humano. No inventes plazos, precios, compromisos ni datos: marca cualquier supuesto entre corchetes para que pueda revisarlo.',
+    test: 'Compara un email real anonimizado con tu versión final y mide cuánto tiempo ahorras sin perder tu tono.',
+    criterion: 'Conserva el flujo si el borrador reduce la página en blanco y necesita solo una revisión consciente, no una reescritura total.',
+    notDelegate: 'El tono final, compromisos, cifras o decisiones que vinculen a una persona o empresa.',
+    link: '/blog/claude-emails-sonar-humanos/',
+    linkLabel: 'Ver guía para emails',
+  },
+  {
+    id: 'presentaciones',
+    title: 'Crear presentaciones',
+    description: 'Transformar un briefing en una estructura que puedas revisar.',
+    recommendation: 'Gamma',
+    alternative: 'Canva',
+    why: 'Primero convierte el briefing en estructura; después usa una herramienta visual para acelerar una primera versión revisable.',
+    risk: 'Una presentación atractiva puede ocultar una historia débil o datos incorrectos.',
+    steps: [
+      'Define audiencia, decisión que buscas y una única idea central.',
+      'Pide un esquema de cinco diapositivas antes de generar diseño.',
+      'Revisa el hilo y sustituye cualquier dato genérico por evidencia propia.',
+      'Exporta y comprueba una a una las diapositivas antes de compartir.',
+    ],
+    prompt: 'Convierte este briefing en un esquema de cinco diapositivas: apertura, problema, evidencia, propuesta y siguiente paso. Para cada diapositiva, indica el mensaje principal, la prueba necesaria y qué dato debo verificar antes de presentar.',
+    test: 'Genera cinco diapositivas con un briefing no confidencial y revisa la estructura antes del diseño final.',
+    criterion: 'Conserva el flujo si llegas antes a una estructura coherente y no necesitas rehacer la historia al revisar.',
+    notDelegate: 'La narrativa, la identidad de marca y cualquier dato que deba ser exacto.',
+    link: '/herramientas/para-presentaciones/',
+    linkLabel: 'Ver herramientas para presentaciones',
+  },
+  {
+    id: 'hojas',
+    title: 'Analizar hojas de cálculo',
+    description: 'Probar fórmulas, análisis y cambios con una copia de control.',
+    recommendation: 'ChatGPT',
+    alternative: 'Claude',
+    why: 'Un chat puede ayudar a explicar fórmulas, proponer comprobaciones y detectar patrones, siempre sobre una copia controlada.',
+    risk: 'Una fórmula plausible puede alterar resultados financieros o borrar supuestos sin que el error sea evidente.',
+    steps: [
+      'Duplica la hoja y elimina o anonimiza información sensible.',
+      'Define una fórmula, análisis o validación concreta.',
+      'Pide la lógica paso a paso y un ejemplo con datos conocidos.',
+      'Prueba el cambio solo en la copia y contrasta los resultados antes de reutilizarlo.',
+    ],
+    prompt: 'Quiero resolver esta tarea en una hoja de cálculo. Explica la lógica paso a paso, propone la fórmula o el análisis y crea un ejemplo con datos ficticios. Indica qué supuestos debo comprobar antes de aplicarlo a mi archivo real.',
+    test: 'Prueba tres fórmulas repetitivas en una copia con resultados conocidos.',
+    criterion: 'Conserva el flujo si puedes verificar cada resultado y la explicación permite que otra persona lo revise.',
+    notDelegate: 'Validación financiera, permisos o cambios directos sobre la hoja original.',
+    link: '/blog/ia-mejora-excel/',
+    linkLabel: 'Ver guía de IA para Excel',
+  },
+];
+---
+
+<section id="diagnostico" class="py-12 sm:py-16">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold text-brand-300">Diagnóstico Decodifica · {diagnosticVersion}</p>
+      <h2 class="mt-2 font-display text-3xl font-bold">Empieza por la tarea, no por la herramienta.</h2>
+      <p class="mt-3 text-dark-200">Responde seis preguntas sin adjuntar documentos ni datos privados. Verás una ruta inicial antes de decidir si quieres recibir una versión completa por email.</p>
+    </div>
+
+    <form id="diagnostic-form" class="mt-8 space-y-8" novalidate>
+      <fieldset>
+        <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">1.</span> ¿Qué tipo de tarea quieres resolver?</legend>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="group" aria-label="Tarea para diagnosticar">
+          {tasks.map((task) => (
+            <button type="button" data-task={task.id} aria-pressed="false" class="diagnostic-task rounded-xl border border-dark-600 bg-dark-800 p-4 text-left transition hover:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-900">
+              <span class="block font-display text-lg font-bold text-white">{task.title}</span>
+              <span class="mt-1 block text-sm leading-5 text-dark-200">{task.description}</span>
+            </button>
+          ))}
+        </div>
+        <input id="diagnostic-task" type="hidden" name="task_category" required />
+        <p id="diagnostic-task-error" class="mt-3 hidden text-sm text-red-300" role="alert">Elige una tarea para continuar.</p>
+      </fieldset>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <label class="block">
+          <span class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">2.</span> ¿Qué tarea concreta repites?</span>
+          <span class="mt-1 block text-sm text-dark-300">Descríbela sin nombres, cifras, clientes ni documentos privados.</span>
+          <input id="diagnostic-task-summary" name="task_summary" type="text" maxlength="180" required placeholder="Ej.: comparar presupuestos con el mismo criterio" class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        </label>
+        <label class="block">
+          <span class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">3.</span> ¿Qué resultado necesitas?</span>
+          <span class="mt-1 block text-sm text-dark-300">Define una salida que puedas comprobar en veinte minutos.</span>
+          <input id="diagnostic-desired-result" name="desired_result" type="text" maxlength="180" required placeholder="Ej.: una tabla de decisiones que pueda revisar" class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        </label>
+      </div>
+
+      <fieldset>
+        <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">4.</span> ¿Qué tipo de datos usarías?</legend>
+        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+          <label class="cursor-pointer rounded-xl border border-dark-600 bg-dark-800 p-4 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-500/10"><input type="radio" name="sensitivity" value="publicos" required class="mr-2 accent-brand-500" />Públicos <span class="mt-1 block text-sm text-dark-300">Información que ya puedes compartir.</span></label>
+          <label class="cursor-pointer rounded-xl border border-dark-600 bg-dark-800 p-4 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-500/10"><input type="radio" name="sensitivity" value="internos" required class="mr-2 accent-brand-500" />Internos <span class="mt-1 block text-sm text-dark-300">Material de trabajo no público.</span></label>
+          <label class="cursor-pointer rounded-xl border border-dark-600 bg-dark-800 p-4 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-500/10"><input type="radio" name="sensitivity" value="sensibles" required class="mr-2 accent-brand-500" />Sensibles <span class="mt-1 block text-sm text-dark-300">Datos personales, financieros o confidenciales.</span></label>
+        </div>
+      </fieldset>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <fieldset>
+          <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">5.</span> ¿Qué presupuesto te encaja?</legend>
+          <select id="diagnostic-budget" name="budget" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
+            <option value="">Elige una opción</option>
+            <option value="gratis">Quiero empezar gratis</option>
+            <option value="bajo">Puedo pagar una suscripción pequeña</option>
+            <option value="flexible">Puedo valorar una opción de pago si funciona</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">6.</span> ¿Qué utilizas ahora?</legend>
+          <select id="diagnostic-current-tool" name="current_tool" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
+            <option value="">Elige una opción</option>
+            <option value="ninguna">Aún no uso IA para esta tarea</option>
+            <option value="chatgpt">ChatGPT</option>
+            <option value="claude">Claude</option>
+            <option value="gemini">Gemini</option>
+            <option value="otra">Otra herramienta</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <div class="rounded-xl border border-dark-600 bg-dark-800/70 p-4 text-sm leading-6 text-dark-200">
+        <strong class="text-white">Privacidad:</strong> no pegues material sensible. La ruta inicial se calcula en tu navegador. Si aceptas la analítica, medimos solo opciones agregadas; si después dejas tu email, Buttondown guardará las respuestas de este formulario para poder enviarte el plan completo. <a href="/privacidad" class="font-semibold text-brand-300 hover:text-brand-200">Ver política de privacidad</a>.
+      </div>
+
+      <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-900">Ver mi ruta inicial <span class="ml-2" aria-hidden="true">→</span></button>
+    </form>
+
+    <article id="diagnostic-result" hidden class="mt-12 rounded-2xl border border-brand-500/30 bg-brand-500/5 p-6 sm:p-8" aria-live="polite" tabindex="-1">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm font-semibold text-brand-300">Ruta inicial · revisada el {reviewedAt}</p>
+        <p class="text-xs text-dark-300">{diagnosticVersion}</p>
+      </div>
+      <h2 id="result-title" class="mt-3 font-display text-3xl font-bold text-white"></h2>
+      <p id="result-context" class="mt-3 text-dark-200"></p>
+
+      <div class="mt-7 grid gap-5 sm:grid-cols-2">
+        <div><p class="text-xs font-semibold uppercase tracking-wide text-dark-300">Herramienta para probar</p><p id="result-recommendation" class="mt-1 text-lg font-semibold text-white"></p></div>
+        <div><p class="text-xs font-semibold uppercase tracking-wide text-dark-300">Alternativa</p><p id="result-alternative" class="mt-1 text-lg font-semibold text-white"></p></div>
+      </div>
+      <p id="result-why" class="mt-5 text-dark-200"></p>
+
+      <div class="mt-6 rounded-xl border border-amber-300/25 bg-amber-300/5 p-4"><p class="text-sm font-semibold text-amber-100">Límite que debes revisar</p><p id="result-risk" class="mt-1 text-sm leading-6 text-dark-100"></p></div>
+
+      <div class="mt-8">
+        <h3 class="font-display text-xl font-bold text-white">Workflow de cuatro pasos</h3>
+        <ol id="result-steps" class="mt-4 list-decimal space-y-2 pl-5 text-dark-200"></ol>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="font-display text-xl font-bold text-white">Prompt inicial</h3>
+        <pre class="mt-4 overflow-x-auto rounded-xl border border-dark-600 bg-dark-900 p-4 whitespace-pre-wrap text-sm leading-6 text-dark-100"><code id="result-prompt"></code></pre>
+      </div>
+
+      <div class="mt-8 grid gap-5 sm:grid-cols-3">
+        <div><p class="text-xs font-semibold uppercase tracking-wide text-dark-300">Prueba de 20 minutos</p><p id="result-test" class="mt-1 text-sm text-white"></p></div>
+        <div><p class="text-xs font-semibold uppercase tracking-wide text-dark-300">Decide si funciona</p><p id="result-criterion" class="mt-1 text-sm text-white"></p></div>
+        <div><p class="text-xs font-semibold uppercase tracking-wide text-dark-300">No delegues</p><p id="result-not-delegate" class="mt-1 text-sm text-white"></p></div>
+      </div>
+
+      <a id="result-link" class="mt-8 inline-flex font-semibold text-brand-300 hover:text-brand-200" href="#">Ver recurso relacionado <span class="ml-2" aria-hidden="true">→</span></a>
+
+      <section class="mt-10 rounded-xl border border-dark-600 bg-dark-800 p-5 sm:p-6">
+        <p class="text-sm font-semibold text-brand-300">Siguiente paso opcional</p>
+        <h3 class="mt-2 font-display text-2xl font-bold text-white">Recibe el plan completo por email</h3>
+        <p class="mt-2 max-w-2xl text-sm leading-6 text-dark-200">Te enviaremos una segunda variante, la versión editable del prompt y el siguiente paso. Durante esta fase respondemos manualmente las primeras solicitudes; no adjuntes documentos ni datos sensibles.</p>
+        <form id="diagnostic-email-form" action={`https://buttondown.com/api/emails/embed-subscribe/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}`} method="post" data-track="diagnostic_email_requested" data-track-component="diagnostic_email_form" data-track-label="Recibir plan completo" class="mt-5 flex flex-col gap-3 sm:flex-row">
+          <input type="hidden" name="embed" value="1" />
+          <input type="hidden" name="metadata__diagnostic_version" value={diagnosticVersion} />
+          <input type="hidden" name="metadata__task_category" />
+          <input type="hidden" name="metadata__task_summary" />
+          <input type="hidden" name="metadata__desired_result" />
+          <input type="hidden" name="metadata__sensitivity" />
+          <input type="hidden" name="metadata__budget" />
+          <input type="hidden" name="metadata__current_tool" />
+          <input type="hidden" name="metadata__recommendation" />
+          <label for="diagnostic-email" class="sr-only">Email</label>
+          <input id="diagnostic-email" type="email" name="email" required autocomplete="email" placeholder="tu@email.com" class="min-w-0 flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+          <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">Enviar mi diagnóstico</button>
+        </form>
+      </section>
+    </article>
+  </div>
+</section>
+
+<script define:vars={{ tasks, diagnosticVersion }}>
+  const form = document.querySelector('#diagnostic-form');
+  const output = document.querySelector('#diagnostic-result');
+  const taskInput = document.querySelector('#diagnostic-task');
+  const taskError = document.querySelector('#diagnostic-task-error');
+  const taskButtons = document.querySelectorAll('.diagnostic-task');
+  const emailForm = document.querySelector('#diagnostic-email-form');
+
+  const fields = {
+    taskSummary: document.querySelector('#diagnostic-task-summary'),
+    desiredResult: document.querySelector('#diagnostic-desired-result'),
+    budget: document.querySelector('#diagnostic-budget'),
+    currentTool: document.querySelector('#diagnostic-current-tool'),
+  };
+
+  const byId = (id) => document.querySelector(id);
+  const selectedRadio = (name) => document.querySelector(`input[name="${name}"]:checked`);
+
+  const privacyNotice = (sensitivity) => {
+    if (sensitivity === 'sensibles') return 'Has indicado datos sensibles. No los subas hasta que tu organización haya validado herramienta, plan, permisos y condiciones. Para esta prueba usa datos ficticios o anonimizados.';
+    if (sensitivity === 'internos') return 'Has indicado datos internos. Empieza con una copia anonimizada y revisa el plan, los permisos y las condiciones antes de usar información real.';
+    return 'Trabaja con una fuente que ya puedas compartir y conserva una copia del original para revisar el resultado.';
+  };
+
+  const setText = (id, value) => {
+    const node = byId(id);
+    if (node) node.textContent = value;
+  };
+
+  taskButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.task || '';
+      taskInput.value = id;
+      taskError.classList.add('hidden');
+      taskButtons.forEach((item) => {
+        const selected = item.dataset.task === id;
+        item.setAttribute('aria-pressed', String(selected));
+        item.classList.toggle('border-brand-500', selected);
+        item.classList.toggle('bg-brand-500/10', selected);
+        item.classList.toggle('border-dark-600', !selected);
+        item.classList.toggle('bg-dark-800', !selected);
+      });
+    });
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const taskId = taskInput.value;
+    const task = tasks.find((item) => item.id === taskId);
+
+    if (!task) {
+      taskError.classList.remove('hidden');
+      taskButtons[0]?.focus();
+      return;
+    }
+
+    if (!form.reportValidity()) return;
+
+    const sensitivity = selectedRadio('sensitivity')?.value || '';
+    const taskSummary = fields.taskSummary.value.trim();
+    const desiredResult = fields.desiredResult.value.trim();
+    const budget = fields.budget.value;
+    const currentTool = fields.currentTool.value;
+
+    setText('#result-title', task.title);
+    setText('#result-context', `Para una tarea como “${taskSummary}”, con el objetivo “${desiredResult}”, esta es una primera ruta revisable.`);
+    setText('#result-recommendation', task.recommendation);
+    setText('#result-alternative', task.alternative);
+    setText('#result-why', task.why);
+    setText('#result-risk', `${privacyNotice(sensitivity)} ${task.risk}`);
+    setText('#result-prompt', `${task.prompt}\n\nTarea: ${taskSummary}\nResultado esperado: ${desiredResult}`);
+    setText('#result-test', task.test);
+    setText('#result-criterion', task.criterion);
+    setText('#result-not-delegate', task.notDelegate);
+
+    const steps = byId('#result-steps');
+    if (steps) {
+      steps.replaceChildren();
+      task.steps.forEach((step) => {
+        const item = document.createElement('li');
+        item.textContent = step;
+        steps.appendChild(item);
+      });
+    }
+
+    const link = byId('#result-link');
+    if (link) {
+      link.href = task.link;
+      link.firstChild.textContent = task.linkLabel;
+    }
+
+    const metadata = {
+      task_category: task.id,
+      task_summary: taskSummary,
+      desired_result: desiredResult,
+      sensitivity,
+      budget,
+      current_tool: currentTool,
+      recommendation: task.recommendation,
+    };
+    Object.entries(metadata).forEach(([key, value]) => {
+      const input = emailForm?.querySelector(`[name="metadata__${key}"]`);
+      if (input instanceof HTMLInputElement) input.value = value;
+    });
+    if (emailForm) emailForm.dataset.trackTask = task.id;
+
+    const tracker = window.DecodificaTrack;
+    tracker?.emit?.('diagnostic_completed', {
+      task: task.id,
+      sensitivity,
+      budget,
+      current_tool: currentTool,
+      recommendation: task.recommendation,
+      version: diagnosticVersion,
+      component: 'diagnostic_concierge',
+    });
+
+    output.hidden = false;
+    output.focus({ preventScroll: true });
+    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
