@@ -66,6 +66,9 @@ const {
 
     <!-- RSS auto-discovery -->
     <link rel="alternate" type="application/rss+xml" title="Decodifica RSS" href="/rss.xml" />
+
+    <!-- Plausible can verify this inert marker; CookieConsent loads the tracker only after consent. -->
+    <script type="text/plain" data-plausible-verification src={env.PUBLIC_PLAUSIBLE_SCRIPT_SRC}></script>
   </head>
 
   <body class="min-h-screen bg-dark-900 font-sans text-white antialiased">
