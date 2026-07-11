@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "Odysseus de PewDiePie: la IA gratis que todos están probando";
-const description = "Qué es Odysseus, la IA open source que PewDiePie mostró en su canal. Cómo instalarla y compararla con LM Studio, GPT4All y Ollama.";
+const title = "Odysseus de PewDiePie: cómo evaluar esta IA local gratuita";
+const description = "Qué es Odysseus, cómo instalarla y qué revisar al compararla con LM Studio, GPT4All y Ollama.";
 const pubDate = "2026-06-15";
 const tags = ["herramientas ia gratis", "ia gratis", "pewdiepie"];
 const readingTime = "8 min";
@@ -31,9 +32,11 @@ const pillarLabel = "Pilar 1: Apps web";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        PewDiePie ha publicado en su canal una demo de Odysseus, una IA open source que corre en local, sin pagar suscripciones y sin enviar tus datos a ningún servidor. En 48 horas el repositorio se ha llenado de issues, forks y un megahilo en Reddit. Esto es lo que hace, cómo se instala y si de verdad merece la pena frente a LM Studio, GPT4All u Ollama.
+        PewDiePie mostró Odysseus en su canal como una opción para ejecutar modelos en local. Esta guía explica cómo instalarla y qué revisar —modelo, red, telemetría, mantenimiento y resultado— antes de compararla con LM Studio, GPT4All u Ollama.
       </p>
     </header>
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="ejecutar un modelo local y evaluar sus requisitos y privacidad" />
 
     <img
       src="/og/blog/odysseus-pewdiepie-ia-gratis.png"
@@ -236,7 +239,7 @@ print(resp.text)
       <li>Necesitas multimodalididad real (imagen, vídeo, audio): los modelos locales todavía están verdes en esto.</li>
     </ul>
     <p>
-      Mi recomendación: <strong>pruébalo un fin de semana</strong>. Instálalo, descarga el modelo de 8B, juega con él una tarde. Si cubre tus necesidades, te acabas de ahorrar 240 euros al año. Si no, siempre puedes volver a ChatGPT Plus y haber aprendido algo por el camino.
+      Si decides probarlo, hazlo con un modelo pequeño, una tarea no sensible y un límite claro de tiempo. Compara la calidad, el coste y el mantenimiento con tu alternativa actual antes de cancelar una suscripción.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
@@ -258,7 +261,7 @@ print(resp.text)
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Mis datos salen del PC en algún momento?</h3>
     <p>
-      No, a menos que tú lo configures así. Odysseus corre 100% en local. Los prompts y las respuestas se procesan en tu máquina. La única comunicación con internet es la descarga inicial de los modelos desde Hugging Face (que puedes hacer offline si te los bajas a mano). Nada de telemetría, nada de analítica, nada de entrenamiento con tus conversaciones.
+      Si ejecutas la aplicación y el modelo en local, el procesamiento puede quedarse en tu equipo. Aun así, revisa la configuración de red, telemetría, actualizaciones y extensiones antes de usar datos sensibles; una aplicación local no garantiza por sí sola que no haya conexiones externas.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Es mejor que ChatGPT Plus o Claude Pro?</h3>
@@ -283,7 +286,7 @@ print(resp.text)
       Odysseus no va a matar a ChatGPT. Pero sí demuestra que, en 2026, ya no necesitas pagar 20 euros al mes para tener una IA competente en tu PC. La instalación es de las más fáciles que he visto, la comunidad está respondiendo bien, y para el 80% de tareas cotidianas un modelo local open source de 8B-13B es más que suficiente.
     </p>
     <p>
-      Si te interesa profundizar en el ecosistema de IAs gratuitas que han salido en los últimos meses, te he preparado un PDF con 50 prompts prácticos que uso a diario: cubre productividad, escritura, código y aprendizaje. Lo tienes gratis en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si te interesa profundizar en el ecosistema de IAs gratuitas, tienes un PDF con 50 prompts prácticos para productividad, escritura, código y aprendizaje en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
     <p>
       Y si todavía no has salido de ChatGPT y quieres comparar opciones online (sin instalar nada), échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas gratuitas a ChatGPT en 2026</a> que publicamos hace dos semanas.
@@ -361,7 +364,7 @@ print(resp.text)
         "name": "¿Mis datos salen del PC en algún momento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, a menos que tú lo configures así. Odysseus corre 100% en local. Los prompts y respuestas se procesan en tu máquina. La única comunicación con internet es la descarga inicial de los modelos desde Hugging Face."
+          "text": "Si ejecutas la aplicación y el modelo en local, el procesamiento puede quedarse en tu equipo. Revisa la configuración de red, telemetría, actualizaciones y extensiones antes de usar datos sensibles."
         }
       },
       {

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "NotebookLM 2026: la IA de Google que solo lee tus documentos";
-const description = "Qué es NotebookLM, cómo empezar en 5 minutos, 4 flujos reales para estudiar y trabajar, y los límites del plan gratis. Verificado en junio 2026.";
+const title = "NotebookLM en 2026: IA de Google para trabajar con tus documentos";
+const description = "Qué es NotebookLM, cómo empezar, cuatro flujos para estudiar y trabajar, y los límites que conviene comprobar antes de usarlo.";
 const pubDate = "2026-06-17";
 const tags = ["herramientas ia gratis", "google ia", "notebooklm", "productividad ia"];
 const readingTime = "9 min";
@@ -30,9 +31,11 @@ const pillarLabel = "Pilar 1: Apps web";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Google te regala una IA que, a diferencia de ChatGPT o Gemini, no se inventa nada: solo responde con lo que tú le subes. Y el plan gratis es más generoso de lo que parece. Esto es lo que hace NotebookLM, cómo configurarlo en cinco minutos, cuatro flujos de trabajo reales para el día a día, los límites que sí te vas a encontrar, y cómo encaja frente a ChatGPT, Claude y Perplexity.
+        NotebookLM está diseñada para trabajar sobre las fuentes que subes y mostrar citas que puedes revisar. Eso no elimina los errores: Google recomienda comprobar las respuestas. Esta guía explica cómo configurarla, qué flujos merece la pena probar, sus límites y cuándo encaja frente a ChatGPT, Claude y Perplexity.
       </p>
     </header>
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="resumir, contrastar y consultar un conjunto de fuentes propias" />
 
     <img
       src="/og/blog/notebooklm-guia-2026.png"
@@ -44,11 +47,11 @@ const pillarLabel = "Pilar 1: Apps web";
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
       <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>NotebookLM</strong> es la herramienta de investigación con IA de Google, lanzada en 2023, potenciada por Gemini 3.5 y centrada en una idea: solo responde con los documentos que tú le das.</li>
-        <li>El plan gratis permite hasta <strong>100 cuadernos, 50 fuentes por cuaderno y 3 audio overviews al día</strong>. Cada fuente admite hasta 500.000 palabras, suficiente para libros enteros.</li>
+        <li><strong>NotebookLM</strong> es una herramienta de investigación de Google orientada a trabajar con las fuentes de un cuaderno y mostrar citas para revisarlas.</li>
+        <li>El plan gratuito tiene límites de cuadernos, fuentes y creaciones al día. Comprueba las cuotas actuales en la página oficial antes de organizar un flujo alrededor de ellas.</li>
         <li>El flujo clásico: subes PDFs, Google Docs, webs, YouTube o texto pegado, y le preguntas. Genera resúmenes, podcasts con dos voces IA, mapas mentales, flashcards, informes y presentaciones.</li>
         <li>Funciona en español desde 2024, con un español de España convincente. La voz del Audio Overview en español suena natural, no robótica.</li>
-        <li>Si necesitas una IA que razone sobre tus materiales sin inventarse nada, NotebookLM es la mejor opción gratis en 2026. Si quieres que también busque en internet, mira Perplexity o Gemini con búsqueda.</li>
+        <li>Si necesitas trabajar sobre materiales propios con citas, NotebookLM es una opción a evaluar. Si también necesitas búsqueda web, compara con Perplexity o Gemini y verifica las fuentes.</li>
       </ul>
     </div>
 
@@ -91,7 +94,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es NotebookLM y por qué se comporta diferente al resto</h2>
     <p>
-      NotebookLM es una herramienta de Google Labs que llegó al público en 2023 y que, desde el verano de 2024, funciona en español. En lugar de entrenar a la IA con todo internet, trabaja con una técnica que se llama RAG (Retrieval Augmented Generation): cuando le haces una pregunta, busca la respuesta en los documentos que tú le has subido y, si no la encuentra, te dice que no la encuentra. No alucina. No mezcla. No se lo inventa.
+      NotebookLM es una herramienta de Google orientada a trabajar con las fuentes de un cuaderno. Al hacer una pregunta, recupera información de las fuentes seleccionadas y muestra citas para que puedas comprobarla. Las citas reducen el trabajo de verificación, pero no garantizan que la respuesta sea correcta: Google advierte que NotebookLM puede cometer errores.
     </p>
     <p>
       Esto, que parece un detalle técnico, cambia por completo cómo se usa. En ChatGPT, si le pides que resuma un PDF, lees un resumen de lo que ChatGPT cree que dice ese PDF. En NotebookLM, lees un resumen de lo que el PDF dice de verdad, con citas a la página concreta de la que ha sacado cada idea. Si el documento no contiene lo que le preguntas, te lo dice sin rodeos.
@@ -115,9 +118,9 @@ const pillarLabel = "Pilar 1: Apps web";
       Listo. No hay truco. La interfaz es austera, sin menús escondidos ni wizards de configuración. Si sabes escribir prompts, ya sabes usar NotebookLM. Si no, prueba las sugerencias de la derecha: NotebookLM te propone resúmenes, líneas temporales, preguntas frecuentes y glosarios adaptados a las fuentes que acabas de subir.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4 flujos de trabajo que sí uso a diario</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4 flujos de trabajo para probar</h2>
     <p>
-      Después de tres meses probándolo para estudiar, trabajar e investigar, estos son los cuatro flujos que más me han servido. Los comparto con el mismo nivel de detalle que encontrarías en una mini-guía de producto.
+      Estos cuatro flujos convierten una colección de fuentes en una tarea concreta. Empieza con un conjunto pequeño, comprueba las citas y conserva el resultado solo si supera tu proceso actual.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-8 mb-3">1. Estudiar un libro o paper en una tarde</h3>
@@ -138,7 +141,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h3 class="font-display text-xl font-bold mt-8 mb-3">3. Investigar un tema a fondo antes de escribir</h3>
     <p>
-      Cuando estoy preparando un artículo, un guion o un informe, abro un cuaderno nuevo, pego las diez mejores URLs que he encontrado (incluidos papers, hilos de Reddit, análisis en blogs técnicos) y le pido: "¿Qué dicen en común estos artículos sobre X?" o "¿Dónde están en desacuerdo?". NotebookLM identifica consensos y discrepancias, cita el documento exacto y me ahorra horas de lectura cruzada. Para un trabajo periodístico o de investigación, esto vale oro.
+      Para preparar un artículo, un guion o un informe, crea un cuaderno con fuentes primarias y pide: "¿Qué dicen en común estas fuentes sobre X?" o "¿Dónde están en desacuerdo?". Revisa las citas de cada conclusión y vuelve al documento original antes de publicar o decidir.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-8 mb-3">4. Resumir y transcribir contenido multimedia</h3>
@@ -164,7 +167,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">NotebookLM vs ChatGPT vs Perplexity vs Claude Projects</h2>
     <p>
-      He probado los cuatro con los mismos materiales (un PDF de 80 páginas, una página web, un vídeo de YouTube de 40 minutos y un Google Doc). Esta es la comparativa honesta, sin marketing.
+      Para comparar estas herramientas, utiliza los mismos materiales, el mismo encargo y los mismos criterios: calidad de las citas, facilidad, coste, privacidad y tiempo de revisión. La tabla siguiente sirve como orientación inicial, no como un ganador universal.
     </p>
 
     <div class="overflow-x-auto">
@@ -216,10 +219,10 @@ const pillarLabel = "Pilar 1: Apps web";
       </table>
     </div>
 
-    <p class="text-sm text-dark-300 mt-2">Datos verificados en junio de 2026. Audio Overview de NotebookLM con dos voces sigue siendo único en el mercado; ningún competidor lo iguala con esa calidad en el plan gratis.</p>
+    <p class="text-sm text-dark-300 mt-2">Datos revisados el 11 de julio de 2026. Audio Overview es una función distintiva de NotebookLM, pero no sustituye la comparación de calidad, límites y disponibilidad para tu caso.</p>
 
     <p>
-      La conclusión honesta: <strong>si tu trabajo es leer, resumir y cruzar documentos, NotebookLM gana por goleada</strong>. Si lo que necesitas es una IA conversacional que también razone sobre el mundo, ChatGPT o Claude siguen siendo las referencias. Y si tu trabajo es investigar temas públicos y citarlos correctamente, Perplexity es insuperable. Las cuatro se pueden usar a la vez, en paralelo, según el caso.
+      Si tu trabajo consiste en leer, resumir y contrastar documentos propios, NotebookLM puede encajar por sus citas. Para una conversación general, compara ChatGPT o Claude; para investigación web, compara Perplexity u otras herramientas con fuentes visibles. La decisión depende de la tarea, el plan y el nivel de revisión que necesites.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
@@ -236,35 +239,34 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué diferencia hay entre NotebookLM y Gemini normal?</h3>
     <p>
-      Gemini es la IA generalista de Google: contesta sobre cualquier tema, navega por internet si se lo pides, genera imágenes y código. NotebookLM es una herramienta específica para trabajar con tus materiales: solo responde con lo que le subes, cita las fuentes página a página, y no se inventa nada. Si quieres una IA que sepa de todo, Gemini. Si quieres una IA que sepa de TUS documentos, NotebookLM.
+      Gemini es la IA generalista de Google. NotebookLM está orientada a trabajar con las fuentes de un cuaderno y mostrar citas que puedas revisar. En los modos basados en fuentes, comprueba siempre la respuesta y la cita antes de usarla como conclusión.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Mis documentos están seguros? ¿Google los usa para entrenar?</h3>
     <p>
-      Los documentos que subes a NotebookLM se procesan en los servidores de Google y se almacenan asociados a tu cuenta. Google no los usa para entrenar sus modelos públicos si usas una cuenta personal con la opción por defecto (puedes verificarlo en Ajustes > Privacidad). Para datos sensibles (clientes, salud, legal), revisa la política actualizada y, si trabajas con información muy crítica, considera subir los PDFs sin metadatos identificativos o usar la versión enterprise.
+      Google indica que los datos de NotebookLM no se usan para entrenar el producto salvo que envíes comentarios. Aun así, revisa la política aplicable a tu cuenta y evita usar esta guía como sustituto de las obligaciones de privacidad de tu organización. Para datos sensibles, consulta primero al responsable de seguridad o privacidad.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo usar NotebookLM en el móvil?</h3>
     <p>
-      Sí, hay app oficial para iOS y Android. La versión móvil perdió durante meses algunas funciones estrella como los Video Overviews, pero Google las fue añadiendo en 2025 y 2026. A día de hoy, la app móvil cubre el 90% de lo que puedes hacer en escritorio: subir fuentes, chatear, generar audio overviews, flashcards y resúmenes. Lo único que sigue siendo más cómodo en escritorio es la gestión masiva de muchos cuadernos.
+      Sí, hay app oficial para iOS y Android. Google avisa de que la disponibilidad de algunas funciones puede variar entre móvil y escritorio, así que confirma que la función que necesitas está disponible antes de basar tu flujo en el móvil.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y referencias</h2>
     <p>
-      Todos los datos técnicos, límites de plan y nombres de funciones están extraídos de las fuentes primarias, consultadas en junio de 2026:
+      Las capacidades, límites y políticas se han contrastado con estas fuentes. Comprueba las páginas oficiales, ya que planes y disponibilidad pueden cambiar:
     </p>
     <ul>
       <li><strong>Web oficial de NotebookLM</strong> — landing en español, descripción del producto, casos de uso: <a href="https://notebooklm.google/?hl=es" class="text-brand-400 hover:text-brand-300">notebooklm.google/?hl=es</a></li>
+      <li><strong>Ayuda oficial de Google</strong> — fuentes, citas, límites de respuesta y tratamiento de datos: <a href="https://support.google.com/notebooklm/answer/16164461" class="text-brand-400 hover:text-brand-300">support.google.com/notebooklm/answer/16164461</a></li>
       <li><strong>Página de planes y precios</strong> — comparación de límites entre plan Free, Pro y Ultra: <a href="https://notebooklm.google/plans" class="text-brand-400 hover:text-brand-300">notebooklm.google/plans</a></li>
       <li><strong>Google Help sobre límites y upgrade</strong> — cuotas diarias detalladas de audio overviews, video overviews y fuentes por plan: <a href="https://support.google.com/notebooklm/answer/16213268" class="text-brand-400 hover:text-brand-300">support.google.com/notebooklm</a></li>
       <li><strong>Blog oficial de Google sobre las novedades de NotebookLM</strong> — lanzamiento de Audio Overviews interactivos, formato NotebookLM Plus, integración con Discover: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-new-features-december-2024/" class="text-brand-400 hover:text-brand-300">blog.google/notebooklm-new-features</a></li>
-      <li><strong>The Verge — NotebookLM pasa a Gemini 3.5</strong> — actualización técnica del modelo subyacente, función Discover para buscar fuentes en la web, integración con plataforma agentic: <a href="https://www.theverge.com/tech/944325/google-notebooklm-ai-gemini-update" class="text-brand-400 hover:text-brand-300">theverge.com/google-notebooklm-ai-gemini-update</a></li>
-      <li><strong>DigitalOcean — What Is NotebookLM?</strong> — explicación técnica de RAG, casos de uso, comparativa con alternativas: <a href="https://www.digitalocean.com/resources/articles/what-is-notebooklm" class="text-brand-400 hover:text-brand-300">digitalocean.com/resources/articles/what-is-notebooklm</a></li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
     <p>
-      NotebookLM no es la IA que te va a escribir un email, generar una imagen o mantener una conversación profunda. Para eso ya tienes ChatGPT, Claude o Gemini. Lo que sí hace, y lo hace mejor que nadie en 2026, es trabajar con tus materiales sin inventarse nada. Si tu día a día incluye leer PDFs, cruzar documentos, preparar reuniones, estudiar oposiciones o investigar a fondo un tema, pruébalo una tarde. Lo más probable es que se quede en tu flujo de trabajo para siempre.
+      NotebookLM no sustituye a un chat generalista para cada tarea. Si tu día a día incluye leer PDFs, cruzar documentos, preparar reuniones o investigar un tema, pruébalo con un conjunto de fuentes y una pregunta concreta. Conserva el flujo si las citas y el resultado superan tu método actual; si no, descártalo.
     </p>
     <p>
       Si quieres profundizar en otras herramientas de IA que sí puedes usar ya, te he preparado un PDF con 50 prompts prácticos que cubro en producción: cubre productividad, escritura, código y aprendizaje. Lo tienes gratis en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
@@ -323,7 +325,7 @@ const pillarLabel = "Pilar 1: Apps web";
         "name": "¿NotebookLM es realmente gratis o tiene letra pequeña?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Es gratis de verdad, sin tarjeta ni truco. El plan Free incluye 100 cuadernos, 50 fuentes por cuaderno, 3 audio overviews al día y acceso a Gemini 3.5 Flash. Si necesitas más, el plan Pro sube los límites y desbloquea Gemini 3.5 Pro, pero la mayoría de usuarios no lo necesitan."
+          "text": "NotebookLM tiene un plan gratuito con límites de cuadernos, fuentes y creaciones. Comprueba las cuotas y la disponibilidad actual en la página oficial antes de organizar un flujo alrededor de ellas."
         }
       },
       {
@@ -339,7 +341,7 @@ const pillarLabel = "Pilar 1: Apps web";
         "name": "¿Qué diferencia hay entre NotebookLM y Gemini normal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gemini es la IA generalista de Google: contesta sobre cualquier tema y navega por internet. NotebookLM es una herramienta específica para trabajar con tus materiales: solo responde con lo que le subes, cita las fuentes página a página, y no se inventa nada."
+          "text": "Gemini es la IA generalista de Google. NotebookLM está orientada a trabajar con las fuentes de un cuaderno y mostrar citas que puedas revisar. Comprueba la respuesta y la cita antes de usarla como conclusión."
         }
       },
       {
@@ -355,7 +357,7 @@ const pillarLabel = "Pilar 1: Apps web";
         "name": "¿Puedo usar NotebookLM en el móvil?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, hay app oficial para iOS y Android. La versión móvil cubre el 90% de lo que puedes hacer en escritorio: subir fuentes, chatear, generar audio overviews, flashcards y resúmenes. La gestión masiva de cuadernos sigue siendo más cómoda en escritorio."
+          "text": "Sí, hay app oficial para iOS y Android. La disponibilidad de algunas funciones puede variar entre móvil y escritorio, así que confirma que la función que necesitas está disponible antes de basar tu flujo en el móvil."
         }
       }
     ]

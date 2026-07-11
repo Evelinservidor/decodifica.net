@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
 const title = "5 IAs para Excel en 2026: ahorra horas con tus fórmulas";
 const description = "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.";
@@ -31,9 +32,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        En 2026, cinco IAs diferentes se han metido de lleno en Excel. La que más me ha cambiado la semana a semana es una función nueva, integrada en la propia cuadrícula, que escribe fórmulas con un texto en español. Esto es lo que he probado, lo que se puede hacer hoy y el tutorial paso a paso para que tu primera celda inteligente funcione en cinco minutos.
+        Varias IAs ya pueden ayudar a crear fórmulas, analizar datos y editar hojas de cálculo. Esta guía compara sus casos de uso, los requisitos de cada plan y una prueba inicial para decidir si merece la pena incorporarlas a tu hoja.
       </p>
     </header>
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="crear, revisar y aplicar fórmulas o cambios en una hoja de cálculo" />
 
     <img
       src="/og/blog/ia-mejora-excel.png"
@@ -45,8 +48,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
       <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Microsoft =COPILOT()</strong>: la función nativa que más cambia el día a día. Está en Excel para Windows y Mac, requiere licencia Microsoft 365 Copilot ($30/usuario/mes) y permite escribir fórmulas con texto en lenguaje natural.</li>
-        <li><strong>Google Gemini en Sheets</strong>: la mejor opción gratuita para quien vive en Google Workspace. "Fill with Gemini" rellena columnas enteras desde un prompt.</li>
+        <li><strong>Microsoft =COPILOT()</strong>: función de Excel que permite usar un prompt y referencias de celda. Su disponibilidad depende del programa y la licencia de Copilot.</li>
+        <li><strong>Google Gemini en Sheets</strong>: puede crear fórmulas, tablas, análisis y cambios en hojas nativas de Google Sheets con un plan elegible.</li>
         <li><strong>ChatGPT for Excel (beta)</strong>: plugin oficial de OpenAI, en pruebas desde marzo de 2026. Solo disponible para usuarios de pago en EE. UU., Canadá y Australia.</li>
         <li><strong>Quadratic</strong>: la nueva generación de hoja de cálculo. Lleva Python, SQL y múltiples modelos de IA en una misma cuadrícula. Plan Personal gratis con IA limitada.</li>
         <li><strong>Equals</strong>: para empresas con datos en Snowflake, BigQuery o HubSpot. Pensado para equipos de finanzas que ya gastan $24k al año en herramientas, no para un usuario normal.</li>
@@ -55,7 +58,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA para Excel elegir según tu caso</h2>
     <p>
-      Si quieres ir directo a la decisión, yo lo separaría así:
+      Si quieres ir directo a la decisión, sepáralo así:
     </p>
 
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -82,18 +85,18 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <p>
-      Mi regla rápida: si ya pagas Microsoft 365 Copilot, empieza por <code>=COPILOT()</code>. Si no, prueba Gemini en Sheets o Quadratic antes de gastar dinero. Y si tu problema es puntual, ChatGPT sigue sirviendo para explicar fórmulas, aunque no viva dentro de la hoja.
+      Regla rápida: si ya dispones de la licencia compatible, prueba <code>=COPILOT()</code> con una copia de la hoja. Si no, compara Gemini en Sheets o Quadratic antes de gastar dinero. Para una fórmula puntual, un chat puede servir para explicarla, pero valida el resultado en la hoja.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Excel sigue siendo un cuello de botella en 2026</h2>
     <p>
-      Llevo más de quince años usando Excel a diario, en controllers, en consultorías, en mi propio negocio. Y durante todo ese tiempo, la queja ha sido siempre la misma: Excel es potentísimo, pero escribir una fórmula compleja sigue siendo un acto de arqueología. Buscas en Google, abres Stack Overflow, pruebas, falla, ajustas, prueba otra vez. Para una fórmula medianamente decente, veinte minutos.
+      Excel sigue siendo potente, pero una fórmula compleja puede obligarte a buscar, probar, corregir y volver a probar. La IA puede acelerar esa primera versión; no elimina la necesidad de comprobarla con datos reales.
     </p>
     <p>
-      En 2026 esto ha cambiado, pero no como nos lo pintaron. La revolución no es que la IA "haga Excel por ti" (eso ya lo hacía ChatGPT hace dos años, copiando y pegando). La revolución es que la IA ahora vive <strong>dentro</strong> de la celda, en una función nativa, con el mismo aspecto que SUMA o BUSCARV. Eso cambia las reglas: no sales de Excel, no pierdes el formato, no rompes la hoja con un import mal hecho. La fórmula se queda en la celda, igual que siempre, y se recalcula sola cuando cambian los datos.
+      Algunas funciones ya integran IA dentro de Excel o Sheets. Eso puede reducir el salto entre el encargo y una primera fórmula, pero no impide errores de lógica, permisos o formato. Revisa el plan, la disponibilidad y el comportamiento de recálculo antes de depender de una función en un proceso recurrente.
     </p>
     <p>
-      Lo que he hecho este mes: he abierto la hoja de seguimiento financiero que mantengo desde 2021, llena de BUSCARV anidados, SUMAPRODUCTO y condicionales que tardé semanas en depurar, y le he pedido a Copilot que reescriba cada fórmula en lenguaje natural. He borrado más de trescientas fórmulas a mano. Lo que tardaba cuatro horas cada lunes ahora tarda diez minutos. Y la hoja no ha dejado de funcionar en ningún momento.
+      Una prueba prudente consiste en copiar una hoja no crítica, elegir tres fórmulas repetitivas, pedir una propuesta y comparar el resultado con los datos conocidos. Conserva el flujo solo si reduce tiempo sin introducir discrepancias.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las 5 IAs que de verdad cambian Excel en 2026</h2>
@@ -112,7 +115,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <p>
-      He probado las cinco a fondo o las he revisado documentación oficial. Aquí va el ranking por caso de uso, no por marketing.
+      La comparación se basa en la documentación oficial disponible y en criterios por caso de uso, no en un ranking universal.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">1. Microsoft =COPILOT() — La que más cambia el día a día</h3>
@@ -123,13 +126,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La sintaxis es: <code>=COPILOT(prompt_parte1, [contexto1], [prompt_parte2], [contexto2], ...)</code>. El primer argumento es un texto entre comillas que describe la tarea, y los siguientes son referencias a celdas o rangos que dan contexto. La función devuelve texto, números o tablas que se derraman en la cuadrícula, y se recalcula sola cada vez que cambian los datos de entrada. Igual que cualquier otra fórmula.
     </p>
     <p>
-      Lo mejor: <strong>se combina con el resto de funciones de Excel</strong>. Puedes anidarla dentro de SI, SWITCH, LAMBDA o WRAPROWS, o pasarle el resultado de otra fórmula como parte del prompt. Si sabes algo de Excel, te resulta natural en cinco minutos. Lo peor: requiere licencia de Microsoft 365 Copilot, que cuesta <strong>30 dólares al mes por usuario</strong>, y de momento está en beta limitada a Windows (versión 2509 o superior) y Mac.
+      La función usa un prompt y contexto de celdas. Microsoft indica que requiere una licencia compatible y que su disponibilidad está ligada a los programas Frontier e Insider; confirma ambas condiciones en tu cuenta antes de diseñar un flujo alrededor de ella.
     </p>
     <p>
-      Importante: en la versión beta inicial la función <strong>no accede a internet ni a documentos internos</strong>, solo al conocimiento del modelo. Microsoft ya ha confirmado que añadirá acceso a datos web y a fuentes corporativas en próximas actualizaciones, pero todavía no está. Si necesitas datos en tiempo real (cotizaciones, tipos de cambio), de momento tendrás que importarlos primero a la hoja y luego pasárselos a COPILOT como contexto.
+      Importante: la función solo recibe el contexto que le pases como argumentos; Microsoft advierte que el resultado puede variar con el tiempo. Para datos críticos, importa y valida las fuentes en la hoja antes de usar la respuesta.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">2. Google Gemini en Sheets — La mejor opción gratuita para Workspace</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">2. Google Gemini en Sheets — opción para Google Workspace</h3>
     <p>
       Si vives en Google Workspace, Gemini lleva ya un año integrado en Sheets y ha mejorado mucho. La función estrella se llama <strong>"Fill with Gemini"</strong> (rellenar con Gemini) y permite generar o rellenar una columna entera a partir de un ejemplo y un prompt. Por ejemplo: "En la columna C, a partir del nombre del cliente en la columna A, deduce el sector industrial y devuelve solo el nombre del sector en minúsculas".
     </p>

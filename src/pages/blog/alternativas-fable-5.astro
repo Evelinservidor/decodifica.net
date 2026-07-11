@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "Claude Fable 5 desaparecio. Estas 4 alternativas puedes ejecutar en tu propio PC";
+const title = "Claude Fable 5: alternativas locales tras la suspensión";
 const description = "Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte...";
 const pubDate = "2026-07-07";
 const readingTime = "4 min";
-const tags = ["ia", "herramientas ia", "Claude Fable 5 desaparecio. Estas 4 alternativas puedes ejecutar en tu propio PC"];
+const tags = ["ia", "herramientas ia", "Claude Fable 5", "alternativas locales"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -34,6 +35,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
         {description}
       </p>
     </header>
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="evaluar alternativas locales tras una interrupción de acceso" />
 
     <img
       src="/og/blog/alternativas-fable-5.png"
@@ -80,7 +83,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>La pregunta útil es esta: si un modelo desaparece o cambia de condiciones, ¿qué parte de tu trabajo con IA sigues controlando de verdad?</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por que importa</h2>
     <p>La idea es separar lo que parece una novedad mas de lo que realmente puede cambiar una rutina de trabajo.</p>
-    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decision, reducir friccion o ayudarte a probar algo que antes daba pereza.</p>
+    <p>Una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir fricción o ayudarte a probar algo que antes daba pereza.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que cambia realmente</h2>
     <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha tecnica. Lo importante es traducir esas funciones a consecuencias practicas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
     <p>El giro esta en no quedarse con la funcion vistosa, sino mirar si encaja en tareas repetibles y decisiones concretas.</p>
@@ -107,21 +110,19 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>No tiene tanto sentido si solo quieres la herramienta más cómoda posible y no quieres tocar configuración, modelos, pesos o interfaces como Ollama y LM Studio. En ese caso, mejor empezar por alternativas web antes de montar un flujo local.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Donde esta el valor</h2>
     <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar mas de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decision o a una version revisable, entonces ya empieza a tener sentido.</p>
-    <p>Yo lo probaria primero en un caso pequeño, con salida verificable y poco riesgo. Si ahi funciona, se puede subir el nivel. Si falla en lo basico, al menos no has construido todo tu sistema encima de una promesa.</p>
+    <p>Empieza con un caso pequeño, con salida verificable y poco riesgo. Si ahí funciona, se puede subir el nivel. Si falla en lo básico, al menos no habrás construido todo el sistema sobre una promesa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraria todavia</h2>
     <p>No lo venderia como piloto automatico. Si una herramienta toca archivos, codigo o acciones del sistema, la supervision sigue siendo parte del trabajo.</p>
     <p>Esta parte importa porque en IA es muy facil confundir potencial con resultado. Una demo puede ser espectacular y aun asi no encajar en tu dia a dia. Por eso conviene separar tres cosas: lo que la herramienta dice que hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decision Decodifica</h2>
     <p>La decision Decodifica es mirarlo por utilidad real: que te ahorra, que te permite hacer y que riesgos mantiene.</p>
-    <p>Mi recomendacion es tratarlo como una oportunidad de mejora, no como una solucion automatica. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
+    <p>Trátalo como una oportunidad de mejora, no como una solución automática. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
     <p>Si quieres seguir este tipo de analisis con fuentes, recursos y decisiones practicas, la web de Decodifica ira reuniendo la version ampliada de cada video.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
       <li><a href="https://www.anthropic.com/claude/fable" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/claude/fable</a></li>
-      <li><a href="https://actumforensepress.es/archivos/el-juego-de-la-politica-y-fable-5/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://actumforensepress.es/archivos/el-juego-de-la-politica-y-fable-5/</a></li>
       <li><a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/</a></li>
       <li><a href="https://huggingface.co/Qwen" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://huggingface.co/Qwen</a></li>
-      <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro</a></li>
       <li><a href="https://ai.google.dev/gemma" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemma</a></li>
       <li><a href="https://llama.meta.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://llama.meta.com/</a></li>
       <li><a href="https://ollama.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://ollama.com/</a></li>

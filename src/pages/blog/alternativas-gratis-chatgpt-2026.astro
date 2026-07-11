@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "5 alternativas gratuitas a ChatGPT en 2026 (probadas, sin tarjeta)";
-const description = "Comparativa honesta de las 5 mejores alternativas gratuitas a ChatGPT en 2026. Probadas con casos de uso reales. Sin tarjeta, sin letra pequeña.";
+const title = "5 alternativas gratuitas a ChatGPT en 2026 (sin tarjeta)";
+const description = "Comparativa de cinco alternativas gratuitas a ChatGPT organizada por tarea, límites de uso y controles de datos.";
 const pubDate = "2026-06-15";
 const tags = ["apps web gratis", "alternativas chatgpt", "herramientas ia"];
 const readingTime = "9 min";
@@ -31,9 +32,11 @@ const pillarLabel = "Pilar 1: Apps web";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Si ChatGPT se te queda corto o quieres alternativas sin pagar, esta comparativa es para ti. He probado las 5 opciones gratuitas más serias de 2026, con código y sin marketing.
+        Si ChatGPT se te queda corto o quieres alternativas sin pagar, esta comparativa te ayuda a elegir por tarea, límites de uso y controles de datos.
       </p>
     </header>
+
+    <ReviewMethodology reviewed="11 de julio de 2026" task="elegir una alternativa gratuita para una tarea concreta" />
 
     <img
       src="/og/blog/alternativas-gratis-chatgpt-2026.png"
@@ -82,7 +85,7 @@ const pillarLabel = "Pilar 1: Apps web";
     </div>
 
     <p>
-      Mi recomendación práctica: no busques “la mejor IA gratis” en abstracto. Elige una para cada tipo de tarea. Gemini para velocidad, Claude para texto, DeepSeek para código, Mistral para privacidad y Hugging Face para probar modelos abiertos.
+      Recomendación práctica: no busques “la mejor IA gratis” en abstracto. Elige una según la tarea, los límites, el idioma y los controles de datos que necesites.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué buscar alternativas a ChatGPT</h2>
@@ -95,7 +98,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><strong>Una sola perspectiva</strong>: cada modelo tiene sesgos y fortalezas distintas. Usar varios te da respuestas más ricas.</li>
     </ol>
     <p>
-      La buena noticia: en 2026 ya no tienes que elegir uno. Aquí van las 5 mejores alternativas gratuitas que he probado, ordenadas por casos de uso reales.
+      Aquí van cinco alternativas gratuitas, ordenadas por casos de uso. Comprueba sus límites y políticas antes de subir información sensible.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Google Gemini 2.0 Flash — La más rápida y multimodal</h2>
@@ -246,21 +249,21 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Mi setup personal (lo que uso yo)</h2>
     <p>
-      Por si te sirve de referencia, en mi día a día alterno entre:
+      Una forma razonable de repartir las tareas es esta:
     </p>
     <ul>
-      <li><strong>Gemini 2.0 Flash</strong> para cosas rápidas (resumir emails, búsquedas)</li>
-      <li><strong>Claude</strong> cuando necesito pensar (escribir posts, code review, decisiones)</li>
-      <li><strong>DeepSeek</strong> para código complejo</li>
-      <li><strong>Mistral</strong> cuando manejo datos de clientes europeos</li>
+      <li><strong>Gemini</strong> para consultas rápidas y tareas compatibles con sus límites.</li>
+      <li><strong>Claude</strong> para borradores y revisión de texto, validando siempre el resultado.</li>
+      <li><strong>DeepSeek</strong> para probar una tarea de código con tests propios.</li>
+      <li><strong>Mistral</strong> cuando sus condiciones de tratamiento de datos encajen con tu caso.</li>
     </ul>
     <p>
-      No uso ChatGPT casi nunca. Y tú tampoco necesitas ceñirte a uno.
+      No necesitas ceñirte a una sola herramienta: documenta qué funciona para cada tarea y revisa las condiciones antes de usar datos sensibles.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
     <p>
-      Si quieres convertir esta comparativa en un flujo de trabajo real, yo seguiría por aquí:
+      Si quieres convertir esta comparativa en un flujo de trabajo real, esta es una ruta útil:
     </p>
     <ul>
       <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que no suenen a robot</a>, si tu prioridad es comunicación.</li>
@@ -272,30 +275,40 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuál es mejor para programar gratis?</h3>
     <p>
-      DeepSeek V3 en mis pruebas. Le sigue Claude (gratis) y luego Gemini. Para proyectos serios, sigue mereciendo la pena Cursor o Copilot de pago, pero para scripts puntuales, DeepSeek basta.
+      No hay una opción universal. Prueba el mismo script pequeño con tests, revisa el código y compara límites, privacidad y tiempo de corrección antes de elegir.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y para escribir en español?</h3>
     <p>
-      Claude es el más natural en español de los 5. Gemini suena un poco "traducido" en textos largos. DeepSeek es correcto pero menos fluido.
+      La calidad depende del encargo y puede cambiar entre modelos y planes. Prueba el mismo texto con ejemplos de tu registro y revisa tono, precisión y formato antes de usarlo con clientes.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Estas alternativas usan mis datos para entrenar?</h3>
     <p>
-      Gemini: sí por defecto, hay que desactivarlo. Claude: sí por defecto, se puede desactivar pero se mantienen 30 días por seguridad. DeepSeek y Mistral: política más clara, no usan tus datos para entrenar. HuggingFace: depende del modelo, pero la plataforma en sí no.
+      Depende del proveedor, plan, cuenta y configuración. Lee la política aplicable y los controles de datos de cada servicio antes de subir información personal, profesional o confidencial.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo combinar varias en un solo workflow?</h3>
     <p>
-      Sí, de hecho es lo que hago yo. Por ejemplo: uso Gemini para transcribir una reunión, Claude para resumir los puntos clave y DeepSeek para generar el código que automatiza las acciones decididas. Cada uno en lo que destaca.
+      Sí. Un flujo puede separar transcripción, resumen y código, pero empieza con datos no sensibles y revisa cada salida antes de encadenarla con la siguiente herramienta.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
     <p>
       La pregunta correcta en 2026 no es "qué IA uso" sino "qué IA uso para esto". Cada una tiene su fuerte. La mejor estrategia es no casarse con ninguna y aprender a combinar.
     </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes oficiales</h2>
+    <p>Consulta las condiciones y límites vigentes de cada herramienta antes de elegirla o subir datos sensibles:</p>
+    <ul>
+      <li><a href="https://gemini.google.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Gemini de Google</a></li>
+      <li><a href="https://www.anthropic.com/claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Claude de Anthropic</a></li>
+      <li><a href="https://www.deepseek.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek</a></li>
+      <li><a href="https://mistral.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Mistral AI</a></li>
+      <li><a href="https://huggingface.co/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+    </ul>
     <p>
-      Si quieres profundizar en prompts prácticos para cada una de estas herramientas, te he preparado un PDF gratuito con 50 prompts que uso a diario: cubre productividad, escritura, código, análisis y aprendizaje. Lo encuentras en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si quieres profundizar en prompts prácticos para estas herramientas, tienes un PDF gratuito con 50 prompts para productividad, escritura, código, análisis y aprendizaje en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
     <p>
       ¿Quieres que profundice en alguna de las 5? Responde por email o en <a href="/contacto" class="text-brand-400 hover:text-brand-300">contacto</a>.
@@ -329,8 +342,8 @@ const pillarLabel = "Pilar 1: Apps web";
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "5 alternativas gratuitas a ChatGPT en 2026 (probadas, sin tarjeta)",
-    "description": "Comparativa honesta de las 5 mejores alternativas gratuitas a ChatGPT en 2026. Probadas con casos de uso reales. Sin tarjeta, sin letra pequeña.",
+    "headline": "5 alternativas gratuitas a ChatGPT en 2026 (sin tarjeta)",
+    "description": "Comparativa de cinco alternativas gratuitas a ChatGPT organizada por tarea, límites de uso y controles de datos.",
     "datePublished": "2026-06-15",
     "mainEntityOfPage": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
     "author": {
