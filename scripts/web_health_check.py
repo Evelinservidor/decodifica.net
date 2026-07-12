@@ -186,6 +186,23 @@ class HrefParser(HTMLParser):
                 self.hrefs.append(value)
 
 
+class AssetParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.assets: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = {name.lower(): value for name, value in attrs}
+        if tag.lower() == "img" and attributes.get("src"):
+            self.assets.append(str(attributes["src"]))
+        elif tag.lower() == "source" and attributes.get("srcset"):
+            self.assets.extend(candidate.strip().split()[0] for candidate in str(attributes["srcset"]).split(",") if candidate.strip())
+        elif tag.lower() == "meta":
+            key = str(attributes.get("property") or attributes.get("name") or "").lower()
+            if key in {"og:image", "twitter:image"} and attributes.get("content"):
+                self.assets.append(str(attributes["content"]))
+
+
 def normalize_internal_path(href: str, page_url: str, site_url: str) -> str | None:
     href = href.strip()
     if not href or href.startswith("#"):
@@ -237,6 +254,29 @@ def collect_built_internal_paths(repo: Path, site_url: str) -> list[str]:
     return sorted(discovered)
 
 
+def collect_built_assets(repo: Path, site_url: str) -> list[dict]:
+    dist = repo / "dist"
+    if not dist.exists():
+        return []
+
+    discovered: dict[str, set[str]] = {}
+    for path in dist.rglob("*.html"):
+        page_route = built_page_route(path, dist)
+        page_url = urljoin(f"{site_url.rstrip('/')}/", page_route.lstrip("/"))
+        parser = AssetParser()
+        parser.feed(path.read_text(encoding="utf-8-sig", errors="replace"))
+        for asset in parser.assets:
+            asset = asset.strip()
+            if not asset or asset.startswith("#") or asset.startswith("data:"):
+                continue
+            resolved = urljoin(page_url, asset)
+            if urlparse(resolved).scheme not in {"http", "https"}:
+                continue
+            discovered.setdefault(resolved, set()).add(page_route)
+
+    return [{"url": url, "pages": sorted(pages)} for url, pages in sorted(discovered.items())]
+
+
 def fetch_url(url: str, timeout: int = 15) -> dict:
     request = urllib.request.Request(url, headers={"User-Agent": "DecodificaWebHealth/1.0"})
     try:
@@ -261,6 +301,16 @@ def fetch_url(url: str, timeout: int = 15) -> dict:
         return {"url": url, "ok": False, "status": exc.code, "error": str(exc)}
     except Exception as exc:
         return {"url": url, "ok": False, "status": None, "error": str(exc)}
+
+
+def fetch_assets(built_assets: list[dict]) -> list[dict]:
+    results: list[dict] = []
+    for asset in built_assets:
+        result = fetch_url(asset["url"])
+        result["pages"] = asset["pages"]
+        result["ok"] = bool(result.get("ok")) and str(result.get("content_type", "")).startswith("image/")
+        results.append(result)
+    return results
 
 
 def iter_source_files(repo: Path):
@@ -294,11 +344,16 @@ def source_presence(repo: Path, values: list[str] | dict[str, str]) -> list[dict
 def markdown(report: dict) -> str:
     production = report["production"]
     failed_urls = [item for item in production if not item["ok"]]
+    failed_assets = [item for item in report["assets"] if not item["ok"]]
     copy_matches = report["internal_copy_matches"]
     missing_emails = [item for item in report["emails"] if not item["present"]]
     missing_socials = [item for item in report["socials"] if not item["present"]]
     recommendations = "\n".join(f"- {item}" for item in report["recommendations"]) or "- No immediate action."
     failed = "\n".join(f"- {item['url']}: {item.get('status') or item.get('error')}" for item in failed_urls) or "- none"
+    failed_asset_lines = "\n".join(
+        f"- {item['url']}: {item.get('status') or item.get('error')} ({item.get('content_type') or 'unknown type'})"
+        for item in failed_assets
+    ) or "- none"
     copy = "\n".join(f"- {item['path']}:{item['line']} -> {item['pattern']}" for item in copy_matches) or "- none"
     return f"""# Decodifica Web Health
 
@@ -311,6 +366,8 @@ Generated: {report['generated_at']}
 - Production URLs checked: {len(production)}
 - Internal paths discovered from build: {len(report['discovered_internal_paths'])}
 - Production URL failures: {len(failed_urls)}
+- Image/social assets checked: {len(report['assets'])}
+- Image/social asset failures: {len(failed_assets)}
 - Internal copy matches: {len(copy_matches)}
 - Missing emails: {len(missing_emails)}
 - Missing socials: {len(missing_socials)}
@@ -318,6 +375,10 @@ Generated: {report['generated_at']}
 ## Failed URLs
 
 {failed}
+
+## Failed Image and Social Assets
+
+{failed_asset_lines}
 
 ## Internal Copy Matches
 
@@ -343,8 +404,10 @@ def main() -> int:
 
     build = {"ok": True, "skipped": True} if args.skip_build else run_build(repo)
     discovered_internal_paths = collect_built_internal_paths(repo, site_url)
+    built_assets = collect_built_assets(repo, site_url)
     production_paths = sorted(set(REQUIRED_PATHS) | set(discovered_internal_paths))
     production = [] if args.skip_production else [fetch_url(f"{site_url}{path}") for path in production_paths]
+    assets = [] if args.skip_production else fetch_assets(built_assets)
     copy_matches = scan_internal_copy(repo)
     emails = source_presence(repo, REQUIRED_EMAILS)
     socials = source_presence(repo, REQUIRED_SOCIALS)
@@ -354,6 +417,8 @@ def main() -> int:
         recommendations.append("Fix Astro build before shipping any web change.")
     if any(not item["ok"] for item in production):
         recommendations.append("Review failed production URLs before promoting new pages or CTAs.")
+    if any(not item["ok"] for item in assets):
+        recommendations.append("Restore broken image or social-preview assets before sharing affected pages.")
     if copy_matches:
         recommendations.append("Rewrite internal-production copy matches into reader-facing public copy.")
     if any(not item["present"] for item in emails):
@@ -366,6 +431,7 @@ def main() -> int:
     ok = (
         bool(build.get("ok"))
         and all(item["ok"] for item in production)
+        and all(item["ok"] for item in assets)
         and not copy_matches
         and all(item["present"] for item in emails)
         and all(item["present"] for item in socials)
@@ -380,6 +446,7 @@ def main() -> int:
         "build": build,
         "discovered_internal_paths": discovered_internal_paths,
         "production": production,
+        "assets": assets,
         "internal_copy_matches": copy_matches,
         "emails": emails,
         "socials": socials,
