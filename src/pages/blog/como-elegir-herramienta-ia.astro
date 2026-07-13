@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 
-const title = 'Como elegir una herramienta de IA sin perder tiempo';
-const description = 'Un metodo practico para decidir que IA probar, que descartar y como medir si una herramienta merece entrar en tu flujo de trabajo.';
+const title = 'Cómo elegir una herramienta de IA sin perder tiempo';
+const description = 'Un método práctico para decidir qué IA probar, cuál descartar y cómo medir si una herramienta merece entrar en tu flujo de trabajo.';
 const pubDate = '2026-07-06';
 const readingTime = '8 min';
 const tags = ['herramientas IA', 'productividad con IA', 'prompts', 'workflow IA', 'Decodifica'];
@@ -170,6 +170,15 @@ const pillarLabel = 'Pilar 2: Productividad practica';
       <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IA para organizar pendientes</a>, si buscas herramientas conectadas a tu flujo real.</li>
     </ul>
 
+    <h2>Fuentes y criterios</h2>
+    <p>
+      Para evaluar riesgos, permisos y fiabilidad usamos como referencia marcos públicos que priorizan pruebas, supervisión y protección de datos:
+    </p>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">AI Risk Management Framework de NIST</a>, para estructurar la evaluación y el uso responsable de sistemas de IA.</li>
+      <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">OWASP Top 10 para aplicaciones con modelos de lenguaje</a>, para revisar exposición de información sensible, exceso de autonomía y confianza excesiva en las salidas.</li>
+    </ul>
+
     <ConversionBand
       eyebrow="Siguiente paso"
       title="Convierte esta guia en una prueba real"
@@ -204,5 +213,15 @@ const pillarLabel = 'Pilar 2: Productividad practica';
       name: 'Decodifica',
     },
     about: tags,
+    citation: [
+      {
+        '@type': 'WebPage',
+        url: 'https://www.nist.gov/itl/ai-risk-management-framework',
+      },
+      {
+        '@type': 'WebPage',
+        url: 'https://owasp.org/www-project-top-10-for-large-language-model-applications/',
+      },
+    ],
   })} />
 </BaseLayout>
