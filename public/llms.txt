@@ -1,49 +1,78 @@
 # Decodifica
 
-> Decodifica es una web y canal en espanol sobre inteligencia artificial practica: herramientas, modelos y flujos de trabajo que una persona puede probar, entender y aplicar sin perderse en hype.
+> Decodifica es una web y canal en español sobre inteligencia artificial práctica: herramientas, comparativas y flujos de trabajo que una persona puede probar, entender y aplicar sin perderse en el hype.
 
-Decodifica prioriza contenido util, verificable y accionable para usuarios de Espana, Latinoamerica e hispanohablantes de Estados Unidos. El foco editorial esta en dos areas: aplicaciones y modelos de IA que se pueden usar o probar, y productividad practica con IA.
+Decodifica está dirigido a usuarios de España, Latinoamérica e hispanohablantes de Estados Unidos. Sus dos pilares son las aplicaciones y modelos de IA que se pueden usar o evaluar, y la productividad práctica con IA. El contenido separa hechos, declaraciones de fabricantes, pruebas propias e inferencias.
 
-El tono de Decodifica es directo, claro y con criterio propio. La web no publica transcripciones literales de los videos: convierte cada tema en una guia escrita con contexto, decision practica, limites relevantes, enlaces internos y una invitacion clara a seguir aprendiendo en la comunidad o newsletter.
+La web no publica transcripciones literales de los vídeos. Cada pieza debe ayudar a decidir qué probar, qué evitar, cómo verificar un resultado y qué hacer después. Para descubrir todas las URLs públicas debe usarse el sitemap; este archivo conserva una selección breve de las superficies más útiles.
 
-## Main pages
+## Start here
 
-- [Home](https://decodifica.net/): entrada principal a Decodifica, con ultimos contenidos, recursos y propuesta de valor.
-- [Blog](https://decodifica.net/blog/): guias y articulos practicos sobre herramientas de IA, productividad y modelos utiles.
-- [Recursos](https://decodifica.net/recursos/): materiales descargables, prompts, flujos y recursos para aplicar IA en el dia a dia.
-- [Comunidad](https://decodifica.net/comunidad/): punto de entrada para seguir Decodifica, participar y recibir contenidos seleccionados.
-- [Contacto](https://decodifica.net/contacto/): contacto editorial y colaboraciones.
+- [Inicio](https://decodifica.net/): portada y propuesta principal de Decodifica.
+- [Empieza](https://decodifica.net/empieza/): entrada por tarea para elegir un primer resultado útil.
+- [Herramientas IA](https://decodifica.net/herramientas/): catálogo de fichas verificadas, comparativas, casos de uso y utilidades.
+- [Blog](https://decodifica.net/blog/): guías y análisis prácticos sobre herramientas, modelos y productividad.
+- [Recursos](https://decodifica.net/recursos/): descargables, prompts, workflows y materiales reutilizables.
+- [Mapa de herramientas IA](https://decodifica.net/recursos/mapa-herramientas-ia/): orientación rápida para elegir herramientas según la tarea.
+
+## Interactive tools
+
+- [Comparador de herramientas IA](https://decodifica.net/herramientas/comparador/): compara hasta tres herramientas por tarea, precio, privacidad, dificultad y plataformas.
+- [Evaluador de resultados de IA](https://decodifica.net/herramientas/evaluador/): puntúa exactitud, trazabilidad, ahorro, edición, privacidad y repetibilidad.
+- [Constructor de prompts útiles](https://decodifica.net/herramientas/generador-prompts/): estructura prompts por tarea, contexto, resultado, restricciones y criterio de calidad sin enviar datos a una API.
+- [Preflight de datos](https://decodifica.net/herramientas/preflight-datos/): revisa sensibilidad, permisos, retención y consecuencias antes de subir información a una herramienta.
+
+## Decision guides
+
+- [Herramientas IA para reuniones](https://decodifica.net/herramientas/casos/para-reuniones/): Granola, Fathom, NotebookLM y Claude según consentimiento, notas y seguimiento.
+- [Herramientas IA para Excel y hojas de cálculo](https://decodifica.net/herramientas/casos/para-excel-hojas-calculo/): Copilot, Gemini, Quadratic y ChatGPT con verificación de resultados.
+- [Herramientas IA para investigar](https://decodifica.net/herramientas/casos/para-investigar/): Perplexity, NotebookLM, Gemini y Kimi según búsqueda, fuentes y contexto.
+- [Herramientas IA para organizar el trabajo](https://decodifica.net/herramientas/casos/para-organizar-trabajo/): Notion AI, Reclaim, Motion y Copilot sin delegar prioridades importantes.
+- [Herramientas IA para crear aplicaciones](https://decodifica.net/herramientas/casos/para-crear-apps/): Emergent, Cursor, Copilot y Qwen Code distinguiendo prototipo y producto.
+- [Herramientas IA locales y abiertas](https://decodifica.net/herramientas/casos/para-ia-local-abierta/): Ollama, Hermes Agent, Qwen Code y modelos abiertos según privacidad, hardware y dificultad.
+
+## Comparisons
+
+- [ChatGPT vs Claude](https://decodifica.net/herramientas/chatgpt-vs-claude/): decisión por escritura, análisis, contexto, archivos y privacidad.
+- [NotebookLM vs Perplexity](https://decodifica.net/herramientas/notebooklm-vs-perplexity/): fuentes propias frente a búsqueda web.
+- [Gamma vs Canva AI](https://decodifica.net/herramientas/gamma-vs-canva-ai/): estructura de presentación frente a producción visual.
+- [Granola vs Fathom](https://decodifica.net/herramientas/comparativas/granola-vs-fathom/): notas humanas enriquecidas frente a grabación automatizada.
+- [Cursor vs GitHub Copilot](https://decodifica.net/herramientas/comparativas/cursor-vs-github-copilot/): editor centrado en IA frente a integración con GitHub.
+- [Kimi vs GLM](https://decodifica.net/herramientas/comparativas/kimi-vs-glm/): asistentes chinos para documentos, razonamiento, código y contexto.
+
+## Practical workflows
+
+- [Convertir una reunión en decisiones y tareas](https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/): transforma una transcripción sin inventar responsables, fechas ni acuerdos.
+- [Verificar una fórmula de hoja de cálculo](https://decodifica.net/workflows/verificar-formula-hoja-calculo/): prueba una fórmula generada antes de conservarla.
+- [Investigar un tema sin perder las fuentes](https://decodifica.net/workflows/investigar-con-fuentes/): separa descubrimiento, fuentes, análisis y redacción.
+- [Crear un prototipo de app revisable](https://decodifica.net/workflows/prototipo-app-revisable/): pasa de idea a prototipo con datos ficticios, límites y pruebas.
+- [Planificar la semana sin ceder prioridades](https://decodifica.net/workflows/planificar-semana-sin-ceder-prioridades/): genera un borrador semanal sin mover compromisos ni aceptar decisiones externas.
 
 ## Core guides
 
-- [NotebookLM 2026: la IA de Google que solo lee tus documentos](https://decodifica.net/blog/notebooklm-guia-2026/): guia practica para usar NotebookLM con documentos propios, estudiar, investigar y trabajar con fuentes cerradas.
-- [5 alternativas gratuitas a ChatGPT en 2026](https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/): comparativa de alternativas gratuitas a ChatGPT con casos de uso reales.
-- [5 IAs para organizar Gmail, Calendar y Notion en 2026](https://decodifica.net/blog/ia-organiza-pendientes/): decision practica sobre asistentes para organizar tareas, correo, calendario y herramientas de trabajo.
-- [5 IAs para Excel en 2026](https://decodifica.net/blog/ia-mejora-excel/): comparativa de herramientas de IA para formulas, hojas de calculo y analisis de datos.
-- [5 IAs para crear presentaciones en 2026](https://decodifica.net/blog/ia-crea-presentaciones-completas/): guia para elegir herramientas de presentaciones con IA sin perder control del resultado.
+- [NotebookLM en 2026](https://decodifica.net/blog/notebooklm-guia-2026/): guía para trabajar con documentos propios y fuentes cerradas.
+- [Alternativas gratuitas a ChatGPT](https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/): opciones gratuitas con casos de uso y límites.
+- [IA para organizar Gmail, Calendar y Notion](https://decodifica.net/blog/ia-organiza-pendientes/): decisión práctica sobre asistentes para organizar trabajo.
+- [IA para Excel](https://decodifica.net/blog/ia-mejora-excel/): herramientas para fórmulas, hojas de cálculo y análisis de datos.
+- [IA para crear presentaciones](https://decodifica.net/blog/ia-crea-presentaciones-completas/): herramientas de presentaciones con límites y control del resultado.
+- [Cómo convertir una reunión en tareas revisables](https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/): workflow probado con trazabilidad y revisión explícita.
 
-## AI tools and model analysis
+## Follow Decodifica
 
-- [Qwen Code ya no es solo un CLI](https://decodifica.net/blog/qwen-code-agent-terminal/): analisis de Qwen Code como capa de trabajo para terminal, agentes, modelos y aprobaciones.
-- [Claude Skills desde cero](https://decodifica.net/blog/claude-skills-desde-cero/): introduccion practica a Claude Skills y como crear un primer skill personalizado.
-- [Como configurar Claude para escribir emails sin que suene a robot](https://decodifica.net/blog/claude-emails-sonar-humanos/): guia de prompts y criterio para escribir emails profesionales con IA.
-- [Como crear un Agente de Voz con IA sin programar](https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/): comparativa de plataformas para crear agentes de voz sin codigo.
-- [La IA gratis que esta hundiendo a Silicon Valley](https://decodifica.net/blog/ia-gratis-silicon-valley/): guia sobre modelos y herramientas gratuitas que compiten con alternativas comerciales.
-- [Odysseus de PewDiePie](https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/): explicacion de Odysseus, alternativas locales y como probar este tipo de IA.
+- [Newsletter](https://decodifica.net/newsletter/): selección editorial y workflows aplicables.
+- [Comunidad](https://decodifica.net/comunidad/): vías oficiales para seguir Decodifica y participar.
+- [Contacto](https://decodifica.net/contacto/): contacto editorial y colaboraciones.
+- [Canal de YouTube](https://www.youtube.com/@DecodificaIA): vídeos principales de Decodifica.
 
 ## Editorial policy
 
-- Decodifica separa hechos, declaraciones de fabricantes, pruebas propias e inferencias.
-- Las fuentes preferidas son documentacion oficial, repositorios, anuncios primarios, benchmarks con metodologia publica y prensa especializada para contexto.
-- YouTube puede inspirar un tema, pero no valida especificaciones ni claims por si solo.
-- Los contenidos deben ayudar al lector a decidir que probar, que evitar y como aplicar una herramienta en una situacion real.
-- Decodifica evita el hype vacio, las comparativas genericas y la divulgacion sin una accion practica clara.
+- Las fuentes preferidas son documentación oficial, repositorios, anuncios primarios, benchmarks con metodología pública y prensa especializada para contexto.
+- YouTube puede inspirar un tema, pero no valida especificaciones ni claims por sí solo.
+- Una comparación debe conducir a una decisión práctica y no confundir precio, popularidad o marketing con calidad demostrada.
+- Las pruebas propias solo se declaran cuando existe evidencia documentada de versión, fecha, entrada, salida y criterio.
+- Decodifica evita el hype vacío, las páginas finas y los cambios de fecha usados únicamente para aparentar frescura.
 
 ## Technical discovery
 
-- [Sitemap](https://decodifica.net/sitemap-index.xml): sitemap XML canonico de la web.
-- [Robots.txt](https://decodifica.net/robots.txt): politica de rastreo publica.
-
-## Optional
-
-- [Canal de YouTube Decodifica](https://www.youtube.com/@DecodificaIA): videos principales de Decodifica sobre inteligencia artificial practica.
+- [Sitemap](https://decodifica.net/sitemap-index.xml): lista XML canónica y exhaustiva de URLs públicas, regenerada en cada despliegue.
+- [Robots.txt](https://decodifica.net/robots.txt): política pública de rastreo y señales de uso del contenido.
