@@ -44,7 +44,9 @@ COURSE_FILES = {
 }
 COURSE_DIR = ROOT / "lead-magnets" / "mini-curso"
 DAY_DELAY = timedelta(hours=24)
+SEND_TOLERANCE = timedelta(hours=6)
 COURSE_VERSION = "decodifica_codex_v2"
+SEND_TAG_NAME = "curso-envio-activo"
 
 
 def get_token() -> str:
@@ -84,20 +86,6 @@ def parse_course_email(day: int) -> tuple[str, str]:
     return subject, body
 
 
-def subscriber_filter(subscriber_id: str) -> dict:
-    return {
-        "filters": [
-            {
-                "field": "subscriber.id",
-                "operator": "equals",
-                "value": subscriber_id,
-            }
-        ],
-        "groups": [],
-        "predicate": "and",
-    }
-
-
 def list_active_subscribers(token: str) -> list[dict]:
     subscribers = []
     page = 1
@@ -110,7 +98,68 @@ def list_active_subscribers(token: str) -> list[dict]:
     return subscribers
 
 
-def send_course_email(token: str, day: int, subscriber_id: str) -> str:
+def list_tags(token: str) -> list[dict]:
+    tags = []
+    page = 1
+    while True:
+        result = api("GET", f"/tags?page={page}&page_size=100", token)
+        tags.extend(result.get("results", []))
+        if not result.get("next"):
+            break
+        page += 1
+    return tags
+
+
+def get_tag_id(token: str, name: str) -> str:
+    for tag in list_tags(token):
+        if tag.get("name") == name:
+            return tag["id"]
+    raise RuntimeError(f"required_tag_missing:{name}")
+
+
+def ensure_subscriber_tag(token: str, subscriber: dict, tag_id: str) -> list:
+    tags = subscriber.get("tags") or []
+    if tag_id in tags:
+        return tags
+    api("PATCH", f"/subscribers/{subscriber['id']}", token, {"tags": [*tags, tag_id]})
+    return tags
+
+
+def restore_subscriber_tags(token: str, subscriber_id: str, tags: list) -> None:
+    api("PATCH", f"/subscribers/{subscriber_id}", token, {"tags": tags})
+
+
+def clear_send_tag(token: str, tag_id: str, keep_subscriber_id: str) -> None:
+    for subscriber in list_active_subscribers(token):
+        subscriber_id = subscriber["id"]
+        tags = subscriber.get("tags") or []
+        if subscriber_id != keep_subscriber_id and tag_id in tags:
+            restore_subscriber_tags(
+                token,
+                subscriber_id,
+                [tag for tag in tags if tag != tag_id],
+            )
+
+
+def recipient_filter(tag_id: str) -> dict:
+    return {
+        "filters": [
+            {
+                "field": "subscriber.tags",
+                "operator": "contains",
+                "value": tag_id,
+            }
+        ],
+        "groups": [],
+        "predicate": "and",
+    }
+
+
+def send_course_email(token: str, day: int, subscriber: dict) -> str:
+    subscriber_id = subscriber["id"]
+    tag_id = get_tag_id(token, SEND_TAG_NAME)
+    clear_send_tag(token, tag_id, subscriber_id)
+    original_tags = ensure_subscriber_tag(token, subscriber, tag_id)
     subject, body = parse_course_email(day)
     payload = {
         "subject": subject,
@@ -118,7 +167,7 @@ def send_course_email(token: str, day: int, subscriber_id: str) -> str:
         "email_type": "private",
         "archival_mode": "disabled",
         "commenting_mode": "disabled",
-        "filters": subscriber_filter(subscriber_id),
+        "filters": recipient_filter(tag_id),
         "metadata": {
             "source": "decodifica_codex_course",
             "course_version": COURSE_VERSION,
@@ -127,7 +176,19 @@ def send_course_email(token: str, day: int, subscriber_id: str) -> str:
     }
     created = api("POST", "/emails", token, {**payload, "status": "draft"})
     email_id = created["id"]
-    api("POST", f"/emails/{email_id}/publish", token, payload)
+    try:
+        api("POST", f"/emails/{email_id}/publish", token, payload)
+    except (HTTPError, URLError):
+        try:
+            api("DELETE", f"/emails/{email_id}", token, expect_json=False)
+        except (HTTPError, URLError):
+            pass
+        raise
+    finally:
+        try:
+            restore_subscriber_tags(token, subscriber_id, original_tags)
+        except (HTTPError, URLError):
+            pass
     return email_id
 
 
@@ -188,7 +249,7 @@ def process_subscriber(
         day_key = f"curso_dia_{force_day}_sent_at"
         email_id = None
         if execute:
-            email_id = send_course_email(token, force_day, subscriber_id)
+            email_id = send_course_email(token, force_day, subscriber)
             new_metadata = {
                 **metadata,
                 "curso_version": COURSE_VERSION,
@@ -224,13 +285,13 @@ def process_subscriber(
             last_sent = parse_iso(metadata[day_key]) or last_sent
             continue
 
-        if (now - last_sent) >= DAY_DELAY:
+        if (now - last_sent) >= (DAY_DELAY - SEND_TOLERANCE):
             email_id = None
             if execute:
                 new_metadata = {**metadata, day_key: now.isoformat()}
                 if day == 5:
                     new_metadata["curso_completed_at"] = now.isoformat()
-                email_id = send_course_email(token, day, subscriber_id)
+                email_id = send_course_email(token, day, subscriber)
                 patch_metadata(token, subscriber_id, new_metadata)
             return {
                 "action": f"{'sent' if execute else 'would_send'}_dia_{day}",
@@ -242,7 +303,7 @@ def process_subscriber(
             "action": "skip",
             "reason": f"waiting_for_dia_{day}",
             "subscriber_id": subscriber_id,
-            "next_at": (last_sent + DAY_DELAY).isoformat(),
+            "next_at": (last_sent + DAY_DELAY - SEND_TOLERANCE).isoformat(),
         }
 
     if execute:
@@ -259,6 +320,7 @@ def main() -> int:
     parser.add_argument("--inspect", action="store_true", help="Consulta suscriptores y muestra que haria, sin enviar.")
     parser.add_argument("--test-email", help="Limita la corrida a un unico email de prueba.")
     parser.add_argument("--force-day", type=int, choices=range(1, 6), help="Fuerza un dia concreto. Requiere --test-email.")
+    parser.add_argument("--summary-output", help="Guarda un resumen operativo agregado sin datos personales.")
     args = parser.parse_args()
 
     if args.force_day and not args.test_email:
@@ -302,7 +364,7 @@ def main() -> int:
                 force_day=args.force_day,
             )
             results.append(redacted(result))
-        except (HTTPError, URLError) as exc:
+        except (HTTPError, URLError, RuntimeError) as exc:
             results.append({
                 "action": "error",
                 "subscriber_id": subscriber.get("id"),
@@ -317,7 +379,7 @@ def main() -> int:
     error_rows = [item for item in results if item["action"] == "error"]
     skip_rows = [item for item in results if item not in action_rows and item not in error_rows]
 
-    print(json.dumps({
+    report = {
         "ok": not error_rows,
         "timestamp": now.isoformat(),
         "execute": args.execute,
@@ -332,7 +394,29 @@ def main() -> int:
         "actions": action_rows,
         "skips": skip_rows,
         "error_log": error_rows,
-    }, indent=2, ensure_ascii=False))
+    }
+    if args.summary_output:
+        action_counts = {}
+        for item in action_rows:
+            action = item.get("action", "unknown")
+            action_counts[action] = action_counts.get(action, 0) + 1
+        summary = {
+            "schema_version": "decodifica-newsletter-minicurso-1.0",
+            "generated_at": report["timestamp"],
+            "ok": report["ok"],
+            "phase": "execute" if report["execute"] else "inspect",
+            "total_subscribers": report["total_subscribers"],
+            "sent": report["sent"],
+            "would_send": report["would_send"],
+            "initialized": report["initialized"],
+            "skipped": report["skipped"],
+            "errors": report["errors"],
+            "action_counts": action_counts,
+        }
+        summary_path = Path(args.summary_output)
+        summary_path.parent.mkdir(parents=True, exist_ok=True)
+        summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2, ensure_ascii=False))
     return 1 if error_rows else 0
 
 

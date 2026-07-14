@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import ssl
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
-from web_health_check import built_page_route, collect_built_internal_paths, load_public_env, normalize_internal_path
+from web_health_check import built_page_route, collect_built_internal_paths, fetch_url, load_public_env, normalize_internal_path
 
 
 class WebHealthLinkTests(unittest.TestCase):
@@ -70,6 +73,64 @@ class WebHealthLinkTests(unittest.TestCase):
                     "/newsletter/",
                 ],
             )
+
+
+class WebHealthFetchTests(unittest.TestCase):
+    @staticmethod
+    def successful_response() -> MagicMock:
+        response = MagicMock()
+        response.status = 200
+        response.read.return_value = b"<html>ok</html>"
+        response.headers.get_content_type.return_value = "text/html"
+        response.headers.get_content_charset.return_value = "utf-8"
+        response.__enter__.return_value = response
+        return response
+
+    def test_retries_transient_tls_error_then_recovers(self) -> None:
+        transient = urllib.error.URLError(ssl.SSLError("temporary TLS decode error"))
+        with (
+            patch("web_health_check.urllib.request.urlopen", side_effect=[transient, self.successful_response()]) as urlopen,
+            patch("web_health_check.time.sleep") as sleep,
+        ):
+            result = fetch_url("https://decodifica.net/login", attempts=3, retry_backoff_seconds=0.01)
+
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["attempts"], 2)
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(0.01)
+
+    def test_reports_failure_after_transient_attempts_are_exhausted(self) -> None:
+        transient = urllib.error.URLError("temporary network failure")
+        with (
+            patch("web_health_check.urllib.request.urlopen", side_effect=transient) as urlopen,
+            patch("web_health_check.time.sleep") as sleep,
+        ):
+            result = fetch_url("https://decodifica.net/login", attempts=3, retry_backoff_seconds=0.01)
+
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["attempts"], 3)
+        self.assertEqual(urlopen.call_count, 3)
+        self.assertEqual(sleep.call_count, 2)
+
+    def test_does_not_retry_permanent_http_error(self) -> None:
+        permanent = urllib.error.HTTPError(
+            "https://decodifica.net/missing",
+            404,
+            "Not Found",
+            hdrs=None,
+            fp=None,
+        )
+        with (
+            patch("web_health_check.urllib.request.urlopen", side_effect=permanent) as urlopen,
+            patch("web_health_check.time.sleep") as sleep,
+        ):
+            result = fetch_url("https://decodifica.net/missing", attempts=3)
+
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["status"], 404)
+        self.assertEqual(result["attempts"], 1)
+        self.assertEqual(urlopen.call_count, 1)
+        sleep.assert_not_called()
 
 
 if __name__ == "__main__":

@@ -5,8 +5,10 @@ import argparse
 import json
 import os
 import shutil
+import ssl
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import date, datetime
@@ -55,6 +57,9 @@ REQUIRED_PATHS = [
 ]
 
 IGNORED_LINK_SCHEMES = {"data", "javascript", "mailto", "tel"}
+TRANSIENT_HTTP_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+DEFAULT_FETCH_ATTEMPTS = 3
+DEFAULT_RETRY_BACKOFF_SECONDS = 0.5
 
 INTERNAL_COPY_PATTERNS = [
     "como funciona el embudo",
@@ -277,30 +282,69 @@ def collect_built_assets(repo: Path, site_url: str) -> list[dict]:
     return [{"url": url, "pages": sorted(pages)} for url, pages in sorted(discovered.items())]
 
 
-def fetch_url(url: str, timeout: int = 15) -> dict:
+def fetch_url(
+    url: str,
+    timeout: int = 15,
+    attempts: int = DEFAULT_FETCH_ATTEMPTS,
+    retry_backoff_seconds: float = DEFAULT_RETRY_BACKOFF_SECONDS,
+) -> dict:
     request = urllib.request.Request(url, headers={"User-Agent": "DecodificaWebHealth/1.0"})
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            raw_body = response.read(200000)
-            content_type = response.headers.get_content_type()
-            is_text = content_type.startswith("text/") or content_type in {
-                "application/json",
-                "application/javascript",
-                "application/xml",
+    max_attempts = max(1, attempts)
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                raw_body = response.read(200000)
+                content_type = response.headers.get_content_type()
+                is_text = content_type.startswith("text/") or content_type in {
+                    "application/json",
+                    "application/javascript",
+                    "application/xml",
+                }
+                body_sample = raw_body.decode(response.headers.get_content_charset() or "utf-8", errors="replace")[:1000] if is_text else ""
+                return {
+                    "url": url,
+                    "ok": 200 <= response.status < 400,
+                    "status": response.status,
+                    "length": len(raw_body),
+                    "content_type": content_type,
+                    "body_sample": body_sample,
+                    "attempts": attempt,
+                }
+        except urllib.error.HTTPError as exc:
+            result = {
+                "url": url,
+                "ok": False,
+                "status": exc.code,
+                "error": str(exc),
+                "error_type": type(exc).__name__,
+                "attempts": attempt,
             }
-            body_sample = raw_body.decode(response.headers.get_content_charset() or "utf-8", errors="replace")[:1000] if is_text else ""
+            should_retry = exc.code in TRANSIENT_HTTP_STATUSES and attempt < max_attempts
+        except (urllib.error.URLError, TimeoutError, ssl.SSLError, ConnectionError, OSError) as exc:
+            result = {
+                "url": url,
+                "ok": False,
+                "status": None,
+                "error": str(exc),
+                "error_type": type(exc).__name__,
+                "attempts": attempt,
+            }
+            should_retry = attempt < max_attempts
+        except Exception as exc:
             return {
                 "url": url,
-                "ok": 200 <= response.status < 400,
-                "status": response.status,
-                "length": len(raw_body),
-                "content_type": content_type,
-                "body_sample": body_sample,
+                "ok": False,
+                "status": None,
+                "error": str(exc),
+                "error_type": type(exc).__name__,
+                "attempts": attempt,
             }
-    except urllib.error.HTTPError as exc:
-        return {"url": url, "ok": False, "status": exc.code, "error": str(exc)}
-    except Exception as exc:
-        return {"url": url, "ok": False, "status": None, "error": str(exc)}
+
+        if not should_retry:
+            return result
+        time.sleep(retry_backoff_seconds * (2 ** (attempt - 1)))
+
+    raise RuntimeError("fetch_url exhausted attempts without a result")
 
 
 def fetch_assets(built_assets: list[dict]) -> list[dict]:
