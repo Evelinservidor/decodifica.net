@@ -143,7 +143,7 @@ Yo redacto el post completo, Jordi valida y publica.
 | Miércoles | Redacto post de ampliación + Jordi revisa |
 | Jueves | Commit + push + indexar |
 | Viernes | Brief de listicle (si toca) o descanso |
-| Sábado | Cron newsletter draft (8:00) + envío newsletter manual |
+| Viernes | Cron newsletter semanal (11:30): investiga, valida y envía solo si todos los gates pasan |
 | Domingo | Métricas, descanso |
 
 ---
