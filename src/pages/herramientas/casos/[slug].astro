@@ -1,0 +1,15 @@
+---
+import ToolUseCasePage from '~/components/ToolUseCasePage.astro';
+import { toolUseCases } from '~/data/tool-use-cases';
+
+export function getStaticPaths() {
+  const legacySlugs = new Set(['para-estudiar', 'para-crear-contenido', 'para-programar', 'para-presentaciones']);
+  return toolUseCases
+    .filter((useCase) => !legacySlugs.has(useCase.slug))
+    .map((useCase) => ({ params: { slug: useCase.slug }, props: { useCase } }));
+}
+
+const { useCase } = Astro.props;
+---
+
+<ToolUseCasePage useCase={useCase} />
