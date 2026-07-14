@@ -3,12 +3,15 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import { tools } from '~/data/tools';
 import { toolUseCases } from '~/data/tool-use-cases';
+import { toolComparisons } from '~/data/tool-comparisons';
 
-const updatedAt = '7 julio 2026';
+const updatedAt = '14 julio 2026';
 const useCases = [...new Set(tools.map((tool) => tool.useCase))].sort();
 const prices = [...new Set(tools.map((tool) => tool.price))].sort();
 const privacyLevels = ['Baja', 'Media', 'Alta'];
 const difficulties = ['Baja', 'Media', 'Alta'];
+const legacyUseCases = new Set(['para-estudiar', 'para-crear-contenido', 'para-programar', 'para-presentaciones']);
+const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/${slug}/` : `/herramientas/casos/${slug}/`;
 ---
 
 <BaseLayout
@@ -25,16 +28,16 @@ const difficulties = ['Baja', 'Media', 'Alta'];
           Elige una herramienta por tarea, no por ruido.
         </h1>
         <p class="mt-4 max-w-2xl text-lg leading-8 text-dark-200">
-          Una biblioteca viva para comparar herramientas de IA por caso de uso, precio, privacidad, dificultad y momento adecuado. No es un ranking: es un mapa para decidir que probar primero.
+          Una biblioteca viva para comparar herramientas de IA por caso de uso, precio, privacidad, dificultad y momento adecuado. No es un ranking: es un mapa para decidir qué probar primero.
         </p>
         <div class="mt-6 grid gap-3 text-sm sm:grid-cols-3">
           <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
             <div class="text-2xl font-bold text-white">{tools.length}</div>
-            <div class="mt-1 text-dark-300">fichas iniciales</div>
+            <div class="mt-1 text-dark-300">fichas prácticas</div>
           </div>
           <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
-            <div class="text-2xl font-bold text-white">{useCases.length}</div>
-            <div class="mt-1 text-dark-300">casos de uso</div>
+            <div class="text-2xl font-bold text-white">{toolUseCases.length}</div>
+            <div class="mt-1 text-dark-300">guías por tarea</div>
           </div>
           <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
             <div class="text-2xl font-bold text-white">0</div>
@@ -46,10 +49,23 @@ const difficulties = ['Baja', 'Media', 'Alta'];
 
       <NewsletterForm
         title="Recibe nuevas fichas"
-        description="Te avisamos cuando anadamos herramientas utiles, comparativas y recursos para probarlas mejor."
+        description="Te avisamos cuando añadamos herramientas útiles, comparativas y recursos para probarlas mejor."
         buttonLabel="Seguir la biblioteca"
       />
     </header>
+
+    <section class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4" aria-label="Utilidades gratuitas">
+      {[
+        { title: 'Comparar herramientas', description: 'Pon dos o tres opciones frente a frente con la misma matriz.', href: '/herramientas/comparador/', event: 'utility_compare_opened' },
+        { title: 'Construir un prompt', description: 'Convierte una tarea en un prompt estructurado y revisable.', href: '/herramientas/generador-prompts/', event: 'utility_prompt_opened' },
+        { title: 'Revisar datos', description: 'Comprueba riesgos antes de subir información a una IA.', href: '/herramientas/preflight-datos/', event: 'utility_preflight_opened' },
+        { title: 'Evaluar un resultado', description: 'Decide si el flujo merece conservarse, repetirse o descartarse.', href: '/herramientas/evaluador/', event: 'utility_evaluator_opened' },
+      ].map((utility) => (
+        <a href={utility.href} data-track={utility.event} data-track-label={utility.title} data-track-component="tools_utility_hub" class="rounded-lg border border-brand-500/30 bg-dark-800 p-5 transition hover:border-brand-400">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">Utilidad gratuita</p><h2 class="mt-2 font-display text-xl font-bold">{utility.title}</h2><p class="mt-2 text-sm leading-6 text-dark-300">{utility.description}</p>
+        </a>
+      ))}
+    </section>
 
     <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-4 sm:p-5" aria-label="Filtros de herramientas IA">
       <div class="grid gap-3 lg:grid-cols-[1.4fr_repeat(4,1fr)_auto] lg:items-end">
@@ -95,7 +111,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
         </button>
       </div>
       <p class="mt-4 text-sm text-dark-300">
-        <span id="tool-count">{tools.length}</span> herramientas visibles. Precio y condiciones pueden cambiar; revisa siempre la pagina oficial antes de pagar o subir datos sensibles.
+        <span id="tool-count">{tools.length}</span> herramientas visibles. Precio y condiciones pueden cambiar; revisa siempre la página oficial antes de pagar o subir datos sensibles.
       </p>
     </section>
 
@@ -109,7 +125,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
       </div>
       <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {toolUseCases.map((useCase) => (
-          <a href={`/herramientas/${useCase.slug}/`} data-track="tools_hub_use_case_click" data-track-label={useCase.slug} data-track-component="tools_hub" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+          <a href={useCaseHref(useCase.slug)} data-track="tools_hub_use_case_click" data-track-label={useCase.slug} data-track-component="tools_hub" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
             <h3 class="font-display text-lg font-bold text-white">{useCase.title}</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">{useCase.intro}</p>
           </a>
@@ -121,7 +137,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
       {tools.map((tool) => {
         const detailHref = `/herramientas/${tool.slug}/`;
         const primaryHref = tool.hasDetailPage ? detailHref : tool.officialUrl;
-        const primaryLabel = tool.hasDetailPage ? 'Ver ficha practica' : 'Ver pagina oficial';
+        const primaryLabel = tool.hasDetailPage ? 'Ver ficha práctica' : 'Ver página oficial';
         return (
           <article
             class="tool-card flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/50"
@@ -148,7 +164,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
                 <p class="mt-1 text-dark-200">{tool.bestFor}</p>
               </div>
               <div>
-                <div class="font-semibold text-white">Evitala si</div>
+                <div class="font-semibold text-white">Evítala si</div>
                 <p class="mt-1 text-dark-200">{tool.avoidIf}</p>
               </div>
             </div>
@@ -164,7 +180,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
                 {primaryLabel}
               </a>
               <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} data-track="tool_to_comparison_click" data-track-label={`${tool.slug}:primary_related`} data-track-component="tools_hub" class="text-sm font-semibold text-brand-300 hover:text-brand-200">
-                {tool.relatedLinks[0]?.label ?? 'Como elegir una herramienta IA'}
+                {tool.relatedLinks[0]?.label ?? 'Cómo elegir una herramienta IA'}
               </a>
             </div>
           </article>
@@ -180,9 +196,9 @@ const difficulties = ['Baja', 'Media', 'Alta'];
       <div class="grid gap-5 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
         <div>
           <p class="text-sm font-semibold text-brand-300">Recurso recomendado</p>
-          <h2 class="mt-2 font-display text-3xl font-bold">Mapa Decodifica: que IA usar segun tu tarea</h2>
+          <h2 class="mt-2 font-display text-3xl font-bold">Mapa Decodifica: qué IA usar según tu tarea</h2>
           <p class="mt-3 text-sm leading-6 text-dark-200">
-            Antes de probar herramientas al azar, usa el mapa para elegir la primera app segun tarea, riesgo y resultado esperado.
+            Antes de probar herramientas al azar, usa el mapa para elegir la primera app según tarea, riesgo y resultado esperado.
           </p>
           <a href="/recursos/mapa-herramientas-ia/" class="mt-5 inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
             Abrir el mapa
@@ -202,13 +218,13 @@ const difficulties = ['Baja', 'Media', 'Alta'];
           <p class="text-sm font-semibold text-brand-300">Comparativas</p>
           <h2 class="mt-2 font-display text-3xl font-bold">Cuando dos herramientas parecen iguales</h2>
           <p class="mt-3 text-sm leading-6 text-dark-200">
-            Algunas decisiones no se resuelven con una ficha aislada. Estas guias comparan herramientas que compiten por la misma tarea.
+            Algunas decisiones no se resuelven con una ficha aislada. Estas guías comparan herramientas que compiten por la misma tarea.
           </p>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           <a href="/herramientas/chatgpt-vs-claude/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
             <h3 class="font-display text-xl font-bold text-white">ChatGPT vs Claude</h3>
-            <p class="mt-2 text-sm leading-6 text-dark-300">Que abrir primero para escritura, documentos, codigo, privacidad y uso general.</p>
+            <p class="mt-2 text-sm leading-6 text-dark-300">Qué abrir primero para escritura, documentos, código, privacidad y uso general.</p>
           </a>
           <a href="/herramientas/notebooklm-vs-perplexity/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
             <h3 class="font-display text-xl font-bold text-white">NotebookLM vs Perplexity</h3>
@@ -216,12 +232,18 @@ const difficulties = ['Baja', 'Media', 'Alta'];
           </a>
           <a href="/herramientas/gamma-vs-canva-ai/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
             <h3 class="font-display text-xl font-bold text-white">Gamma vs Canva AI</h3>
-            <p class="mt-2 text-sm leading-6 text-dark-300">Que usar para presentaciones, piezas visuales, marca y formatos de redes.</p>
+            <p class="mt-2 text-sm leading-6 text-dark-300">Qué usar para presentaciones, piezas visuales, marca y formatos de redes.</p>
           </a>
           <a href="/herramientas/alternativas-elevenlabs/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
             <h3 class="font-display text-xl font-bold text-white">Alternativas a ElevenLabs</h3>
-            <p class="mt-2 text-sm leading-6 text-dark-300">Que mirar para locucion, doblaje, agentes de voz, API y clonacion segura.</p>
+            <p class="mt-2 text-sm leading-6 text-dark-300">Qué mirar para locución, doblaje, agentes de voz, API y clonación segura.</p>
           </a>
+          {toolComparisons.map((comparison) => (
+            <a href={`/herramientas/comparativas/${comparison.slug}/`} class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+              <h3 class="font-display text-xl font-bold text-white">{comparison.title}</h3>
+              <p class="mt-2 text-sm leading-6 text-dark-300">{comparison.description}</p>
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -229,7 +251,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
     <section class="mt-12 grid gap-5 rounded-lg border border-dark-600 bg-dark-800 p-6 lg:grid-cols-[.75fr_1.25fr] lg:p-8">
       <div>
         <p class="text-sm font-semibold text-brand-300">Criterio Decodifica</p>
-        <h2 class="mt-2 font-display text-3xl font-bold">Como entra una herramienta aqui</h2>
+        <h2 class="mt-2 font-display text-3xl font-bold">Cómo entra una herramienta aquí</h2>
       </div>
       <ol class="grid gap-4 sm:grid-cols-3">
         <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">1. Caso claro.</strong> Tiene que resolver una tarea real, no solo sonar novedosa.</li>
@@ -241,7 +263,7 @@ const difficulties = ['Baja', 'Media', 'Alta'];
     <div class="mt-12" id="newsletter">
       <NewsletterForm
         title="No pruebes herramientas al azar"
-        description="Apuntate y recibe el filtro Decodifica: que herramienta mirar, para que sirve y que comprobar antes de pagar."
+        description="Apúntate y recibe el filtro Decodifica: qué herramienta mirar, para qué sirve y qué comprobar antes de pagar."
         buttonLabel="Recibir el filtro"
       />
     </div>

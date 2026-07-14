@@ -1,0 +1,55 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { tools } from '~/data/tools';
+
+const publicTools = tools.map(({ slug, name, useCase, price, privacy, difficulty, bestFor, avoidIf, platforms, verifiedAt, nextReviewAt, freshnessStatus }) => ({
+  slug, name, useCase, price, privacy, difficulty, bestFor, avoidIf, platforms, verifiedAt, nextReviewAt,
+  reviewState: freshnessStatus === 'review-due' ? 'Revisión pendiente' : freshnessStatus === 'due-soon' ? 'Revisión próxima' : 'Al día',
+}));
+---
+
+<BaseLayout title="Comparador de herramientas IA" description="Compara dos o tres herramientas IA por tarea, precio, privacidad, dificultad, plataformas y fecha de verificación.">
+  <main class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <header class="max-w-4xl"><p class="inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">Utilidad gratuita · datos revisados</p><h1 class="mt-5 font-display text-4xl font-bold sm:text-5xl">Compara herramientas con la misma pregunta</h1><p class="mt-5 text-lg leading-8 text-dark-200">Elige hasta tres opciones. Verás la misma matriz para todas y podrás guardar la combinación en la URL. No es un ranking automático.</p></header>
+    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6" aria-labelledby="compare-controls-title"><h2 id="compare-controls-title" class="font-display text-2xl font-bold">Herramientas</h2><div class="mt-5 grid gap-4 md:grid-cols-3">{[0,1,2].map((index) => <label class="block"><span class="text-sm font-semibold text-dark-200">Opción {index + 1}</span><select class="compare-select mt-2 w-full rounded-lg border border-dark-600 bg-dark-900 px-3 py-3 text-white" data-index={index}><option value="">Sin seleccionar</option>{tools.map((tool) => <option value={tool.slug}>{tool.name}</option>)}</select></label>)}</div><div class="mt-5 flex flex-wrap gap-3"><button id="compare-run" type="button" class="rounded-lg bg-brand-500 px-4 py-2.5 font-semibold text-white">Comparar</button><button id="compare-copy" type="button" class="rounded-lg border border-dark-600 px-4 py-2.5 font-semibold text-white">Copiar enlace</button><button id="compare-reset" type="button" class="rounded-lg border border-dark-600 px-4 py-2.5 font-semibold text-white">Limpiar</button></div><p id="compare-status" class="mt-4 text-sm text-dark-300" aria-live="polite">Selecciona al menos dos herramientas.</p></section>
+    <section id="compare-result" class="mt-8 hidden overflow-x-auto rounded-lg border border-dark-600 bg-dark-800" aria-live="polite"><table class="w-full min-w-[820px] text-left text-sm"><thead id="compare-head" class="border-b border-dark-600 bg-dark-900"></thead><tbody id="compare-body"></tbody></table></section>
+    <section class="mt-10 rounded-lg border border-brand-500/30 bg-dark-800 p-6"><h2 class="font-display text-2xl font-bold">Cómo decidir</h2><ol class="mt-4 grid gap-4 md:grid-cols-3"><li class="rounded-lg bg-dark-900 p-4 text-sm text-dark-200"><strong class="text-white">1. Misma tarea.</strong> Compara con un input y resultado idénticos.</li><li class="rounded-lg bg-dark-900 p-4 text-sm text-dark-200"><strong class="text-white">2. Coste total.</strong> Cuenta edición, errores y límites, no solo la cuota.</li><li class="rounded-lg bg-dark-900 p-4 text-sm text-dark-200"><strong class="text-white">3. Prueba corta.</strong> Conserva la opción que puedas repetir y revisar.</li></ol></section>
+    <div class="mt-12"><NewsletterForm title="Recibe comparativas sin ruido" description="Qué probar, qué evitar y qué revisar antes de pagar." buttonLabel="Recibir el filtro" /></div>
+  </main>
+  <script define:vars={{ publicTools }}>
+    const toolMap = new Map(publicTools.map((tool) => [tool.slug, tool]));
+    const selects = Array.from(document.querySelectorAll('.compare-select'));
+    const status = document.querySelector('#compare-status');
+    const result = document.querySelector('#compare-result');
+    const head = document.querySelector('#compare-head');
+    const body = document.querySelector('#compare-body');
+    const fields = [['Caso de uso','useCase'],['Precio','price'],['Privacidad','privacy'],['Dificultad','difficulty'],['Plataformas','platforms'],['Úsala cuando','bestFor'],['Evítala si','avoidIf'],['Última revisión','verifiedAt'],['Próxima revisión','nextReviewAt'],['Estado de revisión','reviewState']];
+    const chosen = () => [...new Set(selects.map((select) => select.value).filter(Boolean))].map((slug) => toolMap.get(slug)).filter(Boolean);
+    const track = (event, props = {}) => window.DecodificaTrack?.emit?.(event, { component: 'tool_comparator', ...props });
+    async function copyText(value) {
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard API unavailable');
+        await Promise.race([navigator.clipboard.writeText(value), new Promise((_, reject) => setTimeout(() => reject(new Error('Clipboard timeout')), 1200))]);
+        return true;
+      } catch {
+        const area=document.createElement('textarea'); area.value=value; area.style.position='fixed'; area.style.opacity='0'; document.body.appendChild(area); area.select(); const copied=document.execCommand('copy'); area.remove(); return copied;
+      }
+    }
+    function render(updateUrl = true) {
+      const items = chosen();
+      if (items.length < 2) { result?.classList.add('hidden'); status.textContent = 'Selecciona al menos dos herramientas distintas.'; return; }
+      head.replaceChildren(); body.replaceChildren();
+      const headerRow = document.createElement('tr'); headerRow.innerHTML = `<th class="p-4 text-dark-300">Criterio</th>${items.map((item) => `<th class="p-4 text-white">${item.name}</th>`).join('')}`; head.appendChild(headerRow);
+      fields.forEach(([label,key]) => { const row=document.createElement('tr'); row.className='border-b border-dark-600 last:border-0'; row.innerHTML=`<th class="p-4 align-top text-dark-300">${label}</th>${items.map((item)=>`<td class="p-4 align-top leading-6 text-dark-200">${Array.isArray(item[key]) ? item[key].join(', ') : item[key]}</td>`).join('')}`; body.appendChild(row); });
+      result?.classList.remove('hidden'); status.textContent = `${items.length} herramientas comparadas.`;
+      if (updateUrl) history.replaceState({}, '', `${location.pathname}?tools=${items.map((item) => item.slug).join(',')}`);
+      track('comparison_created', { count: items.length, tools: items.map((item) => item.slug).join('|') });
+    }
+    const initial = new URLSearchParams(location.search).get('tools')?.split(',').filter((slug) => toolMap.has(slug)).slice(0,3) ?? [];
+    initial.forEach((slug,index) => { if(selects[index]) selects[index].value=slug; }); if(initial.length >= 2) render(false);
+    document.querySelector('#compare-run')?.addEventListener('click', () => render());
+    document.querySelector('#compare-copy')?.addEventListener('click', async () => { if(chosen().length < 2) return render(); const copied=await copyText(location.href); status.textContent=copied?'Enlace copiado.':'No se pudo copiar; selecciona la URL del navegador.'; if(copied) track('utility_share', { utility: 'comparator' }); });
+    document.querySelector('#compare-reset')?.addEventListener('click', () => { selects.forEach((select)=>select.value=''); history.replaceState({},'',location.pathname); result?.classList.add('hidden'); status.textContent='Selecciona al menos dos herramientas.'; track('utility_reset',{utility:'comparator'}); });
+  </script>
+</BaseLayout>

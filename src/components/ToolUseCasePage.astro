@@ -11,7 +11,9 @@ export interface Props {
 
 const { useCase } = Astro.props;
 const selectedTools = useCase.tools.map((slug) => getToolBySlug(slug)).filter(Boolean);
-const pageUrl = `${siteConfig.url}/herramientas/${useCase.slug}/`;
+const legacySlugs = new Set(['para-estudiar', 'para-crear-contenido', 'para-programar', 'para-presentaciones']);
+const relativeUrl = legacySlugs.has(useCase.slug) ? `/herramientas/${useCase.slug}/` : `/herramientas/casos/${useCase.slug}/`;
+const pageUrl = `${siteConfig.url}${relativeUrl}`;
 
 const itemListLd = {
   '@context': 'https://schema.org',
@@ -40,6 +42,7 @@ const breadcrumbLd = {
 <BaseLayout
   title={useCase.title}
   description={useCase.description}
+  modifiedDate="2026-07-14"
   keywords={['herramientas IA', useCase.title, 'Decodifica']}
   section="Herramientas IA"
 >
@@ -60,7 +63,7 @@ const breadcrumbLd = {
       </div>
       <NewsletterForm
         title="Recibe el filtro por casos de uso"
-        description="Una vez por semana: que herramienta mirar, que riesgo revisar y que recurso guardar para probarla mejor."
+        description="Una vez por semana: qué herramienta mirar, qué riesgo revisar y qué recurso guardar para probarla mejor."
         buttonLabel="Recibir el filtro"
       />
     </header>
@@ -81,7 +84,7 @@ const breadcrumbLd = {
 
     <section class="mt-12 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Reglas de decision</h2>
+        <h2 class="font-display text-2xl font-bold text-white">Reglas de decisión</h2>
         <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
           {useCase.decisionRules.map((rule) => <li>{rule}</li>)}
         </ul>
@@ -99,7 +102,7 @@ const breadcrumbLd = {
         <div>
           <p class="text-sm font-semibold text-brand-300">Comparativas y recursos</p>
           <h2 class="mt-2 font-display text-3xl font-bold">Siguiente paso si dudas</h2>
-          <p class="mt-3 text-sm leading-6 text-dark-200">Estas piezas ayudan a pasar de lista de herramientas a decision concreta.</p>
+          <p class="mt-3 text-sm leading-6 text-dark-200">Estas piezas ayudan a pasar de una lista de herramientas a una decisión concreta.</p>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           {useCase.comparisons.map((comparison) => (

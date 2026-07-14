@@ -1,3 +1,6 @@
+import { expandedTools } from './tools-expanded';
+import reviewLedger from './tool-review-ledger.json';
+
 export type ToolLink = {
   label: string;
   href: string;
@@ -34,10 +37,19 @@ export type Tool = {
   officialUrl: string;
   relatedLinks: ToolLink[];
   hasDetailPage: boolean;
+  verifiedAt?: string;
+  nextReviewAt?: string;
+  reviewCadenceDays?: number;
+  reviewedFields?: string[];
+  freshnessStatus?: 'current' | 'due-soon' | 'review-due';
+  status?: 'active' | 'changed' | 'review' | 'archived';
+  evidenceLevel?: 'official' | 'controlled-test' | 'decodifica-test';
+  platforms?: string[];
+  language?: string;
   detail?: ToolDetail;
 };
 
-export const tools: Tool[] = [
+const coreTools: Tool[] = [
   {
     slug: 'chatgpt',
     name: 'ChatGPT',
@@ -535,6 +547,40 @@ export const tools: Tool[] = [
     },
   },
 ];
+
+const defaultReviewedFields = ['status', 'officialUrl', 'price', 'privacy', 'platforms', 'bestFor', 'avoidIf'];
+
+function addDays(date: string, days: number): string {
+  const value = new Date(`${date}T00:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + days);
+  return value.toISOString().slice(0, 10);
+}
+
+function freshnessStatus(nextReviewAt: string): Tool['freshnessStatus'] {
+  const today = new Date().toISOString().slice(0, 10);
+  if (nextReviewAt <= today) return 'review-due';
+  const dueSoon = addDays(today, 7);
+  return nextReviewAt <= dueSoon ? 'due-soon' : 'current';
+}
+
+export const tools: Tool[] = [...coreTools, ...expandedTools].map((tool) => {
+  const review = reviewLedger[tool.slug as keyof typeof reviewLedger];
+  const verifiedAt = review?.verifiedAt ?? tool.verifiedAt ?? '2026-07-14';
+  const reviewCadenceDays = review?.reviewCadenceDays ?? tool.reviewCadenceDays ?? 30;
+  const nextReviewAt = addDays(verifiedAt, reviewCadenceDays);
+  return {
+    status: tool.status ?? 'active',
+    evidenceLevel: tool.evidenceLevel ?? 'official',
+    platforms: tool.platforms ?? ['Web'],
+    language: tool.language ?? 'Español disponible',
+    ...tool,
+    verifiedAt,
+    reviewCadenceDays,
+    nextReviewAt,
+    reviewedFields: tool.reviewedFields ?? defaultReviewedFields,
+    freshnessStatus: freshnessStatus(nextReviewAt),
+  };
+});
 
 export const detailedTools = tools.filter((tool) => tool.hasDetailPage && tool.detail);
 
