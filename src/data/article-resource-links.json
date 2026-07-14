@@ -1,0 +1,122 @@
+{
+  "2026-07-16-prompts-secretos-web": [
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Construye un prompt privado y revisable sin enviar el texto fuera del navegador.", "href": "/herramientas/generador-prompts/" },
+    { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Elige el asistente según el tipo de texto, contexto y revisión que necesitas.", "href": "/herramientas/chatgpt-vs-claude/" },
+    { "kind": "Control", "label": "Preflight de datos", "description": "Comprueba qué información puedes compartir antes de pegarla en una IA.", "href": "/herramientas/preflight-datos/" }
+  ],
+  "2026-07-17-hermes-agent-chino": [
+    { "kind": "Herramienta", "label": "Ficha de Hermes Agent", "description": "Revisa instalación, dificultad, privacidad, fuentes y cuándo compensa usarlo.", "href": "/herramientas/hermes-agent/" },
+    { "kind": "Caso de uso", "label": "Agentes y automatizaciones", "description": "Sitúa Hermes junto a otras opciones y decide por tarea, permisos y control.", "href": "/herramientas/casos/para-agentes-automatizaciones/" },
+    { "kind": "Workflow", "label": "Prototipo de app revisable", "description": "Prueba un agente con un entregable pequeño, un diff y criterios de salida claros.", "href": "/workflows/prototipo-app-revisable/" }
+  ],
+  "alternativas-fable-5": [
+    { "kind": "Caso de uso", "label": "IA para crear contenido", "description": "Separa escritura, diseño, voz y revisión antes de elegir una sola plataforma.", "href": "/herramientas/para-crear-contenido/" },
+    { "kind": "Comparativa", "label": "Gamma vs Canva AI", "description": "Decide entre generar la estructura o producir las piezas visuales finales.", "href": "/herramientas/gamma-vs-canva-ai/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Puntúa calidad, edición necesaria y repetibilidad con el mismo criterio.", "href": "/herramientas/evaluador/" }
+  ],
+  "alternativas-gratis-chatgpt-2026": [
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Empieza por la tarea y encuentra una opción razonable sin depender de una marca.", "href": "/recursos/mapa-herramientas-ia/" },
+    { "kind": "Utilidad", "label": "Comparador de herramientas", "description": "Compara opciones con los mismos criterios antes de abrir cuentas o pagar.", "href": "/herramientas/comparador/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Comprueba cuál necesita menos corrección con una prueba pequeña y repetible.", "href": "/herramientas/evaluador/" }
+  ],
+  "chatgpt-work-archivos-a-entregables": [
+    { "kind": "Herramienta", "label": "Ficha de ChatGPT", "description": "Revisa usos, límites, privacidad y alternativas antes de conectar tus archivos.", "href": "/herramientas/chatgpt/" },
+    { "kind": "Comparativa", "label": "Copilot vs Gemini Workspace", "description": "La decisión depende de dónde viven tus documentos y qué permisos heredan.", "href": "/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/" },
+    { "kind": "Caso de uso", "label": "IA para documentos y PDF", "description": "Elige un flujo para leer, transformar y revisar archivos sin perder el original.", "href": "/herramientas/casos/para-documentos-pdf/" }
+  ],
+  "claude-emails-sonar-humanos": [
+    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Comprueba cuándo encaja en escritura larga, documentos y contexto reutilizable.", "href": "/herramientas/claude/" },
+    { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Elige según el tipo de texto, la longitud del contexto y el trabajo de revisión.", "href": "/herramientas/chatgpt-vs-claude/" },
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Prepara instrucciones de tono, objetivo y límites sin enviar el contenido fuera.", "href": "/herramientas/generador-prompts/" }
+  ],
+  "claude-skills-1000-gratis": [
+    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Sitúa las Skills dentro de los usos, planes, límites y riesgos de Claude.", "href": "/herramientas/claude/" },
+    { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Decide si necesitas instrucciones reutilizables o un asistente más general.", "href": "/herramientas/chatgpt-vs-claude/" },
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Convierte una tarea repetida en una instrucción clara antes de guardarla como Skill.", "href": "/herramientas/generador-prompts/" }
+  ],
+  "claude-skills-desde-cero": [
+    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Revisa planes, privacidad y casos de uso antes de montar instrucciones persistentes.", "href": "/herramientas/claude/" },
+    { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Compara contexto, escritura y forma de reutilizar instrucciones en cada entorno.", "href": "/herramientas/chatgpt-vs-claude/" },
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Escribe la primera versión de la instrucción con objetivo, límites y formato de salida.", "href": "/herramientas/generador-prompts/" }
+  ],
+  "como-elegir-herramienta-ia": [
+    { "kind": "Utilidad", "label": "Comparador de herramientas", "description": "Pon dos opciones frente a los mismos criterios y evita decidir por una demo.", "href": "/herramientas/comparador/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Mide exactitud, edición y repetibilidad después de ejecutar la misma prueba.", "href": "/herramientas/evaluador/" },
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Explora el catálogo por tarea cuando todavía no sabes qué opciones comparar.", "href": "/recursos/mapa-herramientas-ia/" }
+  ],
+  "crear-agente-voz-ia-sin-programar": [
+    { "kind": "Herramienta", "label": "Ficha de ElevenLabs", "description": "Revisa voz, precio, privacidad, permisos y usos que conviene evitar.", "href": "/herramientas/elevenlabs/" },
+    { "kind": "Comparativa", "label": "Alternativas a ElevenLabs", "description": "Compara voz, doblaje, API y clonación sin ignorar el consentimiento.", "href": "/herramientas/alternativas-elevenlabs/" },
+    { "kind": "Control", "label": "Preflight de datos", "description": "Comprueba si el audio, la voz o los datos pueden salir de tu entorno.", "href": "/herramientas/preflight-datos/" }
+  ],
+  "crear-app-web-ias-chinas-open-source": [
+    { "kind": "Herramienta", "label": "Ficha de Emergent", "description": "Revisa para qué sirve, qué debes comprobar y qué alternativas existen.", "href": "/herramientas/emergent/" },
+    { "kind": "Comparativa", "label": "Cursor vs GitHub Copilot", "description": "Decide entre un editor centrado en agentes y mantener tu entorno actual.", "href": "/herramientas/comparativas/cursor-vs-github-copilot/" },
+    { "kind": "Workflow", "label": "Prototipo de app revisable", "description": "Pasa de idea a demo con rama, pruebas, diff y límites de publicación.", "href": "/workflows/prototipo-app-revisable/" }
+  ],
+  "deepseek-app-oficial-espanol": [
+    { "kind": "Herramienta", "label": "Ficha de DeepSeek", "description": "Consulta precio, privacidad, dificultad, usos y fuentes revisadas.", "href": "/herramientas/deepseek/" },
+    { "kind": "Caso de uso", "label": "Herramientas IA para programar", "description": "Sitúa DeepSeek junto a asistentes y agentes de código según la tarea.", "href": "/herramientas/para-programar/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Compara su salida con otra IA usando los mismos criterios y el mismo input.", "href": "/herramientas/evaluador/" }
+  ],
+  "glm-52-kimi-coinbase": [
+    { "kind": "Herramienta", "label": "Ficha de Kimi", "description": "Revisa documentos, contexto, privacidad y disponibilidad antes de usarlo.", "href": "/herramientas/kimi/" },
+    { "kind": "Comparativa", "label": "Kimi vs GLM", "description": "Compara documentos, razonamiento y código registrando versión y fecha.", "href": "/herramientas/comparativas/kimi-vs-glm/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Ejecuta la misma tarea y mide qué opción necesita menos correcciones.", "href": "/herramientas/evaluador/" }
+  ],
+  "gpt-live-voz-chatgpt": [
+    { "kind": "Herramienta", "label": "Ficha de ChatGPT", "description": "Revisa planes, privacidad y límites del asistente antes de usar voz.", "href": "/herramientas/chatgpt/" },
+    { "kind": "Comparativa", "label": "Alternativas a ElevenLabs", "description": "Separa conversación por voz, generación, doblaje y clonación.", "href": "/herramientas/alternativas-elevenlabs/" },
+    { "kind": "Control", "label": "Preflight de datos", "description": "Decide qué información puedes compartir durante una conversación hablada.", "href": "/herramientas/preflight-datos/" }
+  ],
+  "ia-crea-presentaciones-completas": [
+    { "kind": "Herramienta", "label": "Ficha de Gamma", "description": "Revisa cuándo sirve para pasar de una idea a un primer deck.", "href": "/herramientas/gamma/" },
+    { "kind": "Comparativa", "label": "Gamma vs Canva AI", "description": "Elige entre generar estructura y producir piezas visuales de marca.", "href": "/herramientas/gamma-vs-canva-ai/" },
+    { "kind": "Caso de uso", "label": "IA para presentaciones", "description": "Compara más opciones y revisa reglas, riesgos y siguiente paso.", "href": "/herramientas/para-presentaciones/" }
+  ],
+  "ia-gratis-silicon-valley": [
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Encuentra opciones por tarea sin convertir lo gratuito en el único criterio.", "href": "/recursos/mapa-herramientas-ia/" },
+    { "kind": "Utilidad", "label": "Comparador de herramientas", "description": "Contrasta dos candidatas con los mismos criterios antes de registrarte.", "href": "/herramientas/comparador/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Mide cuál resuelve mejor tu prueba aunque ambas tengan plan gratuito.", "href": "/herramientas/evaluador/" }
+  ],
+  "ia-mejora-excel": [
+    { "kind": "Caso de uso", "label": "IA para Excel y hojas de cálculo", "description": "Compara herramientas, riesgos y reglas antes de tocar datos reales.", "href": "/herramientas/casos/para-excel-hojas-calculo/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Puntúa exactitud y edición antes de conservar una fórmula generada.", "href": "/herramientas/evaluador/" },
+    { "kind": "Workflow", "label": "Verificar una fórmula con IA", "description": "Sigue un proceso que conserva el original y exige una prueba controlada.", "href": "/workflows/verificar-formula-hoja-calculo/" }
+  ],
+  "ia-organiza-pendientes": [
+    { "kind": "Caso de uso", "label": "IA para organizar el trabajo", "description": "Compara asistentes de tareas y calendario sin ceder tus prioridades.", "href": "/herramientas/casos/para-organizar-trabajo/" },
+    { "kind": "Comparativa", "label": "Reclaim vs Motion", "description": "Elige entre proteger tiempo de forma flexible y generar un plan completo.", "href": "/herramientas/comparativas/reclaim-vs-motion/" },
+    { "kind": "Workflow", "label": "Planificar la semana", "description": "Convierte tareas y calendario en un borrador que todavía debes decidir.", "href": "/workflows/planificar-semana-sin-ceder-prioridades/" }
+  ],
+  "ia-resumir-reuniones-tareas-revisables": [
+    { "kind": "Caso de uso", "label": "IA para reuniones", "description": "Compara opciones y revisa consentimiento, captura y seguimiento.", "href": "/herramientas/casos/para-reuniones/" },
+    { "kind": "Comparativa", "label": "Granola vs Fathom", "description": "Decide entre notas humanas enriquecidas y grabación automatizada.", "href": "/herramientas/comparativas/granola-vs-fathom/" },
+    { "kind": "Workflow", "label": "Reunión a decisiones y tareas", "description": "Usa el proceso completo sin inventar responsables, fechas ni acuerdos.", "href": "/workflows/reunion-a-decisiones-y-tareas/" }
+  ],
+  "notebooklm-google-openai": [
+    { "kind": "Herramienta", "label": "Ficha de NotebookLM", "description": "Revisa privacidad, límites, precio y cuándo trabajar con fuentes propias.", "href": "/herramientas/notebooklm/" },
+    { "kind": "Comparativa", "label": "NotebookLM vs Perplexity", "description": "Elige entre analizar tu material y descubrir información en la web.", "href": "/herramientas/notebooklm-vs-perplexity/" },
+    { "kind": "Workflow", "label": "Investigar con fuentes", "description": "Separa descubrimiento, selección, análisis y redacción para conservar trazabilidad.", "href": "/workflows/investigar-con-fuentes/" }
+  ],
+  "notebooklm-guia-2026": [
+    { "kind": "Herramienta", "label": "Ficha de NotebookLM", "description": "Consulta el veredicto rápido, la privacidad y las alternativas revisadas.", "href": "/herramientas/notebooklm/" },
+    { "kind": "Comparativa", "label": "NotebookLM vs Perplexity", "description": "Distingue una respuesta anclada en tus fuentes de una búsqueda web.", "href": "/herramientas/notebooklm-vs-perplexity/" },
+    { "kind": "Workflow", "label": "Investigar con fuentes", "description": "Aplica un proceso completo para no perder citas entre búsqueda y redacción.", "href": "/workflows/investigar-con-fuentes/" }
+  ],
+  "odysseus-pewdiepie-ia-gratis": [
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Busca una alternativa por tarea y no solo por novedad o precio.", "href": "/recursos/mapa-herramientas-ia/" },
+    { "kind": "Utilidad", "label": "Comparador de herramientas", "description": "Contrasta la candidata con una opción conocida usando criterios iguales.", "href": "/herramientas/comparador/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Comprueba si la salida gratuita aguanta una segunda ejecución y revisión.", "href": "/herramientas/evaluador/" }
+  ],
+  "prompts-chinos-abiertos": [
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Adapta una plantilla a tu tarea con límites y salida verificable.", "href": "/herramientas/generador-prompts/" },
+    { "kind": "Comparativa", "label": "Kimi vs GLM", "description": "Compara dos asistentes chinos registrando versión, región y el mismo input.", "href": "/herramientas/comparativas/kimi-vs-glm/" },
+    { "kind": "Control", "label": "Preflight de datos", "description": "Revisa la sensibilidad del texto antes de probarlo en servicios externos.", "href": "/herramientas/preflight-datos/" }
+  ],
+  "qwen-code-agent-terminal": [
+    { "kind": "Herramienta", "label": "Ficha de Qwen Code", "description": "Revisa dificultad, privacidad, fuentes y el flujo recomendado.", "href": "/herramientas/qwen-code/" },
+    { "kind": "Comparativa", "label": "Cursor vs GitHub Copilot", "description": "Sitúa el agente de terminal frente a opciones integradas en el editor.", "href": "/herramientas/comparativas/cursor-vs-github-copilot/" },
+    { "kind": "Workflow", "label": "Prototipo de app revisable", "description": "Trabaja en una rama, revisa el diff y exige pruebas antes de publicar.", "href": "/workflows/prototipo-app-revisable/" }
+  ]
+}
