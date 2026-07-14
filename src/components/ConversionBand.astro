@@ -1,4 +1,6 @@
 ---
+import ArticleResourceLinks from '~/components/ArticleResourceLinks.astro';
+
 export interface Props {
   eyebrow?: string;
   title?: string;
@@ -18,7 +20,10 @@ const {
   secondaryHref = '/comunidad',
   secondaryLabel = 'Entrar en comunidad',
 } = Astro.props;
+
 ---
+
+<ArticleResourceLinks />
 
 <aside class="not-prose mt-14 rounded-2xl border border-brand-500/20 bg-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
   <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">{eyebrow}</p>

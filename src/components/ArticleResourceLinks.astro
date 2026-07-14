@@ -1,0 +1,38 @@
+---
+import articleResourceLinks from '~/data/article-resource-links.json';
+
+type ResourceLink = {
+  kind: string;
+  label: string;
+  description: string;
+  href: string;
+};
+
+const articleSlug = Astro.url.pathname.match(/^\/blog\/([^/]+)\/?$/)?.[1] ?? '';
+const resources = (articleResourceLinks as Record<string, ResourceLink[]>)[articleSlug] ?? [];
+---
+
+{resources.length > 0 && (
+  <section class="not-prose my-8 rounded-2xl border border-dark-600 bg-dark-900 p-5 sm:p-6" aria-labelledby={`article-resources-${articleSlug}`}>
+    <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Ponlo en práctica</p>
+    <h2 id={`article-resources-${articleSlug}`} class="mt-3 font-display text-2xl font-bold text-white">Tres caminos útiles para continuar</h2>
+    <p class="mt-2 max-w-2xl text-sm leading-6 text-dark-200">
+      Elige el siguiente paso según necesites revisar una herramienta, tomar una decisión o ejecutar un proceso.
+    </p>
+    <div class="mt-5 grid gap-3 md:grid-cols-3">
+      {resources.map((resource) => (
+        <a
+          href={resource.href}
+          data-track="article_resource_click"
+          data-track-label={`${articleSlug}:${resource.href}`}
+          data-track-component="article_resource_links"
+          class="group rounded-lg border border-dark-600 bg-dark-800 p-4 transition hover:border-brand-500/60 hover:bg-dark-700"
+        >
+          <span class="text-xs font-semibold uppercase tracking-wide text-brand-300">{resource.kind}</span>
+          <h3 class="mt-2 font-display text-lg font-bold text-white group-hover:text-brand-200">{resource.label}</h3>
+          <p class="mt-2 text-sm leading-6 text-dark-300">{resource.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
