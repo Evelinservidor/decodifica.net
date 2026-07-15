@@ -5,64 +5,60 @@ import { siteConfig } from '~/lib/site-config';
 ---
 
 <BaseLayout
-  title="Quienes somos"
-  description="Quien esta detras de Decodifica, como elegimos temas y que criterio usamos para publicar guias de inteligencia artificial."
+  title="Quiénes somos y quién está detrás"
+  description="Conoce quién está detrás de Decodifica, por qué es un proyecto editorial independiente y cómo contactar para correcciones o colaboraciones."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header>
       <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-        Sobre Decodifica
+        Personas y transparencia
       </p>
       <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
-        Filtramos la IA que merece tu tiempo.
+        Quién está detrás de Decodifica.
       </h1>
       <p class="mt-5 text-lg leading-8 text-dark-200">
-        Decodifica es un proyecto editorial independiente creado por Jordi Castaneira para explicar herramientas, modelos y flujos de inteligencia artificial con criterio practico, sin ruido y sin vender humo.
+        Decodifica es un proyecto editorial independiente creado y gestionado por Jordi Castaneira para explicar herramientas, modelos y flujos de inteligencia artificial con criterio práctico, sin ruido y sin vender humo.
       </p>
     </header>
 
     <section class="mt-12 grid gap-5 sm:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold">Que cubrimos</h2>
-        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
-          {siteConfig.pillars.map((pillar) => (
-            <li><strong class="text-white">{pillar.title}:</strong> {pillar.description}</li>
-          ))}
-        </ul>
+        <h2 class="font-display text-2xl font-bold">Responsable editorial</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          Jordi selecciona los temas, coordina la investigación y mantiene el canal, la web y sus recursos. La IA ayuda en el proceso, pero la decisión editorial final tiene responsable humano.
+        </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold">Que evitamos</h2>
-        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
-          {siteConfig.antiTopics.map((topic) => (
-            <li>{topic}</li>
-          ))}
-        </ul>
+        <h2 class="font-display text-2xl font-bold">Proyecto independiente</h2>
+        <p class="mt-4 text-sm leading-6 text-dark-200">
+          Decodifica prioriza la utilidad para la audiencia. Una colaboración comercial no compra una conclusión y debe identificarse cuando exista.
+        </p>
       </div>
     </section>
 
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
-      <h2>Como trabajamos</h2>
+      <h2>Qué responsabilidad asumimos</h2>
       <p>
-        YouTube puede inspirar una idea, pero no valida un dato. Antes de publicar buscamos fuentes primarias, documentacion oficial, repositorios, benchmarks con metodologia y pruebas que ayuden a entender que cambia para una persona normal.
-      </p>
-      <p>
-        Nuestro criterio es simple: una herramienta de IA importa si te ayuda a decidir, producir, aprender o ahorrar tiempo con menos friccion. Si solo suena espectacular pero no aterriza en una accion concreta, no es prioridad.
+        Una guía debe separar hechos, declaraciones de fabricantes, pruebas propias e inferencias. Si una herramienta cambia, una fuente deja de estar disponible o detectas un error, puedes avisarnos para revisarlo.
       </p>
 
-      <h2>Quien esta detras</h2>
+      <h2>Cómo se organiza Decodifica</h2>
       <p>
-        Jordi Castaneira gestiona Decodifica como canal y web sobre inteligencia artificial practica. La web reune las guias, recursos, newsletter y comunidad para que el contenido no dependa solo de una red social.
+        El <a href="/decodifica/">canal de YouTube</a> sirve para descubrir y entender una novedad. La web reúne guías, herramientas y recursos que se pueden volver a consultar. La newsletter ayuda a conservar una relación directa sin depender de una plataforma.
       </p>
 
-      <h2>Como contactar</h2>
+      <h2>Cómo contactar</h2>
       <p>
         Para consultas generales, correcciones o privacidad puedes escribir a <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.publicEmailLabel}</a>. Para propuestas comerciales o colaboraciones, usa <a href={`mailto:${siteConfig.author.collaborationsEmail}`}>{siteConfig.author.collaborationsEmail}</a>.
+      </p>
+      <p>
+        Si buscas el criterio que guía cada publicación, consulta <a href="/sobre/">la misión, los principios y el método editorial</a>.
       </p>
     </section>
 
     <div class="mt-10 flex flex-col gap-3 sm:flex-row">
       <Button href="/recursos" variant="primary">Ver recursos IA</Button>
-      <Button href="/contacto" variant="secondary">Contactar</Button>
+      <Button href="/contacto" variant="secondary">Contactar con Decodifica</Button>
     </div>
   </article>
 </BaseLayout>

@@ -25,7 +25,7 @@ const rows = [
 ];
 ---
 
-<BaseLayout title={comparison.title} description={comparison.description} type="article" modifiedDate="2026-07-14" section="Comparativas IA">
+<BaseLayout title={comparison.seoTitle ?? `${comparison.title}: cuál elegir`} description={comparison.description} type="article" modifiedDate="2026-07-14" section="Comparativas IA">
   <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8" data-track-read-min="comparison_read_minimum" data-track-label={comparison.slug} data-track-component="comparison_detail">
     <nav class="text-sm text-dark-300" aria-label="Migas de pan"><a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a><span class="mx-2">/</span><span>Comparativas</span></nav>
     <header class="mt-8 max-w-4xl">

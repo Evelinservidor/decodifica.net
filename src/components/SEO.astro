@@ -15,6 +15,7 @@ export interface Props {
   imageAlt?: string;
   keywords?: string[];
   section?: string; // Pilar 1 / Pilar 2
+  noindex?: boolean;
 }
 
 const {
@@ -30,6 +31,7 @@ const {
   imageAlt,
   keywords = [],
   section,
+  noindex = false,
 } = Astro.props;
 
 const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline}`;
@@ -100,6 +102,7 @@ const articleLd = type === 'article' && pubDate
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonicalUrl} />
 

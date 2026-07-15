@@ -5,43 +5,64 @@ import { siteConfig } from '~/lib/site-config';
 ---
 
 <BaseLayout
-  title="El canal"
-  description="Canal de YouTube sobre IA en español. Videos prácticos, sin fluff, con fuentes verificadas."
+  title="Canal de YouTube de Decodifica"
+  description="Conoce el canal de YouTube de Decodifica: vídeos breves sobre herramientas y flujos de IA, con fuentes verificadas y una decisión práctica."
 >
   <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="text-center">
+    <header>
+      <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        El canal de YouTube
+      </p>
       <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        El canal Decodifica
+        IA útil en vídeo, con una decisión clara.
       </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        Videos de 3-7 minutos sobre IA. Prácticos, verificados, sin clickbait.
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
+        Decodifica publica vídeos en español para descubrir una herramienta, entender qué cambia y decidir si merece una prueba. Sin listas interminables ni entusiasmo prestado.
       </p>
     </header>
 
-    <div class="mt-12 rounded-2xl border border-dark-600 bg-dark-800 p-8">
-      <h2 class="font-display text-2xl font-bold">Sobre el canal</h2>
-      <div class="prose prose-invert mt-4 max-w-none text-dark-200">
-        <p>
-          Decodifica es un canal de YouTube dedicado a la inteligencia artificial en español.
-          Cubrimos dos cosas y las hacemos bien:
-        </p>
-        <ul>
+    <section class="mt-12 grid gap-5 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-7">
+        <h2 class="font-display text-2xl font-bold">Qué encontrarás</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+          <li>Una utilidad concreta antes que una colección de funciones.</li>
+          <li>Pruebas, fuentes y contexto suficiente para entender los límites.</li>
+          <li>Una recomendación final: probar, esperar, comparar o descartar.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-7">
+        <h2 class="font-display text-2xl font-bold">Qué cubrimos</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
           {siteConfig.pillars.map((pilar) => (
             <li><strong>{pilar.title}:</strong> {pilar.description}</li>
           ))}
         </ul>
-        <p>
-          <strong>Lo que NO hacemos:</strong>
-        </p>
-        <ul>
-          {siteConfig.antiTopics.map((topic) => (
-            <li>{topic}</li>
-          ))}
-        </ul>
       </div>
-    </div>
+    </section>
 
-    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+    <section class="prose prose-invert mt-12 max-w-none text-dark-200">
+      <h2>Cómo elegimos los temas</h2>
+      <p>
+        Priorizamos herramientas y flujos que una persona pueda usar, probar o evaluar. Los modelos abiertos y las alternativas menos conocidas tienen espacio cuando ofrecen una ventaja práctica; una marca popular solo entra si existe un ángulo que ayude a decidir mejor.
+      </p>
+
+      <h2>Lo que dejamos fuera</h2>
+      <p>
+        No intentamos cubrir toda la actualidad de la inteligencia artificial. Evitamos los temas que generan ruido pero no terminan en una acción útil:
+      </p>
+      <ul>
+        {siteConfig.antiTopics.map((topic) => (
+          <li>{topic}</li>
+        ))}
+      </ul>
+
+      <h2>Del vídeo a una guía reutilizable</h2>
+      <p>
+        La web amplía lo que un vídeo corto no puede resolver: fuentes, comparativas, fichas y workflows que puedes consultar cuando llegue una tarea real. Puedes leer <a href="/sobre/">la misión y el método editorial</a> o conocer <a href="/quienes-somos/">quién está detrás de Decodifica</a>.
+      </p>
+    </section>
+
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
       <Button href={siteConfig.social.youtube} variant="primary" size="lg" external>
         Suscribirme al canal
       </Button>

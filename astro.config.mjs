@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
+const sitemapExcludedPaths = new Set(['/login', '/recursos-ia']);
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://decodifica.net',
@@ -10,7 +12,9 @@ export default defineConfig({
   output: 'static',
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !sitemapExcludedPaths.has(new URL(page).pathname.replace(/\/$/, '')),
+    }),
   ],
   build: {
     inlineStylesheets: 'auto',
