@@ -1,0 +1,270 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { env } from '~/lib/env';
+---
+
+<BaseLayout
+  title="Conversación de la comunidad"
+  description="Conversación de la comunidad de IA práctica de Decodifica."
+  noindex
+>
+  <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <a href="/comunidad" class="text-sm font-semibold text-brand-300 hover:text-brand-200">← Volver a la comunidad</a>
+
+    <div id="thread-status" class="mt-6 rounded-lg border border-dark-600 bg-dark-800 p-5 text-sm text-dark-200" role="status">
+      Cargando conversación…
+    </div>
+
+    <article id="thread" class="mt-6 hidden rounded-lg border border-dark-600 bg-dark-800 p-6 sm:p-8">
+      <div id="thread-meta" class="flex flex-wrap items-center gap-2 text-xs text-dark-300"></div>
+      <h1 id="thread-title" class="mt-3 font-display text-3xl font-bold sm:text-4xl"></h1>
+      <div id="thread-body" class="mt-5 whitespace-pre-line text-base leading-7 text-dark-100"></div>
+      <div id="thread-stats" class="mt-6 flex flex-wrap gap-3 border-t border-dark-600 pt-4 text-xs text-dark-300"></div>
+    </article>
+
+    <section class="mt-8">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Respuestas</p>
+          <h2 class="mt-1 font-display text-2xl font-bold">Continúa la conversación</h2>
+        </div>
+        <span id="comment-count" class="text-sm text-dark-300"></span>
+      </div>
+
+      <div id="comments" class="mt-5 space-y-4" aria-live="polite"></div>
+      <div id="comments-empty" class="mt-5 hidden rounded-lg border border-dark-600 bg-dark-800 p-6 text-sm text-dark-200">
+        Todavía no hay respuestas. Si puedes aportar una prueba, un límite o una alternativa, abre la conversación.
+      </div>
+    </section>
+
+    <section id="comment-composer" class="mt-8 hidden rounded-lg border border-brand-500/30 bg-brand-500/5 p-6">
+      <h2 class="font-display text-xl font-bold">Responder</h2>
+      <form id="comment-form" class="mt-4 space-y-4" data-track="community_comment_attempt" data-track-component="community_thread">
+        <div>
+          <label for="comment-body" class="block text-sm font-semibold text-dark-100">Tu respuesta</label>
+          <textarea
+            id="comment-body"
+            name="body"
+            required
+            minlength="8"
+            maxlength="2500"
+            rows="5"
+            placeholder="Aporta contexto, una prueba o una pregunta concreta. No compartas información sensible."
+            class="mt-2 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20"
+          ></textarea>
+        </div>
+        <button
+          id="comment-submit"
+          type="submit"
+          class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          Publicar respuesta
+        </button>
+      </form>
+    </section>
+
+    <section id="comment-login" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 class="font-display text-xl font-bold">¿Quieres responder?</h2>
+          <p class="mt-2 text-sm text-dark-200">La lectura es pública. Inicia sesión únicamente para participar.</p>
+        </div>
+        <a
+          href="/login"
+          data-track="community_login_prompt"
+          data-track-label="responder_hilo"
+          class="inline-flex shrink-0 items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600"
+        >
+          Iniciar sesión
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
+    (async () => {
+      const status = document.getElementById('thread-status');
+      const thread = document.getElementById('thread');
+      const commentsNode = document.getElementById('comments');
+      const commentsEmpty = document.getElementById('comments-empty');
+      const commentCount = document.getElementById('comment-count');
+      const postId = new URLSearchParams(window.location.search).get('id') || '';
+      const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+      function escapeHtml(value) {
+        const div = document.createElement('div');
+        div.textContent = String(value || '');
+        return div.innerHTML;
+      }
+
+      function authorBadge(author) {
+        const teamRoles = new Set(['admin', 'owner', 'moderator', 'team']);
+        const badge = author.author_badge
+          || author.community_badge
+          || (author.author_is_team || author.is_team || teamRoles.has(String(author.author_role || author.role || '').toLowerCase()) ? 'Cuenta del equipo' : '');
+        if (!badge) return '';
+        return `<span class="rounded-full border border-brand-500/40 bg-brand-500/10 px-2 py-0.5 font-semibold text-brand-300">${escapeHtml(badge)}</span>`;
+      }
+
+      function showError(message) {
+        if (!status) return;
+        status.className = 'mt-6 rounded-lg border border-red-500/40 bg-red-500/10 p-5 text-sm text-red-200';
+        status.textContent = message;
+      }
+
+      async function loadComments(supabase) {
+        const communityResponse = await supabase
+          .from('community_comments_with_author')
+          .select('*')
+          .eq('post_id', postId)
+          .order('created_at', { ascending: true });
+        if (!communityResponse.error) {
+          const comments = communityResponse.data || [];
+          commentCount.textContent = `${comments.length} ${comments.length === 1 ? 'respuesta' : 'respuestas'}`;
+          commentsEmpty?.classList.toggle('hidden', comments.length > 0);
+          if (!commentsNode) return;
+          commentsNode.innerHTML = comments.map((comment) => `
+            <article class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+              <div class="flex flex-wrap items-center gap-2 text-xs text-dark-300">
+                <span class="font-semibold text-dark-100">${escapeHtml(comment.author_display_name || 'Miembro de Decodifica')}</span>
+                ${authorBadge(comment)}
+                <span aria-hidden="true">·</span>
+                <time datetime="${escapeHtml(comment.created_at)}">${new Date(comment.created_at).toLocaleDateString('es-ES')}</time>
+              </div>
+              <p class="mt-3 whitespace-pre-line text-sm leading-6 text-dark-200">${escapeHtml(comment.body)}</p>
+            </article>
+          `).join('');
+          return;
+        }
+
+        const { data: comments, error } = await supabase
+          .from('comments')
+          .select('*')
+          .eq('post_id', postId)
+          .order('created_at', { ascending: true });
+        if (error) throw error;
+
+        const authorIds = [...new Set((comments || []).map((comment) => comment.author_id).filter(Boolean))];
+        const profileMap = new Map();
+        if (authorIds.length > 0) {
+          const { data: profiles, error: profilesError } = await supabase
+            .from('profiles')
+            .select('id,display_name,avatar_url,role')
+            .in('id', authorIds);
+          if (profilesError) throw profilesError;
+          (profiles || []).forEach((profile) => profileMap.set(profile.id, profile));
+        }
+
+        commentCount.textContent = `${(comments || []).length} ${(comments || []).length === 1 ? 'respuesta' : 'respuestas'}`;
+        commentsEmpty?.classList.toggle('hidden', (comments || []).length > 0);
+        if (!commentsNode) return;
+        commentsNode.innerHTML = (comments || []).map((comment) => {
+          const author = profileMap.get(comment.author_id) || {};
+          return `
+            <article class="rounded-lg border border-dark-600 bg-dark-800 p-5">
+              <div class="flex flex-wrap items-center gap-2 text-xs text-dark-300">
+                <span class="font-semibold text-dark-100">${escapeHtml(author.display_name || 'Miembro de Decodifica')}</span>
+                ${authorBadge(author)}
+                <span aria-hidden="true">·</span>
+                <time datetime="${escapeHtml(comment.created_at)}">${new Date(comment.created_at).toLocaleDateString('es-ES')}</time>
+              </div>
+              <p class="mt-3 whitespace-pre-line text-sm leading-6 text-dark-200">${escapeHtml(comment.body)}</p>
+            </article>
+          `;
+        }).join('');
+      }
+
+      if (!uuidPattern.test(postId)) {
+        showError('La conversación solicitada no es válida.');
+        return;
+      }
+
+      try {
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
+        const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+          auth: {
+            flowType: 'pkce',
+            persistSession: true,
+            autoRefreshToken: true,
+            storage: window.localStorage,
+            storageKey: 'sb-' + supabaseUrl.split('//')[1].split('.')[0] + '-auth-token',
+          },
+        });
+
+        const [communityPostResponse, { data: { user } }] = await Promise.all([
+          supabase.from('community_posts_with_author').select('*').eq('id', postId).maybeSingle(),
+          supabase.auth.getUser(),
+        ]);
+        let post = communityPostResponse.data;
+        let postError = communityPostResponse.error;
+        if (postError) {
+          const fallback = await supabase.from('posts_with_author').select('*').eq('id', postId).maybeSingle();
+          post = fallback.data;
+          postError = fallback.error;
+        }
+        if (postError) throw postError;
+        if (!post) {
+          showError('Esta conversación no existe o ya no está disponible.');
+          return;
+        }
+
+        status?.classList.add('hidden');
+        thread?.classList.remove('hidden');
+        document.getElementById('thread-title').textContent = post.title;
+        document.getElementById('thread-body').textContent = post.body;
+        document.getElementById('thread-meta').innerHTML = `
+          <span class="font-semibold text-brand-300">${escapeHtml(post.category || 'Conversación')}</span>
+          ${authorBadge(post)}
+          <span>${escapeHtml(post.author_display_name || 'Miembro de Decodifica')}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime="${escapeHtml(post.created_at)}">${new Date(post.created_at).toLocaleDateString('es-ES')}</time>
+        `;
+        document.getElementById('thread-stats').innerHTML = `
+          <span>${Number(post.comments_count || 0)} comentarios</span>
+          <span>${Number(post.likes_count || 0)} me gusta</span>
+        `;
+        document.title = `${post.title} | Decodifica`;
+
+        await loadComments(supabase);
+        window.DecodificaTrack?.emit?.('community_thread_view', {
+          component: 'community_thread',
+        });
+
+        if (user) {
+          document.getElementById('comment-composer')?.classList.remove('hidden');
+          document.getElementById('comment-form')?.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const submit = document.getElementById('comment-submit');
+            const body = form.body.value.trim();
+            if (body.length < 8) return;
+
+            submit.disabled = true;
+            submit.textContent = 'Publicando…';
+            const { error } = await supabase
+              .from('comments')
+              .insert({ post_id: postId, author_id: user.id, body });
+            if (error) {
+              showError(`No se pudo publicar la respuesta: ${error.message}`);
+              submit.disabled = false;
+              submit.textContent = 'Publicar respuesta';
+              return;
+            }
+
+            form.reset();
+            submit.disabled = false;
+            submit.textContent = 'Publicar respuesta';
+            window.DecodificaTrack?.emit?.('community_comment_created', {
+              component: 'community_thread',
+            });
+            await loadComments(supabase);
+          });
+        } else {
+          document.getElementById('comment-login')?.classList.remove('hidden');
+        }
+      } catch (error) {
+        showError(`No se pudo cargar la conversación: ${error?.message || String(error)}`);
+      }
+    })();
+  </script>
+</BaseLayout>

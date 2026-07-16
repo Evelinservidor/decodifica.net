@@ -6,93 +6,304 @@ import { env } from '~/lib/env';
 
 <BaseLayout
   title="Comunidad de IA práctica"
-  description="Comunidad de Decodifica para preguntas, recursos y decisiones prácticas sobre herramientas de IA."
+  description="Pregunta, comparte pruebas y ayuda a decidir qué herramientas y workflows debe analizar Decodifica."
 >
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
-    <header class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+    <header class="grid gap-8 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          Punto de encuentro de Decodifica
+          Comunidad de IA práctica
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
-          Pregunta, propone temas y sigue las pruebas de Decodifica.
+          Trae una tarea real. La convertimos en una conversación útil.
         </h1>
-        <p class="mt-4 text-lg text-dark-200">
-          La comunidad empieza simple: dudas sobre herramientas, ideas para próximos vídeos, recursos compartidos y seguimiento de lo que ya hemos analizado.
+        <p class="mt-4 max-w-2xl text-lg text-dark-200">
+          Puedes leer todas las conversaciones sin crear una cuenta. Inicia sesión solo cuando quieras preguntar, responder o compartir una prueba.
         </p>
-        <div class="mt-6 grid gap-3 text-sm text-dark-200 sm:grid-cols-3">
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Preguntas sobre herramientas</div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Ideas para vídeos y guías</div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">Recursos y decisiones guardadas</div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="#conversaciones"
+            data-track="community_feed_open"
+            data-track-label="ver_conversaciones"
+            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600"
+          >
+            Ver conversaciones
+          </a>
+          <a
+            href="/login"
+            data-track="community_login_prompt"
+            data-track-label="hacer_primera_pregunta"
+            class="inline-flex items-center justify-center rounded-lg border border-dark-500 bg-dark-800 px-5 py-3 font-semibold text-white transition hover:border-brand-400"
+          >
+            Hacer una pregunta
+          </a>
         </div>
       </div>
+
       <NewsletterForm
-        title="Recibe primero las novedades"
-        description="Te avisamos de nuevos recursos, pruebas y temas para que puedas seguirlos sin estar pendiente de cada red."
+        title="Recibe el filtro semanal"
+        description="Una tarea real, varias herramientas, un proceso ganador y el fallo que debes evitar."
         buttonLabel="Unirme gratis"
       />
     </header>
 
-    <section class="mt-12 grid gap-5 lg:grid-cols-3">
+    <section class="mt-12 grid gap-5 lg:grid-cols-3" aria-label="Cómo funciona la comunidad">
       <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <p class="text-sm font-semibold text-brand-300">1</p>
-        <h2 class="mt-2 font-display text-xl font-bold">Recibe el filtro</h2>
-        <p class="mt-2 text-sm leading-6 text-dark-200">La newsletter resume qué probar, qué evitar y qué recurso guardar cada semana.</p>
+        <p class="text-sm font-semibold text-brand-300">Pregunta</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Explica la tarea</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Qué quieres conseguir, qué herramienta usas y en qué punto te estás atascando.</p>
       </article>
       <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <p class="text-sm font-semibold text-brand-300">2</p>
-        <h2 class="mt-2 font-display text-xl font-bold">Trae una duda real</h2>
-        <p class="mt-2 text-sm leading-6 text-dark-200">Preguntas sobre herramientas, prompts, workflows o límites que merecen una prueba.</p>
+        <p class="text-sm font-semibold text-brand-300">Prueba</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Separa demo de utilidad</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Compartimos resultados, límites y pasos que otra persona pueda revisar o repetir.</p>
       </article>
       <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <p class="text-sm font-semibold text-brand-300">3</p>
-        <h2 class="mt-2 font-display text-xl font-bold">Ayuda a elegir próximos temas</h2>
-        <p class="mt-2 text-sm leading-6 text-dark-200">Las mejores preguntas ayudan a decidir qué herramientas merece la pena probar después.</p>
+        <p class="text-sm font-semibold text-brand-300">Decide</p>
+        <h2 class="mt-2 font-display text-xl font-bold">Elige el siguiente análisis</h2>
+        <p class="mt-2 text-sm leading-6 text-dark-200">Las dudas repetidas ayudan a priorizar próximos vídeos, comparativas, guías y workflows.</p>
       </article>
     </section>
 
     <section class="mt-8 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 class="font-display text-2xl font-bold">Acceso a comunidad</h2>
-          <p class="mt-2 text-sm text-dark-200">
-            Si ya tienes cuenta, puedes entrar con Google. Si aún no hay actividad, usa la newsletter como entrada principal y responde con tu duda.
+          <h2 class="font-display text-2xl font-bold">Participación transparente</h2>
+          <p class="mt-2 max-w-3xl text-sm leading-6 text-dark-200">
+            Las cuentas del equipo aparecen identificadas. No usamos perfiles ficticios ni conversaciones simuladas como si fueran aportaciones reales.
           </p>
         </div>
         <a
           href="/login"
-          class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition hover:bg-brand-600"
+          data-track="community_login_prompt"
+          data-track-label="acceso_comunidad"
+          class="inline-flex shrink-0 items-center justify-center rounded-lg border border-brand-500/50 px-5 py-2.5 font-semibold text-brand-300 transition hover:bg-brand-500/10"
         >
           Iniciar sesión
         </a>
       </div>
     </section>
 
-    <div id="user-info" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-4 text-center">
-      <p class="text-sm text-dark-200">
-        Conectado como <strong id="user-email"></strong>
-      </p>
-      <button
-        id="signout"
-        type="button"
-        class="mt-2 text-sm text-brand-400 hover:text-brand-300"
-      >
-        Cerrar sesión
-      </button>
-    </div>
+    <div id="community-status" class="mt-8 hidden rounded-lg border p-4 text-sm" role="status"></div>
 
-    <div id="feed" class="mt-8 space-y-4 hidden"></div>
+    <section id="session-panel" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-5">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm text-dark-200">
+          Conectado como <strong id="user-email" class="text-white"></strong>
+        </p>
+        <button id="signout" type="button" class="text-left text-sm font-semibold text-brand-300 hover:text-brand-200">
+          Cerrar sesión
+        </button>
+      </div>
+    </section>
 
-    <div id="empty-state" class="mt-8 hidden rounded-lg border border-dark-600 bg-dark-800 p-12 text-center">
-      <h2 class="font-display text-2xl font-bold">Estamos abriendo este espacio</h2>
-      <p class="mt-2 text-dark-200">
-        Mientras aparecen las primeras conversaciones, puedes seguir Decodifica por la newsletter, YouTube, Facebook, Bluesky y TikTok.
-      </p>
-    </div>
+    <section id="composer" class="mt-8 hidden rounded-lg border border-brand-500/30 bg-brand-500/5 p-6">
+      <p class="text-sm font-semibold text-brand-300">Nueva conversación</p>
+      <h2 class="mt-2 font-display text-2xl font-bold">¿Qué tarea quieres resolver con IA?</h2>
+      <form id="post-form" class="mt-5 space-y-4" data-track="community_post_attempt" data-track-component="community_composer">
+        <div>
+          <label for="post-title" class="block text-sm font-semibold text-dark-100">Título</label>
+          <input
+            id="post-title"
+            name="title"
+            type="text"
+            required
+            minlength="8"
+            maxlength="120"
+            placeholder="Ejemplo: ¿Cómo resumiríais reuniones sin perder decisiones?"
+            class="mt-2 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20"
+          />
+        </div>
+        <div>
+          <label for="post-body" class="block text-sm font-semibold text-dark-100">Contexto</label>
+          <textarea
+            id="post-body"
+            name="body"
+            required
+            minlength="20"
+            maxlength="3000"
+            rows="6"
+            placeholder="Cuenta qué resultado buscas, qué has probado y dónde falla. No incluyas datos personales, internos o sensibles."
+            class="mt-2 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder-dark-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20"
+          ></textarea>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-xs leading-5 text-dark-300">Publica solo información que puedas compartir. Las respuestas pueden convertirse en señales editoriales agregadas.</p>
+          <button
+            id="post-submit"
+            type="submit"
+            class="inline-flex shrink-0 items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Publicar pregunta
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="logged-out-prompt" class="mt-8 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 class="font-display text-xl font-bold">Leer es público. Participar requiere una cuenta.</h2>
+          <p class="mt-2 text-sm text-dark-200">Así reducimos spam y podemos mantener conversaciones útiles sin pedirte otra contraseña.</p>
+        </div>
+        <a
+          href="/login"
+          data-track="community_login_prompt"
+          data-track-label="participar_comunidad"
+          class="inline-flex shrink-0 items-center justify-center rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600"
+        >
+          Entrar para participar
+        </a>
+      </div>
+    </section>
+
+    <section id="conversaciones" class="mt-12 scroll-mt-24">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Conversaciones abiertas</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">Dudas, pruebas y decisiones</h2>
+        </div>
+        <p id="feed-count" class="text-sm text-dark-300">Cargando conversaciones…</p>
+      </div>
+
+      <div id="feed" class="mt-6 space-y-4" aria-live="polite"></div>
+
+      <div id="empty-state" class="mt-6 hidden rounded-lg border border-dark-600 bg-dark-800 p-8">
+        <p class="text-sm font-semibold text-brand-300">Primera etapa</p>
+        <h3 class="mt-2 font-display text-2xl font-bold">Todavía no hay conversaciones públicas.</h3>
+        <p class="mt-3 max-w-3xl text-dark-200">
+          Puedes abrir la primera con una pregunta concreta. Si necesitas una idea, empieza por una de estas:
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-3">
+          <a href="/login" class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm text-dark-100 transition hover:border-brand-400">
+            ¿Qué tarea repetitiva te roba más tiempo?
+          </a>
+          <a href="/login" class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm text-dark-100 transition hover:border-brand-400">
+            ¿Qué herramienta te prometió más de lo que cumple?
+          </a>
+          <a href="/login" class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm text-dark-100 transition hover:border-brand-400">
+            ¿Qué comparación debería probar Decodifica?
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 rounded-lg border border-dark-600 bg-dark-800 p-6">
+      <p class="text-sm font-semibold text-brand-300">Miembros fundadores</p>
+      <div class="mt-2 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <h2 class="font-display text-2xl font-bold">Ayuda a construir una comunidad que sirva para algo</h2>
+          <p class="mt-2 max-w-3xl text-sm leading-6 text-dark-200">
+            Los primeros miembros podrán proponer pruebas, votar próximos análisis y recibir respuesta directa a su primera duda. La insignia se reserva para participantes reales.
+          </p>
+        </div>
+        <a
+          href="/contacto?asunto=miembro-fundador"
+          data-track="community_founder_interest"
+          data-track-label="quiero_ser_miembro_fundador"
+          class="inline-flex items-center justify-center rounded-lg border border-brand-500/50 px-5 py-3 font-semibold text-brand-300 transition hover:bg-brand-500/10"
+        >
+          Quiero participar
+        </a>
+      </div>
+    </section>
   </div>
 
   <script is:inline define:vars={{ supabaseUrl: env.PUBLIC_SUPABASE_URL, supabaseAnonKey: env.PUBLIC_SUPABASE_ANON_KEY }}>
     (async () => {
+      const status = document.getElementById('community-status');
+      const feed = document.getElementById('feed');
+      const feedCount = document.getElementById('feed-count');
+      const emptyState = document.getElementById('empty-state');
+      const sessionPanel = document.getElementById('session-panel');
+      const composer = document.getElementById('composer');
+      const loggedOutPrompt = document.getElementById('logged-out-prompt');
+
+      function showStatus(message, kind = 'info') {
+        if (!status) return;
+        const colors = kind === 'error'
+          ? 'border-red-500/40 bg-red-500/10 text-red-200'
+          : kind === 'success'
+            ? 'border-green-500/40 bg-green-500/10 text-green-200'
+            : 'border-brand-500/40 bg-brand-500/10 text-dark-100';
+        status.className = `mt-8 rounded-lg border p-4 text-sm ${colors}`;
+        status.textContent = message;
+      }
+
+      function escapeHtml(value) {
+        const div = document.createElement('div');
+        div.textContent = String(value || '');
+        return div.innerHTML;
+      }
+
+      function excerpt(value, length = 280) {
+        const text = String(value || '').trim();
+        return text.length > length ? `${text.slice(0, length).trim()}…` : text;
+      }
+
+      function authorBadge(post) {
+        const teamRoles = new Set(['admin', 'owner', 'moderator', 'team']);
+        const badge = post.author_badge
+          || (post.author_is_team || teamRoles.has(String(post.author_role || '').toLowerCase()) ? 'Cuenta del equipo' : '');
+        if (!badge) return '';
+        return `<span class="rounded-full border border-brand-500/40 bg-brand-500/10 px-2 py-0.5 font-semibold text-brand-300">${escapeHtml(badge)}</span>`;
+      }
+
+      function categoryLabel(post) {
+        const labels = {
+          welcome: 'Empieza aquí',
+          question: 'Pregunta',
+          lab: 'Laboratorio',
+          vote: 'Votación',
+          guide: 'Guía',
+        };
+        return labels[post.category] || 'Conversación';
+      }
+
+      function renderPosts(posts) {
+        if (!feed || !feedCount || !emptyState) return;
+        const sorted = [...posts].sort((a, b) => {
+          const pinned = Number(Boolean(b.is_pinned)) - Number(Boolean(a.is_pinned));
+          if (pinned) return pinned;
+          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+        });
+
+        feedCount.textContent = `${sorted.length} ${sorted.length === 1 ? 'conversación' : 'conversaciones'}`;
+        emptyState.classList.toggle('hidden', sorted.length > 0);
+        feed.innerHTML = sorted.map((post) => {
+          const postUrl = `/comunidad/hilo?id=${encodeURIComponent(post.id)}`;
+          return `
+            <article class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-dark-500">
+              <div class="flex flex-wrap items-center gap-2 text-xs text-dark-300">
+                <span class="font-semibold text-brand-300">${escapeHtml(categoryLabel(post))}</span>
+                ${post.is_pinned ? '<span class="rounded-full bg-dark-700 px-2 py-0.5 text-dark-100">Fijado</span>' : ''}
+                ${authorBadge(post)}
+              </div>
+              <h3 class="mt-3 font-display text-xl font-bold">
+                <a
+                  href="${postUrl}"
+                  data-track="community_thread_open"
+                  data-track-label="${escapeHtml(post.title)}"
+                  class="transition hover:text-brand-300"
+                >
+                  ${escapeHtml(post.title)}
+                </a>
+              </h3>
+              <p class="mt-3 whitespace-pre-line text-sm leading-6 text-dark-200">${escapeHtml(excerpt(post.body))}</p>
+              <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-dark-300">
+                <span>${escapeHtml(post.author_display_name || 'Miembro de Decodifica')}</span>
+                <span aria-hidden="true">·</span>
+                <time datetime="${escapeHtml(post.created_at)}">${new Date(post.created_at).toLocaleDateString('es-ES')}</time>
+                <span aria-hidden="true">·</span>
+                <span>${Number(post.comments_count || 0)} comentarios</span>
+                <span aria-hidden="true">·</span>
+                <span>${Number(post.likes_count || 0)} me gusta</span>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
       try {
         const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.39.0');
         const supabase = createClient(supabaseUrl, supabaseAnonKey, {
@@ -105,59 +316,79 @@ import { env } from '~/lib/env';
           },
         });
 
-        const { data: { user } } = await supabase.auth.getUser();
+        const [{ data: { user } }, communityPostsResponse] = await Promise.all([
+          supabase.auth.getUser(),
+          supabase.from('community_posts_with_author').select('*').order('created_at', { ascending: false }).limit(50),
+        ]);
+
+        let posts = communityPostsResponse.data;
+        let postsError = communityPostsResponse.error;
+        if (postsError) {
+          const fallback = await supabase
+            .from('posts_with_author')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(50);
+          posts = fallback.data;
+          postsError = fallback.error;
+        }
+
+        if (postsError) throw postsError;
+        renderPosts(posts || []);
+        window.DecodificaTrack?.emit?.('community_feed_view', {
+          component: 'community_feed',
+          conversations: String((posts || []).length),
+        });
 
         if (user) {
-          const userInfo = document.getElementById('user-info');
-          userInfo?.classList.remove('hidden');
-          document.getElementById('user-email').textContent = user.email;
+          sessionPanel?.classList.remove('hidden');
+          composer?.classList.remove('hidden');
+          loggedOutPrompt?.classList.add('hidden');
+          const userEmail = document.getElementById('user-email');
+          if (userEmail) userEmail.textContent = user.email || 'cuenta conectada';
 
           document.getElementById('signout')?.addEventListener('click', async () => {
             await supabase.auth.signOut();
             window.location.reload();
           });
 
-          const { data: posts, error } = await supabase
-            .from('posts_with_author')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(20);
+          document.getElementById('post-form')?.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const submit = document.getElementById('post-submit');
+            const title = form.title.value.trim();
+            const body = form.body.value.trim();
+            if (title.length < 8 || body.length < 20) {
+              showStatus('Añade un título claro y suficiente contexto antes de publicar.', 'error');
+              return;
+            }
 
-          if (error) console.error('Error loading posts:', error);
+            submit.disabled = true;
+            submit.textContent = 'Publicando…';
+            const { data, error } = await supabase
+              .from('posts')
+              .insert({ author_id: user.id, title, body })
+              .select('id')
+              .single();
 
-          if (posts && posts.length > 0) {
-            const feed = document.getElementById('feed');
-            feed.classList.remove('hidden');
-            feed.innerHTML = posts.map((post) => `
-              <article class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-                <h2 class="font-display text-lg font-bold">${escapeHtml(post.title)}</h2>
-                <p class="mt-2 text-sm text-dark-200">${escapeHtml(post.body.slice(0, 200))}...</p>
-                <div class="mt-3 flex items-center gap-3 text-xs text-dark-300">
-                  <span>${escapeHtml(post.author_display_name || 'Anónimo')}</span>
-                  <span>-</span>
-                  <span>${new Date(post.created_at).toLocaleDateString('es-ES')}</span>
-                  <span>-</span>
-                  <span>${post.comments_count} comentarios</span>
-                  <span>-</span>
-                  <span>${post.likes_count} me gusta</span>
-                </div>
-              </article>
-            `).join('');
-          } else {
-            document.getElementById('empty-state')?.classList.remove('hidden');
-          }
-        } else {
-          document.getElementById('empty-state')?.classList.remove('hidden');
+            if (error) {
+              showStatus(`No se pudo publicar: ${error.message}`, 'error');
+              submit.disabled = false;
+              submit.textContent = 'Publicar pregunta';
+              return;
+            }
+
+            window.DecodificaTrack?.emit?.('community_post_created', {
+              component: 'community_composer',
+            });
+            showStatus('Pregunta publicada. Abriendo la conversación…', 'success');
+            window.location.href = `/comunidad/hilo?id=${encodeURIComponent(data.id)}`;
+          });
         }
-      } catch (err) {
-        console.error('[comunidad] init failed:', err);
+      } catch (error) {
+        if (feedCount) feedCount.textContent = 'No se pudo cargar el feed';
+        showStatus(`La comunidad no está disponible ahora mismo: ${error?.message || String(error)}`, 'error');
       }
     })();
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
   </script>
 </BaseLayout>
