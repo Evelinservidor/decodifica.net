@@ -200,12 +200,10 @@ to anon, authenticated;
 do $$
 declare
   profile_total integer;
-  post_total integer;
 begin
   select count(*) into profile_total from public.profiles;
-  select count(*) into post_total from public.posts;
 
-  if profile_total = 1 and post_total = 0 then
+  if profile_total = 1 then
     update public.profiles
     set
       display_name = 'Jordi · Decodifica',
