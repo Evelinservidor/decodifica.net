@@ -1,4 +1,5 @@
 import { expandedTools } from './tools-expanded';
+import autoPublishedToolsData from './tools-auto-published.json';
 import reviewLedger from './tool-review-ledger.json';
 
 export type ToolLink = {
@@ -563,7 +564,9 @@ function freshnessStatus(nextReviewAt: string): Tool['freshnessStatus'] {
   return nextReviewAt <= dueSoon ? 'due-soon' : 'current';
 }
 
-export const tools: Tool[] = [...coreTools, ...expandedTools].map((tool) => {
+const autoPublishedTools = autoPublishedToolsData as Tool[];
+
+export const tools: Tool[] = [...coreTools, ...expandedTools, ...autoPublishedTools].map((tool) => {
   const review = reviewLedger[tool.slug as keyof typeof reviewLedger];
   const verifiedAt = review?.verifiedAt ?? tool.verifiedAt ?? '2026-07-14';
   const reviewCadenceDays = review?.reviewCadenceDays ?? tool.reviewCadenceDays ?? 30;
