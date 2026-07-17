@@ -20,6 +20,7 @@ export const siteConfig = {
     facebook: 'https://www.facebook.com/JCAutomatizacionesIA',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
     tiktok: 'https://www.tiktok.com/@decodificalaia',
+    reddit: 'https://www.reddit.com/user/PergaminosProhibidos/',
   },
   newsletter: {
     url: 'https://buttondown.email/decodifica',

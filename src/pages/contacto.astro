@@ -57,7 +57,7 @@ import { siteConfig } from '~/lib/site-config';
 
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <div class="text-sm text-dark-300">Redes sociales</div>
-        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <a
             href={siteConfig.social.facebook}
             target="_blank"
@@ -81,6 +81,14 @@ import { siteConfig } from '~/lib/site-config';
             class="rounded-lg border border-dark-600 bg-dark-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-500/50"
           >
             TikTok
+          </a>
+          <a
+            href={siteConfig.social.reddit}
+            target="_blank"
+            rel="noopener"
+            class="rounded-lg border border-dark-600 bg-dark-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-500/50"
+          >
+            Reddit
           </a>
         </div>
       </div>

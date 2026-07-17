@@ -45,6 +45,9 @@ const year = new Date().getFullYear();
           {siteConfig.social.tiktok && (
             <li><a href={siteConfig.social.tiktok} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">TikTok</a></li>
           )}
+          {siteConfig.social.reddit && (
+            <li><a href={siteConfig.social.reddit} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Reddit</a></li>
+          )}
           <li><a href={siteConfig.newsletter.url} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Archivo Buttondown</a></li>
           <li><a href={`mailto:${siteConfig.author.email}`} class="text-dark-200 hover:text-brand-400">{siteConfig.author.publicEmailLabel}</a></li>
         </ul>
