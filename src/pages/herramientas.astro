@@ -5,7 +5,17 @@ import { tools } from '~/data/tools';
 import { toolUseCases } from '~/data/tool-use-cases';
 import { toolComparisons } from '~/data/tool-comparisons';
 
-const updatedAt = '14 julio 2026';
+const latestVerifiedAt = tools
+  .map((tool) => tool.verifiedAt)
+  .filter((value): value is string => Boolean(value))
+  .sort()
+  .at(-1) ?? '2026-07-14';
+const updatedAt = new Intl.DateTimeFormat('es-ES', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${latestVerifiedAt}T00:00:00Z`));
 const useCases = [...new Set(tools.map((tool) => tool.useCase))].sort();
 const prices = [...new Set(tools.map((tool) => tool.price))].sort();
 const privacyLevels = ['Baja', 'Media', 'Alta'];

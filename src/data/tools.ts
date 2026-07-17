@@ -38,6 +38,7 @@ export type Tool = {
   officialUrl: string;
   relatedLinks: ToolLink[];
   hasDetailPage: boolean;
+  publishedAt?: string;
   verifiedAt?: string;
   nextReviewAt?: string;
   reviewCadenceDays?: number;

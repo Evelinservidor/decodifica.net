@@ -22,6 +22,7 @@ export const GET: APIRoute = () => {
       platforms: tool.platforms,
       status: tool.status,
       evidenceLevel: tool.evidenceLevel,
+      publishedAt: tool.publishedAt,
       verifiedAt: tool.verifiedAt,
       nextReviewAt: tool.nextReviewAt,
       reviewCadenceDays: tool.reviewCadenceDays,
