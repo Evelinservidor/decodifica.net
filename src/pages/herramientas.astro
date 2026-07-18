@@ -28,33 +28,33 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
   title="Herramientas de IA por tarea"
   description="Biblioteca filtrable de herramientas IA recomendadas por Decodifica: caso de uso, precio, privacidad, dificultad y cuando usar cada una."
 >
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
-    <header class="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
+  <div class="page-shell mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <header class="page-hero grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
       <div>
-        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        <p class="eyebrow mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
           Biblioteca de herramientas IA
         </p>
-        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+        <h1 class="text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
           Elige una herramienta por tarea, no por ruido.
         </h1>
         <p class="mt-4 max-w-2xl text-lg leading-8 text-dark-200">
           Una biblioteca viva para comparar herramientas de IA por caso de uso, precio, privacidad, dificultad y momento adecuado. No es un ranking: es un mapa para decidir qué probar primero.
         </p>
         <div class="mt-6 grid gap-3 text-sm sm:grid-cols-3">
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
+          <div class="surface-panel rounded-xl border border-dark-600 bg-dark-800 p-4">
             <div class="text-2xl font-bold text-white">{tools.length}</div>
             <div class="mt-1 text-dark-300">fichas prácticas</div>
           </div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
+          <div class="surface-panel rounded-xl border border-dark-600 bg-dark-800 p-4">
             <div class="text-2xl font-bold text-white">{toolUseCases.length}</div>
             <div class="mt-1 text-dark-300">guías por tarea</div>
           </div>
-          <div class="rounded-lg border border-dark-600 bg-dark-800 p-4">
+          <div class="surface-panel rounded-xl border border-dark-600 bg-dark-800 p-4">
             <div class="text-2xl font-bold text-white">0</div>
             <div class="mt-1 text-dark-300">ranking patrocinado</div>
           </div>
         </div>
-        <p class="mt-4 text-xs text-dark-400">Actualizado: {updatedAt}</p>
+        <p class="mt-4 text-xs text-dark-300">Actualizado: {updatedAt}</p>
       </div>
 
       <NewsletterForm
@@ -71,13 +71,13 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
         { title: 'Revisar datos', description: 'Comprueba riesgos antes de subir información a una IA.', href: '/herramientas/preflight-datos/', event: 'utility_preflight_opened' },
         { title: 'Evaluar un resultado', description: 'Decide si el flujo merece conservarse, repetirse o descartarse.', href: '/herramientas/evaluador/', event: 'utility_evaluator_opened' },
       ].map((utility) => (
-        <a href={utility.href} data-track={utility.event} data-track-label={utility.title} data-track-component="tools_utility_hub" class="rounded-lg border border-brand-500/30 bg-dark-800 p-5 transition hover:border-brand-400">
+        <a href={utility.href} data-track={utility.event} data-track-label={utility.title} data-track-component="tools_utility_hub" class="interactive-card pressable rounded-xl border border-brand-500/30 bg-dark-800 p-5">
           <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">Utilidad gratuita</p><h2 class="mt-2 font-display text-xl font-bold">{utility.title}</h2><p class="mt-2 text-sm leading-6 text-dark-300">{utility.description}</p>
         </a>
       ))}
     </section>
 
-    <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-4 sm:p-5" aria-label="Filtros de herramientas IA">
+    <section class="surface-panel mt-10 rounded-xl border border-dark-600 bg-dark-800 p-4 sm:p-5" aria-label="Filtros de herramientas IA">
       <div class="grid gap-3 lg:grid-cols-[1.4fr_repeat(4,1fr)_auto] lg:items-end">
         <label class="block">
           <span class="text-xs font-semibold uppercase text-dark-300">Buscar</span>
@@ -150,7 +150,7 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
         const primaryLabel = tool.hasDetailPage ? 'Ver ficha práctica' : 'Ver página oficial';
         return (
           <article
-            class="tool-card flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-5 transition hover:border-brand-500/50"
+            class="tool-card surface-panel flex h-full flex-col rounded-xl border border-dark-600 bg-dark-800 p-5"
             data-name={tool.name.toLowerCase()}
             data-summary={tool.summary.toLowerCase()}
             data-tags={tool.tags.join(' ').toLowerCase()}
@@ -186,10 +186,10 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
             </div>
 
             <div class="mt-6 flex grow flex-col justify-end gap-3">
-              <a href={primaryHref} target={tool.hasDetailPage ? undefined : '_blank'} rel={tool.hasDetailPage ? undefined : 'noopener'} data-track={tool.hasDetailPage ? 'tool_card_click' : 'official_tool_click'} data-track-label={tool.slug} data-track-component="tools_hub" class="inline-flex w-fit rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-600">
+              <a href={primaryHref} target={tool.hasDetailPage ? undefined : '_blank'} rel={tool.hasDetailPage ? undefined : 'noopener'} data-track={tool.hasDetailPage ? 'tool_card_click' : 'official_tool_click'} data-track-label={tool.slug} data-track-component="tools_hub" class="cta-primary pressable inline-flex w-fit rounded-lg px-3 py-2 text-sm font-semibold">
                 {primaryLabel}
               </a>
-              <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} data-track="tool_to_comparison_click" data-track-label={`${tool.slug}:primary_related`} data-track-component="tools_hub" class="text-sm font-semibold text-brand-300 hover:text-brand-200">
+              <a href={tool.relatedLinks[0]?.href ?? '/blog/como-elegir-herramienta-ia/'} data-track="tool_to_comparison_click" data-track-label={`${tool.slug}:primary_related`} data-track-component="tools_hub" class="text-link text-sm font-semibold text-brand-300">
                 {tool.relatedLinks[0]?.label ?? 'Cómo elegir una herramienta IA'}
               </a>
             </div>
@@ -232,24 +232,24 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
           </p>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
-          <a href="/herramientas/chatgpt-vs-claude/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+          <a href="/herramientas/chatgpt-vs-claude/" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
             <h3 class="font-display text-xl font-bold text-white">ChatGPT vs Claude</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">Qué abrir primero para escritura, documentos, código, privacidad y uso general.</p>
           </a>
-          <a href="/herramientas/notebooklm-vs-perplexity/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+          <a href="/herramientas/notebooklm-vs-perplexity/" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
             <h3 class="font-display text-xl font-bold text-white">NotebookLM vs Perplexity</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">Cuando usar fuentes propias y cuando empezar por busqueda web con IA.</p>
           </a>
-          <a href="/herramientas/gamma-vs-canva-ai/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+          <a href="/herramientas/gamma-vs-canva-ai/" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
             <h3 class="font-display text-xl font-bold text-white">Gamma vs Canva AI</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">Qué usar para presentaciones, piezas visuales, marca y formatos de redes.</p>
           </a>
-          <a href="/herramientas/alternativas-elevenlabs/" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+          <a href="/herramientas/alternativas-elevenlabs/" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
             <h3 class="font-display text-xl font-bold text-white">Alternativas a ElevenLabs</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">Qué mirar para locución, doblaje, agentes de voz, API y clonación segura.</p>
           </a>
           {toolComparisons.map((comparison) => (
-            <a href={`/herramientas/comparativas/${comparison.slug}/`} class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+            <a href={`/herramientas/comparativas/${comparison.slug}/`} class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
               <h3 class="font-display text-xl font-bold text-white">{comparison.title}</h3>
               <p class="mt-2 text-sm leading-6 text-dark-300">{comparison.description}</p>
             </a>

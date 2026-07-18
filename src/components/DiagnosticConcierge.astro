@@ -134,7 +134,7 @@ const tasks = [
 ];
 ---
 
-<section id="diagnostico" class="py-12 sm:py-16">
+<section id="diagnostico" class="page-section py-12 sm:py-16">
   <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl">
       <p class="text-sm font-semibold text-brand-300">Diagnóstico Decodifica · {diagnosticVersion}</p>
@@ -147,7 +147,7 @@ const tasks = [
         <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">1.</span> ¿Qué tipo de tarea quieres resolver?</legend>
         <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="group" aria-label="Tarea para diagnosticar">
           {tasks.map((task) => (
-            <button type="button" data-task={task.id} aria-pressed="false" class="diagnostic-task rounded-xl border border-dark-600 bg-dark-800 p-4 text-left transition hover:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-900">
+            <button type="button" data-task={task.id} aria-pressed="false" class="diagnostic-task interactive-card rounded-xl border border-dark-600 bg-dark-800 p-4 text-left focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-900">
               <span class="block font-display text-lg font-bold text-white">{task.title}</span>
               <span class="mt-1 block text-sm leading-5 text-dark-200">{task.description}</span>
             </button>
@@ -182,7 +182,7 @@ const tasks = [
       <div class="grid gap-6 md:grid-cols-2">
         <fieldset>
           <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">5.</span> ¿Qué presupuesto te encaja?</legend>
-          <select id="diagnostic-budget" name="budget" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
+          <select id="diagnostic-budget" name="budget" aria-label="Presupuesto" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
             <option value="">Elige una opción</option>
             <option value="gratis">Quiero empezar gratis</option>
             <option value="bajo">Puedo pagar una suscripción pequeña</option>
@@ -191,7 +191,7 @@ const tasks = [
         </fieldset>
         <fieldset>
           <legend class="text-lg font-semibold text-white"><span class="mr-2 text-brand-300">6.</span> ¿Qué utilizas ahora?</legend>
-          <select id="diagnostic-current-tool" name="current_tool" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
+          <select id="diagnostic-current-tool" name="current_tool" aria-label="Herramienta actual" required class="mt-3 w-full rounded-lg border border-dark-500 bg-dark-900 px-4 py-3 text-white focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20">
             <option value="">Elige una opción</option>
             <option value="ninguna">Aún no uso IA para esta tarea</option>
             <option value="chatgpt">ChatGPT</option>

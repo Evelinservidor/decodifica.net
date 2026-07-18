@@ -9,7 +9,7 @@ const { plausibleDomain, plausibleScriptSrc } = Astro.props;
 
 <div
   id="cookie-consent"
-  class="fixed inset-x-0 bottom-0 z-[80] hidden border-t border-dark-600 bg-dark-900/95 px-4 py-4 shadow-2xl backdrop-blur sm:px-6"
+  class="cookie-consent fixed inset-x-0 bottom-0 z-[80] hidden border-t border-dark-600 bg-dark-900/95 px-4 py-4 shadow-2xl backdrop-blur sm:px-6"
   role="dialog"
   aria-live="polite"
   aria-label="Preferencias de privacidad"
@@ -38,28 +38,28 @@ const { plausibleDomain, plausibleScriptSrc } = Astro.props;
       <button
         id="cookie-reject"
         type="button"
-        class="rounded-lg border border-dark-500 px-4 py-2 text-sm font-semibold text-dark-100 transition hover:border-dark-300 hover:text-white"
+        class="action-secondary pressable rounded-lg border border-dark-500 px-4 py-2 text-sm font-semibold text-dark-100"
       >
         Rechazar
       </button>
       <button
         id="cookie-configure"
         type="button"
-        class="rounded-lg border border-brand-500/40 px-4 py-2 text-sm font-semibold text-brand-300 transition hover:border-brand-400 hover:text-brand-200"
+        class="action-secondary pressable rounded-lg border border-brand-500/40 px-4 py-2 text-sm font-semibold text-brand-300"
       >
         Configurar
       </button>
       <button
         id="cookie-save"
         type="button"
-        class="hidden rounded-lg bg-dark-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-dark-600"
+        class="pressable hidden rounded-lg bg-dark-700 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200"
       >
         Guardar
       </button>
       <button
         id="cookie-accept"
         type="button"
-        class="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600"
+        class="cta-primary pressable rounded-lg px-4 py-2 text-sm font-semibold"
       >
         Aceptar
       </button>

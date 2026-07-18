@@ -85,13 +85,13 @@ const categorias = [
   title="Recursos gratuitos de IA práctica"
   description="Biblioteca de recursos IA de Decodifica: prompts, workflows y guías prácticas para aplicar inteligencia artificial en tareas reales."
 >
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
-    <header class="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
+  <div class="page-shell mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <header class="page-hero grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
       <div>
-        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        <p class="eyebrow mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
           Recursos IA
         </p>
-        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
+        <h1 class="text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">
           Prompts, flujos y guías para usar IA sin empezar de cero.
         </h1>
         <p class="mt-4 max-w-2xl text-lg leading-8 text-dark-200">
@@ -115,7 +115,7 @@ const categorias = [
 
     <section class="mt-12 grid gap-6 lg:grid-cols-3">
       {recursos.map((recurso) => (
-        <article class="flex h-full flex-col rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/50">
+        <article class="surface-panel flex h-full flex-col rounded-xl border border-dark-600 bg-dark-800 p-6">
           <div class="flex items-center justify-between gap-3">
             <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{recurso.type}</span>
             <span class="text-xs text-dark-300">{recurso.status}</span>
@@ -128,7 +128,7 @@ const categorias = [
             </span>
             <a
               href={recurso.href}
-              class="inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300 transition-all hover:bg-dark-700"
+              class="action-secondary pressable inline-flex w-fit items-center gap-2 rounded-lg border border-brand-700 bg-transparent px-3 py-1.5 text-sm font-semibold text-brand-300"
             >
               Abrir recurso
             </a>
@@ -137,7 +137,7 @@ const categorias = [
       ))}
     </section>
 
-    <section class="mt-12 grid gap-5 rounded-lg border border-dark-600 bg-dark-800 p-6 lg:grid-cols-[.8fr_1.2fr] lg:p-8">
+    <section class="surface-panel mt-12 grid gap-5 rounded-xl border border-dark-600 bg-dark-800 p-6 lg:grid-cols-[.8fr_1.2fr] lg:p-8">
       <div>
         <p class="text-sm font-semibold text-brand-300">Cómo aprovecharlos</p>
         <h2 class="mt-2 font-display text-3xl font-bold">De recurso a hábito</h2>

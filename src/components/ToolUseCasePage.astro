@@ -46,19 +46,19 @@ const breadcrumbLd = {
   keywords={['herramientas IA', useCase.title, 'Decodifica']}
   section="Herramientas IA"
 >
-  <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_use_case_read_minimum" data-track-label={useCase.slug} data-track-component="tool_use_case">
+  <article class="page-shell mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_use_case_read_minimum" data-track-label={useCase.slug} data-track-component="tool_use_case">
     <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
       <a href="/herramientas/" class="text-brand-300 hover:text-brand-200">Herramientas IA</a>
       <span class="mx-2">/</span>
       <span>{useCase.title}</span>
     </nav>
 
-    <header class="grid gap-8 lg:grid-cols-[1fr_390px] lg:items-start">
+    <header class="page-hero grid gap-8 lg:grid-cols-[1fr_390px] lg:items-start">
       <div>
-        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+        <p class="eyebrow mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
           Caso de uso
         </p>
-        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">{useCase.h1}</h1>
+        <h1 class="text-balance font-display text-4xl font-bold leading-tight sm:text-5xl">{useCase.h1}</h1>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-dark-200">{useCase.intro}</p>
       </div>
       <NewsletterForm
@@ -70,7 +70,7 @@ const breadcrumbLd = {
 
     <section class="mt-12 grid gap-5 lg:grid-cols-2">
       {selectedTools.map((tool) => (
-        <a href={`/herramientas/${tool.slug}/`} data-track="use_case_to_tool_click" data-track-label={`${useCase.slug}:${tool.slug}`} data-track-component="tool_use_case" class="rounded-lg border border-dark-600 bg-dark-800 p-6 transition hover:border-brand-500/60">
+        <a href={`/herramientas/${tool.slug}/`} data-track="use_case_to_tool_click" data-track-label={`${useCase.slug}:${tool.slug}`} data-track-component="tool_use_case" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-6">
           <div class="flex flex-wrap gap-2">
             <span class="rounded-lg bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">{tool.useCase}</span>
             <span class="rounded-lg border border-dark-600 px-3 py-1 text-xs text-dark-200">{tool.price}</span>
@@ -106,7 +106,7 @@ const breadcrumbLd = {
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           {useCase.comparisons.map((comparison) => (
-            <a href={comparison.href} data-track="use_case_to_comparison_click" data-track-label={`${useCase.slug}:${comparison.label}`} data-track-component="tool_use_case" class="rounded-lg border border-dark-600 bg-dark-900 p-4 transition hover:border-brand-500/60">
+            <a href={comparison.href} data-track="use_case_to_comparison_click" data-track-label={`${useCase.slug}:${comparison.label}`} data-track-component="tool_use_case" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
               <h3 class="font-display text-lg font-bold text-white">{comparison.label}</h3>
               <p class="mt-2 text-sm leading-6 text-dark-300">{comparison.description}</p>
             </a>
