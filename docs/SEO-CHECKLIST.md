@@ -116,7 +116,7 @@ Marca cada item cuando esté verificado. Si falla algún item crítico, no commi
 
 ```bash
 # Validar schema JSON-LD de un post
-cd "C:\Users\jordi\Documents\GitHub\decodifica.net" && npm run build && npx astro check
+cd "D:\gpt decodifica\_web\decodifica.net" && npm run build && npx astro check
 
 # Detectar links rotos en posts (requiere linkchecker)
 linkchecker https://decodifica.net/blog/

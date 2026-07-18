@@ -1,5 +1,5 @@
 import sys
-path = r'C:\Users\jordi\Documents\GitHub\decodifica.net\src\pages\blog\ia-gratis-silicon-valley.astro'
+path = r'D:\gpt decodifica\_web\decodifica.net\src\pages\blog\ia-gratis-silicon-valley.astro'
 data = open(path, 'r', encoding='utf-8').read()
 print('=== QUALITY GATES CHECK ===')
 print('1. Tag herramientas ia gratis in frontmatter:', 'herramientas ia gratis' in data)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 
-path = r'C:\Users\jordi\Documents\GitHub\decodifica.net\dist\blog\ia-mejora-excel\index.html'
+path = r'D:\gpt decodifica\_web\decodifica.net\dist\blog\ia-mejora-excel\index.html'
 with open(path, 'r', encoding='utf-8') as f:
     html = f.read()
 

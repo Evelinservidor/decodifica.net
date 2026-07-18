@@ -1,7 +1,7 @@
 import os
 from pypdf import PdfReader
 
-fp = r'C:\Users\jordi\Documents\GitHub\decodifica.net\lead-magnets\50-prompts-ia.pdf'
+fp = r'D:\gpt decodifica\_web\decodifica.net\lead-magnets\50-prompts-ia.pdf'
 print(f'File: {fp}')
 print(f'Size: {os.path.getsize(fp) / 1024:.1f} KB')
 

@@ -80,14 +80,14 @@ Activar desde Codex Automations: weekly-decodifica-web-check
 
 ```bash
 # Estado del repo
-git -C "C:\Users\jordi\Documents\GitHub\decodifica.net" status
-git -C "C:\Users\jordi\Documents\GitHub\decodifica.net" log --oneline -10
+git -C "D:\gpt decodifica\_web\decodifica.net" status
+git -C "D:\gpt decodifica\_web\decodifica.net" log --oneline -10
 
 # Build local (sin commit)
-cd "C:\Users\jordi\Documents\GitHub\decodifica.net" && npm run build
+cd "D:\gpt decodifica\_web\decodifica.net" && npm run build
 
 # Ver sitemap generado tras build
-Get-ChildItem "C:\Users\jordi\Documents\GitHub\decodifica.net\dist" -Filter "sitemap*"
+Get-ChildItem "D:\gpt decodifica\_web\decodifica.net\dist" -Filter "sitemap*"
 
 # Listar crons del agente
 Revisar automatizaciones desde Codex Automations o el dashboard local de Decodifica

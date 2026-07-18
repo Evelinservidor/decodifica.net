@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-path = r'C:\Users\jordi\Documents\GitHub\decodifica.net\src\pages\blog\notebooklm-guia-2026.astro'
+path = r'D:\gpt decodifica\_web\decodifica.net\src\pages\blog\notebooklm-guia-2026.astro'
 data = open(path, 'r', encoding='utf-8').read()
 print('=== QUALITY GATES: notebooklm-guia-2026 ===')
 print('1. NotebookLM in frontmatter:', 'NotebookLM' in data)

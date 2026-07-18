@@ -22,7 +22,7 @@ GRAY = HexColor('#9ca3af')
 GREEN = HexColor('#10b981')
 DARK_GRAY = HexColor('#374151')
 
-OUTPUT = r'C:\Users\jordi\Documents\GitHub\decodifica.net\lead-magnets\50-prompts-ia.pdf'
+OUTPUT = r'D:\gpt decodifica\_web\decodifica.net\lead-magnets\50-prompts-ia.pdf'
 VERSION = '1.1'
 UPDATED = '10 de julio de 2026'
 UPDATED_SHORT = '10/07/2026'

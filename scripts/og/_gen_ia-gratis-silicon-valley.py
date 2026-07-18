@@ -2,7 +2,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-OUT = r"C:\Users\jordi\Documents\GitHub\decodifica.net\public\og\blog\ia-gratis-silicon-valley.png"
+OUT = r"D:\gpt decodifica\_web\decodifica.net\public\og\blog\ia-gratis-silicon-valley.png"
 
 W, H = 1200, 630
 BG = (10, 10, 10)

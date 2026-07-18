@@ -18,7 +18,7 @@ DARK_BG = HexColor('#0a0a0a')
 GRAY = HexColor('#9ca3af')
 GREEN = HexColor('#10b981')
 
-OUTPUT = r'C:\Users\jordi\Documents\GitHub\decodifica.net\lead-magnets\claude-skills-desde-cero.pdf'
+OUTPUT = r'D:\gpt decodifica\_web\decodifica.net\lead-magnets\claude-skills-desde-cero.pdf'
 
 styles = getSampleStyleSheet()
 

@@ -15,7 +15,7 @@ import re
 import sys
 from pathlib import Path
 
-REPO = Path(r"C:\Users\jordi\Documents\GitHub\decodifica.net")
+REPO = Path(r"D:\gpt decodifica\_web\decodifica.net")
 TARGETS = [
     "src/pages/blog/index.astro",
     "src/pages/blog/ia-organiza-pendientes.astro",
