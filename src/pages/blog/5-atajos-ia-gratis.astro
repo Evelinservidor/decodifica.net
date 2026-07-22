@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "5 atajos de IA que te ahorran una hora al dia (todos gratis)";
+const description = "No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos,...";
+const pubDate = "2026-07-22";
+const readingTime = "4 min";
+const tags = ["atajos IA", "productividad con IA", "DeepSeek", "Qwen", "Kimi", "Mistral", "prompts", "resumir correos"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/5-atajos-ia-gratis.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/5-atajos-ia-gratis.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
+        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
+        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
+        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
+        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
+        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
+        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
+        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
+      </div>
+    </div>
+
+    <p>No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos, buscar información, traducir con contexto y ordenar un proyecto que todavía está en tu cabeza.</p>
+    <p>La idea es sencilla: copiar una instrucción, adaptarla con tus datos y medir si de verdad reduce trabajo. DeepSeek, Qwen, Kimi y Mistral sirven para probarlos; la mejor opción será la que te obligue a corregir menos.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Sacar la acción de un correo largo</h2>
+    <p><strong>Prompt para copiar:</strong> Resume este correo en tres frases: una con la acción que me piden, otra con el plazo y otra con lo que tengo que responder. Si falta alguno de esos datos, indícalo claramente. Correo: [PEGA AQUÍ EL TEXTO].</p>
+    <p>Este formato evita un resumen bonito pero poco útil. La salida debe decir qué hacer, cuándo y qué respuesta falta. Antes de actuar, vuelve al correo original para comprobar nombres, fechas y cantidades.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">2. Crear una respuesta reutilizable</h2>
+    <p><strong>Prompt para copiar:</strong> Crea una plantilla para responder a clientes que piden un presupuesto. Empieza dando las gracias, confirma que hemos recibido la solicitud, indica que enviaremos el presupuesto en menos de 48 horas y termina con un tono profesional pero cercano. Deja entre corchetes los datos que debo cambiar en cada envío.</p>
+    <p>Guarda la plantilla solo después de revisarla. Los campos variables deben quedar visibles para no enviar el nombre, la fecha o el importe de otra persona.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3. Buscar información con fuentes</h2>
+    <p><strong>Prompt para copiar:</strong> Busca información actualizada sobre [TEMA], en español y de los últimos seis meses. Devuélveme cinco fuentes principales con título, enlace, fecha y un resumen de dos frases. Separa lo confirmado de lo que sea una interpretación.</p>
+    <p>Pedir enlaces no garantiza que sean correctos. Abre cada fuente y comprueba que respalda exactamente el resumen. Para decisiones importantes, da prioridad a documentación oficial, repositorios y páginas del fabricante.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4. Traducir sin perder el contexto</h2>
+    <p><strong>Prompt para copiar:</strong> Traduce este texto a [IDIOMA]. Mantén un tono [FORMAL/CERCANO/TÉCNICO]. Conserva nombres propios y cifras. Para términos técnicos, usa el equivalente habitual del sector y marca cualquier expresión ambigua antes de decidir. Texto: [PEGA AQUÍ EL TEXTO].</p>
+    <p>La ventaja frente a una traducción literal está en definir tono, sector y palabras que no deben cambiar. Si el documento tiene consecuencias legales, médicas o comerciales, la revisión humana sigue siendo obligatoria.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">5. Convertir un proyecto en tareas</h2>
+    <p><strong>Prompt para copiar:</strong> Necesito completar [PROYECTO]. Mi rol es [ROL], dispongo de [RECURSOS] y el plazo es [FECHA]. Crea una lista de tareas por prioridad, con duración estimada, dependencias y un resultado verificable para cada paso. Señala qué información falta antes de empezar.</p>
+    <p>La IA puede proponer el orden, pero no conoce tu calendario ni tus restricciones reales. Ajusta las estimaciones y convierte cada tarea grande en una salida que puedas comprobar.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo saber si realmente ahorran tiempo</h2>
+    <p>Prueba cada atajo con una tarea que ya ibas a hacer. Cronometra el flujo completo, incluida la revisión. Si la IA tarda un minuto pero después necesitas diez para corregirla, el ahorro no es real.</p>
+    <p>Usaría tres criterios:</p>
+    <ul class="space-y-2">
+      <li>tiempo total hasta una salida utilizable;</li>
+      <li>número de errores o datos que has tenido que corregir;</li>
+      <li>facilidad para repetir el proceso la semana siguiente.</li>
+    </ul>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA elegir</h2>
+    <p>No hay un ganador universal. Ejecuta el mismo prompt en dos herramientas y conserva la que siga mejor el formato, cite fuentes utilizables y necesite menos correcciones. Para información sensible, revisa también la política de datos antes de pegar el contenido.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>Empieza por el atajo que resuelva una tarea repetida esta semana. Guarda el prompt junto a un ejemplo bueno y anota qué tuviste que corregir. Así dejas de coleccionar trucos y construyes un pequeño sistema que sí puedes reutilizar.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y herramientas</h2>
+    <ul class="space-y-2">
+      <li><a href="https://chat.deepseek.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://chat.deepseek.com/</a></li>
+      <li><a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/</a></li>
+      <li><a href="https://www.kimi.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.kimi.com/</a></li>
+      <li><a href="https://chat.mistral.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://chat.mistral.ai/</a></li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
+      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que estan cambiando el mercado</a>, si quieres mas contexto sobre herramientas utiles sin suscripcion.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte mas practica de agentes y modelos chinos.</li>
+      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IA para Excel y hojas de calculo</a>, si tu problema esta en datos, formulas o reporting.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-5-atajos-ia-gratis" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-5-atajos-ia-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://chat.deepseek.com/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://qwen.ai/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://www.kimi.com/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://chat.mistral.ai/"
+      }
+]
+  })} />
+</BaseLayout>
