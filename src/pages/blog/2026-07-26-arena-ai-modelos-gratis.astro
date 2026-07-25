@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Arena AI: compara modelos a ciegas antes de pagar";
+const description = "Arena AI no es una tarifa plana con todas las inteligencias artificiales gratis. Su función más útil es mucho más concreta: enviar la misma tarea a dos...";
+const pubDate = "2026-07-25";
+const readingTime = "4 min";
+const tags = ["Arena AI", "Battle Mode", "comparar modelos IA", "modelos IA gratis", "elegir modelo IA", "privacidad IA", "ChatGPT", "Claude"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/2026-07-26-arena-ai-modelos-gratis.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/2026-07-26-arena-ai-modelos-gratis.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Mecanismo:</strong> Battle Mode compara dos respuestas anónimas y revela los modelos después del voto.</li>
+        <li><strong>Prueba útil:</strong> una tarea pequeña, criterios definidos antes de empezar y revisión del resultado completo.</li>
+        <li><strong>Límite:</strong> Arena procesa los inputs mediante servicios de IA de terceros; no subas documentos ni datos sensibles.</li>
+        <li><strong>Decisión:</strong> sirve para elegir qué modelo evaluar, no para declarar un ganador universal.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Quieres comparar antes de pagar</h3>
+        <p class="mt-2 text-sm text-dark-200">Ocultar las marcas durante la prueba ayuda a elegir por salida, no por familiaridad.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Una tarea inocua y medible</h3>
+        <p class="mt-2 text-sm text-dark-200">Define formato, calidad y tiempo de revisión antes de ver las dos respuestas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">No subas</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Documentos ni datos sensibles</h3>
+        <p class="mt-2 text-sm text-dark-200">Los inputs pueden pasar por servicios de IA de terceros y las respuestas pueden ser inexactas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Ver la prueba</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Battle Mode paso a paso</h3>
+        <p class="mt-2 text-sm text-dark-200"><a href="https://www.youtube.com/watch?v=M3StGJQ3FAw" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Abre el vídeo de Decodifica</a> y revisa cómo votar sin conocer el modelo.</p>
+      </div>
+    </div>
+
+    <p>Arena AI no es una tarifa plana con todas las inteligencias artificiales gratis. Su función más útil es mucho más concreta: enviar la misma tarea a dos modelos anónimos, comparar sus respuestas y votar antes de saber cuál ha generado cada una.</p>
+    <p>Ese orden cambia la decisión. En vez de elegir por marca, precio o ranking, puedes comprobar qué salida te sirve mejor para una tarea pequeña. El límite es igual de importante: Arena procesa los inputs mediante servicios de IA de terceros y advierte que las respuestas pueden ser inexactas.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Battle Mode</h2>
+    <p>Battle Mode coloca dos respuestas lado a lado. Los nombres de los modelos permanecen ocultos durante la comparación y se revelan después del voto. Así reduces, al menos durante la prueba, el sesgo de preferir ChatGPT, Claude, Gemini u otro modelo por familiaridad.</p>
+    <p>La comparación no demuestra qué modelo es mejor en general. Solo responde una pregunta útil: cuál ha resuelto mejor este encargo, con este prompt y bajo este criterio.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo hacer una comparación que sirva</h2>
+    <p>Empieza con una tarea breve, inocua y verificable. Por ejemplo: convertir unas notas ficticias en una tabla, proponer tres asuntos para un correo no confidencial o crear la estructura de una landing de prueba.</p>
+    <p>Antes de enviar el prompt, define tres criterios. Yo usaría cumplimiento de instrucciones, calidad de la salida y tiempo de revisión. Si esperas a ver las respuestas para decidir qué importa, es fácil justificar como ganadora la que simplemente suena más convincente.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Un método de cinco pasos</h2>
+    <ol>
+      <li>Escribe una tarea que puedas revisar en pocos minutos.</li>
+      <li>Elimina nombres, correos, contratos, claves y cualquier dato sensible.</li>
+      <li>Ejecuta la misma entrada en Battle Mode sin cambiar el objetivo.</li>
+      <li>Puntúa ambas salidas con los criterios definidos antes de empezar.</li>
+      <li>Vota, revela los modelos y guarda solo la conclusión que puedas repetir.</li>
+    </ol>
+    <p>Haz dos o tres rondas con tareas diferentes. Un modelo puede ganar redactando y perder al seguir un formato cerrado o razonar sobre una tabla.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no deberías subir</h2>
+    <p>No usaría Arena con documentos reales de clientes, información médica, contratos, credenciales, código privado, historiales internos ni contenido que identifique a una persona o empresa. La propia web indica que los inputs se procesan con servicios de IA de terceros.</p>
+    <p>Tampoco asumiría que borrar nombres visibles vuelve seguro un documento. Fechas, importes, referencias internas o combinaciones de detalles pueden seguir identificando el caso. Si la información no debe salir de tu equipo, la decisión correcta puede ser no enviarla.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo leer el resultado</h2>
+    <p>Una respuesta más larga no es necesariamente mejor. Comprueba si respeta el formato, mantiene las cifras, evita inventar datos y reduce el trabajo que tendrás qué hacer después.</p>
+    <p>El voto de Arena ayuda a alimentar comparaciones agregadas, pero tu decisión práctica debe quedarse en la tarea. El ganador de una ronda no se convierte automáticamente en el modelo que debes pagar o usar para todo.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo sí merece la pena</h2>
+    <p>Arena tiene sentido si estás valorando una suscripción, quieres descubrir alternativas o necesitas comparar modelos sin abrir varias cuentas y copiar el prompt manualmente. También sirve como banco de pruebas rápido antes de elegir qué herramienta evaluar con más profundidad.</p>
+    <p>Tiene menos sentido si necesitas privacidad contractual, controles empresariales, resultados deterministas o una integración estable para producción. Battle Mode ayuda a explorar; no sustituye una prueba controlada en tu propio entorno.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>Yo usaría Arena AI para elegir por resultado y no por logo, pero solo con tareas pequeñas y datos inocuos. La prueba buena no es preguntar cualquier cosa y votar por la respuesta más bonita: es fijar un criterio, comparar el coste de revisión y repetir el test.</p>
+    <p>Si un modelo gana varias tareas que de verdad haces, entonces merece una prueba directa. Si solo gana una demo llamativa, todavía no hay motivo para pagar ni mover tu flujo.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li><a href="https://arena.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://arena.ai/</a></li>
+      <li><a href="https://arena.ai/how-it-works" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://arena.ai/how-it-works</a></li>
+      <li><a href="https://help.arena.ai/articles/5629909088-terms-of-use" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://help.arena.ai/articles/5629909088-terms-of-use</a></li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
+      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que estan cambiando el mercado</a>, si quieres mas contexto sobre herramientas utiles sin suscripcion.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte mas practica de agentes y modelos chinos.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-2026-07-26-arena-ai-modelos-gratis" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-2026-07-26-arena-ai-modelos-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://arena.ai/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://arena.ai/how-it-works"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://help.arena.ai/articles/5629909088-terms-of-use"
+      }
+]
+  })} />
+</BaseLayout>
