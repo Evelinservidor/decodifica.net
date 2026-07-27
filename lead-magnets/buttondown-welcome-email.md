@@ -13,7 +13,7 @@ Como prometí, aquí va tu lead magnet:
 - Análisis y decisión
 - Aprendizaje y estudio
 
-👉 **Descarga directa:** https://vsczmjjtesenlqruqoqv.supabase.co/storage/v1/object/public/recursos/50-prompts-ia.pdf
+👉 **Descarga directa:** https://decodifica.net/lead-magnets/50-prompts-ia.pdf
 
 He probado cada prompt personalmente. Funcionan con ChatGPT (cualquier plan), Claude (incluso el free) y Gemini. Copia, pega, adapta.
 

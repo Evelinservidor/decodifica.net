@@ -1,4 +1,34 @@
 {
+  "2026-07-27-tencent-hy3-modelo-abierto-agentes": [
+    { "kind": "Caso de uso", "label": "IA local y abierta", "description": "Compara control, hardware, privacidad y dificultad antes de desplegar un modelo propio.", "href": "/herramientas/casos/para-ia-local-abierta/" },
+    { "kind": "Caso de uso", "label": "Agentes y automatizaciones", "description": "Sitúa el modelo dentro de una tarea de agente con permisos y límites revisables.", "href": "/herramientas/casos/para-agentes-automatizaciones/" },
+    { "kind": "Workflow", "label": "Prototipo de app revisable", "description": "Prueba una integración pequeña con criterio de salida, evidencias y control de cambios.", "href": "/workflows/prototipo-app-revisable/" }
+  ],
+  "2026-07-22-nano-banana-1000-prompts": [
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Convierte una idea visual en una instrucción con formato, límites y resultado revisable.", "href": "/herramientas/generador-prompts/" },
+    { "kind": "Caso de uso", "label": "IA para crear contenido", "description": "Elige entre asistentes de texto, imagen, presentaciones y voz según la pieza final.", "href": "/herramientas/para-crear-contenido/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Compara imágenes con el mismo criterio y evita decidir por una sola generación llamativa.", "href": "/herramientas/evaluador/" }
+  ],
+  "2026-07-25-ia-local-oculta-datos": [
+    { "kind": "Control", "label": "Preflight de datos", "description": "Clasifica la sensibilidad de un texto antes de compartirlo con una herramienta de IA.", "href": "/herramientas/preflight-datos/" },
+    { "kind": "Caso de uso", "label": "IA local y abierta", "description": "Valora cuándo compensa procesar datos en tu equipo y qué límites debes revisar.", "href": "/herramientas/casos/para-ia-local-abierta/" },
+    { "kind": "Herramienta", "label": "Ficha de ChatGPT", "description": "Revisa privacidad, planes y usos antes de subir documentos o datos personales.", "href": "/herramientas/chatgpt/" }
+  ],
+  "2026-07-26-arena-ai-modelos-gratis": [
+    { "kind": "Utilidad", "label": "Comparador de herramientas", "description": "Pon dos opciones frente a los mismos criterios antes de registrarte o pagar.", "href": "/herramientas/comparador/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Puntúa exactitud, edición y repetibilidad con una tarea que puedas verificar.", "href": "/herramientas/evaluador/" },
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Encuentra alternativas por tarea sin convertir la popularidad en el criterio principal.", "href": "/recursos/mapa-herramientas-ia/" }
+  ],
+  "2026-08-05-kimi-k3-investigacion-visual": [
+    { "kind": "Herramienta", "label": "Ficha de Kimi", "description": "Revisa documentos, contexto, privacidad y disponibilidad antes de usarlo.", "href": "/herramientas/kimi/" },
+    { "kind": "Comparativa", "label": "NotebookLM vs Perplexity", "description": "Distingue el análisis de tus fuentes de una investigación abierta en la web.", "href": "/herramientas/notebooklm-vs-perplexity/" },
+    { "kind": "Workflow", "label": "Investigar con fuentes", "description": "Separa búsqueda, selección, análisis y redacción para conservar trazabilidad.", "href": "/workflows/investigar-con-fuentes/" }
+  ],
+  "5-atajos-ia-gratis": [
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Empieza por la tarea y encuentra una opción útil sin depender de una marca.", "href": "/recursos/mapa-herramientas-ia/" },
+    { "kind": "Utilidad", "label": "Generador de prompts", "description": "Convierte una tarea repetida en una instrucción clara que puedas guardar y adaptar.", "href": "/herramientas/generador-prompts/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Comprueba si el atajo mantiene la calidad cuando lo repites con otro caso.", "href": "/herramientas/evaluador/" }
+  ],
   "2026-07-16-prompts-secretos-web": [
     { "kind": "Utilidad", "label": "Generador de prompts", "description": "Construye un prompt privado y revisable sin enviar el texto fuera del navegador.", "href": "/herramientas/generador-prompts/" },
     { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Elige el asistente según el tipo de texto, contexto y revisión que necesitas.", "href": "/herramientas/chatgpt-vs-claude/" },
