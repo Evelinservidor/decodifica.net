@@ -1,1 +1,95 @@
-[]
+[
+  {
+    "slug": "anythingllm",
+    "name": "AnythingLLM",
+    "summary": "Aplicación open source para consultar documentos, organizar espacios de conocimiento y conectar modelos locales o servicios externos.",
+    "metaDescription": "Ficha práctica de AnythingLLM: documentos con IA, opciones de despliegue, privacidad, dificultad y cuándo compensa usarlo.",
+    "useCase": "Documentos y conocimiento propio",
+    "price": "Open source",
+    "privacy": "Media",
+    "difficulty": "Alta",
+    "bestFor": "Cuando necesitas consultar colecciones de documentos y quieres elegir entre modelos locales, APIs externas o un despliegue propio.",
+    "avoidIf": "Buscas una herramienta inmediata sin configurar modelos, almacenamiento, permisos, telemetría ni mantenimiento del entorno.",
+    "tags": [
+      "documentos",
+      "conocimiento",
+      "open source",
+      "autoalojado"
+    ],
+    "officialUrl": "https://github.com/Mintplex-Labs/anything-llm",
+    "relatedLinks": [
+      {
+        "label": "IA para documentos y PDF",
+        "href": "/herramientas/casos/para-documentos-pdf/"
+      },
+      {
+        "label": "IA local y abierta",
+        "href": "/herramientas/casos/para-ia-local-abierta/"
+      },
+      {
+        "label": "Ficha de Ollama",
+        "href": "/herramientas/ollama/"
+      }
+    ],
+    "hasDetailPage": true,
+    "publishedAt": "2026-07-27",
+    "verifiedAt": "2026-07-27",
+    "reviewCadenceDays": 30,
+    "status": "active",
+    "evidenceLevel": "official",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Docker"
+    ],
+    "language": "Uso con documentos en español; documentación principal revisada en inglés",
+    "detail": {
+      "verdict": "AnythingLLM tiene sentido si quieres reunir documentos y modelos en un espacio controlable. Su principal límite es que privacidad y coste dependen del despliegue y de los proveedores conectados.",
+      "idealFor": [
+        "Consultar PDF, documentos y notas desde un espacio de conocimiento propio.",
+        "Elegir entre modelos locales y proveedores externos según cada tarea.",
+        "Crear espacios separados para equipos, proyectos o colecciones documentales."
+      ],
+      "notFor": [
+        "Equipos que no pueden mantener usuarios, almacenamiento, modelos y actualizaciones.",
+        "Datos sensibles sin revisar telemetría, proveedores externos y permisos del despliegue.",
+        "Quien solo necesita resumir un documento puntual con una herramienta ya configurada."
+      ],
+      "workflow": [
+        "Revisa la documentación y decide si necesitas escritorio, Docker o servicio alojado.",
+        "Elige el modelo y comprueba qué datos salen del dispositivo antes de añadir documentos.",
+        "Empieza con una colección no sensible y formula preguntas cuya respuesta puedas verificar.",
+        "Revisa citas, permisos, telemetría y coste antes de ampliar el espacio o añadir usuarios."
+      ],
+      "privacyNotes": [
+        "El proyecto incluye telemetría opcional; la documentación explica cómo desactivarla.",
+        "Los proveedores de modelos, embeddings o bases vectoriales pueden generar conexiones externas aunque el servicio esté autoalojado.",
+        "Autoalojar no garantiza privacidad: debes revisar permisos, copias, registros y servicios conectados."
+      ],
+      "priceNotes": [
+        "El repositorio usa licencia MIT, pero el coste real puede incluir APIs, modelos, almacenamiento, servidor y mantenimiento.",
+        "La edición de escritorio y el despliegue propio no eliminan los costes de los proveedores externos que decidas conectar."
+      ],
+      "alternatives": [
+        "NotebookLM para trabajar con fuentes sin administrar infraestructura",
+        "Ollama para ejecutar modelos locales sin esta capa documental",
+        "Dify para construir flujos y aplicaciones de IA"
+      ],
+      "sources": [
+        {
+          "label": "Repositorio oficial de AnythingLLM",
+          "href": "https://github.com/Mintplex-Labs/anything-llm"
+        },
+        {
+          "label": "Documentación oficial de AnythingLLM",
+          "href": "https://docs.anythingllm.com/"
+        },
+        {
+          "label": "Web oficial de AnythingLLM",
+          "href": "https://anythingllm.com/"
+        }
+      ]
+    }
+  }
+]
