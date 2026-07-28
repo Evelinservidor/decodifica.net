@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-const sitemapExcludedPaths = new Set(['/login', '/recursos-ia']);
+const sitemapExcludedPaths = new Set(['/comunidad/hilo', '/login', '/recursos-ia']);
 
 // https://astro.build/config
 export default defineConfig({
