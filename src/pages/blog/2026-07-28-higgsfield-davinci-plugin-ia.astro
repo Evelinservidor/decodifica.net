@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Higgsfield en DaVinci Resolve: IA sin exportar clips";
+const description = "Qué ofrece el plugin de Higgsfield para DaVinci Resolve, cómo medir si ahorra exportaciones y qué revisar sobre créditos, calidad y uso comercial.";
+const pubDate = "2026-07-28";
+const readingTime = "5 min";
+const tags = ["Decodifica", "Higgsfield", "Higgsfield DaVinci", "Higgsfield AI", "DaVinci Resolve IA", "DaVinci Resolve plugin", "plugin IA DaVinci Resolve", "IA para video"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/2026-07-28-higgsfield-davinci-plugin-ia.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/2026-07-28-higgsfield-davinci-plugin-ia.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué ofrece:</strong> siete herramientas de IA dentro de DaVinci Resolve, desde reencuadre y fondos hasta generación y edición.</li>
+        <li><strong>Para qué mirarlo:</strong> reducir exportaciones, cambios de aplicación y archivos intermedios durante la edición.</li>
+        <li><strong>Límite:</strong> integrado no significa gratis ni perfecto; cuentan los créditos, reintentos y correcciones.</li>
+        <li><strong>Decisión:</strong> probar una tarea repetida y medir el tiempo total hasta una salida usable.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Ya editas en Resolve</h3>
+        <p class="mt-2 text-sm text-dark-200">El valor aumenta si hoy sales del editor para reencuadrar, quitar fondos o generar apoyo visual.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Un clip y dos recorridos</h3>
+        <p class="mt-2 text-sm text-dark-200">Compara el método habitual con el panel y suma generación, espera, limpieza y revisión.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Créditos y derechos</h3>
+        <p class="mt-2 text-sm text-dark-200">Consulta el precio vigente y las condiciones comerciales antes de usar resultados con clientes.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Ver el análisis</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Higgsfield sin la demo</h3>
+        <p class="mt-2 text-sm text-dark-200"><a href="https://www.youtube.com/watch?v=RfVq0kNEROM" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Abre el vídeo de Decodifica</a> y revisa las siete funciones y el criterio de prueba.</p>
+      </div>
+    </div>
+
+    <p>Higgsfield promete llevar siete herramientas de IA al panel de DaVinci Resolve para evitar el viaje de exportar un clip, abrir otra web, esperar el resultado y volver a importarlo. La integración puede ahorrar tiempo, pero la decisión no depende de una demo vistosa: depende de cuánto trabajo elimina después de revisar el resultado.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué integra Higgsfield dentro de DaVinci Resolve</h2>
+    <p>La página oficial presenta un panel con generación de vídeo e imagen, reencuadre, eliminación de fondo, escalado, edición dibujando sobre la imagen y edición de vídeo mediante instrucciones. El argumento de Higgsfield es claro: hacer esas operaciones sin salir de Resolve ni cambiar continuamente de aplicación.</p>
+    <p>Ese detalle importa más que añadir otro generador al mercado. En edición, cada exportación intermedia añade espera, archivos temporales, versiones y puntos donde se puede perder el contexto. Si el panel permite probar una variante y devolverla a la línea de tiempo con menos pasos, el beneficio práctico es la continuidad del flujo.</p>
+    <p>La lista oficial sirve para saber qué probar. No demuestra que las siete funciones produzcan siempre un resultado publicable ni que vayan a ahorrar tiempo en todos los proyectos.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las tres tareas donde empezaría</h2>
+    <p>Yo no probaría todas las funciones a la vez. Empezaría por una tarea repetitiva con una comparación sencilla.</p>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">Reencuadrar una pieza para otro formato</h3>
+    <p>El primer caso es adaptar un plano horizontal a vertical o cuadrado. Prepararía un clip con movimiento, generaría la versión dentro del panel y la compararía con un reencuadre manual. Mediría si mantiene al sujeto, cuánto corrige el encuadre y cuánto tarda en quedar listo.</p>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">Quitar un fondo sin salir del editor</h3>
+    <p>El segundo caso es un plano corto con bordes difíciles: pelo, movimiento o transparencias. El ahorro solo existe si el recorte necesita poca limpieza. Si hay que reconstruir máscaras durante varios minutos, la integración habrá reducido pasos, pero no necesariamente trabajo.</p>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">Generar un plano de apoyo</h3>
+    <p>El tercer caso es crear B-roll o una imagen de apoyo desde la propia edición. Aquí revisaría continuidad visual, texto, manos, marcas y coherencia con el plano anterior. Una generación rápida puede servir para explorar; publicarla exige la misma revisión que cualquier otro recurso visual.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo medir si de verdad ahorra tiempo</h2>
+    <p>La comparación útil no es «con IA» frente a «sin IA» por sensación. Es el mismo clip, el mismo objetivo y dos recorridos medidos de principio a fin.</p>
+    <ol>
+      <li>Elige una tarea que ya forme parte de tu edición.</li>
+      <li>Guarda una copia del proyecto y define qué resultado considerarías aceptable.</li>
+      <li>Completa la tarea con tu método habitual y anota el tiempo total.</li>
+      <li>Repite desde el mismo punto con el panel de Higgsfield.</li>
+      <li>Suma generación, espera, correcciones, reintentos y revisión final.</li>
+      <li>Compara calidad, tiempo y número de pasos, no solo la velocidad de la primera salida.</li>
+    </ol>
+    <p>Haría esta prueba con tres clips distintos. Un único acierto puede ser casual; tres tareas parecidas empiezan a mostrar si la integración merece un sitio estable en el flujo.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Créditos, planes y derechos de uso</h2>
+    <p>«Dentro de DaVinci» no significa «gratis» ni «ilimitado». Higgsfield funciona con planes y créditos, y el consumo puede variar según la herramienta o el modelo. La página de precios es dinámica, así que conviene consultar el coste vigente justo antes de pagar y calcularlo sobre resultados aceptados, no sobre intentos generados.</p>
+    <p>También revisaría los derechos de uso del plan elegido antes de trabajar para un cliente. Higgsfield vincula el uso comercial a sus planes y términos; una prueba personal y una entrega comercial no son la misma decisión.</p>
+    <p>El cálculo correcto es sencillo: coste del crédito más tiempo de corrección frente al tiempo que cuesta hacer la tarea de otra forma. Si el panel genera rápido pero obliga a repetir o limpiar demasiado, el atajo sale caro aunque la tarifa parezca baja.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que la página oficial no demuestra</h2>
+    <p>La página oficial permite confirmar que el panel existe y qué siete funciones anuncia. No basta para juzgar la calidad final, la estabilidad ni el ahorro de tiempo: esas tres cosas deben medirse con el equipo y el material que vayas a editar.</p>
+    <p>Tampoco asumiría que una función automática entiende la intención del montaje. El editor sigue decidiendo qué plano sirve, dónde corta, qué errores son aceptables y si el resultado respeta al cliente, la marca y los derechos del material.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
+    <p>Lo probaría si ya editas en DaVinci Resolve y repites tareas como reencuadrar, aislar fondos, mejorar resolución o preparar planos de apoyo. Cuanto más frecuente sea el salto a herramientas externas, más fácil será medir si la integración elimina fricción.</p>
+    <p>Esperaría si solo haces estas operaciones de forma ocasional, si tu equipo ya tiene un flujo estable con otras aplicaciones o si necesitas resultados previsibles bajo una política estricta de datos y derechos. Añadir un panel nuevo también tiene un coste: cuenta, créditos, aprendizaje y otra dependencia dentro del proyecto.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>Higgsfield merece una prueba pequeña por una razón concreta: lleva operaciones de IA al lugar donde ya estás tomando decisiones de edición. No lo probaría por la promesa de «hacer vídeo con IA», sino para comprobar si elimina un paso muerto medible.</p>
+    <p>Empezaría con reencuadre o eliminación de fondo, usaría un clip no sensible y compararía el tiempo total después de corregir. Si el ahorro se repite, el panel puede convertirse en herramienta. Si solo acelera la primera generación, pero no la entrega final, seguirá siendo una demo cómoda dentro de Resolve.</p>
+    <p>En el vídeo de Decodifica tienes el recorrido visual y la decisión completa: <a href="https://www.youtube.com/watch?v=RfVq0kNEROM" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RfVq0kNEROM</a></p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li><a href="https://higgsfield.ai/plugins/davinci" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://higgsfield.ai/plugins/davinci</a></li>
+      <li><a href="https://higgsfield.ai/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://higgsfield.ai/pricing</a></li>
+      <li><a href="https://higgsfield.ai/terms-of-use-agreement" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://higgsfield.ai/terms-of-use-agreement</a></li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+      <li><a href="/comunidad" class="text-brand-400 hover:text-brand-300">Comunidad Decodifica</a>, para compartir pruebas, dudas y casos de uso con IA.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-2026-07-28-higgsfield-davinci-plugin-ia" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-2026-07-28-higgsfield-davinci-plugin-ia" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://www.youtube.com/watch?v=RfVq0kNEROM"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://higgsfield.ai/plugins/davinci"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://higgsfield.ai/pricing"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://higgsfield.ai/terms-of-use-agreement"
+      }
+]
+  })} />
+</BaseLayout>
