@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Google Maps con Gemini: cómo añadir una parada sin rehacer la ruta";
+const description = "Gemini en Google Maps no cambia el destino por ti. Su utilidad aparece en un momento mucho más concreto: cuando ya estás siguiendo una ruta y necesitas...";
+const pubDate = "2026-07-29";
+const readingTime = "4 min";
+const tags = ["Google Maps", "Gemini", "añadir parada", "paradas en ruta", "navegación con IA", "Google Maps Gemini", "rutas Google Maps"];
+const pillar = "apps-web";
+const pillarLabel = "Pilar 1: Apps web";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.png"
+  type="article"
+  pubDate={pubDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <img
+      src="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.png"
+      alt={title}
+      class="mb-12 w-full rounded-2xl border border-dark-600"
+      loading="eager"
+    />
+
+    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
+      <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
+      <ul class="space-y-2 text-dark-200 text-sm">
+        <li><strong>Qué cambia:</strong> Gemini puede buscar, refinar y añadir una parada mientras mantienes la ruta.</li>
+        <li><strong>Petición útil:</strong> combina lugar, condición y un límite de desvío.</li>
+        <li><strong>Comprueba:</strong> tiempo añadido, horario, dirección y ruta final antes de aceptar.</li>
+        <li><strong>Decisión:</strong> usa la conversación cuando reduce pasos; conserva los filtros manuales para búsquedas simples.</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pídelo así</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Lugar, condición y límite</h3>
+        <p class="mt-2 text-sm text-dark-200">Cuanto más concreta sea la necesidad, menos opciones irrelevantes tendrás que revisar.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Antes de aceptar</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Comprueba el trayecto</h3>
+        <p class="mt-2 text-sm text-dark-200">Revisa desvío, horario, dirección y el orden final de las paradas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Usa filtros si</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">La búsqueda es simple</h3>
+        <p class="mt-2 text-sm text-dark-200">Para la gasolinera más cercana, el método manual puede seguir siendo más rápido.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Ver la secuencia</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini dentro de la ruta</h3>
+        <p class="mt-2 text-sm text-dark-200"><a href="https://www.youtube.com/watch?v=zaK_ktkAa84" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Abre el vídeo de Decodifica</a> y revisa qué puede ahorrar y qué debes confirmar.</p>
+      </div>
+    </div>
+
+    <p>Gemini en Google Maps no cambia el destino por ti. Su utilidad aparece en un momento mucho más concreto: cuando ya estás siguiendo una ruta y necesitas encontrar un sitio por el camino, acotar la opción y añadirla como parada sin empezar otra búsqueda desde cero.</p>
+    <p>La ayuda oficial de Google documenta esa secuencia. Puedes pedir un lugar durante la navegación, refinar los resultados y añadir una parada. El ahorro no está en hablarle al mapa por hablarle, sino en condensar varios toques en una petición que conserve el contexto del trayecto.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes pedir durante una ruta</h2>
+    <p>La petición útil combina tres piezas: el tipo de lugar, una condición y el límite que no quieres superar. Por ejemplo: buscar una cafetería tranquila que esté abierta y quede cerca de la ruta. Después puedes pedir que afine el resultado y añadir la opción elegida.</p>
+    <p>Google también presenta Gemini en Maps como una experiencia conversacional y manos libres capaz de encadenar tareas. Eso permite corregir la búsqueda sin volver al inicio: cambiar el tipo de sitio, pedir otra condición o descartar una opción antes de tocar la ruta.</p>
+    <p>No conviene convertirlo en una promesa absoluta. Una respuesta depende de los datos disponibles sobre cada lugar, de la ubicación y de la disponibilidad de la función en la cuenta, el idioma y el país.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">La petición que reduce pasos de verdad</h2>
+    <p>Una frase vaga como «busca algo para comer» deja casi toda la decisión abierta. Una petición más útil incluye lo que realmente cambia la ruta:</p>
+    <ol>
+      <li><strong>Lugar:</strong> cafetería, gasolinera, supermercado o restaurante.</li>
+      <li><strong>Condición:</strong> abierto ahora, con aparcamiento, una valoración mínima o un tipo de comida.</li>
+      <li><strong>Límite:</strong> cerca del trayecto o con poco desvío.</li>
+      <li><strong>Acción:</strong> mostrar opciones primero y añadir solo la elegida.</li>
+    </ol>
+    <p>Ese orden importa. Gemini puede ayudarte a buscar y refinar, pero la confirmación final debe seguir en tus manos.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo usarlo sin perder el control</h2>
+    <p>Yo separaría la conversación en cuatro pasos breves:</p>
+    <ol>
+      <li>Pide una categoría y una condición concreta.</li>
+      <li>Revisa las opciones y cuánto se apartan de la ruta.</li>
+      <li>Comprueba el horario y que el destino sea exactamente el que esperas.</li>
+      <li>Añade la parada solo después de confirmar el cambio de trayecto.</li>
+    </ol>
+    <p>Durante la navegación, Google permite iniciar la interacción mediante el botón de Gemini o con la activación por voz cuando está disponible. La interfaz puede variar, así que el criterio práctico es más estable que memorizar un comando exacto.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué comprobar antes de aceptar la parada</h2>
+    <p>Una recomendación conversacional puede sonar correcta y seguir siendo una mala elección para ese viaje. Antes de confirmar, mira cuatro datos:</p>
+    <ul class="space-y-2">
+      <li>el tiempo que añade al trayecto;</li>
+      <li>el horario actual del lugar;</li>
+      <li>la dirección y el acceso correctos;</li>
+      <li>el orden de las paradas y la ruta resultante.</li>
+    </ul>
+    <p>Si alguno no está claro, vuelve a la búsqueda manual. La IA sirve para reducir fricción, no para sustituir una comprobación que afecta al trayecto.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo aporta más que los filtros manuales</h2>
+    <p>Gemini tiene más sentido cuando la necesidad contiene varias condiciones y quieres ajustarlas sobre la marcha. Si solo buscas la gasolinera más cercana, el filtro tradicional puede ser más rápido y predecible.</p>
+    <p>La diferencia aparece cuando la petición necesita contexto: «una cafetería abierta, con buenas reseñas y sin alejarme demasiado». Ahí una conversación puede evitar entrar y salir de categorías, revisar varias fichas y reconstruir la ruta.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Disponibilidad, cuenta e idioma</h2>
+    <p>Google avisa de que la disponibilidad de Gemini en Maps puede variar. También influyen las preferencias de idioma y voz, la ubicación precisa y la cuenta usada para las aplicaciones conectadas. Por eso no asumiría que la misma pantalla o las mismas acciones aparecen igual para todo el mundo.</p>
+    <p>Si la función no está disponible o no entiende bien una condición, el flujo manual sigue siendo el respaldo correcto. El objetivo no es forzar la IA, sino ahorrar pasos cuando realmente los ahorra.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>La novedad útil no es «Gemini llega a Maps». Es poder encadenar búsqueda, refinado y acción dentro de una ruta sin desmontar la navegación. Para una parada con condiciones puede reducir bastante la fricción; para una búsqueda simple, los filtros de siempre siguen siendo suficientes.</p>
+    <p>Mi consejo es usar una petición concreta y conservar la última comprobación: desvío, horario, dirección y ruta final. Si la conversación te obliga a revisar más que el método manual, no has ganado nada.</p>
+    <p>En el vídeo de Decodifica puedes ver la secuencia y el límite práctico: <a href="https://www.youtube.com/watch?v=zaK_ktkAa84" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=zaK_ktkAa84</a></p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <ul class="space-y-2">
+      <li><a href="https://support.google.com/maps/answer/6041199?hl=es-19" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://support.google.com/maps/answer/6041199?hl=es-19</a></li>
+      <li><a href="https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/</a></li>
+    </ul>
+
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <ul class="space-y-2">
+      <li><a href="/empieza" class="text-brand-400 hover:text-brand-300">Empieza con IA sin perderte</a>, para aplicar herramientas útiles con un criterio sencillo.</li>
+      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+      <li><a href="/comunidad" class="text-brand-400 hover:text-brand-300">Comunidad Decodifica</a>, para compartir pruebas, dudas y casos de uso con IA.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-2026-07-31-google-maps-gemini-paradas-ruta" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-2026-07-31-google-maps-gemini-paradas-ruta" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      {
+            "@type": "WebPage",
+            "url": "https://www.youtube.com/watch?v=zaK_ktkAa84"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://support.google.com/maps/answer/6041199?hl=es-19"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/"
+      }
+]
+  })} />
+</BaseLayout>
