@@ -5,10 +5,10 @@ import Button from './Button.astro';
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/empieza', label: 'Empieza' },
-  { href: '/blog', label: 'Guías' },
-  { href: '/herramientas', label: 'Herramientas' },
-  { href: '/comunidad', label: 'Comunidad' },
+  { href: '/empieza/', label: 'Empieza' },
+  { href: '/blog/', label: 'Guías' },
+  { href: '/herramientas/', label: 'Herramientas' },
+  { href: '/comunidad/', label: 'Comunidad' },
 ];
 ---
 
@@ -49,7 +49,7 @@ const navItems = [
           <span aria-hidden="true">☼</span><span class="hidden sm:inline" data-theme-label>Tema claro</span>
         </button>
         <div class="hidden items-center xl:flex">
-          <Button href="/newsletter" variant="primary" size="sm">
+          <Button href="/newsletter/" variant="primary" size="sm">
             Newsletter
           </Button>
         </div>
@@ -93,7 +93,7 @@ const navItems = [
         </ul>
         <div class="mt-4">
           <a
-            href="/newsletter"
+            href="/newsletter/"
             class="cta-primary inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition"
           >
             Recibir el filtro semanal

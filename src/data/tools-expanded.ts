@@ -140,7 +140,7 @@ const specs: ExpandedSpec[] = [
     notFor: ['Datos sensibles.', 'Producción sin pruebas.', 'Comparaciones sin mismo input.'],
     workflow: ['Define un benchmark propio.', 'Usa el mismo input.', 'Mide errores y edición.', 'Documenta la versión.'],
     alternatives: ['Kimi', 'DeepSeek', 'Qwen'],
-    sources: [{ label: 'Z.ai oficial', href: 'https://z.ai/' }, { label: 'Blog de GLM', href: 'https://z.ai/blog' }],
+    sources: [{ label: 'Z.ai oficial', href: 'https://z.ai/' }, { label: 'GLM-5.2 oficial', href: 'https://z.ai/blog/glm-5.2' }],
   },
   {
     slug: 'hermes-agent', name: 'Hermes Agent', useCase: 'Agentes abiertos',

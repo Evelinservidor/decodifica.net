@@ -3,10 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "Odysseus de PewDiePie: cómo evaluar esta IA local gratuita";
-const description = "Qué es Odysseus, cómo instalarla y qué revisar al compararla con LM Studio, GPT4All y Ollama.";
+const title = "Odysseus de PewDiePie: qué es y cómo instalarlo con seguridad";
+const description = "Qué es el workspace de IA autoalojado Odysseus, cómo se instala hoy y qué revisar antes de usar modelos locales o APIs.";
 const pubDate = "2026-06-15";
-const tags = ["herramientas ia gratis", "ia gratis", "pewdiepie"];
+const tags = ["Odysseus", "IA autoalojada", "modelos locales", "agentes de IA"];
 const readingTime = "8 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
@@ -15,7 +15,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/odysseus-pewdiepie-ia-gratis.png"
+  ogImage="/og-default.png"
   type="article"
   pubDate={pubDate}
   section={pillarLabel}
@@ -32,83 +32,39 @@ const pillarLabel = "Pilar 1: Apps web";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        PewDiePie mostró Odysseus en su canal como una opción para ejecutar modelos en local. Esta guía explica cómo instalarla y qué revisar —modelo, red, telemetría, mantenimiento y resultado— antes de compararla con LM Studio, GPT4All u Ollama.
+        PewDiePie presentó Odysseus como un workspace de IA autoalojado que puede conectar modelos locales y APIs. Esta guía contrasta la propuesta con la documentación actual y explica qué revisar —instalación, modelo, red, mantenimiento y privacidad— antes de probarla.
       </p>
     </header>
 
-    <ReviewMethodology reviewed="11 de julio de 2026" task="ejecutar un modelo local y evaluar sus requisitos y privacidad" />
-
-    <img
-      src="/og/blog/odysseus-pewdiepie-ia-gratis.png"
-      alt={title}
-      class="mb-8 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <ReviewMethodology reviewed="29 de julio de 2026" task="contrastar arquitectura, instalación y límites con la documentación oficial" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
       <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Odysseus</strong> es una app open source (MIT) que te deja correr modelos de IA grandes en tu propio PC, con interfaz web y un solo comando de instalación.</li>
-        <li><strong>PewDiePie la presentó el 12 de junio de 2026</strong> en un vídeo de 22 minutos: en 24 horas el repo pasó de 3.000 a 28.000 estrellas y el hilo de Reddit alcanzó las 4.000 respuestas.</li>
-        <li>Corre en Windows, macOS y Linux, descarga modelos de Hugging Face automáticamente y no necesita tarjeta gráfica dedicada (aunque con GPU vuela).</li>
-        <li>Frente a LM Studio, GPT4All y Ollama, la diferencia está en la <strong>simplicidad de instalación</strong>: un solo curl y ya tienes UI lista, sin pelearte con Python ni con Docker.</li>
-        <li>Si ya tienes 8 GB de RAM y una GPU de 6 GB VRAM, puedes correr modelos de 7B-13B en local gratis, sin nube y sin enviar nada a internet.</li>
+        <li><strong>Odysseus no es un modelo de IA:</strong> es un espacio de trabajo autoalojado que reúne chat, agentes, investigación, documentos, correo, notas y flujos con modelos.</li>
+        <li>Puede conectarse a modelos locales o a proveedores por API. Que una tarea sea privada depende de qué motor uses y de cómo configures red, credenciales y extensiones.</li>
+        <li>El código actual usa licencia <strong>AGPL-3.0-or-later</strong>. La documentación recomienda Docker; también ofrece rutas nativas para Windows, Linux y macOS.</li>
+        <li>La aplicación es la capa de trabajo. Ejecutar un modelo local es la parte pesada y sus requisitos dependen del modelo, la cuantización, el runtime y tu hardware.</li>
+        <li>La decisión útil no es «Odysseus o ChatGPT» en abstracto: es si necesitas un entorno autoalojado integrado y aceptas mantenerlo.</li>
       </ul>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes de instalar: ¿Odysseus o una alternativa?</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Odysseus realmente</h2>
     <p>
-      Si vienes por el vídeo de PewDiePie, la tentación es instalarlo sin pensar. Yo lo decidiría así:
+      El repositorio oficial lo define como un espacio de trabajo de IA autoalojado. Incluye chat y agentes, investigación en varias etapas, comparación de modelos, documentos, correo, notas, tareas, calendario y un catálogo para conectar o servir modelos. Esto lo coloca en una categoría distinta a un modelo concreto: Odysseus organiza el trabajo y se conecta al motor que elijas.
+    </p>
+    <p>
+      Puede usar modelos locales, servidores remotos o APIs comerciales. Esa flexibilidad es su principal ventaja y también su límite: instalar la interfaz no garantiza que todo funcione sin internet, sin coste o sin enviar datos a terceros. Cada proveedor y cada modelo tienen su propia licencia, precio y política.
+    </p>
+    <p>
+      PewDiePie presentó el proyecto en su canal y ayudó a darle visibilidad. No usamos cifras históricas de estrellas, comentarios o crecimiento porque no existe una fuente primaria persistente que permita reconstruirlas con precisión.
     </p>
 
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero probar rápido</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Odysseus</h3>
-        <p class="mt-2 text-sm text-dark-200">Tiene sentido si quieres una instalación guiada, UI incluida y pocos pasos.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero una app pulida</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">LM Studio</h3>
-        <p class="mt-2 text-sm text-dark-200">Mejor si prefieres interfaz de escritorio y selector de modelos más maduro.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero terminal</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Ollama</h3>
-        <p class="mt-2 text-sm text-dark-200">La opción natural para devs, servidores locales y automatizaciones.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Quiero máxima privacidad</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">GPT4All</h3>
-        <p class="mt-2 text-sm text-dark-200">Buena alternativa si quieres algo veterano, local y sin depender de servicios externos.</p>
-      </div>
-    </div>
-
-    <p>
-      La clave no es cuál es "mejor", sino cuál te quita menos fricción. Para empezar desde cero, Odysseus tiene sentido. Para quedarte meses, LM Studio u Ollama pueden encajar mejor según tu perfil.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Odysseus y por qué PewDiePie la ha puesto en el mapa</h2>
-    <p>
-      Odysseus es, en esencia, un lanzador de modelos de IA locales. Lo creó un equipo pequeño de desarrolladores independientes bajo licencia MIT y lo publicaron en GitHub a principios de 2026. La idea es la misma que LM Studio u Ollama: descargar modelos open source (Llama 3, Mistral, Qwen, Phi, Gemma) y ejecutarlos en tu propia máquina, sin depender de OpenAI, Anthropic o Google.
-    </p>
-    <p>
-      Lo que cambia frente a la competencia es el envoltorio. Odysseus trae una <strong>interfaz web limpia</strong> tipo chat, un sistema de un solo comando de instalación, y un catálogo curado de modelos que funcionan bien en hardware doméstico. Nada de pelearse con venv, con requirements.txt ni con la línea de comandos de llama.cpp.
-    </p>
-    <p>
-      PewDiePie lo descubrió a finales de mayo y, tras probarlo durante dos semanas, le dedicó un vídeo el 12 de junio de 2026. El título, fiel a su estilo, era algo así como "la IA gratis que os va a doler en el alma a los que pagáis ChatGPT". En menos de 24 horas, el repositorio de GitHub pasó de 3.000 a 28.000 estrellas y el megahilo de Reddit sobre la herramienta se llenó de comentarios, benchmarks caseros y preguntas de gente que llevaba años queriendo salirse de ChatGPT.
-    </p>
-    <p>
-      No es la primera vez que un creador de YouTube mueve la aguja en open source, pero el efecto ha sido desproporcionado porque Odysseus resuelve el verdadero punto de fricción: <strong>la instalación</strong>. La mayoría de la gente no se pasa a LM Studio no porque no quiera, sino porque instalar Python, configurar paths y pelearse con CUDA les parece una montaña. Odysseus lo reduce a copiar y pegar un comando.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo se instala Odysseus en tu PC</h2>
     <div class="mb-12 overflow-hidden rounded-2xl border border-dark-600">
       <div class="aspect-video w-full">
         <iframe
-          src="https://www.youtube-nocookie.com/embed/8lniH4eOhuw"
-          title="Odysseus de PewDiePie: la IA gratis que todos están probando"
+          src="https://www.youtube-nocookie.com/embed/rAzT5lcezPs"
+          title="Presentación original de Odysseus por PewDiePie"
           class="h-full w-full"
           frameborder="0"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -117,180 +73,133 @@ const pillarLabel = "Pilar 1: Apps web";
         ></iframe>
       </div>
     </div>
-
-    <p>
-      El proceso es el mismo en Windows, macOS y Linux. Abres una terminal, ejecutas el comando de instalación, y en menos de tres minutos tienes la aplicación corriendo en <code>http://localhost:3000</code>. No necesitas Python preinstalado, ni Docker, ni compilar nada.
-    </p>
-    <p>
-      El comando oficial es este (cópialo tal cual, sin sudo si ya tienes permisos de escritura en tu carpeta de usuario):
-    </p>
-    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>curl -fsSL https://raw.githubusercontent.com/odysseus-ai/odysseus/main/install.sh | bash</code></pre>
-    <p>
-      ¿Qué hace este script? Baja el binario correspondiente a tu sistema operativo, lo coloca en <code>~/.odysseus/bin/</code>, crea un alias <code>odysseus</code> en tu PATH, y arranca un servidor local con la UI web. La primera vez te pide elegir un modelo del catálogo (por defecto, Llama 3.1 8B Instruct, que ronda los 4,5 GB en cuantización Q4). La descarga es automática desde Hugging Face.
-    </p>
-    <p>
-      Si prefieres una instalación manual o quieres usar la versión en Python para integrarla en tus propios proyectos, también está disponible en PyPI. El ejemplo mínimo de uso es:
-    </p>
-    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>from odysseus import Client
-
-client = Client(model="llama-3.1-8b-instruct")
-resp = client.chat("Explícame qué es un LLM en una frase")
-print(resp.text)
-# &gt; Un LLM (Large Language Model) es un modelo de inteligencia artificial
-# entrenado con grandes cantidades de texto para generar y comprender lenguaje natural.</code></pre>
-    <p>
-      En Windows también hay un instalador <code>.exe</code> firmado en la página de releases, por si la terminal te da pereza. En macOS funciona nativamente en Apple Silicon (M1/M2/M3/M4) y también en Intel, aunque en Intel se nota la falta de GPU dedicada.
+    <p class="text-sm text-dark-300">
+      Este vídeo documenta el lanzamiento del 31 de mayo de 2026. Entonces no existían los lanzadores nativos para Windows y macOS que sí aparecen en la documentación actual; para instalarlo hoy, manda la guía oficial enlazada más abajo.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Odysseus vs LM Studio vs GPT4All vs Ollama: comparativa honesta</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes de instalar: qué problema quieres resolver</h2>
     <p>
-      He instalado y probado las cuatro con el mismo modelo (Llama 3.1 8B Instruct cuantizado en Q4_K_M) en el mismo portátil (M2 Pro con 16 GB de RAM). Esto es lo que he visto, sin marketing.
+      Odysseus tiene sentido si quieres reunir varias tareas de IA en un entorno que controlas: conversar con distintos modelos, comparar respuestas, trabajar con documentos, conectar correo o calendario y mantener flujos propios. No es la opción más corta si solo quieres abrir un chat y escribir una pregunta.
     </p>
-
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-dark-600">
-            <th class="text-left p-2 text-white">Herramienta</th>
-            <th class="text-left p-2 text-white">Instalación</th>
-            <th class="text-left p-2 text-white">UI web</th>
-            <th class="text-left p-2 text-white">Catálogo modelos</th>
-            <th class="text-left p-2 text-white">Ideal para</th>
-          </tr>
-        </thead>
-        <tbody class="text-dark-200">
-          <tr class="border-b border-dark-700"><td class="p-2">Odysseus</td><td class="p-2">1 comando curl</td><td class="p-2">Sí, incluida</td><td class="p-2">Curado, 30+ modelos</td><td class="p-2">Empezar sin pelearse con la terminal</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">LM Studio</td><td class="p-2">.exe / .dmg / .AppImage</td><td class="p-2">Sí, muy pulida</td><td class="p-2">+200 modelos HF</td><td class="p-2">Usuarios de escritorio que quieren GUI top</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">GPT4All</td><td class="p-2">.exe / .dmg + Python local</td><td class="p-2">Sí, escritorio</td><td class="p-2">~50 modelos locales</td><td class="p-2">Privacidad estricta, sin tocar nada online</td></tr>
-          <tr><td class="p-2">Ollama</td><td class="p-2">Binario + CLI</td><td class="p-2">No propia (usa Open WebUI)</td><td class="p-2">+100 modelos oficiales</td><td class="p-2">Devs y servidores, control vía terminal</td></tr>
-        </tbody>
-      </table>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Entorno integrado</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Odysseus</h3>
+        <p class="mt-2 text-sm text-dark-200">Para combinar modelos, agentes, documentos y servicios en un espacio autoalojado.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Motor y API local</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Ollama</h3>
+        <p class="mt-2 text-sm text-dark-200">Para servir modelos y conectarlos a otras aplicaciones; Odysseus puede usar ese endpoint.</p>
+      </div>
     </div>
-
-    <p class="text-sm text-dark-300 mt-2">Datos verificados en junio de 2026. La UI de Ollama existe, pero hay que montarla aparte (Open WebUI o su app de escritorio comunitaria).</p>
-
     <p>
-      La conclusión honesta: <strong>si nunca has ejecutado un LLM en local, empieza por Odysseus</strong>. Si ya te manejas con la terminal y quieres control total, Ollama sigue siendo la referencia. LM Studio es la más cuidada visualmente, pero requiere descargar e instalar a mano. GPT4All es la veterana, sigue siendo buena, pero su desarrollo se ha ralentizado frente a las otras tres.
+      Son capas que pueden complementarse. En Windows, por ejemplo, la propia guía de Odysseus recomienda Ollama como la ruta más sencilla para servir un modelo local y después conectarlo desde Ajustes.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Requisitos reales: qué necesitas para que funcione bien</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo se instala hoy</h2>
     <p>
-      Esto es lo que dice la documentación oficial y lo que se ha confirmado en el megahilo de Reddit con pruebas reales de usuarios:
+      La ruta recomendada por el proyecto es Docker. No es un instalador de tres minutos ni un único <code>curl</code>: hay que clonar el repositorio, preparar la configuración y construir el conjunto de servicios.
     </p>
+    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>git clone --branch main https://github.com/odysseus-dev/odysseus.git
+cd odysseus
+cp .env.example .env
+docker compose up -d --build</code></pre>
+    <p>
+      Cuando los contenedores están sanos, la interfaz se abre en <code>http://localhost:7000</code>. El primer arranque crea una cuenta de administración y muestra una contraseña temporal en los logs. La configuración base escucha en la máquina local; no cambies el bind a toda la red sin autenticación y una red de confianza.
+    </p>
+    <p>
+      En Windows existe un lanzador nativo. Requiere Python 3.11 o superior y, para todas las funciones del catálogo y la herramienta de shell, Git para Windows:
+    </p>
+    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>git clone --branch main https://github.com/odysseus-dev/odysseus.git
+cd odysseus
+powershell -ExecutionPolicy Bypass -File .\launch-windows.ps1</code></pre>
+    <p>
+      En macOS con Apple Silicon, la documentación aconseja la ruta nativa si quieres aprovechar Metal, porque Docker no expone esa GPU al contenedor. En Linux y macOS también existe instalación manual con un entorno de Python. Las instrucciones cambian; conviene seguir siempre la guía oficial y no copiar comandos de artículos antiguos.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Hardware: la pregunta es qué modelo vas a ejecutar</h2>
+    <p>
+      La aplicación puede funcionar en un equipo modesto y conectarse a una API o a un servidor remoto. El consumo importante aparece cuando ejecutas el modelo en tu propia máquina. No existe una cifra universal de RAM, VRAM o velocidad: cambia con el modelo, la cuantización y el motor.
+    </p>
+    <p>
+      La guía oficial propone empezar con modelos GGUF/Q4 en equipos con GPU de portátil de 8 GB antes de probar formatos y servidores más exigentes. Eso es una recomendación de primera prueba, no una garantía de calidad ni de tokens por segundo. En Windows, vLLM y SGLang requieren Linux o WSL2; para una primera conexión local, el proyecto señala Ollama como la opción más sencilla.
+    </p>
+    <p>
+      Antes de descargar nada, define una tarea concreta y un umbral: calidad mínima, tiempo de respuesta aceptable y cuánto mantenimiento estás dispuesto a asumir. Un modelo que «cabe» en memoria puede seguir sin resolver bien tu trabajo.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Privacidad y seguridad: local no significa aislado</h2>
     <ul>
-      <li><strong>Mínimo absoluto</strong>: 8 GB de RAM, sin GPU dedicada. Puedes correr modelos de 3B-7B en cuantización Q4, que son perfectamente válidos para tareas de escritura, resúmenes y preguntas cortas.</li>
-      <li><strong>Recomendado para 7B-13B</strong>: 16 GB de RAM y una GPU con 6 GB de VRAM (RTX 3060, RX 6600, Apple Silicon M1 Pro o superior).</li>
-      <li><strong>Para modelos grandes (30B-70B)</strong>: 32 GB de RAM mínimo, ideal 64 GB, y GPU con 12-24 GB de VRAM. Aquí ya no estamos en "portátil", esto es workstation o Mac Studio.</li>
-      <li><strong>Disco</strong>: cada modelo descargado ocupa entre 2 GB (3B) y 40 GB (70B). Ten al menos 50 GB libres para poder cambiar de modelo.</li>
-    </ul>
-    <p>
-      Lo mejor de Odysseus es que detecta tu hardware al arrancar y te recomienda modelos compatibles. Si tu Mac tiene 8 GB de RAM unificados, te sugiere Phi-3 Mini o Llama 3.2 3B en Q4. Si tienes una RTX 4090 con 24 GB, te ofrece Llama 3.1 70B o Qwen 2.5 72B sin despeinarse.
-    </p>
-    <p>
-      Una cosa que poca gente comenta: <strong>la primera ejecución de cada modelo es lenta</strong> porque se carga en RAM/VRAM. Las siguientes son instantáneas. Si solo vas a usar un modelo, no hay problema. Si quieres probar cinco, prepárate para esperar entre 20 segundos y 2 minutos por cada cambio.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Checklist rápido antes de meter datos sensibles</h2>
-    <p>
-      Que una IA sea local no significa que puedas olvidarte de la seguridad. Antes de usarla con documentos reales:
-    </p>
-    <ul>
-      <li><strong>Descarga modelos desde fuentes conocidas:</strong> Hugging Face oficial, Ollama Library o enlaces del proyecto.</li>
-      <li><strong>Revisa si hay telemetría:</strong> mira ajustes, logs y conexiones salientes si trabajas con datos sensibles.</li>
-      <li><strong>No pegues secretos:</strong> claves API, contraseñas, datos bancarios o documentos legales completos siguen siendo delicados.</li>
-      <li><strong>Separa perfiles:</strong> usa una carpeta/proyecto distinto para trabajo, pruebas y datos personales.</li>
-      <li><strong>Actualiza con calma:</strong> en proyectos nuevos, espera unas horas o días antes de instalar releases recién salidas si lo usas para trabajo.</li>
+      <li><strong>Comprueba el motor:</strong> una API externa procesa la petición fuera de tu equipo aunque la interfaz sea autoalojada.</li>
+      <li><strong>Mantén la autenticación:</strong> el proyecto la activa por defecto y desaconseja exponer el servicio directamente a internet.</li>
+      <li><strong>Conserva el bind local:</strong> Docker publica los servicios en <code>127.0.0.1</code> por defecto. Abrirlos a la LAN es una decisión explícita.</li>
+      <li><strong>No montes el socket de Docker sin necesidad:</strong> la documentación lo considera acceso de alta confianza porque puede dar control amplio sobre el host.</li>
+      <li><strong>Separa secretos y datos:</strong> no subas credenciales al repositorio y revisa extensiones, conectores, logs y retención antes de usar documentos sensibles.</li>
+      <li><strong>Actualiza con criterio:</strong> la rama <code>dev</code> recibe cambios primero; la propia documentación presenta <code>main</code> como la rama más curada.</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que está bien y lo que todavía no</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué está verificado y qué no</h2>
     <p>
-      Después de una semana probándolo a fondo, esto es lo que brilla y lo que chirría.
+      Esta revisión contrasta la arquitectura, las rutas de instalación, la licencia y las advertencias de seguridad con el repositorio oficial. Decodifica no ha realizado para esta actualización un benchmark independiente de velocidad, calidad o consumo, por lo que no atribuimos porcentajes de tareas resueltas, cifras de rendimiento ni una lista universal de «mejores modelos».
     </p>
     <p>
-      <strong>Lo que está bien.</strong> La instalación es ridículamente fácil. La UI es limpia, sin funciones inútiles ni ads. La detección de hardware funciona. El catálogo de modelos está curado, no te encuentras con cien variantes de Llama 2 sin saber cuál elegir. La comunidad en Discord y en el subreddit es activa y responde rápido. Y, sobre todo, es MIT: puedes forkearlo, auditarlo y modificarlo sin pagar a nadie.
-    </p>
-    <p>
-      <strong>Lo que todavía no.</strong> La selección de modelos, aunque curada, es más pequeña que la de Hugging Face. No trae de serie <em>function calling</em> tan pulido como las versiones de pago de OpenAI o Anthropic. La gestión de contexto largo (más de 32k tokens) se resiente en modelos grandes sin VRAM abundante. Y, como todo proyecto open source joven, hay <em>bugs</em> menores: la ventana de contexto a veces se reinicia, el streaming de tokens se corta en Safari, y la exportación de conversaciones está en fase experimental.
-    </p>
-    <p>
-      <strong>Lo que NO es.</strong> No es una IA "más lista" que GPT-4 o Claude 3.5. Los modelos open source de 7B-13B están todavía por detrás en razonamiento complejo, código avanzado y matemáticas. Para eso, sigue mereciendo la pena pagar ChatGPT Plus o Claude Pro. La gracia de Odysseus es que <strong>para el 80% de tareas cotidianas</strong> (redactar emails, resumir documentos, generar ideas, traducir) un modelo local de 8B-13B va sobrado, y lo hace gratis, privado y sin conexión.
+      Tampoco afirmamos que Odysseus sea más fácil que otras herramientas locales para todo el mundo. Su valor diferencial documentado es integrar muchas superficies de trabajo; esa amplitud implica más componentes, permisos y mantenimiento que un chat o un runtime aislado.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Casos de uso donde tiene sentido (y donde no)</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>
-      Te lo resumo en una lista clara, basada en lo que ha compartido la comunidad estos días.
+      Probaría Odysseus si necesitas un espacio autoalojado que coordine varios modelos y herramientas, y si aceptas revisar Docker o Python, autenticación, red y actualizaciones. Empezaría con datos no sensibles, una sola tarea y un límite de tiempo.
     </p>
     <p>
-      <strong>Tiene TODO el sentido si:</strong>
-    </p>
-    <ul>
-      <li>Manejas datos sensibles (clientes, salud, legal) y no quieres que vayan a servidores de terceros.</li>
-      <li>Quieres escribir emails, posts o informes sin pagar una suscripción mensual.</li>
-      <li>Necesitas una IA que funcione sin internet (viajes, trabajo en remoto, zonas rurales).</li>
-      <li>Te interesa aprender cómo funciona un LLM por dentro, modificar prompts, fine-tunear.</li>
-      <li>Quieres dejar de depender de un único proveedor (riesgo de cierre, cambios de precio, censura).</li>
-    </ul>
-    <p>
-      <strong>NO merece la pena si:</strong>
-    </p>
-    <ul>
-      <li>Necesitas el mejor razonamiento posible para código complejo o investigación avanzada.</li>
-      <li>Tu portátil tiene menos de 8 GB de RAM y no puedes (o no quieres) ampliarlo.</li>
-      <li>Prefieres pagar 20 euros al mes y no complicarte la vida con instalaciones.</li>
-      <li>Necesitas multimodalididad real (imagen, vídeo, audio): los modelos locales todavía están verdes en esto.</li>
-    </ul>
-    <p>
-      Si decides probarlo, hazlo con un modelo pequeño, una tarea no sensible y un límite claro de tiempo. Compara la calidad, el coste y el mantenimiento con tu alternativa actual antes de cancelar una suscripción.
+      Si solo quieres conversar con un modelo local, empezaría por una herramienta más pequeña. Si quieres la máxima calidad con cero mantenimiento, usaría un servicio alojado. Odysseus compensa cuando su integración te ahorra más pasos de los que añade.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Odysseus es realmente gratis o tiene letra pequeña?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Odysseus es gratis?</h3>
     <p>
-      Es gratis de verdad. La aplicación está bajo licencia MIT, los modelos que descarga son open source (mayoritariamente Apache 2.0 o Llama Community License), y no hay versión "Pro" oculta. Si en el futuro añaden funciones de pago, lo dejarán claro en su web; de momento todo el código y todas las funciones son开放的 y sin coste. Lo único que pagas es la electricidad de tu PC.
+      El código del proyecto se publica con licencia AGPL-3.0-or-later. Eso no convierte en gratuitos todos los modelos o proveedores: una API puede cobrar por uso, las licencias de los modelos varían y ejecutar modelos locales consume hardware, disco y electricidad.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Necesito una GPU cara para usar Odysseus?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Necesito una GPU?</h3>
     <p>
-      No obligatoriamente. Funciona en CPU pura, aunque más lento: unos 5-15 tokens por segundo en un portátil moderno. Con una GPU dedicada de gama media (RTX 3060, RX 6600, Apple M1 Pro) subes a 30-60 tokens por segundo, que es velocidad de lectura humana. Con hardware top (RTX 4090, Mac Studio M2 Ultra) llegas a 100+ tokens por segundo, más rápido de lo que puedes leer.
+      No para abrir la aplicación o conectarla a una API o servidor remoto. Para servir un modelo local con una experiencia útil, el requisito depende del modelo y del runtime. La documentación recomienda empezar pequeño y verificar primero que el passthrough y el motor usan realmente la GPU.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué modelos funcionan mejor con Odysseus en 2026?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué modelo debo usar?</h3>
     <p>
-      Los más recomendados por la comunidad, en orden: <strong>Llama 3.1 8B Instruct</strong> (el equilibrio perfecto para la mayoría de PCs), <strong>Mistral 7B Instruct v0.3</strong> (rápido y muy capaz en español), <strong>Qwen 2.5 14B Instruct</strong> (si tienes 16 GB de RAM, brilla en código y matemáticas), y <strong>Phi-3 Medium 14B</strong> de Microsoft (sorprendentemente bueno para su tamaño). Para español de España, Mistral 7B y Llama 3.1 8B son los que suenan más naturales.
+      No hay uno universal. Elige según tu tarea, memoria disponible, idioma, licencia y runtime. Empieza con un modelo pequeño, conserva el mismo conjunto de pruebas y aumenta tamaño solo si mejora un resultado que puedas medir.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Mis datos salen del PC en algún momento?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Mis datos salen del PC?</h3>
     <p>
-      Si ejecutas la aplicación y el modelo en local, el procesamiento puede quedarse en tu equipo. Aun así, revisa la configuración de red, telemetría, actualizaciones y extensiones antes de usar datos sensibles; una aplicación local no garantiza por sí sola que no haya conexiones externas.
+      Pueden quedarse en local si el modelo, la búsqueda, los conectores y el almacenamiento también son locales. Si eliges una API, correo externo, búsqueda web u otro servicio, parte del flujo sale de tu equipo. Revisa cada integración por separado.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Es mejor que ChatGPT Plus o Claude Pro?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Es mejor que ChatGPT o Claude?</h3>
     <p>
-      Depende del uso. Para escritura, resúmenes, traducción, brainstorming y trabajo con datos sensibles, un modelo local de 8B-13B en Odysseus cubre el 80% de lo que harías con ChatGPT Plus, gratis y privado. Para razonamiento complejo, código difícil, análisis de imágenes y las últimas novedades en IA, ChatGPT Plus y Claude Pro siguen estando un escalón por encima. Lo ideal: tener ambos y saber cuándo usar cada uno.
+      No es una comparación directa. Odysseus es un entorno de trabajo que puede conectarse a distintos modelos; ChatGPT y Claude son servicios y familias de modelos gestionados. La decisión depende de integración, privacidad, calidad, coste y mantenimiento.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y referencias</h2>
-    <p>
-      Todos los datos de instalación, compatibilidad de hardware y catálogo de modelos están extraídos de las fuentes primarias, consultadas en junio de 2026:
-    </p>
     <ul>
-      <li><strong>Repositorio oficial de Odysseus</strong> — código fuente (MIT), instrucciones de instalación, releases firmadas: <a href="https://github.com/odysseus-ai/odysseus" class="text-brand-400 hover:text-brand-300">github.com/odysseus-ai/odysseus</a></li>
-      <li><strong>Vídeo de PewDiePie presentando Odysseus</strong> — demo en directo, requisitos de hardware, benchmarks caseros: <a href="https://www.youtube.com/watch?v=pewdiepie-odysseus-demo" class="text-brand-400 hover:text-brand-300">youtube.com/watch?v=pewdiepie-odysseus-demo</a></li>
-      <li><strong>Megahilo en r/LocalLLaMA</strong> — más de 4.000 comentarios, pruebas de usuarios, comparativas de velocidad, resolución de errores: <a href="https://www.reddit.com/r/LocalLLaMA/comments/odysseus_megathread/" class="text-brand-400 hover:text-brand-300">reddit.com/r/LocalLLaMA</a></li>
-      <li><strong>Hugging Face</strong> — catálogo de modelos compatibles (Llama 3.1, Mistral, Qwen 2.5, Phi-3), licencias, cuantizaciones: <a href="https://huggingface.co/models?pipeline_tag=text-generation&library=transformers" class="text-brand-400 hover:text-brand-300">huggingface.co/models</a></li>
-      <li><strong>Documentación de Ollama y LM Studio</strong> — para los datos de la tabla comparativa (formatos de modelo, instalación, requisitos): <a href="https://ollama.com/library" class="text-brand-400 hover:text-brand-300">ollama.com/library</a> y <a href="https://lmstudio.ai/" class="text-brand-400 hover:text-brand-300">lmstudio.ai</a></li>
+      <li><strong>Repositorio y README oficiales:</strong> arquitectura, funciones, licencia y arranque recomendado. <a href="https://github.com/odysseus-dev/odysseus" class="text-brand-400 hover:text-brand-300">github.com/odysseus-dev/odysseus</a>.</li>
+      <li><strong>Guía oficial de instalación:</strong> Docker, Windows, macOS, GPU, Ollama y seguridad de red. <a href="https://github.com/odysseus-dev/odysseus/blob/dev/docs/setup.md" class="text-brand-400 hover:text-brand-300">docs/setup.md</a>.</li>
+      <li><strong>Licencia oficial:</strong> AGPL-3.0-or-later. <a href="https://github.com/odysseus-dev/odysseus/blob/dev/LICENSE" class="text-brand-400 hover:text-brand-300">LICENSE</a>.</li>
+      <li><strong>Vídeo de presentación de PewDiePie:</strong> contexto del lanzamiento, no validación técnica independiente. <a href="https://www.youtube.com/watch?v=rAzT5lcezPs" class="text-brand-400 hover:text-brand-300">youtube.com/watch?v=rAzT5lcezPs</a>.</li>
+      <li><strong>Hilo comunitario:</strong> dudas y experiencias de usuarios, no especificaciones oficiales. <a href="https://www.reddit.com/r/pewdiepie/comments/1tu0nni/odysseus_megathread_information_and_conversation/" class="text-brand-400 hover:text-brand-300">reddit.com/r/pewdiepie</a>.</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
     <p>
-      Odysseus no va a matar a ChatGPT. Pero sí demuestra que, en 2026, ya no necesitas pagar 20 euros al mes para tener una IA competente en tu PC. La instalación es de las más fáciles que he visto, la comunidad está respondiendo bien, y para el 80% de tareas cotidianas un modelo local open source de 8B-13B es más que suficiente.
+      Odysseus es una propuesta ambiciosa para reunir trabajo con IA bajo control propio. No elimina la necesidad de elegir modelo, configurar el entorno ni mantenerlo. Si esas responsabilidades encajan con tu objetivo, merece una prueba acotada; si no, una herramienta más pequeña o un servicio gestionado será una decisión mejor.
     </p>
     <p>
-      Si te interesa profundizar en el ecosistema de IAs gratuitas, tienes un PDF con 50 prompts prácticos para productividad, escritura, código y aprendizaje en <a href="/recursos" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si te interesa profundizar en el ecosistema de IAs gratuitas, tienes un PDF con 50 prompts prácticos para productividad, escritura, código y aprendizaje en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
     <p>
-      Y si todavía no has salido de ChatGPT y quieres comparar opciones online (sin instalar nada), échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas gratuitas a ChatGPT en 2026</a> que publicamos hace dos semanas.
+      Y si todavía no has salido de ChatGPT y quieres comparar opciones online (sin instalar nada), échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas gratuitas a ChatGPT en 2026</a> que publicamos hace dos semanas.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
@@ -301,10 +210,10 @@ print(resp.text)
       <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que compiten con GPT-4</a>, si prefieres probar en navegador antes de instalar nada.</li>
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, para una comparación más general.</li>
       <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si quieres llevar modelos abiertos a trabajo técnico.</li>
-      <li><a href="/recursos" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
     </ul>
     <p>
-      ¿Lo has probado? ¿Qué modelo te ha funcionado mejor con tu hardware? Déjamelo en comentarios, en <a href="/contacto" class="text-brand-400 hover:text-brand-300">contacto</a> o apúntate a la newsletter de los sábados.
+      ¿Lo has probado? ¿Qué modelo te ha funcionado mejor con tu hardware? Déjamelo en comentarios, en <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a> o apúntate a la newsletter de los sábados.
     </p>
     <p>
       — Jordi
@@ -338,42 +247,42 @@ print(resp.text)
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Odysseus es realmente gratis o tiene letra pequeña?",
+        "name": "¿Odysseus es gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Es gratis de verdad. La aplicación está bajo licencia MIT, los modelos que descarga son open source (mayoritariamente Apache 2.0 o Llama Community License), y no hay versión Pro oculta. Lo único que pagas es la electricidad de tu PC."
+          "text": "El código del proyecto se publica con licencia AGPL-3.0-or-later. Eso no convierte en gratuitos todos los modelos o proveedores: una API puede cobrar por uso, las licencias de los modelos varían y ejecutar modelos locales consume hardware, disco y electricidad."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Necesito una GPU cara para usar Odysseus?",
+        "name": "¿Necesito una GPU?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No obligatoriamente. Funciona en CPU pura, aunque más lento (5-15 tokens por segundo). Con una GPU dedicada de gama media (RTX 3060, Apple M1 Pro) subes a 30-60 tokens por segundo. Con hardware top, 100+ tokens por segundo."
+          "text": "No para abrir la aplicación o conectarla a una API o servidor remoto. Para servir un modelo local con una experiencia útil, el requisito depende del modelo y del runtime. La documentación recomienda empezar pequeño y verificar primero que el passthrough y el motor usan realmente la GPU."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Qué modelos funcionan mejor con Odysseus en 2026?",
+        "name": "¿Qué modelo debo usar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los más recomendados: Llama 3.1 8B Instruct (el equilibrio perfecto), Mistral 7B Instruct v0.3 (rápido y muy capaz en español), Qwen 2.5 14B Instruct (si tienes 16 GB de RAM) y Phi-3 Medium 14B. Para español de España, Mistral 7B y Llama 3.1 8B suenan más naturales."
+          "text": "No hay uno universal. Elige según tu tarea, memoria disponible, idioma, licencia y runtime. Empieza con un modelo pequeño, conserva el mismo conjunto de pruebas y aumenta tamaño solo si mejora un resultado que puedas medir."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Mis datos salen del PC en algún momento?",
+        "name": "¿Mis datos salen del PC?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Si ejecutas la aplicación y el modelo en local, el procesamiento puede quedarse en tu equipo. Revisa la configuración de red, telemetría, actualizaciones y extensiones antes de usar datos sensibles."
+          "text": "Pueden quedarse en local si el modelo, la búsqueda, los conectores y el almacenamiento también son locales. Si eliges una API, correo externo, búsqueda web u otro servicio, parte del flujo sale de tu equipo. Revisa cada integración por separado."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Es mejor que ChatGPT Plus o Claude Pro?",
+        "name": "¿Es mejor que ChatGPT o Claude?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depende del uso. Para escritura, resúmenes, traducción y trabajo con datos sensibles, un modelo local de 8B-13B cubre el 80% de lo que harías con ChatGPT Plus, gratis y privado. Para razonamiento complejo, código difícil y análisis de imágenes, ChatGPT Plus y Claude Pro siguen estando un escalón por encima."
+          "text": "No es una comparación directa. Odysseus es un entorno de trabajo que puede conectarse a distintos modelos; ChatGPT y Claude son servicios y familias de modelos gestionados. La decisión depende de integración, privacidad, calidad, coste y mantenimiento."
         }
       }
     ]
@@ -382,9 +291,10 @@ print(resp.text)
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Odysseus de PewDiePie: la IA gratis que todos están probando",
-    "description": "Qué es Odysseus, la IA open source que PewDiePie mostró en su canal. Cómo instalarla y compararla con LM Studio, GPT4All y Ollama.",
+    "headline": title,
+    "description": description,
     "datePublished": "2026-06-15",
+    "dateModified": "2026-07-29",
     "mainEntityOfPage": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
     "author": {
         "@type": "Person",
@@ -395,38 +305,31 @@ print(resp.text)
         "name": "Decodifica"
     },
     "about": [
-        "herramientas ia gratis",
-        "ia gratis",
-        "pewdiepie"
+        "Odysseus",
+        "IA autoalojada",
+        "modelos locales",
+        "agentes de IA"
     ],
     "citation": [
         {
             "@type": "WebPage",
-            "url": "https://github.com/odysseus-ai/odysseus"
+            "url": "https://github.com/odysseus-dev/odysseus"
         },
         {
             "@type": "WebPage",
-            "url": "https://www.youtube.com/watch?v=pewdiepie-odysseus-demo"
+            "url": "https://github.com/odysseus-dev/odysseus/blob/dev/docs/setup.md"
         },
         {
             "@type": "WebPage",
-            "url": "https://www.reddit.com/r/LocalLLaMA/comments/odysseus_megathread/"
+            "url": "https://github.com/odysseus-dev/odysseus/blob/dev/LICENSE"
         },
         {
             "@type": "WebPage",
-            "url": "https://huggingface.co/models?pipeline_tag=text-generation&library=transformers"
+            "url": "https://www.youtube.com/watch?v=rAzT5lcezPs"
         },
         {
             "@type": "WebPage",
-            "url": "https://ollama.com/library"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://lmstudio.ai/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://decodifica.net/contacto/"
+            "url": "https://www.reddit.com/r/pewdiepie/comments/1tu0nni/odysseus_megathread_information_and_conversation/"
         }
     ]
 })} />
