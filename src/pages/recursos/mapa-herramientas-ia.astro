@@ -35,6 +35,27 @@ const comparisonLinks = [
   { label: 'Alternativas a ElevenLabs', href: '/herramientas/alternativas-elevenlabs/' },
 ];
 
+const gpt56Prices = [
+  {
+    model: 'GPT-5.6 Luna',
+    input: '0,20 USD',
+    output: '1,20 USD',
+    use: 'Tareas repetidas y de gran volumen cuando puedes revisar la salida y repetir barato.',
+  },
+  {
+    model: 'GPT-5.6 Terra',
+    input: '2 USD',
+    output: '12 USD',
+    use: 'Trabajo cotidiano que necesita mas criterio sin pagar siempre por el nivel mas alto.',
+  },
+  {
+    model: 'GPT-5.6 Sol',
+    input: '5 USD',
+    output: '30 USD',
+    use: 'Problemas complejos donde un error, una revision extra o una mala decision cuestan mas que los tokens.',
+  },
+];
+
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -42,7 +63,7 @@ const articleLd = {
   description,
   url: pageUrl,
   datePublished: '2026-07-08',
-  dateModified: '2026-07-08',
+  dateModified: '2026-08-01',
   author: { '@type': 'Organization', name: 'Decodifica', url: siteConfig.url },
 };
 ---
@@ -52,7 +73,7 @@ const articleLd = {
   description={description}
   type="article"
   pubDate="2026-07-08"
-  modifiedDate="2026-07-08"
+  modifiedDate="2026-08-01"
   keywords={['mapa herramientas IA', 'herramientas IA', 'que IA usar', 'Decodifica']}
   section="Recursos IA"
 >
@@ -116,6 +137,69 @@ const articleLd = {
             <p class="mt-3 text-sm leading-6 text-dark-300">{route.next}</p>
           </a>
         ))}
+      </div>
+    </section>
+
+    <section class="mt-12 rounded-lg border border-brand-500/30 bg-dark-800 p-6 lg:p-8">
+      <div class="grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+        <div>
+          <p class="text-sm font-semibold text-brand-300">Antes de pagar</p>
+          <h2 class="mt-2 font-display text-3xl font-bold">El modelo mas barato no siempre deja el trabajo mas barato</h2>
+          <p class="mt-4 text-sm leading-6 text-dark-200">
+            El precio por token solo mide una parte. Compara tambien cuantos intentos necesitas, cuanto tardas en corregir y si el resultado queda listo para usar.
+          </p>
+        </div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-5">
+          <p class="text-sm leading-6 text-dark-200">
+            OpenAI redujo el 30 de julio el precio de API de Luna un 80 % y el de Terra un 20 %. Las suscripciones de ChatGPT y Codex no bajaron de precio: estos modelos consumen menos creditos dentro de los planes de pago.
+          </p>
+          <a
+            class="mt-3 inline-flex text-sm font-semibold text-brand-300 hover:text-brand-200"
+            href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Ver la actualizacion oficial de precios
+          </a>
+          <span class="mx-2 text-dark-500" aria-hidden="true">|</span>
+          <a
+            class="mt-3 inline-flex text-sm font-semibold text-brand-300 hover:text-brand-200"
+            href="https://openai.com/index/gpt-5-6/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Ver la familia GPT-5.6
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-6 overflow-x-auto rounded-lg border border-dark-600">
+        <table class="min-w-full divide-y divide-dark-600 text-left text-sm">
+          <thead class="bg-dark-900 text-dark-100">
+            <tr>
+              <th class="px-4 py-3 font-semibold">Modelo</th>
+              <th class="px-4 py-3 font-semibold">Entrada / 1 M tokens</th>
+              <th class="px-4 py-3 font-semibold">Salida / 1 M tokens</th>
+              <th class="px-4 py-3 font-semibold">Cuando tiene sentido</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-dark-600 bg-dark-800 text-dark-200">
+            {gpt56Prices.map((row) => (
+              <tr>
+                <th class="whitespace-nowrap px-4 py-4 font-semibold text-white">{row.model}</th>
+                <td class="whitespace-nowrap px-4 py-4">{row.input}</td>
+                <td class="whitespace-nowrap px-4 py-4">{row.output}</td>
+                <td class="min-w-72 px-4 py-4 leading-6">{row.use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">API.</strong> Calcula entrada y salida, pero registra tambien reintentos y tiempo de correccion.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Suscripcion.</strong> Mira cuantos creditos consume una tarea terminada, no conviertas la tarifa API en una cuota mensual imaginaria.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Decision.</strong> Empieza por el nivel mas barato que cumpla tu criterio y sube solo cuando mejore el resultado o reduzca correcciones.</div>
       </div>
     </section>
 
