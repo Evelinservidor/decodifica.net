@@ -148,5 +148,20 @@
     { "kind": "Herramienta", "label": "Ficha de Qwen Code", "description": "Revisa dificultad, privacidad, fuentes y el flujo recomendado.", "href": "/herramientas/qwen-code/" },
     { "kind": "Comparativa", "label": "Cursor vs GitHub Copilot", "description": "Sitúa el agente de terminal frente a opciones integradas en el editor.", "href": "/herramientas/comparativas/cursor-vs-github-copilot/" },
     { "kind": "Workflow", "label": "Prototipo de app revisable", "description": "Trabaja en una rama, revisa el diff y exige pruebas antes de publicar.", "href": "/workflows/prototipo-app-revisable/" }
+  ],
+  "2026-07-28-higgsfield-davinci-plugin-ia": [
+    { "kind": "Caso de uso", "label": "IA para crear contenido", "description": "Sitúa el plugin dentro del flujo completo de imagen, vídeo, voz y revisión antes de elegir herramientas.", "href": "/herramientas/para-crear-contenido/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Compara el clip generado con tus criterios de calidad, edición necesaria y repetibilidad.", "href": "/herramientas/evaluador/" },
+    { "kind": "Mapa", "label": "Mapa de herramientas IA", "description": "Encuentra alternativas por tarea si Higgsfield no encaja en tu editor, presupuesto o forma de trabajar.", "href": "/recursos/mapa-herramientas-ia/" }
+  ],
+  "2026-07-31-google-maps-gemini-paradas-ruta": [
+    { "kind": "Caso de uso", "label": "IA para organizar el trabajo", "description": "Compara asistentes que convierten condiciones, tareas y calendario en propuestas que todavía debes revisar.", "href": "/herramientas/casos/para-organizar-trabajo/" },
+    { "kind": "Workflow", "label": "Planificar la semana", "description": "Aplica el mismo principio: pedir una propuesta útil sin ceder a la IA tus prioridades ni la decisión final.", "href": "/workflows/planificar-semana-sin-ceder-prioridades/" },
+    { "kind": "Utilidad", "label": "Evaluador de resultados", "description": "Comprueba desvío, horario, dirección y utilidad real antes de confiar en una ruta sugerida.", "href": "/herramientas/evaluador/" }
+  ],
+  "2026-08-01-qwen3-asr-transcribe-espanol": [
+    { "kind": "Caso de uso", "label": "IA para reuniones", "description": "Compara opciones para capturar, transcribir y revisar audio con atención al consentimiento y al seguimiento.", "href": "/herramientas/casos/para-reuniones/" },
+    { "kind": "Workflow", "label": "Reunión a decisiones y tareas", "description": "Convierte una transcripción revisada en acuerdos y tareas sin inventar responsables, fechas ni decisiones.", "href": "/workflows/reunion-a-decisiones-y-tareas/" },
+    { "kind": "Control", "label": "Preflight de datos", "description": "Decide si el audio puede enviarse a una demo web o necesita una ruta local con mayor control.", "href": "/herramientas/preflight-datos/" }
   ]
 }
