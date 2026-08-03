@@ -82,7 +82,7 @@ REQUIRED_EMAILS = [
 REQUIRED_SOCIALS = {
     "bluesky": "https://bsky.app/profile/jc-ia.bsky.social",
     "tiktok": "https://www.tiktok.com/@decodificalaia",
-    "facebook": "https://www.facebook.com/JCAutomatizacionesIA",
+    "facebook": "https://www.facebook.com/Decodificaia",
     "youtube": "https://www.youtube.com/@decodificaia",
 }
 

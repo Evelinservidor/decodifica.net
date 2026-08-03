@@ -45,6 +45,15 @@ const orgLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   logo: new URL('/og-default.png', siteConfig.url).toString(),
+  description: siteConfig.description,
+  email: siteConfig.author.publicEmailLabel,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'editorial',
+    email: siteConfig.author.publicEmailLabel,
+    url: new URL('/contacto/', siteConfig.url).toString(),
+    availableLanguage: ['es'],
+  },
   sameAs: [
     siteConfig.social.youtube,
     siteConfig.social.facebook,

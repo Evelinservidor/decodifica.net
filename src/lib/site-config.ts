@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   social: {
     youtube: 'https://www.youtube.com/@decodificaia',
-    facebook: 'https://www.facebook.com/JCAutomatizacionesIA',
+    facebook: 'https://www.facebook.com/Decodificaia',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
     tiktok: 'https://www.tiktok.com/@decodificalaia',
     reddit: 'https://www.reddit.com/user/PergaminosProhibidos/',
