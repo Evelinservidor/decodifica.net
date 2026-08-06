@@ -1,0 +1,106 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import maps from '~/data/mapas-ia.json';
+import { siteConfig } from '~/lib/site-config';
+
+const title = 'Mapas IA: herramientas para crear contenido';
+const description = 'Archivo visual de Mapas IA revisados por Decodifica. Empieza por la tarea, consulta las fuentes y decide qué herramienta probar primero.';
+const pageUrl = `${siteConfig.url}/recursos/mapas-ia/`;
+const latest = maps[0];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={latest.image}
+  imageAlt={latest.title}
+  keywords={['mapas IA', 'herramientas IA para crear contenido', 'recursos IA', 'Decodifica']}
+  section="Recursos IA"
+>
+  <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+    <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
+      <a href="/recursos/" class="text-brand-300 hover:text-brand-200">Recursos IA</a>
+      <span class="mx-2">/</span>
+      <span>Mapas IA</span>
+    </nav>
+
+    <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
+      <div>
+        <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">Archivo visual revisado</p>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">Mapas IA: empieza por la tarea, no por la moda</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
+          Cada mapa organiza herramientas alrededor de un trabajo concreto. Úsalo para reducir opciones y comprueba después el plan, la privacidad y las fuentes antes de depender de una app.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#mapas" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver el mapa seleccionado</a>
+          <a href="/empieza?utm_source=mapas_ia_hub&utm_medium=web&utm_campaign=mapa_ia_04_crear-contenido" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Elegir mi tarea</a>
+        </div>
+      </div>
+
+      <aside class="rounded-xl border border-dark-600 bg-dark-800 p-6">
+        <p class="text-sm font-semibold text-brand-300">Cómo usar un mapa</p>
+        <ol class="mt-4 space-y-4 text-sm leading-6 text-dark-200">
+          <li><strong class="text-white">1. Sitúa la fase.</strong> Idea, redacción, diseño o publicación.</li>
+          <li><strong class="text-white">2. Reduce opciones.</strong> Elige dos herramientas como máximo para una primera prueba.</li>
+          <li><strong class="text-white">3. Verifica antes de pagar.</strong> Los planes y límites pueden cambiar.</li>
+        </ol>
+      </aside>
+    </header>
+
+    <section id="mapas" class="mt-12" aria-labelledby="mapas-title">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold text-brand-300">Selección de agosto</p>
+        <h2 id="mapas-title" class="mt-2 font-display text-3xl font-bold">Crear contenido con IA, por fase</h2>
+        <p class="mt-3 text-sm leading-6 text-dark-200">
+          Este es el primer mapa incorporado al archivo tras comparar la exposición de cuatro entregas publicadas. La selección indica interés relativo; no convierte la lista en un ranking ni en una recomendación automática.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-7 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <figure class="overflow-hidden rounded-xl border border-dark-600 bg-white">
+          <img src={latest.image} alt={latest.title} class="aspect-square w-full object-cover" width="1080" height="1080" />
+          <figcaption class="border-t border-dark-600 bg-dark-800 px-5 py-4 text-sm text-dark-200">
+            Mapa IA #{String(latest.issue).padStart(2, '0')} · {latest.toolCount} herramientas · revisado el {latest.reviewedAt.split('-').reverse().join('/')}
+          </figcaption>
+        </figure>
+
+        <div class="rounded-xl border border-dark-600 bg-dark-800 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">Mapa IA #{String(latest.issue).padStart(2, '0')}</p>
+          <h3 class="mt-2 font-display text-2xl font-bold text-white">{latest.title}</h3>
+          <p class="mt-3 text-sm leading-6 text-dark-200">{latest.subtitle}</p>
+          <p class="mt-5 text-sm leading-6 text-dark-300">
+            La imagen ayuda a orientarte. La página de decisión conecta las fases del trabajo con fichas, comparativas y criterios para elegir mejor.
+          </p>
+          <a href={latest.decisionHref} class="mt-6 inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Decidir qué herramienta probar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 rounded-xl border border-dark-600 bg-dark-800 p-6 lg:p-8">
+      <p class="text-sm font-semibold text-brand-300">Mantén el criterio</p>
+      <h2 class="mt-2 font-display text-3xl font-bold">Un mapa reduce la búsqueda; la prueba decide</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <p class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Plan.</strong> Confirma qué incluye hoy la versión gratuita o de pago.</p>
+        <p class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Datos.</strong> Revisa privacidad y evita subir información sensible sin una decisión consciente.</p>
+        <p class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Resultado.</strong> Conserva solo la herramienta que complete mejor tu tarea real.</p>
+      </div>
+    </section>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description,
+    url: pageUrl,
+    image: `${siteConfig.url}${latest.image}`,
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Recursos IA', item: `${siteConfig.url}/recursos/` },
+      { '@type': 'ListItem', position: 2, name: 'Mapas IA', item: pageUrl },
+    ],
+  })} />
+</BaseLayout>
