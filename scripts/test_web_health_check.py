@@ -8,7 +8,15 @@ import urllib.error
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from web_health_check import built_page_route, collect_built_internal_paths, fetch_url, load_public_env, normalize_internal_path
+from web_health_check import (
+    built_page_route,
+    collect_built_discovery_resources,
+    collect_built_internal_paths,
+    discovery_resource_content_ok,
+    fetch_url,
+    load_public_env,
+    normalize_internal_path,
+)
 
 
 class WebHealthLinkTests(unittest.TestCase):
@@ -74,6 +82,29 @@ class WebHealthLinkTests(unittest.TestCase):
                 ],
             )
 
+    def test_collects_advertised_and_required_discovery_resources(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            repo = Path(temp_dir)
+            dist = repo / "dist"
+            page = dist / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<link rel="alternate" type="application/rss+xml" href="/feed.xml">'
+                '<link rel="icon" href="/favicon.svg">',
+                encoding="utf-8",
+            )
+
+            resources = collect_built_discovery_resources(repo, "https://decodifica.net")
+            keys = {(item["path"], item["kind"]) for item in resources}
+            self.assertIn(("/feed.xml", "rss"), keys)
+            self.assertIn(("/rss.xml", "rss"), keys)
+            self.assertIn(("/favicon.svg", "icon"), keys)
+            self.assertIn(("/favicon.ico", "icon"), keys)
+
+    def test_validates_discovery_resource_content_types(self) -> None:
+        self.assertTrue(discovery_resource_content_ok("rss", "application/rss+xml"))
+        self.assertTrue(discovery_resource_content_ok("icon", "image/x-icon"))
+        self.assertFalse(discovery_resource_content_ok("rss", "text/html"))
 
 class WebHealthFetchTests(unittest.TestCase):
     @staticmethod

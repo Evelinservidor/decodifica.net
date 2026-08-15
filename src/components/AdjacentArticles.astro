@@ -1,0 +1,28 @@
+---
+import { blogPostIndex } from '~/lib/blog-post-index';
+
+const slug = Astro.url.pathname.match(/^\/blog\/([^/]+)\/?$/)?.[1] ?? '';
+const currentIndex = blogPostIndex.findIndex((post) => post.slug === slug);
+const newer = currentIndex > 0 ? blogPostIndex[currentIndex - 1] : null;
+const older = currentIndex >= 0 && currentIndex < blogPostIndex.length - 1 ? blogPostIndex[currentIndex + 1] : null;
+const adjacent = [newer && { ...newer, label: 'Artículo más reciente' }, older && { ...older, label: 'Artículo anterior' }].filter(Boolean);
+---
+
+{adjacent.length > 0 && (
+  <nav class="page-shell mx-auto max-w-5xl px-4 pb-12 sm:px-6" aria-label="Artículos relacionados">
+    <div class="grid gap-3 sm:grid-cols-2">
+      {adjacent.map((post) => post && (
+        <a
+          href={`/blog/${post.slug}/`}
+          data-track="adjacent_article_click"
+          data-track-label={`${slug}:${post.slug}`}
+          data-track-component="adjacent_articles"
+          class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5"
+        >
+          <span class="text-xs font-semibold uppercase tracking-wide text-brand-300">{post.label}</span>
+          <span class="mt-2 block font-display text-lg font-bold text-white">{post.title}</span>
+        </a>
+      ))}
+    </div>
+  </nav>
+)}

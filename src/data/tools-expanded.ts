@@ -288,6 +288,13 @@ const specs: ExpandedSpec[] = [
   },
 ];
 
+const relatedBySlug: Record<string, Array<{ label: string; href: string }>> = {
+  gemini: [{ label: 'ChatGPT vs Gemini', href: '/herramientas/comparativas/chatgpt-vs-gemini/' }],
+  emergent: [{ label: 'Herramientas para crear aplicaciones', href: '/herramientas/casos/para-crear-apps/' }],
+  'beautiful-ai': [{ label: 'Gamma vs Beautiful.ai', href: '/herramientas/comparativas/gamma-vs-beautiful-ai/' }],
+  ollama: [{ label: 'AnythingLLM para trabajar con modelos locales', href: '/herramientas/anythingllm/' }],
+};
+
 export const expandedTools: Tool[] = specs.map((spec) => ({
   slug: spec.slug,
   name: spec.name,
@@ -302,6 +309,7 @@ export const expandedTools: Tool[] = specs.map((spec) => ({
   tags: spec.tags,
   officialUrl: spec.officialUrl,
   relatedLinks: [
+    ...(relatedBySlug[spec.slug] ?? []),
     { label: 'Comparador de herramientas', href: '/herramientas/comparador/' },
     { label: 'Elegir por tarea', href: '/empieza/' },
   ],

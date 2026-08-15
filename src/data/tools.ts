@@ -67,6 +67,7 @@ const coreTools: Tool[] = [
     officialUrl: 'https://openai.com/chatgpt/pricing/',
     relatedLinks: [
       { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
+      { label: 'ChatGPT vs Gemini', href: '/herramientas/comparativas/chatgpt-vs-gemini/' },
       { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
       { label: 'Como elegir una herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
@@ -178,6 +179,7 @@ const coreTools: Tool[] = [
     officialUrl: 'https://notebooklm.google/',
     relatedLinks: [
       { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
+      { label: 'Herramientas para investigar con fuentes', href: '/herramientas/casos/para-investigar/' },
       { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Guia NotebookLM', href: '/blog/notebooklm-guia-2026/' },
       { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
@@ -233,6 +235,7 @@ const coreTools: Tool[] = [
     officialUrl: 'https://www.perplexity.ai/pro',
     relatedLinks: [
       { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
+      { label: 'Herramientas para investigar con fuentes', href: '/herramientas/casos/para-investigar/' },
       { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Metodo de evaluacion', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
@@ -289,6 +292,7 @@ const coreTools: Tool[] = [
     officialUrl: 'https://gamma.app/pricing',
     relatedLinks: [
       { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/' },
+      { label: 'Gamma vs Beautiful.ai', href: '/herramientas/comparativas/gamma-vs-beautiful-ai/' },
       { label: 'Herramientas IA para presentaciones', href: '/herramientas/para-presentaciones/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
       { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },

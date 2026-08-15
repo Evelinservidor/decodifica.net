@@ -11,6 +11,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from html.parser import HTMLParser
 from pathlib import Path
@@ -56,10 +57,29 @@ REQUIRED_PATHS = [
     "/robots.txt",
 ]
 
+REQUIRED_DISCOVERY_RESOURCES = [
+    {"path": "/rss.xml", "kind": "rss"},
+    {"path": "/favicon.ico", "kind": "icon"},
+]
+
+GOOGLE_CRAWLER_PROBES = [
+    {
+        "path": "/?utm_source=google_safety_probe",
+        "report_path": "/ [Google-Safety probe]",
+        "user_agent": "Google-Safety",
+    },
+    {
+        "path": "/empieza/?utm_source=googlebot_probe",
+        "report_path": "/empieza/ [Googlebot probe]",
+        "user_agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    },
+]
+
 IGNORED_LINK_SCHEMES = {"data", "javascript", "mailto", "tel"}
 TRANSIENT_HTTP_STATUSES = {408, 425, 429, 500, 502, 503, 504}
 DEFAULT_FETCH_ATTEMPTS = 3
 DEFAULT_RETRY_BACKOFF_SECONDS = 0.5
+DEFAULT_MAX_WORKERS = 8
 
 INTERNAL_COPY_PATTERNS = [
     "como funciona el embudo",
@@ -208,6 +228,29 @@ class AssetParser(HTMLParser):
                 self.assets.append(str(attributes["content"]))
 
 
+class DiscoveryResourceParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.resources: list[dict[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "link":
+            return
+        attributes = {name.lower(): value for name, value in attrs}
+        href = str(attributes.get("href") or "").strip()
+        rel = {item.lower() for item in str(attributes.get("rel") or "").split()}
+        mime = str(attributes.get("type") or "").lower()
+        kind = None
+        if "alternate" in rel and ("rss" in mime or "atom" in mime):
+            kind = "rss"
+        elif rel & {"icon", "shortcut", "apple-touch-icon"}:
+            kind = "icon"
+        elif "manifest" in rel:
+            kind = "manifest"
+        if href and kind:
+            self.resources.append({"href": href, "kind": kind})
+
+
 def normalize_internal_path(href: str, page_url: str, site_url: str) -> str | None:
     href = href.strip()
     if not href or href.startswith("#"):
@@ -282,13 +325,42 @@ def collect_built_assets(repo: Path, site_url: str) -> list[dict]:
     return [{"url": url, "pages": sorted(pages)} for url, pages in sorted(discovered.items())]
 
 
+def collect_built_discovery_resources(repo: Path, site_url: str) -> list[dict]:
+    dist = repo / "dist"
+    discovered: dict[tuple[str, str], set[str]] = {}
+    if dist.exists():
+        for path in dist.rglob("*.html"):
+            page_route = built_page_route(path, dist)
+            page_url = urljoin(f"{site_url.rstrip('/')}/", page_route.lstrip("/"))
+            parser = DiscoveryResourceParser()
+            parser.feed(path.read_text(encoding="utf-8-sig", errors="replace"))
+            for resource in parser.resources:
+                resolved = urljoin(page_url, resource["href"])
+                internal_path = normalize_internal_path(resolved, page_url, site_url)
+                if internal_path:
+                    discovered.setdefault((internal_path, resource["kind"]), set()).add(page_route)
+
+    for resource in REQUIRED_DISCOVERY_RESOURCES:
+        discovered.setdefault((resource["path"], resource["kind"]), set()).add("required-discovery-resource")
+
+    return [
+        {"path": path, "kind": kind, "pages": sorted(pages)}
+        for (path, kind), pages in sorted(discovered.items())
+    ]
+
+
 def fetch_url(
     url: str,
     timeout: int = 15,
     attempts: int = DEFAULT_FETCH_ATTEMPTS,
     retry_backoff_seconds: float = DEFAULT_RETRY_BACKOFF_SECONDS,
+    headers: dict[str, str] | None = None,
+    report_url: str | None = None,
 ) -> dict:
-    request = urllib.request.Request(url, headers={"User-Agent": "DecodificaWebHealth/1.0"})
+    request_headers = {"User-Agent": "DecodificaWebHealth/1.0"}
+    request_headers.update(headers or {})
+    request = urllib.request.Request(url, headers=request_headers)
+    public_url = report_url or url
     max_attempts = max(1, attempts)
     for attempt in range(1, max_attempts + 1):
         try:
@@ -301,18 +373,22 @@ def fetch_url(
                     "application/xml",
                 }
                 body_sample = raw_body.decode(response.headers.get_content_charset() or "utf-8", errors="replace")[:1000] if is_text else ""
+                cf_mitigated_value = response.headers.get("cf-mitigated")
+                cf_mitigated = cf_mitigated_value if isinstance(cf_mitigated_value, str) else ""
+                challenged = cf_mitigated.lower() == "challenge"
                 return {
-                    "url": url,
-                    "ok": 200 <= response.status < 400,
+                    "url": public_url,
+                    "ok": 200 <= response.status < 400 and not challenged,
                     "status": response.status,
                     "length": len(raw_body),
                     "content_type": content_type,
                     "body_sample": body_sample,
                     "attempts": attempt,
+                    "cf_mitigated": cf_mitigated or None,
                 }
         except urllib.error.HTTPError as exc:
             result = {
-                "url": url,
+                "url": public_url,
                 "ok": False,
                 "status": exc.code,
                 "error": str(exc),
@@ -322,7 +398,7 @@ def fetch_url(
             should_retry = exc.code in TRANSIENT_HTTP_STATUSES and attempt < max_attempts
         except (urllib.error.URLError, TimeoutError, ssl.SSLError, ConnectionError, OSError) as exc:
             result = {
-                "url": url,
+                "url": public_url,
                 "ok": False,
                 "status": None,
                 "error": str(exc),
@@ -332,7 +408,7 @@ def fetch_url(
             should_retry = attempt < max_attempts
         except Exception as exc:
             return {
-                "url": url,
+                "url": public_url,
                 "ok": False,
                 "status": None,
                 "error": str(exc),
@@ -348,13 +424,56 @@ def fetch_url(
 
 
 def fetch_assets(built_assets: list[dict]) -> list[dict]:
-    results: list[dict] = []
-    for asset in built_assets:
+    def fetch_asset(asset: dict) -> dict:
         result = fetch_url(asset["url"])
         result["pages"] = asset["pages"]
         result["ok"] = bool(result.get("ok")) and str(result.get("content_type", "")).startswith("image/")
-        results.append(result)
-    return results
+        return result
+
+    with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
+        return list(executor.map(fetch_asset, built_assets))
+
+
+def fetch_urls(urls: list[str]) -> list[dict]:
+    with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
+        return list(executor.map(fetch_url, urls))
+
+
+def discovery_resource_content_ok(kind: str, content_type: str) -> bool:
+    content_type = content_type.lower()
+    if kind == "rss":
+        return "xml" in content_type or "rss" in content_type or "atom" in content_type
+    if kind == "icon":
+        return content_type.startswith("image/") or content_type == "application/octet-stream"
+    if kind == "manifest":
+        return "json" in content_type or "manifest" in content_type
+    return True
+
+
+def fetch_discovery_resources(site_url: str, resources: list[dict]) -> list[dict]:
+    def fetch_resource(resource: dict) -> dict:
+        result = fetch_url(f"{site_url}{resource['path']}")
+        result.update({"kind": resource["kind"], "pages": resource["pages"]})
+        result["ok"] = bool(result.get("ok")) and discovery_resource_content_ok(
+            resource["kind"], str(result.get("content_type") or "")
+        )
+        return result
+
+    with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
+        return list(executor.map(fetch_resource, resources))
+
+
+def fetch_google_crawler_probes(site_url: str) -> list[dict]:
+    def fetch_probe(probe: dict) -> dict:
+        result = fetch_url(
+            f"{site_url}{probe['path']}",
+            headers={"User-Agent": probe["user_agent"]},
+            report_url=f"{site_url}{probe['report_path']}",
+        )
+        return result
+
+    with ThreadPoolExecutor(max_workers=len(GOOGLE_CRAWLER_PROBES)) as executor:
+        return list(executor.map(fetch_probe, GOOGLE_CRAWLER_PROBES))
 
 
 def iter_source_files(repo: Path):
@@ -389,6 +508,8 @@ def markdown(report: dict) -> str:
     production = report["production"]
     failed_urls = [item for item in production if not item["ok"]]
     failed_assets = [item for item in report["assets"] if not item["ok"]]
+    failed_resources = [item for item in report["discovery_resources"] if not item["ok"]]
+    failed_google_probes = [item for item in report["google_crawler_probes"] if not item["ok"]]
     copy_matches = report["internal_copy_matches"]
     missing_emails = [item for item in report["emails"] if not item["present"]]
     missing_socials = [item for item in report["socials"] if not item["present"]]
@@ -412,6 +533,8 @@ Generated: {report['generated_at']}
 - Production URL failures: {len(failed_urls)}
 - Image/social assets checked: {len(report['assets'])}
 - Image/social asset failures: {len(failed_assets)}
+- Discovery resources checked/failures: {len(report['discovery_resources'])}/{len(failed_resources)}
+- Google crawler probes checked/failures: {len(report['google_crawler_probes'])}/{len(failed_google_probes)}
 - Internal copy matches: {len(copy_matches)}
 - Missing emails: {len(missing_emails)}
 - Missing socials: {len(missing_socials)}
@@ -435,6 +558,7 @@ Generated: {report['generated_at']}
 
 
 def main() -> int:
+    started_at = time.monotonic()
     parser = argparse.ArgumentParser(description="Dry-run Decodifica web health check. Never publishes.")
     parser.add_argument("--config", type=Path, help="Optional web-targets.json path.")
     parser.add_argument("--skip-build", action="store_true")
@@ -449,9 +573,12 @@ def main() -> int:
     build = {"ok": True, "skipped": True} if args.skip_build else run_build(repo)
     discovered_internal_paths = collect_built_internal_paths(repo, site_url)
     built_assets = collect_built_assets(repo, site_url)
+    built_discovery_resources = collect_built_discovery_resources(repo, site_url)
     production_paths = sorted(set(REQUIRED_PATHS) | set(discovered_internal_paths))
-    production = [] if args.skip_production else [fetch_url(f"{site_url}{path}") for path in production_paths]
+    production = [] if args.skip_production else fetch_urls([f"{site_url}{path}" for path in production_paths])
     assets = [] if args.skip_production else fetch_assets(built_assets)
+    discovery_resources = [] if args.skip_production else fetch_discovery_resources(site_url, built_discovery_resources)
+    google_crawler_probes = [] if args.skip_production else fetch_google_crawler_probes(site_url)
     copy_matches = scan_internal_copy(repo)
     emails = source_presence(repo, REQUIRED_EMAILS)
     socials = source_presence(repo, REQUIRED_SOCIALS)
@@ -463,6 +590,10 @@ def main() -> int:
         recommendations.append("Review failed production URLs before promoting new pages or CTAs.")
     if any(not item["ok"] for item in assets):
         recommendations.append("Restore broken image or social-preview assets before sharing affected pages.")
+    if any(not item["ok"] for item in discovery_resources):
+        recommendations.append("Restore advertised and standard discovery resources such as RSS and favicon before the next crawl.")
+    if any(not item["ok"] for item in google_crawler_probes):
+        recommendations.append("Investigate CDN or security challenges affecting Google crawler user agents.")
     if copy_matches:
         recommendations.append("Rewrite internal-production copy matches into reader-facing public copy.")
     if any(not item["present"] for item in emails):
@@ -476,12 +607,15 @@ def main() -> int:
         bool(build.get("ok"))
         and all(item["ok"] for item in production)
         and all(item["ok"] for item in assets)
+        and all(item["ok"] for item in discovery_resources)
+        and all(item["ok"] for item in google_crawler_probes)
         and not copy_matches
         and all(item["present"] for item in emails)
         and all(item["present"] for item in socials)
     )
     report = {
         "generated_at": now_iso(),
+        "duration_seconds": round(time.monotonic() - started_at, 2),
         "job": "daily-health",
         "auto_publish": False,
         "ok": ok,
@@ -491,6 +625,8 @@ def main() -> int:
         "discovered_internal_paths": discovered_internal_paths,
         "production": production,
         "assets": assets,
+        "discovery_resources": discovery_resources,
+        "google_crawler_probes": google_crawler_probes,
         "internal_copy_matches": copy_matches,
         "emails": emails,
         "socials": socials,
