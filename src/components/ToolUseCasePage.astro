@@ -42,8 +42,8 @@ const breadcrumbLd = {
 <BaseLayout
   title={useCase.title}
   description={useCase.description}
-  modifiedDate="2026-07-14"
-  keywords={['herramientas IA', useCase.title, 'Decodifica']}
+  modifiedDate={useCase.modifiedDate ?? '2026-07-14'}
+  keywords={['herramientas IA', useCase.title, 'Decodifica', ...(useCase.keywords ?? [])]}
   section="Herramientas IA"
 >
   <article class="page-shell mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_use_case_read_minimum" data-track-label={useCase.slug} data-track-component="tool_use_case">
@@ -96,6 +96,49 @@ const breadcrumbLd = {
         </ul>
       </div>
     </section>
+
+    {useCase.originalResource && (
+      <section class="mt-12 rounded-xl border border-brand-500/30 bg-dark-800 p-6 sm:p-8" data-track-component="original_editable_resource">
+        <p class="text-sm font-semibold text-brand-300">{useCase.originalResource.eyebrow}</p>
+        <h2 class="mt-2 max-w-3xl font-display text-3xl font-bold text-white">{useCase.originalResource.title}</h2>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-dark-200">{useCase.originalResource.summary}</p>
+
+        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+          {useCase.originalResource.proofStats.map((stat) => (
+            <p class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">{stat}</p>
+          ))}
+        </div>
+
+        <div class="mt-8 grid gap-7 lg:grid-cols-[1.2fr_.8fr]">
+          <div>
+            <h3 class="font-display text-2xl font-bold text-white">Checklist: siete pruebas de editabilidad</h3>
+            <ol class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+              {useCase.originalResource.checklist.map((item, index) => (
+                <li class="flex gap-3"><span class="font-semibold text-brand-300">{index + 1}.</span><span>{item}</span></li>
+              ))}
+            </ol>
+          </div>
+          <aside class="rounded-lg border border-dark-600 bg-dark-900 p-5">
+            <h3 class="font-display text-xl font-bold text-white">Prueba con el mismo archivo</h3>
+            <p class="mt-3 text-sm leading-6 text-dark-300">Descárgalo, ábrelo en PowerPoint y repite el checklist antes de valorar cualquier generador.</p>
+            <a href={useCase.originalResource.downloadHref} download data-track="editable_pptx_download" data-track-label={useCase.slug} class="cta-primary pressable mt-5 inline-flex rounded-lg px-4 py-2.5 text-sm font-semibold">
+              {useCase.originalResource.downloadLabel}
+            </a>
+            <p class="mt-4 text-xs leading-5 text-dark-400">{useCase.originalResource.methodologyNote}</p>
+          </aside>
+        </div>
+
+        <div class="mt-7 border-t border-dark-600 pt-5">
+          <p class="text-sm font-semibold text-white">Fuentes técnicas de contexto</p>
+          <p class="mt-2 max-w-3xl text-sm leading-6 text-dark-300">Microsoft documenta tanto la edición de datos de gráficos como la estructura interna de un archivo PresentationML. Usamos esas operaciones como contexto técnico para el checklist; los resultados numéricos proceden de nuestra propia auditoría.</p>
+          <ul class="mt-3 space-y-2 text-sm leading-6">
+            {useCase.originalResource.sources.map((source) => (
+              <li><a href={source.href} target="_blank" rel="noopener" class="text-brand-300 hover:text-brand-200">{source.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
 
     <section class="mt-12 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <div class="grid gap-5 lg:grid-cols-[.8fr_1.2fr]">

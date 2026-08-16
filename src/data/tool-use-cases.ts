@@ -8,6 +8,19 @@ export type ToolUseCase = {
   comparisons: { label: string; href: string; description: string }[];
   decisionRules: string[];
   risks: string[];
+  modifiedDate?: string;
+  keywords?: string[];
+  originalResource?: {
+    eyebrow: string;
+    title: string;
+    summary: string;
+    proofStats: string[];
+    checklist: string[];
+    downloadHref: string;
+    downloadLabel: string;
+    methodologyNote: string;
+    sources: { label: string; href: string }[];
+  };
 };
 
 export const toolUseCases: ToolUseCase[] = [
@@ -83,9 +96,11 @@ export const toolUseCases: ToolUseCase[] = [
   {
     slug: 'para-presentaciones',
     title: 'Herramientas IA para presentaciones',
-    h1: 'Herramientas IA para presentaciones: estructura, diseño y revisión',
-    description: 'Herramientas IA para presentaciones: Gamma, Canva AI, ChatGPT y Claude según estructura, diseño, marca, exportación y privacidad.',
-    intro: 'Una buena presentación no sale de un prompt largo. Primero necesitas estructura y decisión; después diseño, marca y revisión final.',
+    h1: 'Herramientas IA para presentaciones editables: estructura, diseño y revisión',
+    description: 'Compara herramientas IA para presentaciones y comprueba si el PPTX sigue siendo editable con un archivo de prueba y un checklist práctico.',
+    intro: 'Una buena presentación no sale de un prompt largo. Primero necesitas estructura y decisión; después diseño, marca y una comprobación clave: que el PPTX permita corregir texto, tablas, gráficos, formas y notas por separado.',
+    modifiedDate: '2026-08-16',
+    keywords: ['presentaciones editables con IA', 'PPTX editable', 'PowerPoint con IA'],
     tools: ['gamma', 'canva-ai', 'chatgpt', 'claude'],
     comparisons: [
       { label: 'Gamma vs Canva AI', href: '/herramientas/gamma-vs-canva-ai/', description: 'La decisión central entre generar estructura y producir piezas visuales.' },
@@ -101,6 +116,33 @@ export const toolUseCases: ToolUseCase[] = [
       'No publiques datos o gráficos generados sin comprobarlos.',
       'No confundas diseño rápido con claridad: revisa la historia slide por slide.',
     ],
+    originalResource: {
+      eyebrow: 'Prueba reproducible de Decodifica',
+      title: 'No basta con que el archivo termine en .pptx',
+      summary: 'Creamos una presentación sintética de ocho diapositivas y aplicamos cinco cambios de control. La auditoría confirmó que conserva elementos nativos y no es una única imagen aplanada.',
+      proofStats: [
+        '8 de 8 diapositivas renderizadas sin overflow',
+        '53 formas nativas, 2 tablas y 1 gráfico editable',
+        '1 imagen incrustada y notas del orador en las 8 diapositivas',
+        '5 cambios verificados: título, celda, serie, color y nota',
+      ],
+      checklist: [
+        'Cambia una palabra sin reconstruir todo el bloque.',
+        'Corrige una sola celda de una tabla.',
+        'Modifica los valores de una serie del gráfico.',
+        'Cambia el relleno de una forma sin afectar al resto.',
+        'Comprueba que las notas del orador siguen disponibles.',
+        'Sustituye una imagen y confirma que el texto no forma parte del raster.',
+        'Guarda una copia y vuelve a abrirla para detectar fuentes o elementos desplazados.',
+      ],
+      downloadHref: '/downloads/presentacion-ia-editable-prueba-decodifica.pptx',
+      downloadLabel: 'Descargar el PPTX editable de prueba',
+      methodologyNote: 'El archivo usa contenido sintético y no contiene datos personales. Esta prueba demuestra el fixture de Decodifica; no afirma que hayamos probado las interfaces, planes o exportaciones de herramientas de terceros.',
+      sources: [
+        { label: 'Microsoft: cambiar los datos de un gráfico', href: 'https://support.microsoft.com/en-us/office/change-the-data-in-an-existing-chart-539c9840-7412-4da3-ab06-fcf318e996df' },
+        { label: 'Microsoft: estructura de un documento PresentationML', href: 'https://learn.microsoft.com/en-us/office/open-xml/presentation/structure-of-a-presentationml-document' },
+      ],
+    },
   },
   {
     slug: 'para-excel-hojas-calculo',
