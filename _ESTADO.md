@@ -44,7 +44,8 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 ## Pendiente
 
 - [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
-- [ ] **Jordi configura la cuenta de servicio de Search Console** (guía abajo). Acordado hacerlo el 07-10-2026.
+- [x] Informe de Search Console arreglado (06-10-2026). La organización de Google de Jordi bloquea crear claves (`iam.disableServiceAccountKeyCreation`), así que se usa **federación de identidades de GitHub sin claves**: proyecto `decodifica-informes-510822` (número 979898982695), pool `github`, proveedor `decodifica` (solo admite el repositorio Evelinservidor/decodifica.net), robot `informe-gsc@decodifica-informes-510822.iam.gserviceaccount.com` con permiso «Restringido» en Search Console. Probado: el informe de 28 días se generó y se subió a `data/gsc_weekly/`. Los 4 blogs de Blogspot que también lista `GSC_SITE_URLS` dan error porque el robot no tiene permiso en ellos (no hace falta para Decodifica).
+- [ ] El informe solo guarda las 20 consultas principales; ampliarlo para la Fase 2 y el agente semanal.
 - [ ] NotebookLM → «Gemini Notebook»: revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
 - [ ] `chatgpt-work-archivos-a-entregables` y `gpt-live-voz-chatgpt`: las webs de OpenAI devolvieron 403 al consultarlas; la premisa de ChatGPT Work («presenta un plan antes de ejecutar») está sin verificar. Revisar cuando se pueda abrir la fuente.
 - [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
@@ -57,7 +58,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Redirecciones: GitHub Pages no tiene redirecciones de servidor. Se usa `return Astro.redirect('/destino/', 301)` en el `.astro`, que genera una página con `meta refresh`, `noindex` y `canonical` al destino (igual que `/recursos-ia/`). El sitemap excluye automáticamente cualquier artículo que sea una redirección.
 - Para que el sitemap marque un artículo como actualizado, añade en su frontmatter `const modifiedDate = "AAAA-MM-DD";` y pásalo a `BaseLayout` (`modifiedDate={modifiedDate}`).
 
-## Guía para Jordi: arreglar el informe de Search Console (una sola vez, ~15 minutos)
+## Guía antigua (no aplicable: la organización bloquea las claves; ver arriba la solución aplicada)
 
 1. Entra en Google Cloud con tu cuenta de Google y crea un proyecto (o usa el que ya tenías para la app OAuth): https://console.cloud.google.com/projectcreate — nombre, por ejemplo, «decodifica-informes».
 2. Activa la API de Search Console en ese proyecto: https://console.cloud.google.com/apis/library/searchconsole.googleapis.com → botón **Habilitar**.
