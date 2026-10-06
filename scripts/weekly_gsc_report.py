@@ -161,6 +161,9 @@ def build_site_payload(token: str, site: str, days: int) -> dict[str, Any]:
     curr_pages = query_analytics(token, site, start_curr, end_curr, ["page"], row_limit=500)
     prev_pages = query_analytics(token, site, start_prev, end_prev, ["page"], row_limit=500)
 
+    # Query + page: qué página sale para cada búsqueda (para mejorar títulos)
+    curr_query_pages = query_analytics(token, site, start_curr, end_curr, ["query", "page"], row_limit=1000)
+
     # By country
     curr_countries = query_analytics(token, site, start_curr, end_curr, ["country"], row_limit=100)
 
@@ -207,6 +210,17 @@ def build_site_payload(token: str, site: str, days: int) -> dict[str, Any]:
                 for r in prev_queries
             ],
         },
+        "query_pages": [
+            {
+                "query": r["keys"][0],
+                "page": r["keys"][1],
+                "clicks": r["clicks"],
+                "impressions": r["impressions"],
+                "ctr": r["ctr"],
+                "position": r["position"],
+            }
+            for r in curr_query_pages
+        ],
         "pages": {
             "current": [
                 {

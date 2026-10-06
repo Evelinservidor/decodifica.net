@@ -11,9 +11,9 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 
 ## Plan aprobado por Jordi
 
-1. **Fase 1 · Dejar la web impecable** — hecha en la rama `fase-1-arreglos`, pendiente de que Jordi apruebe el pull request #6.
-2. **Fase 2 · Elegir el nicho con datos** — pendiente. Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
-3. **Fase 3 · Agente semanal** (rutina en la nube, lunes por la mañana, hora de España) — pendiente. Al principio abre un pull request y Jordi aprueba; más adelante, publicación automática.
+1. **Fase 1 · Dejar la web impecable** — **publicada el 06-10-2026** (pull request #6 fusionado; comprobado en línea).
+2. **Fase 2 · Elegir el nicho con datos** — **hecha (07-10-2026)**: Jordi elige seguir con **IA práctica**. Datos y comparación en `docs/fase-2-nichos.md`. Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
+3. **Fase 3 · Agente semanal** — en marcha: instrucciones en `docs/AGENTE-SEMANAL.md`, revisión SEO en `scripts/seo_preflight.py`. (rutina en la nube, lunes por la mañana, hora de España) — pendiente. Al principio abre un pull request y Jordi aprueba; más adelante, publicación automática.
 
 ## Fase 1: hecho
 
@@ -44,7 +44,8 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 ## Pendiente
 
 - [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
-- [ ] **Jordi configura la cuenta de servicio de Search Console** (guía abajo). Acordado hacerlo el 07-10-2026.
+- [x] Informe de Search Console arreglado (06-10-2026). La organización de Google de Jordi bloquea crear claves (`iam.disableServiceAccountKeyCreation`), así que se usa **federación de identidades de GitHub sin claves**: proyecto `decodifica-informes-510822` (número 979898982695), pool `github`, proveedor `decodifica` (solo admite el repositorio Evelinservidor/decodifica.net), robot `informe-gsc@decodifica-informes-510822.iam.gserviceaccount.com` con permiso «Restringido» en Search Console. Probado: el informe de 28 días se generó y se subió a `data/gsc_weekly/`. Los 4 blogs de Blogspot que también lista `GSC_SITE_URLS` dan error porque el robot no tiene permiso en ellos (no hace falta para Decodifica).
+- [ ] El informe solo guarda las 20 consultas principales; ampliarlo para la Fase 2 y el agente semanal.
 - [ ] NotebookLM → «Gemini Notebook»: revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
 - [ ] `chatgpt-work-archivos-a-entregables` y `gpt-live-voz-chatgpt`: las webs de OpenAI devolvieron 403 al consultarlas; la premisa de ChatGPT Work («presenta un plan antes de ejecutar») está sin verificar. Revisar cuando se pueda abrir la fuente.
 - [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
@@ -57,7 +58,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Redirecciones: GitHub Pages no tiene redirecciones de servidor. Se usa `return Astro.redirect('/destino/', 301)` en el `.astro`, que genera una página con `meta refresh`, `noindex` y `canonical` al destino (igual que `/recursos-ia/`). El sitemap excluye automáticamente cualquier artículo que sea una redirección.
 - Para que el sitemap marque un artículo como actualizado, añade en su frontmatter `const modifiedDate = "AAAA-MM-DD";` y pásalo a `BaseLayout` (`modifiedDate={modifiedDate}`).
 
-## Guía para Jordi: arreglar el informe de Search Console (una sola vez, ~15 minutos)
+## Guía antigua (no aplicable: la organización bloquea las claves; ver arriba la solución aplicada)
 
 1. Entra en Google Cloud con tu cuenta de Google y crea un proyecto (o usa el que ya tenías para la app OAuth): https://console.cloud.google.com/projectcreate — nombre, por ejemplo, «decodifica-informes».
 2. Activa la API de Search Console en ese proyecto: https://console.cloud.google.com/apis/library/searchconsole.googleapis.com → botón **Habilitar**.
@@ -70,6 +71,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 Si en el paso 4 Google dice que la creación de claves está bloqueada por una política de la organización, la alternativa es pasar la app OAuth a «producción» (https://console.cloud.google.com/auth/audience → **Publicar app**) y regenerar `GSC_REFRESH_TOKEN`.
 
 ## Decisiones de Jordi
+- (07-10-2026) Nicho: **opción 2, solo IA práctica**. La «casa autosuficiente» (solar aislada, baterías, domótica, IA en casa) queda como propuesta para más adelante, posiblemente en una **web nueva aparte**. Datos en `docs/fase-2-nichos.md`.
 - (06-10-2026) Publicar la Fase 1: sí.
 - (06-10-2026) Apellido: **Castañeira** (con ñ). Corregido en toda la web.
 - (06-10-2026) Redes activas: Facebook, Bluesky y Reddit (nadie publica en ellas). TikTok fuera de la web. Idea para la Fase 3: un agente programado que proponga publicaciones para esas redes a partir de los artículos (mismo esquema: propone, Jordi aprueba).
@@ -77,3 +79,21 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
 - (06-10-2026) Semrush, Ahrefs y OpenRush: cuentas gratuitas, sin pago.
 
 - (06-10-2026) Aprueba el plan de tres fases. El dinero, después: afiliados y producto propio antes que anuncios.
+
+## Fase 2: notas
+
+- (06-10-2026) Las cuentas gratuitas no dan datos de palabras clave por API:
+  - Semrush: `no_api_units` (la cuenta no tiene unidades de API).
+  - Ahrefs: «Insufficient plan».
+  - OpenRush: «Insufficient credits» (402).
+- Fuentes gratuitas que sí sirven:
+  1. **Search Console de Decodifica** (en cuanto Jordi configure la cuenta de servicio): demanda real de lo que ya cubre la web.
+  2. **Planificador de palabras clave de Google Ads** (gratis con una cuenta de Google Ads, sin campañas activas): volumen por rangos y puja (CPC) por país. Necesita que Jordi lo abra con su cuenta o comparta los resultados.
+  3. **Autocompletado de Google** (funciona desde aquí, sin volumen): para listar qué se busca en cada nicho y país.
+  4. Revisión manual de quién ocupa los primeros resultados (competencia) y de los programas de afiliados públicos (dinero por visita).
+
+## Agente semanal
+
+- Rutina en la nube cada lunes (hora de España), después del informe de Search Console de las 9:00. Sigue `docs/AGENTE-SEMANAL.md`.
+- Modo actual: **propone y Jordi aprueba** (pull request). Pasar a «Publicar sola: SÍ» cuando Jordi lo diga.
+- Cola de arreglos para el agente (el preflight los marca): `claude-emails-sonar-humanos` («brutal»), `crear-agente-voz-ia-sin-programar` («he probado», «increíble»), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»).
