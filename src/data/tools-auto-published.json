@@ -59,7 +59,7 @@
       "workflow": [
         "Revisa la documentación y decide si necesitas escritorio, Docker o servicio alojado.",
         "Elige el modelo y comprueba qué datos salen del dispositivo antes de añadir documentos.",
-        "Empieza con una colección no sensible y formula preguntas cuya respuesta puedas verificar.",
+        "Empieza con una colección no sensible y fórmula preguntas cuya respuesta puedas verificar.",
         "Revisa citas, permisos, telemetría y coste antes de ampliar el espacio o añadir usuarios."
       ],
       "privacyNotes": [

@@ -9,43 +9,43 @@ const claude = getToolBySlug('claude');
 
 const pageUrl = `${siteConfig.url}/herramientas/chatgpt-vs-claude/`;
 const title = 'ChatGPT vs Claude: cual elegir';
-const description = 'Comparativa practica entre ChatGPT y Claude: escritura, documentos, codigo, privacidad, precio y que usar segun la tarea.';
+const description = 'Comparativa práctica entre ChatGPT y Claude: escritura, documentos, código, privacidad, precio y que usar según la tarea.';
 
 const rows = [
   {
     criterion: 'Uso general',
     chatgpt: 'Mejor punto de entrada si quieres una herramienta para casi todo: escribir, resumir, razonar, programar y desbloquear tareas abiertas.',
-    claude: 'Muy fuerte, pero brilla mas cuando la tarea esta centrada en texto, documentos largos o instrucciones cuidadas.',
+    claude: 'Muy fuerte, pero brilla más cuando la tarea esta centrada en texto, documentos largos o instrucciones cuidadas.',
     winner: 'ChatGPT',
   },
   {
     criterion: 'Escritura larga',
     chatgpt: 'Funciona bien para borradores, estructura y reescritura, especialmente si iteras varias veces.',
-    claude: 'Suele ser mas comodo para documentos largos, tono cuidado, emails y textos donde el matiz importa.',
+    claude: 'Suele ser más cómodo para documentos largos, tono cuidado, emails y textos donde el matiz importa.',
     winner: 'Claude',
   },
   {
     criterion: 'Documentos y contexto',
     chatgpt: 'Buen asistente para resumir y transformar documentos, con valor extra si ya usas su ecosistema.',
-    claude: 'Una opcion especialmente fuerte cuando el trabajo gira alrededor de archivos, contexto extenso y revision de texto.',
+    claude: 'Una opción especialmente fuerte cuando el trabajo gira alrededor de archivos, contexto extenso y revisión de texto.',
     winner: 'Claude',
   },
   {
-    criterion: 'Codigo',
-    chatgpt: 'Buen copiloto general para explicar errores, crear scripts, revisar codigo y proponer soluciones.',
-    claude: 'Muy competitivo para explicar, refactorizar y razonar sobre codigo, sobre todo cuando hay contexto largo.',
-    winner: 'Empate segun flujo',
+    criterion: 'Código',
+    chatgpt: 'Buen copiloto general para explicar errores, crear scripts, revisar código y proponer soluciones.',
+    claude: 'Muy competitivo para explicar, refactorizar y razonar sobre código, sobre todo cuando hay contexto largo.',
+    winner: 'Empate según flujo',
   },
   {
     criterion: 'Privacidad de empresa',
     chatgpt: 'OpenAI declara que no entrena por defecto con datos de ChatGPT Business, Enterprise, Edu, Healthcare, Teachers ni API.',
-    claude: 'Anthropic separa productos de consumo y comerciales; sus politicas de retencion dependen del producto y acuerdo.',
+    claude: 'Anthropic separa productos de consumo y comerciales; sus políticas de retención dependen del producto y acuerdo.',
     winner: 'Revisar plan',
   },
   {
     criterion: 'Precio',
-    chatgpt: 'Tiene plan gratuito y planes de pago para usuarios, equipos y empresa. Los limites y funciones cambian por plan.',
-    claude: 'Tiene Free, Pro, Max y planes de trabajo/equipo. Pro se situa en el rango de pago individual habitual.',
+    chatgpt: 'Tiene plan gratuito y planes de pago para usuarios, equipos y empresa. Los límites y funciones cambian por plan.',
+    claude: 'Tiene Free, Pro, Max y planes de trabajo/equipo. Pro se sitúa en el rango de pago individual habitual.',
     winner: 'Depende del uso',
   },
 ];
@@ -55,8 +55,8 @@ const decisions = [
     title: 'Elige ChatGPT si...',
     items: [
       'Quieres una herramienta principal para tareas variadas.',
-      'Necesitas mezclar escritura, codigo, analisis, imagenes o trabajo general.',
-      'No tienes claro todavia que herramienta especializada necesitas.',
+      'Necesitas mezclar escritura, código, análisis, imágenes o trabajo general.',
+      'No tienes claro todavía que herramienta especializada necesitas.',
       'Trabajas con equipos que ya usan el ecosistema de OpenAI.',
     ],
   },
@@ -66,7 +66,7 @@ const decisions = [
       'Tu trabajo principal son documentos largos, emails o escritura cuidada.',
       'Necesitas transformar mucho texto sin perder tono ni estructura.',
       'Quieres crear instrucciones reutilizables para procesos repetidos.',
-      'Te importa especialmente el contexto largo y la revision de material textual.',
+      'Te importa especialmente el contexto largo y la revisión de material textual.',
     ],
   },
 ];
@@ -80,7 +80,7 @@ const useCases = [
   {
     task: 'Empezar una idea desde cero',
     choice: 'ChatGPT',
-    reason: 'Es mas versatil para explorar opciones, generar esquemas y convertir una idea vaga en una primera accion.',
+    reason: 'Es más versátil para explorar opciones, generar esquemas y convertir una idea vaga en una primera acción.',
   },
   {
     task: 'Revisar un documento largo',
@@ -88,14 +88,14 @@ const useCases = [
     reason: 'Tiene mucho sentido cuando el centro de la tarea es leer, reorganizar y mejorar texto con contexto.',
   },
   {
-    task: 'Resolver una duda de codigo',
+    task: 'Resolver una duda de código',
     choice: 'Empate',
     reason: 'Prueba ambos con el mismo error: muchas veces gana el que mejor entienda tu contexto y restricciones.',
   },
   {
     task: 'Trabajar con datos sensibles',
     choice: 'Ninguno sin revisar plan',
-    reason: 'Antes de subir datos privados, comprueba cuenta, plan, retencion, permisos y politica aplicable.',
+    reason: 'Antes de subir datos privados, comprueba cuenta, plan, retención, permisos y política aplicable.',
   },
 ];
 
@@ -105,21 +105,21 @@ const sources = [
   { label: 'Privacidad empresarial de OpenAI', href: 'https://openai.com/enterprise-privacy/' },
   { label: 'Planes oficiales de Claude', href: 'https://support.claude.com/en/articles/11049762-choose-a-claude-plan' },
   { label: 'Precios de Claude API', href: 'https://platform.claude.com/docs/en/about-claude/pricing' },
-  { label: 'Retencion de datos de Claude', href: 'https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data' },
+  { label: 'Retención de datos de Claude', href: 'https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data' },
 ];
 
 const faq = [
   {
     question: 'Es mejor ChatGPT o Claude?',
-    answer: 'Para uso general, ChatGPT suele ser mejor punto de partida. Para escritura larga, documentos y tono cuidado, Claude suele ser una apuesta mas natural. La decision buena depende de la tarea, no del nombre del modelo.',
+    answer: 'Para uso general, ChatGPT suele ser mejor punto de partida. Para escritura larga, documentos y tono cuidado, Claude suele ser una apuesta más natural. La decisión buena depende de la tarea, no del nombre del modelo.',
   },
   {
     question: 'Cual es mejor para escribir?',
-    answer: 'Claude suele destacar en textos largos, emails y documentos donde el tono importa. ChatGPT tambien escribe bien, pero su ventaja esta en ser mas versatil para tareas mezcladas.',
+    answer: 'Claude suele destacar en textos largos, emails y documentos donde el tono importa. ChatGPT también escribe bien, pero su ventaja esta en ser más versátil para tareas mezcladas.',
   },
   {
     question: 'Cual conviene para datos sensibles?',
-    answer: 'No subas datos sensibles a ningun chat sin revisar el plan, la configuracion y la politica de datos. En empresas, mira especificamente las condiciones de Business, Enterprise, Team o API.',
+    answer: 'No subas datos sensibles a ningún chat sin revisar el plan, la configuración y la política de datos. En empresas, mira especificamente las condiciones de Business, Enterprise, Team o API.',
   },
 ];
 
@@ -171,10 +171,10 @@ const faqLd = {
     <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          Comparativa practica
+          Comparativa práctica
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
-          ChatGPT vs Claude: cual elegir segun la tarea
+          ChatGPT vs Claude: cual elegir según la tarea
         </h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
           Si solo quieres una herramienta para casi todo, empieza por ChatGPT. Si tu trabajo gira alrededor de documentos, escritura larga y tono cuidado, Claude merece estar muy arriba. La clave no es elegir un ganador universal: es saber cual abrir primero.
@@ -186,7 +186,7 @@ const faqLd = {
       </div>
 
       <aside class="rounded-lg border border-dark-600 bg-dark-800 p-5">
-        <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+        <h2 class="font-display text-xl font-bold text-white">Decisión rápida</h2>
         <dl class="mt-4 grid gap-4 text-sm leading-6">
           <div>
             <dt class="font-semibold text-brand-300">Uso general</dt>
@@ -210,7 +210,7 @@ const faqLd = {
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
       <h2>Veredicto Decodifica</h2>
       <p>
-        ChatGPT gana como herramienta principal para uso amplio. Claude gana cuando el resultado depende de leer, reescribir y cuidar textos largos. Si trabajas con contenido, documentos o emails, prueba Claude. Si quieres una navaja suiza para empezar cualquier tarea, ChatGPT es mas directo.
+        ChatGPT gana como herramienta principal para uso amplio. Claude gana cuando el resultado depende de leer, reescribir y cuidar textos largos. Si trabajas con contenido, documentos o emails, prueba Claude. Si quieres una navaja suiza para empezar cualquier tarea, ChatGPT es más directo.
       </p>
     </section>
 
@@ -234,7 +234,7 @@ const faqLd = {
               <th class="border-b border-dark-600 px-3 py-3">Criterio</th>
               <th class="border-b border-dark-600 px-3 py-3">ChatGPT</th>
               <th class="border-b border-dark-600 px-3 py-3">Claude</th>
-              <th class="border-b border-dark-600 px-3 py-3">Mejor opcion</th>
+              <th class="border-b border-dark-600 px-3 py-3">Mejor opción</th>
             </tr>
           </thead>
           <tbody>
@@ -252,7 +252,7 @@ const faqLd = {
     </section>
 
     <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
-      <h2 class="font-display text-2xl font-bold text-white">Que abrir primero segun la tarea</h2>
+      <h2 class="font-display text-2xl font-bold text-white">Qué abrir primero según la tarea</h2>
       <div class="mt-5 grid gap-4 md:grid-cols-2">
         {useCases.map((item) => (
           <div class="rounded-lg border border-dark-600 bg-dark-900 p-4">
@@ -268,15 +268,15 @@ const faqLd = {
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Precio y limites</h2>
+        <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          Los dos tienen plan gratuito y planes de pago. ChatGPT organiza su oferta en planes personales, Business y Enterprise. Claude tiene Free, Pro, Max y planes para trabajo/equipo. En ambos casos, no decidas solo por el precio mensual: mira limites, funciones incluidas y el tipo de datos que vas a subir.
+          Los dos tienen plan gratuito y planes de pago. ChatGPT organiza su oferta en planes personales, Business y Enterprise. Claude tiene Free, Pro, Max y planes para trabajo/equipo. En ambos casos, no decidas solo por el precio mensual: mira límites, funciones incluidas y el tipo de datos que vas a subir.
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          La comparativa cambia mucho si hablamos de cuenta personal, plan de empresa o API. OpenAI declara que no entrena por defecto con datos de sus ofertas empresariales y API. Anthropic diferencia productos de consumo y comerciales, con politicas de retencion que dependen del caso. Si hay datos sensibles, revisa el plan antes de probar.
+          La comparativa cambia mucho si hablamos de cuenta personal, plan de empresa o API. OpenAI declara que no entrena por defecto con datos de sus ofertas empresariales y API. Anthropic diferencia productos de consumo y comerciales, con políticas de retención que dependen del caso. Si hay datos sensibles, revisa el plan antes de probar.
         </p>
       </div>
     </section>
@@ -284,9 +284,9 @@ const faqLd = {
     <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <h2 class="font-display text-2xl font-bold text-white">Flujo recomendado para decidir</h2>
       <ol class="mt-5 grid gap-4 md:grid-cols-4">
-        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 1</span><p class="mt-1">Elige una tarea real: email, documento, codigo o analisis.</p></li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 1</span><p class="mt-1">Elige una tarea real: email, documento, código o análisis.</p></li>
         <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 2</span><p class="mt-1">Usa el mismo prompt en ChatGPT y Claude.</p></li>
-        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 3</span><p class="mt-1">Compara salida, tiempo de edicion y errores.</p></li>
+        <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 3</span><p class="mt-1">Compara salida, tiempo de edición y errores.</p></li>
         <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><span class="text-xs font-semibold text-brand-300">Paso 4</span><p class="mt-1">Paga solo si esa tarea se repite cada semana.</p></li>
       </ol>
     </section>

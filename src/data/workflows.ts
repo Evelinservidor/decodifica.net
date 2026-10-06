@@ -27,7 +27,7 @@ export const practicalWorkflows: PracticalWorkflow[] = [
   },
   {
     slug: 'investigar-con-fuentes', title: 'Investigar un tema sin perder las fuentes', description: 'Workflow para separar descubrimiento, selección, análisis y redacción con herramientas distintas.', task: 'Investigación', tools: ['perplexity','notebooklm','gemini','kimi'],
-    steps: ['Formula una pregunta que pueda responderse con evidencia.', 'Busca documentos primarios y descarta resúmenes que no sostienen el claim.', 'Crea un corpus pequeño con las fuentes aceptadas.', 'Extrae hechos, declaraciones e inferencias en columnas separadas.', 'Redacta la conclusión enlazando cada claim importante.'],
+    steps: ['Fórmula una pregunta que pueda responderse con evidencia.', 'Busca documentos primarios y descarta resúmenes que no sostienen el claim.', 'Crea un corpus pequeño con las fuentes aceptadas.', 'Extrae hechos, declaraciones e inferencias en columnas separadas.', 'Redacta la conclusión enlazando cada claim importante.'],
     prompt: 'Analiza únicamente las fuentes proporcionadas. Devuelve una tabla con claim, tipo de claim, fuente exacta, fragmento que lo sostiene, fecha y duda pendiente. Si una fuente no permite afirmar algo, escribe “no demostrado”.',
     test: ['Incluye una fuente que no apoye el claim.', 'Comprueba si la salida la rechaza.', 'Abre manualmente todas las URLs conservadas.'], success: ['Cada claim apunta a su fuente.', 'Las dudas permanecen visibles.', 'No usa una fuente sobre un producto para validar otro.'], doNotDelegate: 'La decisión final de publicar un claim factual.', evidence: 'Basado en la jerarquía editorial de fuentes de Decodifica; debe probarse con cada investigación.',
   },

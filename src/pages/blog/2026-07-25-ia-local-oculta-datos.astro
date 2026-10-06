@@ -46,7 +46,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
       <ul class="space-y-2 text-dark-200 text-sm">
         <li><strong>Filtro local:</strong> Presidio sustituye correos, teléfonos e IBAN antes de enviar el texto a una IA externa.</li>
-        <li><strong>Prueba real:</strong> el vídeo compara el texto original con una salida marcada mediante etiquetas revisables.</li>
+        <li><strong>Ejemplo:</strong> la demostración enlazada en las fuentes compara el texto original con una salida marcada mediante etiquetas revisables.</li>
         <li><strong>Límite:</strong> nombres ambiguos, firmas, imágenes y PDF escaneados pueden necesitar OCR, reglas propias y revisión humana.</li>
         <li><strong>Decisión:</strong> sirve como barrera previa; no es una garantía de anonimato ni de cumplimiento legal.</li>
       </ul>
@@ -69,18 +69,13 @@ const pillarLabel = "Pilar 1: Apps web";
         <h3 class="mt-2 font-display text-xl font-bold text-white">Nombres, firmas y escaneos</h3>
         <p class="mt-2 text-sm text-dark-200">La detección depende del idioma, el formato, el OCR y los reconocedores configurados.</p>
       </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Ver la prueba</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Original frente a salida</h3>
-        <p class="mt-2 text-sm text-dark-200"><a href="https://www.youtube.com/watch?v=fE_gyEgL-Fs" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Abre el vídeo de Decodifica</a> y revisa qué desaparece antes de tocar ChatGPT.</p>
-      </div>
     </div>
 
     <p>Pegar un contrato, una factura o una ficha de cliente en ChatGPT puede exponer datos que el modelo no necesita para resumir, clasificar o extraer tareas. La alternativa práctica es filtrar el texto antes: Presidio funciona en local, detecta identificadores y los sustituye por etiquetas revisables.</p>
     <p>No convierte cualquier documento en anónimo ni garantiza cumplimiento legal. Sí añade una barrera útil entre el archivo original y una IA externa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué hace Presidio</h2>
     <p>Presidio es un proyecto abierto de Data Privacy Stack con dos piezas principales. El analizador localiza información personal; el anonimizador decide qué hacer con cada hallazgo: reemplazarlo, ocultarlo, cifrarlo o aplicar otra transformación.</p>
-    <p>En la prueba del vídeo, un correo, un teléfono y un IBAN desaparecen del texto original y se convierten en etiquetas como <code>&lt;EMAIL_ADDRESS&gt;</code>, <code>&lt;PHONE_NUMBER&gt;</code> e <code>&lt;IBAN_CODE&gt;</code>. El contenido útil permanece, pero la identidad queda separada antes de que el texto toque ChatGPT, Claude o Gemini.</p>
+    <p>En la demostración enlazada en las fuentes, un correo, un teléfono y un IBAN desaparecen del texto original y se convierten en etiquetas como <code>&lt;EMAIL_ADDRESS&gt;</code>, <code>&lt;PHONE_NUMBER&gt;</code> e <code>&lt;IBAN_CODE&gt;</code>. El contenido útil permanece, pero la identidad queda separada antes de que el texto toque ChatGPT, Claude o Gemini.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El flujo correcto antes de subir un documento</h2>
     <p>Yo lo usaría como un paso previo y revisable:</p>
     <ol>
@@ -117,18 +112,17 @@ const pillarLabel = "Pilar 1: Apps web";
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
+    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
     <ul class="space-y-2">
-      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">Guia practica de NotebookLM</a>, para decidir cuando usarlo con documentos, audio y fuentes propias.</li>
+      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">Guía práctica de NotebookLM</a>, para decidir cuando usarlo con documentos, audio y fuentes propias.</li>
       <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres llevar el aprendizaje a productividad diaria.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
-      <li><a href="/comunidad/" class="text-brand-400 hover:text-brand-300">Comunidad Decodifica</a>, para compartir pruebas, dudas y casos de uso con IA.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">

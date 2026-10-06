@@ -16,7 +16,6 @@ export const siteConfig = {
     collaborationsEmail: 'colaboraciones@decodifica.net',
   },
   social: {
-    youtube: 'https://www.youtube.com/@decodificaia',
     facebook: 'https://www.facebook.com/Decodificaia',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
     tiktok: 'https://www.tiktok.com/@decodificalaia',

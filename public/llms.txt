@@ -22,7 +22,7 @@ La web no publica transcripciones literales de los vídeos. Cada pieza debe ayud
 - [Constructor de prompts útiles](https://decodifica.net/herramientas/generador-prompts/): estructura prompts por tarea, contexto, resultado, restricciones y criterio de calidad sin enviar datos a una API.
 - [Preflight de datos](https://decodifica.net/herramientas/preflight-datos/): revisa sensibilidad, permisos, retención y consecuencias antes de subir información a una herramienta.
 
-## Decision guides
+## Decisión guides
 
 - [Herramientas IA para reuniones](https://decodifica.net/herramientas/casos/para-reuniones/): Granola, Fathom, NotebookLM y Claude según consentimiento, notas y seguimiento.
 - [Herramientas IA para Excel y hojas de cálculo](https://decodifica.net/herramientas/casos/para-excel-hojas-calculo/): Copilot, Gemini, Quadratic y ChatGPT con verificación de resultados.

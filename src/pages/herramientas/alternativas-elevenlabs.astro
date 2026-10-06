@@ -8,46 +8,46 @@ const elevenlabs = getToolBySlug('elevenlabs');
 
 const pageUrl = `${siteConfig.url}/herramientas/alternativas-elevenlabs/`;
 const title = 'Alternativas a ElevenLabs para voz IA';
-const description = 'Comparativa practica de alternativas a ElevenLabs: OpenAI, PlayHT, Resemble AI y Cartesia para voz IA, doblaje, API, clonacion y agentes.';
+const description = 'Comparativa práctica de alternativas a ElevenLabs: OpenAI, PlayHT, Resemble AI y Cartesia para voz IA, doblaje, API, clonación y agentes.';
 
 const options = [
   {
     name: 'ElevenLabs',
     bestFor: 'Locuciones, doblaje, voces expresivas y flujo completo para creadores.',
-    avoidIf: 'Tu prioridad absoluta es integrar voz dentro de una app propia con el menor numero de proveedores.',
-    notes: 'Muy fuerte como producto de voz IA general. Requiere cuidar permisos de voz, creditos, uso comercial y volumen.',
+    avoidIf: 'Tu prioridad absoluta es integrar voz dentro de una app propia con el menor número de proveedores.',
+    notes: 'Muy fuerte como producto de voz IA general. Requiere cuidar permisos de voz, créditos, uso comercial y volumen.',
   },
   {
     name: 'OpenAI',
     bestFor: 'Integrar voz con modelos conversacionales, agentes, API y flujos donde ya usas OpenAI.',
-    avoidIf: 'Buscas una interfaz de creador centrada en catalogo de voces y doblaje listo para produccion.',
-    notes: 'Tiene sentido cuando la voz forma parte de una aplicacion, bot o experiencia multimodal mas amplia.',
+    avoidIf: 'Buscas una interfaz de creador centrada en catálogo de voces y doblaje listo para producción.',
+    notes: 'Tiene sentido cuando la voz forma parte de una aplicación, bot o experiencia multimodal más amplia.',
   },
   {
     name: 'PlayHT',
     bestFor: 'TTS por API, streaming, voces para agentes y flujos donde necesitas modelos de voz conversacional.',
-    avoidIf: 'Necesitas una decision basada solo en precio publico simple: revisa plan, limites y documentacion actual.',
+    avoidIf: 'Necesitas una decisión basada solo en precio publico simple: revisa plan, límites y documentación actual.',
     notes: 'Interesante para desarrolladores que quieren TTS, streaming y modelos conversacionales con API.',
   },
   {
     name: 'Resemble AI',
-    bestFor: 'Equipos que priorizan clonacion segura, deteccion, watermarking o despliegues con mas control empresarial.',
-    avoidIf: 'Solo necesitas una locucion rapida y barata para un video sencillo.',
-    notes: 'Mas orientada a seguridad, voz sintetica profesional, clonacion y casos empresariales.',
+    bestFor: 'Equipos que priorizan clonación segura, detección, watermarking o despliegues con más control empresarial.',
+    avoidIf: 'Solo necesitas una locución rápida y barata para un vídeo sencillo.',
+    notes: 'Más orientada a seguridad, voz sintética profesional, clonación y casos empresariales.',
   },
   {
     name: 'Cartesia',
     bestFor: 'Voz en tiempo real, baja latencia, agentes y experiencias interactivas.',
-    avoidIf: 'Tu caso principal es una narracion larga tradicional y no necesitas respuesta en tiempo real.',
-    notes: 'Buena candidata cuando la velocidad y la conversacion importan tanto como la calidad de la voz.',
+    avoidIf: 'Tu caso principal es una narración larga tradicional y no necesitas respuesta en tiempo real.',
+    notes: 'Buena candidata cuando la velocidad y la conversación importan tanto como la calidad de la voz.',
   },
 ];
 
 const rows = [
   {
-    criterion: 'Video y locucion',
+    criterion: 'Vídeo y locución',
     choice: 'ElevenLabs',
-    reason: 'Tiene un producto muy directo para narracion, doblaje y piezas publicables.',
+    reason: 'Tiene un producto muy directo para narración, doblaje y piezas publicables.',
   },
   {
     criterion: 'Agentes de voz',
@@ -60,14 +60,14 @@ const rows = [
     reason: 'Depende de latencia, voces, SDK, coste y proveedor que ya uses.',
   },
   {
-    criterion: 'Clonacion y seguridad',
+    criterion: 'Clonación y seguridad',
     choice: 'Resemble AI',
-    reason: 'Tiene posicionamiento fuerte en clonacion, seguridad, deteccion y despliegues empresariales.',
+    reason: 'Tiene posicionamiento fuerte en clonación, seguridad, detección y despliegues empresariales.',
   },
   {
     criterion: 'Coste a escala',
     choice: 'Comparar con prueba real',
-    reason: 'Los modelos cambian por caracteres, tokens, creditos o minutos. Calcula con tu guion y volumen real.',
+    reason: 'Los modelos cambian por caracteres, tokens, créditos o minutos. Calcula con tu guion y volumen real.',
   },
   {
     criterion: 'Permisos de voz',
@@ -77,17 +77,17 @@ const rows = [
 ];
 
 const workflow = [
-  'Define el caso: locucion, doblaje, agente, API, clonacion o producto.',
+  'Define el caso: locución, doblaje, agente, API, clonación o producto.',
   'Genera la misma muestra corta en dos o tres proveedores.',
   'Compara naturalidad, control, latencia, coste estimado y derechos de uso.',
-  'Escala solo cuando tengas permisos, proceso de revision y calculo de coste por volumen.',
+  'Escala solo cuando tengas permisos, proceso de revisión y cálculo de coste por volumen.',
 ];
 
 const sources = [
   { label: 'Precios oficiales de ElevenLabs', href: 'https://elevenlabs.io/pricing' },
   { label: 'Precios API de ElevenLabs', href: 'https://elevenlabs.io/pricing/api' },
   { label: 'Precios oficiales de OpenAI API', href: 'https://developers.openai.com/api/docs/pricing' },
-  { label: 'Documentacion PlayHT', href: 'https://docs.play.ht/reference' },
+  { label: 'Documentación PlayHT', href: 'https://docs.play.ht/reference' },
   { label: 'Modelos de PlayHT', href: 'https://docs.play.ht/reference/models' },
   { label: 'Precios de Resemble AI', href: 'https://www.resemble.ai/pricing' },
   { label: 'Voice creation de Resemble AI', href: 'https://www.resemble.ai/products/voice-creation' },
@@ -98,15 +98,15 @@ const sources = [
 const faq = [
   {
     question: 'Cual es la mejor alternativa a ElevenLabs?',
-    answer: 'Depende del caso: OpenAI si quieres voz integrada con modelos y agentes, Cartesia si necesitas baja latencia, Resemble AI si priorizas clonacion segura y PlayHT si buscas TTS por API y streaming.',
+    answer: 'Depende del caso: OpenAI si quieres voz integrada con modelos y agentes, Cartesia si necesitas baja latencia, Resemble AI si priorizas clonación segura y PlayHT si buscas TTS por API y streaming.',
   },
   {
     question: 'ElevenLabs sigue mereciendo la pena?',
-    answer: 'Si tu caso es locucion, doblaje o contenido de voz para creadores, ElevenLabs sigue siendo una opcion muy fuerte. La alternativa tiene mas sentido cuando tu prioridad es API, latencia, seguridad empresarial o stack tecnico.',
+    answer: 'Si tu caso es locución, doblaje o contenido de voz para creadores, ElevenLabs sigue siendo una opción muy fuerte. La alternativa tiene más sentido cuando tu prioridad es API, latencia, seguridad empresarial o stack técnico.',
   },
   {
     question: 'Puedo clonar cualquier voz con estas herramientas?',
-    answer: 'No deberias clonar, imitar ni publicar una voz sin permiso claro. La decision legal y de derechos no la resuelve la herramienta: debe existir consentimiento y uso autorizado.',
+    answer: 'No deberías clonar, imitar ni publicar una voz sin permiso claro. La decisión legal y de derechos no la resuelve la herramienta: debe existir consentimiento y uso autorizado.',
   },
 ];
 
@@ -158,25 +158,25 @@ const faqLd = {
     <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          Comparativa practica
+          Comparativa práctica
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
           Alternativas a ElevenLabs para voz IA
         </h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
-          ElevenLabs es una opcion fuerte para locuciones y doblaje, pero no siempre es la mejor para API, agentes, baja latencia o clonacion empresarial. La decision empieza por el uso real, no por el demo mas llamativo.
+          ElevenLabs es una opción fuerte para locuciones y doblaje, pero no siempre es la mejor para API, agentes, baja latencia o clonación empresarial. La decisión empieza por el uso real, no por el demo más llamativo.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/herramientas/elevenlabs/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha ElevenLabs</a>
-          <a href="/blog/crear-agente-voz-ia-sin-programar/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver guia de agentes de voz</a>
+          <a href="/blog/crear-agente-voz-ia-sin-programar/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver guía de agentes de voz</a>
         </div>
       </div>
 
       <aside class="rounded-lg border border-dark-600 bg-dark-800 p-5">
-        <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+        <h2 class="font-display text-xl font-bold text-white">Decisión rápida</h2>
         <dl class="mt-4 grid gap-4 text-sm leading-6">
           <div>
-            <dt class="font-semibold text-brand-300">Locucion y doblaje</dt>
+            <dt class="font-semibold text-brand-300">Locución y doblaje</dt>
             <dd class="mt-1 text-dark-200">ElevenLabs</dd>
           </div>
           <div>
@@ -184,7 +184,7 @@ const faqLd = {
             <dd class="mt-1 text-dark-200">OpenAI, PlayHT o Cartesia</dd>
           </div>
           <div>
-            <dt class="font-semibold text-brand-300">Clonacion segura</dt>
+            <dt class="font-semibold text-brand-300">Clonación segura</dt>
             <dd class="mt-1 text-dark-200">Resemble AI o plan empresarial revisado.</dd>
           </div>
         </dl>
@@ -197,7 +197,7 @@ const faqLd = {
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
       <h2>Veredicto Decodifica</h2>
       <p>
-        Si haces contenido de voz y quieres ir rapido, empieza por ElevenLabs. Si vas a construir un producto, agente o flujo tecnico, compara tambien OpenAI, PlayHT y Cartesia. Si hay clonacion de voz o uso empresarial sensible, mira Resemble AI y revisa permisos antes de producir.
+        Si haces contenido de voz y quieres ir rápido, empieza por ElevenLabs. Si vas a construir un producto, agente o flujo técnico, compara también OpenAI, PlayHT y Cartesia. Si hay clonación de voz o uso empresarial sensible, mira Resemble AI y revisa permisos antes de producir.
       </p>
     </section>
 
@@ -211,7 +211,7 @@ const faqLd = {
               <p class="mt-1 text-dark-200">{option.bestFor}</p>
             </div>
             <div>
-              <div class="font-semibold text-brand-300">Evitala si</div>
+              <div class="font-semibold text-brand-300">Evítala si</div>
               <p class="mt-1 text-dark-200">{option.avoidIf}</p>
             </div>
             <p class="text-dark-300">{option.notes}</p>
@@ -227,8 +227,8 @@ const faqLd = {
           <thead>
             <tr class="text-xs uppercase text-dark-300">
               <th class="border-b border-dark-600 px-3 py-3">Criterio</th>
-              <th class="border-b border-dark-600 px-3 py-3">Mejor opcion inicial</th>
-              <th class="border-b border-dark-600 px-3 py-3">Por que</th>
+              <th class="border-b border-dark-600 px-3 py-3">Mejor opción inicial</th>
+              <th class="border-b border-dark-600 px-3 py-3">Por qué</th>
             </tr>
           </thead>
           <tbody>
@@ -258,15 +258,15 @@ const faqLd = {
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Precio y limites</h2>
+        <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          No compares solo el precio mensual. Un proveedor puede cobrar por creditos, caracteres, tokens, minutos, llamadas o seats. Para voz IA, calcula siempre con tu guion real: duracion media, idiomas, numero de voces, uso comercial, API y revision humana.
+          No compares solo el precio mensual. Un proveedor puede cobrar por créditos, caracteres, tokens, minutos, llamadas o seats. Para voz IA, calcula siempre con tu guion real: duración media, idiomas, número de voces, uso comercial, API y revisión humana.
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Privacidad y permisos</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          La voz es material sensible. Antes de clonar, imitar o publicar una voz, necesitas permiso claro y uso autorizado. Tambien conviene separar guiones privados, voces de clientes y pruebas internas de material publico.
+          La voz es material sensible. Antes de clonar, imitar o publicar una voz, necesitas permiso claro y uso autorizado. También conviene separar guiones privados, voces de clientes y pruebas internas de material publico.
         </p>
       </div>
     </section>
@@ -277,7 +277,7 @@ const faqLd = {
         <ul class="mt-4 space-y-3 text-sm leading-6">
           {elevenlabs && <li><a href={`/herramientas/${elevenlabs.slug}/`} class="text-brand-300 hover:text-brand-200">{elevenlabs.name}: cuando usarla</a></li>}
           <li><a href="/blog/crear-agente-voz-ia-sin-programar/" class="text-brand-300 hover:text-brand-200">Crear agente de voz IA sin programar</a></li>
-          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Como elegir una herramienta IA</a></li>
+          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Cómo elegir una herramienta IA</a></li>
         </ul>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
