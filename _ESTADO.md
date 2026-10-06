@@ -11,7 +11,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 
 ## Plan aprobado por Jordi
 
-1. **Fase 1 · Dejar la web impecable** — en curso (rama `fase-1-arreglos`).
+1. **Fase 1 · Dejar la web impecable** — hecha en la rama `fase-1-arreglos`, pendiente de que Jordi apruebe el pull request #6.
 2. **Fase 2 · Elegir el nicho con datos** — pendiente. Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
 3. **Fase 3 · Agente semanal** (rutina en la nube, lunes por la mañana, hora de España) — pendiente. Al principio abre un pull request y Jordi aprueba; más adelante, publicación automática.
 
@@ -28,22 +28,31 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Generador de prompts: título orientado a la búsqueda («Generador de prompts gratis y sin registro»). Blog: título «Guías de IA práctica en español». Quitado `<main>` anidado en 5 páginas.
 - Informe semanal de Search Console: el fallo era el token OAuth caducado (error 400 en `oauth2.googleapis.com/token`). El script ya acepta una **cuenta de servicio** (`GSC_SERVICE_ACCOUNT_JSON`), que no caduca. **Falta que Jordi cree la cuenta y guarde el secreto** (guía abajo).
 
-## Fase 1: en curso / pendiente
+## Fase 1: hecho (segunda parte)
 
-- [ ] Fusiones con redirección (en revisión):
-  - Claude Skills: `claude-skills-desde-cero` → `claude-skills-1000-gratis` (guía única reescrita).
-  - NotebookLM: `notebooklm-google-openai` → `notebooklm-guia-2026`. La comparativa `/herramientas/notebooklm-vs-perplexity/` se queda (otra búsqueda).
-  - IA gratis: `ia-gratis-silicon-valley` → `alternativas-gratis-chatgpt-2026` (actualizada a octubre de 2026). `5-atajos-ia-gratis` y `odysseus-pewdiepie-ia-gratis` se quedan: responden a búsquedas distintas.
-  - IA china: `glm-52-kimi-coinbase` y `prompts-chinos-abiertos` → `deepseek-app-oficial-espanol` (guía DeepSeek/Qwen/Kimi en español).
-- [ ] «emergent ia»: reescribir `crear-app-web-ias-chinas-open-source` (la URL se mantiene porque ya tiene impresiones) para responder qué es Emergent, precios y cómo usarlo.
-- [ ] Limpiar texto de plantilla y descripciones cortadas con «...» en 12 artículos más.
-- [ ] Actualizar enlaces internos que apunten a URLs redirigidas.
-- [ ] NotebookLM se llama «Gemini Notebook» desde el 16-07-2026 (notebooklm.google redirige a notebook.google). La guía ya está al día; falta revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
-- [ ] `claude-skills-desde-cero.pdf` (da 404): **no se ha publicado a propósito**. Contiene afirmaciones en primera persona que no podemos comprobar («he creado 8 skills», «lo uso 5-8 veces al día»), un dato técnico dudoso y el usuario del canal antiguo. Ninguna página de la web lo enlaza. Opciones: rehacerlo a partir de la guía nueva de Claude Skills, o dejarlo sin publicar. Pendiente de Jordi.
-- [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de poner anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
-- [ ] Nombre del autor: en unas páginas «Jordi Castaneira» y en el JSON-LD de un artículo «Jordi Castañeira». Confirmar con Jordi cuál es el correcto.
-- [ ] Redes sociales de `site-config.ts` (Facebook, Bluesky, TikTok, Reddit): confirmar con Jordi que siguen activas y son suyas.
-- [ ] Revisión de datos (fuentes) del resto de artículos antiguos que no se han reescrito: queda como tarea continua del agente semanal.
+- Fusiones con redirección (la página que se queda está reescrita con fuentes oficiales consultadas el 06-10-2026):
+  - Claude Skills: `claude-skills-desde-cero` → `claude-skills-1000-gratis` («Claude Skills gratis: qué son, cómo instalarlas y crearlas»). Se quitó «+1.000» del título (no verificable).
+  - NotebookLM: `notebooklm-google-openai` → `notebooklm-guia-2026`. **NotebookLM se llama «Gemini Notebook» desde el 16-07-2026** (notebooklm.google redirige a notebook.google); la guía usa ambos nombres.
+  - IA gratis: `ia-gratis-silicon-valley` → `alternativas-gratis-chatgpt-2026` (7 asistentes; Le Chat ahora es «Mistral Vibe», chat de Qwen ahora es «Qwen Studio»). `5-atajos-ia-gratis` y `odysseus-pewdiepie-ia-gratis` se quedan (búsquedas distintas).
+  - IA china: `glm-52-kimi-coinbase` y `prompts-chinos-abiertos` → `deepseek-app-oficial-espanol` («DeepSeek, Qwen y Kimi en español: cómo usarlos gratis»).
+- «emergent ia»: `crear-app-web-ias-chinas-open-source` reescrito («Emergent IA: qué es, precios y cómo crear una app»); la URL se mantiene.
+- Limpieza de texto de plantilla, primera persona sin respaldo y restos de guion de vídeo en 12 artículos; descripciones nuevas (ninguna termina en «...»); `modifiedDate` 2026-10-06 en todo lo reescrito.
+- `alternativas-fable-5`: la suspensión de Fable 5 (12-06-2026, directiva de exportación de EE. UU.) y su vuelta (01-07-2026) están confirmadas en anthropic.com/news; el artículo lo cuenta con esas fuentes.
+- Enlaces internos apuntan directamente a las guías fusionadas. Comprobado: 0 enlaces internos rotos en la web construida.
+- Quitadas las últimas referencias a «vídeos» del canal antiguo en portada, recursos y newsletter.
+
+## Pendiente
+
+- [ ] **Jordi aprueba y fusiona el pull request de la Fase 1** (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
+- [ ] **Jordi configura la cuenta de servicio de Search Console** (guía abajo).
+- [ ] NotebookLM → «Gemini Notebook»: revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
+- [ ] `chatgpt-work-archivos-a-entregables` y `gpt-live-voz-chatgpt`: las webs de OpenAI devolvieron 403 al consultarlas; la premisa de ChatGPT Work («presenta un plan antes de ejecutar») está sin verificar. Revisar cuando se pueda abrir la fuente.
+- [ ] `claude-skills-desde-cero.pdf` (da 404): **no se ha publicado a propósito** (afirmaciones en primera persona no comprobables, un dato técnico erróneo y el usuario del canal antiguo). Ninguna página lo enlaza. Pendiente de Jordi: rehacerlo desde la guía nueva o dejarlo.
+- [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
+- [ ] Nombre del autor: «Jordi Castaneira» en unas páginas y «Jordi Castañeira» en otra. Confirmar con Jordi.
+- [ ] Redes de `site-config.ts` (Facebook, Bluesky, TikTok, Reddit): confirmar con Jordi que siguen activas y son suyas.
+- [ ] Revisión de fuentes del resto de artículos antiguos no reescritos (`ia-mejora-excel`, `ia-crea-presentaciones-completas`, `ia-organiza-pendientes`, `crear-agente-voz-ia-sin-programar`, `claude-emails-sonar-humanos`, `odysseus-pewdiepie-ia-gratis`, `qwen-code-agent-terminal`, `ia-resumir-reuniones-tareas-revisables`, `2026-07-28-higgsfield-davinci-plugin-ia`, `2026-08-01-qwen3-asr-transcribe-espanol`, `como-elegir-herramienta-ia`): tarea continua del agente semanal (Fase 3).
+- [ ] Fase 2 (nicho con datos): antes de usar Semrush/Ahrefs/OpenRush, preguntar a Jordi si gastan créditos. Nota: Ahrefs respondió «Insufficient plan» a la consulta de uso; OpenRush no tiene Search Console conectado.
 
 ### Decisiones técnicas tomadas
 
