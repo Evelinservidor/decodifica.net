@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "1000 prompts gratis para Nano Banana: cómo aprovecharlos";
-const description = "Una biblioteca con más de 1.000 prompts puede ahorrar muchas pruebas con Nano Banana, pero no porque exista una frase mágica para cada imagen. Su valor...";
+const title = "Prompts para Nano Banana: cómo usar una biblioteca gratuita";
+const description = "Cómo aprovechar la biblioteca abierta de prompts para Nano Banana Pro: una fórmula de cinco partes, usos prácticos y cómo compararla con Qwen-Image.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-21";
 const readingTime = "4 min";
 const tags = ["Nano Banana", "prompts IA", "Gemini", "generación de imágenes", "Qwen Image"];
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/2026-07-22-nano-banana-1000-prompts.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -44,11 +46,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
 
-    <p>Una biblioteca con más de 1.000 prompts puede ahorrar muchas pruebas con Nano Banana, pero no porque exista una frase mágica para cada imagen. Su valor está en mostrar estructuras completas que puedes adaptar: sujeto, estilo, iluminación, encuadre, fondo y emoción.</p>
+    <p>La biblioteca abierta de YouMind para Nano Banana Pro reúne, según su README (consultado en octubre de 2026), más de 10.000 prompts. Puede ahorrar muchas pruebas, pero no porque exista una frase mágica para cada imagen. Su valor está en mostrar estructuras completas que puedes adaptar: sujeto, estilo, iluminación, encuadre, fondo y emoción.</p>
     <p>La forma útil de aprovecharla es empezar con una tarea real, elegir una plantilla cercana y cambiar solo lo necesario. Así descubres qué parte del prompt mejora el resultado y evitas gastar créditos repitiendo instrucciones vagas.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué contiene la biblioteca</h2>
-    <p>El repositorio reúne prompts organizados por tipos de imagen y casos de uso. Hay ejemplos para retratos, producto, ilustración, infografías, escenas publicitarias y composiciones pensadas para redes o miniaturas.</p>
-    <p>No necesitas guardar los mil. Busca una categoría próxima a tu objetivo, revisa cómo describe la escena y conserva tres o cinco plantillas que puedas reutilizar.</p>
+    <p>El repositorio se publica en GitHub como proyecto gratuito y de código abierto, muestra cada prompt con una imagen de vista previa y tiene el README traducido a 16 idiomas, entre ellos el español.</p>
+    <p>No necesitas guardarlos todos. Busca una categoría próxima a tu objetivo, revisa cómo describe la escena y conserva tres o cinco plantillas que puedas reutilizar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">La fórmula de cinco partes</h2>
     <p>Cuando ninguna plantilla encaje exactamente, estructura el prompt con cinco piezas:</p>
     <ol>
@@ -60,15 +62,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </ol>
     <p>Esta estructura no garantiza una imagen perfecta, pero reduce la ambigüedad. También facilita corregir: si el encuadre falla, cambias el encuadre; no reescribes todo el prompt.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres usos que sí merecen una prueba</h2>
-    <p><strong>Miniatura de YouTube.</strong> Define un sujeto claro, contraste fuerte, espacio para texto y una emoción legible incluso en pequeño. Evita pedir demasiados elementos compitiendo por atención.</p>
+    <p><strong>Miniatura para vídeo.</strong> Define un sujeto claro, contraste fuerte, espacio para texto y una emoción legible incluso en pequeño. Evita pedir demasiados elementos compitiendo por atención.</p>
     <p><strong>Infografía.</strong> Separa primero la jerarquía de información y después el estilo. El texto generado dentro de una imagen todavía necesita revisión, así que comprueba cada cifra y etiqueta antes de publicar.</p>
-    <p><strong>Fotografía de producto.</strong> Específica material, superficie, luz, ángulo y contexto de uso. Si el producto debe ser fiel a uno real, compara logos, proporciones y detalles; una imagen atractiva no equivale a una representación exacta.</p>
+    <p><strong>Fotografía de producto.</strong> Especifica material, superficie, luz, ángulo y contexto de uso. Si el producto debe ser fiel a uno real, compara logos, proporciones y detalles; una imagen atractiva no equivale a una representación exacta.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probar sin tirar créditos</h2>
     <p>Empieza con una sola plantilla y genera una primera versión. Después cambia una variable cada vez: luz, cámara, fondo o estilo. Guarda el prompt y el resultado que funcionen juntos.</p>
     <p>Si modificas cinco cosas a la vez, no sabrás qué produjo la mejora. Un pequeño archivo con prompt, imagen y nota de uso vale más que una carpeta con cientos de instrucciones sin contexto.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Nano Banana frente a Qwen Image</h2>
-    <p>Nano Banana está integrado en el ecosistema de Gemini y resulta cómodo para generar y editar mediante instrucciones. Qwen Image ofrece otra vía para experimentar con generación y edición de imágenes desde un proyecto abierto.</p>
-    <p>La comparación útil no es cuál gana en una demo aislada. Usa el mismo objetivo, la misma referencia y un criterio sencillo: fidelidad al sujeto, legibilidad, facilidad de edición y número de intentos necesarios.</p>
+    <p>Nano Banana es la familia de modelos de imagen de Google construida sobre Gemini (Nano Banana 2 Lite, Nano Banana 2 y Nano Banana Pro). Está disponible en la app de Gemini, Google AI Studio y la API de Gemini, y permite generar y editar imágenes con instrucciones en lenguaje natural.</p>
+    <p>Qwen-Image es un modelo de 20.000 millones de parámetros del equipo Qwen, con pesos descargables bajo licencia Apache 2.0. Su blog oficial destaca el renderizado de texto complejo (también en chino) y la edición de imágenes.</p>
+    <p>Para compararlos, usa el mismo objetivo, la misma referencia y un criterio sencillo: fidelidad al sujeto, legibilidad, facilidad de edición y número de intentos necesarios.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene revisar</h2>
     <p>Una biblioteca pública puede contener estilos, marcas o personajes que no debas usar comercialmente. Revisa derechos, privacidad y exactitud antes de publicar. No subas imágenes sensibles solo porque la herramienta permita editarlas.</p>
     <p>También conviene desconfiar de cualquier prompt que prometa resultados idénticos en todos los modelos. Cada sistema interpreta de forma distinta el orden, el nivel de detalle y las referencias.</p>
@@ -78,13 +81,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
       <li><a href="https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts</a></li>
-      <li><a href="https://gemini.google.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://gemini.google.com/</a></li>
+      <li><a href="https://deepmind.google/models/gemini-image/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Google DeepMind: Nano Banana (modelos de imagen de Gemini)</a></li>
+      <li><a href="https://huggingface.co/Qwen/Qwen-Image" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Qwen-Image en Hugging Face (licencia y pesos)</a></li>
       <li><a href="https://qwenlm.github.io/blog/qwen-image/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/blog/qwen-image/</a></li>
     </ul>
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
     <ul class="space-y-2">
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
       <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
@@ -119,6 +122,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -135,7 +139,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
       },
       {
             "@type": "WebPage",
-            "url": "https://gemini.google.com/"
+            "url": "https://deepmind.google/models/gemini-image/"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://huggingface.co/Qwen/Qwen-Image"
       },
       {
             "@type": "WebPage",

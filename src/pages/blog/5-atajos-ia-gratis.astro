@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "5 atajos de IA que te ahorran una hora al día (todos gratis)";
-const description = "No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos,...";
+const title = "5 atajos de IA para correos, traducciones y tareas";
+const description = "Cinco prompts listos para copiar: resumir correos, crear plantillas de respuesta, buscar con fuentes, traducir con contexto y dividir un proyecto en tareas.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-22";
 const readingTime = "4 min";
 const tags = ["atajos IA", "productividad con IA", "DeepSeek", "Qwen", "Kimi", "Mistral", "prompts", "resumir correos"];
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/5-atajos-ia-gratis.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -45,7 +47,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
     <p>No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos, buscar información, traducir con contexto y ordenar un proyecto que todavía está en tu cabeza.</p>
-    <p>La idea es sencilla: copiar una instrucción, adaptarla con tus datos y medir si de verdad reduce trabajo. DeepSeek, Qwen, Kimi y Mistral sirven para probarlos; la mejor opción será la que te obligue a corregir menos.</p>
+    <p>La idea es sencilla: copiar una instrucción, adaptarla con tus datos y medir si de verdad reduce trabajo. Puedes probarlos en asistentes como DeepSeek, Qwen, Kimi o Mistral; la mejor opción será la que te obligue a corregir menos. Revisa en cada servicio qué ofrece su plan gratuito, porque las condiciones cambian.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Sacar la acción de un correo largo</h2>
     <p><strong>Prompt para copiar:</strong> Resume este correo en tres frases: una con la acción que me piden, otra con el plazo y otra con lo que tengo que responder. Si falta alguno de esos datos, indícalo claramente. Correo: [PEGA AQUÍ EL TEXTO].</p>
     <p>Este formato evita un resumen bonito pero poco útil. La salida debe decir qué hacer, cuándo y qué respuesta falta. Antes de actuar, vuelve al correo original para comprobar nombres, fechas y cantidades.</p>
@@ -63,7 +65,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>La IA puede proponer el orden, pero no conoce tu calendario ni tus restricciones reales. Ajusta las estimaciones y convierte cada tarea grande en una salida que puedas comprobar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo saber si realmente ahorran tiempo</h2>
     <p>Prueba cada atajo con una tarea que ya ibas a hacer. Cronometra el flujo completo, incluida la revisión. Si la IA tarda un minuto pero después necesitas diez para corregirla, el ahorro no es real.</p>
-    <p>Usaría tres criterios:</p>
+    <p>Tres criterios para compararlos:</p>
     <ul class="space-y-2">
       <li>tiempo total hasta una salida utilizable;</li>
       <li>número de errores o datos que has tenido que corregir;</li>
@@ -83,12 +85,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
-    <ul class="space-y-2">
+        <ul class="space-y-2">
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
       <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
       <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte más práctica de agentes y modelos chinos.</li>
-      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IA para Excel y hojas de cálculo</a>, si tu problema esta en datos, fórmulas o reporting.</li>
+      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IA para Excel y hojas de cálculo</a>, si tu problema está en datos, fórmulas o reporting.</li>
     </ul>
 
     <ConversionBand
@@ -118,6 +119,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"

@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "Kimi K3: cómo convertir 11.000 páginas en un informe vivo";
-const description = "Kimi presenta K3 con un caso llamativo: convertir 11.000 páginas, 87 informes trimestrales y 99 PDF en una investigación interactiva sobre 42 años de la...";
+const title = "Kimi K3: cómo convertir miles de páginas en un informe";
+const description = "Kimi K3 tiene un millón de tokens de contexto, visión nativa y pesos abiertos. Qué muestra su caso de 11.000 páginas y cómo probarlo con tus documentos.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-21";
 const readingTime = "4 min";
 const tags = ["Kimi K3", "Kimi AI", "IA china", "investigación con IA", "análisis de documentos", "informe interactivo", "contexto de un millón de tokens", "mixture of experts"];
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/2026-08-05-kimi-k3-investigacion-visual.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -44,44 +46,44 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
 
-    <p>Kimi presenta K3 con un caso llamativo: convertir 11.000 páginas, 87 informes trimestrales y 99 PDF en una investigación interactiva sobre 42 años de la industria del silicio. La cifra importa menos que el tipo de salida: un informe navegable que permite volver a las fuentes y recorrer relaciones entre documentos.</p>
+    <p>Kimi presenta K3 con un caso llamativo: convertir más de 11.000 páginas, 87 informes trimestrales y 99 PDF originales en una investigación interactiva sobre 42 años de la industria de los ASIC (chips diseñados para una tarea concreta). Según el blog de Kimi, para ello hizo más de 2.800 búsquedas y consultas web y más de 1.100 extracciones de datos desde terminal. La cifra importa menos que el tipo de salida: un informe navegable que permite volver a las fuentes y recorrer relaciones entre documentos.</p>
     <p>Es un caso oficial del fabricante, no una evaluación externa. Aun así, sirve para diseñar una prueba mucho mejor que pedir «resume estos PDF» y aceptar un bloque de texto imposible de auditar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué promete Kimi K3</h2>
-    <p>Kimi describe K3 como un modelo con visión nativa, un millón de tokens de contexto y arquitectura *mixture of experts*. La ficha habla de 2,8 billones de parámetros totales y 16 expertos activos de un conjunto de 896 en cada paso.</p>
+    <p>Kimi describe K3 como un modelo con visión nativa, un millón de tokens de contexto y arquitectura *mixture of experts*. Su anuncio habla de 2,8 billones de parámetros totales y 16 expertos activos de un conjunto de 896; la ficha en Hugging Face indica 104.000 millones de parámetros activados.</p>
     <p>Estas cifras explican la escala del sistema, pero no garantizan que una investigación sea correcta. Un contexto enorme puede contener mucho material y seguir pasando por alto una contradicción, mezclando fechas o citando una página que no respalda la conclusión.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo interesante del caso de 11.000 páginas</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué muestra el caso de 11.000 páginas</h2>
     <p>El entregable oficial no se limita a resumir documentos. Organiza cronología, actores, relaciones y fuentes para que la persona pueda navegar el resultado. Ese cambio de formato es la parte valiosa: transformar un corpus difícil de leer en una estructura que todavía se puede inspeccionar.</p>
-    <p>Para un trabajo real, exigiría cuatro elementos:</p>
+    <p>Para un trabajo real, conviene exigir cuatro elementos:</p>
     <ul class="space-y-2">
       <li>una lista completa de documentos utilizados;</li>
       <li>citas que lleven al fragmento concreto;</li>
       <li>contradicciones y vacíos visibles, no ocultos;</li>
       <li>una tabla o línea temporal exportable para revisar fuera de la herramienta.</li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría con tus propios documentos</h2>
-    <p>No empezaría con miles de páginas. Prepararía un corpus pequeño que ya conozcas: cinco PDF, una hoja con cifras, una captura y dos documentos que discrepen en una fecha o cantidad.</p>
-    <p>Después pediría un informe con tres salidas cerradas: cronología, tabla de afirmaciones con fuente y apartado de contradicciones. El criterio de éxito no sería que el texto suene convincente, sino poder localizar cada dato y detectar el desacuerdo que introdujiste.</p>
-    <p>Repetiría la prueba con ChatGPT, Claude o Gemini usando el mismo corpus. Ganaría la herramienta que obligue a corregir menos citas, cifras y relaciones; no la que escriba la introducción más elegante.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo con tus propios documentos</h2>
+    <p>No empieces con miles de páginas. Prepara un corpus pequeño que ya conozcas: cinco PDF, una hoja con cifras, una captura y dos documentos que discrepen en una fecha o cantidad.</p>
+    <p>Después pide un informe con tres salidas cerradas: cronología, tabla de afirmaciones con fuente y apartado de contradicciones. El criterio de éxito no es que el texto suene convincente, sino poder localizar cada dato y detectar el desacuerdo que introdujiste.</p>
+    <p>Repite la prueba con ChatGPT, Claude o Gemini usando el mismo corpus. Quédate con la herramienta que obligue a corregir menos citas, cifras y relaciones.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Pesos abiertos no significa IA local doméstica</h2>
-    <p>Kimi ha anunciado pesos abiertos para K3, pero el propio material del fabricante sitúa el despliegue completo en infraestructura muy grande. Su recomendación de 64 o más aceleradores deja claro que no es un modelo pensado para instalarse entero en un portátil.</p>
+    <p>Los pesos de K3 están publicados en Hugging Face bajo la licencia propia «Kimi K3 License», pero el propio fabricante recomienda desplegarlo en configuraciones de 64 o más aceleradores. Esa recomendación deja claro que no es un modelo pensado para instalarse entero en un portátil.</p>
     <p>La utilidad para la mayoría estará en el servicio de Kimi o en proveedores que ofrezcan el modelo. «Abierto» puede mejorar inspección y despliegue especializado, pero no elimina costes de cómputo, privacidad ni dependencia operativa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Kimi K3 merece una prueba si trabajas con investigaciones documentales, expedientes, informes, archivos visuales o corpus donde la trazabilidad importa tanto como el resumen.</p>
     <p>Para leer un único PDF o mantener una conversación rápida, un modelo más sencillo puede ser suficiente. La escala solo compensa si el entregable final permite encontrar relaciones y volver a la evidencia.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>El caso oficial demuestra una dirección interesante, no una victoria automática. Kimi K3 puede convertir mucho material en un informe visual, pero la prueba decisiva es si conserva citas, encuentra contradicciones y produce una estructura que puedas revisar.</p>
-    <p>Empieza con un corpus conocido y un error sembrado a propósito. Si la herramienta te ayuda a localizarlo y deja cada conclusión unida a su fuente, entonces sí hay valor más allá de los 2,8 billones de parámetros.</p>
+    <p>El caso oficial es una demostración del fabricante, no una evaluación independiente. Kimi K3 puede convertir mucho material en un informe visual, pero la prueba decisiva es si conserva citas, encuentra contradicciones y produce una estructura que puedas revisar.</p>
+    <p>Empieza con un corpus conocido y un error sembrado a propósito. Si la herramienta te ayuda a localizarlo y deja cada conclusión unida a su fuente, la herramienta te sirve para investigación documental.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://www.kimi.com/blog/kimi-k3" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.kimi.com/blog/kimi-k3</a></li>
+      <li><a href="https://www.kimi.ai/blog/kimi-k3" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Blog oficial de Kimi: anuncio de Kimi K3</a></li>
+      <li><a href="https://huggingface.co/moonshotai/Kimi-K3" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Kimi K3 en Hugging Face (pesos, licencia y parámetros)</a></li>
       <li><a href="https://www.kimi.com/help/agent/agent-overview" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.kimi.com/help/agent/agent-overview</a></li>
     </ul>
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
     <ul class="space-y-2">
-      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">Guía práctica de NotebookLM</a>, para decidir cuando usarlo con documentos, audio y fuentes propias.</li>
+      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">Guía práctica de NotebookLM</a>, para decidir cuándo usarlo con documentos, audio y fuentes propias.</li>
       <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres llevar el aprendizaje a productividad diaria.</li>
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
       <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
@@ -114,6 +116,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -126,7 +129,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "citation": [
       {
             "@type": "WebPage",
-            "url": "https://www.kimi.com/blog/kimi-k3"
+            "url": "https://www.kimi.ai/blog/kimi-k3"
+      },
+      {
+            "@type": "WebPage",
+            "url": "https://huggingface.co/moonshotai/Kimi-K3"
       },
       {
             "@type": "WebPage",

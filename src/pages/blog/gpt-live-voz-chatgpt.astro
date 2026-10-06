@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "GPT-Live cambia la voz de ChatGPT: ahora escucha mientras habla";
-const description = "Hay herramientas de IA que llaman la atención un día y desaparecen al siguiente. Y luego están las que, si las miras con calma, pueden cambiar una parte...";
+const title = "GPT-Live: la voz de ChatGPT que escucha mientras habla";
+const description = "Qué es GPT-Live, el modelo de voz full-duplex de ChatGPT: cómo gestiona pausas e interrupciones, qué versión tiene cada plan y cómo probarlo.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-11";
 const readingTime = "5 min";
 const tags = ["Decodifica", "GPT-Live", "GPT Live", "ChatGPT", "voz de ChatGPT", "ChatGPT Voice", "nueva voz ChatGPT", "modo voz ChatGPT"];
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/gpt-live-voz-chatgpt.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -43,61 +45,38 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
-
-
-    <p>Hay herramientas de IA que llaman la atención un día y desaparecen al siguiente. Y luego están las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este artículo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
-    <p>La pregunta útil es esta: ¿GPT-Live convierte por fin la voz de ChatGPT en una conversación fluida o el cambio se queda en una voz más natural?</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué importa</h2>
-    <p>Decidir si merece cambiar a GPT-Live y comprobar en tres pruebas si la nueva voz de ChatGPT interrumpe menos, respeta las pausas y resuelve búsquedas sin romper la conversación.</p>
-    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir fricción o ayudarte a probar algo que antes daba pereza.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué cambia realmente</h2>
-    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha técnica. Lo importante es traducir esas funciones a consecuencias prácticas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
-    <p>La novedad atractiva no es una voz más bonita, sino que escucha mientras habla y delega búsquedas; el giro es que el despliegue, los planes y las funciones disponibles cambian según cuenta, región y superficie, y Live pierde vídeo y pantalla compartida en el lanzamiento.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraría antes de usarlo</h2>
+    <p>GPT-Live es la nueva generación de modelos de voz de ChatGPT que OpenAI documentó en su <em>system card</em> del 8 de julio de 2026. La diferencia con el modo de voz anterior es que no espera a que termines de hablar para procesar lo que dices: escucha y responde de forma continua. La pregunta práctica es si eso reduce las veces que tienes que repetir o reformular lo que pides.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es GPT-Live</h2>
+    <p>Según la <em>system card</em> publicada por OpenAI, GPT-Live-1 y GPT-Live-1 mini son modelos <strong>full-duplex</strong>: pueden escuchar y responder de forma continua en lugar de esperar a que acabe un turno claramente definido. Están diseñados para gestionar pausas, interrupciones y cambios de ritmo, y deciden en cada momento si responder o seguir escuchando.</p>
     <ul class="space-y-2">
-      <li>ChatGPT ya te escucha mientras habla y acepta interrupciones sin cortar la conversación.</li>
-      <li>OpenAI lo llama GPT-Live. En sus demos oficiales, la charla sigue aunque la persona haga una pausa, cambie de idea o pida una búsqueda en ese mismo momento.</li>
-      <li>Si ese número baja, GPT-Live no es una demo bonita; es una interfaz mejor. Si no baja, la arquitectura será nueva, pero tu trabajo seguirá igual.</li>
-      <li>Prueba hoy interrupción, pausa y búsqueda contextual. Tu número de repeticiones te dirá si merece el cambio.</li>
+      <li><strong>GPT-Live-1:</strong> modelo de voz por defecto para usuarios de pago.</li>
+      <li><strong>GPT-Live-1 mini:</strong> modelo por defecto para usuarios gratuitos.</li>
+      <li><strong>Delegación:</strong> cuando una petición requiere trabajo más complejo, como una búsqueda o un razonamiento largo, GPT-Live puede delegarlo en otros modelos. OpenAI indica que ese trabajo refleja el entrenamiento de seguridad del modelo que lo hace; en sus evaluaciones usa GPT-5.5 Thinking como referencia.</li>
+      <li><strong>Seguridad durante la conversación:</strong> las entradas y salidas se supervisan mientras hablas; el sistema puede reconducir o interrumpir la respuesta, reproducir un aviso de seguridad o terminar la conversación de voz.</li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
-    <p>La prueba buena no es abrir GPT-Live cambia la voz de ChatGPT: ahora escucha mientras habla cinco minutos y decidir por sensación. La prueba buena tiene una entrada clara, una salida revisable y un criterio de éxito antes de empezar.</p>
-    <p>Yo lo haría así:</p>
+    <p>La disponibilidad exacta por plan, región y dispositivo, y las funciones que siguen limitadas, están en la guía de ayuda de ChatGPT Voice. Consúltala antes de decidir, porque puede cambiar.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres pruebas para comprobar si te sirve</h2>
+    <p>Si quieres saber si GPT-Live mejora tu uso de la voz, una forma sencilla es contar cuántas veces tienes que repetir algo en estas tres situaciones:</p>
     <ol>
-      <li>Elige una tarea real que ya ibas a hacer esta semana.</li>
-      <li>Guarda el resultado que obtendrias sin la herramienta, aunque sea en una nota rápida.</li>
-      <li>Prueba la herramienta con el mismo objetivo, sin cambiar el problema a mitad de camino.</li>
-      <li>Compara tres cosas: tiempo, calidad y esfuerzo de revisión.</li>
-      <li>Decide si lo repetiría mañana o si solo fue una demo curiosa.</li>
+      <li><strong>Interrupción:</strong> corta a ChatGPT a mitad de respuesta para corregir o cambiar la pregunta. Fíjate en si retoma desde tu corrección o vuelve a empezar.</li>
+      <li><strong>Pausa:</strong> haz una pausa larga mientras piensas una frase. Comprueba si responde antes de que termines.</li>
+      <li><strong>Búsqueda en contexto:</strong> pide un dato actual en mitad de la conversación (por ejemplo, el horario de un sitio) y observa si la charla sigue sin cortarse mientras busca.</li>
     </ol>
-    <p>Ese último punto es el importante. Una IA puede impresionar en pantalla y aun así no merecer entrar en tu rutina si después te obliga a corregir, revisar permisos o rehacer el resultado.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Con qué lo compararía</h2>
-    <p>Lo compararía contra lo que ya usas hoy. La pregunta no es si la novedad suena potente, sino si mejora una tarea concreta frente a ChatGPT, Claude, Gemini, una automatización sencilla o incluso una plantilla bien hecha.</p>
-    <p>La comparación tiene que ser práctica. No basta con mirar el titular, el precio o el benchmark que más conviene a cada fabricante. Hay que mirar la tarea completa: preparación, calidad de salida, revisión, privacidad, dependencia y facilidad para repetir el resultado una semana después.</p>
+    <p>Si el número de repeticiones baja respecto al modo de voz anterior, el cambio se nota en el uso real. Si no baja, la arquitectura es nueva pero tu forma de trabajar con la voz sigue igual.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
-    <p>Tiene sentido si ya tienes una tarea repetida, un bloqueo claro o una decisión que puedas medir.</p>
-    <p>No tiene tanto sentido si solo buscas probar la herramienta porque esta de moda. En ese caso, mejor esperar a tener un caso real y evitar llenar tu flujo de pruebas que no se convierten en hábito.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde esta el valor</h2>
-    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar más de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decisión o a una versión revisable, entonces ya empieza a tener sentido.</p>
-    <p>Yo lo probaría primero en un caso pequeño, con salida verificable y poco riesgo. Si ahí funciona, se puede subir el nivel. Si falla en lo básico, al menos no has construido todo tu sistema encima de una promesa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraría todavía</h2>
-    <p>El límite importante es no confundir potencial con resultado. Una herramienta puede sonar muy bien y aun así no encajar en tu día a día si te obliga a revisar más de lo que ahorra.</p>
-    <p>Esta parte importa porque en IA es muy fácil confundir potencial con resultado. Una demo puede ser espectacular y aun así no encajar en tu día a día. Por eso conviene separar tres cosas: lo que la herramienta dice qué hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>GPT-Live puede mantener la interacción de voz mientras delega búsqueda o razonamiento en GPT-5.5, separando la conversación rápida del trabajo más profundo.</p>
-    <p>Mi recomendación es tratarlo como una oportunidad de mejora, no como una solución automática. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
+    <p>Es más útil para quien ya usa la voz de ChatGPT con frecuencia: practicar idiomas, preparar una conversación, pensar en voz alta o consultar algo con las manos ocupadas. Si solo escribes en el chat, el cambio te afecta poco. Si usas el plan gratuito, ten en cuenta que recibes la versión mini.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://openai.com/index/introducing-gpt-live/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Presentación oficial de GPT-Live</a>, con la arquitectura full-duplex, el despliegue inicial y las demos de conversación continua.</li>
-      <li><a href="https://help.openai.com/en/articles/20001274" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Guía oficial de ChatGPT Voice</a>, para disponibilidad, planes, superficies compatibles y límites de uso.</li>
-      <li><a href="https://deploymentsafety.openai.com/gpt-live" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">System Card de GPT-Live</a>, con la definición técnica y las evaluaciones de seguridad publicadas por OpenAI.</li>
+      <li><a href="https://deploymentsafety.openai.com/gpt-live" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">System Card de GPT-Live</a> (OpenAI, publicada el 8 de julio de 2026): arquitectura full-duplex, modelos para planes gratis y de pago, delegación y salvaguardas. Consultada el 6 de octubre de 2026.</li>
+      <li><a href="https://openai.com/index/introducing-gpt-live/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Presentación oficial de GPT-Live</a> (OpenAI).</li>
+      <li><a href="https://help.openai.com/en/articles/20001274" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Guía oficial de ChatGPT Voice</a>, para disponibilidad, planes, dispositivos compatibles y límites de uso.</li>
     </ul>
 
-
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
     <ul class="space-y-2">
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
+      <li><a href="/herramientas/chatgpt/" class="text-brand-400 hover:text-brand-300">Ficha de ChatGPT en Decodifica</a>, con planes y casos de uso.</li>
+      <li><a href="/blog/crear-agente-voz-ia-sin-programar/" class="text-brand-400 hover:text-brand-300">Cómo crear un agente de voz con IA sin programar</a>, si quieres ir más allá del modo de voz de ChatGPT.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, con prompts, workflows y plantillas.</li>
     </ul>
 
     <ConversionBand
@@ -127,6 +106,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -137,18 +117,9 @@ const pillarLabel = "Pilar 2: Tips productividad";
     },
     "about": tags,
     "citation": [
-      {
-        "@type": "WebPage",
-        "url": "https://openai.com/index/introducing-gpt-live/"
-      },
-      {
-        "@type": "WebPage",
-        "url": "https://help.openai.com/en/articles/20001274"
-      },
-      {
-        "@type": "WebPage",
-        "url": "https://deploymentsafety.openai.com/gpt-live"
-      }
+      {"@type": "WebPage", "url": "https://deploymentsafety.openai.com/gpt-live"},
+      {"@type": "WebPage", "url": "https://openai.com/index/introducing-gpt-live/"},
+      {"@type": "WebPage", "url": "https://help.openai.com/en/articles/20001274"}
     ]
   })} />
 </BaseLayout>
