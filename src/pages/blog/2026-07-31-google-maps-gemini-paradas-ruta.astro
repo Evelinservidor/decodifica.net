@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "Google Maps con Gemini: cómo añadir una parada sin rehacer la ruta";
-const description = "Gemini en Google Maps no cambia el destino por ti. Su utilidad aparece en un momento mucho más concreto: cuando ya estás siguiendo una ruta y necesitas...";
+const title = "Google Maps con Gemini: cómo añadir una parada en tu ruta";
+const description = "Cómo pedir a Gemini en Google Maps que busque un sitio durante la navegación y lo añada como parada, cómo activarlo y qué revisar antes de aceptar el desvío.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-29";
 const readingTime = "4 min";
 const tags = ["Google Maps", "Gemini", "añadir parada", "paradas en ruta", "navegación con IA", "Google Maps Gemini", "rutas Google Maps"];
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -71,11 +73,11 @@ const pillarLabel = "Pilar 1: Apps web";
       </div>
     </div>
 
-    <p>Gemini en Google Maps no cambia el destino por ti. Su utilidad aparece en un momento mucho más concreto: cuando ya estás siguiendo una ruta y necesitas encontrar un sitio por el camino, acotar la opción y añadirla como parada sin empezar otra búsqueda desde cero.</p>
-    <p>La ayuda oficial de Google documenta esa secuencia. Puedes pedir un lugar durante la navegación, refinar los resultados y añadir una parada. El ahorro no está en hablarle al mapa por hablarle, sino en condensar varios toques en una petición que conserve el contexto del trayecto.</p>
+    <p>Gemini en Google Maps no cambia el destino por ti. Sirve en un momento concreto: cuando ya estás siguiendo una ruta y necesitas encontrar un sitio por el camino, acotar la opción y añadirla como parada sin empezar otra búsqueda desde cero.</p>
+    <p>La ayuda oficial de Google documenta esa secuencia: durante la navegación puedes pedir que busque algo en la ruta o cerca de tu destino, acotar los resultados y añadir paradas. Su ejemplo es «Búscame una cafetería cerca de mi destino que sirva tiramisú».</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes pedir durante una ruta</h2>
     <p>La petición útil combina tres piezas: el tipo de lugar, una condición y el límite que no quieres superar. Por ejemplo: buscar una cafetería tranquila que esté abierta y quede cerca de la ruta. Después puedes pedir que afine el resultado y añadir la opción elegida.</p>
-    <p>Google también presenta Gemini en Maps como una experiencia conversacional y manos libres capaz de encadenar tareas. Eso permite corregir la búsqueda sin volver al inicio: cambiar el tipo de sitio, pedir otra condición o descartar una opción antes de tocar la ruta.</p>
+    <p>En su blog, Google presenta Gemini en Maps como una experiencia conversacional y manos libres que permite encadenar preguntas, por ejemplo pedir un restaurante económico con opciones veganas a pocos kilómetros de la ruta y después preguntar cómo está el aparcamiento. Así puedes corregir la búsqueda sin volver al inicio.</p>
     <p>No conviene convertirlo en una promesa absoluta. Una respuesta depende de los datos disponibles sobre cada lugar, de la ubicación y de la disponibilidad de la función en la cuenta, el idioma y el país.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">La petición que reduce pasos de verdad</h2>
     <p>Una frase vaga como «busca algo para comer» deja casi toda la decisión abierta. Una petición más útil incluye lo que realmente cambia la ruta:</p>
@@ -87,14 +89,14 @@ const pillarLabel = "Pilar 1: Apps web";
     </ol>
     <p>Ese orden importa. Gemini puede ayudarte a buscar y refinar, pero la confirmación final debe seguir en tus manos.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo usarlo sin perder el control</h2>
-    <p>Yo separaría la conversación en cuatro pasos breves:</p>
+    <p>Separa la conversación en cuatro pasos breves:</p>
     <ol>
       <li>Pide una categoría y una condición concreta.</li>
       <li>Revisa las opciones y cuánto se apartan de la ruta.</li>
       <li>Comprueba el horario y que el destino sea exactamente el que esperas.</li>
       <li>Añade la parada solo después de confirmar el cambio de trayecto.</li>
     </ol>
-    <p>Durante la navegación, Google permite iniciar la interacción mediante el botón de Gemini o con la activación por voz cuando está disponible. La interfaz puede variar, así que el criterio práctico es más estable que memorizar un comando exacto.</p>
+    <p>Durante la navegación, Gemini se activa diciendo «Hey Google» o tocando el icono de Gemini. Si la activación por voz no responde, la ayuda de Google indica que hay que comprobar que «Hey Google» y Voice Match estén activados.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué comprobar antes de aceptar la parada</h2>
     <p>Una recomendación conversacional puede sonar correcta y seguir siendo una mala elección para ese viaje. Antes de confirmar, mira cuatro datos:</p>
     <ul class="space-y-2">
@@ -108,20 +110,19 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>Gemini tiene más sentido cuando la necesidad contiene varias condiciones y quieres ajustarlas sobre la marcha. Si solo buscas la gasolinera más cercana, el filtro tradicional puede ser más rápido y predecible.</p>
     <p>La diferencia aparece cuando la petición necesita contexto: «una cafetería abierta, con buenas reseñas y sin alejarme demasiado». Ahí una conversación puede evitar entrar y salir de categorías, revisar varias fichas y reconstruir la ruta.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Disponibilidad, cuenta e idioma</h2>
-    <p>Google avisa de que la disponibilidad de Gemini en Maps puede variar. También influyen las preferencias de idioma y voz, la ubicación precisa y la cuenta usada para las aplicaciones conectadas. Por eso no asumiría que la misma pantalla o las mismas acciones aparecen igual para todo el mundo.</p>
+    <p>Según la ayuda de Google, Gemini está disponible en muchos países e idiomas, pero no en todos. Maps usa las preferencias de idioma y voz de Gemini de la cuenta con la que hayas iniciado sesión, las respuestas se basan en tu ubicación precisa y las aplicaciones conectadas deben estar vinculadas a la misma cuenta que usas en Maps. Por eso la pantalla y las acciones pueden no ser iguales para todo el mundo.</p>
     <p>Si la función no está disponible o no entiende bien una condición, el flujo manual sigue siendo el respaldo correcto. El objetivo no es forzar la IA, sino ahorrar pasos cuando realmente los ahorra.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>La novedad útil no es «Gemini llega a Maps». Es poder encadenar búsqueda, refinado y acción dentro de una ruta sin desmontar la navegación. Para una parada con condiciones puede reducir bastante la fricción; para una búsqueda simple, los filtros de siempre siguen siendo suficientes.</p>
-    <p>Mi consejo es usar una petición concreta y conservar la última comprobación: desvío, horario, dirección y ruta final. Si la conversación te obliga a revisar más que el método manual, no has ganado nada.</p>
+    <p>Lo útil es poder encadenar búsqueda, refinado y acción dentro de una ruta sin salir de la navegación. Para una parada con condiciones puede reducir bastante la fricción; para una búsqueda simple, los filtros de siempre siguen siendo suficientes.</p>
+    <p>Usa una petición concreta y haz tú la última comprobación: desvío, horario, dirección y ruta final.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://support.google.com/maps/answer/6041199?hl=es-19" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://support.google.com/maps/answer/6041199?hl=es-19</a></li>
-      <li><a href="https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/</a></li>
+      <li><a href="https://support.google.com/maps/answer/6041199?hl=es-19" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ayuda de Google Maps: usar Gemini durante la navegación</a></li>
+      <li><a href="https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Blog de Google: nuevas funciones de Gemini en la navegación de Maps</a></li>
     </ul>
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decisión o en un flujo más concreto:</p>
     <ul class="space-y-2">
       <li><a href="/empieza/" class="text-brand-400 hover:text-brand-300">Empieza con IA sin perderte</a>, para aplicar herramientas útiles con un criterio sencillo.</li>
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
@@ -154,6 +155,7 @@ const pillarLabel = "Pilar 1: Apps web";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
