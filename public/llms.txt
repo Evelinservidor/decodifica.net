@@ -60,9 +60,7 @@ La web no publica transcripciones literales de los vídeos. Cada pieza debe ayud
 ## Follow Decodifica
 
 - [Newsletter](https://decodifica.net/newsletter/): selección editorial y workflows aplicables.
-- [Comunidad](https://decodifica.net/comunidad/): vías oficiales para seguir Decodifica y participar.
 - [Contacto](https://decodifica.net/contacto/): contacto editorial y colaboraciones.
-- [Canal de YouTube](https://www.youtube.com/@DecodificaIA): vídeos principales de Decodifica.
 
 ## Editorial policy
 
