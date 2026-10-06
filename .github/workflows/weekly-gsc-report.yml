@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: weekly-gsc
@@ -26,6 +27,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      # Acceso a Search Console sin claves: GitHub pide un token temporal a Google
+      # (federación de identidades; la organización bloquea crear claves).
+      - name: Autenticar en Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: projects/979898982695/locations/global/workloadIdentityPools/github/providers/decodifica
+          service_account: informe-gsc@decodifica-informes-510822.iam.gserviceaccount.com
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -53,4 +62,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/gsc_weekly/
           git diff --cached --quiet || git commit -m "data: weekly GSC report $(date -u +%Y-%m-%d)" || true
-          git push origin main
+          git push origin "HEAD:${GITHUB_REF_NAME}"
