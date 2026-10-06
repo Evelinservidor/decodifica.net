@@ -7,8 +7,13 @@ Refreshes OAuth access token, queries Search Analytics for the last N days
 date and country. Saves raw + aggregated data as JSON to disk for downstream
 analysis (the seo-data-analyst skill consumes it).
 
-Required env vars (set as GitHub Actions secrets):
-  GSC_REFRESH_TOKEN  - Long-lived refresh token from OAuth flow
+Auth (set as GitHub Actions secrets), in order of preference:
+  GSC_SERVICE_ACCOUNT_JSON - Full JSON key of a Google Cloud service account that
+                       has been added as a user in Search Console. Does not
+                       expire (recommended).
+  or the legacy OAuth trio:
+  GSC_REFRESH_TOKEN  - Long-lived refresh token from OAuth flow (expires after
+                       7 days while the OAuth app is in "Testing" mode)
   GSC_CLIENT_ID      - OAuth Client ID (same project as the refresh token)
   GSC_CLIENT_SECRET  - OAuth Client Secret
   GSC_SITE_URLS      - Comma-separated list of site URLs in GSC format
@@ -33,7 +38,21 @@ GSC_ANALYTICS_URL = (
 )
 
 
+SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
+
+
 def get_access_token() -> str:
+    sa_json = os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
+    if sa_json:
+        from google.oauth2 import service_account
+        from google.auth.transport.requests import Request
+
+        creds = service_account.Credentials.from_service_account_info(
+            json.loads(sa_json), scopes=[SCOPE]
+        )
+        creds.refresh(Request())
+        return creds.token
+
     r = requests.post(
         GSC_TOKEN_URL,
         data={

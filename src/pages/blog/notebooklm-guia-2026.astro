@@ -3,11 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "NotebookLM en 2026: IA de Google para trabajar con tus documentos";
-const description = "Qué es NotebookLM, cómo empezar, cuatro flujos para estudiar y trabajar, y los límites que conviene comprobar antes de usarlo.";
+const title = "NotebookLM (Gemini Notebook): qué es y cómo usarlo";
+const description = "Qué es NotebookLM, ahora Gemini Notebook: cómo crear un cuaderno, qué fuentes admite, qué genera, límites del plan gratuito y cuándo elegir otra IA.";
 const pubDate = "2026-06-17";
-const tags = ["herramientas ia gratis", "google ia", "notebooklm", "productividad ia"];
-const readingTime = "9 min";
+const modifiedDate = "2026-10-06";
+const tags = ["notebooklm", "gemini notebook", "google ia", "herramientas ia gratis", "productividad ia"];
+const readingTime = "10 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og/blog/notebooklm-guia-2026.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -25,17 +27,19 @@ const pillarLabel = "Pilar 1: Apps web";
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
         <time datetime="2026-06-17">17 junio 2026</time>
         <span>·</span>
+        <span>Actualizado el <time datetime={modifiedDate}>6 octubre 2026</time></span>
+        <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
       <h1 class="font-display text-4xl font-bold sm:text-5xl">
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        NotebookLM está diseñada para trabajar sobre las fuentes que subes y mostrar citas que puedes revisar. Eso no elimina los errores: Google recomienda comprobar las respuestas. Esta guía explica cómo configurarla, qué flujos merece la pena probar, sus límites y cuándo encaja frente a ChatGPT, Claude y Perplexity.
+        NotebookLM es la herramienta de Google para hacer preguntas sobre tus propios documentos y obtener respuestas con citas a esas fuentes. Desde el 16 de julio de 2026 se llama Gemini Notebook. Esta guía explica cómo empezar, qué fuentes acepta, qué puede generar, qué límites tiene el plan gratuito y cuándo conviene otra herramienta. Datos contrastados con la documentación oficial de Google en octubre de 2026.
       </p>
     </header>
 
-    <ReviewMethodology reviewed="11 de julio de 2026" task="resumir, contrastar y consultar un conjunto de fuentes propias" />
+    <ReviewMethodology reviewed="6 de octubre de 2026" task="contrastar funciones, fuentes admitidas, idiomas, límites y planes de NotebookLM con la documentación oficial de Google" />
 
     <img
       src="/og/blog/notebooklm-guia-2026.png"
@@ -46,129 +50,190 @@ const pillarLabel = "Pilar 1: Apps web";
     />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
+      <h2 class="font-display text-lg font-bold text-white mb-3">Lo esencial sobre NotebookLM</h2>
       <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>NotebookLM</strong> es una herramienta de investigación de Google orientada a trabajar con las fuentes de un cuaderno y mostrar citas para revisarlas.</li>
-        <li>El plan gratuito tiene límites de cuadernos, fuentes y creaciones al día. Comprueba las cuotas actuales en la página oficial antes de organizar un flujo alrededor de ellas.</li>
-        <li>El flujo clásico: subes PDFs, Google Docs, webs, YouTube o texto pegado, y le preguntas. Genera resúmenes, podcasts con dos voces IA, mapas mentales, flashcards, informes y presentaciones.</li>
-        <li>Funciona en español desde 2024, con un español de España convincente. La voz del Audio Overview en español suena natural, no robótica.</li>
-        <li>Si necesitas trabajar sobre materiales propios con citas, NotebookLM es una opción a evaluar. Si también necesitas búsqueda web, compara con Perplexity o Gemini y verifica las fuentes.</li>
+        <li><strong>Nuevo nombre:</strong> Google renombró NotebookLM como <strong>Gemini Notebook</strong> el 16 de julio de 2026. Es el mismo producto; la antigua dirección notebooklm.google redirige a <a href="https://notebook.google/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">notebook.google</a>.</li>
+        <li><strong>Gratis con una cuenta de Google:</strong> el plan estándar permite 100 cuadernos y 50 fuentes por cuaderno; cada fuente admite hasta 500.000 palabras o 200 MB.</li>
+        <li><strong>El uso se mide por cómputo:</strong> ya no hay un número fijo de audios al día. La cuota se recarga cada 5 horas hasta un límite semanal; Google AI Plus la duplica y Google AI Pro la multiplica por cuatro.</li>
+        <li><strong>En español:</strong> la interfaz, el chat y los Audio Overviews están disponibles en español de España, de Latinoamérica y de México, entre más de 80 idiomas.</li>
+        <li><strong>Para qué sirve:</strong> chatear con citas sobre tus fuentes y convertirlas en resúmenes de audio y vídeo, mapas mentales, informes, flashcards, cuestionarios, presentaciones e infografías.</li>
       </ul>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Elige NotebookLM si necesitas esto</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es NotebookLM (ahora Gemini Notebook)</h2>
     <p>
-      NotebookLM no compite exactamente con ChatGPT. Su punto fuerte es más concreto: convertir documentos largos en una base de conocimiento que puedes preguntar, escuchar y estudiar sin tener que fiarte de memoria.
+      Google lo define en su centro de ayuda como un asistente de investigación con IA. Funciona por cuadernos: cada cuaderno reúne las fuentes de un proyecto (PDF, Google Docs, webs, vídeos de YouTube, audios…) y el chat responde a partir de ellas, con citas en línea que llevan al fragmento concreto. Cada cuaderno es independiente: la herramienta no cruza información entre cuadernos distintos.
+    </p>
+    <p>
+      La diferencia con un chat generalista está en el origen de la respuesta. Según la ayuda oficial, NotebookLM está diseñado para responder con la información de las fuentes que has subido; si lo que preguntas no está en ellas, puede decirte que no puede responder. Las citas facilitan comprobar cada afirmación, pero no la garantizan: Google advierte que la herramienta puede ser inexacta y recomienda revisar las respuestas.
+    </p>
+    <p>
+      El cambio de nombre llegó con la integración en el resto de productos de Google. Según el <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">anuncio oficial</a>, sigue siendo un producto independiente, pero tus cuadernos aparecen también en la app de Gemini y se sincronizan entre ambas. Google cifra su uso en más de 30 millones de personas y 600.000 organizaciones. Los cuadernos también aparecen en el Modo IA de la Búsqueda de Google, aunque esa integración por ahora solo funciona en inglés y no está disponible en el Espacio Económico Europeo.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para qué usar NotebookLM</h2>
+    <p>
+      Encaja cuando el material de partida importa: documentos largos que quieres consultar varias veces y cuyas respuestas necesitas poder rastrear hasta la fuente.
     </p>
 
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Estudiar</p>
         <h3 class="mt-2 font-display text-xl font-bold text-white">Libros, apuntes y papers</h3>
-        <p class="mt-2 text-sm text-dark-200">Subes el material, pides resumen, preguntas tipo examen, glosario y audio para repasar.</p>
+        <p class="mt-2 text-sm text-dark-200">Subes el material y generas guía de estudio, flashcards, cuestionarios con tres niveles de dificultad y un audio para repasar.</p>
       </div>
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Trabajo</p>
         <h3 class="mt-2 font-display text-xl font-bold text-white">Reuniones y proyectos</h3>
-        <p class="mt-2 text-sm text-dark-200">Cruzas briefs, actas, propuestas y emails para llegar a una reunión sin releer todo.</p>
+        <p class="mt-2 text-sm text-dark-200">Reúnes briefs, actas y propuestas, y pides puntos abiertos o un documento informativo que puedes exportar a Google Docs.</p>
       </div>
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Investigación</p>
         <h3 class="mt-2 font-display text-xl font-bold text-white">Fuentes y discrepancias</h3>
-        <p class="mt-2 text-sm text-dark-200">Comparas documentos, encuentras acuerdos/desacuerdos y localizas de dónde sale cada idea.</p>
+        <p class="mt-2 text-sm text-dark-200">Comparas documentos, localizas acuerdos y desacuerdos, y compruebas en la cita de dónde sale cada idea.</p>
       </div>
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Contenido</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">YouTube, podcasts y PDFs</h3>
-        <p class="mt-2 text-sm text-dark-200">Transformas vídeos y documentos largos en notas consultables, resúmenes y preguntas.</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Vídeos, audios y PDFs</h3>
+        <p class="mt-2 text-sm text-dark-200">Importas la transcripción de vídeos públicos de YouTube o de tus grabaciones y la conviertes en notas consultables.</p>
       </div>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Setup rápido en 5 minutos</h2>
-    <ol>
-      <li><strong>Crea un cuaderno por proyecto.</strong> No mezcles temas. Un cuaderno para una reunión, otro para estudiar, otro para investigar un artículo.</li>
-      <li><strong>Sube pocas fuentes pero buenas.</strong> Empieza con 3-5 documentos clave antes de meter 40 PDFs sin orden.</li>
-      <li><strong>Pide primero el mapa.</strong> Usa: "Dame los temas principales y qué fuente sostiene cada uno".</li>
-      <li><strong>Haz preguntas concretas.</strong> Mejor "qué objeciones aparecen en estas actas" que "resúmelo todo".</li>
-      <li><strong>Usa el audio sólo cuando ya tengas claro el objetivo.</strong> El Audio Overview es útil para repasar, pero no sustituye revisar la fuente si hay una decisión importante.</li>
-    </ol>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es NotebookLM y por qué se comporta diferente al resto</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo usar NotebookLM paso a paso</h2>
     <p>
-      NotebookLM es una herramienta de Google orientada a trabajar con las fuentes de un cuaderno. Al hacer una pregunta, recupera información de las fuentes seleccionadas y muestra citas para que puedas comprobarla. Las citas reducen el trabajo de verificación, pero no garantizan que la respuesta sea correcta: Google advierte que NotebookLM puede cometer errores.
-    </p>
-    <p>
-      Esto, que parece un detalle técnico, cambia por completo cómo se usa. En ChatGPT, si le pides que resuma un PDF, lees un resumen de lo que ChatGPT cree que dice ese PDF. En NotebookLM, lees un resumen de lo que el PDF dice de verdad, con citas a la página concreta de la que ha sacado cada idea. Si el documento no contiene lo que le preguntas, te lo dice sin rodeos.
-    </p>
-    <p>
-      En la práctica, esto convierte a NotebookLM en una herramienta radicalmente distinta. No es una IA generativa al uso: es un asistente de investigación que se vuelve más útil cuantos más documentos le das. Y cuantos más específicos son esos documentos, mejor trabaja.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo empezar paso a paso (5 minutos exactos)</h2>
-    <p>
-      La puesta en marcha es la parte más fácil. No hay instalación, no hay configuración avanzada, no hay que crear una cuenta nueva si ya usas Google.
+      No hay que instalar nada en el equipo: funciona en el navegador con una cuenta personal de Google o con una cuenta de trabajo o centro educativo, si el administrador lo ha activado. Hay que tener la edad mínima de consentimiento digital del país (en Workspace for Education está disponible para todas las edades).
     </p>
     <ol>
-      <li>Entra en <a href="https://notebooklm.google/" class="text-brand-400 hover:text-brand-300">notebooklm.google</a> con tu cuenta de Google (la misma de Gmail sirve).</li>
-      <li>Pulsa "Nuevo cuaderno" en la parte superior. Verás un panel limpio con tres zonas: fuentes, chat y estudio.</li>
-      <li>Añade fuentes. Tienes cuatro opciones: subir archivos desde tu PC (PDF, TXT, Markdown), pegar una URL (artículos web, papers, hilos), conectar un Google Drive (Docs, Slides, Sheets) o pegar texto directamente. También acepta vídeos de YouTube: pega la URL y la IA transcribe el audio.</li>
-      <li>Espera a que termine el procesado. Dependiendo del tamaño, tarda entre diez segundos y dos minutos por fuente. Cuando esté listo, aparece una marca verde.</li>
-      <li>Empieza a preguntar en la zona de chat. Cosas útiles para empezar: "Resume este documento en cinco puntos", "¿Qué dice sobre X?", "Compara la postura de los autores A y B".</li>
+      <li>Entra en <a href="https://notebook.google/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">notebook.google</a> (o en notebooklm.google, que redirige allí) con tu cuenta de Google.</li>
+      <li>Pulsa <strong>Crear cuaderno</strong>. Usa un cuaderno por proyecto: como no se comparte información entre cuadernos, mezclar temas solo empeora las respuestas.</li>
+      <li>Añade fuentes: sube archivos, importa desde Google Drive, pega una URL web o de YouTube, pega texto, o escribe una pregunta en el buscador de fuentes para que te proponga webs o archivos de Workspace. Empieza con pocos documentos clave.</li>
+      <li>Revisa el resumen que aparece en el panel de <strong>Chat</strong> y pide primero un mapa del contenido, por ejemplo: "Dame los temas principales y qué fuente sostiene cada uno".</li>
+      <li>Haz preguntas concretas. La ayuda oficial recomienda nombrar la fuente cuando hay varias seleccionadas: mejor "¿Qué conclusiones aparecen en el informe de marzo?" que "Resume esto". También puedes marcar solo ciertas fuentes en el panel para limitar la búsqueda.</li>
+      <li>Usa el panel <strong>Studio</strong> para generar formatos (audio, vídeo, informes, flashcards…). Se crean en segundo plano, así que puedes seguir trabajando mientras tanto.</li>
     </ol>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué fuentes admite NotebookLM</h2>
     <p>
-      Listo. No hay truco. La interfaz es austera, sin menús escondidos ni wizards de configuración. Si sabes escribir prompts, ya sabes usar NotebookLM. Si no, prueba las sugerencias de la derecha: NotebookLM te propone resúmenes, líneas temporales, preguntas frecuentes y glosarios adaptados a las fuentes que acabas de subir.
+      Según la <a href="https://support.google.com/gemininotebook/answer/16215270?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de fuentes del centro de ayuda</a> (consultada en octubre de 2026), acepta:
+    </p>
+    <ul>
+      <li><strong>Documentos:</strong> PDF, Word (docx), texto (txt), Markdown (md), CSV, PowerPoint (pptx) y ePub.</li>
+      <li><strong>Google Drive:</strong> Docs, Slides (hasta 100 diapositivas) y Sheets (hasta 100.000 tokens). Se sincronizan cada pocos minutos con el original.</li>
+      <li><strong>Webs:</strong> solo se importa el texto de la página; no las imágenes, los vídeos incrustados ni las subpáginas. Las webs con muro de pago no funcionan.</li>
+      <li><strong>YouTube:</strong> vídeos públicos con subtítulos (subidos por el autor o automáticos). Se importa solo la transcripción; los vídeos sin voz no funcionan y los subidos hace menos de 72 horas pueden fallar.</li>
+      <li><strong>Audio:</strong> MP3, WAV, M4A, OGG y muchos otros formatos. Se transcribe al importarlo; el español está entre los idiomas admitidos.</li>
+      <li><strong>Imágenes:</strong> JPG, PNG, WEBP, HEIC y otros formatos, aunque Google avisa de que algunos tipos de imagen funcionan peor.</li>
+      <li><strong>Otros:</strong> texto pegado, notas propias, libros comprados en Google Play Libros (solo el texto) y chats de Gemini vinculados al cuaderno.</li>
+    </ul>
+    <p>
+      Cada fuente puede tener hasta 500.000 palabras o 200 MB si es un archivo subido. En YouTube no hay límite de duración mientras la transcripción no supere ese número de palabras.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puede generar: audio, vídeo, mapas y más</h2>
+    <ul>
+      <li><strong>Audio Overview:</strong> un resumen en formato de conversación. Hay cuatro formatos: <em>Deep Dive</em> (dos presentadores, el predeterminado), <em>The Brief</em> (una voz, menos de dos minutos), <em>The Critique</em> (crítica constructiva de un texto) y <em>The Debate</em> (dos posturas enfrentadas). Puedes elegir idioma, darle instrucciones y descargarlo. El modo interactivo, en el que preguntas en voz alta a los presentadores, solo funciona en inglés, igual que el ajuste de duración.</li>
+      <li><strong>Video Overview:</strong> convierte las fuentes en un vídeo con formatos <em>Explainer</em>, <em>Short</em> (unos 60 segundos) y <em>Cinematic</em> (solo en inglés y para mayores de 18 años). Puede tardar más de 30 minutos en generarse.</li>
+      <li><strong>Mapas mentales:</strong> un diagrama de los temas principales; al pulsar un nodo, pregunta sobre ese tema en el chat. No están disponibles en la app móvil.</li>
+      <li><strong>Informes:</strong> preguntas frecuentes, guía de estudio, documento informativo o uno personalizado, exportables a Google Docs. Las tablas de datos se exportan a Google Sheets.</li>
+      <li><strong>Flashcards y cuestionarios:</strong> con dificultad fácil, media o difícil; registran tu progreso y permiten repasar solo las tarjetas falladas.</li>
+      <li><strong>Presentaciones e infografías:</strong> se descargan en PDF o PNG. Algunas opciones son solo para mayores de 18 años.</li>
+    </ul>
+    <p>
+      Todo esto es contenido generado por IA y Google advierte que puede contener errores. Antes de usar un resumen para estudiar o decidir, contrasta los puntos clave con la fuente citada.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">NotebookLM en español</h2>
+    <p>
+      Google amplió los Audio Overviews a más de 50 idiomas, español incluido, en abril de 2025, según <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-audio-overviews-50-languages/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">su blog oficial</a>. Hoy el centro de ayuda habla de más de 80 idiomas y separa tres variantes: español (Europa), español (Latinoamérica) y español (México).
+    </p>
+    <p>
+      El idioma de salida se toma de tu cuenta de Google, pero se cambia en <strong>Configuración → Idioma de salida</strong>. Afecta al chat, las guías, los informes y los resúmenes de audio y vídeo. Puedes tener fuentes en inglés y pedir el resultado en español; eso sí, algunas funciones tienen menos idiomas (el modo interactivo del audio y los vídeos <em>Cinematic</em> solo funcionan en inglés).
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites del plan gratuito y precio del plan de pago</h2>
+    <p>
+      Según la <a href="https://support.google.com/gemininotebook/answer/16213268?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de planes del centro de ayuda</a>, consultada el 6 de octubre de 2026 (Google indica que los límites pueden cambiar):
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="text-left p-2 text-white">Plan</th>
+            <th class="text-left p-2 text-white">Cuadernos</th>
+            <th class="text-left p-2 text-white">Fuentes por cuaderno</th>
+            <th class="text-left p-2 text-white">Cuota de uso</th>
+          </tr>
+        </thead>
+        <tbody class="text-dark-200">
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Estándar (gratis)</td>
+            <td class="p-2">100</td>
+            <td class="p-2">50</td>
+            <td class="p-2">Estándar</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Google AI Plus</td>
+            <td class="p-2">200</td>
+            <td class="p-2">100</td>
+            <td class="p-2">2 veces la estándar</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Google AI Pro</td>
+            <td class="p-2">500</td>
+            <td class="p-2">300</td>
+            <td class="p-2">4 veces la estándar</td>
+          </tr>
+          <tr>
+            <td class="p-2">Google AI Ultra</td>
+            <td class="p-2">500</td>
+            <td class="p-2">500 o 600 (según plan)</td>
+            <td class="p-2">5 o 20 veces la de Pro</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-dark-300 mt-2">Fuente: centro de ayuda de Gemini Notebook, páginas de planes y de límites de uso. Consultado el 6 de octubre de 2026.</p>
+
+    <ul>
+      <li><strong>Cómo funciona la cuota:</strong> la <a href="https://support.google.com/gemininotebook/answer/17670842?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de límites de uso</a> explica que no se cuentan audios ni preguntas por separado: el gasto depende de la complejidad del prompt, el modelo, la función y la longitud del chat. Se recarga cada 5 horas hasta alcanzar un tope semanal. Tu consumo aparece en <strong>Configuración → Uso</strong>.</li>
+      <li><strong>Generar más tarde:</strong> si agotas la cuota, en la web puedes dejar un audio, un vídeo o un informe en cola para que se genere cuando haya cuota disponible.</li>
+      <li><strong>Lo que no cuenta:</strong> los informes, audios o vídeos que a veces se generan automáticamente al añadir las primeras fuentes no consumen cuota.</li>
+      <li><strong>Modelo:</strong> la documentación solo habla de acceso a "modelos de Gemini", con más acceso en los planes superiores; no indica qué versión usa cada plan.</li>
+      <li><strong>Precio:</strong> no hay suscripción solo para NotebookLM; los límites altos vienen con los planes de IA de Google. En Estados Unidos, la <a href="https://one.google.com/about/google-ai-plans/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de planes de Google AI</a> muestra Google AI Pro a 19,99 US$ al mes (199,99 US$ al año), con 5 TB de almacenamiento. El precio cambia según el país: consúltalo en esa página con tu cuenta.</li>
+    </ul>
+    <p>
+      En la práctica, el plan gratuito basta para probar la herramienta y para uso personal con pocos cuadernos. Plantéate pagar solo si necesitas más de 50 fuentes por cuaderno o agotas la cuota de forma habitual.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">4 flujos de trabajo para probar</h2>
     <p>
-      Estos cuatro flujos convierten una colección de fuentes en una tarea concreta. Empieza con un conjunto pequeño, comprueba las citas y conserva el resultado solo si supera tu proceso actual.
+      Cada flujo parte de un conjunto pequeño de fuentes. Comprueba las citas y quédate con el resultado solo si mejora lo que ya haces.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-8 mb-3">1. Estudiar un libro o paper en una tarde</h3>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">1. Estudiar un libro o un paper</h3>
     <p>
-      Subes el PDF completo (o el capítulo que te toca), esperas un minuto, y le pides: "Genera un mapa mental con los conceptos clave", "Hazme 20 preguntas tipo examen con respuesta", "Resume la diferencia entre las tesis A y B del capítulo 3". El Audio Overview te lo convierte en un podcast de entre cinco y veinte minutos con dos presentadores que mantienen una conversación natural sobre el material. Lo escuchas yendo al trabajo, en el gimnasio o fregando los platos. Cuando vuelves al PDF, entiendes la estructura general y puedes ir a leer en detalle solo lo que te interesa.
-    </p>
-    <p>
-      La función de flashcards es especialmente útil: te genera tarjetas pregunta-respuesta a partir del documento, y puedes exportarlas a Anki o estudiar dentro de la propia app. Ideal para oposiciones, másteres o cualquier examen técnico.
+      Sube el PDF o el capítulo que toca. Genera un mapa mental para ver la estructura, una guía de estudio y un cuestionario de dificultad media. Si quieres repasar mientras haces otra cosa, pide un Audio Overview en formato <em>The Brief</em> (menos de dos minutos) o <em>Deep Dive</em>, y descárgalo para escucharlo sin conexión desde la app móvil. Repasa con flashcards y luego practica solo las que fallaste.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-8 mb-3">2. Preparar una reunión con clientes o un proyecto nuevo</h3>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">2. Preparar una reunión o un proyecto</h3>
     <p>
-      Antes de una reunión importante, subes la propuesta, el brief, los emails cruzados y, si existen, las actas de reuniones anteriores. Le dices: "¿Cuáles son los puntos abiertos?" o "¿Qué objeciones ha puesto el cliente hasta ahora?". NotebookLM cruza toda la documentación y te da un resumen ejecutivo. Tardas cinco minutos y llegas a la reunión sabiendo exactamente en qué punto estáis, qué decidió cada uno y qué queda por cerrar.
-    </p>
-    <p>
-      Para proyectos grandes con mucha documentación, esto sustituye las dos horas previas que dedicabas a releer PDFs para ponerte al día. La versión de pago permite cuadernos más grandes y fuentes ilimitadas, pero con el plan gratuito cubres el 80% de los casos.
+      Añade la propuesta, el brief y las actas anteriores (desde Drive se mantienen sincronizadas). Pregunta: "¿Qué puntos siguen abiertos?" o "¿Qué objeciones aparecen y en qué documento?". Si lo tienes que compartir, genera un documento informativo y expórtalo a Google Docs. Ojo: lo que cambies en el Doc exportado no se actualiza en el cuaderno, y los permisos de compartir no se trasladan.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-8 mb-3">3. Investigar un tema a fondo antes de escribir</h3>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">3. Investigar un tema antes de escribir</h3>
     <p>
-      Para preparar un artículo, un guion o un informe, crea un cuaderno con fuentes primarias y pide: "¿Qué dicen en común estas fuentes sobre X?" o "¿Dónde están en desacuerdo?". Revisa las citas de cada conclusión y vuelve al documento original antes de publicar o decidir.
+      Crea un cuaderno solo con fuentes primarias (puedes buscarlas desde el propio panel de fuentes). Pide "¿En qué coinciden estas fuentes sobre X?" y "¿Dónde se contradicen?". Para casos de análisis, el formato <em>The Debate</em> del Audio Overview enfrenta las posturas. Abre cada cita antes de publicar.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-8 mb-3">4. Resumir y transcribir contenido multimedia</h3>
+    <h3 class="font-display text-xl font-bold mt-8 mb-3">4. Convertir vídeos y grabaciones en notas</h3>
     <p>
-      El soporte de YouTube es una de las funciones más potentes. Pegas la URL de un vídeo, NotebookLM descarga la transcripción automáticamente, y puedes preguntarle cualquier cosa sobre el contenido. Esto vale para entrevistas, podcasts, conferencias, tutoriales largos, e incluso vídeos en otros idiomas (traduce y resume manteniendo el contexto). Para un equipo de marketing o de contenido, esto convierte horas de vídeo en un documento consultable en minutos.
+      Pega la URL de un vídeo público de YouTube con subtítulos o sube la grabación de una clase o reunión. NotebookLM trabaja con la transcripción, así que puedes preguntar por el contenido y pedir una tabla de datos con las decisiones y los responsables, exportable a Google Sheets. Si el vídeo no tiene subtítulos o su idioma no está admitido, la importación falla.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Los límites reales del plan gratis (lo que sí te vas a encontrar)</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">NotebookLM frente a Claude Projects y Perplexity Spaces</h2>
     <p>
-      El plan gratuito de NotebookLM es más generoso que el de la mayoría de competidores, pero tiene sus topes. Esto es lo que he comprobado al usarlo durante meses, basado en la documentación oficial y en la página de planes.
-    </p>
-    <ul>
-      <li><strong>100 cuadernos por cuenta</strong>: suficiente para la mayoría de mortales, pero si trabajas en muchos proyectos a la vez, se llenan rápido.</li>
-      <li><strong>50 fuentes por cuaderno</strong>: el límite está en las fuentes, no en las preguntas. Puedes añadir hasta 50 PDFs, Docs, webs o vídeos por cuaderno.</li>
-      <li><strong>500.000 palabras por fuente</strong>: equivale a un libro de unas 1.000 páginas. La mayoría de documentos caben sin problema.</li>
-      <li><strong>3 audio overviews al día</strong>: el coste computacional de generar el podcast de dos voces es alto, así que Google lo limita. Tres al día es más que suficiente para uso personal; para equipos, se queda corto.</li>
-      <li><strong>Acceso a Gemini 3.5 limitado</strong>: el plan gratis usa Gemini 3.5 Flash, la versión rápida. El plan Pro y Ultra acceden a Gemini 3.5 Pro completo, con mejor razonamiento.</li>
-      <li><strong>Las respuestas se quedan dentro de tus fuentes</strong>: si no está en el documento, NotebookLM no lo busca en internet. Para eso necesitas la función de Discover, que sí navega.</li>
-    </ul>
-    <p>
-      En resumen: para el 90% de uso personal y muchos flujos de trabajo profesionales, el plan gratis da de sobra. El plan Pro (unos 20 euros al mes, integrado en Google AI Pro) merece la pena solo si necesitas muchos más audio overviews, más cuadernos o el modelo Pro completo.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">NotebookLM vs ChatGPT vs Perplexity vs Claude Projects</h2>
-    <p>
-      Para comparar estas herramientas, utiliza los mismos materiales, el mismo encargo y los mismos criterios: calidad de las citas, facilidad, coste, privacidad y tiempo de revisión. La tabla siguiente sirve como orientación inicial, no como un ganador universal.
+      Las tres permiten trabajar sobre documentos propios, pero parten de lógicas distintas. Datos de la documentación oficial de cada una, consultada en octubre de 2026:
     </p>
 
     <div class="overflow-x-auto">
@@ -176,129 +241,117 @@ const pillarLabel = "Pilar 1: Apps web";
         <thead>
           <tr class="border-b border-dark-600">
             <th class="text-left p-2 text-white">Herramienta</th>
-            <th class="text-left p-2 text-white">Fuentes</th>
-            <th class="text-left p-2 text-white">Alucinaciones</th>
-            <th class="text-left p-2 text-white">Audio/Podcast</th>
-            <th class="text-left p-2 text-white">Búsqueda en internet</th>
-            <th class="text-left p-2 text-white">Ideal para</th>
+            <th class="text-left p-2 text-white">Con qué trabaja</th>
+            <th class="text-left p-2 text-white">Web</th>
+            <th class="text-left p-2 text-white">Plan gratuito</th>
+            <th class="text-left p-2 text-white">Encaja para</th>
           </tr>
         </thead>
         <tbody class="text-dark-200">
           <tr class="border-b border-dark-700">
-            <td class="p-2">NotebookLM</td>
-            <td class="p-2">100 cuadernos, 50 fuentes c/u</td>
-            <td class="p-2">Casi cero (RAG estricto)</td>
-            <td class="p-2">3/día gratis, dos voces IA</td>
-            <td class="p-2">Solo con Discover</td>
-            <td class="p-2">Estudiar, investigar, resumir materiales propios</td>
-          </tr>
-          <tr class="border-b border-dark-700">
-            <td class="p-2">ChatGPT</td>
-            <td class="p-2">Subir archivos,Projects con docs</td>
-            <td class="p-2">Medias (modelo generalista)</td>
-            <td class="p-2">No nativo (vía app de voz)</td>
-            <td class="p-2">Sí, con búsqueda activada</td>
-            <td class="p-2">Conversación abierta, generación creativa</td>
+            <td class="p-2">NotebookLM / Gemini Notebook</td>
+            <td class="p-2">Fuentes del cuaderno con citas; genera audio, vídeo, mapas, informes, flashcards y presentaciones</td>
+            <td class="p-2">Busca webs para añadirlas como fuentes</td>
+            <td class="p-2">Sí: 100 cuadernos, 50 fuentes por cuaderno</td>
+            <td class="p-2">Estudiar y consultar material propio</td>
           </tr>
           <tr class="border-b border-dark-700">
             <td class="p-2">Claude Projects</td>
-            <td class="p-2">Proyectos con base de conocimiento</td>
-            <td class="p-2">Bajas, cita fuentes</td>
-            <td class="p-2">No nativo</td>
-            <td class="p-2">No (solo lo que subes)</td>
-            <td class="p-2">Trabajo con documentos privados, código</td>
+            <td class="p-2">Espacios con historial y base de conocimiento propios a partir de documentos subidos</td>
+            <td class="p-2">No es su función principal</td>
+            <td class="p-2">Sí, hasta 5 proyectos; la ampliación con RAG es de pago</td>
+            <td class="p-2">Trabajo continuado con documentos privados en un chat</td>
           </tr>
           <tr>
-            <td class="p-2">Perplexity</td>
-            <td class="p-2">Búsqueda web + Spaces con docs</td>
-            <td class="p-2">Bajas, cita fuentes web</td>
-            <td class="p-2">No nativo</td>
-            <td class="p-2">Sí, principal seña de identidad</td>
-            <td class="p-2">Investigar temas con fuentes públicas</td>
+            <td class="p-2">Perplexity Spaces</td>
+            <td class="p-2">Archivos subidos combinados con búsqueda</td>
+            <td class="p-2">Sí: web, artículos académicos e hilos de redes sociales</td>
+            <td class="p-2">Los límites de archivos publicados son de los planes de pago (50 por Space en Pro)</td>
+            <td class="p-2">Investigar mezclando tus archivos con fuentes públicas</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p class="text-sm text-dark-300 mt-2">Datos revisados el 11 de julio de 2026. Audio Overview es una función distintiva de NotebookLM, pero no sustituye la comparación de calidad, límites y disponibilidad para tu caso.</p>
-
     <p>
-      Si tu trabajo consiste en leer, resumir y contrastar documentos propios, NotebookLM puede encajar por sus citas. Para una conversación general, compara ChatGPT o Claude; para investigación web, compara Perplexity u otras herramientas con fuentes visibles. La decisión depende de la tarea, el plan y el nivel de revisión que necesites.
+      Si tu trabajo consiste en leer, resumir y contrastar documentos propios, NotebookLM es, de las tres, la que documenta más formatos de estudio. Si necesitas que la respuesta incorpore información pública actualizada, mira la <a href="/herramientas/notebooklm-vs-perplexity/" class="text-brand-400 hover:text-brand-300">comparativa NotebookLM vs Perplexity</a>. Para redactar o conversar sin un conjunto de fuentes fijo, un chat generalista como los del <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">repaso de alternativas gratuitas a ChatGPT</a> te sirve más.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿NotebookLM es realmente gratis o tiene letra pequeña?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿NotebookLM y Gemini Notebook son lo mismo?</h3>
     <p>
-      Es gratis de verdad, sin tarjeta ni truco. El plan Free incluye 100 cuadernos, 50 fuentes por cuaderno, 3 audio overviews al día y acceso a Gemini 3.5 Flash. Si necesitas más, el plan Pro (integrado en Google AI Pro) sube los límites y desbloquea Gemini 3.5 Pro, pero la mayoría de usuarios no lo necesitan. Lo único "gratis con condiciones" es que Google usa los datos para mejorar el modelo, salvo que tengas una cuenta de empresa o desactives la opción en ajustes.
+      Sí. Google cambió el nombre el 16 de julio de 2026. Los cuadernos, los enlaces compartidos y las funciones se mantienen, y notebooklm.google redirige a notebook.google. En la app móvil puede que tengas que actualizar para ver el nuevo nombre.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona bien en español de España?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿NotebookLM es gratis?</h3>
     <p>
-      Sí, desde finales de 2024. El español que genera es natural, no se nota que es una traducción. Los acentos, la construcción de frases y el vocabulario están adaptados al español ibérico, no al neutro latino. El Audio Overview en español suena convincente, con dos voces (masculina y femenina) que mantienen una conversación pausada. Para textos técnicos, responde igual de bien que en inglés.
+      Sí, con una cuenta de Google. El plan estándar incluye 100 cuadernos, 50 fuentes por cuaderno y una cuota de uso que se recarga cada 5 horas hasta un límite semanal. Google AI Plus, Pro y Ultra amplían cuadernos, fuentes y cuota. Los límites pueden cambiar: consulta la página de planes del centro de ayuda.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué diferencia hay entre NotebookLM y Gemini normal?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona en español?</h3>
     <p>
-      Gemini es la IA generalista de Google. NotebookLM está orientada a trabajar con las fuentes de un cuaderno y mostrar citas que puedas revisar. En los modos basados en fuentes, comprueba siempre la respuesta y la cita antes de usarla como conclusión.
+      Sí. El idioma de salida se elige en Configuración y existen variantes de español de Europa, de Latinoamérica y de México. Los Audio Overviews se pueden generar en español; el modo interactivo del audio y los vídeos Cinematic, de momento, solo en inglés.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Mis documentos están seguros? ¿Google los usa para entrenar?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Qué diferencia hay entre NotebookLM y la app de Gemini?</h3>
     <p>
-      Google indica que los datos de NotebookLM no se usan para entrenar el producto salvo que envíes comentarios. Aun así, revisa la política aplicable a tu cuenta y evita usar esta guía como sustituto de las obligaciones de privacidad de tu organización. Para datos sensibles, consulta primero al responsable de seguridad o privacidad.
+      Gemini es el asistente generalista de Google. NotebookLM responde a partir de las fuentes de cada cuaderno, con citas. Desde el cambio de nombre, tus cuadernos también aparecen en la app de Gemini y puedes chatear con ellos desde allí; los cambios se sincronizan entre las dos.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo usar NotebookLM en el móvil?</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Google usa mis documentos para entrenar la IA?</h3>
     <p>
-      Sí, hay app oficial para iOS y Android. Google avisa de que la disponibilidad de algunas funciones puede variar entre móvil y escritorio, así que confirma que la función que necesitas está disponible antes de basar tu flujo en el móvil.
+      Según la ayuda oficial, tus datos no se usan para entrenar el producto salvo que envíes comentarios (pulgar arriba o abajo). En ese caso, Google puede revisar el contexto completo de esa interacción, con personas incluidas, y conservarlo hasta 3 años. Con cuentas de Google Workspace, las subidas, preguntas y respuestas no se revisan por personas ni se usan para entrenar modelos. Evita incluir información confidencial al enviar comentarios.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Hay app para el móvil?</h3>
+    <p>
+      Sí, para Android (versión 10 o superior) e iPhone y iPad, disponible en España, México, Argentina, Colombia, Perú, Estados Unidos y muchos otros países. Permite preguntar a tus fuentes, escuchar y descargar Audio Overviews, repasar con flashcards y cuestionarios, y ver presentaciones e infografías. Los mapas mentales no están en la app.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y referencias</h2>
     <p>
-      Las capacidades, límites y políticas se han contrastado con estas fuentes. Comprueba las páginas oficiales, ya que planes y disponibilidad pueden cambiar:
+      Datos consultados el 6 de octubre de 2026. Planes, límites y disponibilidad pueden cambiar; comprueba siempre las páginas oficiales:
     </p>
     <ul>
-      <li><strong>Web oficial de NotebookLM</strong> — landing en español, descripción del producto, casos de uso: <a href="https://notebooklm.google/?hl=es" class="text-brand-400 hover:text-brand-300">notebooklm.google/?hl=es</a></li>
-      <li><strong>Ayuda oficial de Google</strong> — fuentes, citas, límites de respuesta y tratamiento de datos: <a href="https://support.google.com/notebooklm/answer/16164461" class="text-brand-400 hover:text-brand-300">support.google.com/notebooklm/answer/16164461</a></li>
-      <li><strong>Página de planes y precios</strong> — comparación de límites entre plan Free, Pro y Ultra: <a href="https://notebooklm.google/plans" class="text-brand-400 hover:text-brand-300">notebooklm.google/plans</a></li>
-      <li><strong>Google Help sobre límites y upgrade</strong> — cuotas diarias detalladas de audio overviews, video overviews y fuentes por plan: <a href="https://support.google.com/notebooklm/answer/16213268" class="text-brand-400 hover:text-brand-300">support.google.com/notebooklm</a></li>
-      <li><strong>Blog oficial de Google sobre las novedades de NotebookLM</strong> — lanzamiento de Audio Overviews interactivos, formato NotebookLM Plus, integración con Discover: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-new-features-december-2024/" class="text-brand-400 hover:text-brand-300">blog.google/notebooklm-new-features</a></li>
+      <li><strong>Blog de Google: NotebookLM pasa a llamarse Gemini Notebook</strong> (16 de julio de 2026): <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">blog.google</a></li>
+      <li><strong>Google Workspace Updates: el cambio de nombre y las redirecciones</strong>: <a href="https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">workspaceupdates.googleblog.com</a></li>
+      <li><strong>Ayuda: qué es Gemini Notebook, países, idiomas y privacidad</strong>: <a href="https://support.google.com/gemininotebook/answer/16164461?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16164461</a></li>
+      <li><strong>Ayuda: planes, cuadernos y fuentes por plan</strong>: <a href="https://support.google.com/gemininotebook/answer/16213268?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16213268</a></li>
+      <li><strong>Ayuda: límites de uso</strong>: <a href="https://support.google.com/gemininotebook/answer/17670842?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/17670842</a></li>
+      <li><strong>Ayuda: tipos de fuentes y límites por fuente</strong>: <a href="https://support.google.com/gemininotebook/answer/16215270?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16215270</a></li>
+      <li><strong>Ayuda: crear un cuaderno y el panel Studio</strong>: <a href="https://support.google.com/gemininotebook/answer/16206563?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16206563</a></li>
+      <li><strong>Ayuda: Audio Overview</strong>: <a href="https://support.google.com/gemininotebook/answer/16212820?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16212820</a></li>
+      <li><strong>Ayuda: Video Overview</strong>: <a href="https://support.google.com/gemininotebook/answer/16454555?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16454555</a></li>
+      <li><strong>Ayuda: idioma de salida</strong>: <a href="https://support.google.com/gemininotebook/answer/16261963?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16261963</a></li>
+      <li><strong>Ayuda: app móvil</strong>: <a href="https://support.google.com/gemininotebook/answer/16296687?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.google.com/gemininotebook/answer/16296687</a></li>
+      <li><strong>Blog de Google: Audio Overviews en más de 50 idiomas</strong> (29 de abril de 2025): <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-audio-overviews-50-languages/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">blog.google</a></li>
+      <li><strong>Planes de Google AI y precios</strong>: <a href="https://one.google.com/about/google-ai-plans/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">one.google.com/about/google-ai-plans</a></li>
+      <li><strong>Ayuda de Claude: qué son los Projects</strong>: <a href="https://support.claude.com/en/articles/9517075-what-are-projects" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">support.claude.com</a></li>
+      <li><strong>Ayuda de Perplexity: Spaces</strong>: <a href="https://intercom.help/perplexity-ai/en/articles/10352961-spaces" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">intercom.help/perplexity-ai</a></li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
     <p>
-      NotebookLM no sustituye a un chat generalista para cada tarea. Si tu día a día incluye leer PDFs, cruzar documentos, preparar reuniones o investigar un tema, pruébalo con un conjunto de fuentes y una pregunta concreta. Conserva el flujo si las citas y el resultado superan tu método actual; si no, descártalo.
+      NotebookLM (Gemini Notebook) tiene sentido si trabajas con documentos largos que necesitas consultar con citas y convertir en material de estudio o de trabajo. Pruébalo gratis con un cuaderno de tres a cinco fuentes y una pregunta concreta. Si las citas te ahorran tiempo de revisión frente a tu método actual, incorpóralo; si no, sigue con lo que ya usas.
     </p>
     <p>
-      Si quieres profundizar en otras herramientas de IA que sí puedes usar ya, te he preparado un PDF con 50 prompts prácticos que cubro en producción: cubre productividad, escritura, código y aprendizaje. Lo tienes gratis en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
-    </p>
-    <p>
-      Y si lo que te interesa es comparar IAs generalistas que puedas usar desde el navegador sin instalar nada, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas gratuitas a ChatGPT en 2026</a> que publicamos hace dos semanas. O, si quieres ir más al fondo con la IA de Google, mira el <a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">repaso de las IAs gratis que están cambiando el mercado</a>.
-    </p>
-    <p>
-      ¿Lo has probado? ¿Qué flujo de trabajo te ha funcionado mejor? Déjamelo en comentarios, en <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a> o apúntate a la newsletter de los sábados.
-    </p>
-    <p>
-      — Jordi
+      Si quieres prompts y flujos para aplicarlo, los tienes en los <a href="/recursos/" class="text-brand-400 hover:text-brand-300">recursos gratuitos de Decodifica</a>. Para dudas o sugerencias, escribe desde <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
-    <p>
-      Si NotebookLM te encaja, estos artículos son el siguiente paso natural:
-    </p>
     <ul>
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para decidir qué IA usar cuando no trabajas sólo con documentos.</li>
-      <li><a href="/herramientas/notebooklm/" class="text-brand-400 hover:text-brand-300">Ficha practica de NotebookLM</a>, para revisar precio, privacidad, limites y cuando usarlo.</li>
-      <li><a href="/herramientas/notebooklm-vs-perplexity/" class="text-brand-400 hover:text-brand-300">NotebookLM vs Perplexity</a>, si dudas entre fuentes propias y busqueda web.</li>
+      <li><a href="/herramientas/notebooklm-vs-perplexity/" class="text-brand-400 hover:text-brand-300">NotebookLM vs Perplexity</a>, si dudas entre fuentes propias y búsqueda web.</li>
+      <li><a href="/herramientas/notebooklm/" class="text-brand-400 hover:text-brand-300">Ficha de NotebookLM</a>, con precio, privacidad y alternativas.</li>
       <li><a href="/herramientas/para-estudiar/" class="text-brand-400 hover:text-brand-300">Herramientas IA para estudiar</a>, para ver el caso de uso completo.</li>
-      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres llevarlo a productividad diaria.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, si quieres prompts y workflows para aplicar lo aprendido.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para cuando no trabajas solo con documentos.</li>
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres llevarlo a la productividad diaria.</li>
     </ul>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
@@ -306,7 +359,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
         <label for="blog-email-2" class="sr-only">Email</label>
-        
+
         <input type="hidden" name="embed" value="1" />
         <input id="blog-email-2" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
         <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
@@ -323,42 +376,50 @@ const pillarLabel = "Pilar 1: Apps web";
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿NotebookLM es realmente gratis o tiene letra pequeña?",
+        "name": "¿NotebookLM y Gemini Notebook son lo mismo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NotebookLM tiene un plan gratuito con límites de cuadernos, fuentes y creaciones. Comprueba las cuotas y la disponibilidad actual en la página oficial antes de organizar un flujo alrededor de ellas."
+          "text": "Sí. Google cambió el nombre el 16 de julio de 2026. Los cuadernos, los enlaces compartidos y las funciones se mantienen, y notebooklm.google redirige a notebook.google."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Funciona bien en español de España?",
+        "name": "¿NotebookLM es gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, desde finales de 2024. El español que genera es natural, con acentos y vocabulario del español ibérico. El Audio Overview en español suena convincente, con dos voces (masculina y femenina) en conversación pausada."
+          "text": "Sí, con una cuenta de Google. El plan estándar incluye 100 cuadernos, 50 fuentes por cuaderno y una cuota de uso que se recarga cada 5 horas hasta un límite semanal. Google AI Plus, Pro y Ultra amplían cuadernos, fuentes y cuota. Los límites pueden cambiar."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Qué diferencia hay entre NotebookLM y Gemini normal?",
+        "name": "¿Funciona en español?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gemini es la IA generalista de Google. NotebookLM está orientada a trabajar con las fuentes de un cuaderno y mostrar citas que puedas revisar. Comprueba la respuesta y la cita antes de usarla como conclusión."
+          "text": "Sí. El idioma de salida se elige en Configuración y existen variantes de español de Europa, de Latinoamérica y de México. Los Audio Overviews se pueden generar en español; el modo interactivo del audio y los vídeos Cinematic, de momento, solo en inglés."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Mis documentos están seguros? ¿Google los usa para entrenar?",
+        "name": "¿Qué diferencia hay entre NotebookLM y la app de Gemini?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los documentos se procesan en servidores de Google y se asocian a tu cuenta. Google no los usa para entrenar modelos públicos si usas una cuenta personal con la opción por defecto. Para datos muy sensibles, revisa la política actualizada y considera subir PDFs sin metadatos identificativos."
+          "text": "Gemini es el asistente generalista de Google. NotebookLM responde a partir de las fuentes de cada cuaderno, con citas. Desde el cambio de nombre, tus cuadernos también aparecen en la app de Gemini y los cambios se sincronizan entre las dos."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Puedo usar NotebookLM en el móvil?",
+        "name": "¿Google usa mis documentos para entrenar la IA?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, hay app oficial para iOS y Android. La disponibilidad de algunas funciones puede variar entre móvil y escritorio, así que confirma que la función que necesitas está disponible antes de basar tu flujo en el móvil."
+          "text": "Según la ayuda oficial, tus datos no se usan para entrenar el producto salvo que envíes comentarios; en ese caso Google puede revisar esa interacción y conservarla hasta 3 años. Con cuentas de Google Workspace, los datos no se revisan por personas ni se usan para entrenar modelos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay app para el móvil?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, para Android 10 o superior e iPhone y iPad. Permite preguntar a tus fuentes, escuchar y descargar Audio Overviews, repasar con flashcards y cuestionarios, y ver presentaciones e infografías. Los mapas mentales no están en la app."
         }
       }
     ]
@@ -367,9 +428,10 @@ const pillarLabel = "Pilar 1: Apps web";
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "NotebookLM 2026: la IA de Google que solo lee tus documentos",
-    "description": "Qué es NotebookLM, cómo empezar en 5 minutos, 4 flujos reales para estudiar y trabajar, y los límites del plan gratis. Verificado en junio 2026.",
-    "datePublished": "2026-06-17",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "mainEntityOfPage": "https://decodifica.net/blog/notebooklm-guia-2026/",
     "author": {
         "@type": "Person",
@@ -379,45 +441,23 @@ const pillarLabel = "Pilar 1: Apps web";
         "@type": "Organization",
         "name": "Decodifica"
     },
-    "about": [
-        "herramientas ia gratis",
-        "google ia",
-        "notebooklm",
-        "productividad ia"
-    ],
+    "about": tags,
     "citation": [
-        {
-            "@type": "WebPage",
-            "url": "https://notebooklm.google/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://notebooklm.google/?hl=es"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://notebooklm.google/plans"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://support.google.com/notebooklm/answer/16213268"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-new-features-december-2024/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.theverge.com/tech/944325/google-notebooklm-ai-gemini-update"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.digitalocean.com/resources/articles/what-is-notebooklm"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://decodifica.net/contacto/"
-        }
+        { "@type": "WebPage", "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" },
+        { "@type": "WebPage", "url": "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16164461" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16213268" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/17670842" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16215270" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16206563" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16212820" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16454555" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16261963" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16296687" },
+        { "@type": "WebPage", "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-audio-overviews-50-languages/" },
+        { "@type": "WebPage", "url": "https://one.google.com/about/google-ai-plans/" },
+        { "@type": "WebPage", "url": "https://support.claude.com/en/articles/9517075-what-are-projects" },
+        { "@type": "WebPage", "url": "https://intercom.help/perplexity-ai/en/articles/10352961-spaces" }
     ]
 })} />
 </BaseLayout>

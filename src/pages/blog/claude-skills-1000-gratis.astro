@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "+1.000 Skills gratis para Claude: así se instalan y esto hacen";
-const description = "Claude Skills convierte a Claude en algo más parecido a una caja de herramientas que a un chat plano. La idea no es escribir un prompt enorme cada vez,...";
+const title = "Claude Skills gratis: qué son, cómo instalarlas y crearlas";
+const description = "Qué son las Skills de Claude, en qué planes funcionan, dónde descargar Skills gratis, cómo instalarlas en Claude.ai y Claude Code, y cómo crear la tuya.";
 const pubDate = "2026-07-09";
-const readingTime = "4 min";
-const tags = ["ia", "herramientas ia", "+1.000 Skills gratis para Claude: así se instalan y esto hacen"];
+const modifiedDate = "2026-10-06";
+const readingTime = "10 min";
+const tags = ["claude skills", "agent skills", "claude code", "anthropic", "skill.md"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og/blog/claude-skills-1000-gratis.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -24,6 +26,8 @@ const pillarLabel = "Pilar 1: Apps web";
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
         <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>Actualizado el 6 de octubre de 2026</span>
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -43,102 +47,210 @@ const pillarLabel = "Pilar 1: Apps web";
       fetchpriority="high"
     />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
-      <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
-        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
-        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
-        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
-      </ul>
-    </div>
+    <p>En resumen: una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub, y te deja subir las tuyas en Claude.ai, Claude Code y la API. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
-        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
-        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
-        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
-        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
-      </div>
-    </div>
+    <p>Todos los datos de esta guía salen de la documentación oficial de Anthropic y de los repositorios citados, consultados el 6 de octubre de 2026. Esta función cambia a menudo: si algo no coincide con lo que ves en tu cuenta, manda la página oficial enlazada en <a href="#fuentes" class="text-brand-400 hover:text-brand-300">Fuentes</a>.</p>
 
-    <p>Claude Skills convierte a Claude en algo más parecido a una caja de herramientas que a un chat plano. La idea no es escribir un prompt enorme cada vez, sino cargar una habilidad con instrucciones, recursos y pasos reutilizables para una tarea concreta.</p>
-    <p>Lo interesante del video no es solo que haya más de mil Skills gratis. Es que muchas personas siguen usando Claude como buscador conversacional cuando ya puede trabajar con módulos para PDF, Word, Excel, PowerPoint, SEO, contenido, pruebas o automatizaciones.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es una Skill de Claude</h2>
-    <p>Una Skill es una carpeta con un archivo <code>SKILL.md</code> y, si hace falta, recursos adicionales. Ese archivo le dice a Claude cómo actuar en una tarea concreta: qué pasos seguir, que criterios aplicar y que herramientas tener en cuenta.</p>
-    <p>La diferencia con un prompt largo es la repetición. Un prompt largo lo pegas cada vez. Una Skill queda empaquetada y se puede reutilizar como una capacidad más estable.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué importa ahora</h2>
-    <p>Anthropic ya ofrece Skills preinstaladas para PowerPoint, Excel, Word y PDF. Además, el repositorio oficial <code>anthropics/skills</code> y varios marketplaces han abierto la puerta a bibliotecas de Skills para tareas de oficina, marketing, programación ligera y productividad.</p>
-    <p>El punto práctico es sencillo: si repites una tarea con Claude, una Skill puede ahorrarte instrucciones, reducir errores y dejar un proceso más claro.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde hay valor real</h2>
-    <p>Tiene valor cuando convierte una tarea repetida en una rutina revisable. Por ejemplo:</p>
+    <p>Anthropic las llama <strong>Agent Skills</strong> y las define como "carpetas organizadas de instrucciones, scripts y recursos que los agentes pueden descubrir y cargar de forma dinámica" para hacer mejor una tarea concreta. Las presentó en su blog de ingeniería el 16 de octubre de 2025 y en diciembre de 2025 publicó el formato como estándar abierto en agentskills.io.</p>
+    <p>Lo que las distingue de un prompt largo es cómo se cargan. La documentación lo llama <em>progressive disclosure</em> (carga progresiva) y lo divide en tres niveles:</p>
     <ul class="space-y-2">
-      <li>analizar un PDF largo con criterios fijos;</li>
-      <li>limpiar una hoja de cálculo;</li>
-      <li>convertir notas en una presentación;</li>
-      <li>revisar un texto con una guía editorial concreta;</li>
-      <li>preparar un informe siguiendo siempre la misma estructura.</li>
+      <li><strong>Metadatos (siempre cargados):</strong> solo el <code>name</code> y la <code>description</code> del encabezado de <code>SKILL.md</code>, unos 100 tokens por Skill. Por eso puedes tener muchas instaladas sin llenar el contexto.</li>
+      <li><strong>Instrucciones (al activarse):</strong> el cuerpo de <code>SKILL.md</code>, que Anthropic recomienda mantener por debajo de 5.000 tokens.</li>
+      <li><strong>Recursos y código (cuando se necesitan):</strong> archivos extra y scripts. De los scripts solo entra en el contexto su salida, no el código.</li>
     </ul>
-    <p>Si cada vez tienes que explicar desde cero qué quieres, todavía estas usando Claude como chat. Si la instrucción se convierte en Skill, empiezas a construir flujo.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
-    <p>La prueba buena no es instalar diez Skills a la vez. Empieza con una tarea que ya tengas qué hacer: resumir un PDF largo, limpiar una hoja de Excel o preparar una presentación.</p>
-    <p>Yo lo probaría así:</p>
-    <ol>
-      <li>Abre Claude y elige una tarea concreta, no una demo inventada.</li>
-      <li>Instala una Skill oficial o de una fuente que puedas revisar.</li>
-      <li>Ejecuta la misma tarea con y sin la Skill.</li>
-      <li>Compara si ahorra pasos, si mantiene calidad y si deja claro que esta haciendo.</li>
-      <li>Si toca archivos o código, revisa permisos y salida antes de incorporarla a tu flujo.</li>
-    </ol>
-    <p>La clave es que una Skill buena no solo responde mejor: reduce instrucciones repetidas y convierte una tarea frecuente en algo más estable.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué fuentes usaria</h2>
-    <p>Empezaría por las fuentes oficiales: documentacion de Anthropic y repositorio oficial. Después miraría marketplaces de terceros, pero con más cuidado. Una Skill puede incluir instrucciones y recursos que influyen en la sesión, así que no conviene instalar cualquier cosa solo porque aparezca arriba en una lista.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">El giro de Qwen</h2>
-    <p>La parte importante es que esto no se queda en Anthropic. Alibaba también ha abierto Qwen a Skills de terceros, con integraciones de marcas como Luckin, KFC o China Eastern. Eso sugiere que las Skills pueden convertirse en un patrón común: asistentes generalistas que cargan capacidades especializadas según la tarea.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Riesgos antes de instalar</h2>
-    <p>El riesgo no es solo que una Skill sea mala. Es que le des acceso a una tarea sensible sin entender qué instrucciones esta ejecutando. Por eso conviene revisar la fuente, leer el <code>SKILL.md</code> cuando sea posible y empezar con datos poco delicados.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>Claude Skills merece una prueba si ya usas Claude para tareas repetidas. No lo trataria como magia ni como piloto automatico, sino como una forma de convertir buenos prompts en procedimientos reutilizables.</p>
-    <p>Si solo usas Claude de vez en cuando para preguntas sueltas, no necesitas instalar mil cosas. Pero si lo usas para documentos, hojas, presentaciones o escritura recurrente, esta es una de las funciones que más puede cambiar el flujo.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Frente a otras funciones de Claude, el centro de ayuda de Anthropic las sitúa así: las <strong>instrucciones personalizadas</strong> se aplican a todas las conversaciones; los <strong>Proyectos</strong> dan conocimiento de fondo que siempre está cargado dentro de ese espacio; <strong>MCP</strong> conecta Claude con servicios y datos externos; y las <strong>Skills</strong> aportan procedimientos ("cómo hacer esta tarea") que se activan solo cuando son relevantes. Una Skill y un conector MCP pueden usarse juntos.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde funcionan y qué plan necesitas</h2>
+    <div class="not-prose my-8 overflow-x-auto">
+      <table class="w-full text-left text-sm text-dark-200">
+        <thead>
+          <tr class="border-b border-dark-600 text-white">
+            <th class="py-3 pr-4">Dónde</th>
+            <th class="py-3 pr-4">Skills de Anthropic (Word, Excel, PowerPoint, PDF)</th>
+            <th class="py-3 pr-4">Skills propias o de terceros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Claude.ai (web y apps)</td>
+            <td class="py-3 pr-4">Sí, se usan solas al crear documentos.</td>
+            <td class="py-3 pr-4">Sí, subiendo un ZIP. Solo para tu usuario.</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Claude Code</td>
+            <td class="py-3 pr-4">No vienen incluidas (sí se pueden instalar desde el repositorio oficial).</td>
+            <td class="py-3 pr-4">Sí, como carpetas en tu equipo o mediante plugins.</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 font-semibold text-white">API de Claude</td>
+            <td class="py-3 pr-4">Sí, con los identificadores <code>pptx</code>, <code>xlsx</code>, <code>docx</code> y <code>pdf</code>.</td>
+            <td class="py-3 pr-4">Sí, subiéndolas con los endpoints <code>/v1/skills</code>. Compartidas con todo el espacio de trabajo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Planes:</strong> el artículo de ayuda "Using Skills in Claude" indica que las Skills están disponibles en los planes Free, Pro, Max, Team y Enterprise, siempre que esté activada la ejecución de código ("Code execution and file creation"). La documentación para desarrolladores, en cambio, menciona solo Pro, Max, Team y Enterprise para subir Skills personalizadas en Claude.ai. Si usas el plan gratuito y no ves la opción de subir una Skill, esa es la razón probable. Para precios actuales, consulta la <a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de precios de Claude</a>.</p>
+    <p><strong>No se sincronizan:</strong> una Skill subida a Claude.ai no aparece en la API ni en Claude Code, y al revés. Hay que instalarla en cada sitio donde la quieras usar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde conseguir Skills gratis</h2>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">1. El repositorio oficial: anthropics/skills</h3>
+    <p>Es el punto de partida más seguro porque lo mantiene Anthropic. A 6 de octubre de 2026 la carpeta <code>skills/</code> contiene 19 Skills, entre ellas <code>docx</code>, <code>xlsx</code>, <code>pptx</code>, <code>pdf</code>, <code>skill-creator</code> (ayuda a crear Skills nuevas), <code>mcp-builder</code>, <code>webapp-testing</code>, <code>frontend-design</code>, <code>brand-guidelines</code> y <code>claude-api</code>.</p>
+    <p>Dos detalles que conviene saber:</p>
     <ul class="space-y-2">
-      <li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a></li>
-      <li><a href="https://github.com/anthropics/skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/anthropics/skills</a></li>
-      <li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills</a></li>
-      <li><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://skillsmp.com/</a></li>
-      <li><a href="https://en.youth.cn/RightNow/202606/t20260605_16699332.htm" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://en.youth.cn/RightNow/202606/t20260605_16699332.htm</a></li>
-      <li><a href="https://www.anthropic.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/pricing</a></li>
+      <li><strong>Licencias distintas:</strong> la mayoría son Apache 2.0 (puedes reutilizarlas y modificarlas). Las de documentos (<code>docx</code>, <code>pdf</code>, <code>pptx</code>, <code>xlsx</code>) son <em>source-available</em>: puedes leerlas como referencia, pero no son código abierto.</li>
+      <li><strong>Son ejemplos:</strong> el propio repositorio avisa de que se ofrecen "con fines de demostración y educativos" y de que conviene probarlas antes de usarlas en tareas críticas.</li>
     </ul>
 
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">2. Colecciones de la comunidad con más de mil Skills</h3>
+    <p>La cifra de "+1.000 Skills gratis" que circula en vídeos y listas no viene de Anthropic, sino de recopilaciones de la comunidad. Las dos más citadas:</p>
+    <ul class="space-y-2">
+      <li><strong><a href="https://github.com/sickn33/antigravity-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/antigravity-awesome-skills</a>:</strong> repositorio con licencia MIT que en su README declara más de 2.658 Skills instalables para Claude Code, Codex CLI, Cursor, Gemini CLI y otras herramientas. Es un proyecto independiente, sin relación con Anthropic, y el propio README advierte de que su validación no certifica que una Skill sea segura de aplicar.</li>
+      <li><strong><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>:</strong> un buscador que indexa Skills publicadas en repositorios públicos de GitHub. En su portada afirma tener más de 3.000.000. No indica quién lo gestiona ni tiene relación declarada con Anthropic. Funciona como un buscador, no como una tienda revisada.</li>
+    </ul>
+    <p>Las cifras de ambas son las que declaran sus responsables; no hemos podido contarlas de forma independiente, y una cifra alta incluye duplicados, versiones abandonadas y Skills pensadas para otras herramientas. Para encontrar ideas o un punto de partida sirven. Para instalar sin revisar, no (ver la sección de seguridad).</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo instalar o activar una Skill, paso a paso</h2>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Claude.ai</h3>
+    <ol class="space-y-2">
+      <li>Ve a <strong>Settings &gt; Capabilities</strong> y comprueba que está activado <strong>Code execution and file creation</strong>. Sin eso, las Skills no funcionan.</li>
+      <li>Abre <strong>Customize &gt; Skills</strong>. Ahí verás las Skills de Anthropic y podrás activarlas o desactivarlas una por una.</li>
+      <li>Para añadir una propia o descargada: pulsa <strong>+</strong>, luego <strong>+ Create skill</strong> y <strong>Upload a skill</strong>, y sube un archivo ZIP.</li>
+      <li>El ZIP debe contener la carpeta de la Skill (no los archivos sueltos en la raíz), y el nombre de la carpeta debe coincidir con el de la Skill.</li>
+      <li>Actívala y prueba con varias peticiones. No hace falta invocarla: Claude la usa cuando la petición encaja con su descripción.</li>
+    </ol>
+    <p>En planes Team y Enterprise, un administrador tiene que habilitar antes "Cloud code execution and file creation" y "Skills" en <strong>Organization settings &gt; Plugins &amp; skills</strong>.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Claude Code</h3>
+    <ol class="space-y-2">
+      <li>Para tus Skills personales (disponibles en todos tus proyectos), crea la carpeta en <code>~/.claude/skills/nombre-de-la-skill/</code> con su <code>SKILL.md</code> dentro.</li>
+      <li>Para compartirla con quien trabaje en un repositorio, ponla en <code>.claude/skills/nombre-de-la-skill/</code> dentro del proyecto.</li>
+      <li>Para instalar las del repositorio oficial como plugin, ejecuta <code>/plugin marketplace add anthropics/skills</code> y después <code>/plugin install document-skills@anthropic-agent-skills</code> o <code>/plugin install example-skills@anthropic-agent-skills</code>.</li>
+      <li>Claude Code la carga sola cuando encaja, o puedes llamarla escribiendo <code>/nombre-de-la-skill</code>.</li>
+    </ol>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">En la API</h3>
+    <p>Las Skills se usan junto con la herramienta de ejecución de código: indicas el <code>skill_id</code> en el parámetro <code>container</code>. Las de Anthropic se llaman <code>pptx</code>, <code>xlsx</code>, <code>docx</code> y <code>pdf</code>; las tuyas se suben con los endpoints <code>/v1/skills</code>. En la API se ejecutan en un contenedor sin acceso a internet y sin poder instalar paquetes nuevos.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo crear tu primera Skill</h2>
+    <p>Antes de escribir nada, comprueba que merece la pena: una Skill tiene sentido cuando repites la misma tarea con el mismo formato de salida y te cansa volver a explicar las reglas. Si todavía no sabes qué resultado quieres, prueba primero con prompts sueltos.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Estructura de la carpeta</h3>
+    <p>Lo único obligatorio es <code>SKILL.md</code>. Todo lo demás es opcional:</p>
+    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
+      <pre class="whitespace-pre-wrap">email-triage/
+├── SKILL.md          (obligatorio: encabezado + instrucciones)
+├── ejemplos.md       (opcional: casos de entrada y salida)
+└── scripts/
+    └── limpiar.py    (opcional: código que Claude ejecuta)</pre>
+    </div>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">El encabezado: name y description</h3>
+    <p><code>SKILL.md</code> empieza con un bloque YAML entre dos líneas <code>---</code>. Los dos campos que importan:</p>
+    <ul class="space-y-2">
+      <li><strong><code>name</code>:</strong> máximo 64 caracteres, solo minúsculas, números y guiones, y no puede contener las palabras "anthropic" ni "claude".</li>
+      <li><strong><code>description</code>:</strong> qué hace la Skill y cuándo debe usarse. Es lo que Claude compara con tu petición para decidir si la carga. La documentación de la API admite hasta 1.024 caracteres, pero el centro de ayuda de Claude.ai fija 200. Si quieres que funcione en todas partes, no pases de 200.</li>
+    </ul>
+    <p>En Claude Code ambos campos son técnicamente opcionales (si falta <code>name</code>, usa el nombre de la carpeta), pero la <code>description</code> se recomienda siempre. Claude Code admite además campos propios, como <code>disable-model-invocation: true</code> para que una Skill solo se ejecute cuando tú la llamas.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Plantilla mínima de SKILL.md</h3>
+    <p>Un ejemplo que analiza correos pegados en el chat. Cópialo, cambia las reglas a las tuyas y guárdalo como <code>email-triage/SKILL.md</code>:</p>
+    <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
+      <pre class="whitespace-pre-wrap">---
+name: email-triage
+description: Extrae remitente, petición, fecha límite y siguiente acción de un email. Úsala cuando el usuario pegue un correo o pregunte qué hacer con él.
+---
+
+# Email Triage
+
+Cuando recibas un email, devuelve siempre una tabla con:
+
+| Campo | Resultado |
+| --- | --- |
+| Resumen | una frase |
+| Persona | quién escribe |
+| Petición | qué pide exactamente |
+| Fecha límite | o "sin fecha clara" |
+| Urgencia | baja / media / alta |
+| Siguiente acción | un verbo + qué |
+
+## Reglas
+
+- No inventes datos que no estén en el email.
+- Si el email es ambiguo, propone una pregunta de aclaración.
+- Responde en español claro y directo.</pre>
+    </div>
+    <p>Para subirla a Claude.ai, comprime la carpeta <code>email-triage</code> entera en un ZIP. En Claude Code basta con dejarla en <code>~/.claude/skills/</code>.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Añadir scripts y recursos</h3>
+    <p>Si una parte de la tarea debe dar siempre el mismo resultado (validar un formato, convertir un archivo), es mejor un script que pedirle a Claude que escriba el código cada vez. Lo guardas en <code>scripts/</code> y lo mencionas en <code>SKILL.md</code> ("para validar, ejecuta <code>scripts/limpiar.py</code>"). Claude lo ejecuta en su entorno de código y solo recibe la salida. Dónde corre depende de la superficie: en la API, en un contenedor aislado sin internet; en Claude.ai, en el entorno de ejecución de código, con acceso a la red según la configuración; en Claude Code, en tu propio equipo, con el mismo acceso a la red que cualquier programa.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Probar y ajustar</h3>
+    <ul class="space-y-2">
+      <li><strong>No se activa:</strong> casi siempre es la <code>description</code>. "Procesa emails" es demasiado vaga; di qué hace y en qué situación usarla.</li>
+      <li><strong>Formato inestable:</strong> añade un ejemplo de entrada y salida esperada.</li>
+      <li><strong>Demasiado larga:</strong> la guía de Claude Code recomienda que <code>SKILL.md</code> no pase de 500 líneas; mueve el material de consulta a archivos aparte y enlázalos.</li>
+      <li><strong>Sin escribir desde cero:</strong> la Skill <code>skill-creator</code> del repositorio oficial está pensada para ayudarte a redactar una nueva.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Riesgos de instalar Skills de terceros</h2>
+    <p>La documentación de Anthropic es directa: usa Skills solo de fuentes de confianza, es decir, las que creas tú o las que publica Anthropic. Una Skill da a Claude instrucciones y código, así que una maliciosa puede hacer que Claude use herramientas o ejecute código de formas que no coinciden con lo que dice hacer. Según Anthropic, eso puede acabar en robo de datos o accesos no autorizados, dependiendo de los permisos que tenga Claude en ese momento.</p>
+    <p>Antes de activar una Skill descargada:</p>
+    <ol class="space-y-2">
+      <li><strong>Lee todos los archivos</strong>, no solo <code>SKILL.md</code>: scripts, imágenes y documentos incluidos.</li>
+      <li><strong>Busca llamadas de red o accesos a archivos</strong> que no tengan que ver con el propósito declarado.</li>
+      <li><strong>Desconfía de las que leen URLs externas:</strong> el contenido descargado puede traer instrucciones maliciosas, y una Skill fiable hoy puede dejar de serlo si cambia lo que descarga.</li>
+      <li><strong>Prueba con datos poco sensibles</strong> antes de usarla con documentos de trabajo o clientes.</li>
+      <li><strong>En Claude Code ten especial cuidado:</strong> ahí el código corre en tu equipo, con tus archivos y tu red.</li>
+    </ol>
+    <p>Las organizaciones con Claude Enterprise pueden activar el análisis automático de Skills subidas en Claude.ai. Ese análisis no cubre las Skills subidas por la API. Y un dato más para empresas: las Skills no están cubiertas por los acuerdos de retención cero de datos (ZDR) de la API.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo no merece la pena</h2>
+    <ul class="space-y-2">
+      <li><strong>Preguntas sueltas:</strong> si usas Claude de vez en cuando para dudas variadas, un prompt normal es más rápido.</li>
+      <li><strong>Preferencias generales</strong> (tono, idioma, forma de responder): eso va en las instrucciones personalizadas, que se aplican siempre.</li>
+      <li><strong>Material de consulta fijo para un trabajo concreto:</strong> un Proyecto con sus archivos encaja mejor.</li>
+      <li><strong>Conectar Claude con otro servicio</strong> (correo, calendario, base de datos): eso lo resuelve un conector MCP; la Skill, como mucho, explica cómo usarlo.</li>
+      <li><strong>Instalar decenas de golpe "por si acaso":</strong> cada Skill que no hayas revisado es código ajeno con acceso a tu sesión.</li>
+    </ul>
+
+    <p>¿Prefieres tenerlo a mano? Descarga el resumen de esta guía en PDF: <a href="/lead-magnets/claude-skills-desde-cero.pdf" class="text-brand-400 hover:text-brand-300">Claude Skills desde cero (PDF, 5 páginas)</a>.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Las Skills funcionan con ChatGPT o Gemini?</h3>
+    <p>Anthropic publicó el formato como estándar abierto (agentskills.io) y colecciones como antigravity-awesome-skills las adaptan a herramientas como Codex CLI, Cursor o Gemini CLI. Que una Skill funcione en otra herramienta depende de cómo la soporte esa herramienta, no de Anthropic.</p>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo compartir una Skill con mi equipo en Claude.ai?</h3>
+    <p>Las Skills personalizadas que subes en Claude.ai son individuales: cada persona tiene que subirlas. En la API se comparten con todo el espacio de trabajo, y en Claude Code basta con guardarlas en <code>.claude/skills/</code> dentro del repositorio.</p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Consultadas el 6 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Agent Skills: overview (documentación de Anthropic)</a>: niveles de carga, superficies, límites de <code>name</code> y <code>description</code>, seguridad, entornos de ejecución y sincronización.</li>
+      <li><a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Using Skills in Claude (centro de ayuda)</a>: planes, activación y subida en Claude.ai.</li>
+      <li><a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">How to create custom Skills (centro de ayuda)</a>: estructura del ZIP y límite de 200 caracteres en la descripción.</li>
+      <li><a href="https://support.claude.com/en/articles/12512176-what-are-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">What are Skills? (centro de ayuda)</a>: diferencias con Proyectos, instrucciones personalizadas y MCP.</li>
+      <li><a href="https://code.claude.com/docs/en/skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use Skills in Claude Code</a>: rutas de instalación, invocación con <code>/</code>, campos opcionales y recomendación de 500 líneas.</li>
+      <li><a href="https://github.com/anthropics/skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">github.com/anthropics/skills</a>: lista de Skills, licencias, aviso de uso educativo y comandos de instalación como plugin.</li>
+      <li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Equipping agents for the real world with Agent Skills (blog de ingeniería de Anthropic)</a>: definición, fecha de lanzamiento y estándar abierto.</li>
+      <li><a href="https://github.com/sickn33/antigravity-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/antigravity-awesome-skills</a>: cifra declarada de Skills, licencia y herramientas compatibles.</li>
+      <li><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>: cifra declarada de Skills indexadas.</li>
+    </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
     <ul class="space-y-2">
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
-      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que estan cambiando el mercado</a>, si quieres mas contexto sobre herramientas utiles sin suscripcion.</li>
-      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte mas practica de agentes y modelos chinos.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+      <li><a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">Ficha práctica de Claude</a>, para decidir cuándo usarlo frente a otras IA.</li>
+      <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas entre los dos asistentes.</li>
+      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que suenen humanos</a>, que encaja con la Skill de ejemplo de esta guía.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa comparar con otros agentes de programación.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y plantillas.</li>
     </ul>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
@@ -162,6 +274,8 @@ const pillarLabel = "Pilar 1: Apps web";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
+    "mainEntityOfPage": "https://decodifica.net/blog/claude-skills-1000-gratis/",
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -172,30 +286,15 @@ const pillarLabel = "Pilar 1: Apps web";
     },
     "about": tags,
     "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://github.com/anthropics/skills"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://skillsmp.com/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://en.youth.cn/RightNow/202606/t20260605_16699332.htm"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://www.anthropic.com/pricing"
-      }
-]
+      { "@type": "WebPage", "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512180-using-skills-in-claude" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512198-creating-custom-skills" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512176-what-are-skills" },
+      { "@type": "WebPage", "url": "https://code.claude.com/docs/en/skills" },
+      { "@type": "WebPage", "url": "https://github.com/anthropics/skills" },
+      { "@type": "WebPage", "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" },
+      { "@type": "WebPage", "url": "https://github.com/sickn33/antigravity-awesome-skills" },
+      { "@type": "WebPage", "url": "https://skillsmp.com/" }
+    ]
   })} />
 </BaseLayout>

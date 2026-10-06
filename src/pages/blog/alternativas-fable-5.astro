@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "Claude Fable 5: alternativas locales tras la suspensión";
-const description = "Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte...";
+const title = "Alternativas a Claude Fable 5: modelos abiertos y locales";
+const description = "Qué pasó con la suspensión de Claude Fable 5 en junio de 2026 y qué modelos abiertos y locales (Qwen, DeepSeek, Gemma) sirven como plan B.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-07";
 const readingTime = "4 min";
 const tags = ["ia", "herramientas ia", "Claude Fable 5", "alternativas locales"];
@@ -18,6 +19,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/alternativas-fable-5.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -36,7 +38,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <ReviewMethodology reviewed="11 de julio de 2026" task="evaluar alternativas locales tras una interrupción de acceso" />
+    <ReviewMethodology reviewed="6 de octubre de 2026" task="revisar alternativas abiertas y locales tras la suspensión temporal de Fable 5" />
 
     <img
       src="/og/blog/alternativas-fable-5.png"
@@ -46,103 +48,63 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
-      <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
-        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
-        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
-        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
-      </ul>
-    </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
-        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
-        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
-        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
-        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
-      </div>
-    </div>
 
-    <p>Hay herramientas de IA que llaman la atencion un dia y desaparecen al siguiente. Y luego estan las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este articulo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
-    <p>La pregunta útil es esta: si un modelo desaparece o cambia de condiciones, ¿qué parte de tu trabajo con IA sigues controlando de verdad?</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por que importa</h2>
-    <p>La idea es separar lo que parece una novedad mas de lo que realmente puede cambiar una rutina de trabajo.</p>
-    <p>Una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir fricción o ayudarte a probar algo que antes daba pereza.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Que cambia realmente</h2>
-    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha tecnica. Lo importante es traducir esas funciones a consecuencias practicas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
-    <p>El giro esta en no quedarse con la funcion vistosa, sino mirar si encaja en tareas repetibles y decisiones concretas.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraria antes de usarlo</h2>
+    <p>Del 12 de junio al 1 de julio de 2026, Claude Fable 5 dejó de estar disponible para todos los usuarios. No fue un fallo técnico: Anthropic retiró el acceso para cumplir una directiva de control de exportaciones del Gobierno de EE. UU. Ese episodio sirve como recordatorio práctico: si todo tu flujo depende de un único modelo, conviene tener un plan B. Aquí tienes qué pasó, según los comunicados oficiales, y qué alternativas abiertas y locales puedes preparar.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué pasó con Claude Fable 5</h2>
     <ul class="space-y-2">
-      <li>Si resuelve un problema que ya tienes.</li>
-      <li>Si reduce pasos sin quitarte control.</li>
-      <li>Si el resultado se puede revisar con facilidad.</li>
+      <li><strong>12 de junio de 2026:</strong> Anthropic publicó que el Gobierno de EE. UU. le había ordenado suspender el acceso a Fable 5 y Mythos 5 para cualquier ciudadano extranjero. Según la empresa, el Gobierno creía conocer un método para saltarse (hacer <em>jailbreak</em>) las salvaguardas de Fable 5. Como no podía aplicar la orden de forma selectiva, Anthropic suspendió el acceso para todos los usuarios. El resto de modelos de Anthropic no se vieron afectados.</li>
+      <li><strong>30 de junio de 2026:</strong> Anthropic anunció que se habían levantado esos controles y que Fable 5 volvía a estar disponible desde el 1 de julio en Claude Platform, Claude.ai, Claude Code y Claude Cowork.</li>
+      <li><strong>Cambios al volver:</strong> la empresa entrenó un clasificador de seguridad que bloquea la técnica descrita en el informe de investigadores de Amazon (en más del 99 % de los casos, según Anthropic). Cuando una petición se bloquea, se envía a Claude Opus 4.8 en lugar de a Fable 5.</li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
-    <p>Aquí no haría una prueba de ranking. Haría una prueba de dependencia: elegir una tarea que hoy haces con un modelo cerrado y comprobar si puedes resolverla con una alternativa abierta o local sin perder demasiada calidad.</p>
+    <p>A fecha de consulta (octubre de 2026), la página oficial de Claude Fable presenta Fable 5.1 como el modelo más capaz disponible de forma general de Anthropic.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Alternativas abiertas y locales a Claude</h2>
+    <p>Estas opciones publican sus pesos o permiten ejecutar modelos en tu propio equipo. No sustituyen a Fable 5 en todo, pero cubren tareas como resumir, redactar borradores o clasificar textos sin depender de un solo proveedor.</p>
+    <ul class="space-y-2">
+      <li><strong>Qwen (Alibaba):</strong> su organización en Hugging Face publica familias como Qwen3.8 (texto y multimodal), Qwen-Image y Qwen3-TTS. Revisa la licencia en la ficha de cada modelo.</li>
+      <li><strong>DeepSeek-V4-Pro:</strong> modelo de mezcla de expertos con 1,6 billones de parámetros (49.000 millones activos por consulta), contexto de un millón de tokens y licencia MIT. Sus pesos se descargan desde Hugging Face, aunque por tamaño no es un modelo para un portátil.</li>
+      <li><strong>Gemma 4 (Google DeepMind):</strong> modelos abiertos en tamaños E2B, E4B, 12B, 26B y 31B. Las variantes pequeñas están pensadas para móviles y dispositivos con poca memoria, y se pueden usar con Ollama o LM Studio.</li>
+      <li><strong>Ollama:</strong> herramienta para descargar y ejecutar modelos abiertos en local; tiene instalador para macOS, Linux y Windows.</li>
+      <li><strong>LM Studio:</strong> aplicación de escritorio para ejecutar modelos locales; su web menciona compatibilidad con modelos como GLM 5.2, Kimi K3 y DeepSeek V4 Pro.</li>
+    </ul>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo preparar un plan B</h2>
+    <p>Una forma sencilla de medir cuánto dependes de un modelo cerrado:</p>
     <ol>
       <li>Escoge una tarea repetida: resumir documentos, escribir una respuesta, generar ideas o analizar un texto largo.</li>
-      <li>Hazla primero con tu modelo habitual.</li>
-      <li>Repítela con una alternativa como Qwen, DeepSeek, Gemma, Llama, Ollama o LM Studio.</li>
+      <li>Hazla primero con tu modelo habitual y guarda el resultado.</li>
+      <li>Repítela con una alternativa abierta, por ejemplo Gemma 4 en Ollama o LM Studio, o un modelo Qwen.</li>
       <li>Compara calidad, tiempo, privacidad, coste y facilidad para repetir el flujo.</li>
     </ol>
-    <p>Si la alternativa resuelve el 80% de la tarea sin depender de una plataforma concreta, ya tienes un plan B útil. Si requiere demasiada configuración o baja mucho la calidad, entonces todavía es una opción de laboratorio, no de producción diaria.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Con qué lo compararía</h2>
-    <p>Lo compararía contra Claude, ChatGPT, Gemini y las alternativas abiertas que puedas ejecutar o probar sin demasiada fricción. La pregunta no es cuál gana todos los benchmarks, sino cuál te deja trabajar con menos dependencia y más control.</p>
-    <p>Para tareas creativas o muy delicadas quizá un modelo cerrado siga siendo mejor. Para borradores, análisis, clasificación, resúmenes y trabajo privado, una alternativa abierta puede ser suficiente y más interesante a medio plazo.</p>
+    <p>Si la alternativa resuelve la mayor parte de la tarea, ya tienes un respaldo útil. Si requiere demasiada configuración o baja mucho la calidad, sigue siendo una opción de laboratorio y no de uso diario.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
-    <p>Tiene sentido para usuarios que ya usan IA cada semana y no quieren depender al cien por cien de una sola empresa. También para perfiles que trabajan con datos sensibles, proyectos largos o automatizaciones donde el coste y el control importan.</p>
-    <p>No tiene tanto sentido si solo quieres la herramienta más cómoda posible y no quieres tocar configuración, modelos, pesos o interfaces como Ollama y LM Studio. En ese caso, mejor empezar por alternativas web antes de montar un flujo local.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Donde esta el valor</h2>
-    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar mas de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decision o a una version revisable, entonces ya empieza a tener sentido.</p>
-    <p>Empieza con un caso pequeño, con salida verificable y poco riesgo. Si ahí funciona, se puede subir el nivel. Si falla en lo básico, al menos no habrás construido todo el sistema sobre una promesa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraria todavia</h2>
-    <p>No lo venderia como piloto automatico. Si una herramienta toca archivos, codigo o acciones del sistema, la supervision sigue siendo parte del trabajo.</p>
-    <p>Esta parte importa porque en IA es muy facil confundir potencial con resultado. Una demo puede ser espectacular y aun asi no encajar en tu dia a dia. Por eso conviene separar tres cosas: lo que la herramienta dice que hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decision Decodifica</h2>
-    <p>La decision Decodifica es mirarlo por utilidad real: que te ahorra, que te permite hacer y que riesgos mantiene.</p>
-    <p>Trátalo como una oportunidad de mejora, no como una solución automática. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
-    <p>Si quieres seguir este tipo de analisis con fuentes, recursos y decisiones practicas, la web de Decodifica ira reuniendo la version ampliada de cada video.</p>
+    <p>Tiene sentido para quien usa IA cada semana en tareas importantes, trabaja con datos sensibles o mantiene automatizaciones en las que una interrupción de acceso detiene el trabajo. Para tareas creativas o muy delicadas, un modelo cerrado puede seguir siendo mejor; para borradores, clasificación, resúmenes y trabajo privado, un modelo abierto puede ser suficiente.</p>
+    <p>Si no quieres tocar configuración, modelos ni interfaces como Ollama o LM Studio, empieza por alternativas web antes de montar un flujo local.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://www.anthropic.com/claude/fable" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/claude/fable</a></li>
-      <li><a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/</a></li>
-      <li><a href="https://huggingface.co/Qwen" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://huggingface.co/Qwen</a></li>
-      <li><a href="https://ai.google.dev/gemma" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://ai.google.dev/gemma</a></li>
-      <li><a href="https://llama.meta.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://llama.meta.com/</a></li>
-      <li><a href="https://ollama.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://ollama.com/</a></li>
-      <li><a href="https://lmstudio.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://lmstudio.ai/</a></li>
+      <li><a href="https://www.anthropic.com/news/fable-mythos-access" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anthropic: comunicado sobre la directiva para suspender el acceso a Fable 5 y Mythos 5</a></li>
+      <li><a href="https://www.anthropic.com/news/redeploying-fable-5" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anthropic: Redeploying Claude Fable 5</a></li>
+      <li><a href="https://www.anthropic.com/claude/fable" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anthropic: página oficial de Claude Fable</a></li>
+      <li><a href="https://huggingface.co/Qwen" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Qwen en Hugging Face</a></li>
+      <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek-V4-Pro en Hugging Face</a></li>
+      <li><a href="https://deepmind.google/models/gemma" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Google DeepMind: Gemma</a></li>
+      <li><a href="https://ollama.com/download" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama: descarga</a></li>
+      <li><a href="https://lmstudio.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio</a></li>
     </ul>
+    <p class="text-sm text-dark-300">Fuentes consultadas el 6 de octubre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, aquí tienes una ruta para comparar alternativas y pasar de la noticia a una prueba real:</p>
     <ul class="space-y-2">
+      <li><a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">Ficha de Claude en Decodifica</a>, con planes y casos de uso.</li>
+      <li><a href="/herramientas/deepseek/" class="text-brand-400 hover:text-brand-300">Ficha de DeepSeek</a>, una de las alternativas con pesos abiertos.</li>
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de depender de un solo modelo.</li>
-      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres ampliar el radar de herramientas útiles.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres ampliar el radar de herramientas útiles.</li>
       <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, para ver cómo los modelos chinos también entran en flujos de trabajo reales.</li>
-      <li><a href="/comunidad/" class="text-brand-400 hover:text-brand-300">Comunidad Decodifica</a>, para comentar qué modelos locales o abiertos merece la pena probar.</li>
     </ul>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
@@ -166,6 +128,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -176,42 +139,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
     },
     "about": tags,
     "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://www.anthropic.com/claude/fable"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://actumforensepress.es/archivos/el-juego-de-la-politica-y-fable-5/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://qwen.ai/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/Qwen"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://ai.google.dev/gemma"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://llama.meta.com/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://ollama.com/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://lmstudio.ai/"
-      }
+      {"@type": "WebPage", "url": "https://www.anthropic.com/news/fable-mythos-access"},
+      {"@type": "WebPage", "url": "https://www.anthropic.com/news/redeploying-fable-5"},
+      {"@type": "WebPage", "url": "https://www.anthropic.com/claude/fable"},
+      {"@type": "WebPage", "url": "https://huggingface.co/Qwen"},
+      {"@type": "WebPage", "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"},
+      {"@type": "WebPage", "url": "https://deepmind.google/models/gemma"},
+      {"@type": "WebPage", "url": "https://ollama.com/download"},
+      {"@type": "WebPage", "url": "https://lmstudio.ai/"}
 ]
   })} />
 </BaseLayout>

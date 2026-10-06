@@ -9,13 +9,13 @@ const canva = getToolBySlug('canva-ai');
 
 const pageUrl = `${siteConfig.url}/herramientas/gamma-vs-canva-ai/`;
 const title = 'Gamma vs Canva AI: cual usar';
-const description = 'Comparativa practica entre Gamma y Canva AI: presentaciones, documentos visuales, marca, redes, precio, privacidad y flujo recomendado.';
+const description = 'Comparativa práctica entre Gamma y Canva AI: presentaciones, documentos visuales, marca, redes, precio, privacidad y flujo recomendado.';
 
 const rows = [
   {
     criterion: 'Crear desde una idea',
-    gamma: 'Muy fuerte para convertir un prompt, esquema o documento en una presentacion o pagina visual inicial.',
-    canva: 'Puede generar y editar, pero su ventaja aparece mas cuando ya estas trabajando dentro de formatos visuales concretos.',
+    gamma: 'Muy fuerte para convertir un prompt, esquema o documento en una presentación o página visual inicial.',
+    canva: 'Puede generar y editar, pero su ventaja aparece más cuando ya estas trabajando dentro de formatos visuales concretos.',
     winner: 'Gamma',
   },
   {
@@ -26,26 +26,26 @@ const rows = [
   },
   {
     criterion: 'Presentaciones',
-    gamma: 'Gana para pasar de idea a deck rapido y con narrativa visual.',
+    gamma: 'Gana para pasar de idea a deck rápido y con narrativa visual.',
     canva: 'Gana si necesitas editar mucho el estilo, adaptar la pieza a marca o reutilizar elementos de diseno.',
     winner: 'Depende del momento',
   },
   {
     criterion: 'Redes y piezas de marketing',
-    gamma: 'Puede generar social content, pero no es su terreno mas diferencial.',
+    gamma: 'Puede generar social content, pero no es su terreno más diferencial.',
     canva: 'Muy fuerte para formatos de redes, banners, miniaturas, carruseles y piezas reutilizables.',
     winner: 'Canva AI',
   },
   {
     criterion: 'Documentos visuales',
-    gamma: 'Buen encaje para one-pagers, white papers, paginas y documentos visuales estructurados.',
-    canva: 'Buen encaje si quieres una pieza mas disenada y ligada a marca o plantilla.',
-    winner: 'Empate segun salida',
+    gamma: 'Buen encaje para one-pagers, white papers, páginas y documentos visuales estructurados.',
+    canva: 'Buen encaje si quieres una pieza más disenada y ligada a marca o plantilla.',
+    winner: 'Empate según salida',
   },
   {
     criterion: 'Privacidad y equipos',
-    gamma: 'Revisa plan, workspace, archivos subidos y permisos antes de usar informacion sensible.',
-    canva: 'Ofrece controles de AI y permisos por plan; aun asi, revisa contenido, marca y datos de cliente antes de subirlos.',
+    gamma: 'Revisa plan, workspace, archivos subidos y permisos antes de usar información sensible.',
+    canva: 'Ofrece controles de AI y permisos por plan; aun así, revisa contenido, marca y datos de cliente antes de subirlos.',
     winner: 'Revisar plan',
   },
 ];
@@ -54,26 +54,26 @@ const decisions = [
   {
     title: 'Elige Gamma si...',
     items: [
-      'Tienes una idea, texto o esquema y quieres convertirlo rapido en deck o documento visual.',
+      'Tienes una idea, texto o esquema y quieres convertirlo rápido en deck o documento visual.',
       'Necesitas ordenar una propuesta antes de entrar en diseno fino.',
-      'Quieres generar varias estructuras de presentacion para comparar enfoques.',
-      'La velocidad del primer borrador importa mas que el control pixel a pixel.',
+      'Quieres generar varias estructuras de presentación para comparar enfoques.',
+      'La velocidad del primer borrador importa más que el control pixel a pixel.',
     ],
   },
   {
     title: 'Elige Canva AI si...',
     items: [
       'Necesitas piezas visuales listas para redes, marketing o marca.',
-      'Quieres adaptar una idea a varios formatos: presentacion, post, banner, miniatura o carrusel.',
+      'Quieres adaptar una idea a varios formatos: presentación, post, banner, miniatura o carrusel.',
       'Trabajas con plantillas, brand kits o materiales recurrentes.',
-      'La edicion visual y la consistencia de marca pesan mas que el primer borrador.',
+      'La edición visual y la consistencia de marca pesan más que el primer borrador.',
     ],
   },
 ];
 
 const useCases = [
   {
-    task: 'Tengo una idea y necesito una presentacion inicial',
+    task: 'Tengo una idea y necesito una presentación inicial',
     choice: 'Gamma',
     reason: 'Empieza con Gamma para convertir el concepto en estructura visual y narrativa.',
   },
@@ -84,7 +84,7 @@ const useCases = [
   },
   {
     task: 'Tengo una propuesta comercial',
-    choice: 'Gamma primero, Canva despues',
+    choice: 'Gamma primero, Canva después',
     reason: 'Usa Gamma para ordenar el argumento y Canva si necesitas pulir marca, portada o piezas derivadas.',
   },
   {
@@ -95,7 +95,7 @@ const useCases = [
   {
     task: 'Quiero un documento visual para explicar una idea',
     choice: 'Gamma',
-    reason: 'Gamma es muy comodo para one-pagers, documentos y paginas visuales que nacen de texto.',
+    reason: 'Gamma es muy cómodo para one-pagers, documentos y páginas visuales que nacen de texto.',
   },
 ];
 
@@ -103,7 +103,7 @@ const workflow = [
   'Empieza por el objetivo: vender, explicar, presentar o publicar.',
   'Usa Gamma si necesitas estructura y narrativa desde texto.',
   'Usa Canva si necesitas adaptar, maquetar y mantener marca.',
-  'Antes de publicar, revisa datos, derechos de recursos, legibilidad movil y exportacion final.',
+  'Antes de publicar, revisa datos, derechos de recursos, legibilidad móvil y exportación final.',
 ];
 
 const sources = [
@@ -122,11 +122,11 @@ const faq = [
   },
   {
     question: 'Cual conviene para redes sociales?',
-    answer: 'Canva AI encaja mejor para redes porque su ecosistema esta pensado para formatos visuales, plantillas, brand kits y adaptaciones rapidas.',
+    answer: 'Canva AI encaja mejor para redes porque su ecosistema esta pensado para formatos visuales, plantillas, brand kits y adaptaciones rápidas.',
   },
   {
     question: 'Tiene sentido usar las dos?',
-    answer: 'Si. Un flujo practico es usar Gamma para ordenar una propuesta o presentacion y Canva para pulir diseno, marca y materiales de distribucion.',
+    answer: 'Si. Un flujo práctico es usar Gamma para ordenar una propuesta o presentación y Canva para pulir diseno, marca y materiales de distribución.',
   },
 ];
 
@@ -178,13 +178,13 @@ const faqLd = {
     <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          Comparativa practica
+          Comparativa práctica
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
           Gamma vs Canva AI: cual usar para presentaciones y diseno
         </h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
-          Gamma es mejor para convertir una idea en una presentacion o documento visual. Canva AI es mejor para producir, adaptar y mantener piezas visuales con marca. No compiten siempre por la misma fase: muchas veces se complementan.
+          Gamma es mejor para convertir una idea en una presentación o documento visual. Canva AI es mejor para producir, adaptar y mantener piezas visuales con marca. No compiten siempre por la misma fase: muchas veces se complementan.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/herramientas/gamma/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha Gamma</a>
@@ -193,7 +193,7 @@ const faqLd = {
       </div>
 
       <aside class="rounded-lg border border-dark-600 bg-dark-800 p-5">
-        <h2 class="font-display text-xl font-bold text-white">Decision rapida</h2>
+        <h2 class="font-display text-xl font-bold text-white">Decisión rápida</h2>
         <dl class="mt-4 grid gap-4 text-sm leading-6">
           <div>
             <dt class="font-semibold text-brand-300">Primer borrador</dt>
@@ -217,7 +217,7 @@ const faqLd = {
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
       <h2>Veredicto Decodifica</h2>
       <p>
-        Si la tarea empieza con una idea en bruto, abre Gamma. Si la tarea termina en una pieza visual publicable, abre Canva. Para propuestas y presentaciones importantes, el flujo mas sensato es generar estructura en Gamma y terminar con criterio visual en Canva.
+        Si la tarea empieza con una idea en bruto, abre Gamma. Si la tarea termina en una pieza visual publicable, abre Canva. Para propuestas y presentaciones importantes, el flujo más sensato es generar estructura en Gamma y terminar con criterio visual en Canva.
       </p>
     </section>
 
@@ -241,7 +241,7 @@ const faqLd = {
               <th class="border-b border-dark-600 px-3 py-3">Criterio</th>
               <th class="border-b border-dark-600 px-3 py-3">Gamma</th>
               <th class="border-b border-dark-600 px-3 py-3">Canva AI</th>
-              <th class="border-b border-dark-600 px-3 py-3">Mejor opcion</th>
+              <th class="border-b border-dark-600 px-3 py-3">Mejor opción</th>
             </tr>
           </thead>
           <tbody>
@@ -259,7 +259,7 @@ const faqLd = {
     </section>
 
     <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
-      <h2 class="font-display text-2xl font-bold text-white">Que abrir primero segun la tarea</h2>
+      <h2 class="font-display text-2xl font-bold text-white">Qué abrir primero según la tarea</h2>
       <div class="mt-5 grid gap-4 md:grid-cols-2">
         {useCases.map((item) => (
           <div class="rounded-lg border border-dark-600 bg-dark-900 p-4">
@@ -287,15 +287,15 @@ const faqLd = {
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Precio y limites</h2>
+        <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          Gamma tiene plan gratuito y planes de pago que amplian modelos, tarjetas por prompt, marca, dominios, API y opciones de equipo. Canva tiene Free, Pro, Business y Enterprise, con limites de uso de herramientas IA y controles segun plan. En los dos casos, revisa exportacion, marca, creditos o allowances antes de montar un flujo recurrente.
+          Gamma tiene plan gratuito y planes de pago que amplian modelos, tarjetas por prompt, marca, dominios, API y opciones de equipo. Canva tiene Free, Pro, Business y Enterprise, con límites de uso de herramientas IA y controles según plan. En los dos casos, revisa exportación, marca, créditos o allowances antes de montar un flujo recurrente.
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          En estas herramientas el riesgo suele estar en subir propuestas, datos de clientes, logos, imagenes o material de marca. Canva publica controles de IA y permisos por plan; Gamma tambien debe revisarse por workspace, archivos y permisos. Si hay datos sensibles, usa material anonimizado para el borrador.
+          En estas herramientas el riesgo suele estar en subir propuestas, datos de clientes, logos, imágenes o material de marca. Canva publica controles de IA y permisos por plan; Gamma también debe revisarse por workspace, archivos y permisos. Si hay datos sensibles, usa material anonimizado para el borrador.
         </p>
       </div>
     </section>
@@ -307,7 +307,7 @@ const faqLd = {
           {gamma && <li><a href={`/herramientas/${gamma.slug}/`} class="text-brand-300 hover:text-brand-200">{gamma.name}: cuando usarla</a></li>}
           {canva && <li><a href={`/herramientas/${canva.slug}/`} class="text-brand-300 hover:text-brand-200">{canva.name}: cuando usarla</a></li>}
           <li><a href="/blog/ia-crea-presentaciones-completas/" class="text-brand-300 hover:text-brand-200">IA para crear presentaciones completas</a></li>
-          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Como elegir una herramienta IA</a></li>
+          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Cómo elegir una herramienta IA</a></li>
         </ul>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">

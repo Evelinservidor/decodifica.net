@@ -3,11 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
-const title = "5 alternativas gratis a ChatGPT en 2026: cuál elegir";
-const description = "Compara Gemini, Claude, DeepSeek, Mistral y HuggingChat gratis: qué hace mejor cada una, sus límites y cuál elegir según tu tarea.";
+const title = "Alternativas gratis a ChatGPT en 2026: 7 IA comparadas";
+const description = "Gemini, Claude, Copilot, DeepSeek, Qwen, Mistral Vibe y HuggingChat: qué dan gratis hoy, sus límites, qué hacen con tus datos y cuál elegir según la tarea.";
 const pubDate = "2026-06-15";
-const tags = ["apps web gratis", "alternativas chatgpt", "herramientas ia"];
-const readingTime = "9 min";
+const modifiedDate = "2026-10-06";
+const tags = ["ia gratis", "alternativas chatgpt", "herramientas ia"];
+const readingTime = "11 min";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -18,13 +19,16 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og/blog/alternativas-gratis-chatgpt-2026.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
         <time datetime="2026-06-15">15 junio 2026</time>
+        <span>·</span>
+        <span>Actualizado: <time datetime="2026-10-06">6 octubre 2026</time></span>
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -32,11 +36,11 @@ const pillarLabel = "Pilar 1: Apps web";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Si ChatGPT se te queda corto o quieres alternativas sin pagar, esta comparativa te ayuda a elegir por tarea, límites de uso y controles de datos.
+        Siete asistentes de IA que puedes usar sin pagar, con lo que cada uno ofrece en su plan gratuito según su web oficial (consultada el 6 de octubre de 2026): modelo, límites publicados, cuenta, idioma y qué hacen con tus conversaciones.
       </p>
     </header>
 
-    <ReviewMethodology reviewed="11 de julio de 2026" task="elegir una alternativa gratuita para una tarea concreta" />
+    <ReviewMethodology reviewed="6 de octubre de 2026" task="elegir una alternativa gratuita a ChatGPT para una tarea concreta" />
 
     <img
       src="/og/blog/alternativas-gratis-chatgpt-2026.png"
@@ -47,290 +51,296 @@ const pillarLabel = "Pilar 1: Apps web";
     />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
+      <h2 class="font-display text-lg font-bold text-white mb-3">Resumen en cinco líneas</h2>
       <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Google Gemini 2.0 Flash</strong>: la mejor alternativa gratuita si necesitas velocidad y multimodalidad</li>
-        <li><strong>Claude Sonnet (free tier)</strong>: la mejor para análisis de texto largo y razonamiento cuidadoso</li>
-        <li><strong>DeepSeek V3</strong>: la mejor para código y razonamiento técnico, en chino pero excelente</li>
-        <li><strong>Mistral Le Chat</strong>: la mejor alternativa europea (cumple GDPR de verdad)</li>
-        <li><strong>Hugging Face Chat</strong>: la mejor para experimentar con modelos open source</li>
+        <li><strong>Gemini</strong> es el plan gratis más completo en funciones (Deep Research, imágenes, Canvas, Gemini Live) con una cuenta de Google.</li>
+        <li><strong>Claude</strong> da gratis los modelos Sonnet y Haiku, búsqueda web y ejecución de código, y no entrena con tus chats salvo que lo permitas.</li>
+        <li><strong>Microsoft Copilot</strong> es el único de la lista que se puede usar sin iniciar sesión.</li>
+        <li><strong>DeepSeek</strong> y <strong>Qwen</strong> son gratuitos y fuertes en código y razonamiento, pero sus empresas están en China (DeepSeek guarda los datos allí, según su política).</li>
+        <li><strong>Mistral Vibe</strong> (antes Le Chat) aloja los datos en la Unión Europea por defecto; <strong>HuggingChat</strong> sirve para comparar modelos abiertos.</li>
       </ul>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuál elegir según tu caso</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa: qué da gratis cada una</h2>
     <p>
-      Si vienes buscando una respuesta rápida, esta sería mi elección sin darle muchas vueltas:
+      Datos tomados de las páginas oficiales de precios, ayuda y privacidad enlazadas en <a href="#fuentes" class="text-brand-400 hover:text-brand-300">Fuentes</a>. Donde la empresa no publica el dato, lo indicamos como «no publicado».
     </p>
-
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Uso diario rápido</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini 2.0 Flash</h3>
-        <p class="mt-2 text-sm text-dark-200">Para resumir, buscar, analizar imágenes, leer PDFs y resolver tareas cortas sin esperar.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Texto serio</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Claude</h3>
-        <p class="mt-2 text-sm text-dark-200">Para escribir mejor, revisar documentos largos, preparar emails y pensar con más calma.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Código y lógica</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">DeepSeek V3</h3>
-        <p class="mt-2 text-sm text-dark-200">Para scripts, debugging, SQL, matemáticas y problemas técnicos donde necesitas pasos claros.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Privacidad europea</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Mistral Le Chat</h3>
-        <p class="mt-2 text-sm text-dark-200">Para datos más sensibles, empresas europeas o casos donde prefieres evitar enviar todo a EEUU o China.</p>
-      </div>
-    </div>
-
-    <p>
-      Recomendación práctica: no busques “la mejor IA gratis” en abstracto. Elige una según la tarea, los límites, el idioma y los controles de datos que necesites.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué buscar alternativas a ChatGPT</h2>
-    <p>
-      ChatGPT sigue siendo el rey, pero tiene tres problemas reales:
-    </p>
-    <ol>
-      <li><strong>Rate limits agresivos en el plan gratuito</strong>: si haces más de 10-15 consultas por hora, te quedas sin servicio hasta el día siguiente.</li>
-      <li><strong>Privacidad cuestionable</strong>: OpenAI entrena con tus conversaciones por defecto (hay que desactivarlo manualmente).</li>
-      <li><strong>Una sola perspectiva</strong>: cada modelo tiene sesgos y fortalezas distintas. Usar varios te da respuestas más ricas.</li>
-    </ol>
-    <p>
-      Aquí van cinco alternativas gratuitas, ordenadas por casos de uso. Comprueba sus límites y políticas antes de subir información sensible.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Google Gemini 2.0 Flash — La más rápida y multimodal</h2>
-    <div class="mb-12 overflow-hidden rounded-2xl border border-dark-600">
-      <div class="aspect-video w-full">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/0498G9Zf-Z0"
-          title="7 IAs gratis que hacen el 90% de lo que hace ChatGPT"
-          class="h-full w-full"
-          frameborder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-
-    
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
-    <p>
-      La versión gratuita de Gemini es absurdamente rápida (responde en 1-2 segundos) y acepta imágenes, PDFs, videos, código y texto. Es la IA más versátil para tareas multimodales del día a día.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
-    <ul>
-      <li>Subir una foto de un producto y pedir que lo describa</li>
-      <li>Analizar PDFs largos (extracto, resumen, responde preguntas)</li>
-      <li>Generar código con contexto visual</li>
-      <li>Búsqueda con Google integrada (cuando cita fuentes, ves los enlaces)</li>
-    </ul>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones del plan gratuito</h3>
-    <ul>
-      <li>~60 consultas por minuto, 1.000 por día</li>
-      <li>Acceso a Gemini 2.0 Flash, no Pro</li>
-      <li>Las conversaciones se usan para entrenar (hay que desactivar en Settings)</li>
-    </ul>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Cuándo NO usarla</h3>
-    <p>
-      Razonamiento ético, análisis filosófico profundo, o cualquier cosa que requiera "pensar antes de responder". Gemini Flash es veloz pero a veces salta a conclusiones.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">2. Claude (Sonnet 4, free tier) — La más inteligente en texto</h2>
-    
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
-    <p>
-      Anthropic da acceso gratuito a Claude Sonnet 4 con límite de mensajes por día. Es la IA con mejor razonamiento escrito, mejor comprensión de contexto largo, y menos "alucinaciones" en mis pruebas.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
-    <ul>
-      <li>Escribir emails que suenen humanos, no a ChatGPT</li>
-      <li>Resumir documentos de +20 páginas sin perder matices</li>
-      <li>Code review crítico (te dice qué está mal sin rodeos)</li>
-      <li>Análisis de texto legal o técnico</li>
-      <li>Brainstorming de ideas poco convencionales</li>
-    </ul>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones del plan gratuito</h3>
-    <ul>
-      <li>~50 mensajes por día (suficiente para uso personal, corto para trabajo)</li>
-      <li>Sin acceso a Skills (solo en plan de pago)</li>
-      <li>Sin acceso a web search en tiempo real</li>
-    </ul>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3. DeepSeek V3 — La bestia del código y las matemáticas</h2>
-    
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
-    <p>
-      Un modelo chino open source (DeepSeek-V3) que compite con GPT-4o en benchmarks de código y razonamiento matemático. El chat gratuito está en <a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300">chat.deepseek.com</a>.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
-    <ul>
-      <li>Programación avanzada (refactor, debugging, code review)</li>
-      <li>Resolución de problemas matemáticos paso a paso</li>
-      <li>Razonamiento lógico estructurado</li>
-      <li>Generar SQL complejo con joins múltiples</li>
-    </ul>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
-    <ul>
-      <li>La interfaz está en chino (se puede usar en español sin problema, pero el menú confunde)</li>
-      <li>Sin multimodalidad (solo texto)</li>
-      <li>A veces tarda más que Gemini en respuestas simples</li>
-    </ul>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4. Mistral Le Chat — La europea (RGPD-friendly)</h2>
-    
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
-    <p>
-      Mistral AI es la startup francesa que está compitiendo con los americanos. Le Chat es su interfaz gratuita, con servidores en Europa (cumple RGPD de verdad, no como las demás que dicen "RGPD" pero guardan datos en USA).
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Casos de uso donde brilla</h3>
-    <ul>
-      <li>Trabajo con datos sensibles de clientes europeos</li>
-      <li>Empresas que necesitan cumplir RGPD estricto</li>
-      <li>Cuando quieres evitar enviar datos a servers de USA/China</li>
-    </ul>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
-    <ul>
-      <li>Modelos más pequeños (Mistral Small, Medium) en el plan gratuito</li>
-      <li>Sin acceso a su flagship (Mistral Large) sin pagar</li>
-      <li>Menos refinado que Claude en tareas largas</li>
-    </ul>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">5. Hugging Face Chat — La playground open source</h2>
-    
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Qué es</h3>
-    <p>
-      Hugging Face aloja +100.000 modelos open source. Su chat te deja probar Llama, Mistral, Qwen, DeepSeek, Phi, y muchos más, gratis, sin registro (con límites).
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">Limitaciones</h3>
-    <ul>
-      <li>Calidad variable: hay modelos brillantes y modelos pésimos mezclados</li>
-      <li>Sin continuity entre sesiones</li>
-      <li>Interfaz más técnica, menos pulida</li>
-    </ul>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa rápida</h2>
 
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-dark-600">
             <th class="text-left p-2 text-white">IA</th>
-            <th class="text-left p-2 text-white">Velocidad</th>
-            <th class="text-left p-2 text-white">Multimodal</th>
-            <th class="text-left p-2 text-white">Mejor para</th>
-            <th class="text-left p-2 text-white">Límite free</th>
+            <th class="text-left p-2 text-white">Modelo en el plan gratis</th>
+            <th class="text-left p-2 text-white">Límite publicado</th>
+            <th class="text-left p-2 text-white">Cuenta</th>
+            <th class="text-left p-2 text-white">Entrena con tus chats</th>
           </tr>
         </thead>
         <tbody class="text-dark-200">
-          <tr class="border-b border-dark-700"><td class="p-2">Gemini 2.0 Flash</td><td class="p-2">⚡⚡⚡</td><td class="p-2">✅ Sí</td><td class="p-2">Velocidad + multimodalidad</td><td class="p-2">1.000/día</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">Claude Sonnet 4</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Texto largo, razonamiento</td><td class="p-2">~50/día</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">DeepSeek V3</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Código + matemáticas</td><td class="p-2">Ilimitado*</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">Mistral Le Chat</td><td class="p-2">⚡⚡</td><td class="p-2">❌ No</td><td class="p-2">Privacidad + RGPD</td><td class="p-2">Ilimitado*</td></tr>
-          <tr><td class="p-2">HuggingFace Chat</td><td class="p-2">Rápida</td><td class="p-2">Varía</td><td class="p-2">Experimentar</td><td class="p-2">~100/día</td></tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Gemini</td>
+            <td class="p-2">3.6 Flash; acceso variable a 3.1 Pro</td>
+            <td class="p-2">Por cómputo; se recarga cada 5 horas hasta un tope semanal</td>
+            <td class="p-2">Cuenta de Google</td>
+            <td class="p-2">Sí, con «Actividad» activada; se puede desactivar</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Claude</td>
+            <td class="p-2">Sonnet y Haiku (Opus no)</td>
+            <td class="p-2">Por sesión de 5 horas, sin número fijo de mensajes</td>
+            <td class="p-2">Sí; mayores de 18 años</td>
+            <td class="p-2">Solo si lo activas</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Microsoft Copilot</td>
+            <td class="p-2">No especificado</td>
+            <td class="p-2">No publicado</td>
+            <td class="p-2">Opcional</td>
+            <td class="p-2">Se puede desactivar en Privacidad</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">DeepSeek</td>
+            <td class="p-2">«Último modelo insignia» (versión no especificada)</td>
+            <td class="p-2">No publicado</td>
+            <td class="p-2">No lo detalla</td>
+            <td class="p-2">Sí, según su política; recoge un derecho de oposición</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Qwen Studio</td>
+            <td class="p-2">Familia Qwen, incluido Qwen3.8</td>
+            <td class="p-2">No publicado</td>
+            <td class="p-2">No lo detalla</td>
+            <td class="p-2">No verificado</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="p-2">Mistral Vibe</td>
+            <td class="p-2">«Nuestros últimos modelos» (sin detalle)</td>
+            <td class="p-2">«Mensajes y búsquedas limitados»</td>
+            <td class="p-2">No lo detalla</td>
+            <td class="p-2">Sí por defecto; se puede desactivar</td>
+          </tr>
+          <tr>
+            <td class="p-2">HuggingChat</td>
+            <td class="p-2">Más de 100 modelos abiertos + enrutador Omni</td>
+            <td class="p-2">No publicado</td>
+            <td class="p-2">Cuenta de Hugging Face</td>
+            <td class="p-2">No verificado</td>
+          </tr>
         </tbody>
       </table>
     </div>
+    <p class="text-sm text-dark-300 mt-2">Consultado el 6 de octubre de 2026. Los planes gratuitos cambian a menudo: confirma en la página oficial antes de decidir.</p>
 
-    <p class="text-sm text-dark-300 mt-2">* Pueden aplicar throttling en horas pico o con prompts muy largos</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuál elegir según tu tarea</h2>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Mi setup personal (lo que uso yo)</h2>
+    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Investigar un tema con fuentes</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini</h3>
+        <p class="mt-2 text-sm text-dark-200">Deep Research está incluido en el plan gratuito. Alternativa: Copilot, que responde con búsqueda web en tiempo real.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Escribir y revisar documentos</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Claude</h3>
+        <p class="mt-2 text-sm text-dark-200">Artifacts, creación de archivos y memoria entre conversaciones en el plan gratis, y tus chats no se usan para entrenar salvo que lo actives.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Una consulta rápida sin registrarte</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Microsoft Copilot</h3>
+        <p class="mt-2 text-sm text-dark-200">Funciona sin iniciar sesión. Si entras con tu cuenta Microsoft, añade historial, imágenes y conversaciones más largas.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Código y problemas técnicos (sin datos sensibles)</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">DeepSeek o Qwen</h3>
+        <p class="mt-2 text-sm text-dark-200">Ambos publican modelos orientados a código y agentes. Úsalos con código propio no confidencial y prueba el resultado con tus tests.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Datos que deben quedarse en Europa</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">Mistral Vibe</h3>
+        <p class="mt-2 text-sm text-dark-200">Aloja los datos en la UE por defecto. Desactiva el uso para entrenamiento, que en el plan gratuito viene activado.</p>
+      </div>
+      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Comparar modelos abiertos</p>
+        <h3 class="mt-2 font-display text-xl font-bold text-white">HuggingChat</h3>
+        <p class="mt-2 text-sm text-dark-200">Lanza la misma pregunta a Qwen, DeepSeek, Gemma, Llama o gpt-oss sin instalar nada, antes de decidir cuál ejecutar en local.</p>
+      </div>
+    </div>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Gemini (Google)</h2>
     <p>
-      Una forma razonable de repartir las tareas es esta:
+      <strong>Qué da gratis.</strong> La página de planes de Google indica «0 $ al mes con una cuenta de Google» e incluye acceso a <strong>Gemini 3.6 Flash</strong>, «acceso variable» a <strong>3.1 Pro</strong>, generación y edición de imágenes, Deep Research, Gemini Live, Canvas, Gems y acceso limitado a Google Flow.
     </p>
+    <p>
+      <strong>Límites.</strong> No hay un número de mensajes: los límites se calculan según la complejidad del prompt, las funciones usadas y la longitud del chat, y se recargan cada 5 horas hasta alcanzar un límite semanal. Los planes de pago (Google AI Plus y Google AI Pro) multiplican ese uso por 2 y por 4.
+    </p>
+    <p>
+      <strong>Español y Latinoamérica.</strong> Según la ayuda de Google, la app web funciona en más de 70 idiomas y más de 230 países y territorios, entre ellos México, Argentina, Colombia, Perú, España y EE. UU.
+    </p>
+    <p>
+      <strong>Tus datos.</strong> Con el ajuste «Actividad» (Keep Activity) activado, Google usa los chats para mejorar sus servicios, incluido el entrenamiento de modelos, y una parte la revisan personas. Si lo desactivas, los chats futuros no se usan para entrenar (salvo que envíes comentarios), aunque Google los procesa para responderte y por seguridad.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> investigación con Deep Research y tareas con imágenes o documentos. <strong>Límite principal:</strong> el acceso a 3.1 Pro es variable y el tope semanal no está cuantificado.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">2. Claude (Anthropic)</h2>
+    <p>
+      <strong>Qué da gratis.</strong> El plan Free cuesta 0 $ e incluye chat en web, escritorio y móvil; búsqueda web, creación de archivos y ejecución de código; memoria entre conversaciones; conexión con apps y herramientas, y Artifacts. Los modelos disponibles en Free son <strong>Sonnet y Haiku</strong>; Opus queda para los planes de pago.
+    </p>
+    <p>
+      <strong>Límites.</strong> Anthropic no fija un número de mensajes: el límite se reinicia en ventanas de 5 horas y depende de la longitud de las conversaciones, el modelo y las funciones. Pro ofrece al menos 5 veces más uso por sesión.
+    </p>
+    <p>
+      <strong>Español y Latinoamérica.</strong> La ayuda indica que Claude funciona bien en los idiomas más comunes. Claude.ai está disponible en México, Argentina, Colombia, Perú, Chile, España y EE. UU., entre otros; Venezuela y Cuba no aparecen en la lista de países admitidos. Hay que tener al menos 18 años.
+    </p>
+    <p>
+      <strong>Tus datos.</strong> En las cuentas Free, Pro y Max, los chats se usan para mejorar Claude solo si eliges permitirlo en la configuración de privacidad; los chats de incógnito nunca se usan. La excepción son las conversaciones marcadas para revisión de seguridad.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> redacción, revisión de documentos y trabajo con archivos. <strong>Límite principal:</strong> Opus no está en el plan gratuito y la cuota de 5 horas puede acabarse rápido con documentos largos. Si dudas entre los dos, tienes la comparativa <a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a> y la <a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">ficha de Claude</a>.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3. Microsoft Copilot</h2>
+    <p>
+      <strong>Qué da gratis.</strong> Copilot está disponible sin coste en copilot.microsoft.com, en apps de escritorio y móvil, y dentro de Edge. Sirve para escribir, resumir y hacer lluvia de ideas, con respuestas basadas en búsqueda web en tiempo real.
+    </p>
+    <p>
+      <strong>Cuenta.</strong> Según Microsoft, no hace falta iniciar sesión; con una cuenta personal se añaden historial de chats, creación de imágenes, conversaciones más largas y voz.
+    </p>
+    <p>
+      <strong>Límites.</strong> Microsoft no publica cifras para el plan gratuito; la página de Microsoft 365 Premium habla de «más uso que el gratuito». Tampoco indica qué modelo usa la versión gratuita.
+    </p>
+    <p>
+      <strong>Español y Latinoamérica.</strong> Disponible en más de 170 mercados (con excepciones como China continental y países con embargo). Admite texto en español y en español de México.
+    </p>
+    <p>
+      <strong>Tus datos.</strong> Puedes excluir tus conversaciones del entrenamiento en Perfil → Privacidad → «Training on conversation activity». Microsoft aclara que eso no impide su uso para mejoras generales del producto, publicidad, seguridad y cumplimiento.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> preguntas rápidas con búsqueda web, incluso sin cuenta. <strong>Límite principal:</strong> no sabes qué modelo te responde ni cuánto uso tienes.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">4. DeepSeek</h2>
+    <p>
+      <strong>Qué da gratis.</strong> La app oficial es gratuita en la App Store, se describe como «impulsada por el último modelo insignia de DeepSeek» e incluye el español entre sus idiomas. El chat web está en <a href="https://chat.deepseek.com" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.deepseek.com</a>. DeepSeek no indica qué versión exacta sirve en el chat; su anuncio más reciente (10 de septiembre de 2026) presenta <strong>DeepSeek-V4.1-Flash</strong> en la API, con soporte multimodal nativo.
+    </p>
+    <p>
+      <strong>Límites.</strong> No publicados para el chat gratuito.
+    </p>
+    <p>
+      <strong>Tus datos.</strong> La política de privacidad (actualizada el 10 de febrero de 2026) dice que DeepSeek recoge, procesa y almacena los datos personales en la República Popular China, y que los usa para entrenar y mejorar sus modelos. La misma política recoge el derecho a oponerse a que tus datos se usen para entrenar; revisa el apartado que corresponde a tu país.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> programación y razonamiento técnico, con modelos de pesos abiertos que también puedes ejecutar fuera de su web. <strong>Límite principal:</strong> la ubicación de los datos lo descarta para información de clientes o datos personales. Si vas a usarlo, empieza por la guía de la <a href="/blog/deepseek-app-oficial-espanol/" class="text-brand-400 hover:text-brand-300">app oficial de DeepSeek en español</a>.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">5. Qwen Studio (Alibaba)</h2>
+    <p>
+      <strong>Qué da gratis.</strong> El chat de Qwen sigue en <a href="https://chat.qwen.ai" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a>, ahora con el nombre <strong>Qwen Studio</strong>. El repositorio oficial de Qwen3.8 (publicado en agosto de 2026) lo presenta como el sitio para probar ese modelo y lo describe como «gratuito y abierto a todos». Según la propia web, ofrece chat, comprensión de imagen y vídeo, generación y edición de imágenes, procesamiento de documentos, chat de voz y vídeo, y artifacts.
+    </p>
+    <p>
+      <strong>Idiomas.</strong> Qwen3.8 parte de la base de Qwen3.5, que según el equipo de Qwen amplió el soporte a 201 idiomas y dialectos.
+    </p>
+    <p>
+      <strong>Límites y datos.</strong> Qwen no publica límites de uso del chat. No hemos podido leer su política de privacidad (la página se carga solo con JavaScript), así que no afirmamos nada sobre entrenamiento o ubicación de datos: léela en <a href="https://qwen.ai/privacypolicy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">qwen.ai/privacypolicy</a> antes de subir nada sensible.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> tareas multimodales y textos largos con estructura; además, muchos de sus modelos tienen pesos abiertos (Qwen3.5, Qwen3.6 y Qwen3.8 en Hugging Face). <strong>Límite principal:</strong> poca información pública sobre límites y privacidad del chat. Para tareas de programación en la terminal existe <a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code</a>.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">6. Mistral Vibe (antes Le Chat)</h2>
+    <p>
+      <strong>Qué da gratis.</strong> Le Chat ahora se llama <strong>Vibe</strong>: Mistral indica que las conversaciones, ajustes y planes se conservan. El plan Free, con «límites de uso conservadores», da acceso a sus últimos modelos, chat, búsqueda web con citas, generación de imágenes, subida de documentos (limitada), conectores y sesiones de código limitadas. Mistral no especifica qué modelo responde en el plan gratuito; el plan Pro ofrece hasta 6 veces más mensajes y 5 veces más búsquedas.
+    </p>
+    <p>
+      <strong>Tus datos.</strong> Por defecto, los datos se alojan en la Unión Europea (con posibles transferencias temporales a subencargados, según la función). En los planes estándar, las entradas y respuestas se usan para entrenar por defecto salvo que te excluyas; la página de precios marca «Opt-out» para el plan gratuito. Las valoraciones con pulgar arriba o abajo se pueden usar aunque te hayas excluido.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> trabajo con datos que conviene mantener en la UE y tareas rápidas con búsqueda web. <strong>Límite principal:</strong> límites gratuitos sin cuantificar y sin detalle del modelo; la disponibilidad por país en Latinoamérica no figura en la página de precios.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">7. HuggingChat (Hugging Face)</h2>
+    <p>
+      <strong>Qué da gratis.</strong> <a href="https://huggingface.co/chat/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">HuggingChat</a> permite elegir entre más de un centenar de modelos abiertos (en octubre de 2026 incluye, entre otros, Qwen3.8, DeepSeek-V4.1-Flash, Gemma 4, Llama 4, gpt-oss y Kimi K3) o dejar que el enrutador <strong>Omni</strong> elija el modelo según tu petición. Hace falta iniciar sesión con una cuenta de Hugging Face.
+    </p>
+    <p>
+      <strong>Límites.</strong> HuggingChat no publica un límite de mensajes. Como referencia, la documentación de Inference Providers (el servicio de inferencia de Hugging Face) indica 0,10 $ de crédito mensual para cuentas gratuitas y 2 $ para PRO; no hemos encontrado una página oficial que confirme cómo se aplica ese crédito al chat.
+    </p>
+    <p>
+      <strong>Dónde destaca:</strong> comparar la misma pregunta en varios modelos abiertos antes de instalar uno en tu equipo. <strong>Límite principal:</strong> la calidad varía mucho entre modelos del mismo selector y la propia web avisa de que el contenido puede ser inexacto.
+    </p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo no usar ninguna</h2>
     <ul>
-      <li><strong>Gemini</strong> para consultas rápidas y tareas compatibles con sus límites.</li>
-      <li><strong>Claude</strong> para borradores y revisión de texto, validando siempre el resultado.</li>
-      <li><strong>DeepSeek</strong> para probar una tarea de código con tests propios.</li>
-      <li><strong>Mistral</strong> cuando sus condiciones de tratamiento de datos encajen con tu caso.</li>
+      <li><strong>Decisiones médicas, legales o financieras</strong>: úsalas para preparar preguntas o resumir, pero la decisión la valida un profesional.</li>
+      <li><strong>Datos personales o de clientes</strong>: ningún plan gratuito de esta lista está pensado para eso. Si no puedes evitarlo, anonimiza antes; aquí explicamos cómo <a href="/blog/2026-07-25-ia-local-oculta-datos/" class="text-brand-400 hover:text-brand-300">ocultar datos personales con Presidio</a>.</li>
+      <li><strong>Privacidad máxima</strong> (sanidad, despachos, información de empresa): ejecuta un modelo abierto en tu propio equipo, sin enviar nada a la nube. Tienes un ejemplo en <a href="/blog/odysseus-pewdiepie-ia-gratis/" class="text-brand-400 hover:text-brand-300">cómo instalar Odysseus con seguridad</a>.</li>
+      <li><strong>Datos de última hora</strong> (cotizaciones, resultados, normativa recién publicada): aunque Gemini, Claude, Copilot y Mistral Vibe buscan en la web, comprueba la cifra en la fuente original.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuál de estas IA no usa mis chats para entrenar?</h3>
+    <p>
+      Claude es la única de la lista cuya documentación indica que en cuentas Free no entrena con tus chats salvo que lo permitas. Gemini, Copilot y Mistral Vibe permiten excluirte desde la configuración. DeepSeek los usa según su política, que recoge un derecho de oposición; de Qwen y HuggingChat no hemos podido verificarlo.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Hay alguna que funcione sin registrarse?</h3>
+    <p>
+      Microsoft Copilot, según su página de ayuda. Gemini pide una cuenta de Google, HuggingChat una de Hugging Face y Claude exige ser mayor de 18 años.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funcionan en Venezuela o Cuba?</h3>
+    <p>
+      Claude.ai no incluye Venezuela ni Cuba en su lista de países admitidos. Copilot excluye los mercados con embargo. Para el resto, consulta la página de disponibilidad de cada servicio.
+    </p>
+
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y ChatGPT gratis?</h3>
+    <p>
+      Esta guía trata de alternativas. Para comparar con ChatGPT tienes su <a href="/herramientas/chatgpt/" class="text-brand-400 hover:text-brand-300">ficha en el directorio de herramientas</a> y el <a href="/recursos/mapa-herramientas-ia/" class="text-brand-400 hover:text-brand-300">mapa de herramientas IA</a> por tarea.
+    </p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Todas consultadas el 6 de octubre de 2026.</p>
+    <ul class="text-sm">
+      <li>Google — <a href="https://gemini.google/subscriptions/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Planes de Gemini</a> (modelos y funciones del plan gratis, límites cada 5 horas y semanales)</li>
+      <li>Google — <a href="https://support.google.com/gemini/answer/13575153?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Dónde se puede usar Gemini</a> (idiomas y países)</li>
+      <li>Google — <a href="https://support.google.com/gemini/answer/13594961?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Centro de privacidad de Gemini Apps</a> (entrenamiento, revisión humana, ajuste Actividad)</li>
+      <li>Anthropic — <a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Precios de Claude</a> (funciones y modelos del plan Free, límites por sesión de 5 horas)</li>
+      <li>Anthropic — <a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Get started with Claude</a> (idiomas, edad mínima, límites del plan gratuito)</li>
+      <li>Anthropic — <a href="https://www.anthropic.com/supported-countries" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Países admitidos</a></li>
+      <li>Anthropic — <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">¿Se usan mis datos para entrenar?</a></li>
+      <li>Microsoft — <a href="https://support.microsoft.com/topic/understanding-the-different-microsoft-copilot-experiences-cfff4791-694a-4d90-9c9c-1eb3fb28e842" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Las distintas experiencias de Copilot</a> (Copilot gratis, inicio de sesión opcional)</li>
+      <li>Microsoft — <a href="https://www.microsoft.com/en-us/microsoft-copilot/for-individuals" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Copilot para particulares</a> (qué añade Microsoft 365 Premium)</li>
+      <li>Microsoft — <a href="https://support.microsoft.com/en-us/Microsoft-Copilot/supported-regions-and-languages-in-microsoft-copilot" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Regiones e idiomas de Copilot</a></li>
+      <li>Microsoft — <a href="https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Controles de privacidad de Copilot</a></li>
+      <li>DeepSeek — <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad</a> (almacenamiento en China, entrenamiento, derecho de oposición)</li>
+      <li>DeepSeek — <a href="https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">App oficial en la App Store</a> (gratuita, idiomas)</li>
+      <li>DeepSeek — <a href="https://api-docs.deepseek.com/news/news260910" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anuncio de DeepSeek-V4.1-Flash</a></li>
+      <li>Qwen — <a href="https://github.com/QwenLM/Qwen3.8" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Repositorio oficial de Qwen3.8</a> (Qwen Studio, modelos abiertos, 201 idiomas en Qwen3.5)</li>
+      <li>Qwen — <a href="https://chat.qwen.ai" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Qwen Studio</a> (funciones descritas por la propia web)</li>
+      <li>Mistral AI — <a href="https://mistral.ai/products/vibe/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Mistral Vibe (antes Le Chat)</a></li>
+      <li>Mistral AI — <a href="https://mistral.ai/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Precios</a> (plan Free, opt-out de entrenamiento)</li>
+      <li>Mistral AI — <a href="https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">¿Usan mis datos para entrenar?</a> y <a href="https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">¿Dónde se guardan mis datos?</a></li>
+      <li>Hugging Face — <a href="https://huggingface.co/chat/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">HuggingChat</a> y <a href="https://huggingface.co/docs/inference-providers/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">precios de Inference Providers</a></li>
     </ul>
     <p>
-      No necesitas ceñirte a una sola herramienta: documenta qué funciona para cada tarea y revisa las condiciones antes de usar datos sensibles.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
-    <p>
-      Si quieres convertir esta comparativa en un flujo de trabajo real, esta es una ruta útil:
-    </p>
-    <ul>
-      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que no suenen a robot</a>, si tu prioridad es comunicación.</li>
-      <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IAs para Excel</a>, si quieres ahorrar tiempo en hojas de cálculo.</li>
-      <li><a href="/recursos/mapa-herramientas-ia/" class="text-brand-400 hover:text-brand-300">Mapa de herramientas IA</a>, para elegir por tarea sin depender de una sola marca.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, si prefieres empezar con prompts y workflows copiables.</li>
-    </ul>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuál es mejor para programar gratis?</h3>
-    <p>
-      No hay una opción universal. Prueba el mismo script pequeño con tests, revisa el código y compara límites, privacidad y tiempo de corrección antes de elegir.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y para escribir en español?</h3>
-    <p>
-      La calidad depende del encargo y puede cambiar entre modelos y planes. Prueba el mismo texto con ejemplos de tu registro y revisa tono, precisión y formato antes de usarlo con clientes.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Estas alternativas usan mis datos para entrenar?</h3>
-    <p>
-      Depende del proveedor, plan, cuenta y configuración. Lee la política aplicable y los controles de datos de cada servicio antes de subir información personal, profesional o confidencial.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo combinar varias en un solo workflow?</h3>
-    <p>
-      Sí. Un flujo puede separar transcripción, resumen y código, pero empieza con datos no sensibles y revisa cada salida antes de encadenarla con la siguiente herramienta.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
-    <p>
-      La pregunta correcta en 2026 no es "qué IA uso" sino "qué IA uso para esto". Cada una tiene su fuerte. La mejor estrategia es no casarse con ninguna y aprender a combinar.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes oficiales</h2>
-    <p>Consulta las condiciones y límites vigentes de cada herramienta antes de elegirla o subir datos sensibles:</p>
-    <ul>
-      <li><a href="https://gemini.google.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Gemini de Google</a></li>
-      <li><a href="https://www.anthropic.com/claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Claude de Anthropic</a></li>
-      <li><a href="https://www.deepseek.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek</a></li>
-      <li><a href="https://mistral.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Mistral AI</a></li>
-      <li><a href="https://huggingface.co/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-    </ul>
-    <p>
-      Si quieres profundizar en prompts prácticos para estas herramientas, tienes un PDF gratuito con 50 prompts para productividad, escritura, código, análisis y aprendizaje en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
-    </p>
-    <p>
-      ¿Quieres que profundice en alguna de las 5? Responde por email o en <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
-    </p>
-    <p>
-      — Jordi
+      ¿Ves un dato que ha cambiado? Escríbenos desde <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a> y lo revisamos.
     </p>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 video destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
         <label for="blog-email-1" class="sr-only">Email</label>
-        
+
         <input type="hidden" name="embed" value="1" />
         <input id="blog-email-1" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
         <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
@@ -344,9 +354,10 @@ const pillarLabel = "Pilar 1: Apps web";
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "5 alternativas gratuitas a ChatGPT en 2026 (sin tarjeta)",
-    "description": "Comparativa de cinco alternativas gratuitas a ChatGPT organizada por tarea, límites de uso y controles de datos.",
+    "headline": "Alternativas gratis a ChatGPT en 2026: 7 IA comparadas",
+    "description": "Gemini, Claude, Copilot, DeepSeek, Qwen, Mistral Vibe y HuggingChat: qué dan gratis hoy, sus límites, qué hacen con tus datos y cuál elegir según la tarea.",
     "datePublished": "2026-06-15",
+    "dateModified": "2026-10-06",
     "mainEntityOfPage": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
     "author": {
         "@type": "Person",
@@ -357,19 +368,33 @@ const pillarLabel = "Pilar 1: Apps web";
         "name": "Decodifica"
     },
     "about": [
-        "apps web gratis",
+        "ia gratis",
         "alternativas chatgpt",
         "herramientas ia"
     ],
     "citation": [
-        {
-            "@type": "WebPage",
-            "url": "https://chat.deepseek.com"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://decodifica.net/contacto/"
-        }
+        { "@type": "WebPage", "url": "https://gemini.google/subscriptions/" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemini/answer/13575153" },
+        { "@type": "WebPage", "url": "https://support.google.com/gemini/answer/13594961" },
+        { "@type": "WebPage", "url": "https://claude.com/pricing" },
+        { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
+        { "@type": "WebPage", "url": "https://www.anthropic.com/supported-countries" },
+        { "@type": "WebPage", "url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" },
+        { "@type": "WebPage", "url": "https://support.microsoft.com/topic/understanding-the-different-microsoft-copilot-experiences-cfff4791-694a-4d90-9c9c-1eb3fb28e842" },
+        { "@type": "WebPage", "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals" },
+        { "@type": "WebPage", "url": "https://support.microsoft.com/en-us/Microsoft-Copilot/supported-regions-and-languages-in-microsoft-copilot" },
+        { "@type": "WebPage", "url": "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" },
+        { "@type": "WebPage", "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" },
+        { "@type": "WebPage", "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349" },
+        { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260910" },
+        { "@type": "WebPage", "url": "https://github.com/QwenLM/Qwen3.8" },
+        { "@type": "WebPage", "url": "https://chat.qwen.ai" },
+        { "@type": "WebPage", "url": "https://mistral.ai/products/vibe/" },
+        { "@type": "WebPage", "url": "https://mistral.ai/pricing" },
+        { "@type": "WebPage", "url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
+        { "@type": "WebPage", "url": "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
+        { "@type": "WebPage", "url": "https://huggingface.co/chat/" },
+        { "@type": "WebPage", "url": "https://huggingface.co/docs/inference-providers/pricing" }
     ]
 })} />
 </BaseLayout>

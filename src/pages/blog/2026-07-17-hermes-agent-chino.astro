@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "Hermes Agent: el agente open source que puedes probar gratis";
-const description = "Hermes Agent no es un nuevo modelo ni otro chat dentro del navegador. Es un agente open source de Nous Research que puedes instalar en tu propio ordenador...";
+const title = "Hermes Agent: qué es y cómo probar este agente open source";
+const description = "Hermes Agent, de Nous Research, es un agente open source con licencia MIT, memoria persistente y Skills. Qué hace, cómo instalarlo y probarlo con seguridad.";
+const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-14";
 const readingTime = "4 min";
-const tags = ["ia", "herramientas ia", "Hermes Agent: el agente open source que compite con los chinos (asi lo pruebas gratis)"];
+const tags = ["ia", "herramientas ia", "Hermes Agent: el agente open source que compite con los chinos (así lo pruebas gratis)"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/2026-07-17-hermes-agent-chino.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -43,45 +45,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
-      <ul class="space-y-2 text-dark-200 text-sm">
-        <li><strong>Qué mirar:</strong> si la herramienta resuelve un problema real del día a día, no sólo si suena nueva.</li>
-        <li><strong>Cómo probarla:</strong> con una tarea pequeña, concreta y fácil de verificar.</li>
-        <li><strong>Qué evitar:</strong> confiar en una demo sin revisar límites, permisos, datos y resultado final.</li>
-        <li><strong>Decisión Decodifica:</strong> entra en el radar sólo si ahorra fricción o abre un flujo útil.</li>
-      </ul>
-    </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Úsalo si</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Tienes un caso claro</h3>
-        <p class="mt-2 text-sm text-dark-200">La herramienta debe resolver una tarea concreta, no sólo parecer interesante.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Pruébalo con</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Un test pequeño</h3>
-        <p class="mt-2 text-sm text-dark-200">Empieza con algo medible: tiempo ahorrado, calidad del resultado o pasos eliminados.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Datos y permisos</h3>
-        <p class="mt-2 text-sm text-dark-200">Antes de usarla en serio, revisa qué toca, qué guarda y qué puedes comprobar.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Convierte en flujo</h3>
-        <p class="mt-2 text-sm text-dark-200">Si funciona una vez, documenta el proceso para repetirlo sin empezar de cero.</p>
-      </div>
-    </div>
 
-    <p>Hermes Agent no es un nuevo modelo ni otro chat dentro del navegador. Es un agente open source de Nous Research que puedes instalar en tu propio ordenador para darle tareas, conservar memoria entre sesiones y ampliar capacidades mediante Skills.</p>
+    <p>Hermes Agent no es un nuevo modelo ni otro chat dentro del navegador. Es un agente open source de Nous Research que puedes instalar en tu propio equipo para darle tareas, conservar memoria entre sesiones y ampliar capacidades mediante Skills.</p>
     <p>La diferencia práctica está en el control: los archivos, la configuración y el historial pueden quedarse en tu entorno, pero la instalación y la revisión también pasan a ser responsabilidad tuya.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Hermes Agent</h2>
-    <p>El proyecto se distribuye con licencia MIT y reúne en una sola interfaz tareas de chat, investigación web, trabajo con archivos, automatizaciones programadas y conexiones con canales como Telegram, Discord, Slack o WhatsApp.</p>
-    <p>Su memoria persistente permite conservar contexto útil y el sistema puede crear Skills reutilizables a partir de tareas que repites. Eso lo acerca más a un entorno de trabajo configurable que a una conversación aislada.</p>
+    <p>Según su repositorio oficial, el proyecto se distribuye con licencia MIT e incluye más de 40 herramientas: ejecución de comandos en varios entornos (local, Docker, SSH y otros), navegador en la nube a través de Nous Portal, un programador de tareas tipo cron y una pasarela para usar el agente desde Telegram, Discord, Slack, WhatsApp, Signal o la línea de comandos.</p>
+    <p>Se instala con un comando en Linux, macOS y WSL2, con un instalador de PowerShell en Windows y en Android mediante Termux. No te ata a un proveedor de modelos: puedes conectarlo a Nous Portal, OpenRouter, OpenAI o tu propio endpoint. El software es gratuito, pero el modelo que uses puede tener coste.</p>
+    <p>Su memoria persistente conserva contexto entre sesiones, y el agente crea Skills reutilizables después de tareas complejas y las ajusta con el uso.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes hacer con él</h2>
     <p>Los casos de uso más claros son los que terminan en una salida revisable:</p>
     <ul class="space-y-2">
@@ -91,24 +62,22 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>programar tareas recurrentes;</li>
       <li>usar el mismo agente desde distintos canales.</li>
     </ul>
-    <p>La ventaja no es que haga nueve cosas a la vez. Es poder empezar con una tarea concreta, revisar el resultado y convertir lo que funciona en un proceso repetible.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría sin perder el control</h2>
-    <p>Empezaría con una carpeta de prueba y datos que no sean sensibles. Después le pediría una tarea cerrada, por ejemplo resumir varios documentos con enlaces a las fuentes o crear una página sencilla en un directorio nuevo.</p>
-    <p>Antes de incorporarlo al flujo comprobaría cuatro puntos:</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo sin perder el control</h2>
+    <p>Empieza con una carpeta de prueba y datos que no sean sensibles. Después pídele una tarea cerrada, por ejemplo resumir varios documentos con enlaces a las fuentes o crear una página sencilla en un directorio nuevo.</p>
+    <p>Antes de incorporarlo a tu trabajo, comprueba cuatro puntos:</p>
     <ol>
       <li>Qué archivos ha leído y cuáles ha modificado.</li>
       <li>Si la salida se puede revisar sin reconstruirla.</li>
       <li>Qué permisos, claves o conexiones necesita.</li>
       <li>Si la memoria y las Skills ahorran trabajo en una segunda ejecución.</li>
     </ol>
-    <p>No activaría desde el primer día tareas programadas, mensajería externa ni acciones difíciles de revertir. Primero debe demostrar que obedece límites y deja evidencia suficiente para revisar.</p>
+    <p>Evita activar desde el primer día tareas programadas, mensajería externa o acciones difíciles de revertir. El repositorio remite a una guía de seguridad con opciones como aprobación de comandos y aislamiento en contenedores; revísala antes de dar más permisos.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Hermes frente a DeepSeek, Qwen y GLM</h2>
-    <p>La comparación no es exactamente modelo contra modelo. Hermes es la capa de agente que organiza herramientas y tareas; DeepSeek, Qwen o GLM pueden actuar como modelos o como alternativas cloud con menos configuración.</p>
+    <p>No es una comparación de modelo contra modelo: Hermes es la capa de agente que organiza herramientas y tareas; DeepSeek, Qwen o GLM pueden actuar como modelos o como alternativas cloud con menos configuración.</p>
     <p>Hermes tiene más sentido si priorizas control local, personalización y procesos persistentes. Las opciones web de DeepSeek, Qwen o Z.ai resultan más rápidas si quieres entrar, preguntar y obtener una respuesta sin mantener infraestructura propia.</p>
     <p>También puedes combinar enfoques: usar Hermes como entorno de agente y elegir un modelo compatible según coste, privacidad y calidad para cada tarea.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene tener presentes</h2>
     <p>Open source no significa automático ni libre de riesgo. Un agente que toca archivos, ejecuta comandos o envía mensajes puede equivocarse con más impacto que un chat que solo responde texto.</p>
-    <p>Además, una cifra de popularidad o una demo llamativa no demuestra que encaje en tu ordenador, tus permisos o tu forma de trabajar. La prueba útil es pequeña, repetible y con salida verificable.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>Hermes Agent merece una prueba si quieres un agente configurable bajo tu control y tienes una tarea repetida que justifique la instalación. Para una consulta ocasional, una herramienta cloud será más sencilla.</p>
     <p>La recomendación es instalarlo en un entorno de prueba, limitar permisos y medir si la memoria y las Skills reducen pasos en una segunda tarea. Si no hay ahorro repetible, la complejidad local no compensa.</p>
@@ -116,7 +85,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <ul class="space-y-2">
       <li><a href="https://github.com/NousResearch/hermes-agent" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/NousResearch/hermes-agent</a></li>
       <li><a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/NousResearch/hermes-agent/blob/main/LICENSE</a></li>
-      <li><a href="https://blog.csdn.net/yanceyxin/article/details/161090316" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/yanceyxin/article/details/161090316</a></li>
+      <li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/security" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Guía de seguridad de Hermes Agent</a></li>
       <li><a href="https://api-docs.deepseek.com/news/news260424" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/news/news260424</a></li>
       <li><a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/</a></li>
       <li><a href="https://z.ai/blog/glm-5" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://z.ai/blog/glm-5</a></li>
@@ -124,18 +93,17 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si este tema te interesa, estos enlaces te ayudan a convertirlo en una decision o en un flujo mas concreto:</p>
     <ul class="space-y-2">
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
-      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que estan cambiando el mercado</a>, si quieres mas contexto sobre herramientas utiles sin suscripcion.</li>
-      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte mas practica de agentes y modelos chinos.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar despues de leer.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte más práctica de agentes y modelos chinos.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
 
     <ConversionBand
       eyebrow="Después de leer"
       title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o entra en la comunidad para compartir dudas, pruebas y casos de uso con IA."
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
     />
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
@@ -159,6 +127,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -179,7 +148,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       },
       {
             "@type": "WebPage",
-            "url": "https://blog.csdn.net/yanceyxin/article/details/161090316"
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security"
       },
       {
             "@type": "WebPage",

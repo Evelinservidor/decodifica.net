@@ -27,7 +27,7 @@ const {
   pubDate,
   modifiedDate,
   authorName = siteConfig.author.name,
-  authorUrl = `${siteConfig.url}/decodifica`,
+  authorUrl = `${siteConfig.url}/sobre/`,
   imageAlt,
   keywords = [],
   section,
@@ -42,6 +42,7 @@ const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 const orgLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteConfig.url}#org`,
   name: siteConfig.name,
   url: siteConfig.url,
   logo: new URL('/og-default.png', siteConfig.url).toString(),
@@ -55,10 +56,8 @@ const orgLd = {
     availableLanguage: ['es'],
   },
   sameAs: [
-    siteConfig.social.youtube,
     siteConfig.social.facebook,
     siteConfig.social.bluesky,
-    siteConfig.social.tiktok,
     siteConfig.social.reddit,
   ].filter(Boolean),
 };

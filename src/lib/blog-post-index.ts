@@ -3,6 +3,7 @@ export type BlogPostIndexEntry = {
   title: string;
   description: string;
   pubDate: string;
+  readingTime: string | null;
 };
 
 const sources = import.meta.glob('../pages/blog/*.astro', {
@@ -24,6 +25,7 @@ export const blogPostIndex: BlogPostIndexEntry[] = Object.entries(sources)
       title: field(source, 'title'),
       description: field(source, 'description'),
       pubDate: field(source, 'pubDate'),
+      readingTime: field(source, 'readingTime'),
     };
   })
   .filter((post): post is BlogPostIndexEntry =>

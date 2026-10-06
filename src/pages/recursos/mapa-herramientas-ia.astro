@@ -6,25 +6,25 @@ import { siteConfig } from '~/lib/site-config';
 
 const pageUrl = `${siteConfig.url}/recursos/mapa-herramientas-ia/`;
 const title = 'Mapa Decodifica de herramientas IA';
-const description = 'Mapa practico para decidir que herramienta de IA usar segun tu tarea: escribir, investigar, estudiar, programar, disenar, presentar o crear voz.';
+const description = 'Mapa práctico para decidir que herramienta de IA usar según tu tarea: escribir, investigar, estudiar, programar, disenar, presentar o crear voz.';
 
 const routes = [
-  { task: 'Escribir, resumir o arrancar una idea', start: 'ChatGPT', why: 'Punto de entrada versatil cuando todavia no sabes que herramienta especializada necesitas.', href: '/herramientas/chatgpt/', next: 'Si el texto es largo o delicado, compara con Claude.' },
+  { task: 'Escribir, resumir o arrancar una idea', start: 'ChatGPT', why: 'Punto de entrada versátil cuando todavía no sabes que herramienta especializada necesitas.', href: '/herramientas/chatgpt/', next: 'Si el texto es largo o delicado, compara con Claude.' },
   { task: 'Pulir documentos, emails o tono profesional', start: 'Claude', why: 'Encaja cuando la calidad depende de matiz, contexto largo y escritura cuidada.', href: '/herramientas/claude/', next: 'Usa ChatGPT vs Claude si dudas entre ambos.' },
-  { task: 'Investigar un tema desde cero', start: 'Perplexity', why: 'Ayuda a descubrir fuentes, contexto y terminos relevantes antes de profundizar.', href: '/herramientas/perplexity/', next: 'Pasa las fuentes buenas a NotebookLM para trabajarlas.' },
-  { task: 'Estudiar o trabajar con fuentes propias', start: 'NotebookLM', why: 'Funciona mejor cuando ya tienes PDFs, notas, webs o videos que quieres entender.', href: '/herramientas/notebooklm/', next: 'Usa NotebookLM vs Perplexity si dudas entre buscar o analizar.' },
-  { task: 'Crear una presentacion desde una idea', start: 'Gamma', why: 'Convierte esquemas, notas y prompts en un primer deck o documento visual.', href: '/herramientas/gamma/', next: 'Pulir marca y formatos puede ser mejor en Canva AI.' },
+  { task: 'Investigar un tema desde cero', start: 'Perplexity', why: 'Ayuda a descubrir fuentes, contexto y términos relevantes antes de profundizar.', href: '/herramientas/perplexity/', next: 'Pasa las fuentes buenas a NotebookLM para trabajarlas.' },
+  { task: 'Estudiar o trabajar con fuentes propias', start: 'NotebookLM', why: 'Funciona mejor cuando ya tienes PDFs, notas, webs o vídeos que quieres entender.', href: '/herramientas/notebooklm/', next: 'Usa NotebookLM vs Perplexity si dudas entre buscar o analizar.' },
+  { task: 'Crear una presentación desde una idea', start: 'Gamma', why: 'Convierte esquemas, notas y prompts en un primer deck o documento visual.', href: '/herramientas/gamma/', next: 'Pulir marca y formatos puede ser mejor en Canva AI.' },
   { task: 'Crear piezas visuales para marca o redes', start: 'Canva AI', why: 'Encaja con plantillas, formatos, brand kits y materiales visuales recurrentes.', href: '/herramientas/canva-ai/', next: 'Usa Gamma vs Canva AI si dudas entre estructura o diseno.' },
-  { task: 'Generar locuciones, doblaje o voz IA', start: 'ElevenLabs', why: 'Opcion fuerte para voz publicable, con cuidado extra en permisos y uso comercial.', href: '/herramientas/elevenlabs/', next: 'Mira alternativas si priorizas API, latencia o clonacion segura.' },
-  { task: 'Trabajar con codigo desde terminal', start: 'Qwen Code', why: 'Tiene sentido si ya trabajas con repositorios, git, tests y tareas tecnicas supervisadas.', href: '/herramientas/qwen-code/', next: 'No lo uses sin revisar diff, permisos y cambios de seguridad.' },
-  { task: 'Comparar modelos o probar bajo coste', start: 'DeepSeek', why: 'Sirve como segunda opinion y alternativa de coste bajo, sobre todo para codigo y razonamiento.', href: '/herramientas/deepseek/', next: 'Evitalo con datos sensibles si no has revisado privacidad.' },
+  { task: 'Generar locuciones, doblaje o voz IA', start: 'ElevenLabs', why: 'Opción fuerte para voz publicable, con cuidado extra en permisos y uso comercial.', href: '/herramientas/elevenlabs/', next: 'Mira alternativas si priorizas API, latencia o clonación segura.' },
+  { task: 'Trabajar con código desde terminal', start: 'Qwen Code', why: 'Tiene sentido si ya trabajas con repositorios, git, tests y tareas técnicas supervisadas.', href: '/herramientas/qwen-code/', next: 'No lo uses sin revisar diff, permisos y cambios de seguridad.' },
+  { task: 'Comparar modelos o probar bajo coste', start: 'DeepSeek', why: 'Sirve como segunda opinión y alternativa de coste bajo, sobre todo para código y razonamiento.', href: '/herramientas/deepseek/', next: 'Evitalo con datos sensibles si no has revisado privacidad.' },
 ];
 
 const checks = [
   'Que resultado necesito hoy?',
   'Voy a subir datos sensibles o material de clientes?',
   'Necesito buscar fuentes nuevas o trabajar con fuentes propias?',
-  'Esto sera una prueba puntual o un flujo repetido?',
+  'Esto será una prueba puntual o un flujo repetido?',
   'Puedo revisar el resultado antes de publicarlo o automatizarlo?',
 ];
 
@@ -46,13 +46,13 @@ const gpt56Prices = [
     model: 'GPT-5.6 Terra',
     input: '2 USD',
     output: '12 USD',
-    use: 'Trabajo cotidiano que necesita mas criterio sin pagar siempre por el nivel mas alto.',
+    use: 'Trabajo cotidiano que necesita más criterio sin pagar siempre por el nivel más alto.',
   },
   {
     model: 'GPT-5.6 Sol',
     input: '5 USD',
     output: '30 USD',
-    use: 'Problemas complejos donde un error, una revision extra o una mala decision cuestan mas que los tokens.',
+    use: 'Problemas complejos donde un error, una revisión extra o una mala decisión cuestan más que los tokens.',
   },
 ];
 
@@ -87,7 +87,7 @@ const articleLd = {
     <header class="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">Recurso Decodifica</p>
-        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">Mapa Decodifica: que IA usar segun tu tarea</h1>
+        <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">Mapa Decodifica: que IA usar según tu tarea</h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
           No necesitas probar veinte herramientas. Necesitas saber cual abrir primero, que riesgo revisar y cuando cambiar de herramienta.
         </p>
@@ -108,7 +108,7 @@ const articleLd = {
 
     <section class="mt-12 grid gap-5 rounded-lg border border-dark-600 bg-dark-800 p-6 lg:grid-cols-[.75fr_1.25fr] lg:p-8">
       <div>
-        <p class="text-sm font-semibold text-brand-300">Metodo rapido</p>
+        <p class="text-sm font-semibold text-brand-300">Método rápido</p>
         <h2 class="mt-2 font-display text-3xl font-bold">Cinco preguntas antes de abrir una app</h2>
       </div>
       <ol class="grid gap-4 sm:grid-cols-2">
@@ -124,7 +124,7 @@ const articleLd = {
     <section id="mapa" class="mt-12">
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p class="text-sm font-semibold text-brand-300">Mapa de decision</p>
+          <p class="text-sm font-semibold text-brand-300">Mapa de decisión</p>
           <h2 class="mt-2 font-display text-3xl font-bold">Empieza por la tarea</h2>
         </div>
         <p class="text-sm text-dark-300">{tools.length} fichas conectadas</p>
@@ -147,32 +147,32 @@ const articleLd = {
       <div class="grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
         <div>
           <p class="text-sm font-semibold text-brand-300">De gratis a pago</p>
-          <h2 class="mt-2 font-display text-3xl font-bold">Paga por un limite repetido, no por curiosidad</h2>
+          <h2 class="mt-2 font-display text-3xl font-bold">Paga por un límite repetido, no por curiosidad</h2>
           <p class="mt-4 text-sm leading-6 text-dark-200">
             El plan gratuito sirve para comprobar si una herramienta resuelve tu tarea. No basta con abrirla una vez: repite el mismo trabajo con material real no sensible y anota donde se interrumpe.
           </p>
         </div>
         <ol class="grid gap-4 sm:grid-cols-3">
           <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">
-            <strong class="text-white">1. Elige una tarea.</strong> Resume un documento, prepara un email o compara fuentes. Define antes que salida consideras util.
+            <strong class="text-white">1. Elige una tarea.</strong> Resume un documento, prepara un email o compara fuentes. Define antes que salida consideras útil.
           </li>
           <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">
-            <strong class="text-white">2. Repitela.</strong> Hazla varias veces durante una semana. Separa un limite del plan de un prompt deficiente o una revision que igualmente tendrias que hacer.
+            <strong class="text-white">2. Repítela.</strong> Hazla varias veces durante una semana. Separa un límite del plan de un prompt deficiente o una revisión que igualmente tendrias que hacer.
           </li>
           <li class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200">
-            <strong class="text-white">3. Paga solo con prueba.</strong> Sube de plan cuando el mismo limite corte una tarea recurrente y el plan de pago amplie justo esa capacidad.
+            <strong class="text-white">3. Paga solo con prueba.</strong> Sube de plan cuando el mismo límite corte una tarea recurrente y el plan de pago amplie justo esa capacidad.
           </li>
         </ol>
       </div>
 
       <div class="mt-6 rounded-lg border border-brand-500/30 bg-dark-900 p-5">
         <p class="text-sm leading-6 text-dark-200">
-          Los propios proveedores presentan el pago como mas acceso o capacidad, no como garantia de que cada resultado sera mejor. ChatGPT mantiene un nivel gratuito y reserva mas acceso y funciones para planes superiores; Claude describe Free para uso ocasional y Pro para uso regular; Gemini aplica limites de uso que dependen del plan, la complejidad y las funciones utilizadas.
+          Los propios proveedores presentan el pago como más acceso o capacidad, no como garantía de que cada resultado será mejor. ChatGPT mantiene un nivel gratuito y reserva más acceso y funciones para planes superiores; Claude describe Free para uso ocasional y Pro para uso regular; Gemini aplica límites de uso que dependen del plan, la complejidad y las funciones utilizadas.
         </p>
         <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
           <a class="text-brand-300 hover:text-brand-200" href="https://openai.com/chatgpt/pricing/" rel="noopener noreferrer" target="_blank">Planes oficiales de ChatGPT</a>
-          <a class="text-brand-300 hover:text-brand-200" href="https://support.anthropic.com/en/articles/11049762-choosing-a-claude-ai-plan" rel="noopener noreferrer" target="_blank">Guia oficial de planes Claude</a>
-          <a class="text-brand-300 hover:text-brand-200" href="https://support.google.com/gemini/answer/16275805?hl=es" rel="noopener noreferrer" target="_blank">Limites oficiales de Gemini</a>
+          <a class="text-brand-300 hover:text-brand-200" href="https://support.anthropic.com/en/articles/11049762-choosing-a-claude-ai-plan" rel="noopener noreferrer" target="_blank">Guía oficial de planes Claude</a>
+          <a class="text-brand-300 hover:text-brand-200" href="https://support.google.com/gemini/answer/16275805?hl=es" rel="noopener noreferrer" target="_blank">Límites oficiales de Gemini</a>
         </div>
       </div>
     </section>
@@ -181,14 +181,14 @@ const articleLd = {
       <div class="grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
         <div>
           <p class="text-sm font-semibold text-brand-300">Antes de pagar</p>
-          <h2 class="mt-2 font-display text-3xl font-bold">El modelo mas barato no siempre deja el trabajo mas barato</h2>
+          <h2 class="mt-2 font-display text-3xl font-bold">El modelo más barato no siempre deja el trabajo más barato</h2>
           <p class="mt-4 text-sm leading-6 text-dark-200">
-            El precio por token solo mide una parte. Compara tambien cuantos intentos necesitas, cuanto tardas en corregir y si el resultado queda listo para usar.
+            El precio por token solo mide una parte. Compara también cuantos intentos necesitas, cuanto tardas en corregir y si el resultado queda listo para usar.
           </p>
         </div>
         <div class="rounded-lg border border-dark-600 bg-dark-900 p-5">
           <p class="text-sm leading-6 text-dark-200">
-            OpenAI redujo el 30 de julio el precio de API de Luna un 80 % y el de Terra un 20 %. Las suscripciones de ChatGPT y Codex no bajaron de precio: estos modelos consumen menos creditos dentro de los planes de pago.
+            OpenAI redujo el 30 de julio el precio de API de Luna un 80 % y el de Terra un 20 %. Las suscripciones de ChatGPT y Codex no bajaron de precio: estos modelos consumen menos créditos dentro de los planes de pago.
           </p>
           <a
             class="mt-3 inline-flex text-sm font-semibold text-brand-300 hover:text-brand-200"
@@ -196,7 +196,7 @@ const articleLd = {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Ver la actualizacion oficial de precios
+            Ver la actualización oficial de precios
           </a>
           <span class="mx-2 text-dark-500" aria-hidden="true">|</span>
           <a
@@ -234,9 +234,9 @@ const articleLd = {
       </div>
 
       <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">API.</strong> Calcula entrada y salida, pero registra tambien reintentos y tiempo de correccion.</div>
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Suscripcion.</strong> Mira cuantos creditos consume una tarea terminada, no conviertas la tarifa API en una cuota mensual imaginaria.</div>
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Decision.</strong> Empieza por el nivel mas barato que cumpla tu criterio y sube solo cuando mejore el resultado o reduzca correcciones.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">API.</strong> Calcula entrada y salida, pero registra también reintentos y tiempo de corrección.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Suscripción.</strong> Mira cuantos créditos consume una tarea terminada, no conviertas la tarifa API en una cuota mensual imaginaria.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Decisión.</strong> Empieza por el nivel más barato que cumpla tu criterio y sube solo cuando mejore el resultado o reduzca correcciones.</div>
       </div>
     </section>
 
@@ -261,15 +261,15 @@ const articleLd = {
         <h2 class="mt-2 font-display text-3xl font-bold">No subas datos antes de decidir el riesgo</h2>
       </div>
       <div class="grid gap-4 sm:grid-cols-3">
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Bajo riesgo.</strong> Ideas, borradores, textos publicos y pruebas sin datos personales.</div>
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Riesgo medio.</strong> Documentos internos, marca, material de cliente anonimizado o informacion no publica.</div>
-        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Alto riesgo.</strong> Datos personales, contratos, salud, legal, voz real, codigo sensible o secretos.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Bajo riesgo.</strong> Ideas, borradores, textos públicos y pruebas sin datos personales.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Riesgo medio.</strong> Documentos internos, marca, material de cliente anonimizado o información no publica.</div>
+        <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm leading-6 text-dark-200"><strong class="text-white">Alto riesgo.</strong> Datos personales, contratos, salud, legal, voz real, código sensible o secretos.</div>
       </div>
     </section>
 
     <div id="newsletter" class="mt-12">
       <NewsletterForm
-        title="Guarda el mapa y recibe la siguiente actualizacion"
+        title="Guarda el mapa y recibe la siguiente actualización"
         description="Cuando anadamos nuevas fichas, comparativas o recursos, te enviaremos el filtro Decodifica para no probar herramientas al azar."
         buttonLabel="Recibir actualizaciones"
       />
