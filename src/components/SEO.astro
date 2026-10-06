@@ -42,6 +42,7 @@ const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 const orgLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteConfig.url}#org`,
   name: siteConfig.name,
   url: siteConfig.url,
   logo: new URL('/og-default.png', siteConfig.url).toString(),
