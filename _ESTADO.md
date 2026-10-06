@@ -43,16 +43,13 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 
 ## Pendiente
 
-- [ ] **Jordi aprueba y fusiona el pull request de la Fase 1** (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
-- [ ] **Jordi configura la cuenta de servicio de Search Console** (guía abajo).
+- [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
+- [ ] **Jordi configura la cuenta de servicio de Search Console** (guía abajo). Acordado hacerlo el 07-10-2026.
 - [ ] NotebookLM → «Gemini Notebook»: revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
 - [ ] `chatgpt-work-archivos-a-entregables` y `gpt-live-voz-chatgpt`: las webs de OpenAI devolvieron 403 al consultarlas; la premisa de ChatGPT Work («presenta un plan antes de ejecutar») está sin verificar. Revisar cuando se pueda abrir la fuente.
-- [ ] `claude-skills-desde-cero.pdf` (da 404): **no se ha publicado a propósito** (afirmaciones en primera persona no comprobables, un dato técnico erróneo y el usuario del canal antiguo). Ninguna página lo enlaza. Pendiente de Jordi: rehacerlo desde la guía nueva o dejarlo.
 - [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
-- [ ] Nombre del autor: «Jordi Castaneira» en unas páginas y «Jordi Castañeira» en otra. Confirmar con Jordi.
-- [ ] Redes de `site-config.ts` (Facebook, Bluesky, TikTok, Reddit): confirmar con Jordi que siguen activas y son suyas.
 - [ ] Revisión de fuentes del resto de artículos antiguos no reescritos (`ia-mejora-excel`, `ia-crea-presentaciones-completas`, `ia-organiza-pendientes`, `crear-agente-voz-ia-sin-programar`, `claude-emails-sonar-humanos`, `odysseus-pewdiepie-ia-gratis`, `qwen-code-agent-terminal`, `ia-resumir-reuniones-tareas-revisables`, `2026-07-28-higgsfield-davinci-plugin-ia`, `2026-08-01-qwen3-asr-transcribe-espanol`, `como-elegir-herramienta-ia`): tarea continua del agente semanal (Fase 3).
-- [ ] Fase 2 (nicho con datos): antes de usar Semrush/Ahrefs/OpenRush, preguntar a Jordi si gastan créditos. Nota: Ahrefs respondió «Insufficient plan» a la consulta de uso; OpenRush no tiene Search Console conectado.
+- [ ] Fase 2 (nicho con datos): antes de usar Semrush/Ahrefs/OpenRush, preguntar a Jordi si gastan créditos. Jordi confirma que sus cuentas de Semrush, Ahrefs y OpenRush son gratuitas, sin tarjeta: se pueden usar, aceptando los límites del plan gratis. Nota: Ahrefs respondió «Insufficient plan» a la consulta de uso; OpenRush no tiene Search Console conectado.
 
 ### Decisiones técnicas tomadas
 
@@ -73,5 +70,10 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 Si en el paso 4 Google dice que la creación de claves está bloqueada por una política de la organización, la alternativa es pasar la app OAuth a «producción» (https://console.cloud.google.com/auth/audience → **Publicar app**) y regenerar `GSC_REFRESH_TOKEN`.
 
 ## Decisiones de Jordi
+- (06-10-2026) Publicar la Fase 1: sí.
+- (06-10-2026) Apellido: **Castañeira** (con ñ). Corregido en toda la web.
+- (06-10-2026) Redes activas: Facebook, Bluesky y Reddit (nadie publica en ellas). TikTok fuera de la web. Idea para la Fase 3: un agente programado que proponga publicaciones para esas redes a partir de los artículos (mismo esquema: propone, Jordi aprueba).
+- (06-10-2026) PDF de Claude Skills: rehacerlo. Hecho: `public/lead-magnets/claude-skills-desde-cero.pdf` (5 páginas) generado con `lead-magnets/gen_claude_skills_pdf.py` a partir de la guía verificada; enlazado desde la guía y desde /recursos/.
+- (06-10-2026) Semrush, Ahrefs y OpenRush: cuentas gratuitas, sin pago.
 
 - (06-10-2026) Aprueba el plan de tres fases. El dinero, después: afiliados y producto propio antes que anuncios.

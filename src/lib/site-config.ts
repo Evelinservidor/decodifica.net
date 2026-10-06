@@ -18,7 +18,6 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/Decodificaia',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
-    tiktok: 'https://www.tiktok.com/@decodificalaia',
     reddit: 'https://www.reddit.com/user/PergaminosProhibidos/',
   },
   newsletter: {
