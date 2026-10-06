@@ -11,8 +11,8 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 
 ## Plan aprobado por Jordi
 
-1. **Fase 1 · Dejar la web impecable** — hecha en la rama `fase-1-arreglos`, pendiente de que Jordi apruebe el pull request #6.
-2. **Fase 2 · Elegir el nicho con datos** — pendiente. Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
+1. **Fase 1 · Dejar la web impecable** — **publicada el 06-10-2026** (pull request #6 fusionado; comprobado en línea).
+2. **Fase 2 · Elegir el nicho con datos** — en curso (rama `fase-2-nicho`). Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
 3. **Fase 3 · Agente semanal** (rutina en la nube, lunes por la mañana, hora de España) — pendiente. Al principio abre un pull request y Jordi aprueba; más adelante, publicación automática.
 
 ## Fase 1: hecho
@@ -77,3 +77,15 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
 - (06-10-2026) Semrush, Ahrefs y OpenRush: cuentas gratuitas, sin pago.
 
 - (06-10-2026) Aprueba el plan de tres fases. El dinero, después: afiliados y producto propio antes que anuncios.
+
+## Fase 2: notas
+
+- (06-10-2026) Las cuentas gratuitas no dan datos de palabras clave por API:
+  - Semrush: `no_api_units` (la cuenta no tiene unidades de API).
+  - Ahrefs: «Insufficient plan».
+  - OpenRush: «Insufficient credits» (402).
+- Fuentes gratuitas que sí sirven:
+  1. **Search Console de Decodifica** (en cuanto Jordi configure la cuenta de servicio): demanda real de lo que ya cubre la web.
+  2. **Planificador de palabras clave de Google Ads** (gratis con una cuenta de Google Ads, sin campañas activas): volumen por rangos y puja (CPC) por país. Necesita que Jordi lo abra con su cuenta o comparta los resultados.
+  3. **Autocompletado de Google** (funciona desde aquí, sin volumen): para listar qué se busca en cada nicho y país.
+  4. Revisión manual de quién ocupa los primeros resultados (competencia) y de los programas de afiliados públicos (dinero por visita).
