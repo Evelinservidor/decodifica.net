@@ -38,6 +38,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - [ ] «emergent ia»: reescribir `crear-app-web-ias-chinas-open-source` (la URL se mantiene porque ya tiene impresiones) para responder qué es Emergent, precios y cómo usarlo.
 - [ ] Limpiar texto de plantilla y descripciones cortadas con «...» en 12 artículos más.
 - [ ] Actualizar enlaces internos que apunten a URLs redirigidas.
+- [ ] NotebookLM se llama «Gemini Notebook» desde el 16-07-2026 (notebooklm.google redirige a notebook.google). La guía ya está al día; falta revisar la ficha `/herramientas/notebooklm/` (`src/data/tools.ts`) y la comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre y límites).
 - [ ] `claude-skills-desde-cero.pdf` (da 404): **no se ha publicado a propósito**. Contiene afirmaciones en primera persona que no podemos comprobar («he creado 8 skills», «lo uso 5-8 veces al día»), un dato técnico dudoso y el usuario del canal antiguo. Ninguna página de la web lo enlaza. Opciones: rehacerlo a partir de la guía nueva de Claude Skills, o dejarlo sin publicar. Pendiente de Jordi.
 - [ ] Aviso legal sin NIF ni domicilio: obligatorio (LSSI) antes de poner anuncios o afiliados. **Pedírselo a Jordi cuando toque monetizar; no inventarlo.**
 - [ ] Nombre del autor: en unas páginas «Jordi Castaneira» y en el JSON-LD de un artículo «Jordi Castañeira». Confirmar con Jordi cuál es el correcto.
