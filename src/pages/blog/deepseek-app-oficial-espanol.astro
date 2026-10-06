@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "App oficial de DeepSeek en español: cómo instalarla y usarla";
-const description = "Cómo instalar la app oficial de DeepSeek, qué puedes hacer desde el móvil y qué revisar antes de usarla con datos sensibles.";
+const title = "DeepSeek, Qwen y Kimi en español: cómo usarlos gratis";
+const description = "Guía práctica de DeepSeek, Qwen y Kimi en español: app oficial, modelos actuales, privacidad según cada política, prompts de prueba y cuándo no usarlos.";
 const pubDate = "2026-07-07";
-const readingTime = "4 min";
-const tags = ["ia", "herramientas ia", "DeepSeek ya tiene app oficial en español: así la instalas y esto puedes hacer"];
+const modifiedDate = "2026-10-06";
+const readingTime = "10 min";
+const tags = ["deepseek en español", "deepseek app", "ia china gratis", "Qwen", "Kimi", "GLM", "privacidad IA"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -17,6 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/deepseek-app-oficial-espanol.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -43,68 +45,192 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
+    <p>DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Resumen rápido: qué ofrece cada uno hoy</h2>
+    <div class="not-prose overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b border-dark-600">
+            <th class="py-2 pr-4">Asistente</th>
+            <th class="py-2 pr-4">Dónde usarlo</th>
+            <th class="py-2 pr-4">Modelo que destaca su web</th>
+            <th class="py-2">Datos guardados en</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-dark-700">
+            <td class="py-2 pr-4">DeepSeek</td>
+            <td class="py-2 pr-4">chat.deepseek.com y app (iOS, Android)</td>
+            <td class="py-2 pr-4">DeepSeek-V4.1-Flash</td>
+            <td class="py-2">República Popular China</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-2 pr-4">Qwen</td>
+            <td class="py-2 pr-4">chat.qwen.ai y app</td>
+            <td class="py-2 pr-4">Qwen3.8</td>
+            <td class="py-2">Singapur</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-2 pr-4">Kimi</td>
+            <td class="py-2 pr-4">kimi.com y app</td>
+            <td class="py-2 pr-4">Kimi K3</td>
+            <td class="py-2">República Popular China</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4">GLM (Z.ai)</td>
+            <td class="py-2 pr-4">chat.z.ai</td>
+            <td class="py-2 pr-4">GLM-5.3-Flash</td>
+            <td class="py-2">Por lo general, Singapur</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-dark-300">Modelos y políticas consultados en octubre de 2026. Cambian a menudo: revisa la web oficial antes de decidir.</p>
 
-    <p>Hay herramientas de IA que llaman la atención un día y desaparecen al siguiente. Y luego están las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este artículo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
-    <p>La pregunta útil es esta: ¿la app oficial de DeepSeek merece un hueco en tu móvil, o es solo otra alternativa más a ChatGPT?</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué importa</h2>
-    <p>La idea es separar lo que parece una novedad más de lo que realmente puede cambiar una rutina de trabajo.</p>
-    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir fricción o ayudarte a probar algo que antes daba pereza.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué cambia realmente</h2>
-    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha técnica. Lo importante es traducir esas funciones a consecuencias prácticas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
-    <p>El giro esta en no quedarse con la función vistosa, sino mirar si encaja en tareas repetibles y decisiones concretas.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraría antes de usarlo</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">DeepSeek: web, app y modelo actual</h2>
+    <p>DeepSeek es la empresa china (Hangzhou DeepSeek Artificial Intelligence Co., Ltd., según su ficha en el App Store) que publica los modelos DeepSeek y un asistente de chat. Se usa sin pagar en <a href="https://chat.deepseek.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.deepseek.com</a> o con la app; la ficha de Google Play la describe como el asistente oficial de DeepSeek "¡gratis!".</p>
     <ul class="space-y-2">
-      <li>Si resuelve un problema que ya tienes.</li>
-      <li>Si reduce pasos sin quitarte control.</li>
-      <li>Si el resultado se puede revisar con facilidad.</li>
+      <li><strong>Modelo:</strong> la web <a href="https://www.deepseek.com/en/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">deepseek.com</a> destaca DeepSeek-V4.1-Flash, anunciado el 10 de septiembre de 2026 con comprensión de imágenes nativa. La serie V4 (abril de 2026) llevó el contexto de 1 millón de tokens a "todos los servicios oficiales de DeepSeek" y separó un modo Experto y un modo Instantáneo en el chat. La web no detalla qué versión exacta responde en el chat gratuito en cada momento.</li>
+      <li><strong>Español:</strong> la ficha del App Store incluye el español entre los idiomas de la app y la de Google Play está traducida al español.</li>
+      <li><strong>API:</strong> es de pago por tokens y aparte del chat. Si te interesa ese uso, la <a href="/herramientas/deepseek/" class="text-brand-400 hover:text-brand-300">ficha de DeepSeek</a> resume precio, privacidad y alternativas.</li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo lo probaría</h2>
-    <p>La forma más útil de probar DeepSeek no es preguntarle algo genérico. Es llevarlo a tres tareas móviles donde normalmente usarías ChatGPT, Claude o Google.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo instalar la app oficial de DeepSeek sin caer en copias</h2>
+    <p>En las tiendas hay apps con nombres parecidos que no son de DeepSeek. Estas son las comprobaciones que separan la oficial de una copia:</p>
     <ol>
-      <li>Primero, una consulta rápida con contexto: algo que resolverías mientras viajas, estudias o trabajas desde el móvil.</li>
-      <li>Segundo, una tarea con archivo o texto largo: resumen, extracción de puntos clave o preparación de una respuesta.</li>
-      <li>Tercero, una comparación de calidad: la misma pregunta en DeepSeek y en tu IA habitual.</li>
-      <li>Después miraría si la respuesta es útil en español, si tarda poco y si te obliga a revisar demasiado.</li>
+      <li><strong>iPhone y iPad:</strong> entra desde este enlace directo a <a href="https://apps.apple.com/app/deepseek-ai-assistant/id6737597349" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek - AI Assistant en el App Store</a>. El vendedor debe ser <em>Hangzhou DeepSeek Artificial Intelligence Co., Ltd</em>. Requiere iOS 15.0 o posterior y no muestra compras dentro de la app.</li>
+      <li><strong>Android:</strong> usa el enlace a <a href="https://play.google.com/store/apps/details?id=com.deepseek.chat" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek - Asistente de AI en Google Play</a>. El identificador del paquete que aparece en la URL es <code>com.deepseek.chat</code> y el desarrollador figura como DeepSeek, con más de 50 millones de descargas.</li>
+      <li><strong>Desde la web oficial:</strong> deepseek.com muestra un código QR ("Scan to get DeepSeek App") que lleva a la descarga. Es la vía más segura si no te fías del resultado de búsqueda de la tienda.</li>
+      <li><strong>Señales de copia:</strong> otro nombre de desarrollador, suscripciones caras en la primera pantalla o permisos que no encajan con un chat (contactos, SMS). La app oficial de DeepSeek no lista compras integradas en el App Store.</li>
     </ol>
-    <p>Si gana por velocidad, coste o comodidad, tiene sentido mantenerla instalada. Si solo la abres por curiosidad y vuelves siempre a tu herramienta principal, entonces todavía no cambia tu flujo.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Con qué lo compararía</h2>
-    <p>Lo compararía contra ChatGPT, Claude, Gemini y Qwen, pero no en abstracto. La comparación buena es por tarea: estudiar, resumir, buscar información, redactar, programar o resolver dudas rápidas desde el móvil.</p>
-    <p>DeepSeek puede ser especialmente interesante si buscas una alternativa gratis o barata, si quieres probar modelos chinos sin instalar nada complicado, o si necesitas una app sencilla para tareas diarias. No lo trataría como reemplazo automático de todo lo demás.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
-    <p>Tiene sentido para quien quiere una IA potente en el móvil sin empezar pagando una suscripción. También para quien sigue el avance de modelos chinos y quiere probarlos en un entorno más cómodo que una web técnica o Hugging Face.</p>
-    <p>No tiene tanto sentido si ya dependes de integraciones concretas de ChatGPT, Claude o Gemini, o si necesitas garantías empresariales, privacidad muy controlada o un ecosistema completo conectado a tu trabajo.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde está el valor</h2>
-    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar más de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decisión o a una versión revisable, entonces ya empieza a tener sentido.</p>
-    <p>Yo lo probaría primero en un caso pequeño, con salida verificable y poco riesgo. Si ahí funciona, se puede subir el nivel. Si falla en lo básico, al menos no has construido todo tu sistema encima de una promesa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraría todavía</h2>
-    <p>No lo vendería como piloto automático. Si una herramienta toca archivos, código o acciones del sistema, la supervisión sigue siendo parte del trabajo.</p>
-    <p>Esta parte importa porque en IA es muy fácil confundir potencial con resultado. Una demo puede ser espectacular y aun así no encajar en tu día a día. Por eso conviene separar tres cosas: lo que la herramienta dice que hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>La decisión Decodifica es mirarlo por utilidad real: que te ahorra, que te permite hacer y que riesgos mantiene.</p>
-    <p>Mi recomendación es tratarlo como una oportunidad de mejora, no como una solución automática. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Lo mismo vale para Qwen: en una búsqueda de "qwen chat" en el App Store de EE. UU. del 6 de octubre de 2026 aparecían apps de terceros con nombres parecidos. Para Qwen, entra a la app desde el botón de descarga de <a href="https://chat.qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a> en lugar de buscar por nombre.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qwen Chat: el asistente de Alibaba</h2>
+    <p>Qwen es la familia de modelos del equipo Qwen de Alibaba. El asistente está en <a href="https://chat.qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a>, que el repositorio oficial de Qwen3.8 llama ahora Qwen Studio y describe como "free to use, open to all" (gratis y abierto a todos). También hay app móvil y cliente de escritorio, según la política de privacidad.</p>
     <ul class="space-y-2">
-      <li><a href="https://api-docs.deepseek.com/news/news260424" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/news/news260424</a></li>
-      <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro</a></li>
-      <li><a href="https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349</a></li>
-      <li><a href="https://www.aibase.com/zh/news/14649" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.aibase.com/zh/news/14649</a></li>
+      <li><strong>Modelo:</strong> la generación más reciente en el <a href="https://github.com/QwenLM/Qwen3.8" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">repositorio oficial</a> es Qwen3.8 (pesos abiertos publicados el 12 y el 14 de agosto de 2026), y el propio repositorio remite a chat.qwen.ai para probarlo.</li>
+      <li><strong>Español:</strong> el repositorio indica que desde Qwen3.5 el soporte se amplió a 201 idiomas y dialectos. No hemos encontrado una página oficial que confirme el idioma de la interfaz de la app.</li>
+      <li><strong>Para programar:</strong> Qwen tiene un agente de terminal aparte; lo explicamos en <a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a> y en su <a href="/herramientas/qwen-code/" class="text-brand-400 hover:text-brand-300">ficha</a>.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Kimi: el asistente de Moonshot AI</h2>
+    <p>Kimi es el asistente de Moonshot AI (Beijing Moonshot Technology Co., Ltd.). Se usa en <a href="https://www.kimi.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">kimi.com</a> y en su app.</p>
+    <ul class="space-y-2">
+      <li><strong>Modelo:</strong> <a href="https://www.moonshot.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">moonshot.ai</a> presenta Kimi K3 (16 de julio de 2026): 2,8 billones de parámetros, multimodal y con contexto de 1 millón de tokens. Contamos un caso de uso en <a href="/blog/2026-08-05-kimi-k3-investigacion-visual/" class="text-brand-400 hover:text-brand-300">Kimi K3 para convertir miles de páginas en un informe</a>.</li>
+      <li><strong>Gratis y de pago:</strong> la <a href="https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">app en el App Store</a> es de descarga gratuita, pero ofrece suscripciones de pago (en la ficha de EE. UU., entre 19 y 199 dólares). No hemos podido leer en una página oficial los límites exactos del uso sin pagar.</li>
+      <li><strong>Español:</strong> la ficha del App Store incluye el español entre sus 16 idiomas.</li>
+    </ul>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">Y GLM (Z.ai)</h3>
+    <p>Z.ai publica los modelos GLM. Su chat, <a href="https://chat.z.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.z.ai</a>, mostraba GLM-5.3-Flash al consultarlo. No hemos podido confirmar en una página oficial las condiciones del uso gratuito ni el idioma de la interfaz, así que tómalo como opción secundaria. Si dudas entre los dos, la comparativa <a href="/herramientas/comparativas/kimi-vs-glm/" class="text-brand-400 hover:text-brand-300">Kimi vs GLM</a> y la <a href="/herramientas/glm/" class="text-brand-400 hover:text-brand-300">ficha de GLM</a> te ayudan a elegir.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Privacidad: dónde acaban tus datos</h2>
+    <p>Esto es lo que dice cada política oficial sobre la ubicación de los datos y el entrenamiento de modelos:</p>
+    <ul class="space-y-3">
+      <li><strong>DeepSeek</strong> (<a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política actualizada el 10 de febrero de 2026</a>): "we directly collect, process and store your Personal Data in People's Republic of China" (recogemos, tratamos y almacenamos tus datos personales en la República Popular China). Recoge texto, voz, prompts, archivos subidos, fotos e historial de chat, y los usa también "to train and improve our technology". La política reconoce el derecho a oponerte a que se usen tus datos para entrenar los modelos.</li>
+      <li><strong>Qwen</strong> (<a href="https://qwen.ai/privacypolicy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política en vigor desde el 7 de septiembre de 2026</a>): el servicio lo opera NTH Power Global Tech Singapore Pte. Ltd. y dice: "We collect, process, and store your personal data in Singapore". La infraestructura es de Alibaba Cloud (Singapore). Puede usar contenido "de-identified" (desidentificado) para entrenar modelos, pero no tu texto original. Y pide expresamente no subir datos sensibles, como historiales médicos, documentos de identidad o cuentas financieras.</li>
+      <li><strong>Kimi</strong> (<a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política en vigor desde el 31 de agosto de 2026</a>): "We store your personal information within the territory of the People's Republic of China". Usa el contenido desidentificado para optimizar sus modelos. Para que dejen de usar el tuyo, hay que pedirlo al servicio de atención al cliente, que verifica tu identidad antes.</li>
+      <li><strong>Z.ai</strong> (<a href="https://docs.z.ai/legal-agreement/privacy-policy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política de usuarios individuales</a>): la opera una sociedad de Singapur y "your personal data is generally processed in Singapore".</li>
+    </ul>
+    <p><strong>Qué no subir a ninguno de ellos:</strong> contraseñas o claves de API, documentos de identidad, datos de salud, extractos bancarios, datos personales de clientes o empleados, contratos con cláusula de confidencialidad y código o documentos internos de tu empresa. Si necesitas que analicen un documento, quita antes nombres, correos, teléfonos y cifras que identifiquen a alguien.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres prompts para probarlos</h2>
+    <p>Son plantillas para comparar asistentes con la misma entrada, no la prueba de que un modelo rinda más que otro. Para que la comparación sirva, pega el mismo texto en DeepSeek, Qwen, Kimi y en la IA que uses habitualmente, sin datos personales, y quédate con la respuesta que menos tengas que corregir.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">1. Analizar una tabla</h3>
+    <p>Pedir solo "resúmeme esto" suele dar un párrafo bonito. Este prompt obliga a revisar los números y a responder en un formato que puedes comprobar:</p>
+    <pre class="whitespace-pre-wrap rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm"><code>Te paso una tabla en formato CSV. Analízala así:
+1. Describe en una frase qué mide cada columna.
+2. Indica el patrón numérico principal (tendencia, estacionalidad o relación entre columnas) y la fila o filas que lo muestran.
+3. Señala hasta tres valores atípicos. Para cada uno, da la fila, el valor y por qué se sale de lo normal.
+4. Haz una recomendación concreta basada solo en estos datos.
+Si un cálculo no se puede hacer con los datos de la tabla, dilo en lugar de suponerlo.
+
+[pega aquí la tabla]</code></pre>
+    <p>Para comprobarlo, revisa a mano las filas que cita como atípicas. Si se inventa filas o valores, descarta la respuesta.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">2. Traducir respetando el tono</h3>
+    <pre class="whitespace-pre-wrap rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm"><code>Traduce el siguiente texto del [idioma de origen] al [idioma de destino] para [público: clientes de México, equipo interno, lectores de España...].
+- Conserva el tono (formal, cercano, irónico) y el registro del original.
+- Traduce la intención, no palabra por palabra. Adapta modismos a uno equivalente del idioma de destino.
+- No añadas ni quites información.
+- Al final, haz una lista con las expresiones que adaptaste y explica por qué.
+
+Texto:
+[pega aquí el texto]</code></pre>
+    <p>La lista final sirve para revisar las decisiones del modelo sin tener que comparar frase a frase. Si el texto es para publicar, que lo revise alguien que hable bien el idioma de destino.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">3. Instrucciones largas sin que se salte pasos</h3>
+    <p>Cuando un prompt lleva muchas tareas, es fácil que el modelo mezcle pasos o que se olvide de los últimos. Numerar y separar las tareas permite ver de un vistazo si cumplió todo:</p>
+    <pre class="whitespace-pre-wrap rounded-lg border border-dark-600 bg-dark-900 p-4 text-sm"><code>Vas a resolver las tareas siguientes en orden.
+Reglas:
+- Empieza cada respuesta con "Tarea N:".
+- Al acabar cada tarea, escribe FIN en una línea aparte.
+- No agrupes tareas ni hagas un resumen al final.
+- Si una tarea depende de otra anterior, indícalo al principio de la respuesta.
+- Si no puedes completar una tarea, escribe "No completada" y el motivo.
+
+Tarea 1: [...]
+Tarea 2: [...]
+Tarea 3: [...]
+(hasta la última tarea)</code></pre>
+    <p>Cuenta las marcas FIN: si hay menos que tareas, el modelo se ha saltado alguna. Repite cada prueba al menos dos veces antes de sacar conclusiones, porque la misma pregunta puede dar respuestas distintas.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que se puede aprender del caso Coinbase</h2>
+    <p>El 27 de junio de 2026, Brian Armstrong, director general de Coinbase, <a href="https://x.com/brian_armstrong/status/2070670644577280109" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">explicó en X</a> cómo habían recortado "casi a la mitad" su gasto en IA mientras el uso de tokens seguía creciendo. <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">The Decoder</a> recogió la noticia al día siguiente. Lo que cuenta el propio Armstrong:</p>
+    <ul class="space-y-2">
+      <li><strong>Modelos por defecto más baratos:</strong> están "experimentando" con modelos de pesos abiertos como GLM 5.2 y Kimi 2.7 como opción por defecto de su pasarela de modelos. Los ingenieros pueden seguir eligiendo el que quieran, y el 91 % nunca llegaba a su límite de uso.</li>
+      <li><strong>Enrutado:</strong> en sus herramientas internas envían cada prompt al modelo más adecuado según el precio y la caché. Por ejemplo, un modelo de frontera para planificar y otro más barato para ejecutar.</li>
+      <li><strong>Caché:</strong> la tasa de aciertos de caché en LibreChat pasó del 5 % al 60 % "once properly implemented" (cuando la implementaron bien).</li>
+      <li><strong>Contexto corto:</strong> abrir sesiones nuevas al cambiar de tarea, limitar los archivos que se cargan y desconectar las herramientas que no se usan.</li>
+    </ul>
+    <p>La publicación no reparte el ahorro entre estas medidas, así que no demuestra que el cambio de modelo fuera lo decisivo. Además, se trata de uso por API dentro de una empresa, no de las apps gratuitas. Lo que sí sirve en el chat es el último consejo: empieza una conversación nueva para cada tema y pega solo el fragmento que importa, no el documento entero.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo no usarlos</h2>
+    <ul class="space-y-2">
+      <li><strong>Con datos personales de terceros:</strong> si trabajas con datos de clientes, pacientes o alumnos, enviarlos a un servicio que los guarda en China o Singapur puede chocar con las obligaciones de protección de datos de tu país o con los contratos de tu empresa. Consúltalo antes con quien lleve la privacidad o el cumplimiento normativo.</li>
+      <li><strong>Cuando tu organización tiene una lista de herramientas aprobadas</strong> y estas no están en ella.</li>
+      <li><strong>Con información confidencial o regulada:</strong> secretos comerciales, documentación legal en curso, datos financieros no publicados.</li>
+      <li><strong>Cuando necesitas una fuente verificable</strong> y no vas a contrastar la respuesta. Esto vale para cualquier asistente de IA.</li>
+      <li><strong>Si dependes de integraciones concretas</strong> (correo, documentos, calendario) que ya tienes resueltas con otra herramienta.</li>
+    </ul>
+    <p>Para todo lo demás (dudas generales, borradores, traducciones de textos públicos, practicar idiomas, comparar respuestas), son una opción gratuita razonable. Si buscas más alternativas sin suscripción, mira <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">las alternativas gratis a ChatGPT</a>.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p class="text-sm text-dark-300">Todas consultadas el 6 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://www.deepseek.com/en/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek, web oficial</a>: modelo destacado y acceso al chat y a la app.</li>
+      <li><a href="https://api-docs.deepseek.com/news/news260910" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek-V4.1-Flash, anuncio oficial (10 de septiembre de 2026)</a></li>
+      <li><a href="https://api-docs.deepseek.com/news/news260424" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek V4, anuncio oficial (24 de abril de 2026)</a>: contexto de 1M y modos Experto e Instantáneo.</li>
+      <li><a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de DeepSeek</a></li>
+      <li><a href="https://apps.apple.com/app/deepseek-ai-assistant/id6737597349" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek en el App Store</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.deepseek.chat" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek en Google Play</a></li>
+      <li><a href="https://github.com/QwenLM/Qwen3.8" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Repositorio oficial de Qwen3.8</a></li>
+      <li><a href="https://qwen.ai/privacypolicy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Qwen</a></li>
+      <li><a href="https://www.moonshot.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Moonshot AI, web oficial (Kimi K3)</a></li>
+      <li><a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Kimi</a></li>
+      <li><a href="https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Kimi en el App Store</a></li>
+      <li><a href="https://docs.z.ai/legal-agreement/privacy-policy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Z.ai</a></li>
+      <li><a href="https://x.com/brian_armstrong/status/2070670644577280109" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Brian Armstrong (Coinbase) en X, 27 de junio de 2026</a></li>
+      <li><a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">The Decoder sobre Coinbase y los modelos chinos</a></li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si quieres comparar DeepSeek con otras opciones antes de instalarlo o usarlo a diario, estos enlaces te dan contexto y próximos pasos:</p>
     <ul class="space-y-2">
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para decidir qué IA usar cuando no quieres pagar una suscripción.</li>
-      <li><a href="/blog/ia-gratis-silicon-valley/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más herramientas útiles sin quedarte sólo con las marcas de siempre.</li>
-      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte práctica de modelos chinos y agentes.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows que puedes probar después del vídeo.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para elegir IA sin pagar una suscripción.</li>
+      <li><a href="/herramientas/comparativas/kimi-vs-glm/" class="text-brand-400 hover:text-brand-300">Kimi vs GLM</a>, si dudas entre los dos para documentos largos o código.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, para usar Qwen al programar.</li>
+      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, con más prompts y flujos de trabajo.</li>
     </ul>
 
     <section class="not-prose mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
-      <h2 class="font-display text-2xl font-bold text-white">Antes de elegir DeepSeek</h2>
+      <h2 class="font-display text-2xl font-bold text-white">Fichas de herramientas</h2>
       <ul class="mt-4 space-y-3 text-sm leading-6">
-        <li><a href="/herramientas/deepseek/" class="text-brand-400 hover:text-brand-300">Ficha práctica de DeepSeek</a>, para revisar precio, privacidad, API y cuando evitarlo.</li>
-        <li><a href="/herramientas/para-programar/" class="text-brand-400 hover:text-brand-300">Herramientas IA para programar</a>, si quieres compararlo con Qwen Code, ChatGPT y Claude.</li>
+        <li><a href="/herramientas/deepseek/" class="text-brand-400 hover:text-brand-300">DeepSeek</a>: precio, privacidad, API y cuándo evitarlo.</li>
+        <li><a href="/herramientas/kimi/" class="text-brand-400 hover:text-brand-300">Kimi</a>: para qué tareas encaja y qué revisar antes.</li>
+        <li><a href="/herramientas/glm/" class="text-brand-400 hover:text-brand-300">GLM</a>: modelos de Z.ai para razonamiento y código.</li>
+        <li><a href="/herramientas/para-programar/" class="text-brand-400 hover:text-brand-300">Herramientas IA para programar</a>, para compararlos con Qwen Code, ChatGPT y Claude.</li>
       </ul>
     </section>
 
@@ -135,6 +261,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -145,22 +272,20 @@ const pillarLabel = "Pilar 2: Tips productividad";
     },
     "about": tags,
     "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://api-docs.deepseek.com/news/news260424"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://www.aibase.com/zh/news/14649"
-      }
-]
+      { "@type": "WebPage", "url": "https://www.deepseek.com/en/" },
+      { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260910" },
+      { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260424" },
+      { "@type": "WebPage", "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" },
+      { "@type": "WebPage", "url": "https://apps.apple.com/app/deepseek-ai-assistant/id6737597349" },
+      { "@type": "WebPage", "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat" },
+      { "@type": "WebPage", "url": "https://github.com/QwenLM/Qwen3.8" },
+      { "@type": "WebPage", "url": "https://qwen.ai/privacypolicy" },
+      { "@type": "WebPage", "url": "https://www.moonshot.ai/" },
+      { "@type": "WebPage", "url": "https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" },
+      { "@type": "WebPage", "url": "https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312" },
+      { "@type": "WebPage", "url": "https://docs.z.ai/legal-agreement/privacy-policy" },
+      { "@type": "WebPage", "url": "https://x.com/brian_armstrong/status/2070670644577280109" },
+      { "@type": "WebPage", "url": "https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" }
+    ]
   })} />
 </BaseLayout>
