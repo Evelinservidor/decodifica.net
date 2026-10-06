@@ -96,4 +96,5 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
 
 - Rutina en la nube cada lunes (hora de España), después del informe de Search Console de las 9:00. Sigue `docs/AGENTE-SEMANAL.md`.
 - Modo actual: **propone y Jordi aprueba** (pull request). Pasar a «Publicar sola: SÍ» cuando Jordi lo diga.
-- Cola de arreglos para el agente (el preflight los marca): `claude-emails-sonar-humanos` («brutal»), `crear-agente-voz-ia-sin-programar` («he probado», «increíble»), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»).
+- Decisión de Jordi (07-10-2026): los arreglos pendientes de la web publicada los hace el agente, **uno por semana**.
+- Cola de arreglos para el agente (el preflight los marca): `claude-emails-sonar-humanos` («brutal»), `crear-agente-voz-ia-sin-programar` («he probado», «increíble»), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»). Después: ficha `/herramientas/notebooklm/` y comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre nuevo «Gemini Notebook» y límites), y la revisión de fuentes de los artículos antiguos no reescritos.
