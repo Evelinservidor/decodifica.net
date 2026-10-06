@@ -70,7 +70,7 @@ const coreTools: Tool[] = [
       { label: 'ChatGPT vs Gemini', href: '/herramientas/comparativas/chatgpt-vs-gemini/' },
       { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
-      { label: 'Como elegir una herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Cómo elegir una herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
       { label: 'Recursos IA', href: '/recursos/' },
     ],
@@ -125,7 +125,7 @@ const coreTools: Tool[] = [
     relatedLinks: [
       { label: 'ChatGPT vs Claude', href: '/herramientas/chatgpt-vs-claude/' },
       { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
-      { label: 'Claude Skills desde cero', href: '/blog/claude-skills-desde-cero/' },
+      { label: 'Guía de Claude Skills', href: '/blog/claude-skills-1000-gratis/' },
       { label: 'Emails con Claude sin sonar a robot', href: '/blog/claude-emails-sonar-humanos/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
     ],
@@ -182,8 +182,7 @@ const coreTools: Tool[] = [
       { label: 'Herramientas para investigar con fuentes', href: '/herramientas/casos/para-investigar/' },
       { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Guía NotebookLM', href: '/blog/notebooklm-guia-2026/' },
-      { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
-      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Cómo elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
     ],
     hasDetailPage: true,
     detail: {
@@ -239,7 +238,7 @@ const coreTools: Tool[] = [
       { label: 'Herramientas IA para estudiar', href: '/herramientas/para-estudiar/' },
       { label: 'Método de evaluación', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Alternativas gratis a ChatGPT', href: '/blog/alternativas-gratis-chatgpt-2026/' },
-      { label: 'NotebookLM frente a Google y OpenAI', href: '/blog/notebooklm-google-openai/' },
+      { label: 'Guía NotebookLM', href: '/blog/notebooklm-guia-2026/' },
     ],
     hasDetailPage: true,
     detail: {
@@ -295,7 +294,7 @@ const coreTools: Tool[] = [
       { label: 'Gamma vs Beautiful.ai', href: '/herramientas/comparativas/gamma-vs-beautiful-ai/' },
       { label: 'Herramientas IA para presentaciones', href: '/herramientas/para-presentaciones/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
-      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Cómo elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
       { label: 'Recursos IA', href: '/recursos/' },
     ],
     hasDetailPage: true,
@@ -351,7 +350,7 @@ const coreTools: Tool[] = [
       { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Recursos IA', href: '/recursos/' },
       { label: 'IA para presentaciones', href: '/blog/ia-crea-presentaciones-completas/' },
-      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Cómo elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
     ],
     hasDetailPage: true,
     detail: {
@@ -406,7 +405,7 @@ const coreTools: Tool[] = [
       { label: 'Herramientas IA para crear contenido', href: '/herramientas/para-crear-contenido/' },
       { label: 'Agentes de voz IA', href: '/blog/crear-agente-voz-ia-sin-programar/' },
       { label: 'Recursos IA', href: '/recursos/' },
-      { label: 'Como elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
+      { label: 'Cómo elegir herramienta IA', href: '/blog/como-elegir-herramienta-ia/' },
     ],
     hasDetailPage: true,
     detail: {

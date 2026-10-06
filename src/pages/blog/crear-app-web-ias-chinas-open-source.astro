@@ -2,13 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "Emergent: crea una app completa con IA desde un prompt";
-const description = "Qué puede construir Emergent, cómo probarlo con una app pequeña y qué revisar antes de confiarle código, datos o despliegues.";
+const title = "Emergent IA: qué es, precios y cómo crear una app";
+const description = "Qué es Emergent (emergent.sh), qué apps crea, planes y créditos en octubre de 2026, plan gratis, exportación a GitHub, riesgos y alternativas.";
 const pubDate = "2026-07-06";
-const readingTime = "4 min";
-const tags = ["Emergent", "crear apps con IA", "agentes de código", "herramientas IA"];
+const modifiedDate = "2026-10-06";
+const readingTime = "9 min";
+const tags = ["Emergent", "Emergent IA", "crear apps con IA", "agentes de código", "herramientas IA"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
+
+const linkClass = "text-brand-400 hover:text-brand-300";
 ---
 
 <BaseLayout
@@ -17,6 +20,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/crear-app-web-ias-chinas-open-source.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
@@ -24,6 +28,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
         <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>Actualizado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -37,55 +43,143 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <img
       src="/og/blog/crear-app-web-ias-chinas-open-source.png"
-      alt={title}
+      alt="Emergent IA: plataforma para crear apps web y móviles con agentes de IA"
       class="mb-12 w-full rounded-2xl border border-dark-600"
       loading="eager"
       fetchpriority="high"
     />
 
+    <p><strong>En resumen:</strong> Emergent (<a href="https://emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">emergent.sh</a>) es una plataforma en la que describes una aplicación en lenguaje natural y unos agentes de IA la diseñan, la programan y la publican. Tiene plan gratuito con 10 créditos, un plan Standard de 20 dólares al mes con 100 créditos y un plan Pro de 200 dólares con 750 créditos (precios consultados el 6 de octubre de 2026). El código es tuyo y se puede llevar a GitHub desde el plan Standard. Lo que más conviene vigilar es el gasto de créditos: según su documentación, tener una app publicada cuesta entre 50 y 1.100 créditos al mes.</p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Emergent y quién está detrás</h2>
+    <p>Emergent se presenta como una plataforma para "crear apps listas para producción conversando" con agentes de IA que diseñan, programan y despliegan la aplicación de principio a fin. No hace falta saber programar: escribes lo que quieres en el chat y el agente decide la arquitectura. Su centro de ayuda menciona React y MongoDB como parte de la pila técnica, aunque el agente elige el conjunto completo según el tipo de app.</p>
+    <p>La empresa fue fundada en 2024 por los hermanos Mukund Jha (CEO) y Madhav Jha (CTO), tiene sede en San Francisco y pasó por la aceleradora Y Combinator en la tanda de verano de 2024, según su <a href="https://www.ycombinator.com/companies/emergent" class={linkClass} target="_blank" rel="noopener noreferrer">ficha en Y Combinator</a>. Esa misma ficha indica que ha levantado 100 millones de dólares con inversores como Khosla Ventures, SoftBank, Google, Lightspeed India y Prosus Ventures. En su web oficial afirma tener certificaciones SOC 2 e ISO 27001.</p>
 
-    <p>Hay herramientas de IA que llaman la atención un día y desaparecen al siguiente. Y luego están las que, si las miras con calma, pueden cambiar una parte concreta de tu trabajo. Este artículo va de esa segunda lectura: no quedarnos en el titular, sino decidir si merece tiempo, pruebas y hueco en tu flujo.</p>
-    <p>La pregunta útil es esta: La pregunta útil es si esto merece entrar en tu flujo real o si solo es otra demo llamativa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué importa</h2>
-    <p>La idea es separar lo que parece una novedad más de lo que realmente puede cambiar una rutina de trabajo.</p>
-    <p>Para mi, una herramienta empieza a ser interesante cuando deja de ser "una cosa que enseñas en una demo" y empieza a resolver un bloqueo repetido: ahorrar pasos, ordenar una decisión, reducir fricción o ayudarte a probar algo que antes daba pereza.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué cambia realmente</h2>
-    <p>La parte importante no es repetir la lista de funciones. Eso lo puede hacer cualquier ficha técnica. Lo importante es traducir esas funciones a consecuencias prácticas: que puedes hacer mañana, que parte del flujo se simplifica y donde sigue haciendo falta criterio humano.</p>
-    <p>El giro esta en no quedarse con la función vistosa, sino mirar si encaja en tareas repetibles y decisiones concretas.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que miraría antes de usarlo</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes construir con Emergent</h2>
+    <p>La web oficial enumera estos tipos de proyecto:</p>
     <ul class="space-y-2">
-      <li>Si resuelve un problema que ya tienes.</li>
-      <li>Si reduce pasos sin quitarte control.</li>
-      <li>Si el resultado se puede revisar con facilidad.</li>
+      <li><strong>Web:</strong> sitios, portafolios, tiendas en línea, paneles de datos y productos SaaS.</li>
+      <li><strong>Herramientas internas:</strong> CRM y aplicaciones de gestión para equipos.</li>
+      <li><strong>Móvil:</strong> la plataforma anuncia apps móviles, y su documentación tiene secciones para convertir una web en app móvil y publicarla en las tiendas de iOS y Android (incluye compras dentro de la app y notificaciones push).</li>
+      <li><strong>Backend e integraciones:</strong> base de datos, autenticación propia (Emergent Auth) y conexiones documentadas con Stripe, PayPal, Twilio, Resend, SendGrid, Shopify, ElevenLabs y modelos de OpenAI, Claude y Gemini.</li>
+      <li><strong>Despliegue:</strong> alojamiento integrado con un clic, dirección web permanente y dominio propio en los planes de pago.</li>
     </ul>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde está el valor</h2>
-    <p>El valor no esta en que la IA prometa hacerlo todo. Esta en que te quite trabajo repetitivo sin quitarte control. Si una herramienta te obliga a revisar más de lo que ahorra, no sirve. Si te ayuda a llegar antes a una decisión o a una versión revisable, entonces ya empieza a tener sentido.</p>
-    <p>Yo lo probaría primero en un caso pequeño, con salida verificable y poco riesgo. Si ahí funciona, se puede subir el nivel. Si falla en lo básico, al menos no has construido todo tu sistema encima de una promesa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraría todavía</h2>
-    <p>No lo vendería como piloto automático. Si una herramienta toca archivos, código o acciones del sistema, la supervisión sigue siendo parte del trabajo.</p>
-    <p>Esta parte importa porque en IA es muy fácil confundir potencial con resultado. Una demo puede ser espectacular y aun así no encajar en tu día a día. Por eso conviene separar tres cosas: lo que la herramienta dice que hace, lo que ya esta documentado y lo que puedes comprobar con una prueba real.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>La decisión Decodifica es mirarlo por utilidad real: que te ahorra, que te permite hacer y que riesgos mantiene.</p>
-    <p>Mi recomendación es tratarlo como una oportunidad de mejora, no como una solución automática. Si encaja con un problema repetido que ya tienes, merece una prueba. Si solo te atrae porque suena nuevo, espera a tener un caso concreto.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo funciona, paso a paso</h2>
+    <p>El <a href="https://help.emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">centro de ayuda de Emergent</a> organiza el proceso en cuatro fases:</p>
+    <ol class="space-y-2">
+      <li><strong>Empieza con la idea.</strong> La documentación recomienda un primer mensaje con tres elementos: qué hace la app (una frase), para quién es y cuál es la acción principal del usuario.</li>
+      <li><strong>Háblalo con el agente.</strong> Puedes conversar sobre la idea antes de generar nada.</li>
+      <li><strong>Mira cómo se construye.</strong> El agente escribe el código, ejecuta pruebas y muestra una vista previa.</li>
+      <li><strong>Ajústala.</strong> Después de la primera versión pides cambios en el chat y el agente actualiza la app.</li>
+    </ol>
+    <p>Para publicar hay dos entornos separados, según la guía <a href="https://help.emergent.sh/put-your-app-live" class={linkClass} target="_blank" rel="noopener noreferrer">Put your app live</a>: la <strong>vista previa</strong> (privada, se suspende tras unos 30 minutos sin uso) y la <strong>producción</strong> (pública, activa las 24 horas). Los cambios en la vista previa no llegan a la versión publicada hasta que vuelves a publicar.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Precios de Emergent: planes y créditos</h2>
+    <p>Datos de la <a href="https://emergent.sh/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">página de precios oficial</a>, consultada el 6 de octubre de 2026. Los precios están en dólares estadounidenses y pueden cambiar.</p>
+    <div class="overflow-x-auto">
+      <table>
+        <thead>
+          <tr><th>Plan</th><th>Precio</th><th>Créditos</th><th>Qué añade</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Free</td><td>0 $</td><td>10</td><td>Funciones básicas de la plataforma, web y móvil, acceso a modelos avanzados</td></tr>
+          <tr><td>Standard</td><td>20 $/mes (17 $/mes en pago anual)</td><td>100 al mes, ampliables con compras</td><td>Alojamiento de proyectos privados, integración con GitHub, bifurcar tareas</td></tr>
+          <tr><td>Pro</td><td>200 $/mes (167 $/mes en pago anual)</td><td>750 al mes</td><td>Ventana de contexto de 1 millón de tokens, "ultra thinking", edición del prompt de sistema, agentes personalizados, soporte prioritario</td></tr>
+          <tr><td>Business</td><td>A medida</td><td>—</td><td>Control de acceso por roles (RBAC), SSO, espacios de equipo y edición simultánea</td></tr>
+          <tr><td>Enterprise</td><td>A medida</td><td>—</td><td>Límites de créditos por usuario, registros de auditoría, base de datos autoalojada, despliegue en VPC</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">En qué se gastan los créditos</h3>
+    <p>La guía <a href="https://help.emergent.sh/how-credits-work-basics" class={linkClass} target="_blank" rel="noopener noreferrer">How credits work</a> explica que consumen créditos:</p>
     <ul class="space-y-2">
-      <li><a href="https://www.ycombinator.com/companies/emergent" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.ycombinator.com/companies/emergent</a></li>
-      <li><a href="https://www.mg21.com/emergent.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://www.mg21.com/emergent.html</a></li>
-      <li><a href="https://emergent.sh/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://emergent.sh/pricing</a></li>
-      <li><a href="https://emergent.sh/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://emergent.sh/</a></li>
-      <li><a href="https://api-docs.deepseek.com/updates" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/updates</a></li>
-      <li><a href="https://qwenlm.github.io/blog/qwen3-coder/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/blog/qwen3-coder/</a></li>
-      <li><a href="https://juejin.cn/post/7631569095843217417" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/7631569095843217417</a></li>
+      <li>Cada mensaje que escribe o cambia código (los cambios grandes cuestan más).</li>
+      <li>Las pruebas automáticas.</li>
+      <li>Las llamadas a servicios externos, tareas programadas y procesos en segundo plano.</li>
+      <li>Las operaciones pesadas de base de datos.</li>
+      <li>Las llamadas a modelos de lenguaje que haga tu app ya publicada si usa la "Universal LLM Key" de Emergent.</li>
+      <li>El modo "Maxx", que planifica con más cuidado y "usa bastantes más créditos que un mensaje normal".</li>
+    </ul>
+    <p>Los créditos del plan mensual se rellenan hasta el tope en cada ciclo de facturación y <strong>no se acumulan</strong>. Los créditos comprados aparte no caducan.</p>
+    <p>El dato que más pesa en el presupuesto: una app publicada cuesta <strong>entre 50 y 1.100 créditos al mes</strong> según el nivel de publicación elegido, y eso cubre alojamiento, ancho de banda, monitorización y escalado. Con los 100 créditos del plan Standard, la publicación más barata ya se lleva la mitad del mes antes de pedir ningún cambio.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿Tiene plan gratis? Qué incluye</h2>
+    <p>Sí. La página de precios habla de "10 créditos gratis al mes", mientras que la guía <a href="https://help.emergent.sh/plans-the-free-tier" class={linkClass} target="_blank" rel="noopener noreferrer">Plans &amp; the free tier</a> los describe como "10 créditos en tu primer día". Las dos fuentes oficiales no coinciden, así que conviene mirar el saldo dentro de la cuenta.</p>
+    <p>Según esa guía, con el plan gratuito puedes conversar con los agentes, construir y probar la app en el espacio de trabajo. No puedes publicar en producción (requiere un mínimo de 50 créditos) ni usar dominio propio, aunque la documentación indica que los usuarios gratuitos "pueden optar" a una publicación gratuita solo de la parte visual (frontend). La integración con GitHub aparece en la página de precios como función del plan Standard.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites y riesgos antes de confiarle un proyecto</h2>
+    <ul class="space-y-3">
+      <li><strong>Propiedad del código.</strong> La página <a href="https://help.emergent.sh/your-data-ownership" class={linkClass} target="_blank" rel="noopener noreferrer">Your data ownership</a> cita sus condiciones de servicio (sección 3.4): conservas la propiedad del código, los proyectos, los datos y los archivos que creas, incluido lo generado por la IA.</li>
+      <li><strong>Exportación.</strong> Puedes guardar el proyecto en GitHub con "Save → Save to GitHub" desde el plan Standard, o ver y copiar los archivos con el botón Code en cualquier plan. La exportación <strong>no incluye</strong> variables de entorno, claves secretas, el contenido de la base de datos ni <code>node_modules</code>. La base de datos (MongoDB) se exporta aparte, con <code>mongodump</code>, MongoDB Compass o CSV por colección.</li>
+      <li><strong>Dependencia de la plataforma.</strong> Si tu app usa Emergent Auth o la Universal LLM Key, sacarla de Emergent implica sustituir esas piezas por servicios propios.</li>
+      <li><strong>Datos y entrenamiento de modelos.</strong> Según <a href="https://help.emergent.sh/ai-model-training" class={linkClass} target="_blank" rel="noopener noreferrer">AI model training</a>, Emergent no usa los datos personales de clientes para entrenar modelos y prohíbe por contrato a sus proveedores de IA hacerlo. Hay una excepción: puede usar "Service Data" (datos operativos de uso) para mejorar modelos, sin opción de exclusión descrita.</li>
+      <li><strong>Dónde se guardan los datos.</strong> En Estados Unidos, la Unión Europea e India, según <a href="https://help.emergent.sh/where-your-data-is-stored" class={linkClass} target="_blank" rel="noopener noreferrer">Where your data is stored</a>. Si manejas datos personales de clientes, revisa el acuerdo de tratamiento de datos (DPA) y la lista de subencargados antes de cargar nada real.</li>
+      <li><strong>Seguridad del código generado.</strong> Las certificaciones SOC 2 e ISO 27001 cubren a la empresa, no revisan la lógica de tu app. Antes de abrirla al público, comprueba quién puede leer y modificar cada dato, y que las claves de pago o de API no queden expuestas en el frontend.</li>
+      <li><strong>Coste variable.</strong> Cada iteración, prueba y tarea en segundo plano gasta créditos, y la app publicada sigue gastando cada mes. Un proyecto con muchas correcciones puede agotar el plan antes de lo previsto.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo con una app pequeña</h2>
+    <p>Esta es una propuesta de prueba para medir Emergent con poco riesgo, no el relato de una prueba hecha por Decodifica. La idea es gastar los créditos gratuitos en algo pequeño y verificable.</p>
+    <ol class="space-y-2">
+      <li>Crea una cuenta gratuita en <a href="https://emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">emergent.sh</a> y anota cuántos créditos tienes al empezar.</li>
+      <li>Elige una app con una sola acción principal y sin datos sensibles: por ejemplo, un registro de lecturas o una lista de tareas de un equipo pequeño.</li>
+      <li>Escribe el primer mensaje con la estructura que recomienda la documentación (qué, para quién, acción principal) y añade lo que <em>no</em> quieres, para evitar que el agente amplíe el alcance.</li>
+      <li>Cuando aparezca la vista previa, prueba la acción principal tres veces, incluido un caso erróneo (un campo vacío, una fecha pasada).</li>
+      <li>Pide una sola corrección concreta y apunta cuántos créditos ha gastado.</li>
+      <li>Abre el botón Code y revisa si entiendes la estructura de archivos. Si piensas pasar a un plan de pago, comprueba la exportación a GitHub antes de construir algo grande.</li>
+    </ol>
+    <p>Prompt de ejemplo:</p>
+    <pre class="whitespace-pre-wrap rounded-xl border border-dark-600 bg-dark-800 p-4 text-sm"><code>Crea una app web para que un club de lectura de 10 personas registre los libros que lee.
+Usuarios: miembros del club, sin conocimientos técnicos.
+Acción principal: añadir un libro (título, autor, fecha de fin y nota del 1 al 5) y ver la lista de todos ordenada por fecha.
+Incluye inicio de sesión con correo.
+No añadas pagos, chat, notificaciones ni panel de administración.
+Interfaz en español, sencilla y usable en el teléfono.</code></pre>
+    <p>Al terminar tendrás dos datos útiles: cuántos créditos cuesta una app mínima con una corrección, y si el código que genera es algo que tú o alguien de tu equipo podría mantener fuera de la plataforma.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Alternativas a Emergent</h2>
+    <p>Datos tomados de las páginas de precios oficiales, consultadas el 6 de octubre de 2026:</p>
+    <ul class="space-y-3">
+      <li><strong><a href="https://lovable.dev/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Lovable</a></strong>: se define como un "ingeniero de software con IA" para crear aplicaciones web conversando. Su plan gratuito da 5 créditos de construcción al día (hasta 30 al mes) y 20 créditos mensuales de alojamiento en Lovable Cloud.</li>
+      <li><strong><a href="https://bolt.new/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Bolt</a></strong>: cobra por tokens en lugar de créditos. El plan gratuito tiene un límite de 300.000 tokens al día y 1 millón al mes, con alojamiento web; el plan Pro cuesta 25 dólares al mes y parte de 10 millones de tokens.</li>
+      <li><strong><a href="https://replit.com/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Replit</a></strong>: entorno de desarrollo en el navegador con un agente de IA (Replit Agent). El plan Core cuesta 20 dólares al mes (18 en pago anual). Encaja mejor si quieres ver y tocar el código mientras el agente trabaja.</li>
+      <li><strong><a href="https://v0.app/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">v0</a></strong>: herramienta de Vercel para diseñar y generar interfaces y apps. El plan gratuito tiene un límite de 7 mensajes al día y los nuevos usuarios reciben 5 dólares en créditos de una sola vez.</li>
+    </ul>
+    <p>Si dudas entre ellas, define antes la tarea y el criterio de éxito con nuestra guía sobre <a href="/blog/como-elegir-herramienta-ia/" class={linkClass}>cómo elegir una herramienta de IA</a>, y repite la misma prueba pequeña (mismo prompt, misma corrección) en dos de ellas para comparar créditos gastados y calidad del resultado.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Emergent es gratis?</h3>
+    <p>Tiene un plan gratuito con 10 créditos para construir y probar en el espacio de trabajo, pero no permite publicar en producción ni usar dominio propio. Para eso hace falta un plan de pago, desde 20 dólares al mes (17 en pago anual), según la página de precios consultada en octubre de 2026.</p>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Se puede exportar el código de Emergent?</h3>
+    <p>Sí. El código es tuyo según sus condiciones de servicio. En cualquier plan puedes ver y copiar los archivos desde el botón Code, y desde el plan Standard puedes guardarlo en GitHub. Las variables de entorno, las claves y el contenido de la base de datos no van incluidos y se exportan aparte.</p>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Emergent está en español?</h3>
+    <p>La web oficial y el centro de ayuda están en inglés (consultados en octubre de 2026), y la documentación no indica en qué idiomas se pueden escribir los mensajes al agente. No hemos encontrado una confirmación oficial de soporte en español, así que el prompt de ejemplo de arriba pide la interfaz en español de forma explícita.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Todas consultadas el 6 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent: web oficial</a> (qué es, tipos de apps, propiedad del código, certificaciones)</li>
+      <li><a href="https://emergent.sh/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent: precios</a> (planes, precios y créditos)</li>
+      <li><a href="https://www.ycombinator.com/companies/emergent" class={linkClass} target="_blank" rel="noopener noreferrer">Y Combinator: ficha de Emergent</a> (fundadores, año, sede, financiación)</li>
+      <li><a href="https://help.emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: primeros pasos</a> (flujo de trabajo, integraciones, pila técnica)</li>
+      <li><a href="https://help.emergent.sh/how-credits-work-basics" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: How credits work</a> (consumo y caducidad de créditos)</li>
+      <li><a href="https://help.emergent.sh/put-your-app-live" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: Put your app live</a> (publicación y coste mensual de alojamiento)</li>
+      <li><a href="https://help.emergent.sh/plans-the-free-tier" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: Plans &amp; the free tier</a> (límites del plan gratuito)</li>
+      <li><a href="https://help.emergent.sh/your-data-ownership" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: Your data ownership</a> (propiedad y exportación)</li>
+      <li><a href="https://help.emergent.sh/ai-model-training" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: AI model training</a> (uso de datos para entrenar modelos)</li>
+      <li><a href="https://help.emergent.sh/where-your-data-is-stored" class={linkClass} target="_blank" rel="noopener noreferrer">Emergent Help: Where your data is stored</a> (ubicación de los datos)</li>
+      <li><a href="https://lovable.dev/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Lovable: precios</a></li>
+      <li><a href="https://bolt.new/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Bolt: precios</a></li>
+      <li><a href="https://replit.com/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">Replit: precios</a></li>
+      <li><a href="https://v0.app/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">v0 (Vercel): precios</a></li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
-    <p>Si quieres convertir la prueba en una decisión más útil, esta ruta te ayuda a comparar y documentar el resultado:</p>
     <ul class="space-y-2">
-      <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-400 hover:text-brand-300">Cómo elegir una herramienta de IA</a>, para definir la tarea y el criterio de éxito antes de probar Emergent.</li>
-      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si quieres comparar otro enfoque para trabajar con código.</li>
-      <li><a href="/herramientas/para-programar/" class="text-brand-400 hover:text-brand-300">Herramientas IA para programar</a>, para situar Emergent frente a otras opciones según el tipo de proyecto.</li>
-      <li><a href="/recursos/mapa-herramientas-ia/" class="text-brand-400 hover:text-brand-300">Mapa de herramientas IA</a>, para encontrar alternativas por tarea.</li>
+      <li><a href="/blog/como-elegir-herramienta-ia/" class={linkClass}>Cómo elegir una herramienta de IA</a>, para fijar la tarea y el criterio de éxito antes de pagar un plan.</li>
+      <li><a href="/herramientas/para-programar/" class={linkClass}>Herramientas IA para programar</a>, si prefieres un asistente que trabaje sobre tu propio código.</li>
+      <li><a href="/recursos/mapa-herramientas-ia/" class={linkClass}>Mapa de herramientas IA</a>, para encontrar alternativas por tarea.</li>
     </ul>
 
     <ConversionBand
@@ -115,6 +209,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "headline": title,
     "description": description,
     "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": "Jordi Castañeira"
@@ -125,34 +220,20 @@ const pillarLabel = "Pilar 2: Tips productividad";
     },
     "about": tags,
     "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://www.ycombinator.com/companies/emergent"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://www.mg21.com/emergent.html"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://emergent.sh/pricing"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://emergent.sh/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://api-docs.deepseek.com/updates"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://qwenlm.github.io/blog/qwen3-coder/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://juejin.cn/post/7631569095843217417"
-      }
-]
+      "https://emergent.sh/",
+      "https://emergent.sh/pricing",
+      "https://www.ycombinator.com/companies/emergent",
+      "https://help.emergent.sh/",
+      "https://help.emergent.sh/how-credits-work-basics",
+      "https://help.emergent.sh/put-your-app-live",
+      "https://help.emergent.sh/plans-the-free-tier",
+      "https://help.emergent.sh/your-data-ownership",
+      "https://help.emergent.sh/ai-model-training",
+      "https://help.emergent.sh/where-your-data-is-stored",
+      "https://lovable.dev/pricing",
+      "https://bolt.new/pricing",
+      "https://replit.com/pricing",
+      "https://v0.app/pricing"
+    ].map((url) => ({ "@type": "WebPage", "url": url }))
   })} />
 </BaseLayout>
