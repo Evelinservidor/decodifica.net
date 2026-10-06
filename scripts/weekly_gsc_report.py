@@ -42,6 +42,16 @@ SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 
 
 def get_access_token() -> str:
+    # Federación de identidades de GitHub (sin claves): la acción
+    # google-github-actions/auth deja GOOGLE_APPLICATION_CREDENTIALS preparado.
+    if os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
+        import google.auth
+        from google.auth.transport.requests import Request
+
+        creds, _ = google.auth.default(scopes=[SCOPE])
+        creds.refresh(Request())
+        return creds.token
+
     sa_json = os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
     if sa_json:
         from google.oauth2 import service_account
