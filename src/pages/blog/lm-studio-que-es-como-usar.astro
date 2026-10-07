@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "LM Studio: qué es y cómo usar IA local en tu ordenador";
+const description = "Qué es LM Studio, qué ordenador necesitas, cómo descargar un modelo y chatear con tus documentos sin conexión, en qué se diferencia de Bionic y de Ollama.";
+const pubDate = "2026-10-07";
+const modifiedDate = "2026-10-07";
+const readingTime = "8 min";
+const tags = ["lm studio", "ia local", "modelos abiertos", "lm studio bionic", "ollama"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og-default.png"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <p>En resumen: LM Studio es una aplicación de escritorio gratuita para Mac, Windows y Linux que descarga modelos de IA abiertos (Qwen, Gemma, Mistral, gpt-oss, DeepSeek y otros) y los ejecuta en tu propio ordenador. Una vez descargado el modelo, puedes chatear con él y con tus documentos sin conexión a internet: según su documentación, lo que escribes no sale de tu equipo.</p>
+    <p>Los datos de esta guía salen de la documentación oficial de LM Studio y de las páginas de precios de LM Studio y Ollama, consultadas el 7 de octubre de 2026. La versión de LM Studio publicada ese día era la 0.4.25.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es LM Studio y para qué sirve</h2>
+    <p>LM Studio lo desarrolla Element Labs, Inc. Su propia documentación resume lo que permite hacer:</p>
+    <ul class="space-y-2">
+      <li><strong>Buscar y descargar modelos abiertos</strong> desde Hugging Face sin salir de la aplicación.</li>
+      <li><strong>Chatear con ellos</strong> en una interfaz parecida a la de ChatGPT.</li>
+      <li><strong>Adjuntar documentos</strong> (<code>.docx</code>, <code>.pdf</code> y <code>.txt</code>) y hacerles preguntas, también sin conexión.</li>
+      <li><strong>Conectar servidores MCP</strong> para que el modelo local use herramientas externas.</li>
+      <li><strong>Servir el modelo a otras aplicaciones</strong> con una API compatible con la de OpenAI, en tu ordenador o en tu red local.</li>
+    </ul>
+    <p>Para qué tiene sentido: trabajar con textos que no quieres subir a un servicio en la nube (contratos, notas de clientes, datos de salud), usar IA sin conexión o probar modelos abiertos antes de decidir si te merece la pena pagar una suscripción. Si lo que buscas es la mejor calidad posible sin pensar en el hardware, un asistente en la nube seguirá siendo más cómodo: el modelo local solo va tan rápido como tu ordenador.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">LM Studio y LM Studio Bionic: no son lo mismo</h2>
+    <p>Si entras hoy en lmstudio.ai, lo primero que verás es <strong>LM Studio Bionic</strong>. La documentación aclara que Bionic es "una aplicación nueva y separada de LM Studio": un agente pensado para trabajar con documentos, programar y automatizar tareas usando modelos abiertos. Una sesión de Bionic puede usar tres tipos de modelo:</p>
+    <ul class="space-y-2">
+      <li><strong>Locales</strong>, que corren en tu ordenador.</li>
+      <li><strong>En la nube de LM Studio</strong> (alojada en EE. UU.), con modelos abiertos grandes como Kimi K3, GLM o DeepSeek V4. LM Studio afirma que su nube no guarda tus peticiones ni las respuestas (lo llama <em>Zero Data Retention</em>).</li>
+      <li><strong>Remotos</strong>, ejecutados en otro equipo tuyo a través de LM Link.</li>
+    </ul>
+    <p>La aplicación clásica, LM Studio, se sigue descargando desde la misma página de descargas y es la que explica esta guía. LM Studio recomienda seguir usándola para la configuración avanzada de los modelos.</p>
+    <p><strong>Precios (consultados en octubre de 2026):</strong> el plan gratuito incluye el agente Bionic, los modelos locales, la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Bionic+ cuesta 20 dólares al mes y añade los modelos en la nube; Pro cuesta 100 dólares al mes con cinco veces más uso. Para usar modelos en tu propio ordenador no necesitas pagar nada.</p>
+    <p><strong>Uso en el trabajo:</strong> las condiciones de uso de la aplicación (versión del 23 de agosto de 2026) conceden una licencia para uso personal o para fines internos de la empresa. Lo que no permiten es revender la aplicación o ofrecerla como servicio a terceros.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué ordenador necesitas</h2>
+    <div class="not-prose my-8 overflow-x-auto">
+      <table class="w-full text-left text-sm text-dark-200">
+        <thead>
+          <tr class="border-b border-dark-600 text-white">
+            <th class="py-3 pr-4">Sistema</th>
+            <th class="py-3 pr-4">Requisitos oficiales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Mac</td>
+            <td class="py-3 pr-4">Chip Apple Silicon (M1 a M4) y macOS 14 o posterior. Se recomiendan 16 GB de RAM; con 8 GB funciona si usas modelos pequeños. Los Mac con procesador Intel no están soportados.</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Windows</td>
+            <td class="py-3 pr-4">Procesadores x64 (con instrucciones AVX2) o ARM (Snapdragon X Elite). Se recomiendan al menos 16 GB de RAM y una tarjeta gráfica con 4 GB de memoria propia.</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 font-semibold text-white">Linux</td>
+            <td class="py-3 pr-4">x64 o ARM64, distribuido como AppImage. Requiere Ubuntu 20.04 o posterior; las versiones posteriores a la 22 no están bien probadas, según LM Studio.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La regla práctica: cuanto más grande es el modelo, más memoria necesita. Si tu ordenador va justo, empieza por un modelo pequeño y sube de tamaño solo si la calidad no te basta.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo empezar, paso a paso</h2>
+    <ol class="space-y-2">
+      <li><strong>Descarga LM Studio</strong> desde <a href="https://lmstudio.ai/download" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">lmstudio.ai/download</a>. En esa página aparecen dos aplicaciones: baja la que dice "LM Studio" si quieres la versión clásica, o "Bionic" si quieres el agente.</li>
+      <li><strong>Ponla en español.</strong> En <strong>Settings &gt; Preferences &gt; Language</strong> (atajo <code>Ctrl + ,</code> en Windows y Linux, <code>Cmd + ,</code> en Mac). Para ver los ajustes hay que estar en el modo "Power User" o superior.</li>
+      <li><strong>Busca un modelo</strong> en la pestaña Discover (atajo <code>Ctrl + 2</code> o <code>Cmd + 2</code>). Puedes escribir un nombre como <code>qwen</code> o <code>gemma</code>, o pegar la dirección de un modelo de Hugging Face.</li>
+      <li><strong>Elige la versión del archivo.</strong> Verás opciones con nombres como <code>Q3_K_S</code> o <code>Q_8</code>: son el mismo modelo comprimido en distintos grados (cuantización). Más compresión ocupa menos memoria pero pierde algo de calidad. La documentación recomienda una opción de 4 bits o superior si tu equipo puede con ella.</li>
+      <li><strong>Carga el modelo y abre un chat.</strong> A partir de aquí ya no necesitas internet para conversar.</li>
+    </ol>
+    <p>Una prueba sencilla para saber si un modelo te sirve: dale una tarea que hagas de verdad (resumir un correo largo, reescribir un párrafo, extraer fechas de un documento) y compara el resultado con el de tu asistente habitual. Si se queda corto, prueba otro modelo antes de descartar la idea.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Chatear con tus documentos</h3>
+    <p>Arrastra un archivo <code>.pdf</code>, <code>.docx</code> o <code>.txt</code> al chat. Si el documento cabe entero en la memoria de trabajo del modelo (el contexto), LM Studio lo añade completo; si es demasiado largo, busca solo los fragmentos relacionados con tu pregunta (lo que se conoce como RAG). La documentación da un consejo útil: incluye en la pregunta las palabras que esperas encontrar en el documento, porque así es más fácil que encuentre el fragmento correcto. El procesado de los documentos se hace en tu equipo.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Qué funciona sin conexión y qué no</h3>
+    <ul class="space-y-2">
+      <li><strong>Sin internet:</strong> chatear con modelos ya descargados, chatear con documentos y usar el servidor local.</li>
+      <li><strong>Con internet:</strong> buscar y descargar modelos, descargar los motores que los ejecutan (los "runtimes") y buscar actualizaciones de la aplicación.</li>
+    </ul>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Usarlo desde otras aplicaciones</h3>
+    <p>LM Studio puede funcionar como servidor en tu ordenador o en tu red local, con puntos de acceso que imitan a los de OpenAI. En la práctica, muchas herramientas que permiten cambiar la dirección de la API de OpenAI pueden usar tu modelo local en su lugar. Para servidores sin pantalla existe <strong>llmster</strong>, la versión sin interfaz gráfica.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">LM Studio o Ollama: cuál elegir</h2>
+    <p>Es la comparación más buscada junto a LM Studio. Las dos ejecutan modelos abiertos en tu ordenador y las dos ofrecen ahora modelos en la nube como opción de pago.</p>
+    <ul class="space-y-2">
+      <li><strong>LM Studio</strong> está pensado para usarse con ratón: buscador de modelos, chat, documentos y ajustes en una ventana, con la interfaz en español.</li>
+      <li><strong><a href="/herramientas/ollama/" class="text-brand-400 hover:text-brand-300">Ollama</a></strong> se instala con una línea de comandos (o con un instalador) y está muy orientado a conectarse con otras aplicaciones y agentes de programación. Su plan gratuito permite ejecutar modelos en local y su plan Pro cuesta 20 dólares al mes (consultado en octubre de 2026). La propia Ollama avisa de que los modelos grandes van lentos en un ordenador sin una buena tarjeta gráfica.</li>
+    </ul>
+    <p>Si no has usado nunca la terminal, empieza por LM Studio. Si vas a conectar el modelo a tus propios programas, prueba los dos y quédate con el que te resulte más cómodo.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene tener claros</h2>
+    <ul class="space-y-2">
+      <li><strong>No es ChatGPT en tu ordenador.</strong> Los modelos que caben en un portátil son más pequeños que los que usan los servicios en la nube, y lo notarás en tareas complejas.</li>
+      <li><strong>La privacidad depende de qué uses.</strong> Lo local se queda en tu equipo; la nube de Bionic y la búsqueda web no son locales, aunque LM Studio diga que no guarda los datos. La propia empresa avisa de que la búsqueda web tiene sus propios riesgos y de que el contenido de internet debe tratarse como no fiable.</li>
+      <li><strong>Cada modelo tiene su licencia.</strong> LM Studio es la aplicación; el modelo que descargas tiene sus propias condiciones, que se pueden consultar en su página de Hugging Face.</li>
+      <li><strong>Ocupa espacio.</strong> Cada modelo es un archivo grande. Puedes cambiar la carpeta donde se guardan desde "My Models".</li>
+    </ul>
+    <p>Si tu objetivo es solo no enviar datos personales a ChatGPT, otra opción es anonimizarlos antes de mandarlos: lo explicamos en <a href="/blog/2026-07-25-ia-local-oculta-datos/" class="text-brand-400 hover:text-brand-300">cómo ocultar datos personales con Presidio</a>.</p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Consultadas el 7 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://lmstudio.ai/docs/app" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Documentación de LM Studio</a>: qué permite hacer, MCP, API y llmster.</li>
+      <li><a href="https://lmstudio.ai/docs/app/system-requirements" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: System Requirements</a>: requisitos de Mac, Windows y Linux.</li>
+      <li><a href="https://lmstudio.ai/docs/app/offline" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: Offline Operation</a>: qué funciona sin conexión.</li>
+      <li><a href="https://lmstudio.ai/docs/app/basics/download-model" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: Download an LLM</a>: búsqueda de modelos y cuantización.</li>
+      <li><a href="https://lmstudio.ai/docs/app/basics/rag" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: Chat with Documents</a>: formatos admitidos y RAG.</li>
+      <li><a href="https://lmstudio.ai/docs/app/user-interface/languages" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio in your language</a>: interfaz en español.</li>
+      <li><a href="https://lmstudio.ai/docs/bionic" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Welcome to LM Studio Bionic</a>: diferencias entre Bionic y LM Studio.</li>
+      <li><a href="https://lmstudio.ai/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: Pricing</a>: planes Free, Bionic+ y Pro.</li>
+      <li><a href="https://lmstudio.ai/download" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: descargas</a>: versión 0.4.25 y las dos aplicaciones.</li>
+      <li><a href="https://lmstudio.ai/app-terms" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio App Terms of Service</a>: licencia de uso personal e interno.</li>
+      <li><a href="https://ollama.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama: Pricing</a> y <a href="https://ollama.com/download" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama: Download</a>: planes, instalación y aviso sobre modelos grandes.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <ul class="space-y-2">
+      <li><a href="/blog/alternativas-fable-5/" class="text-brand-400 hover:text-brand-300">Alternativas a Claude Fable 5: modelos abiertos y locales</a>, para elegir qué modelo descargar.</li>
+      <li><a href="/herramientas/ollama/" class="text-brand-400 hover:text-brand-300">Ficha de Ollama</a>, la alternativa más usada a LM Studio.</li>
+      <li><a href="/blog/deepseek-app-oficial-espanol/" class="text-brand-400 hover:text-brand-300">DeepSeek, Qwen y Kimi en español</a>, si prefieres usar estos modelos en la nube.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-lm-studio-que-es-como-usar" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-lm-studio-que-es-como-usar" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "dateModified": modifiedDate,
+    "mainEntityOfPage": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/system-requirements" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/offline" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/basics/download-model" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/basics/rag" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/user-interface/languages" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/bionic" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/pricing" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/download" },
+      { "@type": "WebPage", "url": "https://lmstudio.ai/app-terms" },
+      { "@type": "WebPage", "url": "https://ollama.com/pricing" },
+      { "@type": "WebPage", "url": "https://ollama.com/download" }
+    ]
+  })} />
+</BaseLayout>

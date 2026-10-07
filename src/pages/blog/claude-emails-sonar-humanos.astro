@@ -2,11 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-const title = "Cómo configurar Claude para escribir emails sin que suene a robot";
-const description = "Tutorial paso a paso para usar Claude (o cualquier LLM) y escribir emails profesionales que suenan humanos, no generados por IA. Con prompts reales.";
+const title = "Claude para escribir emails que no suenen a robot";
+const description = "Cómo darle a Claude tu tono, tu relación con el destinatario y un correo de ejemplo para que escriba emails claros y naturales. Con plantillas copiables.";
 const pubDate = "2026-06-19";
+const modifiedDate = "2026-10-07";
 const readingTime = "8 min";
 const tags = ["emails con ia", "claude prompts", "productividad email"];
+const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
 
@@ -16,13 +18,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/claude-emails-sonar-humanos.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
       <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime="2026-06-19">19 junio 2026</time>
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>Actualizado el 7 de octubre de 2026</span>
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -30,7 +35,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         {title}
       </h1>
       <p class="mt-4 text-lg text-dark-200">
-        Te voy a enseñar el setup exacto que uso yo para que Claude me escriba emails que mi destinatario no detecta como IA. Con prompts reales, no genéricos.
+        {description}
       </p>
     </header>
 
@@ -42,16 +47,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
-    <div class="rounded-2xl border border-accent-orange/20 bg-accent-orange/5 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
-      <p class="text-dark-200 text-sm">
-        Los emails suenan a robot cuando pides a Claude "escribe un email profesional". El truco está en darle <strong>contexto humano</strong>: tu voz, tu relación con el destinatario, y un ejemplo de un email anterior tuyo que le gustó. Toma 10 minutos configurarlo una vez. Funciona siempre.
-      </p>
-    </div>
+    <p>
+      En resumen: los emails suenan a robot cuando le pides a Claude "escribe un email profesional" sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo mismo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo detrás de cada instrucción y ejemplos.
+    </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Claude para emails</h2>
     <p>
-      No todos los correos necesitan IA. Para mí tiene sentido usar Claude cuando el email cumple una de estas cuatro condiciones:
+      No todos los correos necesitan IA. Tiene sentido usar Claude en estos casos, y no en el último:
     </p>
 
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -86,10 +88,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
       Me dirijo a usted para solicitar formalmente una revisión de mi compensación económica. Considero que mi desempeño durante el último año ha sido excepcional..."
     </blockquote>
     <p>
-      ¿Te suena? Es el email perfecto según un manual de negocios de 1995. Pero ningún humano de 2026 escribe así. Y tu jefe lo detecta a la primera.
+      ¿Te suena? Es correcto, pero podría haberlo escrito cualquiera para cualquier jefe. Y casi nadie escribe así a alguien con quien trabaja a diario.
     </p>
     <p>
-      Claude no es malo escribiendo. El problema es que <strong>sin contexto, improvisa el tono "profesional genérico"</strong>. Tienes que darle el tuyo.
+      El problema no es Claude: <strong>sin contexto, rellena con un tono "profesional genérico"</strong>. La guía de Anthropic lo explica con una comparación útil: trata a Claude como a una persona brillante recién llegada que no conoce tus costumbres; cuanto más preciso seas, mejor será el resultado.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El método en 4 pasos</h2>
@@ -97,7 +99,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 1: Crea un "system prompt" con tu voz</h3>
     <p>
-      Esto es lo que Claude lee antes de cada conversación. Es tu "personalidad por defecto". Pega esto en "Custom Instructions" o como primer mensaje del chat:
+      Son instrucciones fijas que Claude tiene en cuenta sin que las repitas. En Claude.ai tienes dos sitios para guardarlas:</p>
+    <ul class="space-y-2">
+      <li><strong>Settings &gt; Instructions for Claude:</strong> se aplican a todas tus conversaciones. Sirve si casi todo lo que escribes con Claude son correos.</li>
+      <li><strong>Las instrucciones de un Proyecto:</strong> solo afectan a los chats de ese proyecto. Es la opción más limpia: creas un proyecto "Emails" y no mezclas este tono con otras tareas. Los Proyectos están también en el plan gratuito, con un máximo de cinco.</li>
+    </ul>
+    <p>
+      Si no quieres configurar nada, pega el texto como primer mensaje del chat. Un ejemplo para adaptar:
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
       <pre class="whitespace-pre-wrap">Mi estilo de email:
@@ -127,7 +135,7 @@ Contexto: Acabo de cerrar un proyecto grande que lideré. Quiero pedir aumento d
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Pega un email anterior que te gustó</h3>
     <p>
-      Este es el truco clave. Claude necesita <strong>ver</strong> cómo escribes, no que le digas cómo escribes. Pega un email real tuyo (de cuando estabas contento con el resultado) y dile "usa este tono, estructura y longitud, pero adapta al contexto nuevo".
+      Es el paso que más cambia el resultado. Anthropic describe los ejemplos como "una de las formas más fiables" de orientar el formato, el tono y la estructura de lo que escribe Claude. Pega un correo tuyo con el que quedaste contento y dile "usa este tono, esta estructura y esta longitud, pero adáptalo al contexto nuevo". Antes de pegarlo, quita los datos personales de terceros que no hagan falta.
     </p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 4: El prompt completo</h3>
@@ -147,9 +155,9 @@ Mi borrador de puntos clave: [lista de 3-5 ideas desordenadas, sin forma]
 Reglas: no suenes a plantilla, no uses frases hechas, no te disculpes más de una vez. Si rechazas algo, sé firme y ofrece alternativa concreta.</pre>
     </div>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo real: pedir un aumento</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo: pedir un aumento</h2>
     <p>
-      Aplicando el método, el prompt fue:
+      Aplicando el método, el prompt quedaría así:
     </p>
     <div class="rounded-lg border border-dark-600 bg-dark-900 p-4 my-4 text-sm font-mono text-green-400">
       <pre class="whitespace-pre-wrap">Destinatario: María, mi jefa desde hace 3 años.
@@ -158,16 +166,16 @@ Objetivo: pedir aumento del 8% por el proyecto Atlas que acabo de liderar.
 Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente renovó por 2 años más, última subida hace 18 meses.</pre>
     </div>
     <p>
-      La respuesta de Claude (resumida):
+      El tipo de respuesta que buscas es algo así (redactado como ejemplo, no copiado de una conversación):
     </p>
     <blockquote class="border-l-4 border-dark-600 pl-4 italic text-dark-200 my-4">
       Hola María,<br/><br/>
       Te escribo para hablar del proyecto Atlas. Lo cerramos en plazo, renovó el cliente por 2 años, y lideré un equipo de 4 que nunca había trabajado junto. Hace 18 meses desde la última revisión salarial.<br/><br/>
       Me gustaría proponer una subida del 8%. ¿Tienes 20 min esta semana para sentarnos?<br/><br/>
-      Jordi
+      [Tu nombre]
     </blockquote>
     <p>
-      Corto, directo, con la información clave, y termina con acción concreta. No suena a robot porque <strong>no le pedí que sonara profesional, le di datos y contexto</strong>.
+      Corto, directo, con la información clave, y termina con una acción concreta. Si el borrador que te dé Claude no se parece, revisa qué dato le falta antes de pedirle otra versión: la clave es <strong>darle datos y contexto, no pedirle que suene profesional</strong>.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes y después: de email robótico a email humano</h2>
@@ -262,7 +270,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona con GPT en vez de Claude?</h3>
     <p>
-      Sí, pero Claude es mejor con texto. GPT es mejor con código y razonamiento técnico. Para emails, Claude gana.
+      Sí. Dar contexto, objetivo y un ejemplo funciona con cualquier asistente; lo que cambia es dónde guardas las instrucciones fijas. Si dudas cuál usar, prueba el mismo prompt en dos y quédate con el borrador que menos tengas que corregir.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Debo leer el email antes de enviarlo?</h3>
@@ -272,25 +280,24 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuánto tarda esto vs. escribirlo yo?</h3>
     <p>
-      Setup inicial: 10 minutos (una sola vez). Por email: 1-2 minutos para tener un borrador decente vs. 10-15 escribiendo desde cero. ROI brutal si escribes más de 3 emails profesionales al día.
+      Depende de tus correos. La forma de saberlo es medirlo: cronometra tres correos escritos a mano y tres con este método (contando la revisión). Configurar las instrucciones fijas solo se hace una vez; lo que tienes que repetir es el contexto de cada correo.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y referencias</h2>
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>
-      Para este flujo he usado como base la documentación oficial de Anthropic sobre Claude, sus guías de prompting y sus recomendaciones de uso responsable:
+      Consultadas el 7 de octubre de 2026.
     </p>
-    <ul>
-      <li><a href="https://docs.anthropic.com/en/docs/intro-to-claude" class="text-brand-400 hover:text-brand-300">Documentación oficial de Claude</a></li>
-      <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" class="text-brand-400 hover:text-brand-300">Guía de prompting de Anthropic</a></li>
-      <li><a href="https://www.anthropic.com/claude" class="text-brand-400 hover:text-brand-300">Página oficial de Claude</a></li>
+    <ul class="space-y-2">
+      <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: instrucciones claras, contexto y uso de ejemplos.</li>
+      <li><a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Understanding Claude's personalization features (centro de ayuda)</a>: instrucciones de cuenta, de Proyecto y Skills.</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo esencial</h2>
     <p>
-      La IA no te va a escribir emails "perfectos" con un prompt vago. Te va a escribir emails <strong>tan buenos como el contexto que le des</strong>. El método que te he enseñado toma 10 minutos configurarlo una vez, y te ahorra 30-60 minutos al día si escribes emails profesionales con regularidad.
+      Con un prompt vago, Claude escribe correos genéricos. Con tu tono, la relación con el destinatario, el objetivo y un ejemplo, escribe borradores <strong>tan buenos como el contexto que le des</strong>. Revísalos siempre antes de enviarlos.
     </p>
     <p>
-      Si quieres el PDF con 50 prompts listos para copiar-pegar (incluye este prompt completo + 49 más), lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si quieres más prompts listos para copiar y pegar, tienes un PDF gratuito en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">recursos</a>.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
@@ -311,9 +318,9 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
     <section class="not-prose mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <h2 class="font-display text-2xl font-bold text-white">Antes de elegir IA para escribir</h2>
       <ul class="mt-4 space-y-3 text-sm leading-6">
-        <li><a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">Ficha práctica de Claude</a>, para revisar cuando usarlo para texto largo y documentos.</li>
-        <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas que herramienta abrir para escribir.</li>
-        <li><a href="/herramientas/para-crear-contenido/" class="text-brand-400 hover:text-brand-300">Herramientas IA para crear contenido</a>, si quieres separar escritura, diseno y revisión.</li>
+        <li><a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">Ficha práctica de Claude</a>, para revisar cuándo usarlo para texto largo y documentos.</li>
+        <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas qué herramienta abrir para escribir.</li>
+        <li><a href="/herramientas/para-crear-contenido/" class="text-brand-400 hover:text-brand-300">Herramientas IA para crear contenido</a>, si quieres separar escritura, diseño y revisión.</li>
       </ul>
     </section>
 
@@ -325,7 +332,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
 
     <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
       <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 vídeo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
       <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
         <label for="blog-email-2" class="sr-only">Email</label>
         
@@ -342,36 +349,23 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Cómo configurar Claude para escribir emails sin que suene a robot",
-    "description": "Tutorial paso a paso para usar Claude (o cualquier LLM) y escribir emails profesionales que suenan humanos, no generados por IA. Con prompts reales.",
-    "datePublished": "2026-06-19",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "dateModified": modifiedDate,
     "mainEntityOfPage": "https://decodifica.net/blog/claude-emails-sonar-humanos/",
     "author": {
-        "@type": "Person",
-        "name": "Jordi Castañeira"
+      "@type": "Person",
+      "name": "Jordi Castañeira"
     },
     "publisher": {
-        "@type": "Organization",
-        "name": "Decodifica"
+      "@type": "Organization",
+      "name": "Decodifica"
     },
-    "about": [
-        "emails con ia",
-        "claude prompts",
-        "productividad email"
-    ],
+    "about": tags,
     "citation": [
-        {
-            "@type": "WebPage",
-            "url": "https://docs.anthropic.com/en/docs/intro-to-claude"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.anthropic.com/claude"
-        }
+      { "@type": "WebPage", "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" }
     ]
-})} />
+  })} />
 </BaseLayout>
