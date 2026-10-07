@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 6 de octubre de 2026.
+Última actualización: 7 de octubre de 2026.
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -97,4 +97,9 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
 - Rutina en la nube cada lunes (hora de España), después del informe de Search Console de las 9:00. Sigue `docs/AGENTE-SEMANAL.md`.
 - Modo actual: **propone y Jordi aprueba** (pull request). Pasar a «Publicar sola: SÍ» cuando Jordi lo diga.
 - Decisión de Jordi (07-10-2026): los arreglos pendientes de la web publicada los hace el agente, **uno por semana**.
-- Cola de arreglos para el agente (el preflight los marca): `claude-emails-sonar-humanos` («brutal»), `crear-agente-voz-ia-sin-programar` («he probado», «increíble»), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»). Después: ficha `/herramientas/notebooklm/` y comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre nuevo «Gemini Notebook» y límites), y la revisión de fuentes de los artículos antiguos no reescritos.
+- Cola de arreglos para el agente (el preflight los marca): ~~`claude-emails-sonar-humanos`~~ (hecho el 07-10-2026), `crear-agente-voz-ia-sin-programar` («he probado», «increíble»), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»). Después: ficha `/herramientas/notebooklm/` y comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre nuevo «Gemini Notebook» y límites), y la revisión de fuentes de los artículos antiguos no reescritos.
+
+### Ejecuciones
+
+- **07-10-2026 (prueba, miércoles):** rama `agente/2026-10-07`, pull request pendiente de aprobación de Jordi. Artículos nuevos: `lm-studio-que-es-como-usar` y `n8n-que-es-gratis`. Arreglado `claude-emails-sonar-humanos`. Títulos nuevos en `/herramientas/notebooklm-vs-perplexity/` y `/herramientas/gamma-vs-canva-ai/`. Informe: `docs/informes/2026-10-07.md`; redes: `docs/redes/2026-10-07.md`.
+  - Pendiente: precio mensual (no anual) de n8n sin confirmar; revisar dentro de unas semanas si «Emergent IA» y «DeepSeek, Qwen y Kimi» empiezan a recibir clics; idea para más adelante: mejorar el artículo de Nano Banana para «prompts para Gemini fotos» (mucha demanda en Latinoamérica).
