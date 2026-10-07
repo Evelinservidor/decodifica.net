@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "n8n: qué es, si es gratis y cómo empezar";
+const description = "Qué es n8n y para qué sirve, cuándo es gratis (edición Community) y cuándo se paga (n8n Cloud), qué permite su licencia y cómo crear tu primer flujo.";
+const pubDate = "2026-10-07";
+const modifiedDate = "2026-10-07";
+const readingTime = "8 min";
+const tags = ["n8n", "automatización", "agentes de ia", "workflows", "n8n gratis"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og-default.png"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <p>En resumen: n8n es una herramienta para automatizar tareas conectando aplicaciones entre sí (correo, hojas de cálculo, CRM, modelos de IA) mediante flujos que se dibujan como cajas unidas por flechas. Es gratis si lo instalas tú en tu ordenador o servidor (edición Community); si prefieres que lo aloje n8n, hay una prueba gratuita de 14 días y después los planes empiezan en 20 euros al mes pagando el año.</p>
+    <p>Los datos de esta guía salen de la página de precios, la documentación y la licencia oficiales de n8n, consultadas el 7 de octubre de 2026.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es n8n y para qué sirve</h2>
+    <p>Un flujo de n8n (<em>workflow</em>) es una cadena de pasos llamados <strong>nodos</strong>. El primero es el <strong>disparador</strong>: lo que pone el flujo en marcha, ya sea a mano, a una hora fija o cuando llega un aviso de otra aplicación. Los siguientes nodos leen datos, los transforman, toman decisiones (si pasa esto, haz aquello) y envían el resultado a otro sitio.</p>
+    <p>Ejemplos del tipo de tarea que encaja:</p>
+    <ul class="space-y-2">
+      <li>Cada lunes a las 9:00, leer las filas nuevas de una hoja de cálculo y mandar un resumen por correo.</li>
+      <li>Cuando alguien rellena un formulario, guardar sus datos en el CRM y avisar por Slack.</li>
+      <li>Pasar el texto de un correo por un modelo de IA para clasificarlo y moverlo a la carpeta que toca.</li>
+    </ul>
+    <p>La parte de IA ha ganado peso: los planes incluyen un nodo de agente de IA (<em>AI Agent</em>), pasos con IA y conexión con servidores MCP, de forma que un modelo puede decidir qué herramientas usar dentro del flujo. n8n anuncia además más de 10.000 plantillas de flujos ya hechos que se pueden importar y adaptar.</p>
+    <p>Cuándo no merece la pena: si la tarea es una sola acción entre dos aplicaciones que ya se conectan entre sí, o si la haces una vez al mes, configurar un flujo te llevará más tiempo del que ahorras.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿n8n es gratis?</h2>
+    <p>Depende de dónde se ejecute. n8n ofrece dos formas de usarlo:</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Instalado por ti (self-hosted): gratis</h3>
+    <p>La <strong>edición Community</strong> es gratuita sin límite de tiempo e incluye, según la documentación, "casi el conjunto completo de funciones". Lo que no trae son funciones de equipo y de empresa: proyectos, compartir flujos y credenciales con otras personas, inicio de sesión único (SSO), entornos separados de pruebas y producción, control de versiones con Git, almacenes externos de secretos y envío de registros a otros sistemas.</p>
+    <p>Si registras tu instalación con tu correo, recibes gratis una clave que desbloquea tres extras: carpetas para ordenar los flujos, depuración en el editor y datos de ejecución personalizados.</p>
+    <p>Lo que no es gratis es tu tiempo: n8n avisa de que instalarlo por tu cuenta exige saber configurar servidores y contenedores, mantenerlos y protegerlos, y lo recomienda solo para personas con experiencia. Un error puede suponer perder datos o dejar el servicio expuesto.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Alojado por n8n (n8n Cloud): de pago, con prueba gratuita</h3>
+    <p>La prueba gratuita dura 14 días, no pide tarjeta e incluye funciones del plan Pro, con estos límites: 1.000 ejecuciones, 5 ejecuciones a la vez, un máximo de 180 segundos por ejecución y un proyecto de equipo. Después, estos son los planes (precios consultados en octubre de 2026, pagando el año; el pago anual ahorra un 17 % frente al mensual):</p>
+    <div class="not-prose my-8 overflow-x-auto">
+      <table class="w-full text-left text-sm text-dark-200">
+        <thead>
+          <tr class="border-b border-dark-600 text-white">
+            <th class="py-3 pr-4">Plan</th>
+            <th class="py-3 pr-4">Precio</th>
+            <th class="py-3 pr-4">Ejecuciones al mes</th>
+            <th class="py-3 pr-4">Dónde</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Starter</td>
+            <td class="py-3 pr-4">20 €/mes</td>
+            <td class="py-3 pr-4">2.500</td>
+            <td class="py-3 pr-4">Nube de n8n</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Pro</td>
+            <td class="py-3 pr-4">50 €/mes</td>
+            <td class="py-3 pr-4">10.000</td>
+            <td class="py-3 pr-4">Nube de n8n</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Business</td>
+            <td class="py-3 pr-4">667 €/mes</td>
+            <td class="py-3 pr-4">40.000</td>
+            <td class="py-3 pr-4">Solo instalado por ti</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 font-semibold text-white">Enterprise</td>
+            <td class="py-3 pr-4">A consultar</td>
+            <td class="py-3 pr-4">A medida</td>
+            <td class="py-3 pr-4">Nube o instalado por ti</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Todos los planes incluyen usuarios y flujos ilimitados y todas las integraciones. Lo que se paga son las <strong>ejecuciones</strong>: cada vez que un flujo se ejecuta de principio a fin cuenta como una, tenga dos pasos o cincuenta. Otro límite a tener en cuenta en Starter: cada ejecución puede durar como máximo 5 minutos (40 en Pro).</p>
+    <p>Para calcular qué plan necesitas, multiplica cuántas veces se ejecutará cada flujo al mes. Un flujo que se dispara cada 15 minutos son unas 2.900 ejecuciones al mes: ya no cabe en Starter.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué permite la licencia de n8n</h2>
+    <p>El código de n8n es público, pero no tiene una licencia de código abierto clásica. La mayor parte se publica con la <strong>Sustainable Use License</strong>, que permite usarlo y modificarlo "solo para tus propios fines empresariales internos" o para uso personal o sin ánimo de lucro, y distribuirlo solo gratis y sin fines comerciales. Los archivos marcados como <code>.ee</code> requieren una licencia Enterprise.</p>
+    <p>En la práctica:</p>
+    <ul class="space-y-2">
+      <li><strong>Sí:</strong> automatizar tareas de tu propia empresa o de tu vida personal con la edición Community.</li>
+      <li><strong>Con dudas:</strong> montar flujos para clientes. Si vas a cobrar por ofrecer n8n a otros, lee la licencia completa antes de empezar o consulta con n8n.</li>
+      <li><strong>No:</strong> vender n8n como servicio propio a terceros.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo empezar sin complicarte</h2>
+    <p>La documentación de n8n recomienda empezar en la nube a quien no tiene experiencia técnica, porque no hay nada que instalar. La prueba de 14 días basta para saber si te sirve.</p>
+    <ol class="space-y-2">
+      <li><strong>Crea una cuenta de prueba</strong> en <a href="https://n8n.io/pricing/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n.io</a>. No pide tarjeta.</li>
+      <li><strong>Crea un flujo nuevo</strong> desde cero ("Start from Scratch" o "Create Workflow").</li>
+      <li><strong>Añade un disparador.</strong> Para practicar, usa <strong>Schedule Trigger</strong> y elige, por ejemplo, cada semana el lunes a las 9:00.</li>
+      <li><strong>Añade el siguiente paso</strong> pulsando el conector del nodo y buscando la aplicación que quieres usar.</li>
+      <li><strong>Configura las credenciales.</strong> Son las claves que permiten a n8n entrar en tus cuentas. No las compartas fuera de n8n.</li>
+      <li><strong>Ejecuta el flujo a mano</strong> ("Execute Workflow") y revisa qué datos salen de cada nodo antes de dejarlo activo.</li>
+    </ol>
+    <p>El tutorial oficial ("Build your first workflow") sigue estos mismos pasos con un ejemplo que consulta datos públicos de la NASA y separa los resultados con una condición. Es una buena forma de entender cómo pasan los datos de un nodo a otro sin tocar tus cuentas reales.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Si prefieres instalarlo tú</h3>
+    <p>La forma más corta que propone n8n es ejecutar en la terminal <code>curl -fsSL https://get.n8n.io | sh</code>. Necesita Docker en Linux o macOS (en Windows, a través de WSL). Cuando termina, n8n queda disponible en tu navegador en <code>http://localhost:5678</code>. Para algo que vaya a funcionar de forma continua, n8n recomienda Docker Compose; la instalación con npm queda obsoleta a partir de n8n 3.0.</p>
+    <p>Ten en cuenta que en tu ordenador n8n solo funciona mientras el equipo está encendido. Para flujos que deben ejecutarse a cualquier hora necesitarás un servidor, y su mantenimiento corre de tu cuenta.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes de automatizar algo importante</h2>
+    <ul class="space-y-2">
+      <li><strong>Empieza por una tarea que ya haces a mano</strong> y sabes describir paso a paso. Si no puedes explicarla, no podrás automatizarla.</li>
+      <li><strong>Prueba con datos de mentira</strong> o con una copia antes de conectar tu correo o tu CRM reales.</li>
+      <li><strong>Revisa lo que hace la IA dentro del flujo.</strong> Un nodo de IA puede equivocarse al clasificar o resumir. Para lo que tenga consecuencias (enviar un correo a un cliente, borrar datos), añade un paso de aprobación humana. La página de precios de n8n incluye una función de aprobación humana para las herramientas que usan los agentes (<em>Human approval for tool calls</em>).</li>
+      <li><strong>Vigila las ejecuciones</strong> si estás en la nube: un flujo que se dispara con demasiada frecuencia gasta el cupo del mes.</li>
+    </ul>
+    <p>Si quieres ver un ejemplo de flujo con IA que deja tareas revisables, mira <a href="/blog/ia-resumir-reuniones-tareas-revisables/" class="text-brand-400 hover:text-brand-300">cómo convertir una reunión en tareas revisables con IA</a> y el <a href="/workflows/reunion-a-decisiones-y-tareas/" class="text-brand-400 hover:text-brand-300">flujo de reunión a decisiones y tareas</a>.</p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Consultadas el 7 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://n8n.io/pricing/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n: Plans and Pricing</a>: precios, ejecuciones, límites de la prueba gratuita y funciones por plan.</li>
+      <li><a href="https://docs.n8n.io/choose-n8n/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Choose how to use n8n</a>: nube frente a instalación propia y duración de la prueba.</li>
+      <li><a href="https://docs.n8n.io/hosting/community-edition-features/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Compare editions</a>: qué incluye la edición Community y la registrada.</li>
+      <li><a href="https://docs.n8n.io/hosting/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Host n8n</a>: instalación en una línea, Docker Compose y aviso sobre npm.</li>
+      <li><a href="https://docs.n8n.io/hosting/installation/docker/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Docker installation</a>: conocimientos necesarios para instalarlo por tu cuenta y puerto 5678.</li>
+      <li><a href="https://docs.n8n.io/try-it-out/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Build your first workflow</a>: pasos del primer flujo y credenciales.</li>
+      <li><a href="https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Licencia de n8n (LICENSE.md)</a>: texto de la Sustainable Use License.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <ul class="space-y-2">
+      <li><a href="/blog/crear-agente-voz-ia-sin-programar/" class="text-brand-400 hover:text-brand-300">Cómo crear un agente de voz con IA sin programar</a>, otro caso de automatización con IA.</li>
+      <li><a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: IA local en tu ordenador</a>, si quieres usar modelos que no salgan de tu equipo.</li>
+      <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-400 hover:text-brand-300">Cómo elegir una herramienta de IA sin perder tiempo</a>.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-n8n-que-es-gratis" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-n8n-que-es-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "dateModified": modifiedDate,
+    "mainEntityOfPage": "https://decodifica.net/blog/n8n-que-es-gratis/",
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      { "@type": "WebPage", "url": "https://n8n.io/pricing/" },
+      { "@type": "WebPage", "url": "https://docs.n8n.io/choose-n8n/" },
+      { "@type": "WebPage", "url": "https://docs.n8n.io/hosting/community-edition-features/" },
+      { "@type": "WebPage", "url": "https://docs.n8n.io/hosting/" },
+      { "@type": "WebPage", "url": "https://docs.n8n.io/hosting/installation/docker/" },
+      { "@type": "WebPage", "url": "https://docs.n8n.io/try-it-out/" },
+      { "@type": "WebPage", "url": "https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md" }
+    ]
+  })} />
+</BaseLayout>
