@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConversionBand from '../../components/ConversionBand.astro';
+
+const title = "Claude IA: qué es, si es gratis y cuánto cuesta";
+const description = "Qué es Claude, la IA de Anthropic: cómo usarlo en español, qué incluye el plan gratuito, cuánto cuestan Pro y Max y qué hace con tus conversaciones.";
+const pubDate = "2026-10-12";
+const modifiedDate = "2026-10-12";
+const readingTime = "7 min";
+const tags = ["claude ia", "claude gratis", "claude en español", "anthropic", "claude precios"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og-default.png"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+>
+  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <header class="mb-12">
+      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
+        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span>·</span>
+        <span>~ {readingTime} lectura</span>
+      </div>
+      <h1 class="font-display text-4xl font-bold sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-dark-200">
+        {description}
+      </p>
+    </header>
+
+    <p>En resumen: Claude es el asistente de IA de la empresa Anthropic. Se usa gratis desde el navegador, el ordenador o el móvil, con la interfaz en español. El plan gratuito tiene un límite de uso que se renueva cada cinco horas; el plan Pro cuesta 20 dólares al mes (17 al mes pagando el año) y añade más uso, los modelos más potentes y herramientas como Claude Code.</p>
+    <p>Los datos de esta guía salen de la página de precios de Claude, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 12 de octubre de 2026. Los planes cambian a menudo: si algo no coincide con lo que ves, manda lo que diga la página oficial.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Claude y de qué empresa es</h2>
+    <p>Claude es un modelo de lenguaje creado por <strong>Anthropic</strong>, una empresa que se define como "de investigación y seguridad en IA". Como ChatGPT o Gemini, conversa contigo: responde preguntas, resume y escribe textos, analiza documentos, programa y crea archivos.</p>
+    <p>Dónde se usa, según el centro de ayuda:</p>
+    <ul class="space-y-2">
+      <li><strong>Navegador:</strong> en <a href="https://claude.ai" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">claude.ai</a>.</li>
+      <li><strong>Ordenador:</strong> aplicación para Mac y Windows (también Windows ARM).</li>
+      <li><strong>Móvil:</strong> aplicaciones para iOS y Android.</li>
+    </ul>
+    <p>Hay que tener al menos 18 años y estar en un país donde Claude esté disponible. España, México, Argentina, Colombia, Perú y Chile están en la lista oficial de países.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Claude en español</h2>
+    <p>Puedes escribirle en español desde el primer mensaje: el centro de ayuda indica que Claude responde en el idioma que uses. Para poner también los menús en español:</p>
+    <ol class="space-y-2">
+      <li>En la web o en la aplicación de escritorio, pulsa el icono de tu perfil (abajo a la izquierda).</li>
+      <li>Entra en la sección <strong>Language</strong>.</li>
+      <li>Elige <strong>Español (España)</strong> o <strong>Español (Latinoamérica)</strong>: son dos opciones distintas.</li>
+    </ol>
+    <p>El modo de voz tiene su propio ajuste de idioma, aparte: <strong>Settings &gt; General &gt; Voice &gt; Language</strong>.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿Claude es gratis?</h2>
+    <p>Sí. El plan Free cuesta 0 dólares y basta con registrarse con un correo. Según la página de precios (consultada en octubre de 2026), incluye:</p>
+    <ul class="space-y-2">
+      <li>Chat en web, ordenador y móvil, con búsqueda en internet y modo de voz.</li>
+      <li>Crear archivos y ejecutar código, Artifacts y las herramientas Claude Design, Slides y Docs.</li>
+      <li>Memoria entre conversaciones, conectores con otras aplicaciones y Skills.</li>
+      <li>Hasta 5 Proyectos (carpetas con instrucciones y documentos propios).</li>
+      <li>Los modelos Sonnet y Haiku. Los modelos Opus y Fable no están en el plan gratuito.</li>
+    </ul>
+    <p><strong>El límite:</strong> el plan gratuito tiene un límite de uso por sesión que se renueva cada cinco horas, y la cantidad de mensajes depende de la demanda en cada momento. Claude te avisa cuando lo alcanzas. No hay un número fijo de mensajes: gasta más un mensaje largo, un archivo grande, una conversación muy larga o una tarea con búsquedas y código.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuánto cuesta Claude: planes de pago</h2>
+    <p>Precios en dólares estadounidenses, consultados en octubre de 2026. Anthropic indica que en muchos países se cobra en moneda local, que el precio puede variar por región y que unos países incluyen los impuestos en el precio mostrado y otros los suman al pagar. El precio exacto para tu país aparece en <code>claude.ai/upgrade</code> o en la tienda de aplicaciones del móvil.</p>
+    <div class="not-prose my-8 overflow-x-auto">
+      <table class="w-full text-left text-sm text-dark-200">
+        <thead>
+          <tr class="border-b border-dark-600 text-white">
+            <th class="py-3 pr-4">Plan</th>
+            <th class="py-3 pr-4">Precio</th>
+            <th class="py-3 pr-4">Qué añade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Free</td>
+            <td class="py-3 pr-4">0 $</td>
+            <td class="py-3 pr-4">Lo descrito arriba, con límite por sesión.</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Pro</td>
+            <td class="py-3 pr-4">20 $/mes, o 17 $/mes pagando el año (200 $ por adelantado)</td>
+            <td class="py-3 pr-4">Más uso, modelos Opus, Research, Claude Code, Claude en Chrome y en Microsoft 365, y más de 5 Proyectos.</td>
+          </tr>
+          <tr class="border-b border-dark-700">
+            <td class="py-3 pr-4 font-semibold text-white">Max</td>
+            <td class="py-3 pr-4">Desde 100 $/mes</td>
+            <td class="py-3 pr-4">5 o 20 veces el uso de Pro, prioridad en horas de mucha demanda y entre 100 y 200 $ al mes de crédito para la API.</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-4 font-semibold text-white">Team</td>
+            <td class="py-3 pr-4">20 $ por persona al mes pagando el año (25 $ mes a mes)</td>
+            <td class="py-3 pr-4">Para equipos de 2 a 150 personas: administración central, inicio de sesión único y Proyectos compartidos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Tres detalles que conviene saber antes de pagar:</p>
+    <ul class="space-y-2">
+      <li><strong>Pro también tiene límites:</strong> uno por sesión que se renueva cada cinco horas y otro semanal.</li>
+      <li><strong>La suscripción no incluye la API.</strong> Si quieres usar Claude desde tus propios programas, la API se paga aparte en la consola de desarrolladores.</li>
+      <li><strong>No hay descuentos permanentes:</strong> Anthropic dice que no ofrece rebajas a petición y que solo hace promociones puntuales anunciadas en sus canales oficiales.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Privacidad: qué hace Anthropic con tus conversaciones</h2>
+    <p>La política de privacidad de Anthropic dice que puede usar lo que escribes y lo que responde Claude para entrenar sus modelos, <strong>salvo que lo desactives en los ajustes de tu cuenta</strong>. Aunque lo desactives, hay dos excepciones: las conversaciones marcadas para revisión de seguridad y las que tú mismo envíes como comentario (por ejemplo, con el botón de valorar una respuesta).</p>
+    <p>En los planes Team y Enterprise es al revés: según la página de precios, no se entrena con tu contenido por defecto. Si vas a usar Claude con datos de clientes o de tu empresa, revisa este ajuste antes de empezar, y no pegues datos personales que no hagan falta.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo aprovechar el plan gratuito</h2>
+    <p>Estos consejos salen de la guía oficial para no agotar el límite tan rápido:</p>
+    <ul class="space-y-2">
+      <li><strong>Agrupa las preguntas relacionadas en un solo mensaje</strong> en vez de mandarlas una a una.</li>
+      <li><strong>Da el contexto desde el principio</strong> y sé concreto: cada aclaración es un mensaje más.</li>
+      <li><strong>Usa un Proyecto para documentos que consultas a menudo.</strong> El contenido de los Proyectos se guarda en caché y, al reutilizarlo, cuenta menos contra tu límite que si lo vuelves a subir.</li>
+      <li><strong>Abre una conversación nueva para cada tema.</strong> Cuanto más larga es la conversación, más gasta cada mensaje.</li>
+    </ul>
+    <p>Para que Claude escriba con tu tono sin repetirlo cada vez, mira cómo guardar instrucciones fijas en <a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que no suenen a robot</a>.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo elegir Claude y cuándo no</h2>
+    <p>Encaja bien si trabajas sobre todo con texto: documentos largos, correos, informes o instrucciones que reutilizas (para eso están las <a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Skills de Claude</a>). Si lo que más necesitas es generar imágenes, o ya pagas otro asistente que te sirve, compara antes de pagar: en <a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a> tienes las diferencias de uso y en <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">alternativas gratis a ChatGPT</a>, otras opciones sin coste.</p>
+    <p>La forma más fiable de decidir es probar tú mismo: haz la misma tarea real (resumir un documento tuyo, redactar un correo) en el plan gratuito de Claude y en tu asistente habitual, y quédate con el resultado que menos tengas que corregir.</p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Consultadas el 12 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Claude: Pricing</a>: planes, precios y funciones de cada uno.</li>
+      <li><a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Get started with Claude (centro de ayuda)</a>: qué es, dónde se usa, edad mínima, idiomas y límite del plan gratuito.</li>
+      <li><a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">What is the Pro plan? (centro de ayuda)</a>: precio, moneda local, límites y API aparte.</li>
+      <li><a href="https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">How to use Claude in your preferred language</a>: cómo poner la interfaz y la voz en español.</li>
+      <li><a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Where can I access Claude?</a>: países donde está disponible.</li>
+      <li><a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Usage limit best practices</a>: qué gasta más uso y cómo ahorrarlo.</li>
+      <li><a href="https://www.anthropic.com/legal/privacy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Anthropic</a>: uso de conversaciones para entrenar y cómo desactivarlo.</li>
+      <li><a href="https://www.anthropic.com/company" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anthropic: Company</a>: quién está detrás de Claude.</li>
+      <li><a href="https://claude.com/download" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Claude: Download</a>: aplicaciones de escritorio.</li>
+    </ul>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
+    <ul class="space-y-2">
+      <li><a href="/herramientas/claude/" class="text-brand-400 hover:text-brand-300">Ficha práctica de Claude</a>, para ver para qué tareas encaja mejor.</li>
+      <li><a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>, para que Claude haga siempre igual una tarea que repites.</li>
+      <li><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama: modelos de IA en local</a>, si prefieres que tus textos no salgan de tu ordenador.</li>
+    </ul>
+
+    <ConversionBand
+      eyebrow="Después de leer"
+      title="Lleva este análisis a tu flujo real"
+      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
+    />
+
+    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
+      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
+      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <label for="blog-email-claude-ia-que-es-gratis" class="sr-only">Email</label>
+        <input type="hidden" name="embed" value="1" />
+        <input id="blog-email-claude-ia-que-es-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
+          <span>Recibir gratis</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </aside>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate,
+    "dateModified": modifiedDate,
+    "mainEntityOfPage": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Castañeira"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Decodifica"
+    },
+    "about": tags,
+    "citation": [
+      { "@type": "WebPage", "url": "https://claude.com/pricing" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8461763-where-can-i-access-claude" },
+      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/9797557-usage-limit-best-practices" },
+      { "@type": "WebPage", "url": "https://www.anthropic.com/legal/privacy" },
+      { "@type": "WebPage", "url": "https://www.anthropic.com/company" },
+      { "@type": "WebPage", "url": "https://claude.com/download" }
+    ]
+  })} />
+</BaseLayout>
