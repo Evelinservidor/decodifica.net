@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
 const title = "5 IAs para organizar Gmail, Calendar y Notion en 2026";
@@ -11,6 +10,7 @@ const pubDate = "2026-06-26";
 const modifiedDate = pubDate;
 const tags = ["ia organiza pendientes", "ia para gestión de tareas", "conectores ia", "manus ai", "chatgpt apps", "claude mcp", "gemini workspace", "microsoft copilot"];
 const readingTime = "11 min";
+const tema = "oficina";
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -34,41 +34,21 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://decodifica.net/contacto/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        Organizar correos, reuniones y tareas suele obligar a copiar datos entre varias aplicaciones. Estas herramientas pueden proponer y, según los permisos concedidos, ejecutar parte del flujo. Esta guía explica qué revisar antes de conectarlas.
-      </p>
-    </header>
+  <Articulo slug="ia-organiza-pendientes">
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="convertir correos y reuniones en tareas sin conceder permisos innecesarios" />
 
-    <PortadaArticulo slug="ia-organiza-pendientes" />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>
-      <ul class="space-y-2 text-dark-200 text-sm">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
+      <ul>
         <li><strong>Manus</strong>: el agente IA más versátil. Conectores oficiales a Gmail, Calendar y Notion. Le pides algo como "revisa mis últimos doce correos, detecta reuniones, créalas en el calendario y deja el resumen en Notion" y lo hace. Ahora parte de Meta.</li>
         <li><strong>ChatGPT apps</strong>: si ya pagas ChatGPT Plus, integración nativa con Google Drive, SharePoint, GitHub y HubSpot. Vive donde tú ya trabajas.</li>
         <li><strong>Claude con MCP</strong>: el estándar abierto de Anthropic. Cualquier herramienta puede publicar un conector MCP. La opción más flexible técnicamente.</li>
         <li><strong>Gemini en Google Workspace</strong>: si vives en Gmail, Calendar, Drive y Docs, Gemini ya está ahí. Sin dar acceso a servicios externos.</li>
         <li><strong>Microsoft Copilot 365</strong>: si pagas Microsoft 365, Copilot vive en Outlook, Teams, Calendar y OneDrive. La opción natural para empresas con Microsoft.</li>
       </ul>
-    </div>
+    </section>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA elegir para organizar tu semana</h2>
     <p>
@@ -413,26 +393,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       — Jordi
     </p>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-ia-organiza" class="sr-only">Email</label>
-        
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-ia-organiza" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

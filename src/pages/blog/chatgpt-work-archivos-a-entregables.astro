@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "ChatGPT Work: cuándo usarlo en lugar del chat normal";
@@ -9,6 +8,7 @@ const description = "Cuándo conviene pasar del chat de ChatGPT al modo Work par
 const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-13";
 const readingTime = "4 min";
+const tema = "chatbots";
 const tags = ["ia", "herramientas ia", "ChatGPT Work: cuándo dejar el chat y pedir un entregable completo"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -30,28 +30,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://openai.com/index/gpt-5-6/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="chatgpt-work-archivos-a-entregables">
 
-    <PortadaArticulo slug="chatgpt-work-archivos-a-entregables" />
 
 
 
@@ -61,6 +41,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Work y cuándo seguir en Chat</h2>
     <p>Chat sirve para una respuesta rápida: entender un concepto, corregir un párrafo o explorar una idea. Work tiene más sentido cuando puedes nombrar un resultado concreto, aportar varios archivos y comprobar el entregable con una lista corta.</p>
     <p>Buenos casos iniciales son un informe de una página, una presentación breve o un dashboard construido a partir de datos que ya conoces. Evita empezar con pagos, envíos externos o cambios irreversibles.</p>
+
     <FiguraArticulo src="/img/blog/chatgpt-work-archivos-a-entregables/chat-o-work-cuando-usar-cada-uno.webp" alt="Comparativa entre el chat normal de ChatGPT, para respuestas rápidas, y ChatGPT Work, para un informe de una página, una presentación breve o un dashboard revisando antes el plan" width={1200} height={674} />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El plan es parte del control</h2>
     <p>Antes de transformar veinte archivos, revisa qué fuentes va a usar, qué pasos propone y qué formato va a entregar. Corregir el enfoque en ese punto cuesta menos que reconstruir una presentación completa con datos mal interpretados.</p>
@@ -72,6 +53,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Si puedes modificar una diapositiva sin romper el resto.</li>
     </ol>
     <p>Si falla alguna, reduce el alcance y vuelve a Chat. Si mantiene procedencia, números y formato editable, puedes ampliar el alcance poco a poco.</p>
+
     <FiguraArticulo src="/img/blog/chatgpt-work-archivos-a-entregables/tres-comprobaciones-entregable-chatgpt-work.webp" alt="Pasos de la prueba de tres comprobaciones de ChatGPT Work: archivo sin datos sensibles, que identifique los archivos usados, que tres cifras coincidan y que una diapositiva se edite sin romper el resto" width={1200} height={617} />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Plugins, contexto y permisos</h2>
     <p>Conectar más herramientas no mejora automáticamente el resultado. Usa solo las fuentes necesarias para el entregable y conserva los permisos del sistema de origen. Cuanto más amplio sea el acceso, más importante es revisar el plan y la salida.</p>
@@ -96,25 +78,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-chatgpt-work-archivos-a-entregables" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-chatgpt-work-archivos-a-entregables" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

@@ -1,0 +1,148 @@
+---
+// Plantilla común de los artículos del blog (diseño «Revista luminosa», docs/rediseno/).
+// Uso: <Articulo slug="mi-articulo"> …contenido… </Articulo> dentro de <BaseLayout>.
+// Pinta la cabecera (tema, título, entradilla, firma con fechas, portada) y transforma el contenido:
+//   - el primer párrafo que empieza por «En resumen:» → recuadro «Respuesta rápida»;
+//   - los <h2> reciben un id y forman el índice (solo si hay 5 o más);
+//   - antes de «Fuentes» se añade una línea para apuntarse al boletín.
+// Al final: recursos para seguir, autor y tres artículos relacionados con portada.
+import ConversionBand from './ConversionBand.astro';
+import PortadaArticulo from './PortadaArticulo.astro';
+import TarjetaArticulo from './TarjetaArticulo.astro';
+import { blogPostIndex } from '~/lib/blog-post-index';
+import { env } from '~/lib/env';
+import { siteConfig } from '~/lib/site-config';
+import { nombreTema, esTema } from '~/lib/temas';
+
+export interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const post = blogPostIndex.find((p) => p.slug === slug);
+if (!post) throw new Error(`Articulo: no encuentro «${slug}» en el índice del blog (¿faltan title, description o pubDate?)`);
+
+const fechaLarga = (iso: string) => new Date(iso).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const quitarEtiquetas = (html: string) => html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+const aId = (texto: string) =>
+  quitarEtiquetas(texto)
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/&[a-z]+;/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60) || 'seccion';
+
+let html = await Astro.slots.render('default');
+
+// 1. Respuesta rápida: el primer «En resumen:» antes del primer <h2>.
+const primerH2 = html.search(/<h2[\s>]/);
+const cabeza = primerH2 === -1 ? html : html.slice(0, primerH2);
+const resumen = cabeza.match(/<p[^>]*>\s*(?:<strong>\s*)?En resumen:?\s*(?:<\/strong>)?\s*:?\s*([\s\S]*?)<\/p>/);
+if (resumen && resumen.index !== undefined) {
+  const caja = `<section class="respuesta-rapida" aria-label="Respuesta rápida"><p class="respuesta-rapida-titulo">Respuesta rápida</p><p><strong>En resumen:</strong> ${resumen[1].trim()}</p></section>`;
+  html = html.slice(0, resumen.index) + caja + html.slice(resumen.index + resumen[0].length);
+}
+
+// Tablas que se deslizan: también con el teclado (accesibilidad).
+html = html.replace(/<div class="([^"]*overflow-x-auto[^"]*)"(?![^>]*tabindex)([^>]*)>(\s*<table)/g, '<div class="$1"$2 tabindex="0" role="region" aria-label="Tabla (se puede deslizar)">$3');
+
+html = html.replace(/<pre(?![^>]*tabindex)/g, '<pre tabindex="0"');
+
+// 2. Ids en los <h2> e índice.
+const usados = new Set<string>();
+const indice: { id: string; texto: string }[] = [];
+html = html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (_todo, attrs: string, contenido: string) => {
+  let id = attrs.match(/\sid="([^"]+)"/)?.[1];
+  if (!id) {
+    id = aId(contenido);
+    while (usados.has(id)) id += '-2';
+    attrs += ` id="${id}"`;
+  }
+  usados.add(id);
+  const texto = quitarEtiquetas(contenido);
+  if (!/^sigue leyendo$/i.test(texto)) indice.push({ id, texto });
+  return `<h2${attrs}>${contenido}</h2>`;
+});
+const conIndice = indice.length >= 5;
+
+// 3. Boletín: una línea antes de «Fuentes» (o al final si no hay fuentes).
+const boletin = `<div class="boletin-en-texto"><b>¿Te ha servido esta guía?</b><span>Cada sábado mandamos una guía como esta. Gratis, sin spam y con baja en un clic.</span><form action="https://buttondown.com/api/emails/embed-subscribe/${env.PUBLIC_BUTTONDOWN_USERNAME || 'decodifica'}" method="post" data-track="newsletter_submit" data-track-component="article_inline" data-track-label="${slug}"><label for="boletin-${slug}" class="sr-only">Tu email</label><input type="hidden" name="embed" value="1" /><input id="boletin-${slug}" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" /><button type="submit">Apuntarme</button></form></div>`;
+const fuentes = html.search(/<h2[^>]*id="fuentes"/);
+html = fuentes === -1 ? html + boletin : html.slice(0, fuentes) + boletin + html.slice(fuentes);
+
+const indiceHtml = (abierto: boolean, clase: string) =>
+  `<details class="indice ${clase}"${abierto ? ' open' : ''}><summary>En esta guía${abierto ? '' : ` · ${indice.length} apartados`}</summary><ol>${indice
+    .map((h) => `<li><a href="#${h.id}">${h.texto}</a></li>`)
+    .join('')}</ol></details>`;
+
+// Índice del móvil: justo antes del primer apartado.
+if (conIndice) {
+  const i = html.search(/<h2[\s>]/);
+  html = html.slice(0, i) + indiceHtml(false, 'indice-movil') + html.slice(i);
+}
+
+// 4. Relacionados: mismo tema primero, luego los más recientes.
+const otros = blogPostIndex.filter((p) => p.slug !== slug);
+const relacionados = [...otros.filter((p) => p.tema && p.tema === post.tema), ...otros.filter((p) => !p.tema || p.tema !== post.tema)].slice(0, 3);
+---
+
+<div class="contenedor pt-5">
+  <div class="articulo-rejilla">
+    <aside class="articulo-lado" aria-label="Índice">
+      {conIndice && <Fragment set:html={indiceHtml(true, '')} />}
+    </aside>
+
+    <article class="articulo-cuerpo">
+      <header>
+        <p class="articulo-miga">
+          <a href="/blog/">Guías</a>
+          {esTema(post.tema) && <> › <a href={`/blog/?tema=${post.tema}`}>{nombreTema(post.tema)}</a></>}
+        </p>
+        <h1 class="articulo-titulo font-display">{post.title}</h1>
+        <p class="articulo-entradilla">{post.description}</p>
+        <div class="articulo-firma">
+          <span class="inicial" aria-hidden="true">J</span>
+          <div>
+            <b><a href="/sobre/">{siteConfig.author.name}</a></b>
+            <span>Publicado el <time datetime={post.pubDate}>{fechaLarga(post.pubDate)}</time></span>
+            {post.modifiedDate !== post.pubDate && (
+              <span> · Revisado el <time datetime={post.modifiedDate}>{fechaLarga(post.modifiedDate)}</time></span>
+            )}
+            {post.readingTime && <span> · {post.readingTime} de lectura</span>}
+          </div>
+        </div>
+      </header>
+
+      <PortadaArticulo slug={slug} />
+
+      <div class="prosa">
+        <Fragment set:html={html} />
+      </div>
+
+      <ConversionBand
+        eyebrow="Siguiente paso"
+        title="Lleva esta guía a una prueba real"
+        description="Descarga los recursos gratuitos de Decodifica: plantillas, prompts y mapas para aplicar lo que acabas de leer."
+      />
+
+      <div class="autor-caja">
+        <span class="inicial" aria-hidden="true">J</span>
+        <p>
+          <b>{siteConfig.author.name}</b> escribe Decodifica. Cada dato de esta guía sale de las fuentes oficiales enlazadas, y Jordi revisa cada artículo antes de publicarlo. <a href="/sobre/">Cómo trabajamos</a>.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <section class="py-6" aria-labelledby="relacionados">
+    <div class="seccion-cabecera">
+      <h2 id="relacionados" class="font-display text-white">Sigue con esto</h2>
+      <a href={esTema(post.tema) ? `/blog/?tema=${post.tema}` : '/blog/'}>Más guías →</a>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {relacionados.map((p) => <TarjetaArticulo post={p} track="related_article_click" />)}
+    </div>
+  </section>
+</div>

@@ -9,61 +9,28 @@ const { plausibleDomain, plausibleScriptSrc } = Astro.props;
 
 <div
   id="cookie-consent"
-  class="cookie-consent fixed inset-x-0 bottom-0 z-[80] hidden border-t border-dark-600 bg-dark-900/95 px-4 py-4 shadow-2xl backdrop-blur sm:px-6"
+  class="aviso-cookies hidden"
   role="dialog"
   aria-live="polite"
   aria-label="Preferencias de privacidad"
 >
-  <div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-    <div class="max-w-3xl">
-      <p class="text-sm font-semibold text-white">Privacidad en Decodifica</p>
-      <p class="mt-1 text-sm leading-6 text-dark-200">
-        Usamos almacenamiento necesario para recordar esta decisión y, si aceptas, analítica agregada para saber que contenidos funcionan. Los vídeos externos se cargan en modo privacidad.
-      </p>
-      <div id="cookie-settings" class="mt-3 hidden rounded-lg border border-dark-600 bg-dark-800 p-3">
-        <label class="flex items-start gap-3 text-sm text-dark-200">
-          <input
-            id="cookie-analytics"
-            type="checkbox"
-            class="mt-1 h-4 w-4 rounded border-dark-500 bg-dark-900 text-brand-500 focus:ring-brand-400"
-          />
-          <span>
-            <strong class="text-white">Analítica agregada</strong><br />
-            Nos ayuda a medir páginas vistas sin crear perfiles publicitarios.
-          </span>
-        </label>
-      </div>
+  <div class="aviso-cookies-fila">
+    <p>
+      Solo medimos visitas, sin publicidad ni perfiles, <b>si aceptas</b>.{' '}
+      <button id="cookie-configure" type="button" class="enlace" aria-expanded="false" aria-controls="cookie-settings">Configurar</button>{' · '}
+      <a href="/cookies/">Más información</a>
+    </p>
+    <div class="aviso-cookies-botones">
+      <button id="cookie-reject" type="button">Rechazar</button>
+      <button id="cookie-accept" type="button">Aceptar</button>
     </div>
-    <div class="flex flex-wrap gap-2 md:justify-end">
-      <button
-        id="cookie-reject"
-        type="button"
-        class="action-secondary pressable rounded-lg border border-dark-500 px-4 py-2 text-sm font-semibold text-dark-100"
-      >
-        Rechazar
-      </button>
-      <button
-        id="cookie-configure"
-        type="button"
-        class="action-secondary pressable rounded-lg border border-brand-500/40 px-4 py-2 text-sm font-semibold text-brand-300"
-      >
-        Configurar
-      </button>
-      <button
-        id="cookie-save"
-        type="button"
-        class="pressable hidden rounded-lg bg-dark-700 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200"
-      >
-        Guardar
-      </button>
-      <button
-        id="cookie-accept"
-        type="button"
-        class="cta-primary pressable rounded-lg px-4 py-2 text-sm font-semibold"
-      >
-        Aceptar
-      </button>
-    </div>
+  </div>
+  <div id="cookie-settings" class="mt-3 hidden border-t border-dark-600 pt-3">
+    <label class="flex items-start gap-3 text-sm text-dark-200">
+      <input id="cookie-analytics" type="checkbox" class="mt-1 h-5 w-5 shrink-0" />
+      <span><strong class="text-white">Analítica agregada (Plausible)</strong><br />Cuenta páginas vistas sin crear perfiles publicitarios. Los vídeos externos se cargan en modo privacidad.</span>
+    </label>
+    <div class="aviso-cookies-botones mt-3"><button id="cookie-save" type="button">Guardar mi elección</button></div>
   </div>
 </div>
 
@@ -124,13 +91,27 @@ const { plausibleDomain, plausibleScriptSrc } = Astro.props;
       }));
     }
 
+    function abrir(configurar) {
+      const actual = readConsent();
+      if (analyticsInput) analyticsInput.checked = Boolean(actual && actual.analytics);
+      banner?.classList.remove('hidden');
+      if (configurar) {
+        settings?.classList.remove('hidden');
+        configureButton?.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // «Cambiar cookies» (pie de página y página de cookies): retirar el consentimiento es igual de fácil que darlo.
+    document.querySelectorAll('[data-abrir-cookies]').forEach((boton) => {
+      boton.addEventListener('click', () => abrir(true));
+    });
+
     const existing = readConsent();
     if (existing) {
       applyConsent(existing);
-      return;
+    } else {
+      abrir(false);
     }
-
-    banner?.classList.remove('hidden');
 
     rejectButton?.addEventListener('click', () => {
       writeConsent({ analytics: false });
@@ -144,8 +125,8 @@ const { plausibleDomain, plausibleScriptSrc } = Astro.props;
     });
 
     configureButton?.addEventListener('click', () => {
-      settings?.classList.toggle('hidden');
-      saveButton?.classList.toggle('hidden');
+      const abierto = settings?.classList.toggle('hidden') === false;
+      configureButton.setAttribute('aria-expanded', String(abierto));
     });
 
     saveButton?.addEventListener('click', () => {

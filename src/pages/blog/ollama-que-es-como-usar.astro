@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Ollama: qué es y cómo usar modelos de IA en local";
@@ -9,6 +8,7 @@ const description = "Qué es Ollama, qué ordenador necesitas, las órdenes bás
 const pubDate = "2026-10-12";
 const modifiedDate = "2026-10-12";
 const readingTime = "8 min";
+const tema = "local";
 const tags = ["ollama", "ia local", "modelos abiertos", "lm studio", "gemma 4"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -39,30 +39,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://lmstudio.ai/docs/app/system-requirements",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="ollama-que-es-como-usar">
 
-    <p>En resumen: Ollama es un programa gratuito y de código abierto (licencia MIT) para Mac, Windows y Linux que descarga modelos de IA abiertos, como Gemma, Qwen o DeepSeek, y los ejecuta en tu ordenador. Se maneja con órdenes cortas como <code>ollama run gemma4</code>, se conecta con otras aplicaciones y agentes de programación y, si tu equipo no da para más, ofrece también modelos en su propia nube.</p>
+    <p><strong>En resumen:</strong> Ollama es un programa gratuito y de código abierto (licencia MIT) para Mac, Windows y Linux que descarga modelos de IA abiertos, como Gemma, Qwen o DeepSeek, y los ejecuta en tu ordenador. Se maneja con órdenes cortas como <code>ollama run gemma4</code>, se conecta con otras aplicaciones y agentes de programación y, si tu equipo no da para más, ofrece también modelos en su propia nube.</p>
 
-    <PortadaArticulo slug="ollama-que-es-como-usar" />
     <p>Los datos de esta guía salen de la documentación oficial de Ollama, su página de precios y su licencia, consultadas el 12 de octubre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Ollama y para qué sirve</h2>
@@ -73,6 +53,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Probar modelos abiertos antes de pagar</strong> una suscripción.</li>
     </ul>
     <p>Su biblioteca de modelos está en <a href="https://ollama.com/library" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">ollama.com/library</a>. Cada modelo suele venir en varios tamaños; por ejemplo, Gemma 4 aparece en las versiones e2b, e4b, 12b, 26b y 31b. Cuanto más grande, mejor suele responder y más memoria necesita.</p>
+
     <FiguraArticulo
       src="/img/blog/ollama-que-es-como-usar/gemma4-tamanos.webp"
       alt="Captura de la ficha de gemma4 en la biblioteca de Ollama con los tamaños e2b, e4b, 12b, 26b y 31b y la orden ollama run gemma4"
@@ -151,6 +132,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Pro (20 $/mes, o 200 $ al año):</strong> 60 $ de créditos al mes, modelos más grandes y varios modelos a la vez.</li>
       <li><strong>Max (100 $/mes):</strong> 300 $ de créditos al mes y hasta 10 peticiones simultáneas.</li>
     </ul>
+
     <FiguraArticulo
       src="/img/blog/ollama-que-es-como-usar/precios-ollama.webp"
       alt="Captura de los planes Free y Pro de la página de precios de Ollama: Free a 0 dólares con modelos locales y Pro a 20 dólares al mes con 60 dólares de créditos"
@@ -167,6 +149,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Mac con Intel:</strong> Ollama funciona (solo con el procesador); LM Studio no los admite.</li>
       <li><strong>Licencia:</strong> Ollama es de código abierto (MIT); LM Studio es gratuito pero su código no es abierto, y su licencia permite uso personal y uso interno en empresas.</li>
     </ul>
+
     <FiguraArticulo
       src="/img/blog/ollama-que-es-como-usar/ollama-o-lm-studio.webp"
       alt="Esquema comparativo de Ollama y LM Studio: Ollama es de código abierto MIT, se usa desde la terminal y funciona en Mac con Intel; LM Studio tiene ventana en español y no admite Mac con Intel"
@@ -197,25 +180,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/blog/alternativas-fable-5/" class="text-brand-400 hover:text-brand-300">Alternativas a Claude Fable 5: modelos abiertos y locales</a>, para elegir qué modelo descargar.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-ollama-que-es-como-usar" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-ollama-que-es-como-usar" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "GPT-Live: la voz de ChatGPT que escucha mientras habla";
@@ -9,6 +8,7 @@ const description = "Qué es GPT-Live, el modelo de voz full-duplex de ChatGPT: 
 const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-11";
 const readingTime = "5 min";
+const tema = "chatbots";
 const tags = ["Decodifica", "GPT-Live", "GPT Live", "ChatGPT", "voz de ChatGPT", "ChatGPT Voice", "nueva voz ChatGPT", "modo voz ChatGPT"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -29,30 +29,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://help.openai.com/en/articles/20001274",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="gpt-live-voz-chatgpt">
 
-    <PortadaArticulo slug="gpt-live-voz-chatgpt" />
 
     <p>GPT-Live es la nueva generación de modelos de voz de ChatGPT que OpenAI documentó en su <em>system card</em> del 8 de julio de 2026. La diferencia con el modo de voz anterior es que no espera a que termines de hablar para procesar lo que dices: escucha y responde de forma continua. La pregunta práctica es si eso reduce las veces que tienes que repetir o reformular lo que pides.</p>
+
     <FiguraArticulo
       src="/img/blog/gpt-live-voz-chatgpt/presentacion-gpt-live.webp"
       alt="Página oficial Introducing GPT-Live de openai.com, del 8 de julio de 2026: una nueva generación de modelos de voz que ya mueve ChatGPT Voice"
@@ -60,7 +41,6 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={791}
       caption="Presentación oficial de GPT-Live en openai.com (captura de octubre de 2026)."
     />
-
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es GPT-Live</h2>
     <p>Según la <em>system card</em> publicada por OpenAI, GPT-Live-1 y GPT-Live-1 mini son modelos <strong>full-duplex</strong>: pueden escuchar y responder de forma continua en lugar de esperar a que acabe un turno claramente definido. Están diseñados para gestionar pausas, interrupciones y cambios de ritmo, y deciden en cada momento si responder o seguir escuchando.</p>
     <ul class="space-y-2">
@@ -69,6 +49,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Delegación:</strong> cuando una petición requiere trabajo más complejo, como una búsqueda o un razonamiento largo, GPT-Live puede delegarlo en otros modelos. OpenAI indica que ese trabajo refleja el entrenamiento de seguridad del modelo que lo hace; en sus evaluaciones usa GPT-5.5 Thinking como referencia.</li>
       <li><strong>Seguridad durante la conversación:</strong> las entradas y salidas se supervisan mientras hablas; el sistema puede reconducir o interrumpir la respuesta, reproducir un aviso de seguridad o terminar la conversación de voz.</li>
     </ul>
+
     <FiguraArticulo
       src="/img/blog/gpt-live-voz-chatgpt/system-card-gpt-live-full-duplex.webp"
       alt="Introducción de la system card de GPT-Live: modelos full-duplex que escuchan y responden de forma continua, GPT-Live-1 para usuarios de pago y GPT-Live-1 mini para usuarios gratuitos"
@@ -76,7 +57,6 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={644}
       caption="System card de GPT-Live en deploymentsafety.openai.com (captura de octubre de 2026)."
     />
-
     <p>La disponibilidad exacta por plan, región y dispositivo, y las funciones que siguen limitadas, están en la guía de ayuda de ChatGPT Voice. Consúltala antes de decidir, porque puede cambiar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres pruebas para comprobar si te sirve</h2>
     <p>Si quieres saber si GPT-Live mejora tu uso de la voz, una forma sencilla es contar cuántas veces tienes que repetir algo en estas tres situaciones:</p>
@@ -85,13 +65,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Pausa:</strong> haz una pausa larga mientras piensas una frase. Comprueba si responde antes de que termines.</li>
       <li><strong>Búsqueda en contexto:</strong> pide un dato actual en mitad de la conversación (por ejemplo, el horario de un sitio) y observa si la charla sigue sin cortarse mientras busca.</li>
     </ol>
+
     <FiguraArticulo
       src="/img/blog/gpt-live-voz-chatgpt/pruebas-gpt-live-voz.webp"
       alt="Esquema con las pruebas para comprobar GPT-Live en ChatGPT: interrumpir a mitad de respuesta, hacer una pausa larga, pedir una búsqueda en contexto y contar las repeticiones"
       width={1200}
       height={643}
     />
-
     <p>Si el número de repeticiones baja respecto al modo de voz anterior, el cambio se nota en el uso real. Si no baja, la arquitectura es nueva pero tu forma de trabajar con la voz sigue igual.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Es más útil para quien ya usa la voz de ChatGPT con frecuencia: practicar idiomas, preparar una conversación, pensar en voz alta o consultar algo con las manos ocupadas. Si solo escribes en el chat, el cambio te afecta poco. Si usas el plan gratuito, ten en cuenta que recibes la versión mini.</p>
@@ -109,25 +89,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, con prompts, workflows y plantillas.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-gpt-live-voz-chatgpt" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-gpt-live-voz-chatgpt" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

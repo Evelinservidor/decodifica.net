@@ -1,0 +1,113 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Skills gratis: qué son, cómo instalarlas y crearlas</title>
+<style>
+@font-face{font-family:"ID";src:url(/scripts/imagenes/fuentes/InterDisplay-ExtraBold.otf);font-weight:800;font-display:swap}
+@font-face{font-family:"ID";src:url(/scripts/imagenes/fuentes/InterDisplay-Black.otf);font-weight:900;font-display:swap}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}@media(min-width:768px){.wrap{padding:0 32px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.h{font-family:"ID",Inter,system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:0}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap}
+.ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.desliza{font-size:13px;margin:1.2em 0 -.9em;opacity:.7}@media(min-width:700px){.desliza{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit}
+
+:root{--bg:#f5f3ee;--sf:#fff;--ink:#16182b;--ink2:#4d5168;--ink3:#6c7088;--line:#e3dfd6;--brand:#4f46e5}
+body{background:var(--bg);color:var(--ink)}
+.top{background:var(--ink);color:#fff}.top .wrap{display:flex;align-items:center;height:56px;gap:6px}
+.logo{display:flex;align-items:center;gap:8px;font-family:"ID";font-weight:900;font-size:21px;margin-right:auto;letter-spacing:-.02em}
+.logo i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#ff9500;color:#16182b;font-style:normal;font-size:15px}
+.top button{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;color:#fff}
+.nav{display:none;gap:24px;font-weight:600;font-size:15px;margin-right:12px}@media(min-width:900px){.nav{display:flex}.top .menu{display:none}}
+.busca{background:var(--ink);color:#fff;padding:18px 0 22px}
+.busca h1{font-size:clamp(24px,6vw,36px)}.busca p{margin:6px 0 14px;color:#c9cce0;font-size:15px}
+.caja-b{display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink3);border-radius:14px;min-height:54px;padding:0 16px;font-size:16px;max-width:680px}
+.busca .chips{margin-top:12px}.busca .chip{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.sec{padding:24px 0 6px}.sec-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.sec-h h2{font-size:21px;display:flex;align-items:center;gap:10px}.sec-h h2 i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.sec-h a{font-size:14px;font-weight:700;color:var(--brand)}
+.it{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.it img{border-radius:10px;aspect-ratio:16/9;object-fit:cover}.it h3{font-size:16.5px;line-height:1.25}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-bottom:4px}
+.meta{font-size:13px;color:var(--ink3);margin-top:4px}
+.lista{background:var(--sf);border-radius:16px;padding:4px 16px;border:1px solid var(--line)}.lista .it:last-child{border-bottom:0}
+.top5{list-style:none;margin:0;padding:0}.top5 li{display:flex;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.top5 li:last-child{border-bottom:0}.top5 b{font-family:"ID";font-weight:900;font-size:22px;color:#ea580c;width:22px;flex:none}.top5 span{font-weight:600;line-height:1.3}
+.temas{display:grid;gap:10px}.tema{display:flex;align-items:center;gap:12px;background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:64px}
+.tema i{width:44px;height:44px;border-radius:12px;flex:none}.tema b{display:block;font-size:16px}.tema span{font-size:13px;color:var(--ink3)}
+@media(min-width:700px){.temas{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+@media(min-width:1000px){.dos{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;align-items:start}}
+.news{margin:26px 0;border-radius:16px;padding:20px;background:#ffedd5;border:1px solid #fed7aa}
+.news h2{font-size:21px}.news p{margin:6px 0 12px;color:#5a3a1a;line-height:1.5}.news form{display:flex;flex-wrap:wrap;gap:8px}
+.news input{flex:1 1 200px;min-height:48px;border-radius:12px;border:1px solid #fdba74;padding:0 14px;font-size:16px}.news .btn{background:var(--ink);color:#fff;min-height:48px}
+footer{background:var(--ink);color:#b8bcd3;margin-top:30px;padding:26px 0 120px;font-size:14px}footer .cols{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:10px}
+.ck{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--sf);border-top:2px solid var(--ink);padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.ck p{margin:0;font-size:14px;line-height:1.4;flex:1 1 260px;max-width:560px}.ck a{color:var(--brand);text-decoration:underline}
+.ck-b{display:flex;gap:8px;flex:1 1 200px;max-width:320px}.ck-btn{flex:1;background:var(--sf);border:2px solid var(--ink);color:var(--ink);min-height:44px}
+/* artículo */
+.art{padding-top:16px}.miga{font-size:14px;color:var(--ink3)}
+.art h1{font-size:clamp(28px,7vw,42px);margin:8px 0 0}.dek{font-size:18px;line-height:1.5;color:var(--ink2);margin:10px 0}
+.by{font-size:14px;color:var(--ink3);display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.by b{color:var(--ink)}
+.cab{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:16px 0}
+.rr{background:var(--sf);border:2px solid var(--ink);border-radius:14px;padding:16px;margin:0 0 20px;box-shadow:5px 5px 0 #ff9500;margin-right:5px}
+.rr-t{margin:0 0 6px!important;font-family:"ID";font-weight:800;font-size:18px}.rr p{margin:0;font-size:17px;line-height:1.6}
+.rr table{margin-top:12px;width:100%;border-collapse:collapse;font-size:15px}.rr td{padding:6px 0;border-top:1px solid var(--line);vertical-align:top}.rr td:first-child{font-weight:700;width:74px}
+.toc{background:var(--sf);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}.toc summary{min-height:48px;display:flex;align-items:center;padding:0 14px;font-weight:700;cursor:pointer}
+.toc ol{margin:0;padding:0 14px 12px 34px;line-height:1.95;font-size:15px}.toc a{color:var(--ink2)}
+.prosa{font-family:Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;font-size:19px;line-height:1.7}.prosa p,.prosa ol,.prosa ul{margin:0 0 1.1em}
+.prosa h2{font-family:"ID";font-weight:800;font-size:clamp(23px,5.4vw,28px);line-height:1.2;margin:1.8em 0 .55em;scroll-margin-top:16px}
+.prosa a{color:var(--brand)}.prosa code{font-family:ui-monospace,monospace;font-size:.8em;background:#ece9e1;padding:2px 5px;border-radius:5px}
+.prosa figure{margin:1.5em 0}.prosa figure img{border-radius:10px}.prosa figcaption{font-family:Inter,system-ui;font-size:14px;color:var(--ink3);margin-top:6px}
+.tabla{overflow-x:auto;margin:1.4em 0;font-family:Inter,system-ui}.tabla table{border-collapse:collapse;width:100%;min-width:500px;font-size:15px;line-height:1.45;background:var(--sf)}
+.tabla th,.tabla td{text-align:left;padding:11px 12px;border:1px solid var(--line);vertical-align:top}.tabla thead th{background:var(--ink);color:#fff;border-color:var(--ink)}
+.caja{font-family:Inter,system-ui;border-radius:12px;padding:14px 16px 14px 52px;margin:1.4em 0;font-size:16px;line-height:1.55;position:relative;background:var(--sf);border:1px solid var(--line)}
+.caja p{margin:0}.caja::before{position:absolute;left:14px;top:12px;font-size:22px}.caja-t{font-weight:800;margin-bottom:2px!important}
+.consejo::before{content:"💡"}.ojo::before{content:"⚠️"}
+.bmed{font-family:Inter,system-ui;background:#ffedd5;border-radius:14px;padding:16px;margin:1.8em 0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.bmed form{display:flex;gap:8px}.bmed input{flex:1;min-width:0;min-height:44px;border:1px solid #fdba74;border-radius:10px;padding:0 12px;font-size:16px}
+.bmed .btn{background:var(--ink);color:#fff}.bmed span{font-size:15px;color:#5a3a1a}
+.prosa details{font-family:Inter,system-ui;border-top:1px solid var(--line);padding:12px 0;font-size:17px}.prosa summary{font-weight:700;cursor:pointer}
+.lado{display:none}
+@media(min-width:1100px){.lay{display:grid;grid-template-columns:minmax(0,720px) 300px;gap:56px;justify-content:center}
+.lado{display:block;position:sticky;top:16px;align-self:start}.lado .toc{border:0;background:none}.lado .toc summary{padding:0;min-height:0;margin-bottom:6px;list-style:none}
+.lado .toc ol{padding-left:20px}.toc-m{display:none}.lado .news{margin-top:16px}}
+</style></head><body><header class="top"><div class="wrap"><a class="logo" href="inicio.html"><i>D</i>Decodifica</a>
+<nav class="nav"><a href="#">Guías</a><a href="#">Temas</a><a href="#">Herramientas</a><a href="#">Boletín</a></nav>
+<button aria-label="Buscar"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button><button aria-label="Modo oscuro"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button><button class="menu" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div></header><main class="wrap art"><div class="lay"><article><p class="miga"><a href="blog.html">Guías</a> › <span class="pill" style="background:#db27771a;color:#be185d">Agentes y automatización</span></p>
+<h1 class="h">Claude Skills gratis: qué son, cómo instalarlas y crearlas</h1><p class="dek">Qué son las Skills de Claude, en qué planes funcionan, dónde descargar Skills gratis, cómo instalarlas en Claude.ai y Claude Code, y cómo crear la tuya.</p>
+<div class="by"><span>Por <b>Jordi Castañeira</b></span><span>Revisado el 6 oct 2026</span><span>⏱ 10 min</span></div>
+<img class="cab" src="/public/og/blog/claude-skills-1000-gratis-16x9-800.webp" width="800" height="450" alt="Logo de Claude" fetchpriority="high">
+<section class="rr"><p class="rr-t">⚡ Respuesta rápida</p><p><strong>En resumen:</strong> una Skill es una carpeta con un archivo <code>SKILL.md</code> que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro gratis (Word, Excel, PowerPoint y PDF), publica más en el repositorio <code>anthropics/skills</code> y te deja subir las tuyas en Claude.ai, Claude Code y la API.</p><table><tr><td>Planes</td><td>Free, Pro, Max, Team y Enterprise, con ejecución de código</td></tr><tr><td>Dónde</td><td>Claude.ai, Claude Code y la API</td></tr><tr><td>Ojo</td><td>Una Skill puede ejecutar código: revisa las de terceros</td></tr></table></section>
+<details class="toc toc-m"><summary>📑 En esta guía (7)</summary><ol><li><a href="#que-es">Qué es una Skill de Claude</a></li><li><a href="#planes">Dónde funcionan y qué plan necesitas</a></li><li><a href="#gratis">Dónde conseguir Skills gratis</a></li><li><a href="#instalar">Cómo instalar una Skill</a></li><li><a href="#crear">Cómo crear tu propia Skill</a></li><li><a href="#seguridad">Seguridad: qué revisar antes</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ol></details>
+<div class="prosa">
+<h2 id="que-es">Qué es una Skill de Claude</h2>
+<p>Anthropic las llama <strong>Agent Skills</strong> y las define como «carpetas organizadas de instrucciones, scripts y recursos que los agentes pueden descubrir y cargar de forma dinámica» para hacer mejor una tarea concreta.</p>
+<p>Lo que las distingue de un prompt largo es cómo se cargan. La documentación lo llama <em>carga progresiva</em> y lo divide en tres niveles: los metadatos (siempre), las instrucciones (al activarse) y los archivos y scripts (solo cuando hacen falta).</p>
+<figure><img src="/public/img/blog/claude-skills-1000-gratis/tres-niveles-de-carga.webp" width="1200" height="489" loading="lazy" alt="Esquema de los tres niveles de carga de una Skill"><figcaption>Los tres niveles de carga de una Skill. Fuente: documentación de Anthropic.</figcaption></figure>
+<aside class="caja consejo"><p class="caja-t">Consejo</p><p>Puedes tener muchas Skills instaladas: hasta que se activan, cada una solo ocupa unos 100 tokens (su nombre y su descripción).</p></aside>
+<h2 id="planes">Dónde funcionan y qué plan necesitas</h2>
+<p>El centro de ayuda indica que las Skills están disponibles en los planes Free, Pro, Max, Team y Enterprise, siempre que esté activada la ejecución de código.</p>
+<p class="desliza">Desliza la tabla para ver todas las columnas →</p><div class="tabla" role="region" aria-label="Tabla: dónde funcionan las Skills" tabindex="0"><table>
+<thead><tr><th>Dónde</th><th>Skills de Anthropic</th><th>Skills propias</th></tr></thead><tbody>
+<tr><th>Claude.ai</th><td>Sí, se usan solas al crear documentos</td><td>Sí, subiendo un ZIP</td></tr>
+<tr><th>Claude Code</th><td>No vienen incluidas; se instalan del repositorio</td><td>Sí, como carpetas o plugins</td></tr>
+<tr><th>API</th><td>Sí: <code>pptx</code>, <code>xlsx</code>, <code>docx</code>, <code>pdf</code></td><td>Sí, con <code>/v1/skills</code></td></tr>
+</tbody></table></div>
+<aside class="caja ojo"><p class="caja-t">Ojo</p><p>No se sincronizan: una Skill subida a Claude.ai no aparece en la API ni en Claude Code. Hay que instalarla en cada sitio.</p></aside>
+<div class="bmed"><b>📬 ¿Te sirve? Recibe una guía así cada sábado.</b><form><label class="sr" for="e2">Tu email</label><input id="e2" type="email" placeholder="tu@email.com"><button class="btn">Apuntarme</button></form><span>Gratis. Te das de baja con un clic.</span></div>
+<h2 id="gratis">Dónde conseguir Skills gratis</h2>
+<p>El punto de partida más seguro es el repositorio oficial <code>anthropics/skills</code>, porque lo mantiene Anthropic. A 6 de octubre de 2026 contiene 19 Skills, entre ellas <code>skill-creator</code>, que ayuda a crear Skills nuevas.</p>
+<ol><li>Abre el repositorio y entra en la carpeta <code>skills/</code>.</li><li>Elige una Skill y descarga su carpeta.</li><li>Comprímela en ZIP y súbela en Ajustes → Capacidades.</li></ol>
+<h2 id="faq">Preguntas frecuentes</h2>
+<details open><summary>¿Las Skills de Claude son gratis?</summary><p>Sí: las cuatro de Anthropic vienen incluidas y las del repositorio oficial son gratuitas. Necesitas tener activada la ejecución de código.</p></details>
+<details><summary>¿Una Skill es lo mismo que un proyecto?</summary><p>No. Un proyecto da conocimiento de fondo siempre cargado; una Skill aporta un procedimiento que se activa solo cuando hace falta.</p></details>
+<h2 id="fuentes">Fuentes</h2>
+<ul class="fuentes"><li><a href="#">Agent Skills · documentación de Anthropic</a></li><li><a href="#">Using Skills in Claude · centro de ayuda</a></li><li><a href="#">anthropics/skills · GitHub</a></li></ul>
+</div>
+<section class="sec"><div class="sec-h"><h2 class="h"><i style="background:#db2777"></i>Más de agentes y automatización</h2></div><div class="lista"><a class="it" href="articulo.html"><img class="" src="/public/og/blog/n8n-que-es-gratis-tarjeta.webp" srcset="/public/og/blog/n8n-que-es-gratis-tarjeta.webp 640w, /public/og/blog/n8n-que-es-gratis-tarjeta-960.webp 960w" sizes="132px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="pill" style="background:#db27771a;color:#be185d">Agentes y automatización</span><h3 class="h">n8n: qué es, si es gratis y cómo empezar</h3><p class="meta">7 oct 2026 · 8 min</p></div></a><a class="it" href="articulo.html"><img class="" src="/public/og/blog/2026-07-17-hermes-agent-chino-tarjeta.webp" srcset="/public/og/blog/2026-07-17-hermes-agent-chino-tarjeta.webp 640w, /public/og/blog/2026-07-17-hermes-agent-chino-tarjeta-960.webp 960w" sizes="132px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="pill" style="background:#db27771a;color:#be185d">Agentes y automatización</span><h3 class="h">Hermes Agent: qué es y cómo probar este agente open source</h3><p class="meta">14 jul 2026 · 4 min</p></div></a><a class="it" href="articulo.html"><img class="" src="/public/og/blog/crear-app-web-ias-chinas-open-source-tarjeta.webp" srcset="/public/og/blog/crear-app-web-ias-chinas-open-source-tarjeta.webp 640w, /public/og/blog/crear-app-web-ias-chinas-open-source-tarjeta-960.webp 960w" sizes="132px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="pill" style="background:#db27771a;color:#be185d">Agentes y automatización</span><h3 class="h">Emergent IA: qué es, precios y cómo crear una app</h3><p class="meta">6 jul 2026 · 9 min</p></div></a><a class="it" href="articulo.html"><img class="" src="/public/og/blog/qwen-code-agent-terminal-tarjeta.webp" srcset="/public/og/blog/qwen-code-agent-terminal-tarjeta.webp 640w, /public/og/blog/qwen-code-agent-terminal-tarjeta-960.webp 960w" sizes="132px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="pill" style="background:#db27771a;color:#be185d">Agentes y automatización</span><h3 class="h">Qwen Code ya no es solo un CLI: así cambia tu flujo</h3><p class="meta">5 jul 2026 · 6 min</p></div></a></div></section></article>
+<aside class="lado"><details class="toc" open><summary>En esta guía</summary><ol><li><a href="#que-es">Qué es una Skill de Claude</a></li><li><a href="#planes">Dónde funcionan y qué plan necesitas</a></li><li><a href="#gratis">Dónde conseguir Skills gratis</a></li><li><a href="#instalar">Cómo instalar una Skill</a></li><li><a href="#crear">Cómo crear tu propia Skill</a></li><li><a href="#seguridad">Seguridad: qué revisar antes</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ol></details><section class="news"><h2 class="h">📬 Una guía útil cada sábado</h2><p>Qué probar, cómo usarlo y sus límites. Gratis; te das de baja con un clic.</p>
+<form><label class="sr" for="em">Tu email</label><input id="em" type="email" placeholder="tu@email.com"><button class="btn">Apuntarme</button></form></section></aside></div></main><footer><div class="wrap"><b class="logo" style="font-size:18px;color:#fff"><i>D</i>Decodifica</b><p>Guías de IA práctica en español, con fuentes. Jordi revisa cada artículo antes de publicarlo.</p>
+<div class="cols"><a href="#">Guías</a><a href="#">Herramientas</a><a href="#">Boletín</a><a href="#">Sobre</a><a href="#">Privacidad</a><a href="#">Cookies</a><a href="#">Aviso legal</a></div></div></footer></body></html>

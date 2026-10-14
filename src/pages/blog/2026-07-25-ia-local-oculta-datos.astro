@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Oculta datos personales antes de usar ChatGPT con Presidio";
@@ -9,6 +8,7 @@ const description = "Cómo usar Presidio, herramienta open source, para sustitui
 const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-24";
 const readingTime = "4 min";
+const tema = "local";
 const tags = ["Decodifica", "ChatGPT", "IA local", "Presidio", "anonimizar documentos", "ocultar datos personales", "privacidad inteligencia artificial", "datos personales ChatGPT"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
@@ -30,38 +30,18 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://presidio.dataprivacystack.org/supported_entities/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="2026-07-25-ia-local-oculta-datos">
 
-    <PortadaArticulo slug="2026-07-25-ia-local-oculta-datos" />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
-      <ul class="space-y-2 text-dark-200 text-sm">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · En dos líneas</p>
+      <ul>
         <li><strong>Filtro local:</strong> Presidio sustituye correos, teléfonos e IBAN antes de enviar el texto a una IA externa.</li>
         <li><strong>Ejemplo:</strong> Presidio tiene una demo oficial en Hugging Face para probar la detección con texto de ejemplo antes de instalar nada.</li>
         <li><strong>Límite:</strong> nombres ambiguos, firmas, imágenes y PDF escaneados pueden necesitar OCR, reglas propias y revisión humana.</li>
         <li><strong>Decisión:</strong> sirve como barrera previa; no es una garantía de anonimato ni de cumplimiento legal.</li>
       </ul>
-    </div>
+    </section>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -86,6 +66,7 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>No convierte cualquier documento en anónimo ni garantiza cumplimiento legal. Sí añade una barrera útil entre el archivo original y una IA externa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué hace Presidio</h2>
     <p>Presidio es un proyecto de código abierto con licencia MIT, mantenido ahora en la organización Data Privacy Stack de GitHub. Tiene cuatro módulos: el analizador localiza información personal en texto; el anonimizador decide qué hacer con cada hallazgo; el Image Redactor la elimina de imágenes mediante OCR, y Presidio Structured trabaja con datos tabulares. Se ejecuta en local con Python, en Docker o en Kubernetes.</p>
+
     <FiguraArticulo
       src="/img/blog/2026-07-25-ia-local-oculta-datos/web-oficial-presidio.webp"
       alt="Captura de la web oficial de Presidio by Data Privacy Stack, que lo presenta como módulos de identificación y anonimización de datos privados en texto e imágenes"
@@ -104,6 +85,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Comparar el original con la versión filtrada.</li>
       <li>Corregir manualmente lo que falte y solo entonces enviar la copia anonimizada.</li>
     </ol>
+
     <FiguraArticulo
       src="/img/blog/2026-07-25-ia-local-oculta-datos/flujo-anonimizar-antes-de-chatgpt.webp"
       alt="Esquema de cinco pasos para filtrar un documento con Presidio antes de ChatGPT: extraer el texto, analizarlo en local, sustituir datos por etiquetas, comparar y corregir antes de enviar"
@@ -113,6 +95,7 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>Las etiquetas conservan el sentido. ChatGPT puede entender que existe un teléfono o una cuenta bancaria sin recibir el valor real. Además, usar la misma etiqueta para la misma persona o entidad ayuda a mantener relaciones dentro del documento.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué detecta mejor</h2>
     <p>Los identificadores con una forma clara son los candidatos más fáciles. Su lista de entidades admitidas incluye correos, teléfonos, direcciones IP, tarjetas de crédito, IBAN y nombres de persona, además de reconocedores por país; para España, NIF, NIE y pasaporte. Presidio combina patrones, validación de dígitos de control, reglas de contexto y modelos de reconocimiento de entidades, y se puede ampliar con reconocedores propios.</p>
+
     <FiguraArticulo
       src="/img/blog/2026-07-25-ia-local-oculta-datos/presidio-entidades-espana-nif-nie.webp"
       alt="Tabla de entidades de España en la documentación de Presidio: ES_NIF y ES_NIE con patrón, contexto y dígito de control, y ES_PASSPORT con patrón y contexto"
@@ -153,25 +136,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-2026-07-25-ia-local-oculta-datos" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-2026-07-25-ia-local-oculta-datos" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

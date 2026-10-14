@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "5 atajos de IA para correos, traducciones y tareas";
@@ -9,6 +8,7 @@ const description = "Cinco prompts listos para copiar: resumir correos, crear pl
 const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-22";
 const readingTime = "4 min";
+const tema = "oficina";
 const tags = ["atajos IA", "productividad con IA", "DeepSeek", "Qwen", "Kimi", "Mistral", "prompts", "resumir correos"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -30,40 +30,20 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://chat.mistral.ai/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="5-atajos-ia-gratis">
 
-    <PortadaArticulo slug="5-atajos-ia-gratis" />
 
 
 
     <p>No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos, buscar información, traducir con contexto y ordenar un proyecto que todavía está en tu cabeza.</p>
     <p>La idea es sencilla: copiar una instrucción, adaptarla con tus datos y medir si de verdad reduce trabajo. Puedes probarlos en asistentes como DeepSeek, Qwen, Kimi o Mistral; la mejor opción será la que te obligue a corregir menos. Revisa en cada servicio qué ofrece su plan gratuito, porque las condiciones cambian.</p>
+
     <FiguraArticulo
       src="/img/blog/5-atajos-ia-gratis/cinco-atajos-ia-resumen.webp"
       alt="Cuadro resumen de los cinco atajos de IA: resumir un correo largo, plantilla de respuesta reutilizable, búsqueda con fuentes, traducción con contexto y proyecto convertido en tareas"
       width={1200}
       height={779}
     />
-
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Sacar la acción de un correo largo</h2>
     <p><strong>Prompt para copiar:</strong> Resume este correo en tres frases: una con la acción que me piden, otra con el plazo y otra con lo que tengo que responder. Si falta alguno de esos datos, indícalo claramente. Correo: [PEGA AQUÍ EL TEXTO].</p>
     <p>Este formato evita un resumen bonito pero poco útil. La salida debe decir qué hacer, cuándo y qué respuesta falta. Antes de actuar, vuelve al correo original para comprobar nombres, fechas y cantidades.</p>
@@ -87,6 +67,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>número de errores o datos que has tenido que corregir;</li>
       <li>facilidad para repetir el proceso la semana siguiente.</li>
     </ul>
+
     <FiguraArticulo
       src="/img/blog/5-atajos-ia-gratis/medir-ahorro-tiempo-ia.webp"
       alt="Esquema de cinco pasos para medir si un atajo de IA ahorra tiempo: tarea real en dos herramientas, cronometrar con la revisión, contar errores, comprobar si es repetible y quedarse con la que menos se corrige"
@@ -95,6 +76,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA elegir</h2>
     <p>No hay un ganador universal. Ejecuta el mismo prompt en dos herramientas y conserva la que siga mejor el formato, cite fuentes utilizables y necesite menos correcciones. Para información sensible, revisa también la política de datos antes de pegar el contenido.</p>
+
     <FiguraArticulo
       src="/img/blog/5-atajos-ia-gratis/chat-mistral-le-chat-sin-cuenta.webp"
       alt="Pantalla de inicio del chat de Mistral en chat.mistral.ai, en español, con el cuadro Haz una pregunta listo para pegar uno de los prompts"
@@ -121,25 +103,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/blog/ia-mejora-excel/" class="text-brand-400 hover:text-brand-300">IA para Excel y hojas de cálculo</a>, si tu problema está en datos, fórmulas o reporting.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-5-atajos-ia-gratis" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-5-atajos-ia-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

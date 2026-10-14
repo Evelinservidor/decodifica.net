@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 14 de octubre de 2026.
+Última actualización: 14 de octubre de 2026 (rediseño).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -50,10 +50,18 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Velocidad (móvil, conexión lenta simulada): la cabecera de los artículos pasa de 0,9-1,7 MB (PNG) a 12-18 KB (WebP) y el LCP de 5-9 s a menos de 1 s en los artículos que la tenían.
 - Pendiente: logos que las webs bloquean (chatgpt.com, Emergent, SlidesAI): ChatGPT usa el logo de OpenAI de su cuenta oficial de GitHub. Comparar plantillas cuando haya datos de Discover/Imágenes (repaso mensual).
 
+## Rediseño de la web (14-10-2026, rama `agente/rediseno`, pull request #14)
+
+- Jordi eligió entre 3 propuestas la **A, «Revista luminosa»**: fondo claro, las portadas ponen el color, con modo oscuro opcional. Maquetas, investigación, capturas y comprobaciones en `docs/rediseno/README.md`.
+- Plantilla común de los artículos `src/components/Articulo.astro`: cabecera, «Respuesta rápida» (a partir del «En resumen:»), índice, boletín antes de las fuentes, recursos, autor y relacionados con portada. Cajas `Caja.astro` (consejo, ojo y nota). Cada artículo lleva `const tema` (`src/lib/temas.ts`). «Lo más leído» sale de Search Console (`src/lib/mas-leidos.ts`).
+- Se cambió `docs/AGENTE-SEMANAL.md` («Cómo se escribe un artículo con el diseño nuevo») y `scripts/seo_preflight.py` da error si falta `<Articulo>` o `tema`.
+- SEO idéntico (títulos, descripciones, datos estructurados, sitemap, `llms.txt` y robots); 0 problemas de accesibilidad; LCP en el móvil por debajo de 0,75 s.
+- Pendiente: que Jordi lo apruebe y se fusione (con «Publicar sola: NO» no se fusiona solo). Faltan resúmenes en 4 artículos (`2026-07-17-hermes-agent-chino`, `2026-07-22-nano-banana-1000-prompts`, `5-atajos-ia-gratis` y `gpt-live-voz-chatgpt`); que los añada el agente semanal con fuentes.
+
 ## Imágenes en todos los artículos (14-10-2026, rama `agente/imagenes-todos`)
 
 - Los 27 artículos que eran solo texto llevan ya 2-3 imágenes dentro (73 nuevas: capturas de webs oficiales y esquemas propios). Ya las tienen todos los artículos del blog.
-- Velocidad igual (LCP medio en móvil de 731 a 715 ms). Revisión SEO y build sin errores.
+- Velocidad igual (LCP medio en móvil de 780 a 784 ms con el diseño nuevo). Revisión SEO y build sin errores.
 - Datos que ya no coincidían con las webs oficiales y lo que no se pudo capturar: `docs/informes/2026-10-14-imagenes.md`. Lo revisa el repaso mensual (`docs/AGENTE-SEMANAL.md`, que ya no pide añadir imágenes poco a poco, sino mantener las capturas al día).
 
 ## Pendiente

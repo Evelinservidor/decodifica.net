@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Qwen3-ASR: transcribir audio en español con marcas por palabra";
 const description = "Probamos Qwen3-ASR con audio en español: 45 marcas por palabra, límites de la demo web y criterios para revisar antes de usarlo.";
 const pubDate = "2026-07-30";
 const modifiedDate = pubDate;
 const readingTime = "4 min";
+const tema = "local";
 const tags = ["ia", "herramientas ia", "Qwen3-ASR transcribe español y marca cada palabra: la prueba real"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
@@ -31,38 +31,18 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://huggingface.co/spaces/Qwen/Qwen3-ASR",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="2026-08-01-qwen3-asr-transcribe-espanol">
 
-    <PortadaArticulo slug="2026-08-01-qwen3-asr-transcribe-espanol" />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h3 class="font-display text-lg font-bold text-white mb-3">En resumen</h3>
-      <ul class="space-y-2 text-dark-200 text-sm">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
+      <ul>
         <li><strong>Prueba:</strong> un audio de 33,048 segundos en español produjo una transcripción y 45 segmentos temporales.</li>
         <li><strong>Valor:</strong> el texto permite buscar; la alineación ayuda a localizar frases, preparar subtítulos y editar.</li>
         <li><strong>Límite:</strong> algunas palabras compartían inicio y final, así que nombres, cifras y tiempos todavía requieren revisión.</li>
         <li><strong>Decisión Decodifica:</strong> usa la demo para probar rápido y valora la ruta local cuando el audio sea sensible.</li>
       </ul>
-    </div>
+    </section>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -92,6 +72,7 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>En Decodifica lo probamos con un audio en español de 33,048 segundos. La demo oficial detectó el idioma, conservó el mensaje completo y devolvió 45 segmentos con inicio y final. El resultado fue útil, pero no perfecto: algunas marcas temporales todavía necesitaban revisión.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué probamos exactamente</h2>
     <p>La prueba se hizo en el Space oficial de Qwen en Hugging Face. Subimos un audio de Decodifica, dejamos la detección de idioma en automático y activamos la salida con timestamps.</p>
+
     <FiguraArticulo
       src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/demo-oficial-qwen3-asr.webp"
       alt="Captura de la demo oficial de Qwen3-ASR en Hugging Face: Qwen3-ASR-1.7B con Qwen3-ForcedAligner-0.6B, subida de audio, idioma en Auto y timestamps activados"
@@ -119,6 +100,7 @@ const pillarLabel = "Pilar 1: Apps web";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Demo web o ejecución local</h2>
     <p>La demo oficial es la ruta rápida: permite subir un audio y ver la transcripción sin preparar un entorno técnico. Ese archivo se procesa en un servicio web, así que la comodidad no equivale a privacidad local.</p>
     <p>Qwen publica dos piezas distintas. Qwen3-ASR-1.7B realiza el reconocimiento de voz y Qwen3-ForcedAligner-0.6B alinea texto y audio. La documentación oficial incluye el español, describe compatibilidad con 30 idiomas y 22 dialectos chinos y distribuye los pesos con licencia Apache 2.0.</p>
+
     <FiguraArticulo
       src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/modelos-qwen3-asr-idiomas.webp"
       alt="Captura de la tabla oficial de modelos: Qwen3-ASR-1.7B reconoce 30 idiomas, entre ellos el español, y 22 dialectos chinos; Qwen3-ForcedAligner-0.6B también incluye el español"
@@ -136,6 +118,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Salta a varias palabras usando sus tiempos de inicio y final.</li>
       <li>Decide si el tiempo ahorrado compensa la revisión necesaria.</li>
     </ol>
+
     <FiguraArticulo
       src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/evaluar-transcripcion-qwen3-asr.webp"
       alt="Esquema en cinco pasos para evaluar una transcripción de Qwen3-ASR: audio de referencia, idioma y sentido, nombres y números, saltos por tiempos y balance de revisión"
@@ -161,25 +144,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><a href="/herramientas/qwen-code/" class="text-brand-400 hover:text-brand-300">Ficha de Qwen Code</a>, para explorar otra herramienta abierta de la familia Qwen.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-2026-08-01-qwen3-asr-transcribe-espanol" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-2026-08-01-qwen3-asr-transcribe-espanol" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

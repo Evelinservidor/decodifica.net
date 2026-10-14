@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "DeepSeek, Qwen y Kimi en español: cómo usarlos gratis";
 const description = "Guía práctica de DeepSeek, Qwen y Kimi en español: app oficial, modelos actuales, privacidad según cada política, prompts de prueba y cuándo no usarlos.";
 const pubDate = "2026-07-07";
 const modifiedDate = "2026-10-06";
 const readingTime = "10 min";
+const tema = "chatbots";
 const tags = ["deepseek en español", "deepseek app", "ia china gratis", "Qwen", "Kimi", "GLM", "privacidad IA"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -40,28 +40,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="deepseek-app-oficial-espanol">
 
-    <PortadaArticulo slug="deepseek-app-oficial-espanol" />
 
     <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
@@ -274,25 +254,7 @@ Tarea 3: [...]
       </ul>
     </section>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-deepseek-app-oficial-espanol" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-deepseek-app-oficial-espanol" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Google Maps con Gemini: cómo añadir una parada en tu ruta";
 const description = "Cómo pedir a Gemini en Google Maps que busque un sitio durante la navegación y lo añada como parada, cómo activarlo y qué revisar antes de aceptar el desvío.";
 const modifiedDate = "2026-10-06";
 const pubDate = "2026-07-29";
 const readingTime = "4 min";
+const tema = "oficina";
 const tags = ["Google Maps", "Gemini", "añadir parada", "paradas en ruta", "navegación con IA", "Google Maps Gemini", "rutas Google Maps"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
@@ -28,38 +28,18 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="2026-07-31-google-maps-gemini-paradas-ruta">
 
-    <PortadaArticulo slug="2026-07-31-google-maps-gemini-paradas-ruta" />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
-      <ul class="space-y-2 text-dark-200 text-sm">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · En dos líneas</p>
+      <ul>
         <li><strong>Qué cambia:</strong> Gemini puede buscar, refinar y añadir una parada mientras mantienes la ruta.</li>
         <li><strong>Petición útil:</strong> combina lugar, condición y un límite de desvío.</li>
         <li><strong>Comprueba:</strong> tiempo añadido, horario, dirección y ruta final antes de aceptar.</li>
         <li><strong>Decisión:</strong> usa la conversación cuando reduce pasos; conserva los filtros manuales para búsquedas simples.</li>
       </ul>
-    </div>
+    </section>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -149,25 +129,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-2026-07-31-google-maps-gemini-paradas-ruta" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-2026-07-31-google-maps-gemini-paradas-ruta" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>
