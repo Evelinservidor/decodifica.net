@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Qwen3-ASR: transcribir audio en español con marcas por palabra";
 const description = "Probamos Qwen3-ASR con audio en español: 45 marcas por palabra, límites de la demo web y criterios para revisar antes de usarlo.";
@@ -71,6 +72,14 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>En Decodifica lo probamos con un audio en español de 33,048 segundos. La demo oficial detectó el idioma, conservó el mensaje completo y devolvió 45 segmentos con inicio y final. El resultado fue útil, pero no perfecto: algunas marcas temporales todavía necesitaban revisión.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué probamos exactamente</h2>
     <p>La prueba se hizo en el Space oficial de Qwen en Hugging Face. Subimos un audio de Decodifica, dejamos la detección de idioma en automático y activamos la salida con timestamps.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/demo-oficial-qwen3-asr.webp"
+      alt="Captura de la demo oficial de Qwen3-ASR en Hugging Face: Qwen3-ASR-1.7B con Qwen3-ForcedAligner-0.6B, subida de audio, idioma en Auto y timestamps activados"
+      width={1200}
+      height={791}
+      caption="Demo oficial de Qwen3-ASR en Hugging Face Spaces (captura de octubre de 2026)."
+    />
     <p>Comprobamos tres cosas:</p>
     <ol>
       <li>si reconocía el español;</li>
@@ -91,6 +100,14 @@ const pillarLabel = "Pilar 1: Apps web";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Demo web o ejecución local</h2>
     <p>La demo oficial es la ruta rápida: permite subir un audio y ver la transcripción sin preparar un entorno técnico. Ese archivo se procesa en un servicio web, así que la comodidad no equivale a privacidad local.</p>
     <p>Qwen publica dos piezas distintas. Qwen3-ASR-1.7B realiza el reconocimiento de voz y Qwen3-ForcedAligner-0.6B alinea texto y audio. La documentación oficial incluye el español, describe compatibilidad con 30 idiomas y 22 dialectos chinos y distribuye los pesos con licencia Apache 2.0.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/modelos-qwen3-asr-idiomas.webp"
+      alt="Captura de la tabla oficial de modelos: Qwen3-ASR-1.7B reconoce 30 idiomas, entre ellos el español, y 22 dialectos chinos; Qwen3-ForcedAligner-0.6B también incluye el español"
+      width={630}
+      height={879}
+      caption="Tabla de modelos e idiomas de la ficha de Qwen3-ASR-1.7B en Hugging Face (captura de octubre de 2026)."
+    />
     <p>La ruta local ofrece más control sobre archivos sensibles, pero exige instalar los pesos y preparar el entorno. No hemos probado esa instalación local: aquí comparamos la utilidad de la demo con la decisión de ejecutar el modelo por cuenta propia.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo evaluar una transcripción</h2>
     <p>Una prueba pequeña basta para saber si el modelo encaja en tu flujo:</p>
@@ -101,6 +118,13 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Salta a varias palabras usando sus tiempos de inicio y final.</li>
       <li>Decide si el tiempo ahorrado compensa la revisión necesaria.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/evaluar-transcripcion-qwen3-asr.webp"
+      alt="Esquema en cinco pasos para evaluar una transcripción de Qwen3-ASR: audio de referencia, idioma y sentido, nombres y números, saltos por tiempos y balance de revisión"
+      width={1200}
+      height={607}
+    />
     <p>La conclusión de nuestra prueba es concreta: Qwen3-ASR acelera la primera transcripción y sus tiempos aportan una salida útil para edición y subtítulos, pero no elimina la revisión humana.</p>
     <p>Si quieres elegir qué herramienta probar según tu tarea, empieza por la <a href="/empieza/" class="text-brand-400 hover:text-brand-300">ruta de Decodifica</a>.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes oficiales</h2>

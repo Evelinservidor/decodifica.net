@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Oculta datos personales antes de usar ChatGPT con Presidio";
 const description = "Cómo usar Presidio, herramienta open source, para sustituir correos, teléfonos, IBAN o NIF por etiquetas antes de pegar un documento en ChatGPT, y sus límites.";
@@ -65,6 +66,14 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>No convierte cualquier documento en anónimo ni garantiza cumplimiento legal. Sí añade una barrera útil entre el archivo original y una IA externa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué hace Presidio</h2>
     <p>Presidio es un proyecto de código abierto con licencia MIT, mantenido ahora en la organización Data Privacy Stack de GitHub. Tiene cuatro módulos: el analizador localiza información personal en texto; el anonimizador decide qué hacer con cada hallazgo; el Image Redactor la elimina de imágenes mediante OCR, y Presidio Structured trabaja con datos tabulares. Se ejecuta en local con Python, en Docker o en Kubernetes.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-25-ia-local-oculta-datos/web-oficial-presidio.webp"
+      alt="Captura de la web oficial de Presidio by Data Privacy Stack, que lo presenta como módulos de identificación y anonimización de datos privados en texto e imágenes"
+      width={1200}
+      height={791}
+      caption="Portada de presidio.dataprivacystack.org, en inglés (captura de octubre de 2026)."
+    />
     <p>Los operadores del anonimizador incluyen <code>replace</code> (sustituir, el predeterminado), <code>redact</code> (eliminar), <code>mask</code> (enmascarar con un carácter), <code>hash</code>, <code>encrypt</code> y funciones personalizadas.</p>
     <p>Con el operador de sustitución, un correo, un teléfono y un IBAN desaparecen del texto original y se convierten en etiquetas como <code>&lt;EMAIL_ADDRESS&gt;</code>, <code>&lt;PHONE_NUMBER&gt;</code> e <code>&lt;IBAN_CODE&gt;</code>. El contenido útil permanece, pero la identidad queda separada antes de que el texto toque ChatGPT, Claude o Gemini.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El flujo correcto antes de subir un documento</h2>
@@ -76,9 +85,24 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Comparar el original con la versión filtrada.</li>
       <li>Corregir manualmente lo que falte y solo entonces enviar la copia anonimizada.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-25-ia-local-oculta-datos/flujo-anonimizar-antes-de-chatgpt.webp"
+      alt="Esquema de cinco pasos para filtrar un documento con Presidio antes de ChatGPT: extraer el texto, analizarlo en local, sustituir datos por etiquetas, comparar y corregir antes de enviar"
+      width={1200}
+      height={770}
+    />
     <p>Las etiquetas conservan el sentido. ChatGPT puede entender que existe un teléfono o una cuenta bancaria sin recibir el valor real. Además, usar la misma etiqueta para la misma persona o entidad ayuda a mantener relaciones dentro del documento.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué detecta mejor</h2>
     <p>Los identificadores con una forma clara son los candidatos más fáciles. Su lista de entidades admitidas incluye correos, teléfonos, direcciones IP, tarjetas de crédito, IBAN y nombres de persona, además de reconocedores por país; para España, NIF, NIE y pasaporte. Presidio combina patrones, validación de dígitos de control, reglas de contexto y modelos de reconocimiento de entidades, y se puede ampliar con reconocedores propios.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-25-ia-local-oculta-datos/presidio-entidades-espana-nif-nie.webp"
+      alt="Tabla de entidades de España en la documentación de Presidio: ES_NIF y ES_NIE con patrón, contexto y dígito de control, y ES_PASSPORT con patrón y contexto"
+      width={721}
+      height={251}
+      caption="Entidades de España en la lista oficial de entidades admitidas por Presidio (captura de octubre de 2026)."
+    />
     <p>Ahí está también su límite. Un nombre común, una firma dentro de una imagen, una dirección escrita de forma rara o un PDF escaneado pueden pasar inadvertidos. El sistema depende del idioma, del formato y de los reconocedores configurados. La propia documentación advierte que, al usar detección automática, no hay garantía de que encuentre toda la información sensible.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo sin confiarte</h2>
     <p>Empieza con datos ficticios que puedas comprobar: un texto corto con un nombre, dos correos, un teléfono, un IBAN y una referencia que no deba ocultarse. Después mide tres cosas:</p>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "GPT-Live: la voz de ChatGPT que escucha mientras habla";
 const description = "Qué es GPT-Live, el modelo de voz full-duplex de ChatGPT: cómo gestiona pausas e interrupciones, qué versión tiene cada plan y cómo probarlo.";
@@ -32,6 +33,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
     <p>GPT-Live es la nueva generación de modelos de voz de ChatGPT que OpenAI documentó en su <em>system card</em> del 8 de julio de 2026. La diferencia con el modo de voz anterior es que no espera a que termines de hablar para procesar lo que dices: escucha y responde de forma continua. La pregunta práctica es si eso reduce las veces que tienes que repetir o reformular lo que pides.</p>
+
+    <FiguraArticulo
+      src="/img/blog/gpt-live-voz-chatgpt/presentacion-gpt-live.webp"
+      alt="Página oficial Introducing GPT-Live de openai.com, del 8 de julio de 2026: una nueva generación de modelos de voz que ya mueve ChatGPT Voice"
+      width={1200}
+      height={791}
+      caption="Presentación oficial de GPT-Live en openai.com (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es GPT-Live</h2>
     <p>Según la <em>system card</em> publicada por OpenAI, GPT-Live-1 y GPT-Live-1 mini son modelos <strong>full-duplex</strong>: pueden escuchar y responder de forma continua en lugar de esperar a que acabe un turno claramente definido. Están diseñados para gestionar pausas, interrupciones y cambios de ritmo, y deciden en cada momento si responder o seguir escuchando.</p>
     <ul class="space-y-2">
@@ -40,6 +49,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Delegación:</strong> cuando una petición requiere trabajo más complejo, como una búsqueda o un razonamiento largo, GPT-Live puede delegarlo en otros modelos. OpenAI indica que ese trabajo refleja el entrenamiento de seguridad del modelo que lo hace; en sus evaluaciones usa GPT-5.5 Thinking como referencia.</li>
       <li><strong>Seguridad durante la conversación:</strong> las entradas y salidas se supervisan mientras hablas; el sistema puede reconducir o interrumpir la respuesta, reproducir un aviso de seguridad o terminar la conversación de voz.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/gpt-live-voz-chatgpt/system-card-gpt-live-full-duplex.webp"
+      alt="Introducción de la system card de GPT-Live: modelos full-duplex que escuchan y responden de forma continua, GPT-Live-1 para usuarios de pago y GPT-Live-1 mini para usuarios gratuitos"
+      width={820}
+      height={644}
+      caption="System card de GPT-Live en deploymentsafety.openai.com (captura de octubre de 2026)."
+    />
     <p>La disponibilidad exacta por plan, región y dispositivo, y las funciones que siguen limitadas, están en la guía de ayuda de ChatGPT Voice. Consúltala antes de decidir, porque puede cambiar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres pruebas para comprobar si te sirve</h2>
     <p>Si quieres saber si GPT-Live mejora tu uso de la voz, una forma sencilla es contar cuántas veces tienes que repetir algo en estas tres situaciones:</p>
@@ -48,6 +65,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Pausa:</strong> haz una pausa larga mientras piensas una frase. Comprueba si responde antes de que termines.</li>
       <li><strong>Búsqueda en contexto:</strong> pide un dato actual en mitad de la conversación (por ejemplo, el horario de un sitio) y observa si la charla sigue sin cortarse mientras busca.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/gpt-live-voz-chatgpt/pruebas-gpt-live-voz.webp"
+      alt="Esquema con las pruebas para comprobar GPT-Live en ChatGPT: interrumpir a mitad de respuesta, hacer una pausa larga, pedir una búsqueda en contexto y contar las repeticiones"
+      width={1200}
+      height={643}
+    />
     <p>Si el número de repeticiones baja respecto al modo de voz anterior, el cambio se nota en el uso real. Si no baja, la arquitectura es nueva pero tu forma de trabajar con la voz sigue igual.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Es más útil para quien ya usa la voz de ChatGPT con frecuencia: practicar idiomas, preparar una conversación, pensar en voz alta o consultar algo con las manos ocupadas. Si solo escribes en el chat, el cambio te afecta poco. Si usas el plan gratuito, ten en cuenta que recibes la versión mini.</p>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Higgsfield en DaVinci Resolve: IA sin exportar clips";
 const description = "Qué ofrece el plugin de Higgsfield para DaVinci Resolve, cómo medir si ahorra exportaciones y qué revisar sobre créditos, calidad y uso comercial.";
@@ -63,6 +64,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Higgsfield promete llevar siete herramientas de IA al panel de DaVinci Resolve para evitar el viaje de exportar un clip, abrir otra web, esperar el resultado y volver a importarlo. La integración puede ahorrar tiempo, pero la decisión no depende de una demo vistosa: depende de cuánto trabajo elimina después de revisar el resultado.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué integra Higgsfield dentro de DaVinci Resolve</h2>
     <p>La página oficial presenta un panel con generación de vídeo e imagen, reencuadre, eliminación de fondo, escalado, edición dibujando sobre la imagen y edición de vídeo mediante instrucciones. El argumento de Higgsfield es claro: hacer esas operaciones sin salir de Resolve ni cambiar continuamente de aplicación.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-28-higgsfield-davinci-plugin-ia/panel-higgsfield-davinci-resolve.webp"
+      alt="Captura de higgsfield.ai/plugins/davinci: titular Higgsfield is now inside DaVinci Resolve, botón Download y el panel del plugin con Reframe y Remove background"
+      width={1200}
+      height={791}
+      caption="Página oficial del plugin de Higgsfield para DaVinci Resolve (captura de octubre de 2026)."
+    />
     <p>Ese detalle importa más que añadir otro generador al mercado. En edición, cada exportación intermedia añade espera, archivos temporales, versiones y puntos donde se puede perder el contexto. Si el panel permite probar una variante y devolverla a la línea de tiempo con menos pasos, el beneficio práctico es la continuidad del flujo.</p>
     <p>La lista oficial sirve para saber qué probar. No demuestra que las siete funciones produzcan siempre un resultado publicable ni que vayan a ahorrar tiempo en todos los proyectos.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las tres tareas donde empezaría</h2>
@@ -83,6 +92,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Suma generación, espera, correcciones, reintentos y revisión final.</li>
       <li>Compara calidad, tiempo y número de pasos, no solo la velocidad de la primera salida.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-28-higgsfield-davinci-plugin-ia/medir-ahorro-tiempo-higgsfield.webp"
+      alt="Esquema en seis pasos para medir si el panel de Higgsfield ahorra tiempo: tarea habitual, copia del proyecto, método de siempre, repetir con el panel, sumar correcciones y comparar"
+      width={1200}
+      height={685}
+    />
     <p>Haría esta prueba con tres clips distintos. Un único acierto puede ser casual; tres tareas parecidas empiezan a mostrar si la integración merece un sitio estable en el flujo.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Créditos, planes y derechos de uso</h2>
     <p>«Dentro de DaVinci» no significa «gratis» ni «ilimitado». Higgsfield funciona con planes y créditos, y el consumo puede variar según la herramienta o el modelo. La página de precios es dinámica, así que conviene consultar el coste vigente justo antes de pagar y calcularlo sobre resultados aceptados, no sobre intentos generados.</p>
@@ -90,6 +106,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>El cálculo correcto es sencillo: coste del crédito más tiempo de corrección frente al tiempo que cuesta hacer la tarea de otra forma. Si el panel genera rápido pero obliga a repetir o limpiar demasiado, el atajo sale caro aunque la tarifa parezca baja.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que la página oficial no demuestra</h2>
     <p>La página oficial permite confirmar que el panel existe y qué siete funciones anuncia. No basta para juzgar la calidad final, la estabilidad ni el ahorro de tiempo: esas tres cosas deben medirse con el equipo y el material que vayas a editar.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-07-28-higgsfield-davinci-plugin-ia/que-confirma-pagina-oficial-higgsfield.webp"
+      alt="Esquema comparativo: la página oficial confirma el panel, sus siete funciones y el uso de créditos; calidad, estabilidad, ahorro de tiempo y derechos los mides tú"
+      width={1200}
+      height={598}
+    />
     <p>Tampoco asumiría que una función automática entiende la intención del montaje. El editor sigue decidiendo qué plano sirve, dónde corta, qué errores son aceptables y si el resultado respeta al cliente, la marca y los derechos del material.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Lo probaría si ya editas en DaVinci Resolve y repites tareas como reencuadrar, aislar fondos, mejorar resolución o preparar planos de apoyo. Cuanto más frecuente sea el salto a herramientas externas, más fácil será medir si la integración elimina fricción.</p>

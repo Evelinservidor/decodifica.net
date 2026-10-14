@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Qwen Code ya no es solo un CLI: así cambia tu flujo";
 const description = "Qwen Code empieza a parecer menos un chat para programar y más una capa de trabajo: terminal, Skills, modelos y aprobaciones en un mismo flujo.";
@@ -82,12 +83,28 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>La parte que más me llama la atención es la combinación. Terminal por un lado, Skills por otro, modelos intercambiables y ahora Computer Use integrado según la actualización oficial del 4 de junio de 2026.</p>
     <p>Por separado, cada pieza suena normal. Junta, la historia cambia: puedes empezar a construir pequeños flujos de trabajo. No una automatización gigante y peligrosa, sino procesos concretos: revisar una estructura, preparar un cambio, repetir una comprobación, documentar una decisión o pedir una propuesta antes de editar.</p>
 
+    <FiguraArticulo
+      src="/img/blog/qwen-code-agent-terminal/actualizacion-computer-use-qwen-code.webp"
+      alt="Captura de la actualización oficial de Qwen Code del 4 de junio de 2026: Computer Use integrado, versiones v0.17.0 y v0.17.1 e integración con Feishu"
+      width={1200}
+      height={791}
+      caption="Actualización semanal de Qwen Code del 4 de junio de 2026 en su documentación oficial (captura de octubre de 2026)."
+    />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las tres piezas que vigilaría</h2>
     <ol>
       <li><strong>Skills reutilizables.</strong> Si una instrucción la repites cada semana, no debería vivir sólo en tu cabeza ni en un prompt perdido.</li>
       <li><strong>Cambio de modelo.</strong> No todas las tareas necesitan el mismo tipo de IA. Poder elegir modelo por trabajo puede ahorrar coste, tiempo o errores.</li>
       <li><strong>Approval mode.</strong> Es menos vistoso que una demo, pero para mí es clave: la IA puede proponer, pero tú decides cuándo toca tocar archivos o ejecutar algo sensible.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/qwen-code-agent-terminal/documentacion-approval-mode-qwen-code.webp"
+      alt="Captura de la página Approval Mode de la documentación de Qwen Code con la tabla de modos de permiso: Plan, Ask Permissions y Auto-Edit, y qué puede editar o ejecutar cada uno"
+      width={1200}
+      height={791}
+      caption="Página de Approval Mode en la documentación oficial de Qwen Code (captura de octubre de 2026)."
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde puede aportar de verdad</h2>
     <p>Yo lo veo especialmente útil en esos momentos en los que abrir un proyecto da pereza: no recuerdas la estructura, no sabes por dónde empezar, tienes que revisar cambios o necesitas convertir una tarea manual en algo más repetible.</p>
@@ -96,6 +113,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no compraría todavía</h2>
     <p>No lo vendería como piloto automático. Si una herramienta toca código, archivos o acciones del sistema, la supervisión sigue siendo parte del trabajo. Approval mode no es una molestia: es una red de seguridad.</p>
     <p>Tampoco sacaría conclusiones de precio o rendimiento sin probarlo en un caso concreto. Para mí la prueba real sería sencilla: darle una tarea pequeña, revisar el diff, medir si ahorra tiempo y ver si el resultado se puede mantener sin estar corrigiendo cada paso.</p>
+
+    <FiguraArticulo
+      src="/img/blog/qwen-code-agent-terminal/primera-prueba-qwen-code-pasos.webp"
+      alt="Esquema en cuatro pasos para probar Qwen Code: elegir una tarea pequeña, dejar el approval mode activo, revisar el diff y medir si ahorra tiempo"
+      width={1200}
+      height={696}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>Qwen Code merece estar en el radar si trabajas con repositorios, automatización ligera o tareas repetidas. No porque prometa hacerlo todo, sino porque empieza a juntar las piezas que hacen falta para trabajar con IA de forma más ordenada.</p>

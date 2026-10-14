@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Ollama: qué es y cómo usar modelos de IA en local";
 const description = "Qué es Ollama, qué ordenador necesitas, las órdenes básicas para usar modelos, cómo conectarlo con otras apps, precios de la nube y diferencias con LM Studio.";
@@ -52,6 +53,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Probar modelos abiertos antes de pagar</strong> una suscripción.</li>
     </ul>
     <p>Su biblioteca de modelos está en <a href="https://ollama.com/library" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">ollama.com/library</a>. Cada modelo suele venir en varios tamaños; por ejemplo, Gemma 4 aparece en las versiones e2b, e4b, 12b, 26b y 31b. Cuanto más grande, mejor suele responder y más memoria necesita.</p>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-que-es-como-usar/gemma4-tamanos.webp"
+      alt="Captura de la ficha de gemma4 en la biblioteca de Ollama con los tamaños e2b, e4b, 12b, 26b y 31b y la orden ollama run gemma4"
+      width={1200}
+      height={791}
+      caption="Ficha de gemma4 en ollama.com/library (captura de octubre de 2026)."
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué ordenador necesitas</h2>
     <div class="not-prose my-8 overflow-x-auto">
@@ -123,6 +132,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Pro (20 $/mes, o 200 $ al año):</strong> 60 $ de créditos al mes, modelos más grandes y varios modelos a la vez.</li>
       <li><strong>Max (100 $/mes):</strong> 300 $ de créditos al mes y hasta 10 peticiones simultáneas.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-que-es-como-usar/precios-ollama.webp"
+      alt="Captura de los planes Free y Pro de la página de precios de Ollama: Free a 0 dólares con modelos locales y Pro a 20 dólares al mes con 60 dólares de créditos"
+      width={660}
+      height={484}
+      caption="Planes Free y Pro en ollama.com/pricing (captura de octubre de 2026)."
+    />
     <p><strong>Privacidad en la nube:</strong> Ollama dice que procesa tus mensajes para responder, pero que no los guarda ni los registra y que no los usa para entrenar modelos. Si prefieres que nada salga de tu equipo, puedes desactivar las funciones en la nube poniendo <code>"disable_ollama_cloud": true</code> en el archivo <code>~/.ollama/server.json</code>; perderás los modelos en la nube y la búsqueda web.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ollama o LM Studio</h2>
@@ -132,6 +149,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Mac con Intel:</strong> Ollama funciona (solo con el procesador); LM Studio no los admite.</li>
       <li><strong>Licencia:</strong> Ollama es de código abierto (MIT); LM Studio es gratuito pero su código no es abierto, y su licencia permite uso personal y uso interno en empresas.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-que-es-como-usar/ollama-o-lm-studio.webp"
+      alt="Esquema comparativo de Ollama y LM Studio: Ollama es de código abierto MIT, se usa desde la terminal y funciona en Mac con Intel; LM Studio tiene ventana en español y no admite Mac con Intel"
+      width={1200}
+      height={648}
+    />
     <p>Si nunca has abierto una terminal, empieza por LM Studio. Si quieres conectar el modelo con un agente de programación o con tus propios programas, Ollama lo pone más fácil.</p>
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>

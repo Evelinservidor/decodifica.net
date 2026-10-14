@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "ChatGPT Work: cuándo usarlo en lugar del chat normal";
 const description = "Cuándo conviene pasar del chat de ChatGPT al modo Work para pedir un informe o una presentación completa, y tres comprobaciones para revisar el resultado.";
@@ -40,6 +41,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Work y cuándo seguir en Chat</h2>
     <p>Chat sirve para una respuesta rápida: entender un concepto, corregir un párrafo o explorar una idea. Work tiene más sentido cuando puedes nombrar un resultado concreto, aportar varios archivos y comprobar el entregable con una lista corta.</p>
     <p>Buenos casos iniciales son un informe de una página, una presentación breve o un dashboard construido a partir de datos que ya conoces. Evita empezar con pagos, envíos externos o cambios irreversibles.</p>
+
+    <FiguraArticulo src="/img/blog/chatgpt-work-archivos-a-entregables/chat-o-work-cuando-usar-cada-uno.webp" alt="Comparativa entre el chat normal de ChatGPT, para respuestas rápidas, y ChatGPT Work, para un informe de una página, una presentación breve o un dashboard revisando antes el plan" width={1200} height={674} />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El plan es parte del control</h2>
     <p>Antes de transformar veinte archivos, revisa qué fuentes va a usar, qué pasos propone y qué formato va a entregar. Corregir el enfoque en ese punto cuesta menos que reconstruir una presentación completa con datos mal interpretados.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">La prueba de tres comprobaciones</h2>
@@ -50,6 +53,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Si puedes modificar una diapositiva sin romper el resto.</li>
     </ol>
     <p>Si falla alguna, reduce el alcance y vuelve a Chat. Si mantiene procedencia, números y formato editable, puedes ampliar el alcance poco a poco.</p>
+
+    <FiguraArticulo src="/img/blog/chatgpt-work-archivos-a-entregables/tres-comprobaciones-entregable-chatgpt-work.webp" alt="Pasos de la prueba de tres comprobaciones de ChatGPT Work: archivo sin datos sensibles, que identifique los archivos usados, que tres cifras coincidan y que una diapositiva se edite sin romper el resto" width={1200} height={617} />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Plugins, contexto y permisos</h2>
     <p>Conectar más herramientas no mejora automáticamente el resultado. Usa solo las fuentes necesarias para el entregable y conserva los permisos del sistema de origen. Cuanto más amplio sea el acceso, más importante es revisar el plan y la salida.</p>
     <p>La disponibilidad de Work y de cada integración depende del plan y de la aplicación (web, móvil o escritorio). Consulta los artículos de ayuda de OpenAI enlazados abajo antes de planificar un flujo con él.</p>

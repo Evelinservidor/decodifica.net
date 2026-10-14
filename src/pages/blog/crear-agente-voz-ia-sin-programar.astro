@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 
 const title = "Cómo crear un agente de voz con IA sin programar";
@@ -82,9 +83,25 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>Retell funciona con pago por uso: al registrarte recibes 10 $ de crédito gratis y después pagas entre 0,07 y 0,31 $ por minuto de agente de voz, según los modelos y voces que elijas. Su página de precios incluye plantillas de agentes ya hechas, analíticas y transcripciones de llamadas, pruebas con llamadas simuladas, webhooks y API, y 20 llamadas simultáneas gratis.</p>
     <p>Las llamadas simuladas son lo más útil para un negocio pequeño: puedes ver cómo responde el agente a distintos clientes antes de dejarle atender a uno de verdad.</p>
 
+    <FiguraArticulo
+      src="/img/blog/crear-agente-voz-ia-sin-programar/precios-retell.webp"
+      alt="Página de precios de Retell AI: pago por uso con 10 $ de crédito gratis, de 0,07 a 0,31 $ por minuto de agente de voz, plantillas, pruebas simuladas y 20 llamadas simultáneas gratis"
+      width={1160}
+      height={664}
+      caption="Página de precios de retellai.com (captura de octubre de 2026)."
+    />
+
     <h3 class="font-display text-xl font-bold mt-6 mb-3">3. Vapi: control de cada pieza</h3>
     <p>Vapi se presenta como una plataforma para desarrolladores, aunque tiene panel y configuraciones predefinidas que montan un agente "en un clic". Su punto fuerte es que eliges cada pieza (reconocimiento de voz, modelo y voz) entre decenas de proveedores como OpenAI, Anthropic, Google, Deepgram o ElevenLabs.</p>
     <p>Cómo cobra (consultado en octubre de 2026): 0,05 $ por minuto de "hosting" de Vapi, más el coste de cada proveedor a su precio de lista y sin recargo, más la telefonía (por ejemplo, Twilio cobra 0,008 $/min por llamada entrante). Para empezar da 5 $ de crédito, un número de teléfono, 4 llamadas a la vez y guarda los datos de las llamadas 14 días. El paquete Core (29 $/mes) amplía a 10 llamadas a la vez, guarda 30 días e incluye la opción de no retener datos (<em>Zero Data Retention</em>).</p>
+
+    <FiguraArticulo
+      src="/img/blog/crear-agente-voz-ia-sin-programar/precios-vapi.webp"
+      alt="Paquetes de Vapi: sin paquete desde 0 $ con 0,05 $/min de hosting, 5 $ de crédito, 4 llamadas a la vez y 14 días de datos; Core a 29 $/mes con 10 llamadas, 30 días y ZDR"
+      width={1160}
+      height={744}
+      caption="Página de precios de vapi.ai (captura de octubre de 2026)."
+    />
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">4. OpenAI Realtime API: para equipos técnicos</h3>
     <p>La Realtime API de OpenAI usa un modelo que trabaja directamente con audio (de voz a voz), mantiene el hilo de la conversación y puede usar herramientas. Se conecta por WebRTC desde el navegador o por WebSocket desde un servidor, así que hace falta programar. La guía oficial usa como ejemplo el modelo <code>gpt-realtime-2.1</code>.</p>
@@ -119,6 +136,13 @@ Reglas:
       <li><strong>Pruébalo en el navegador</strong> hablando como si fueras un cliente. Si se atasca o responde cosas raras, vuelve al paso 3 y ajusta las instrucciones.</li>
       <li><strong>Publícalo:</strong> en tu web con el widget, o en un número de teléfono conectando Twilio o una centralita SIP. La telefonía la cobra el proveedor de teléfono aparte.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/crear-agente-voz-ia-sin-programar/pasos-agente-elevenlabs.webp"
+      alt="Esquema de siete pasos para crear un agente de voz con ElevenLabs: cuenta, agente nuevo, instrucciones, base de conocimiento, voz, prueba en el navegador y publicación con widget, Twilio o SIP"
+      width={1200}
+      height={996}
+    />
     <p>La parte que más tiempo lleva no es la herramienta: es decidir qué debe decir el agente, qué no, y cuándo tiene que pasar la llamada a una persona.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes de ponerlo a atender clientes</h2>

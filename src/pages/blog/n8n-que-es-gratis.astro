@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "n8n: qué es, si es gratis y cómo empezar";
 const description = "Qué es n8n y para qué sirve, cuándo es gratis (edición Community) y cuándo se paga (n8n Cloud), qué permite su licencia y cómo crear tu primer flujo.";
@@ -47,10 +48,25 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Pasar el texto de un correo por un modelo de IA para clasificarlo y moverlo a la carpeta que toca.</li>
     </ul>
     <p>La parte de IA ha ganado peso: los planes incluyen un nodo de agente de IA (<em>AI Agent</em>), pasos con IA y conexión con servidores MCP, de forma que un modelo puede decidir qué herramientas usar dentro del flujo. n8n anuncia además más de 10.000 plantillas de flujos ya hechos que se pueden importar y adaptar.</p>
+
+    <FiguraArticulo
+      src="/img/blog/n8n-que-es-gratis/web-oficial-n8n.webp"
+      alt="Captura de la portada de n8n.io con el lema AI agents and workflows you can see and control y los botones Get started for free y Talk to sales"
+      width={1200}
+      height={698}
+      caption="Portada de n8n.io en inglés (captura de octubre de 2026)."
+    />
     <p>Cuándo no merece la pena: si la tarea es una sola acción entre dos aplicaciones que ya se conectan entre sí, o si la haces una vez al mes, configurar un flujo te llevará más tiempo del que ahorras.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿n8n es gratis?</h2>
     <p>Depende de dónde se ejecute. n8n ofrece dos formas de usarlo:</p>
+
+    <FiguraArticulo
+      src="/img/blog/n8n-que-es-gratis/n8n-gratis-o-de-pago.webp"
+      alt="Esquema comparativo de n8n: la edición Community instalada por ti es gratis sin límite de tiempo; n8n Cloud tiene prueba de 14 días y planes desde 20 euros al mes con 2.500 ejecuciones"
+      width={1200}
+      height={753}
+    />
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Instalado por ti (self-hosted): gratis</h3>
     <p>La <strong>edición Community</strong> es gratuita sin límite de tiempo e incluye, según la documentación, "casi el conjunto completo de funciones". Lo que no trae son funciones de equipo y de empresa: proyectos, compartir flujos y credenciales con otras personas, inicio de sesión único (SSO), entornos separados de pruebas y producción, control de versiones con Git, almacenes externos de secretos y envío de registros a otros sistemas.</p>
@@ -119,6 +135,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Configura las credenciales.</strong> Son las claves que permiten a n8n entrar en tus cuentas. No las compartas fuera de n8n.</li>
       <li><strong>Ejecuta el flujo a mano</strong> ("Execute Workflow") y revisa qué datos salen de cada nodo antes de dejarlo activo.</li>
     </ol>
+
+    <FiguraArticulo
+      src="/img/blog/n8n-que-es-gratis/primer-flujo-n8n.webp"
+      alt="Esquema de seis pasos para crear el primer flujo en n8n: cuenta de prueba, flujo nuevo, disparador Schedule Trigger, siguiente paso, credenciales y ejecución manual"
+      width={1200}
+      height={843}
+    />
     <p>El tutorial oficial ("Build your first workflow") sigue estos mismos pasos con un ejemplo que consulta datos públicos de la NASA y separa los resultados con una condición. Es una buena forma de entender cómo pasan los datos de un nodo a otro sin tocar tus cuentas reales.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Si prefieres instalarlo tú</h3>

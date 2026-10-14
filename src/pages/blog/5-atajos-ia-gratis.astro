@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "5 atajos de IA para correos, traducciones y tareas";
 const description = "Cinco prompts listos para copiar: resumir correos, crear plantillas de respuesta, buscar con fuentes, traducir con contexto y dividir un proyecto en tareas.";
@@ -36,6 +37,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <p>No necesitas otra colección de cien prompts. Estos cinco atajos están pensados para tareas que se repiten: leer correos, contestar mensajes parecidos, buscar información, traducir con contexto y ordenar un proyecto que todavía está en tu cabeza.</p>
     <p>La idea es sencilla: copiar una instrucción, adaptarla con tus datos y medir si de verdad reduce trabajo. Puedes probarlos en asistentes como DeepSeek, Qwen, Kimi o Mistral; la mejor opción será la que te obligue a corregir menos. Revisa en cada servicio qué ofrece su plan gratuito, porque las condiciones cambian.</p>
+
+    <FiguraArticulo
+      src="/img/blog/5-atajos-ia-gratis/cinco-atajos-ia-resumen.webp"
+      alt="Cuadro resumen de los cinco atajos de IA: resumir un correo largo, plantilla de respuesta reutilizable, búsqueda con fuentes, traducción con contexto y proyecto convertido en tareas"
+      width={1200}
+      height={779}
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">1. Sacar la acción de un correo largo</h2>
     <p><strong>Prompt para copiar:</strong> Resume este correo en tres frases: una con la acción que me piden, otra con el plazo y otra con lo que tengo que responder. Si falta alguno de esos datos, indícalo claramente. Correo: [PEGA AQUÍ EL TEXTO].</p>
     <p>Este formato evita un resumen bonito pero poco útil. La salida debe decir qué hacer, cuándo y qué respuesta falta. Antes de actuar, vuelve al correo original para comprobar nombres, fechas y cantidades.</p>
@@ -59,8 +67,23 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>número de errores o datos que has tenido que corregir;</li>
       <li>facilidad para repetir el proceso la semana siguiente.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/5-atajos-ia-gratis/medir-ahorro-tiempo-ia.webp"
+      alt="Esquema de cinco pasos para medir si un atajo de IA ahorra tiempo: tarea real en dos herramientas, cronometrar con la revisión, contar errores, comprobar si es repetible y quedarse con la que menos se corrige"
+      width={1200}
+      height={770}
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA elegir</h2>
     <p>No hay un ganador universal. Ejecuta el mismo prompt en dos herramientas y conserva la que siga mejor el formato, cite fuentes utilizables y necesite menos correcciones. Para información sensible, revisa también la política de datos antes de pegar el contenido.</p>
+
+    <FiguraArticulo
+      src="/img/blog/5-atajos-ia-gratis/chat-mistral-le-chat-sin-cuenta.webp"
+      alt="Pantalla de inicio del chat de Mistral en chat.mistral.ai, en español, con el cuadro Haz una pregunta listo para pegar uno de los prompts"
+      width={1200}
+      height={491}
+      caption="Chat de Mistral en chat.mistral.ai (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>Empieza por el atajo que resuelva una tarea repetida esta semana. Guarda el prompt junto a un ejemplo bueno y anota qué tuviste que corregir. Así dejas de coleccionar trucos y construyes un pequeño sistema que sí puedes reutilizar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes y herramientas</h2>

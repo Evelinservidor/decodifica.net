@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Claude para escribir emails que no suenen a robot";
 const description = "Cómo darle a Claude tu tono, tu relación con el destinatario y un correo de ejemplo para que escriba emails claros y naturales. Con plantillas copiables.";
@@ -78,6 +79,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El método en 4 pasos</h2>
 
+    <FiguraArticulo
+      src="/img/blog/claude-emails-sonar-humanos/metodo-4-pasos-emails-claude.webp"
+      alt="Esquema del método en 4 pasos para emails con Claude: guardar tu voz como instrucciones fijas, describir la relación con el destinatario, pegar un email anterior y enviar el prompt completo"
+      width={1200}
+      height={643}
+    />
+
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 1: Crea un "system prompt" con tu voz</h3>
     <p>
@@ -86,6 +94,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Settings &gt; Instructions for Claude:</strong> se aplican a todas tus conversaciones. Sirve si casi todo lo que escribes con Claude son correos.</li>
       <li><strong>Las instrucciones de un Proyecto:</strong> solo afectan a los chats de ese proyecto. Es la opción más limpia: creas un proyecto "Emails" y no mezclas este tono con otras tareas. Los Proyectos están también en el plan gratuito, con un máximo de cinco.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/claude-emails-sonar-humanos/instrucciones-para-claude-ajustes.webp"
+      alt="Captura del centro de ayuda de Claude con los pasos para fijar las Instructions for Claude: pulsar tus iniciales, abrir Settings y escribir las instrucciones"
+      width={1200}
+      height={791}
+      caption="Artículo de ayuda oficial sobre la personalización de Claude en support.claude.com (captura de octubre de 2026)."
+    />
     <p>
       Si no quieres configurar nada, pega el texto como primer mensaje del chat. Un ejemplo para adaptar:
     </p>
@@ -119,6 +135,14 @@ Contexto: Acabo de cerrar un proyecto grande que lideré. Quiero pedir aumento d
     <p>
       Es el paso que más cambia el resultado. Anthropic describe los ejemplos como "una de las formas más fiables" de orientar el formato, el tono y la estructura de lo que escribe Claude. Pega un correo tuyo con el que quedaste contento y dile "usa este tono, esta estructura y esta longitud, pero adáptalo al contexto nuevo". Antes de pegarlo, quita los datos personales de terceros que no hagan falta.
     </p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-emails-sonar-humanos/guia-anthropic-usar-ejemplos.webp"
+      alt="Captura de la guía Prompting best practices de Anthropic, sección Use examples effectively: los ejemplos son una de las formas más fiables de orientar formato, tono y estructura"
+      width={1200}
+      height={791}
+      caption="Sección «Use examples effectively» de la guía de prompts en platform.claude.com (captura de octubre de 2026)."
+    />
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 4: El prompt completo</h3>
     <p>

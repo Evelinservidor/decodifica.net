@@ -58,6 +58,12 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - SEO idéntico (títulos, descripciones, datos estructurados, sitemap, `llms.txt` y robots); 0 problemas de accesibilidad; LCP en el móvil por debajo de 0,75 s.
 - Pendiente: que Jordi lo apruebe y se fusione (con «Publicar sola: NO» no se fusiona solo). Faltan resúmenes en 4 artículos (`2026-07-17-hermes-agent-chino`, `2026-07-22-nano-banana-1000-prompts`, `5-atajos-ia-gratis` y `gpt-live-voz-chatgpt`); que los añada el agente semanal con fuentes.
 
+## Imágenes en todos los artículos (14-10-2026, rama `agente/imagenes-todos`)
+
+- Los 27 artículos que eran solo texto llevan ya 2-3 imágenes dentro (73 nuevas: capturas de webs oficiales y esquemas propios). Ya las tienen todos los artículos del blog.
+- Velocidad igual (LCP medio en móvil de 780 a 784 ms con el diseño nuevo). Revisión SEO y build sin errores.
+- Datos que ya no coincidían con las webs oficiales y lo que no se pudo capturar: `docs/informes/2026-10-14-imagenes.md`. Lo revisa el repaso mensual (`docs/AGENTE-SEMANAL.md`, que ya no pide añadir imágenes poco a poco, sino mantener las capturas al día).
+
 ## Pendiente
 
 - [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.

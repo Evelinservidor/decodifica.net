@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "NotebookLM (Gemini Notebook): qué es y cómo usarlo";
 const description = "Qué es NotebookLM, ahora Gemini Notebook: cómo crear un cuaderno, qué fuentes admite, qué genera, límites del plan gratuito y cuándo elegir otra IA.";
@@ -67,6 +68,13 @@ const pillarLabel = "Pilar 1: Apps web";
       El cambio de nombre llegó con la integración en el resto de productos de Google. Según el <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">anuncio oficial</a>, sigue siendo un producto independiente, pero tus cuadernos aparecen también en la app de Gemini y se sincronizan entre ambas. Google cifra su uso en más de 30 millones de personas y 600.000 organizaciones. Los cuadernos también aparecen en el Modo IA de la Búsqueda de Google, aunque esa integración por ahora solo funciona en inglés y no está disponible en el Espacio Económico Europeo.
     </p>
 
+    <FiguraArticulo
+      src="/img/blog/notebooklm-guia-2026/web-gemini-notebook-portada.webp"
+      alt="Captura de la portada de notebook.google con el nuevo nombre Gemini Notebook, el lema Entiende cualquier cosa y el botón Probar Gemini Notebook"
+      width={1200}
+      height={604}
+      caption="Portada de notebook.google, la web oficial de Gemini Notebook (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para qué usar NotebookLM</h2>
     <p>
       Encaja cuando el material de partida importa: documentos largos que quieres consultar varias veces y cuyas respuestas necesitas poder rastrear hasta la fuente.
@@ -107,6 +115,12 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Haz preguntas concretas. La ayuda oficial recomienda nombrar la fuente cuando hay varias seleccionadas: mejor "¿Qué conclusiones aparecen en el informe de marzo?" que "Resume esto". También puedes marcar solo ciertas fuentes en el panel para limitar la búsqueda.</li>
       <li>Usa el panel <strong>Studio</strong> para generar formatos (audio, vídeo, informes, flashcards…). Se crean en segundo plano, así que puedes seguir trabajando mientras tanto.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/notebooklm-guia-2026/pasos-crear-cuaderno-notebooklm.webp"
+      alt="Esquema con los cinco pasos para crear tu primer cuaderno en NotebookLM: entrar en notebook.google, pulsar Crear cuaderno, añadir fuentes, preguntar en el panel Chat y generar formatos en Studio"
+      width={1200}
+      height={796}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué fuentes admite NotebookLM</h2>
     <p>
@@ -190,6 +204,13 @@ const pillarLabel = "Pilar 1: Apps web";
       </table>
     </div>
     <p class="text-sm text-dark-300 mt-2">Fuente: centro de ayuda de Gemini Notebook, páginas de planes y de límites de uso. Consultado el 6 de octubre de 2026.</p>
+    <FiguraArticulo
+      src="/img/blog/notebooklm-guia-2026/planes-gemini-notebook-limites.webp"
+      alt="Captura de la página de planes de Gemini Notebook: límites estándar gratis, dos veces más con Google AI Plus, cuatro veces más con Google AI Pro y entre 5 y 20 veces los de Pro con Google AI Ultra"
+      width={1200}
+      height={604}
+      caption="Página de planes de notebook.google (captura de octubre de 2026)."
+    />
 
     <ul>
       <li><strong>Cómo funciona la cuota:</strong> la <a href="https://support.google.com/gemininotebook/answer/17670842?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de límites de uso</a> explica que no se cuentan audios ni preguntas por separado: el gasto depende de la complejidad del prompt, el modelo, la función y la longitud del chat. Se recarga cada 5 horas hasta alcanzar un tope semanal. Tu consumo aparece en <strong>Configuración → Uso</strong>.</li>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Kimi K3: cómo convertir miles de páginas en un informe";
 const description = "Kimi K3 tiene un millón de tokens de contexto, visión nativa y pesos abiertos. Qué muestra su caso de 11.000 páginas y cómo probarlo con tus documentos.";
@@ -36,6 +37,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p><strong>En resumen:</strong> Kimi K3 es un modelo con visión nativa, un millón de tokens de contexto y pesos publicados en Hugging Face, pero el fabricante recomienda desplegarlo en 64 o más aceleradores, así que la mayoría lo usará desde el servicio de Kimi. Su caso de 11.000 páginas es una demostración oficial, no una evaluación independiente: para saber si te sirve, pruébalo con unos pocos documentos que ya conozcas y comprueba que cada dato lleve a su fuente.</p>
     <p>Kimi presenta K3 con un caso llamativo: convertir más de 11.000 páginas, 87 informes trimestrales y 99 PDF originales en una investigación interactiva sobre 42 años de la industria de los ASIC (chips diseñados para una tarea concreta). Según el blog de Kimi, para ello hizo más de 2.800 búsquedas y consultas web y más de 1.100 extracciones de datos desde terminal. La cifra importa menos que el tipo de salida: un informe navegable que permite volver a las fuentes y recorrer relaciones entre documentos.</p>
     <p>Es un caso oficial del fabricante, no una evaluación externa. Aun así, sirve para diseñar una prueba mucho mejor que pedir «resume estos PDF» y aceptar un bloque de texto imposible de auditar.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-05-kimi-k3-investigacion-visual/caso-oficial-kimi-k3-11000-paginas-asic.webp"
+      alt="Captura del blog oficial de Kimi con el caso 1: informe interactivo sobre 42 años de la industria de los ASIC, con 2.8k+ búsquedas web, 1.1k+ extracciones desde terminal, 11k+ páginas, 87 informes trimestrales y 99 PDF"
+      width={880}
+      height={444}
+      caption="Caso oficial del anuncio de Kimi K3 en kimi.ai (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué promete Kimi K3</h2>
     <p>Kimi describe K3 como un modelo con visión nativa, un millón de tokens de contexto y arquitectura *mixture of experts*. Su anuncio habla de 2,8 billones de parámetros totales y 16 expertos activos de un conjunto de 896; la ficha en Hugging Face indica 104.000 millones de parámetros activados.</p>
     <p>Estas cifras explican la escala del sistema, pero no garantizan que una investigación sea correcta. Un contexto enorme puede contener mucho material y seguir pasando por alto una contradicción, mezclando fechas o citando una página que no respalda la conclusión.</p>
@@ -52,8 +61,23 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>No empieces con miles de páginas. Prepara un corpus pequeño que ya conozcas: cinco PDF, una hoja con cifras, una captura y dos documentos que discrepen en una fecha o cantidad.</p>
     <p>Después pide un informe con tres salidas cerradas: cronología, tabla de afirmaciones con fuente y apartado de contradicciones. El criterio de éxito no es que el texto suene convincente, sino poder localizar cada dato y detectar el desacuerdo que introdujiste.</p>
     <p>Repite la prueba con ChatGPT, Claude o Gemini usando el mismo corpus. Quédate con la herramienta que obligue a corregir menos citas, cifras y relaciones.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-05-kimi-k3-investigacion-visual/probar-kimi-k3-con-tus-documentos.webp"
+      alt="Esquema en cuatro pasos para probar Kimi K3: preparar un corpus pequeño con un desacuerdo sembrado, pedir cronología, tabla con fuentes y contradicciones, comprobar cada dato y repetir con ChatGPT, Claude o Gemini"
+      width={1200}
+      height={675}
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Pesos abiertos no significa IA local doméstica</h2>
     <p>Los pesos de K3 están publicados en Hugging Face bajo la licencia propia «Kimi K3 License», pero el propio fabricante recomienda desplegarlo en configuraciones de 64 o más aceleradores. Esa recomendación deja claro que no es un modelo pensado para instalarse entero en un portátil.</p>
+
+    <FiguraArticulo
+      src="/img/blog/2026-08-05-kimi-k3-investigacion-visual/ficha-kimi-k3-hugging-face-pesos-licencia.webp"
+      alt="Captura de la ficha moonshotai/Kimi-K3 en Hugging Face con la licencia kimi-k3, el tamaño del modelo de 2.8T parámetros y la sección Model Introduction"
+      width={1200}
+      height={791}
+      caption="Ficha oficial de Kimi K3 en Hugging Face (captura de octubre de 2026)."
+    />
     <p>La utilidad para la mayoría estará en el servicio de Kimi o en proveedores que ofrezcan el modelo. «Abierto» puede mejorar inspección y despliegue especializado, pero no elimina costes de cómputo, privacidad ni dependencia operativa.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Kimi K3 merece una prueba si trabajas con investigaciones documentales, expedientes, informes, archivos visuales o corpus donde la trazabilidad importa tanto como el resumen.</p>
