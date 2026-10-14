@@ -1,0 +1,131 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Decodifica · IA práctica en español</title>
+<style>
+@font-face{font-family:"ID";src:url(/scripts/imagenes/fuentes/InterDisplay-ExtraBold.otf);font-weight:800;font-display:swap}
+@font-face{font-family:"ID";src:url(/scripts/imagenes/fuentes/InterDisplay-Black.otf);font-weight:900;font-display:swap}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}@media(min-width:768px){.wrap{padding:0 32px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.h{font-family:"ID",Inter,system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:0}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap}
+.ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.desliza{font-size:13px;margin:1.2em 0 -.9em;opacity:.7}@media(min-width:700px){.desliza{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit}
+
+:root{--bg:#fbfaf7;--sf:#fff;--ink:#12142a;--ink2:#4b5066;--ink3:#6b7086;--line:#e6e3dc;--brand:#4f46e5;--brand-s:#eef2ff;--acc:#c2410c;
+--ok:#047857;--ok-s:#ecfdf5;--warn:#b45309;--warn-s:#fffbeb}
+.oscuro{--bg:#0d0f1c;--sf:#151829;--ink:#eef0f8;--ink2:#b7bcd3;--ink3:#9096b0;--line:#272b44;--brand:#a5b4fc;--brand-s:#1c1f3d;--acc:#fdba74;
+--ok:#6ee7b7;--ok-s:#0f2a24;--warn:#fcd34d;--warn-s:#2b230f}
+body{background:var(--bg);color:var(--ink)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{display:flex;align-items:center;gap:8px;font-family:"ID";font-weight:900;font-size:21px;letter-spacing:-.02em}
+.logo i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#1e1b4b,#4f46e5);color:#fff;font-style:normal;font-size:15px}
+.nav{display:none;gap:26px;font-weight:600;font-size:15px}.nav a:hover{color:var(--brand)}
+.acc{display:flex;gap:4px}.acc button{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;color:var(--ink);border-radius:10px}
+@media(min-width:900px){.nav{display:flex}.acc .menu{display:none}}
+.temas{border-bottom:1px solid var(--line);background:var(--bg)}.temas .chips{padding:10px 0}
+.chip{background:var(--sf);border:1px solid var(--line);color:var(--ink2)}.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+.meta{font-size:13px;color:var(--ink3);margin-top:8px}
+.sec{padding:28px 0}.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;border-top:3px solid var(--ink);padding-top:12px}
+.sec-h h2{font-size:22px}.sec-h a{font-size:14px;font-weight:700;color:var(--brand)}
+.lead img{border-radius:14px;aspect-ratio:16/9;object-fit:cover;width:100%}
+.lead h3{font-size:clamp(25px,6.5vw,38px);margin-top:12px}.lead p.d{color:var(--ink2);font-size:16px;line-height:1.5;margin:8px 0 0}
+.row{display:grid;grid-template-columns:124px 1fr;gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.row img{border-radius:10px;aspect-ratio:16/9;object-fit:cover}.row h3{font-size:17px;line-height:1.25}
+.top5{counter-reset:n;list-style:none;margin:0;padding:0}.top5 li{display:grid;grid-template-columns:44px 1fr;gap:6px;padding:12px 0;border-top:1px solid var(--line)}
+.top5 li::before{counter-increment:n;content:counter(n);font-family:"ID";font-weight:900;font-size:34px;line-height:1;color:var(--acc)}
+.top5 h3{font-size:17px;line-height:1.25}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{border-radius:14px;padding:16px;min-height:96px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.tile b{font-family:"ID";font-size:17px;line-height:1.15}.tile span{font-size:13px;opacity:.85}
+.g-indigo{background:linear-gradient(135deg,#1e1b4b,#4f46e5)}.g-verde{background:linear-gradient(135deg,#022c22,#059669)}
+.g-rosa{background:linear-gradient(135deg,#500724,#db2777)}.g-azul{background:linear-gradient(135deg,#082f49,#0284c7)}
+.g-naranja{background:linear-gradient(135deg,#7c2d12,#ea580c)}.g-noche{background:linear-gradient(135deg,#080a14,#312e81)}
+.grid{display:grid;gap:22px}.card img{border-radius:12px;aspect-ratio:16/9;object-fit:cover;width:100%}.card h3{font-size:19px;margin-top:10px;line-height:1.22}
+.card .tag{display:block;margin-top:12px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.tiles{grid-template-columns:repeat(5,1fr)}
+.hero{display:grid;grid-template-columns:1.55fr 1fr;gap:36px}.hero .row:first-child{border-top:0;padding-top:0}
+.duo{display:grid;grid-template-columns:2fr 1fr;gap:40px}}
+.news{border-radius:18px;padding:24px;color:#fff;background:linear-gradient(135deg,#1e1b4b,#4f46e5)}
+.news h2{font-size:24px}.news p{color:#dfe3ff;margin:8px 0 16px;line-height:1.5}
+.news form{display:flex;flex-wrap:wrap;gap:8px}.news input{flex:1 1 200px;min-height:48px;border-radius:10px;border:0;padding:0 14px;font-size:16px}
+.news .btn{background:#ff9500;color:#1a1200;min-height:48px}.news small{display:block;margin-top:10px;color:#c7d2fe}
+.utils{display:grid;gap:10px}.util{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--sf)}
+.util b{display:block}.util span{font-size:14px;color:var(--ink2)}
+@media(min-width:800px){.utils{grid-template-columns:repeat(3,1fr)}}
+footer{margin-top:40px;border-top:1px solid var(--line);padding:28px 0 120px;color:var(--ink3);font-size:14px}
+footer .cols{display:flex;flex-wrap:wrap;gap:12px 22px}
+.ck{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--sf);color:var(--ink);border:1px solid var(--line);border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;max-width:720px;margin:0 auto}
+.ck p{margin:0;font-size:14px;line-height:1.4;flex:1 1 260px}.ck a{color:var(--brand);text-decoration:underline}
+.ck-b{display:flex;gap:8px;flex:1 1 200px}.ck-btn{flex:1;background:var(--ink);color:var(--bg);min-height:44px}
+/* lista del blog */
+.bh{padding:26px 0 8px}.bh h1{font-size:clamp(30px,7vw,46px)}.bh p{color:var(--ink2);margin:8px 0 16px;font-size:16px;line-height:1.5}
+.buscar{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--sf);border-radius:12px;padding:0 12px;min-height:48px;color:var(--ink3)}
+.buscar span{font-size:16px}
+.mas{display:flex;justify-content:center;margin-top:24px}.mas .btn{background:var(--sf);border:1px solid var(--line);color:var(--ink)}
+/* artículo */
+.art{padding-top:18px}.miga{font-size:14px;color:var(--ink3)}.miga a{color:var(--brand);font-weight:600}
+.art h1{font-size:clamp(30px,7.4vw,46px);margin-top:10px}.dek{font-size:19px;line-height:1.5;color:var(--ink2);margin:12px 0 0}
+.by{display:flex;align-items:center;gap:10px;margin:16px 0 18px;font-size:14px;color:var(--ink3)}
+.by i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brand-s);color:var(--brand);font-style:normal;font-weight:800}
+.by b{color:var(--ink);display:block}
+.cab{border-radius:14px;aspect-ratio:16/9;object-fit:cover;width:100%}
+.rr{margin:22px 0;background:var(--brand-s);border-radius:14px;padding:18px;border-left:5px solid var(--brand)}
+.rr-t{margin:0 0 6px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+.rr p{margin:0;font-size:17px;line-height:1.6}.rr dl{display:grid;gap:8px;margin:14px 0 0}.rr dl div{display:grid;grid-template-columns:70px 1fr;gap:8px;font-size:15px}
+.rr dt{font-weight:800}.rr dd{margin:0;color:var(--ink2)}
+.toc{border:1px solid var(--line);border-radius:12px;background:var(--sf);margin:0 0 8px}.toc summary{min-height:48px;display:flex;align-items:center;padding:0 16px;font-weight:700;cursor:pointer}
+.toc ol{margin:0;padding:0 16px 14px 36px;line-height:1.9}.toc a{color:var(--ink2)}.toc a:hover{color:var(--brand)}
+.prosa{font-size:18px;line-height:1.72;color:var(--ink)}.prosa p,.prosa ol,.prosa ul{margin:0 0 1.15em}
+.prosa h2{font-family:"ID";font-weight:800;font-size:clamp(24px,5.6vw,30px);line-height:1.18;letter-spacing:-.015em;margin:1.9em 0 .6em;scroll-margin-top:72px}
+.prosa a{color:var(--brand);text-decoration:underline;text-underline-offset:3px}.prosa code{font-size:.86em;background:var(--brand-s);padding:2px 5px;border-radius:5px}
+.prosa figure{margin:1.6em 0}.prosa figure img{border-radius:10px;border:1px solid var(--line)}.prosa figcaption{font-size:14px;color:var(--ink3);margin-top:8px}
+.tabla{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px;background:var(--sf)}
+.tabla table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.45}
+.tabla th,.tabla td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tabla thead th{background:var(--bg);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3)}
+.tabla tbody th{position:sticky;left:0;background:var(--sf)}.tabla tr:last-child>*{border-bottom:0}
+.caja{border-radius:12px;padding:14px 16px;margin:1.4em 0;font-size:16.5px;line-height:1.6}.caja p{margin:0}
+.caja-t{font-weight:800;font-size:13px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px!important}
+.consejo{background:var(--ok-s);border-left:4px solid var(--ok)}.consejo .caja-t{color:var(--ok)}
+.ojo{background:var(--warn-s);border-left:4px solid var(--warn)}.ojo .caja-t{color:var(--warn)}
+.bmed{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:1.8em 0;display:grid;gap:10px}
+.bmed b{font-size:16px}.bmed span{font-size:15px;color:var(--ink2);line-height:1.5}.bmed form{display:flex;gap:8px}
+.bmed input{flex:1;min-width:0;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font-size:16px;background:var(--sf);color:var(--ink)}
+.bmed .btn{background:var(--brand);color:#fff}.oscuro .bmed .btn{color:#12142a}
+.prosa details{border-top:1px solid var(--line);padding:12px 0}.prosa summary{font-weight:700;cursor:pointer;min-height:32px}
+.fuentes{font-size:16px}
+.autor{display:flex;gap:14px;border:1px solid var(--line);border-radius:14px;padding:16px;margin:28px 0;background:var(--sf);font-size:15px;line-height:1.5;color:var(--ink2)}
+.autor i{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--brand-s);color:var(--brand);font-style:normal;font-weight:800;font-size:20px}
+.autor b{color:var(--ink)}
+.cuerpo{max-width:700px;margin:0 auto}
+@media(min-width:1100px){.lay{display:grid;grid-template-columns:230px minmax(0,700px) 1fr;gap:48px}.lay .cuerpo{margin:0}
+.lado{position:sticky;top:76px;align-self:start;font-size:14px}.lado .toc{border:0;background:none}.lado .toc summary{padding:0;min-height:0;margin-bottom:8px;pointer-events:none;list-style:none}
+.lado .toc summary::-webkit-details-marker{display:none}.lado .toc ol{padding:0 0 0 18px}.toc-m{display:none}}
+@media(max-width:1099px){.lado{display:none}}
+</style></head><body><header class="top"><div class="wrap"><a class="logo" href="inicio.html"><i>D</i>Decodifica</a>
+<nav class="nav"><a href="#">Guías</a><a href="#">Temas</a><a href="#">Herramientas</a><a href="#">Boletín</a></nav><div class="acc"><button aria-label="Buscar"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button><button aria-label="Modo oscuro"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+<button class="menu" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div></div></header><div class="temas"><div class="wrap"><div class="chips"><a class="chip on" href="#">Todas</a><a class="chip" href="#">Chatbots y asistentes</a><a class="chip" href="#">IA en tu ordenador</a><a class="chip" href="#">Agentes y automatización</a><a class="chip" href="#">Trabajo y día a día</a><a class="chip" href="#">Imagen, vídeo y webs</a></div></div></div>
+<main class="wrap"><section class="sec"><div class="sec-h"><h2 class="h">Lo último</h2><a href="blog.html">Todas las guías →</a></div>
+<div class="hero"><a class="lead" href="articulo.html"><img class="" src="/public/og/blog/ollama-que-es-como-usar-tarjeta.webp" srcset="/public/og/blog/ollama-que-es-como-usar-tarjeta.webp 640w, /public/og/blog/ollama-que-es-como-usar-tarjeta-960.webp 960w" sizes="(min-width:1000px) 700px, 100vw" width="640" height="360" alt="" fetchpriority=high decoding="async"><span class="tag" style="display:block;margin-top:14px">IA en tu ordenador</span>
+<h3 class="h">Ollama: qué es y cómo usar modelos de IA en local</h3><p class="d">Qué es Ollama, qué ordenador necesitas, las órdenes básicas para usar modelos, cómo conectarlo con otras apps, precios de la nube y diferencias con LM Studio.</p><p class="meta">12 oct 2026 · 8 min de lectura</p></a>
+<div><a class="row" href="articulo.html"><img class="" src="/public/og/blog/claude-ia-que-es-gratis-tarjeta.webp" srcset="/public/og/blog/claude-ia-que-es-gratis-tarjeta.webp 640w, /public/og/blog/claude-ia-que-es-gratis-tarjeta-960.webp 960w" sizes="124px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="tag">Chatbots y asistentes</span><h3 class="h">Claude IA: qué es, si es gratis y cuánto cuesta</h3><p class="meta">12 oct 2026 · 7 min</p></div></a><a class="row" href="articulo.html"><img class="" src="/public/og/blog/lm-studio-que-es-como-usar-tarjeta.webp" srcset="/public/og/blog/lm-studio-que-es-como-usar-tarjeta.webp 640w, /public/og/blog/lm-studio-que-es-como-usar-tarjeta-960.webp 960w" sizes="124px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="tag">IA en tu ordenador</span><h3 class="h">LM Studio: qué es y cómo usar IA local en tu ordenador</h3><p class="meta">7 oct 2026 · 8 min</p></div></a><a class="row" href="articulo.html"><img class="" src="/public/og/blog/n8n-que-es-gratis-tarjeta.webp" srcset="/public/og/blog/n8n-que-es-gratis-tarjeta.webp 640w, /public/og/blog/n8n-que-es-gratis-tarjeta-960.webp 960w" sizes="124px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="tag">Agentes y automatización</span><h3 class="h">n8n: qué es, si es gratis y cómo empezar</h3><p class="meta">7 oct 2026 · 8 min</p></div></a><a class="row" href="articulo.html"><img class="" src="/public/og/blog/2026-08-01-qwen3-asr-transcribe-espanol-tarjeta.webp" srcset="/public/og/blog/2026-08-01-qwen3-asr-transcribe-espanol-tarjeta.webp 640w, /public/og/blog/2026-08-01-qwen3-asr-transcribe-espanol-tarjeta-960.webp 960w" sizes="124px" width="640" height="360" alt="" loading=lazy decoding="async"><div><span class="tag">IA en tu ordenador</span><h3 class="h">Qwen3-ASR: transcribir audio en español con marcas por palabra</h3><p class="meta">30 jul 2026 · 4 min</p></div></a></div></div></section>
+<div class="duo"><section class="sec"><div class="sec-h"><h2 class="h">Más guías</h2></div><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))"><a class="card" href="articulo.html"><img class="" src="/public/og/blog/2026-07-31-google-maps-gemini-paradas-ruta-tarjeta.webp" srcset="/public/og/blog/2026-07-31-google-maps-gemini-paradas-ruta-tarjeta.webp 640w, /public/og/blog/2026-07-31-google-maps-gemini-paradas-ruta-tarjeta-960.webp 960w" sizes="(min-width:1000px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" alt="" loading=lazy decoding="async"><span class="tag">Trabajo y día a día</span><h3 class="h">Google Maps con Gemini: cómo añadir una parada en tu ruta</h3><p class="meta">29 jul 2026 · 4 min</p></a><a class="card" href="articulo.html"><img class="" src="/public/og/blog/2026-07-28-higgsfield-davinci-plugin-ia-tarjeta.webp" srcset="/public/og/blog/2026-07-28-higgsfield-davinci-plugin-ia-tarjeta.webp 640w, /public/og/blog/2026-07-28-higgsfield-davinci-plugin-ia-tarjeta-960.webp 960w" sizes="(min-width:1000px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" alt="" loading=lazy decoding="async"><span class="tag">Imagen, vídeo y webs</span><h3 class="h">Higgsfield en DaVinci Resolve: IA sin exportar clips</h3><p class="meta">28 jul 2026 · 5 min</p></a><a class="card" href="articulo.html"><img class="" src="/public/og/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes-tarjeta.webp" srcset="/public/og/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes-tarjeta.webp 640w, /public/og/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes-tarjeta-960.webp 960w" sizes="(min-width:1000px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" alt="" loading=lazy decoding="async"><span class="tag">Chatbots y asistentes</span><h3 class="h">Tencent Hy3: cómo probar este modelo abierto por API</h3><p class="meta">27 jul 2026 · 5 min</p></a><a class="card" href="articulo.html"><img class="" src="/public/og/blog/2026-07-26-arena-ai-modelos-gratis-tarjeta.webp" srcset="/public/og/blog/2026-07-26-arena-ai-modelos-gratis-tarjeta.webp 640w, /public/og/blog/2026-07-26-arena-ai-modelos-gratis-tarjeta-960.webp 960w" sizes="(min-width:1000px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" alt="" loading=lazy decoding="async"><span class="tag">Chatbots y asistentes</span><h3 class="h">Arena AI: compara modelos a ciegas antes de pagar</h3><p class="meta">25 jul 2026 · 4 min</p></a></div></section>
+<section class="sec"><div class="sec-h"><h2 class="h">Lo más leído</h2></div><ol class="top5"><li><a href="articulo.html"><h3 class="h">Claude Skills gratis: qué son, cómo instalarlas y crearlas</h3><p class="meta" style="margin-top:4px">Agentes y automatización</p></a></li><li><a href="articulo.html"><h3 class="h">Alternativas a Claude Fable 5: modelos abiertos y locales</h3><p class="meta" style="margin-top:4px">Chatbots y asistentes</p></a></li><li><a href="articulo.html"><h3 class="h">DeepSeek, Qwen y Kimi en español: cómo usarlos gratis</h3><p class="meta" style="margin-top:4px">Chatbots y asistentes</p></a></li><li><a href="articulo.html"><h3 class="h">5 IAs para Excel en 2026: ahorra horas con tus fórmulas</h3><p class="meta" style="margin-top:4px">Trabajo y día a día</p></a></li><li><a href="articulo.html"><h3 class="h">5 IAs para organizar Gmail, Calendar y Notion en 2026</h3><p class="meta" style="margin-top:4px">Trabajo y día a día</p></a></li></ol></section></div>
+<section class="sec"><div class="sec-h"><h2 class="h">Explora por tema</h2></div><div class="tiles"><a class="tile g-indigo" href="blog.html"><b>Chatbots y asistentes</b><span>10 guías</span></a><a class="tile g-verde" href="blog.html"><b>IA en tu ordenador</b><span>5 guías</span></a><a class="tile g-rosa" href="blog.html"><b>Agentes y automatización</b><span>6 guías</span></a><a class="tile g-azul" href="blog.html"><b>Trabajo y día a día</b><span>8 guías</span></a><a class="tile g-naranja" href="blog.html"><b>Imagen, vídeo y webs</b><span>3 guías</span></a></div></section>
+<section class="sec"><section class="news"><h2 class="h">Una guía útil cada sábado</h2><p>Qué herramienta probar, cómo usarla y qué límites tiene. Gratis, sin spam.</p>
+<form><label class="sr" for="em">Tu email</label><input id="em" type="email" placeholder="tu@email.com"><button class="btn">Apuntarme gratis</button></form>
+<small>Te das de baja con un clic.</small></section></section>
+<section class="sec"><div class="sec-h"><h2 class="h">Herramientas gratis</h2><a href="#">Ver todas →</a></div><div class="utils">
+<a class="util" href="#"><div><b>Generador de prompts</b><span>Ordena tu petición en 4 pasos</span></div></a>
+<a class="util" href="#"><div><b>Comparador de IA</b><span>Pon dos herramientas frente a frente</span></div></a>
+<a class="util" href="#"><div><b>¿Puedo subir estos datos?</b><span>Revisa el riesgo antes de usar una IA</span></div></a></div></section>
+</main><footer><div class="wrap"><p class="logo" style="font-size:18px"><i>D</i>Decodifica</p><p>Guías de IA práctica en español, con fuentes. Cada artículo lo revisa Jordi antes de publicarse.</p>
+<div class="cols"><a href="#">Guías</a><a href="#">Herramientas</a><a href="#">Boletín</a><a href="#">Sobre Decodifica</a><a href="#">Privacidad</a><a href="#">Cookies</a><a href="#">Aviso legal</a></div></div></footer><div class="ck" role="dialog" aria-label="Privacidad" aria-live="polite">
+<p>Solo usamos analítica sin publicidad <b>si aceptas</b>. <a href="#">Configurar</a> · <a href="#">Más información</a></p>
+<div class="ck-b"><button class="btn ck-btn">Rechazar</button><button class="btn ck-btn">Aceptar</button></div></div></body></html>
