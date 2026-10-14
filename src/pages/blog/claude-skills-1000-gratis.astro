@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Claude Skills gratis: qué son, cómo instalarlas y crearlas";
 const description = "Qué son las Skills de Claude, en qué planes funcionan, dónde descargar Skills gratis, cómo instalarlas en Claude.ai y Claude Code, y cómo crear la tuya.";
 const pubDate = "2026-07-09";
 const modifiedDate = "2026-10-06";
 const readingTime = "10 min";
+const tema = "automatizar";
 const tags = ["claude skills", "agent skills", "claude code", "anthropic", "skill.md"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
@@ -36,30 +36,10 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://skillsmp.com/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="claude-skills-1000-gratis">
 
-    <PortadaArticulo slug="claude-skills-1000-gratis" />
 
-    <p>En resumen: una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub, y te deja subir las tuyas en Claude.ai, Claude Code y la API. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
+    <p><strong>En resumen:</strong> una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub, y te deja subir las tuyas en Claude.ai, Claude Code y la API. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
 
     <p>Todos los datos de esta guía salen de la documentación oficial de Anthropic y de los repositorios citados, consultados el 6 de octubre de 2026. Esta función cambia a menudo: si algo no coincide con lo que ves en tu cuenta, manda la página oficial enlazada en <a href="#fuentes" class="text-brand-400 hover:text-brand-300">Fuentes</a>.</p>
 
@@ -291,25 +271,7 @@ Cuando recibas un email, devuelve siempre una tabla con:
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y plantillas.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-claude-skills-1000-gratis" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-claude-skills-1000-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

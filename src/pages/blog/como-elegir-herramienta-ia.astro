@@ -1,14 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
-import NewsletterForm from '../../components/NewsletterForm.astro';
+import Articulo from '../../components/Articulo.astro';
 
 const title = 'Cómo elegir una herramienta de IA sin perder tiempo';
 const description = 'Un método práctico para decidir qué IA probar, cuál descartar y cómo medir si una herramienta merece entrar en tu flujo de trabajo.';
 const pubDate = '2026-07-06';
 const modifiedDate = pubDate;
 const readingTime = '8 min';
+const tema = "oficina";
 const tags = ['herramientas IA', 'productividad con IA', 'prompts', 'workflow IA', 'Decodifica'];
 const pillarLabel = 'Pilar 2: Productividad práctica';
 ---
@@ -27,31 +26,15 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
     "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>-</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">{title}</h1>
-      <p class="mt-4 text-lg text-dark-200">{description}</p>
-    </header>
+  <Articulo slug="como-elegir-herramienta-ia">
 
-    <PortadaArticulo slug="como-elegir-herramienta-ia" />
 
-    <div class="not-prose mb-10 rounded-lg border border-brand-500/20 bg-dark-800 p-6">
-      <h2 class="font-display text-xl font-bold text-white">Decisión rápida</h2>
-      <p class="mt-3 text-sm leading-6 text-dark-200">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · Decisión rápida</p>
+      <p>
         No empieces preguntando cual es la mejor IA. Empieza con una tarea concreta, una prueba de 20 minutos y un criterio de salida: si no mejora tiempo, calidad o claridad, no entra en tu sistema.
       </p>
-    </div>
+    </section>
 
     <p>
       El problema de la IA en 2026 no es que falten herramientas. Es que sobran. Cada semana aparece una app nueva, un modelo nuevo, una extensión nueva y una promesa nueva. Si pruebas todo, pierdes el día. Si no pruebas nada, te quedas atras.
@@ -188,22 +171,6 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
       <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">OWASP Top 10 para aplicaciones con modelos de lenguaje</a>, para revisar exposición de información sensible, exceso de autonomía y confianza excesiva en las salidas.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Siguiente paso"
-      title="Convierte esta guía en una prueba real"
-      description="Guarda los recursos IA de Decodifica y usa la newsletter para recibir nuevas pruebas, prompts y decisiones prácticas."
-      primaryHref="/newsletter/"
-      primaryLabel="Recibir recursos"
-      secondaryHref="/newsletter/"
-      secondaryLabel="Recibir el filtro semanal"
-    />
 
-    <div class="not-prose mt-8">
-      <NewsletterForm
-        title="Recibe el filtro semanal de Decodifica"
-        description="Una herramienta que merece la pena, una decisión práctica y un recurso para probarla sin empezar de cero."
-        buttonLabel="Apuntarme gratis"
-      />
-    </div>
-  </article>
+  </Articulo>
 </BaseLayout>

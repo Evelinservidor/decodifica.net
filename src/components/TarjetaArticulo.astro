@@ -1,0 +1,51 @@
+---
+// Tarjeta de un artículo con su portada (versión con gancho, la de la lista del blog).
+// variante: «tarjeta» (portada arriba), «fila» (portada pequeña a la izquierda) o «destacado» (grande).
+import type { BlogPostIndexEntry } from '~/lib/blog-post-index';
+import { portada } from '~/lib/portadas';
+import { nombreTema } from '~/lib/temas';
+
+export interface Props {
+  post: BlogPostIndexEntry;
+  variante?: 'tarjeta' | 'fila' | 'destacado';
+  prioridad?: boolean; // la primera imagen visible: se carga antes que el resto
+  nivel?: 'h2' | 'h3';
+  track?: string;
+}
+
+const { post, variante = 'tarjeta', prioridad = false, nivel = 'h3', track } = Astro.props;
+const p = portada(post.slug);
+const Titulo = nivel;
+const fecha = new Date(post.pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+const sizes =
+  variante === 'fila'
+    ? '124px'
+    : variante === 'destacado'
+      ? '(min-width: 1000px) 700px, 100vw'
+      : '(min-width: 1000px) 380px, (min-width: 640px) 50vw, 100vw';
+---
+
+<a
+  href={`/blog/${post.slug}/`}
+  class={variante === 'fila' ? 'fila-articulo' : variante}
+  data-track={track}
+  data-track-label={track ? post.slug : undefined}
+>
+  <img
+    src={p ? p.tarjeta : '/og-default.png'}
+    srcset={p ? `${p.tarjeta} 640w, ${p.tarjeta960} 960w` : undefined}
+    sizes={sizes}
+    width="640"
+    height="360"
+    alt=""
+    loading={prioridad ? 'eager' : 'lazy'}
+    fetchpriority={prioridad ? 'high' : undefined}
+    decoding="async"
+  />
+  <div>
+    <span class="tema-etiqueta">{nombreTema(post.tema)}</span>
+    <Titulo class="font-display text-white">{post.title}</Titulo>
+    {variante === 'destacado' && <p class="entradilla">{post.description}</p>}
+    <p class="tarjeta-meta"><time datetime={post.pubDate}>{fecha}</time>{post.readingTime && <> · {post.readingTime}</>}</p>
+  </div>
+</a>

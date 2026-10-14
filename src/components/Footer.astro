@@ -4,59 +4,72 @@ import { siteConfig } from '~/lib/site-config';
 const year = new Date().getFullYear();
 ---
 
-<footer class="site-footer border-t border-dark-600 bg-dark-800">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+<footer class="site-footer mt-12 border-t border-dark-600">
+  <div class="contenedor py-10">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
-      <div class="col-span-1 md:col-span-2">
-        <a href="/" class="site-logo pressable flex w-fit items-center gap-2 text-xl font-bold text-white">
-          <span class="theme-brand-mark brand-mark inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500 text-sm font-bold text-white">D</span>
+      <div class="md:col-span-2">
+        <a href="/" class="site-logo flex w-fit items-center gap-2 text-xl text-white">
+          <span class="theme-brand-mark brand-mark inline-flex h-7 w-7 items-center justify-center rounded-lg fondo-indigo font-display text-sm text-white" aria-hidden="true">D</span>
           <span class="font-display">{siteConfig.name}</span>
         </a>
-        <p class="mt-3 max-w-md text-sm text-dark-200">
-          {siteConfig.description}
+        <p class="mt-3 max-w-md text-sm leading-6 text-dark-200">
+          Guías de IA práctica en español, con fuentes oficiales. Jordi revisa cada artículo antes de publicarlo.
         </p>
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Web</h3>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="/blog/" class="text-dark-200 hover:text-brand-400">Blog</a></li>
-          <li><a href="/herramientas/" class="text-dark-200 hover:text-brand-400">Herramientas IA</a></li>
-          <li><a href="/recursos/" class="text-dark-200 hover:text-brand-400">Recursos IA</a></li>
-          <li><a href="/newsletter/" class="text-dark-200 hover:text-brand-400">Newsletter</a></li>
-          <li><a href="/sobre/" class="text-dark-200 hover:text-brand-400">Quiénes somos</a></li>
-          <li><a href="/contacto/" class="text-dark-200 hover:text-brand-400">Contacto</a></li>
+        <h2 class="text-sm font-bold uppercase tracking-wider text-white">Web</h2>
+        <ul class="mt-3 text-sm">
+          <li><a href="/blog/" class="pie-enlace">Guías</a></li>
+          <li><a href="/herramientas/" class="pie-enlace">Herramientas IA</a></li>
+          <li><a href="/recursos/" class="pie-enlace">Recursos IA</a></li>
+          <li><a href="/empieza/" class="pie-enlace">Empieza por tu tarea</a></li>
+          <li><a href="/newsletter/" class="pie-enlace">Boletín</a></li>
+          <li><a href="/sobre/" class="pie-enlace">Quiénes somos</a></li>
+          <li><a href="/contacto/" class="pie-enlace">Contacto</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Seguir</h3>
-        <ul class="mt-4 space-y-2 text-sm">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-white">Seguir</h2>
+        <ul class="mt-3 text-sm">
           {siteConfig.social.facebook && (
-            <li><a href={siteConfig.social.facebook} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href={siteConfig.social.facebook} class="pie-enlace" target="_blank" rel="noopener">Facebook</a></li>
           )}
           {siteConfig.social.bluesky && (
-            <li><a href={siteConfig.social.bluesky} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Bluesky</a></li>
+            <li><a href={siteConfig.social.bluesky} class="pie-enlace" target="_blank" rel="noopener">Bluesky</a></li>
           )}
           {siteConfig.social.reddit && (
-            <li><a href={siteConfig.social.reddit} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Reddit</a></li>
+            <li><a href={siteConfig.social.reddit} class="pie-enlace" target="_blank" rel="noopener">Reddit</a></li>
           )}
-          <li><a href={siteConfig.newsletter.url} class="text-dark-200 hover:text-brand-400" target="_blank" rel="noopener">Archivo Buttondown</a></li>
-          <li><a href={`mailto:${siteConfig.author.email}`} class="text-dark-200 hover:text-brand-400">{siteConfig.author.publicEmailLabel}</a></li>
+          <li><a href={siteConfig.newsletter.url} class="pie-enlace" target="_blank" rel="noopener">Archivo Buttondown</a></li>
+          <li><a href="/rss.xml" class="pie-enlace">RSS</a></li>
+          <li><a href={`mailto:${siteConfig.author.email}`} class="pie-enlace">{siteConfig.author.publicEmailLabel}</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-dark-600 pt-6 sm:flex-row">
-      <p class="text-xs text-dark-300">
-        Copyright {year} {siteConfig.name}. IA práctica, sin ruido.
-      </p>
-      <ul class="flex gap-4 text-xs">
-        <li><a href="/aviso-legal/" class="text-dark-300 hover:text-brand-400">Aviso legal</a></li>
-        <li><a href="/privacidad/" class="text-dark-300 hover:text-brand-400">Privacidad</a></li>
-        <li><a href="/cookies/" class="text-dark-300 hover:text-brand-400">Cookies</a></li>
-        <li><a href="/contacto/" class="text-dark-300 hover:text-brand-400">Contacto</a></li>
+    <div class="mt-8 flex flex-col gap-3 border-t border-dark-600 pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-dark-300">© {year} {siteConfig.name}. IA práctica, sin ruido.</p>
+      <ul class="flex flex-wrap gap-x-4 text-xs">
+        <li><a href="/aviso-legal/" class="pie-enlace">Aviso legal</a></li>
+        <li><a href="/privacidad/" class="pie-enlace">Privacidad</a></li>
+        <li><a href="/cookies/" class="pie-enlace">Cookies</a></li>
+        <li><button type="button" class="pie-enlace" data-abrir-cookies>Cambiar cookies</button></li>
       </ul>
     </div>
   </div>
 </footer>
+
+<style>
+  .pie-enlace {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    color: rgb(var(--theme-300));
+  }
+
+  .pie-enlace:hover {
+    color: var(--marca);
+  }
+</style>

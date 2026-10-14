@@ -1,6 +1,6 @@
-# Rediseño de Decodifica · Fase 1: propuestas
+# Rediseño de Decodifica
 
-Octubre de 2026. Tres propuestas para la página principal, la lista del blog y la página de artículo, pensadas para lucir las portadas nuevas (pull request #13, `docs/portadas.md`). **Todavía no cambia nada de la web publicada**: son maquetas con los artículos, portadas y datos de Search Console reales.
+Octubre de 2026. **Jordi eligió la propuesta A («Revista luminosa») y ya está aplicada a toda la web** (ver «Fase 2: resultado» al final). Primero se hicieron tres propuestas para la página principal, la lista del blog y la página de artículo, pensadas para lucir las portadas nuevas (pull request #13, `docs/portadas.md`), como maquetas con los artículos, portadas y datos de Search Console reales.
 
 ## Qué falla hoy (móvil)
 
@@ -62,9 +62,17 @@ La B también arregla los problemas principales (artículo y portada arriba, avi
 
 ## Lo que se ha aprendido de otras webs
 
-Pendiente: se añade aquí el resumen de la investigación (revistas y blogs de tecnología en español e inglés).
+Investigación completa, con medidas y fuentes: [`investigacion.md`](investigacion.md). Se miraron 12 webs en el móvil (Xataka, Genbeta, Computer Hoy, Wwwhat's new, The Verge, Ars Technica, Zapier, The Rundown AI, Smashing Magazine, Android Authority, How-To Geek y Tom's Guide). Solo se sacaron patrones, sin copiar diseños:
 
-## Qué se haría en la fase 2 (con la propuesta elegida)
+- **Primera pantalla:** el logo, una línea que diga qué es la web y enseguida la guía destacada con su portada 16:9. El título va debajo de la portada, no encima, porque la portada ya lleva su gancho.
+- **Temas en chips** que se deslizan de lado bajo la cabecera, y **dos tamaños de tarjeta**: grande para la destacada y filas compactas (miniatura de unos 120 px) para el resto.
+- **Lo más leído numerado**, de 3 a 5 títulos sin imagen.
+- **Lectura:** casi todas usan letra de 18 px en el móvil (entre 17 y 19), con interlineado de 1,5 a 1,6, y unos 66-70 caracteres por línea en el ordenador (de 640 a 700 px). Las que pasan de 85 caracteres cansan.
+- **Artículo:** tema, título, entradilla, fechas y la portada; un resumen al principio, un índice plegable solo en guías largas, cajas de consejo con borde de color y tablas que se deslizan.
+- **Boletín:** al final del artículo (entre el 86 y el 94 % de la página), nunca en ventanas emergentes ni fijo en la pantalla.
+- **Cookies:** una barra pequeña con «Rechazar» y «Aceptar» del mismo tamaño y aspecto, más «Configurar». La guía de la AEPD (mayo de 2024, apartado 3.2.3) pide que rechazar se ofrezca «al mismo tiempo, al mismo nivel y con la misma visibilidad» que aceptar. Lo que hay que evitar son los muros de «paga o acepta».
+
+## Qué se planteó para la fase 2
 
 - Mismas direcciones de todas las páginas; títulos, descripciones, datos estructurados, `llms.txt`, robots, sitemap y enlaces internos sin tocar.
 - Componentes nuevos para los artículos: `RespuestaRapida` (el recuadro, que mantiene el párrafo «**En resumen:**» que piden las reglas para las IA), `Indice`, `Caja` (consejo / ojo / nota), `Tabla` (se desliza en el móvil) y `BoletinEnTexto`. Se aplican a los 32 artículos y se explican en `docs/AGENTE-SEMANAL.md`.
@@ -87,3 +95,27 @@ python3 scripts/capturas_rediseno.py http://localhost:8765 docs/rediseno/propues
 `capturas_rediseno.py` sirve también para la web de verdad (`npm run build && npx astro preview` y `http://localhost:4321`): guarda la primera pantalla (`-pantalla.webp`) y la página entera (`.jpg`) a 390 px y 1280 px.
 
 El texto del artículo de ejemplo es un resumen del artículo real de Claude Skills; los temas de cada artículo son una propuesta.
+
+## Fase 2: resultado (propuesta A aplicada)
+
+| Inicio | Blog | Artículo | Artículo en modo oscuro |
+|---|---|---|---|
+| ![](final/inicio-movil-pantalla.webp) | ![](final/blog-movil-pantalla.webp) | ![](final/articulo-movil-pantalla.webp) | ![](final/articulo-oscuro-movil-pantalla.webp) |
+
+Ordenador: [inicio](final/inicio-ordenador.jpg) · [blog](final/blog-ordenador.jpg) · [artículo](final/articulo-ordenador.jpg) · [artículo con tablas](final/articulo-tabla-ordenador.jpg). Móvil completo: [inicio](final/inicio-movil.jpg) · [blog](final/blog-movil.jpg) · [artículo](final/articulo-movil.jpg) · [artículo con tablas](final/articulo-tabla-movil.jpg).
+
+**Qué cambia**
+- Fondo claro por defecto. El modo oscuro está en el botón de la luna y se recuerda en cada visita. Los titulares usan Inter Display, la letra de las portadas (20 KB, alojada en la propia web).
+- **Portada:** la última guía con su portada en la primera pantalla, otras 4 en filas, «Más guías», «Lo más leído» (con los datos de Search Console), los temas en colores, el boletín y las herramientas gratis.
+- **Blog:** buscador, filtro por temas (`/blog/?tema=local`) y tarjetas con portada; se ven 12 guías y un botón para ver el resto. Sin JavaScript se ven todas.
+- **Artículo** (plantilla `src/components/Articulo.astro`): tema, título, entradilla, fechas y portada. El «En resumen» sale en el recuadro **Respuesta rápida** (los 5 resúmenes en lista y los 9 recuadros antiguos tipo «En dos líneas» también). Hay **índice** cuando la guía tiene 5 apartados o más (en el móvil se pliega; en el ordenador va fijo a la izquierda), tablas que se deslizan, cajas `Caja` (consejo, ojo y nota) y una línea de **boletín antes de las fuentes**. Al final: recursos, autor y 3 artículos relacionados del mismo tema con portada. Desaparecen el boletín duplicado y los enlaces «anterior/siguiente».
+- **Temas:** cada artículo tiene `const tema` (5 temas en `src/lib/temas.ts`).
+- **Cookies:** la barra pasa de 207 a 119 px de alto en el móvil. «Rechazar» y «Aceptar» son iguales (164x44 px) y «Configurar» está en la primera capa. En el pie hay un botón nuevo, «Cambiar cookies», para retirar el consentimiento. Plausible se sigue cargando solo si aceptas, como antes.
+
+**Comprobaciones (14-10-2026)**
+- `npm run build` (121 páginas) y `npm run type-check`: sin errores.
+- SEO: se compararon las 121 páginas construidas con las de `main`. Los títulos, descripciones, canónicas, `og:*`/`twitter:*` y datos estructurados (JSON-LD) son idénticos en todas, igual que `llms.txt`, `robots.txt` y el sitemap. El RSS solo cambia en la fecha de construcción. Solo cambian los H1 de la portada («Guías de IA práctica en español») y del blog («Guías de IA práctica»). Ninguna dirección cambia.
+- `python3 scripts/seo_preflight.py src/pages/blog/*.astro`: 0 errores. Quedan los mismos avisos que en `main` (sobre todo «imágenes dentro del texto» y 4 artículos sin «En resumen»: `2026-07-17-hermes-agent-chino`, `2026-07-22-nano-banana-1000-prompts`, `5-atajos-ia-gratis` y `gpt-live-voz-chatgpt`, que necesitan un resumen escrito con fuentes).
+- `python3 scripts/web_health_check.py --skip-build --skip-production`: mismo resultado que en `main` (`ok: false` en los dos solo porque echa de menos TikTok y YouTube, que se quitaron a propósito).
+- Accesibilidad (axe-core 4.10, WCAG 2 A/AA, 110 páginas a 390 px): **0 problemas en modo claro y 0 en oscuro** (en `main` había 39 en 21 páginas).
+- Velocidad en el móvil (conexión lenta simulada de 1,6 Mbit/s con 150 ms de latencia y procesador 4 veces más lento, mediana de 3 cargas). LCP de `main` → diseño nuevo: inicio 516 → 600 ms, blog 536 → 604 ms, artículo de Claude Skills 672 → 728 ms, artículo de Ollama 628 → 672 ms. CLS 0 en todo. La portada y el blog suben algo porque ahora enseñan imágenes (antes la portada no tenía ninguna), pero todo queda muy por debajo de los 2,5 s que Google considera «bueno».

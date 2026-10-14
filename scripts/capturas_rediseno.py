@@ -2,7 +2,7 @@
 
 Uso: python3 scripts/capturas_rediseno.py <url_base> <carpeta_salida> nombre=/ruta/ [nombre=/ruta/ ...]
 Guarda <nombre>-<tamaño>-pantalla.webp (lo que se ve al entrar) y <nombre>-<tamaño>.jpg (página entera).
-     [--oscuro]    fuerza prefers-color-scheme: dark
+     [--oscuro]    modo oscuro (prefers-color-scheme y el botón de la web)
 """
 import io
 import sys
@@ -28,11 +28,18 @@ with sync_playwright() as p:
         for item in paginas:
             nombre, ruta = item.split("=", 1)
             pag = ctx.new_page()
+            if "--oscuro" in opts:  # la web guarda el modo oscuro elegido con el botón
+                pag.add_init_script("try { localStorage.setItem('decodifica-theme', 'dark') } catch (e) {}")
             pag.goto(base + ruta, wait_until="networkidle")
             pag.wait_for_timeout(400)
             # Primera pantalla (lo que se ve al entrar) y página completa.
             Image.open(io.BytesIO(pag.screenshot())).convert("RGB").save(
                 salida / f"{nombre}-{nombre_tam}-pantalla.webp", quality=85, method=6)
+            # Bajar poco a poco para que carguen las imágenes diferidas (loading="lazy").
+            pag.evaluate("""async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) {
+                window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } window.scrollTo(0, 0); }""")
+            pag.wait_for_load_state("networkidle")
+            pag.wait_for_timeout(300)
             # JPEG para la completa: WebP no admite más de 16.383 px de alto.
             Image.open(io.BytesIO(pag.screenshot(full_page=True))).convert("RGB").save(
                 salida / f"{nombre}-{nombre_tam}.jpg", quality=78, optimize=True, progressive=True)

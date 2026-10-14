@@ -1,0 +1,16 @@
+---
+// Caja destacada dentro de un artículo. tipo: «consejo» (verde), «ojo» (ámbar) o «nota» (azul).
+// <Caja tipo="consejo">Texto con <strong>HTML</strong> sencillo.</Caja>
+export interface Props {
+  tipo?: 'consejo' | 'ojo' | 'nota';
+  titulo?: string;
+}
+
+const { tipo = 'consejo', titulo } = Astro.props;
+const titulos = { consejo: 'Consejo', ojo: 'Ojo', nota: 'Nota' };
+---
+
+<aside class={`caja caja-${tipo}`}>
+  <p class="caja-titulo">{titulo ?? titulos[tipo]}</p>
+  <slot />
+</aside>
