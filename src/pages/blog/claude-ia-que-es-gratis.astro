@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Claude IA: qué es, si es gratis y cuánto cuesta";
 const description = "Qué es Claude, la IA de Anthropic: cómo usarlo en español, qué incluye el plan gratuito, cuánto cuestan Pro y Max y qué hace con tus conversaciones.";
@@ -79,6 +80,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </ol>
     <p>El modo de voz tiene su propio ajuste de idioma, aparte: <strong>Settings &gt; General &gt; Voice &gt; Language</strong>.</p>
 
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-en-espanol-pasos.webp"
+      alt="Esquema con los cuatro pasos para poner Claude en español: abrir el perfil, entrar en Language, elegir Español (España) o Español (Latinoamérica) y ajustar la voz en Settings, General, Voice, Language"
+      width={1200}
+      height={643}
+    />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿Claude es gratis?</h2>
     <p>Sí. El plan Free cuesta 0 dólares y basta con registrarse con un correo. Según la página de precios (consultada en octubre de 2026), incluye:</p>
     <ul class="space-y-2">
@@ -89,6 +97,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Los modelos Sonnet y Haiku. Los modelos Opus y Fable no están en el plan gratuito.</li>
     </ul>
     <p><strong>El límite:</strong> el plan gratuito tiene un límite de uso por sesión que se renueva cada cinco horas, y la cantidad de mensajes depende de la demanda en cada momento. Claude te avisa cuando lo alcanzas. No hay un número fijo de mensajes: gasta más un mensaje largo, un archivo grande, una conversación muy larga o una tarea con búsquedas y código.</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-gratis-vs-pro.webp"
+      alt="Comparativa del plan Free de Claude (0 dólares, hasta 5 Proyectos, Sonnet y Haiku, límite cada 5 horas) frente a Pro (20 dólares al mes o 17 pagando el año, Opus, Research y Claude Code)"
+      width={1200}
+      height={768}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuánto cuesta Claude: planes de pago</h2>
     <p>Precios en dólares estadounidenses, consultados en octubre de 2026. Anthropic indica que en muchos países se cobra en moneda local, que el precio puede variar por región y que unos países incluyen los impuestos en el precio mostrado y otros los suman al pagar. El precio exacto para tu país aparece en <code>claude.ai/upgrade</code> o en la tienda de aplicaciones del móvil.</p>
@@ -125,6 +140,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
         </tbody>
       </table>
     </div>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/precios-claude-free-pro-max.webp"
+      alt="Captura de la página de precios de claude.com con los planes Free a 0 dólares, Pro a 17 dólares al mes pagando el año (20 mes a mes) y Max desde 100 dólares al mes"
+      width={1200}
+      height={454}
+      caption="Página de precios de claude.com (captura de octubre de 2026)."
+    />
     <p>Tres detalles que conviene saber antes de pagar:</p>
     <ul class="space-y-2">
       <li><strong>Pro también tiene límites:</strong> uno por sesión que se renueva cada cinco horas y otro semanal.</li>
