@@ -50,6 +50,12 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Velocidad (móvil, conexión lenta simulada): la cabecera de los artículos pasa de 0,9-1,7 MB (PNG) a 12-18 KB (WebP) y el LCP de 5-9 s a menos de 1 s en los artículos que la tenían.
 - Pendiente: logos que las webs bloquean (chatgpt.com, Emergent, SlidesAI): ChatGPT usa el logo de OpenAI de su cuenta oficial de GitHub. Comparar plantillas cuando haya datos de Discover/Imágenes (repaso mensual).
 
+## Imágenes en todos los artículos (14-10-2026, rama `agente/imagenes-todos`)
+
+- Los 27 artículos que eran solo texto llevan ya 2-3 imágenes dentro (73 nuevas: capturas de webs oficiales y esquemas propios). Ya las tienen todos los artículos del blog.
+- Velocidad igual (LCP medio en móvil de 731 a 715 ms). Revisión SEO y build sin errores.
+- Datos que ya no coincidían con las webs oficiales y lo que no se pudo capturar: `docs/informes/2026-10-14-imagenes.md`. Lo revisa el repaso mensual (`docs/AGENTE-SEMANAL.md`, que ya no pide añadir imágenes poco a poco, sino mantener las capturas al día).
+
 ## Pendiente
 
 - [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.
