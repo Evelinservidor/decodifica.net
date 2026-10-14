@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "GPT-Live: la voz de ChatGPT que escucha mientras habla";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/gpt-live-voz-chatgpt.png"
+  ogImage="/og/blog/gpt-live-voz-chatgpt.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -48,13 +49,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/gpt-live-voz-chatgpt.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="gpt-live-voz-chatgpt" />
 
     <p>GPT-Live es la nueva generación de modelos de voz de ChatGPT que OpenAI documentó en su <em>system card</em> del 8 de julio de 2026. La diferencia con el modo de voz anterior es que no espera a que termines de hablar para procesar lo que dices: escucha y responde de forma continua. La pregunta práctica es si eso reduce las veces que tienes que repetir o reformular lo que pides.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es GPT-Live</h2>

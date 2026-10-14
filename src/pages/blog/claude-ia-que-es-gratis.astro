@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Claude IA: qué es, si es gratis y cuánto cuesta";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og-default.png"
+  ogImage="/og/blog/claude-ia-que-es-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -55,6 +56,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </header>
 
     <p>En resumen: Claude es el asistente de IA de la empresa Anthropic. Se usa gratis desde el navegador, el ordenador o el móvil, con la interfaz en español. El plan gratuito tiene un límite de uso que se renueva cada cinco horas; el plan Pro cuesta 20 dólares al mes (17 al mes pagando el año) y añade más uso, los modelos más potentes y herramientas como Claude Code.</p>
+
+    <PortadaArticulo slug="claude-ia-que-es-gratis" />
     <p>Los datos de esta guía salen de la página de precios de Claude, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 12 de octubre de 2026. Los planes cambian a menudo: si algo no coincide con lo que ves, manda lo que diga la página oficial.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Claude y de qué empresa es</h2>

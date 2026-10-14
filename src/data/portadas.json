@@ -1,0 +1,371 @@
+{
+  "_ayuda": "Una entrada por artículo (clave = slug). Se genera con: python3 scripts/imagenes/portada.py <slug>. Campos: plantilla (herramienta | lista | novedad), gancho (3-6 palabras; *palabra* = resaltada; distinto del título y que el artículo cumpla), etiqueta (1-3 palabras), fondo (indigo, noche, naranja, verde, rosa, azul), logos (archivos de scripts/imagenes/logos), captura (archivo de scripts/imagenes/capturas), numero y rotulo (plantilla lista), casillas (guías de método sin herramienta), alt (qué se ve en la imagen, sin el gancho: se añade solo en la versión con texto). Guía completa: docs/portadas.md",
+  "2026-07-16-prompts-secretos-web": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "prompts",
+    "gancho": "Tu web con IA, *sin código*",
+    "etiqueta": "Copiar y pegar",
+    "fondo": "naranja",
+    "alt": "Un 5 enorme con la palabra «prompts» sobre fondo naranja: cinco prompts para crear una web con IA"
+  },
+  "2026-07-17-hermes-agent-chino": {
+    "plantilla": "herramienta",
+    "captura": "hermes.webp",
+    "logos": [
+      "nous"
+    ],
+    "gancho": "Un agente *open source* con memoria",
+    "etiqueta": "Guía",
+    "fondo": "noche",
+    "alt": "Captura del repositorio oficial de Hermes Agent en GitHub con el logo de Nous Research"
+  },
+  "2026-07-22-nano-banana-1000-prompts": {
+    "plantilla": "herramienta",
+    "logos": [
+      "gemini"
+    ],
+    "gancho": "Prompts *gratis* para Nano Banana",
+    "etiqueta": "Biblioteca",
+    "fondo": "azul",
+    "alt": "Logo de Gemini, la IA de Google que incluye Nano Banana, en una ficha blanca sobre fondo azul"
+  },
+  "2026-07-25-ia-local-oculta-datos": {
+    "plantilla": "herramienta",
+    "captura": "presidio.webp",
+    "logos": [
+      "presidio"
+    ],
+    "gancho": "Oculta tus *datos* antes de ChatGPT",
+    "etiqueta": "Privacidad",
+    "fondo": "verde",
+    "alt": "Captura de la web oficial de Presidio, la herramienta de Microsoft para anonimizar datos, con su logo"
+  },
+  "2026-07-26-arena-ai-modelos-gratis": {
+    "plantilla": "herramienta",
+    "captura": "arena.webp",
+    "logos": [
+      "arena"
+    ],
+    "gancho": "Compara IAs *a ciegas*",
+    "etiqueta": "Gratis",
+    "fondo": "indigo",
+    "alt": "Captura de la web de Arena, donde se comparan modelos de IA a ciegas, con su logo"
+  },
+  "2026-07-27-tencent-hy3-modelo-abierto-agentes": {
+    "plantilla": "herramienta",
+    "logos": [
+      "tencent-hunyuan"
+    ],
+    "gancho": "El modelo *abierto* de Tencent",
+    "etiqueta": "Apache 2.0",
+    "fondo": "azul",
+    "alt": "Logo de Tencent Hunyuan, la familia de modelos de Tencent a la que pertenece Hy3, sobre fondo azul"
+  },
+  "2026-07-28-higgsfield-davinci-plugin-ia": {
+    "plantilla": "herramienta",
+    "captura": "higgsfield.webp",
+    "logos": [
+      "higgsfield"
+    ],
+    "gancho": "IA *dentro* de DaVinci Resolve",
+    "etiqueta": "Plugin",
+    "fondo": "noche",
+    "alt": "Captura de la web oficial de Higgsfield con su logo"
+  },
+  "2026-07-31-google-maps-gemini-paradas-ruta": {
+    "plantilla": "herramienta",
+    "logos": [
+      "google-maps",
+      "gemini"
+    ],
+    "gancho": "Paradas en ruta *con Gemini*",
+    "etiqueta": "Google Maps",
+    "fondo": "azul",
+    "alt": "Logos de Google Maps y de Gemini, el asistente que añade paradas durante la ruta"
+  },
+  "2026-08-01-qwen3-asr-transcribe-espanol": {
+    "plantilla": "herramienta",
+    "logos": [
+      "qwen"
+    ],
+    "gancho": "Transcribe audio *en español*",
+    "etiqueta": "Qwen3-ASR",
+    "fondo": "indigo",
+    "alt": "Logo de Qwen, la familia de modelos de Alibaba a la que pertenece Qwen3-ASR"
+  },
+  "2026-08-05-kimi-k3-investigacion-visual": {
+    "plantilla": "herramienta",
+    "captura": "kimi.webp",
+    "logos": [
+      "kimi"
+    ],
+    "gancho": "Miles de páginas, *un informe*",
+    "etiqueta": "Kimi K3",
+    "fondo": "noche",
+    "alt": "Captura de la web de Kimi, el asistente de Moonshot AI, con su logo"
+  },
+  "5-atajos-ia-gratis": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "atajos",
+    "logos": [
+      "deepseek",
+      "qwen",
+      "kimi",
+      "mistral"
+    ],
+    "gancho": "Prompts *listos* para copiar",
+    "etiqueta": "Gratis",
+    "fondo": "verde",
+    "alt": "Un 5 grande con la palabra «atajos» y los logos de DeepSeek, Qwen, Kimi y Mistral"
+  },
+  "alternativas-fable-5": {
+    "plantilla": "herramienta",
+    "logos": [
+      "qwen",
+      "deepseek",
+      "ollama"
+    ],
+    "gancho": "El *plan B* a Fable 5",
+    "etiqueta": "Alternativas",
+    "fondo": "noche",
+    "alt": "Logos de Qwen, DeepSeek y Ollama, alternativas abiertas y locales a Claude Fable 5"
+  },
+  "alternativas-gratis-chatgpt-2026": {
+    "plantilla": "lista",
+    "numero": "7",
+    "rotulo": "IAs gratis",
+    "logos": [
+      "gemini",
+      "claude",
+      "copilot",
+      "deepseek",
+      "qwen",
+      "mistral",
+      "huggingchat"
+    ],
+    "gancho": "Alternativas *gratis* a ChatGPT",
+    "etiqueta": "Comparativa",
+    "fondo": "indigo",
+    "alt": "Un 7 grande con «IAs gratis» y los logos de Gemini, Claude, Microsoft, DeepSeek, Qwen, Mistral y HuggingChat"
+  },
+  "chatgpt-work-archivos-a-entregables": {
+    "plantilla": "herramienta",
+    "logos": [
+      "openai"
+    ],
+    "gancho": "Del chat a un *entregable*",
+    "etiqueta": "ChatGPT",
+    "fondo": "verde",
+    "alt": "Logo de OpenAI, la empresa de ChatGPT, en una ficha sobre fondo verde"
+  },
+  "claude-emails-sonar-humanos": {
+    "plantilla": "herramienta",
+    "logos": [
+      "claude"
+    ],
+    "gancho": "Emails que *no suenan* a robot",
+    "etiqueta": "Plantillas",
+    "fondo": "naranja",
+    "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo naranja"
+  },
+  "claude-ia-que-es-gratis": {
+    "plantilla": "herramienta",
+    "logos": [
+      "claude"
+    ],
+    "gancho": "¿Claude es *gratis*?",
+    "etiqueta": "Precios 2026",
+    "fondo": "noche",
+    "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo oscuro"
+  },
+  "claude-skills-1000-gratis": {
+    "plantilla": "herramienta",
+    "logos": [
+      "claude"
+    ],
+    "gancho": "Skills de Claude *gratis*",
+    "etiqueta": "Guía paso a paso",
+    "fondo": "indigo",
+    "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo morado"
+  },
+  "como-elegir-herramienta-ia": {
+    "plantilla": "herramienta",
+    "casillas": [
+      "Funciona con tu material",
+      "Te ahorra pasos",
+      "Puedes repetirlo"
+    ],
+    "gancho": "Elige tu IA *sin perder tiempo*",
+    "etiqueta": "Método",
+    "fondo": "rosa",
+    "alt": "Tarjeta con tres casillas marcadas: «Funciona con tu material», «Te ahorra pasos» y «Puedes repetirlo»"
+  },
+  "crear-agente-voz-ia-sin-programar": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "plataformas",
+    "logos": [
+      "elevenlabs",
+      "retell",
+      "vapi",
+      "openai"
+    ],
+    "gancho": "Agente de voz *sin programar*",
+    "etiqueta": "Planes gratis",
+    "fondo": "rosa",
+    "alt": "Un 5 grande con «plataformas» y los logos de ElevenLabs, Retell, Vapi y OpenAI"
+  },
+  "crear-app-web-ias-chinas-open-source": {
+    "plantilla": "herramienta",
+    "captura": "emergent.webp",
+    "gancho": "Crea una app *describiéndola*",
+    "etiqueta": "Emergent",
+    "fondo": "noche",
+    "alt": "Captura de la web oficial de Emergent con el cuadro «Describe tu idea» para crear apps"
+  },
+  "deepseek-app-oficial-espanol": {
+    "plantilla": "herramienta",
+    "logos": [
+      "deepseek",
+      "qwen",
+      "kimi"
+    ],
+    "gancho": "IA china *gratis* en español",
+    "etiqueta": "Guía",
+    "fondo": "azul",
+    "alt": "Logos de DeepSeek, Qwen y Kimi, tres asistentes de IA chinos que se pueden usar gratis"
+  },
+  "gpt-live-voz-chatgpt": {
+    "plantilla": "herramienta",
+    "logos": [
+      "openai"
+    ],
+    "gancho": "ChatGPT habla *y escucha*",
+    "etiqueta": "Voz",
+    "fondo": "rosa",
+    "alt": "Logo de OpenAI, la empresa de ChatGPT, en una ficha sobre fondo rosa"
+  },
+  "ia-crea-presentaciones-completas": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "IAs",
+    "logos": [
+      "gamma",
+      "beautifulai",
+      "plusai",
+      "canva"
+    ],
+    "gancho": "Presentaciones *con IA*",
+    "etiqueta": "Comparativa",
+    "fondo": "naranja",
+    "alt": "Un 5 grande con «IAs» y los logos de Gamma, Beautiful.ai, Plus AI y Canva"
+  },
+  "ia-mejora-excel": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "IAs",
+    "logos": [
+      "copilot",
+      "gemini",
+      "openai",
+      "quadratic"
+    ],
+    "gancho": "IA para tus *fórmulas* de Excel",
+    "etiqueta": "Comparativa",
+    "fondo": "verde",
+    "alt": "Un 5 grande con «IAs» y los logos de Microsoft, Gemini, OpenAI y Quadratic"
+  },
+  "ia-organiza-pendientes": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "IAs",
+    "logos": [
+      "manus",
+      "openai",
+      "claude",
+      "gemini",
+      "copilot"
+    ],
+    "gancho": "Correo y agenda, *en orden*",
+    "etiqueta": "Comparativa",
+    "fondo": "azul",
+    "alt": "Un 5 grande con «IAs» y los logos de Manus, OpenAI, Claude, Gemini y Microsoft"
+  },
+  "ia-resumir-reuniones-tareas-revisables": {
+    "plantilla": "lista",
+    "numero": "5",
+    "rotulo": "pasos",
+    "gancho": "De la reunión a *tareas*",
+    "etiqueta": "Workflow",
+    "fondo": "indigo",
+    "alt": "Un 5 enorme con la palabra «pasos»: el método para pasar de una reunión a tareas"
+  },
+  "lm-studio-que-es-como-usar": {
+    "plantilla": "herramienta",
+    "captura": "lmstudio.webp",
+    "logos": [
+      "lmstudio"
+    ],
+    "gancho": "IA *sin internet* en tu PC",
+    "etiqueta": "Gratis",
+    "fondo": "indigo",
+    "alt": "Captura de la web oficial de LM Studio con su logo"
+  },
+  "n8n-que-es-gratis": {
+    "plantilla": "herramienta",
+    "captura": "n8n.webp",
+    "logos": [
+      "n8n"
+    ],
+    "gancho": "¿n8n es *gratis*?",
+    "etiqueta": "Precios 2026",
+    "fondo": "rosa",
+    "alt": "Captura de la web oficial de n8n con su logo"
+  },
+  "notebooklm-guia-2026": {
+    "plantilla": "herramienta",
+    "captura": "notebooklm.webp",
+    "logos": [
+      "notebooklm"
+    ],
+    "gancho": "Pregunta a *tus documentos*",
+    "etiqueta": "Gemini Notebook",
+    "fondo": "azul",
+    "alt": "Captura de la web de Gemini Notebook (antes NotebookLM) con su logo"
+  },
+  "odysseus-pewdiepie-ia-gratis": {
+    "plantilla": "herramienta",
+    "captura": "odysseus.webp",
+    "logos": [
+      "github"
+    ],
+    "gancho": "La IA *autoalojada* de PewDiePie",
+    "etiqueta": "Instalación",
+    "fondo": "noche",
+    "alt": "Captura del repositorio oficial de Odysseus en GitHub"
+  },
+  "ollama-que-es-como-usar": {
+    "plantilla": "herramienta",
+    "captura": "ollama.webp",
+    "logos": [
+      "ollama"
+    ],
+    "gancho": "Modelos de IA *en tu PC*",
+    "etiqueta": "Gratis",
+    "fondo": "verde",
+    "alt": "Captura de la web oficial de Ollama con su logo de la llama"
+  },
+  "qwen-code-agent-terminal": {
+    "plantilla": "herramienta",
+    "captura": "qwen-code.webp",
+    "logos": [
+      "qwen"
+    ],
+    "gancho": "Un agente *en tu terminal*",
+    "etiqueta": "Qwen Code",
+    "fondo": "indigo",
+    "alt": "Captura del repositorio oficial de Qwen Code en GitHub con el logo de Qwen"
+  }
+}

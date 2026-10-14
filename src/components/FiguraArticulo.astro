@@ -1,0 +1,26 @@
+---
+// Imagen dentro de un artículo (captura o esquema): WebP ligero, carga diferida
+// y tamaño fijo para que la página no salte. Se generan con scripts/imagenes/.
+export interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+}
+
+const { src, alt, width, height, caption } = Astro.props;
+---
+
+<figure class="not-prose my-10">
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading="lazy"
+    decoding="async"
+    class="h-auto w-full rounded-2xl border border-dark-600"
+  />
+  {caption && <figcaption class="mt-3 text-center text-sm text-dark-300" set:html={caption} />}
+</figure>

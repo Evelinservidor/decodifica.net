@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 
@@ -16,7 +17,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/qwen-code-agent-terminal.png"
+  ogImage="/og/blog/qwen-code-agent-terminal.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -51,13 +52,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/qwen-code-agent-terminal.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="qwen-code-agent-terminal" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>

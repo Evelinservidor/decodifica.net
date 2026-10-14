@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -16,7 +18,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/ia-mejora-excel.png"
+  ogImage="/og/blog/ia-mejora-excel.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -57,13 +59,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="crear, revisar y aplicar fórmulas o cambios en una hoja de cálculo" />
 
-    <img
-      src="/og/blog/ia-mejora-excel.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="ia-mejora-excel" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>
@@ -118,6 +114,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>
       Una prueba prudente consiste en copiar una hoja no crítica, elegir tres fórmulas repetitivas, pedir una propuesta y comparar el resultado con los datos conocidos. Conserva el flujo solo si reduce tiempo sin introducir discrepancias.
     </p>
+
+    <FiguraArticulo
+      src="/img/blog/ia-mejora-excel/ia-excel-gratis-o-de-pago.webp"
+      alt="Cuadro resumen de si cada IA para Excel tiene plan gratis: Copilot no, Gemini en Sheets sí limitado, ChatGPT for Excel no, Quadratic sí con IA limitada y Equals no"
+      width={1200}
+      height={639}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las 5 IAs que de verdad cambian Excel en 2026</h2>
 
@@ -231,6 +234,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>
       Elijo COPILOT para el tutorial porque es la única que cumple la promesa "dentro de Excel, sin salir, sin copy-paste". El resto requiere abrir otra herramienta o estar en otro país. Necesitas: Excel para Windows versión 2509 o superior, licencia Microsoft 365 Copilot, y una hoja con datos.
     </p>
+    <FiguraArticulo
+      src="/img/blog/ia-mejora-excel/primera-formula-copilot.webp"
+      alt="Esquema de cinco pasos para usar la función =COPILOT() en Excel: comprobar la versión, preparar los datos, escribir la fórmula, arrastrarla y vigilar el límite de llamadas"
+      width={1200}
+      height={717}
+    />
+
     <p><strong>Paso 1. Verifica que tienes COPILOT.</strong> Abre Excel, ve a Archivo > Cuenta y comprueba que tu versión es la 2509 o posterior. Si no, actualiza. En la barra de fórmulas, escribe <code>=COPILOT(</code>. Si Excel te ofrece ayuda contextual, la tienes. Si te da error #NAME?, la función aún no está disponible en tu build.</p>
     <p><strong>Paso 2. Prepara tu hoja.</strong> Necesitas al menos una columna con datos que la IA pueda procesar. Para este tutorial, vamos a clasificar comentarios de clientes. En la columna A, filas 2 a 20, pon comentarios ficticios: "El envío llegó rápido", "Tuve que esperar tres semanas", etc. En la columna B, queremos que COPILOT nos devuelva el sentimiento.</p>
     <p><strong>Paso 3. Escribe la primera función.</strong> En la celda B2, escribe exactamente:</p>

@@ -44,13 +44,14 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
 4. **Escribir los artículos** como archivos `src/pages/blog/<slug>.astro`:
    - Slug corto, sin fecha, en minúsculas con guiones, con la búsqueda principal.
    - Copiar la estructura técnica de un artículo reciente bueno (por ejemplo `crear-app-web-ias-chinas-open-source.astro` o `claude-skills-1000-gratis.astro`): `const title`, `description`, `pubDate` (hoy), `modifiedDate` (hoy), `readingTime`, `tags`, `pillar`, `pillarLabel`, `BaseLayout` con `modifiedDate` y `citations` (las URLs de «Fuentes»), cabecera con fecha de publicación y de revisión, párrafo «En resumen:», `ConversionBand` y newsletter. Sin bloque JSON-LD `Article` propio (ver «Para que nos citen las IA»).
-   - Si no hay imagen OG propia, usar `ogImage="/og-default.png"` (no inventar rutas que no existen).
+   - **Portada propia, siempre** (nunca `/og-default.png`). Seguir `docs/portadas.md`: añadir la entrada a `src/data/portadas.json` eligiendo la plantilla (`herramienta`, `lista` o `novedad`) y un gancho de 3-6 palabras pensado para el clic, distinto del título y que el artículo cumpla; descargar el logo de la web oficial si falta (`scripts/imagenes/logo.py`); generar con `python3 scripts/imagenes/portada.py <slug>`; mirar el resultado (`--muestra`) antes de seguir. En el artículo: `ogImage="/og/blog/<slug>.jpg"` y `<PortadaArticulo slug="<slug>" />` justo después del «En resumen».
+   - **2-3 imágenes útiles dentro del texto**, cada una junto al párrafo que explica: capturas de la web oficial (`scripts/imagenes/captura.py`: la página, el botón de descarga, los planes de precios) o esquemas propios (`scripts/imagenes/esquema.py`: pasos, gratis/de pago, cuadro resumen). Con `FiguraArticulo`, texto alternativo descriptivo y menos de 150 KB. Ningún dato en un esquema que no esté en el artículo con su fuente. Nada de imágenes generadas con IA ni de bancos de fotos.
    - Título de 35 a 60 caracteres con la búsqueda al principio; descripción de 110 a 165 caracteres, concreta.
    - Al menos 3 secciones H2 útiles, al menos 2 fuentes externas originales y al menos 2 enlaces internos a páginas que existan.
    - Añadir enlaces desde 1-2 artículos existentes relacionados hacia el nuevo.
 5. **Revisión SEO y editorial:** `python3 scripts/seo_preflight.py --changed`. Corregir todos los errores (✗). Revisar los avisos (·) y corregir los razonables.
 6. **Mejorar títulos y descripciones** de hasta 3 páginas que salen en Google pero casi no reciben clics (paso 2). No cambiar URLs. Anotar en el informe el antes y el después y por qué.
-7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy). Si el artículo no empieza con un «En resumen:», añadírselo (ver «Para que nos citen las IA»).
+7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy). Si el artículo no empieza con un «En resumen:», añadírselo (ver «Para que nos citen las IA»). Si tiene menos de 2 imágenes dentro del texto, añadirle 2-3 (ver paso 4).
 8. **Construir:** `npm ci` (si hace falta), `npm run type-check` y `npm run build`. Todo sin errores. Si falla, arreglarlo antes de seguir.
 9. **Borradores para redes** en `docs/redes/<AAAA-MM-DD>.md`, uno por artículo nuevo:
    - Facebook: 2-4 frases y el enlace.
@@ -71,6 +72,14 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
     - Si es SÍ y preflight y build están en verde: fusionar.
     - Actualizar `_ESTADO.md` (sección «Agente semanal») con la fecha, el pull request y lo pendiente.
     - El último mensaje de la sesión es el resumen para Jordi, corto y sencillo, con el enlace al pull request y qué tiene que hacer: «Si te parece bien, pulsa Merge pull request en GitHub o contesta "sí" en esta conversación».
+
+## Repaso mensual (primer lunes de cada mes)
+
+Además de los pasos de cada lunes:
+
+1. **Imágenes en artículos antiguos, poco a poco:** añadir 2-3 imágenes dentro del texto (capturas oficiales o esquemas, ver `docs/portadas.md`) a 3-4 artículos que aún no las tengan (`python3 scripts/seo_preflight.py src/pages/blog/*.astro` los marca con el aviso «imágenes dentro del texto»), empezando por los que más impresiones tienen en Search Console.
+2. **Portadas caducadas:** si un artículo usa la plantilla `novedad` y la función salió hace más de 30 días, cambiarla a `herramienta` y regenerar. Si cambió el logo o la web de una herramienta, volver a descargarlo y regenerar sus portadas.
+3. **Comparar plantillas:** cuando Search Console tenga datos de Discover o de Imágenes (Rendimiento → Discover; tipo de búsqueda «Imagen»), comparar el CTR por plantilla y por tipo de imagen (logo, captura, número) y apuntar el resultado y la decisión en la tabla de `docs/portadas.md` §6. Con pocos datos, decirlo y no sacar conclusiones.
 
 ## Si Jordi contesta en la sesión
 

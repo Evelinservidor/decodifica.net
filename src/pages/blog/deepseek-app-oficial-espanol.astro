@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "DeepSeek, Qwen y Kimi en español: cómo usarlos gratis";
@@ -15,7 +17,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/deepseek-app-oficial-espanol.png"
+  ogImage="/og/blog/deepseek-app-oficial-espanol.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -59,13 +61,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/deepseek-app-oficial-espanol.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="deepseek-app-oficial-espanol" />
 
     <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
@@ -118,6 +114,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>API:</strong> es de pago por tokens y aparte del chat. Si te interesa ese uso, la <a href="/herramientas/deepseek/" class="text-brand-400 hover:text-brand-300">ficha de DeepSeek</a> resume precio, privacidad y alternativas.</li>
     </ul>
 
+    <FiguraArticulo
+      src="/img/blog/deepseek-app-oficial-espanol/web-oficial-deepseek.webp"
+      alt="Captura de la portada de deepseek.com con el aviso del lanzamiento de DeepSeek-V4.1-Flash, el cuadro de chat y el botón Get App"
+      width={1200}
+      height={679}
+      caption="Portada de deepseek.com en inglés (captura de octubre de 2026)."
+    />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo instalar la app oficial de DeepSeek sin caer en copias</h2>
     <p>En las tiendas hay apps con nombres parecidos que no son de DeepSeek. Estas son las comprobaciones que separan la oficial de una copia:</p>
     <ol>
@@ -126,6 +130,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Desde la web oficial:</strong> deepseek.com muestra un código QR ("Scan to get DeepSeek App") que lleva a la descarga. Es la vía más segura si no te fías del resultado de búsqueda de la tienda.</li>
       <li><strong>Señales de copia:</strong> otro nombre de desarrollador, suscripciones caras en la primera pantalla o permisos que no encajan con un chat (contactos, SMS). La app oficial de DeepSeek no lista compras integradas en el App Store.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/deepseek-app-oficial-espanol/instalar-app-oficial.webp"
+      alt="Esquema con cuatro comprobaciones para instalar la app oficial de DeepSeek: vendedor en el App Store, paquete com.deepseek.chat en Android, código QR de deepseek.com y señales de copia"
+      width={1200}
+      height={655}
+    />
+
     <p>Lo mismo vale para Qwen: en una búsqueda de "qwen chat" en el App Store de EE. UU. del 6 de octubre de 2026 aparecían apps de terceros con nombres parecidos. Para Qwen, entra a la app desde el botón de descarga de <a href="https://chat.qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a> en lugar de buscar por nombre.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qwen Chat: el asistente de Alibaba</h2>
@@ -156,6 +167,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Z.ai</strong> (<a href="https://docs.z.ai/legal-agreement/privacy-policy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política de usuarios individuales</a>): la opera una sociedad de Singapur y "your personal data is generally processed in Singapore".</li>
     </ul>
     <p><strong>Qué no subir a ninguno de ellos:</strong> contraseñas o claves de API, documentos de identidad, datos de salud, extractos bancarios, datos personales de clientes o empleados, contratos con cláusula de confidencialidad y código o documentos internos de tu empresa. Si necesitas que analicen un documento, quita antes nombres, correos, teléfonos y cifras que identifiquen a alguien.</p>
+
+    <FiguraArticulo
+      src="/img/blog/deepseek-app-oficial-espanol/donde-se-guardan-tus-datos.webp"
+      alt="Cuadro resumen de dónde guarda los datos cada servicio: DeepSeek y Kimi en China, Qwen en Singapur y Z.ai por lo general en Singapur"
+      width={1200}
+      height={529}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres prompts para probarlos</h2>
     <p>Son plantillas para comparar asistentes con la misma entrada, no la prueba de que un modelo rinda más que otro. Para que la comparación sirva, pega el mismo texto en DeepSeek, Qwen, Kimi y en la IA que uses habitualmente, sin datos personales, y quédate con la respuesta que menos tengas que corregir.</p>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/ia-crea-presentaciones-completas.png"
+  ogImage="/og/blog/ia-crea-presentaciones-completas.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -59,13 +60,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="crear un primer borrador de presentación a partir de un briefing" />
 
-    <img
-      src="/og/blog/ia-crea-presentaciones-completas.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="ia-crea-presentaciones-completas" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>

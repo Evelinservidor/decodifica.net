@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "5 atajos de IA para correos, traducciones y tareas";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/5-atajos-ia-gratis.png"
+  ogImage="/og/blog/5-atajos-ia-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -49,12 +50,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/5-atajos-ia-gratis.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-    />
+    <PortadaArticulo slug="5-atajos-ia-gratis" />
 
 
 

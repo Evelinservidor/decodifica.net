@@ -11,6 +11,7 @@ Sale con código 1 si algún artículo tiene errores (los avisos no bloquean).
 """
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import sys
@@ -33,6 +34,10 @@ BANNED = [
     "no te lo vas a creer", "increíble", "brutal",
 ]
 FORBIDDEN_LINKS = ["youtube.com/@decodifica", "/comunidad/", "/login/"]
+PORTADAS = ROOT / "src" / "data" / "portadas.json"
+VARIANTES = [".jpg", "-tarjeta.webp", "-tarjeta-960.webp", "-16x9.webp", "-16x9-800.webp", "-4x3.webp", "-1x1.webp"]
+MIN_FIGURAS = 2
+MAX_KB_FIGURA = 200
 MOJIBAKE = ["Ã©", "Ã³", "Ã¡", "Ã±", "Ã‚", "Ãƒ", "â€"]
 
 
@@ -101,8 +106,7 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
         if not internal_target_exists(href):
             errors.append(f"enlace interno roto: {href}")
 
-    if "ogImage" not in text:
-        warnings.append("sin ogImage")
+    audit_images(path.stem, text, body, errors, warnings)
     if "ConversionBand" not in text and "embed-subscribe" not in text:
         warnings.append("sin llamada a la newsletter")
 
@@ -128,6 +132,45 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
     if re.search(r"\b(TL;DR)\b", body) and "Qué mirar:</strong> si la herramienta" in body:
         errors.append("bloque TL;DR genérico de plantilla")
     return errors, warnings
+
+
+def audit_images(slug: str, text: str, body: str, errors: list[str], warnings: list[str]) -> None:
+    """Portada propia (docs/portadas.md) e imágenes dentro del texto."""
+    portadas = json.loads(PORTADAS.read_text(encoding="utf-8")) if PORTADAS.exists() else {}
+    og = re.search(r'ogImage="([^"]*)"', text)
+    if not og or og.group(1) != f"/og/blog/{slug}.jpg":
+        errors.append(f'sin portada propia: ogImage debe ser "/og/blog/{slug}.jpg" (docs/portadas.md)')
+    if slug not in portadas:
+        errors.append("falta la entrada del artículo en src/data/portadas.json")
+    else:
+        faltan = [v for v in VARIANTES if not (ROOT / "public" / "og" / "blog" / f"{slug}{v}").exists()]
+        if faltan:
+            errors.append(f"faltan archivos de portada ({', '.join(faltan)}): python3 scripts/imagenes/portada.py {slug}")
+        if f'<PortadaArticulo slug="{slug}"' not in body:
+            warnings.append("sin <PortadaArticulo> en la cabecera del artículo")
+    for tag in re.findall(r"<img\b[^>]*>", body, flags=re.S):
+        src = re.search(r'src="([^"]+)"', tag)
+        if not re.search(r'\balt="[^"]{10,}"', tag) and "alt={" not in tag:
+            errors.append(f"imagen sin texto alternativo útil: {src.group(1) if src else tag[:60]}")
+        if "width=" not in tag or "height=" not in tag:
+            warnings.append(f"imagen sin width/height (la página salta al cargar): {src.group(1) if src else ''}")
+        if 'loading="lazy"' not in tag:
+            warnings.append(f"imagen sin loading=\"lazy\": {src.group(1) if src else ''}")
+    figuras = re.findall(r"<FiguraArticulo\b(.*?)/>", body, flags=re.S)
+    for f in figuras:
+        src = re.search(r'src="([^"]+)"', f)
+        alt = re.search(r'alt="([^"]*)"', f)
+        if not src or not (ROOT / "public" / src.group(1).lstrip("/")).exists():
+            errors.append(f"FiguraArticulo con imagen que no existe: {src.group(1) if src else '?'}")
+            continue
+        if not alt or len(alt.group(1)) < 30:
+            errors.append(f"FiguraArticulo sin alt descriptivo (30+ caracteres): {src.group(1)}")
+        kb = (ROOT / "public" / src.group(1).lstrip("/")).stat().st_size // 1024
+        if kb > MAX_KB_FIGURA:
+            warnings.append(f"imagen de {kb} KB (máximo {MAX_KB_FIGURA}): {src.group(1)}")
+    total = len(figuras) + len(re.findall(r"<img\b", body))
+    if total < MIN_FIGURAS:
+        warnings.append(f"{total} imágenes dentro del texto (lo normal son 2-3: capturas o esquemas, docs/portadas.md)")
 
 
 def changed_articles() -> list[Path]:

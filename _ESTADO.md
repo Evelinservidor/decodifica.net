@@ -41,6 +41,15 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 - Enlaces internos apuntan directamente a las guías fusionadas. Comprobado: 0 enlaces internos rotos en la web construida.
 - Quitadas las últimas referencias a «vídeos» del canal antiguo en portada, recursos y newsletter.
 
+## Portadas e imágenes (14-10-2026, rama `agente/portadas-ctr`)
+
+- Investigación de qué imágenes traen clics y qué piden Google y las redes: `docs/portadas.md`. Clave: Google pide evitar imágenes con mucho texto en Discover/Imágenes, así que cada portada tiene una versión con gancho (redes y blog) y otra limpia (datos estructurados y cabecera del artículo).
+- Sistema propio en `scripts/imagenes/` (Python + Pillow + Chromium sin pantalla, funciona en la nube): `portada.py` (3 plantillas: herramienta, lista, novedad), `logo.py` (logos de webs oficiales, fuentes en `logos/FUENTES.md`), `captura.py` (capturas de webs oficiales), `esquema.py` (pasos, comparativa, resumen). Fuentes Inter (OFL) en el repositorio. Datos de cada portada en `src/data/portadas.json`.
+- 32 artículos con portada nueva; borradas las portadas negras antiguas (27 MB de PNG) y los scripts de Windows. `max-image-preview:large` en todas las páginas indexables.
+- Imágenes dentro del texto en los 5 artículos con más impresiones: Claude Skills (3), DeepSeek/Qwen/Kimi (3), IA para Excel (2), organizar pendientes (2), Google Maps con Gemini (2).
+- Velocidad (móvil, conexión lenta simulada): la cabecera de los artículos pasa de 0,9-1,7 MB (PNG) a 12-18 KB (WebP) y el LCP de 5-9 s a menos de 1 s en los artículos que la tenían.
+- Pendiente: logos que las webs bloquean (chatgpt.com, Emergent, SlidesAI): ChatGPT usa el logo de OpenAI de su cuenta oficial de GitHub. Comparar plantillas cuando haya datos de Discover/Imágenes (repaso mensual).
+
 ## Pendiente
 
 - [x] Jordi aprueba publicar la Fase 1 (06-10-2026); pull request #6 fusionado (https://github.com/Evelinservidor/decodifica.net/pull/6). Al fusionar a `main` se publica solo.

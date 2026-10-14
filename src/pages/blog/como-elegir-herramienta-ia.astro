@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 
@@ -15,7 +16,7 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/como-elegir-herramienta-ia.png"
+  ogImage="/og/blog/como-elegir-herramienta-ia.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -43,11 +44,7 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
       <p class="mt-4 text-lg text-dark-200">{description}</p>
     </header>
 
-    <img
-      src="/og/blog/como-elegir-herramienta-ia.png"
-      alt="Pregunta para elegir una herramienta de IA: ¿qué IA te sirve de verdad?"
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-    />
+    <PortadaArticulo slug="como-elegir-herramienta-ia" />
 
     <div class="not-prose mb-10 rounded-lg border border-brand-500/20 bg-dark-800 p-6">
       <h2 class="font-display text-xl font-bold text-white">Decisión rápida</h2>

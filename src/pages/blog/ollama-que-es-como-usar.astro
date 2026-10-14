@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Ollama: qué es y cómo usar modelos de IA en local";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og-default.png"
+  ogImage="/og/blog/ollama-que-es-como-usar.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -59,6 +60,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </header>
 
     <p>En resumen: Ollama es un programa gratuito y de código abierto (licencia MIT) para Mac, Windows y Linux que descarga modelos de IA abiertos, como Gemma, Qwen o DeepSeek, y los ejecuta en tu ordenador. Se maneja con órdenes cortas como <code>ollama run gemma4</code>, se conecta con otras aplicaciones y agentes de programación y, si tu equipo no da para más, ofrece también modelos en su propia nube.</p>
+
+    <PortadaArticulo slug="ollama-que-es-como-usar" />
     <p>Los datos de esta guía salen de la documentación oficial de Ollama, su página de precios y su licencia, consultadas el 12 de octubre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Ollama y para qué sirve</h2>

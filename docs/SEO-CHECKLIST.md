@@ -76,14 +76,13 @@ Marca cada item cuando esté verificado. Si falla algún item crítico, no commi
 
 ---
 
-## OG cover (1200×630 dark mode)
+## Portada e imágenes (ver `docs/portadas.md`)
 
-- [ ] Generada con `matrix_generate_image` siguiendo estilo JC (ver `decodifica-thumbnail-generator`)
-- [ ] No texto en el prompt, composición HTML con texto blanco + ámbar
-- [ ] Tipografía Impact/Anton bold con text-shadow outline
-- [ ] "2026" metal plate en top-right corner
-- [ ] Title del post visible y legible
-- [ ] Guardada en `public/og/blog/<slug>.png`
+- [ ] Entrada del artículo en `src/data/portadas.json` (plantilla, gancho de 3-6 palabras que el artículo cumple, etiqueta, alt)
+- [ ] Generada con `python3 scripts/imagenes/portada.py <slug>` y revisada a ojo
+- [ ] `ogImage="/og/blog/<slug>.jpg"` en `BaseLayout` y `<PortadaArticulo slug="<slug>" />` en el artículo
+- [ ] 2-3 imágenes útiles dentro del texto (capturas de la web oficial o esquemas propios) con `FiguraArticulo`, alt descriptivo y menos de 150 KB
+- [ ] Nada de imágenes generadas con IA ni de bancos de fotos de terceros
 
 ---
 

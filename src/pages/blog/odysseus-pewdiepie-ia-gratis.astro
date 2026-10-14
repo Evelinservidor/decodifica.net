@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -16,7 +17,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og-default.png"
+  ogImage="/og/blog/odysseus-pewdiepie-ia-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -50,6 +51,8 @@ const pillarLabel = "Pilar 1: Apps web";
         PewDiePie presentó Odysseus como un workspace de IA autoalojado que puede conectar modelos locales y APIs. Esta guía contrasta la propuesta con la documentación actual y explica qué revisar —instalación, modelo, red, mantenimiento y privacidad— antes de probarla.
       </p>
     </header>
+
+    <PortadaArticulo slug="odysseus-pewdiepie-ia-gratis" />
 
     <ReviewMethodology reviewed="29 de julio de 2026" task="contrastar arquitectura, instalación y límites con la documentación oficial" />
 

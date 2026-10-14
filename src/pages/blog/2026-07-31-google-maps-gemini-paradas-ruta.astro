@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Google Maps con Gemini: cómo añadir una parada en tu ruta";
@@ -15,7 +17,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.png"
+  ogImage="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -47,12 +49,7 @@ const pillarLabel = "Pilar 1: Apps web";
       </p>
     </header>
 
-    <img
-      src="/og/blog/2026-07-31-google-maps-gemini-paradas-ruta.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-    />
+    <PortadaArticulo slug="2026-07-31-google-maps-gemini-paradas-ruta" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>
@@ -97,6 +94,13 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><strong>Límite:</strong> cerca del trayecto o con poco desvío.</li>
       <li><strong>Acción:</strong> mostrar opciones primero y añadir solo la elegida.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/2026-07-31-google-maps-gemini-paradas-ruta/peticion-util-gemini-maps.webp"
+      alt="Cuadro con las cuatro partes de una buena petición a Gemini en Google Maps: lugar, condición, límite de desvío y acción"
+      width={1200}
+      height={511}
+    />
+
     <p>Ese orden importa. Gemini puede ayudarte a buscar y refinar, pero la confirmación final debe seguir en tus manos.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo usarlo sin perder el control</h2>
     <p>Separa la conversación en cuatro pasos breves:</p>
@@ -115,6 +119,13 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>la dirección y el acceso correctos;</li>
       <li>el orden de las paradas y la ruta resultante.</li>
     </ul>
+    <FiguraArticulo
+      src="/img/blog/2026-07-31-google-maps-gemini-paradas-ruta/antes-de-aceptar-la-parada.webp"
+      alt="Lista de cuatro comprobaciones antes de aceptar una parada en Google Maps: tiempo añadido, horario, dirección y ruta final"
+      width={1200}
+      height={529}
+    />
+
     <p>Si alguno no está claro, vuelve a la búsqueda manual. La IA sirve para reducir fricción, no para sustituir una comprobación que afecta al trayecto.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo aporta más que los filtros manuales</h2>
     <p>Gemini tiene más sentido cuando la necesidad contiene varias condiciones y quieres ajustarlas sobre la marcha. Si solo buscas la gasolinera más cercana, el filtro tradicional puede ser más rápido y predecible.</p>

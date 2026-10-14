@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Claude para escribir emails que no suenen a robot";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/claude-emails-sonar-humanos.png"
+  ogImage="/og/blog/claude-emails-sonar-humanos.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -47,13 +48,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/claude-emails-sonar-humanos.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="claude-emails-sonar-humanos" />
 
     <p>
       En resumen: los emails suenan a robot cuando le pides a Claude "escribe un email profesional" sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo mismo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo detrás de cada instrucción y ejemplos.

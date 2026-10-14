@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Arena AI: compara modelos a ciegas antes de pagar";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/2026-07-26-arena-ai-modelos-gratis.png"
+  ogImage="/og/blog/2026-07-26-arena-ai-modelos-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -48,12 +49,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/2026-07-26-arena-ai-modelos-gratis.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-    />
+    <PortadaArticulo slug="2026-07-26-arena-ai-modelos-gratis" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h3 class="font-display text-lg font-bold text-white mb-3">En dos líneas</h3>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
@@ -18,7 +19,7 @@ const linkClass = "text-brand-400 hover:text-brand-300";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/crear-app-web-ias-chinas-open-source.png"
+  ogImage="/og/blog/crear-app-web-ias-chinas-open-source.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -62,13 +63,7 @@ const linkClass = "text-brand-400 hover:text-brand-300";
       </p>
     </header>
 
-    <img
-      src="/og/blog/crear-app-web-ias-chinas-open-source.png"
-      alt="Emergent IA: plataforma para crear apps web y móviles con agentes de IA"
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="crear-app-web-ias-chinas-open-source" />
 
     <p><strong>En resumen:</strong> Emergent (<a href="https://emergent.sh/" class={linkClass} target="_blank" rel="noopener noreferrer">emergent.sh</a>) es una plataforma en la que describes una aplicación en lenguaje natural y unos agentes de IA la diseñan, la programan y la publican. Tiene plan gratuito con 10 créditos, un plan Standard de 20 dólares al mes con 100 créditos y un plan Pro de 200 dólares con 750 créditos (precios consultados el 6 de octubre de 2026). El código es tuyo y se puede llevar a GitHub desde el plan Standard. Lo que más conviene vigilar es el gasto de créditos: según su documentación, tener una app publicada cuesta entre 50 y 1.100 créditos al mes.</p>
 
