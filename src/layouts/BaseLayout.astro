@@ -4,7 +4,6 @@ import Footer from '~/components/Footer.astro';
 import SEO from '~/components/SEO.astro';
 import CookieConsent from '~/components/CookieConsent.astro';
 import ConversionTracker from '~/components/ConversionTracker.astro';
-import AdjacentArticles from '~/components/AdjacentArticles.astro';
 import { env } from '~/lib/env';
 import '~/styles/global.css';
 
@@ -43,7 +42,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" class="dark" data-theme="dark">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,12 +50,11 @@ const {
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <script is:inline>
       try {
-        const savedTheme = localStorage.getItem('decodifica-theme');
-        document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
-      } catch {
-        document.documentElement.dataset.theme = 'dark';
-      }
+        // Claro por defecto; el modo oscuro solo si la persona lo eligió con el botón.
+        if (localStorage.getItem('decodifica-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch {}
     </script>
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260711" />
@@ -84,7 +82,7 @@ const {
     <link rel="alternate" type="application/rss+xml" title="Decodifica RSS" href="/rss.xml" />
   </head>
 
-  <body class="site-body min-h-screen bg-dark-900 font-sans text-white antialiased">
+  <body class="site-body min-h-screen antialiased">
     <a
       href="#main"
       class="skip-link sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-500 focus:px-4 focus:py-2 focus:font-semibold focus:text-dark-900"
@@ -98,10 +96,14 @@ const {
       <slot />
     </main>
 
-    {type === 'article' && <AdjacentArticles />}
-
     <Footer />
     <ConversionTracker />
+    <script is:inline>
+      // Tablas y bloques que se deslizan de lado: también con el teclado.
+      document.querySelectorAll('.overflow-x-auto, pre').forEach((el) => {
+        if (el.scrollWidth > el.clientWidth && !el.hasAttribute('tabindex')) el.tabIndex = 0;
+      });
+    </script>
     <CookieConsent
       plausibleDomain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN}
       plausibleScriptSrc={env.PUBLIC_PLAUSIBLE_SCRIPT_SRC}

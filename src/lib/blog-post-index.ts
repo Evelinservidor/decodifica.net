@@ -5,6 +5,8 @@ export type BlogPostIndexEntry = {
   pubDate: string;
   modifiedDate: string;
   readingTime: string | null;
+  tema: string | null;
+  tags: string[];
 };
 
 const sources = import.meta.glob('../pages/blog/*.astro', {
@@ -28,6 +30,8 @@ export const blogPostIndex: BlogPostIndexEntry[] = Object.entries(sources)
       pubDate: field(source, 'pubDate'),
       modifiedDate: field(source, 'modifiedDate') ?? field(source, 'pubDate'),
       readingTime: field(source, 'readingTime'),
+      tema: field(source, 'tema'),
+      tags: [...(source.match(/const\s+tags\s*=\s*\[([^\]]*)\]/)?.[1] ?? '').matchAll(/["']([^"']+)["']/g)].map((m) => m[1]),
     };
   })
   .filter((post): post is BlogPostIndexEntry =>

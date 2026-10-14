@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
 const title = "5 IAs para crear presentaciones en 2026: comparativa y límites";
@@ -10,6 +9,7 @@ const pubDate = "2026-06-24";
 const modifiedDate = pubDate;
 const tags = ["ia presentaciones gamma", "gamma app", "beautiful.ai", "slidesai", "crear presentaciones con ia"];
 const readingTime = "11 min";
+const tema = "oficina";
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -37,41 +37,21 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://www.linkedin.com/posts/harisodobasic_remember-tome-the-ai-powerpoint-killer-activity-7305575278972395520-htHi",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        Varias IAs pueden convertir un briefing en un borrador de presentación. Esta guía compara qué aportan, qué límites revisar al exportar y cómo evaluar si el resultado merece entrar en tu proceso.
-      </p>
-    </header>
+  <Articulo slug="ia-crea-presentaciones-completas">
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="crear un primer borrador de presentación a partir de un briefing" />
 
-    <PortadaArticulo slug="ia-crea-presentaciones-completas" />
 
-    <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>
-      <ul class="space-y-2 text-dark-200 text-sm">
+    <section class="respuesta-rapida" aria-label="Respuesta rápida">
+      <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
+      <ul>
         <li><strong>Gamma</strong>: la opción más completa para crear desde cero. Plan gratis con 400 créditos, escribe el tema, genera diez diapositivas con diseño coherente en treinta segundos. Es la única que cubre todo el flujo: esquema, contenido, visual y exporta a PowerPoint.</li>
         <li><strong>Beautiful.ai</strong>: si ya tienes el contenido escrito y solo quieres que las diapositivas dejen de parecer hechas en una tarde de domingo. Diseño automático basado en reglas, pero no genera contenido nuevo.</li>
         <li><strong>SlidesAI</strong>: add-on para Google Slides. Funciona dentro de la herramienta que ya usas, sin aprender nada nuevo. Ideal si vives en Google Workspace.</li>
         <li><strong>Plus AI</strong>: add-on que vive dentro de Google Slides y PowerPoint. Más pulido que SlidesAI en la edición posterior, pero sin plan gratis permanente.</li>
         <li><strong>Canva Magic Design</strong>: si ya tienes cuenta de Canva, su Magic Design genera presentaciones desde un prompt. Limitado en texto largo, pero muy bueno para presentaciones cortas con mucho visual.</li>
       </ul>
-    </div>
+    </section>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué herramienta elegir según tu presentación</h2>
     <p>
@@ -379,26 +359,7 @@ const pillarLabel = "Pilar 1: Apps web";
       </ul>
     </section>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-3" class="sr-only">Email</label>
-        
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-3" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

@@ -1,168 +1,140 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
+import TarjetaArticulo from '~/components/TarjetaArticulo.astro';
+import { blogPostIndex } from '~/lib/blog-post-index';
+import { masLeidos } from '~/lib/mas-leidos';
+import { nombreTema, temas } from '~/lib/temas';
 import { tools } from '~/data/tools';
-import { toolComparisons } from '~/data/tool-comparisons';
 import { practicalWorkflows } from '~/data/workflows';
 
-const latestGuides = [
-  {
-    title: 'Elegir una herramienta de IA sin perder tiempo',
-    href: '/blog/como-elegir-herramienta-ia/',
-    description: 'Un método corto para decidir qué probar, qué descartar y qué revisar antes de meter una IA en tu flujo.',
-  },
-  {
-    title: 'Claude Skills: qué son y cómo crear una',
-    href: '/blog/claude-skills-1000-gratis/',
-    description: 'Cómo pasar de prompts sueltos a instrucciones reutilizables para trabajar mejor con Claude.',
-  },
-  {
-    title: 'IA para organizar pendientes',
-    href: '/blog/ia-organiza-pendientes/',
-    description: 'Conectores, agentes y límites prácticos para ordenar tareas con menos fricción.',
-  },
-];
+const [destacado, ...resto] = blogPostIndex;
+const ultimos = resto.slice(0, 4);
+const masGuias = resto.slice(4, 8);
+const top = masLeidos(5);
+const cuenta = (clave: string) => blogPostIndex.filter((post) => post.tema === clave).length;
 ---
 
 <BaseLayout
   title="IA práctica para trabajo real"
   description="Convierte una tarea repetitiva en un workflow de IA que puedas revisar y reutilizar cada semana."
 >
-  <section class="home-hero relative overflow-hidden border-b border-dark-600 bg-dark-900">
-    <div class="home-hero-grid" aria-hidden="true"></div>
-    <div class="home-hero-glow" aria-hidden="true"></div>
-    <div class="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1fr)_420px] lg:px-8 lg:py-20">
-      <div class="home-enter home-enter-1 max-w-3xl">
-        <p class="eyebrow mb-4 inline-flex rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          IA práctica para trabajo real
-        </p>
-        <h1 class="home-hero-title text-balance font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          Convierte una tarea repetitiva en un workflow de IA que puedas reutilizar cada semana.
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-dark-200">
-          Elige una tarea, recibe una ruta para probarla en poco tiempo y conserva solo lo que puedas revisar y repetir. Sin empezar por una lista infinita de herramientas.
-        </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="/empieza/"
-            class="pressable cta-primary inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold shadow-lg shadow-brand-500/20"
-          >
-            Diagnosticar mi tarea
-          </a>
-          <a
-            href="#ejemplo"
-            class="pressable action-secondary inline-flex items-center justify-center rounded-lg border border-dark-500 bg-dark-800 px-6 py-3 text-base font-semibold text-white"
-          >
-            Ver un ejemplo
-          </a>
+  <nav class="border-b border-dark-600" aria-label="Temas">
+    <div class="contenedor"><div class="chips py-2.5">
+      <a class="chip activo" href="/blog/">Todas</a>
+      {Object.entries(temas).map(([clave, tema]) => (
+        <a class="chip" href={`/blog/?tema=${clave}`}>{tema.nombre}</a>
+      ))}
+    </div></div>
+  </nav>
+
+  <div class="contenedor">
+    <header class="pt-6">
+      <h1 class="font-display text-[26px] leading-tight text-white sm:text-3xl">Guías de IA práctica en español</h1>
+      <p class="mt-1.5 text-[15px] leading-6 text-dark-200">
+        Qué es cada herramienta, cuánto cuesta y cómo se usa. Con fuentes oficiales y sin relleno.
+      </p>
+    </header>
+
+    <section class="py-6" aria-labelledby="lo-ultimo">
+      <div class="seccion-cabecera">
+        <h2 id="lo-ultimo" class="font-display text-white">Lo último</h2>
+        <a href="/blog/">Todas las guías →</a>
+      </div>
+      <div class="grid gap-x-9 lg:grid-cols-[1.55fr_1fr]">
+        {destacado && <TarjetaArticulo post={destacado} variante="destacado" prioridad track="home_latest_click" />}
+        <div class="mt-4 lg:mt-0 [&>a:first-child]:lg:border-t-0 [&>a:first-child]:lg:pt-0">
+          {ultimos.map((post) => <TarjetaArticulo post={post} variante="fila" track="home_latest_click" />)}
         </div>
       </div>
+    </section>
 
-      <div class="home-proof home-enter home-enter-2 rounded-2xl border border-dark-600 bg-dark-800 p-6 shadow-xl shadow-black/10 sm:p-8">
-        <p class="text-sm font-semibold text-brand-300">Prueba de 20 minutos</p>
-        <h2 class="mt-2 font-display text-2xl font-bold text-white">Un resultado antes de pedirte nada</h2>
-        <ol class="proof-steps mt-6 space-y-4 text-sm text-dark-200">
-          <li class="proof-step flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">1</span><span>Elige una tarea que repites cada semana.</span></li>
-          <li class="proof-step flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">2</span><span>Prueba una ruta con datos no sensibles.</span></li>
-          <li class="proof-step flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">3</span><span>Comprueba calidad, permisos y tiempo de revisión.</span></li>
-          <li class="proof-step flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/15 font-semibold text-brand-300">4</span><span>Guarda solo el flujo que puedas reutilizar.</span></li>
+    <div class="grid gap-x-10 lg:grid-cols-[2fr_1fr]">
+      <section class="py-6" aria-labelledby="mas-guias">
+        <div class="seccion-cabecera"><h2 id="mas-guias" class="font-display text-white">Más guías</h2></div>
+        <div class="grid gap-6 sm:grid-cols-2">
+          {masGuias.map((post) => <TarjetaArticulo post={post} track="home_more_click" />)}
+        </div>
+      </section>
+
+      <section class="py-6" aria-labelledby="mas-leido">
+        <div class="seccion-cabecera"><h2 id="mas-leido" class="font-display text-white">Lo más leído</h2></div>
+        <ol class="top5">
+          {top.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`} data-track="home_popular_click" data-track-label={post.slug}>
+                <h3 class="font-display text-white">{post.title}</h3>
+                <p class="tarjeta-meta mt-1">{nombreTema(post.tema)}</p>
+              </a>
+            </li>
+          ))}
         </ol>
-      </div>
+      </section>
     </div>
-  </section>
 
-  <section class="border-b border-dark-600 bg-dark-800/50 py-12 sm:py-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold text-brand-300">Tareas frecuentes</p>
-        <h2 class="mt-2 font-display text-3xl font-bold">Empieza por el trabajo, no por la herramienta.</h2>
-      </div>
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          ['Investigar con fuentes', 'Encontrar, contrastar y citar información.', 'investigar'],
-          ['Resumir documentos', 'Convertir material largo en algo revisable.', 'resumir'],
-          ['Preparar reuniones', 'Pasar de notas a decisiones y tareas.', 'reuniones'],
-          ['Redactar emails', 'Crear un borrador sin perder tu tono.', 'emails'],
-          ['Crear presentaciones', 'Pasar de briefing a estructura revisable.', 'presentaciones'],
-          ['Analizar hojas de cálculo', 'Probar fórmulas y análisis con control.', 'hojas'],
-        ].map(([title, description, task]) => (
-          <a href={`/empieza/#${task}`} class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5">
-            <h3 class="font-display text-xl font-bold text-white">{title}</h3>
-            <p class="mt-2 text-sm leading-6 text-dark-200">{description}</p>
+    <section class="py-6" aria-labelledby="por-tema">
+      <div class="seccion-cabecera"><h2 id="por-tema" class="font-display text-white">Explora por tema</h2></div>
+      <div class="mosaico-temas">
+        {Object.entries(temas).map(([clave, tema]) => (
+          <a href={`/blog/?tema=${clave}`} class={`fondo-${tema.color}`}>
+            <b>{tema.nombre}</b>
+            <span>{cuenta(clave)} guías</span>
           </a>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="border-b border-dark-600 py-14 sm:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-start">
-        <div><p class="text-sm font-semibold text-brand-300">La web también es una caja de herramientas</p><h2 class="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">Utilidades gratis para resolver una tarea hoy.</h2><p class="mt-4 leading-7 text-dark-200">Explora {tools.length} fichas, crea una comparación, construye un prompt o comprueba el riesgo de tus datos. Todo el resultado básico es abierto.</p><a href="/herramientas/" class="pressable cta-primary mt-6 inline-flex rounded-lg px-5 py-3 font-semibold">Abrir herramientas</a></div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <a href="/herramientas/comparador/" data-track="home_utility_opened" data-track-label="comparador" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5"><p class="text-xs font-semibold text-brand-300">{toolComparisons.length + 4} comparativas editoriales</p><h3 class="mt-2 font-display text-xl font-bold">Comparar opciones</h3><p class="mt-2 text-sm leading-6 text-dark-300">Elige dos o tres herramientas y aplica la misma matriz.</p></a>
-          <a href="/herramientas/generador-prompts/" data-track="home_utility_opened" data-track-label="generador-prompts" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5"><p class="text-xs font-semibold text-brand-300">Plantilla local</p><h3 class="mt-2 font-display text-xl font-bold">Construir un prompt</h3><p class="mt-2 text-sm leading-6 text-dark-300">Ordena tarea, contexto, salida y criterio de calidad.</p></a>
-          <a href="/herramientas/preflight-datos/" data-track="home_utility_opened" data-track-label="preflight-datos" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5"><p class="text-xs font-semibold text-brand-300">Privacidad práctica</p><h3 class="mt-2 font-display text-xl font-bold">Revisar datos</h3><p class="mt-2 text-sm leading-6 text-dark-300">Detecta riesgo antes de subir información a un tercero.</p></a>
-          <a href="/recursos/" data-track="home_utility_opened" data-track-label="workflows" class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5"><p class="text-xs font-semibold text-brand-300">{practicalWorkflows.length} workflows</p><h3 class="mt-2 font-display text-xl font-bold">Probar un proceso</h3><p class="mt-2 text-sm leading-6 text-dark-300">Pasos, prompt, prueba de 20 minutos y criterio de decisión.</p></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ejemplo" class="py-14 sm:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
-        <div>
-          <p class="text-sm font-semibold text-brand-300">Ejemplo de resultado</p>
-          <h2 class="mt-2 font-display text-3xl font-bold sm:text-4xl">
-            Una respuesta concreta antes de pedirte el email.
-          </h2>
-          <p class="mt-4 text-dark-200">
-            Para una tarea de investigación con fuentes propias, esta sería una primera ruta. La versión completa del diagnóstico llegará después: primero importa que puedas probar algo útil.
-          </p>
-        </div>
-        <div class="home-result-card rounded-2xl border border-brand-500/30 bg-brand-500/5 p-6 sm:p-8">
-          <p class="text-sm font-semibold text-brand-300">Tarea: resumir un informe sin perder las fuentes</p>
-          <dl class="mt-6 grid gap-5 sm:grid-cols-2">
-            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Ruta inicial</dt><dd class="mt-1 font-semibold text-white">NotebookLM con las fuentes seleccionadas</dd></div>
-            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Alternativa</dt><dd class="mt-1 font-semibold text-white">Perplexity si todavía tienes que encontrar fuentes</dd></div>
-            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Primer prompt</dt><dd class="mt-1 text-sm text-dark-200">“Resume las conclusiones y cita la fuente de cada una.”</dd></div>
-            <div><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Prueba</dt><dd class="mt-1 text-sm text-dark-200">Contrasta tres respuestas con el documento original.</dd></div>
-            <div class="sm:col-span-2"><dt class="text-xs font-semibold uppercase tracking-wide text-dark-300">Límite que revisar</dt><dd class="mt-1 text-sm text-dark-200">Las citas ayudan a comprobar la respuesta; no sustituyen la lectura de las fuentes.</dd></div>
-          </dl>
-          <a href="/empieza/#investigar" class="text-link mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-300">Ver rutas para mi tarea <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="border-y border-dark-600 bg-dark-800/50 py-14 sm:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p class="text-sm font-semibold text-brand-300">Lecturas para empezar</p>
-          <h2 class="mt-2 font-display text-3xl font-bold">Guías con decisión, no transcripciones</h2>
-        </div>
-        <a href="/blog/" class="text-sm font-semibold text-brand-300 hover:text-brand-200">Ver todo el blog</a>
-      </div>
-      <div class="mt-8 grid gap-5 md:grid-cols-3">
-        {latestGuides.map((guide) => (
-          <a href={guide.href} class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-800 p-5">
-            <h3 class="font-display text-xl font-bold text-white">{guide.title}</h3>
-            <p class="mt-3 text-sm leading-6 text-dark-200">{guide.description}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="border-t border-dark-600 bg-dark-800/50 py-14 sm:py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section class="py-6">
       <NewsletterForm
-        title="Una tarea, varias opciones y un workflow que puedas guardar"
-        description="Cada semana: una tarea real, las herramientas que se compararon, la ruta que probar y un límite que conviene revisar."
-        buttonLabel="Recibir el filtro semanal"
+        title="Una guía útil cada sábado"
+        description="Qué herramienta probar, cómo usarla y qué límites tiene. Una por semana, en español."
+        buttonLabel="Apuntarme gratis"
       />
-    </div>
-  </section>
+    </section>
+
+    <section class="py-6" aria-labelledby="utilidades">
+      <div class="seccion-cabecera">
+        <h2 id="utilidades" class="font-display text-white">Herramientas gratis</h2>
+        <a href="/herramientas/">Ver todas →</a>
+      </div>
+      <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+        <a href="/herramientas/generador-prompts/" data-track="home_utility_opened" data-track-label="generador-prompts" class="utilidad">
+          <b>Generador de prompts</b><span>Ordena tu petición: tarea, contexto y resultado.</span>
+        </a>
+        <a href="/herramientas/comparador/" data-track="home_utility_opened" data-track-label="comparador" class="utilidad">
+          <b>Comparador de IA</b><span>Pon dos o tres herramientas frente a frente.</span>
+        </a>
+        <a href="/herramientas/preflight-datos/" data-track="home_utility_opened" data-track-label="preflight-datos" class="utilidad">
+          <b>¿Puedo subir estos datos?</b><span>Revisa el riesgo antes de usar una IA.</span>
+        </a>
+        <a href="/empieza/" data-track="home_utility_opened" data-track-label="empieza" class="utilidad">
+          <b>Empieza por tu tarea</b><span>{practicalWorkflows.length} procesos y {tools.length} fichas de herramientas.</span>
+        </a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  .utilidad {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 44px;
+    padding: 14px 16px;
+    border: 1px solid var(--linea);
+    border-radius: 12px;
+    background: var(--superficie);
+    color: var(--tinta);
+  }
+
+  .utilidad span {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--tinta-2);
+  }
+
+  .utilidad:hover {
+    border-color: var(--marca);
+  }
+</style>

@@ -56,7 +56,7 @@ Funciona en Linux (Python + Pillow) con las fuentes Inter guardadas en `scripts/
 - **Con gancho:** imagen a la derecha y 3-6 palabras muy grandes a la izquierda. Es lo que se ve al compartir y en el blog.
 - **Limpia:** solo la imagen (logo, captura o número) sin el gancho, para lo que lee Google. Así cumplimos la recomendación de no usar imágenes cargadas de texto sin renunciar al gancho en redes.
 - `SEO.astro` lo conecta solo cuando el artículo usa `ogImage="/og/blog/<slug>.jpg"`: `og:image:width/height/alt`, `twitter:image:alt`, las tres imágenes limpias en el JSON-LD y `max-image-preview:large` en todas las páginas indexables.
-- En el artículo, justo después del «En resumen» o de la cabecera: `<PortadaArticulo slug="<slug>" />`.
+- En el artículo no hay que poner nada más: la plantilla `<Articulo slug="<slug>">` muestra la versión limpia en la cabecera. En `/blog/`, en la portada de la web y en «Sigue con esto» se usa la versión con gancho (`-tarjeta`).
 
 ### Plantillas
 

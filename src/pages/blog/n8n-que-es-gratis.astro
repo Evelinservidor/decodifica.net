@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 
 const title = "n8n: qué es, si es gratis y cómo empezar";
 const description = "Qué es n8n y para qué sirve, cuándo es gratis (edición Community) y cuándo se paga (n8n Cloud), qué permite su licencia y cómo crear tu primer flujo.";
 const pubDate = "2026-10-07";
 const modifiedDate = "2026-10-07";
 const readingTime = "8 min";
+const tema = "automatizar";
 const tags = ["n8n", "automatización", "agentes de ia", "workflows", "n8n gratis"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -32,30 +32,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="n8n-que-es-gratis">
 
-    <p>En resumen: n8n es una herramienta para automatizar tareas conectando aplicaciones entre sí (correo, hojas de cálculo, CRM, modelos de IA) mediante flujos que se dibujan como cajas unidas por flechas. Es gratis si lo instalas tú en tu ordenador o servidor (edición Community); si prefieres que lo aloje n8n, hay una prueba gratuita de 14 días y después los planes empiezan en 20 euros al mes pagando el año.</p>
+    <p><strong>En resumen:</strong> n8n es una herramienta para automatizar tareas conectando aplicaciones entre sí (correo, hojas de cálculo, CRM, modelos de IA) mediante flujos que se dibujan como cajas unidas por flechas. Es gratis si lo instalas tú en tu ordenador o servidor (edición Community); si prefieres que lo aloje n8n, hay una prueba gratuita de 14 días y después los planes empiezan en 20 euros al mes pagando el año.</p>
 
-    <PortadaArticulo slug="n8n-que-es-gratis" />
     <p>Los datos de esta guía salen de la página de precios, la documentación y la licencia oficiales de n8n, consultadas el 7 de octubre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es n8n y para qué sirve</h2>
@@ -173,25 +153,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-400 hover:text-brand-300">Cómo elegir una herramienta de IA sin perder tiempo</a>.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-n8n-que-es-gratis" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-n8n-que-es-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

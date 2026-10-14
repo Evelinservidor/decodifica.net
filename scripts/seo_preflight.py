@@ -89,7 +89,7 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
         errors.append("falta const pubDate")
 
     body = text.split("---", 2)[-1]
-    h1 = len(re.findall(r"<h1\b", body))
+    h1 = len(re.findall(r"<h1\b", body)) + len(re.findall(r"<Articulo\b", body))  # <Articulo> pinta el H1
     if h1 != 1:
         errors.append(f"{h1} H1 (debe haber 1)")
     h2 = len(re.findall(r"<h2\b", body))
@@ -107,7 +107,12 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
             errors.append(f"enlace interno roto: {href}")
 
     audit_images(path.stem, text, body, errors, warnings)
-    if "ConversionBand" not in text and "embed-subscribe" not in text:
+    usa_articulo = f'<Articulo slug="{path.stem}"' in body
+    if not usa_articulo:
+        errors.append(f'sin la plantilla común: envuelve el texto en <Articulo slug="{path.stem}"> (docs/AGENTE-SEMANAL.md)')
+    if not re.search(r'^const\s+tema\s*=\s*["\'](chatbots|local|automatizar|oficina|crear)["\']', text, flags=re.M):
+        errors.append('falta const tema = "…" (chatbots, local, automatizar, oficina o crear: src/lib/temas.ts)')
+    if not usa_articulo and "ConversionBand" not in text and "embed-subscribe" not in text:
         warnings.append("sin llamada a la newsletter")
 
     lower = re.sub(r"<[^>]+>", " ", body).lower()
@@ -125,10 +130,10 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
         errors.append("bloque JSON-LD Article propio: usa citations={[...]} en BaseLayout")
     if "citations=" not in text:
         warnings.append("sin citations={[...]} en BaseLayout (fuentes en los datos estructurados)")
-    if "datetime={modifiedDate}" not in body:
+    if not usa_articulo and "datetime={modifiedDate}" not in body:
         warnings.append("la cabecera no muestra la fecha de revisión")
-    if not re.search(r"En resumen|En dos líneas|Lo esencial|Resumen en|Decisión rápida", body):
-        warnings.append("no empieza con una respuesta corta («En resumen:»)")
+    if not re.search(r'<p>\s*<strong>En resumen:</strong>|class="respuesta-rapida"', body):
+        warnings.append("no empieza con una respuesta corta («<p><strong>En resumen:</strong> …», sale en el recuadro «Respuesta rápida»)")
     if re.search(r"\b(TL;DR)\b", body) and "Qué mirar:</strong> si la herramienta" in body:
         errors.append("bloque TL;DR genérico de plantilla")
     return errors, warnings
@@ -146,8 +151,8 @@ def audit_images(slug: str, text: str, body: str, errors: list[str], warnings: l
         faltan = [v for v in VARIANTES if not (ROOT / "public" / "og" / "blog" / f"{slug}{v}").exists()]
         if faltan:
             errors.append(f"faltan archivos de portada ({', '.join(faltan)}): python3 scripts/imagenes/portada.py {slug}")
-        if f'<PortadaArticulo slug="{slug}"' not in body:
-            warnings.append("sin <PortadaArticulo> en la cabecera del artículo")
+        if f'<Articulo slug="{slug}"' not in body and f'<PortadaArticulo slug="{slug}"' not in body:
+            warnings.append("sin portada en la cabecera (la pone <Articulo slug=…>)")
     for tag in re.findall(r"<img\b[^>]*>", body, flags=re.S):
         src = re.search(r'src="([^"]+)"', tag)
         if not re.search(r'\balt="[^"]{10,}"', tag) and "alt={" not in tag:

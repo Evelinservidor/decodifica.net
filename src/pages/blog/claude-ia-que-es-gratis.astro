@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 
 const title = "Claude IA: qué es, si es gratis y cuánto cuesta";
 const description = "Qué es Claude, la IA de Anthropic: cómo usarlo en español, qué incluye el plan gratuito, cuánto cuestan Pro y Max y qué hace con tus conversaciones.";
 const pubDate = "2026-10-12";
 const modifiedDate = "2026-10-12";
 const readingTime = "7 min";
+const tema = "chatbots";
 const tags = ["claude ia", "claude gratis", "claude en español", "anthropic", "claude precios"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -34,30 +34,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://claude.com/download",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="claude-ia-que-es-gratis">
 
-    <p>En resumen: Claude es el asistente de IA de la empresa Anthropic. Se usa gratis desde el navegador, el ordenador o el móvil, con la interfaz en español. El plan gratuito tiene un límite de uso que se renueva cada cinco horas; el plan Pro cuesta 20 dólares al mes (17 al mes pagando el año) y añade más uso, los modelos más potentes y herramientas como Claude Code.</p>
+    <p><strong>En resumen:</strong> Claude es el asistente de IA de la empresa Anthropic. Se usa gratis desde el navegador, el ordenador o el móvil, con la interfaz en español. El plan gratuito tiene un límite de uso que se renueva cada cinco horas; el plan Pro cuesta 20 dólares al mes (17 al mes pagando el año) y añade más uso, los modelos más potentes y herramientas como Claude Code.</p>
 
-    <PortadaArticulo slug="claude-ia-que-es-gratis" />
     <p>Los datos de esta guía salen de la página de precios de Claude, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 12 de octubre de 2026. Los planes cambian a menudo: si algo no coincide con lo que ves, manda lo que diga la página oficial.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Claude y de qué empresa es</h2>
@@ -171,25 +151,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama: modelos de IA en local</a>, si prefieres que tus textos no salgan de tu ordenador.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-claude-ia-que-es-gratis" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-claude-ia-que-es-gratis" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>

@@ -80,7 +80,7 @@ Marca cada item cuando esté verificado. Si falla algún item crítico, no commi
 
 - [ ] Entrada del artículo en `src/data/portadas.json` (plantilla, gancho de 3-6 palabras que el artículo cumple, etiqueta, alt)
 - [ ] Generada con `python3 scripts/imagenes/portada.py <slug>` y revisada a ojo
-- [ ] `ogImage="/og/blog/<slug>.jpg"` en `BaseLayout` y `<PortadaArticulo slug="<slug>" />` en el artículo
+- [ ] `ogImage="/og/blog/<slug>.jpg"` en `BaseLayout` y el texto dentro de `<Articulo slug="<slug>">` (pone la portada, el índice y la respuesta rápida)
 - [ ] 2-3 imágenes útiles dentro del texto (capturas de la web oficial o esquemas propios) con `FiguraArticulo`, alt descriptivo y menos de 150 KB
 - [ ] Nada de imágenes generadas con IA ni de bancos de fotos de terceros
 

@@ -20,7 +20,7 @@ const { src, alt, width, height, caption } = Astro.props;
     height={height}
     loading="lazy"
     decoding="async"
-    class="h-auto w-full rounded-2xl border border-dark-600"
+    class="h-auto w-full"
   />
-  {caption && <figcaption class="mt-3 text-center text-sm text-dark-300" set:html={caption} />}
+  {caption && <figcaption set:html={caption} />}
 </figure>

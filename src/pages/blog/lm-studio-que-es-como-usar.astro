@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortadaArticulo from '../../components/PortadaArticulo.astro';
-import ConversionBand from '../../components/ConversionBand.astro';
+import Articulo from '../../components/Articulo.astro';
 
 const title = "LM Studio: qué es y cómo usar IA local en tu ordenador";
 const description = "Qué es LM Studio, qué ordenador necesitas, cómo descargar un modelo y chatear con tus documentos sin conexión, en qué se diferencia de Bionic y de Ollama.";
 const pubDate = "2026-10-07";
 const modifiedDate = "2026-10-07";
 const readingTime = "8 min";
+const tema = "local";
 const tags = ["lm studio", "ia local", "modelos abiertos", "lm studio bionic", "ollama"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -37,30 +37,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://ollama.com/download",
   ]}
 >
-  <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-    <header class="mb-12">
-      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-        {modifiedDate !== pubDate && (
-          <>
-            <span>·</span>
-            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
-          </>
-        )}
-        <span>·</span>
-        <span>~ {readingTime} lectura</span>
-      </div>
-      <h1 class="font-display text-4xl font-bold sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-4 text-lg text-dark-200">
-        {description}
-      </p>
-    </header>
+  <Articulo slug="lm-studio-que-es-como-usar">
 
-    <p>En resumen: LM Studio es una aplicación de escritorio gratuita para Mac, Windows y Linux que descarga modelos de IA abiertos (Qwen, Gemma, Mistral, gpt-oss, DeepSeek y otros) y los ejecuta en tu propio ordenador. Una vez descargado el modelo, puedes chatear con él y con tus documentos sin conexión a internet: según su documentación, lo que escribes no sale de tu equipo.</p>
+    <p><strong>En resumen:</strong> LM Studio es una aplicación de escritorio gratuita para Mac, Windows y Linux que descarga modelos de IA abiertos (Qwen, Gemma, Mistral, gpt-oss, DeepSeek y otros) y los ejecuta en tu propio ordenador. Una vez descargado el modelo, puedes chatear con él y con tus documentos sin conexión a internet: según su documentación, lo que escribes no sale de tu equipo.</p>
 
-    <PortadaArticulo slug="lm-studio-que-es-como-usar" />
     <p>Los datos de esta guía salen de la documentación oficial de LM Studio y de las páginas de precios de LM Studio y Ollama, consultadas el 7 de octubre de 2026. La versión de LM Studio publicada ese día era la 0.4.25.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es LM Studio y para qué sirve</h2>
@@ -175,25 +155,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/blog/deepseek-app-oficial-espanol/" class="text-brand-400 hover:text-brand-300">DeepSeek, Qwen y Kimi en español</a>, si prefieres usar estos modelos en la nube.</li>
     </ul>
 
-    <ConversionBand
-      eyebrow="Después de leer"
-      title="Lleva este análisis a tu flujo real"
-      description="Guarda los recursos gratuitos de Decodifica o recibe cada semana una selección corta de herramientas, pruebas y casos de uso con IA."
-    />
 
-    <aside class="mt-8 rounded-2xl border border-brand-500/20 bg-gradient-to-br from-dark-700 to-dark-800 p-6 shadow-lg shadow-brand-500/5 sm:p-8">
-      <h3 class="font-display text-2xl font-bold text-white">Únete a la newsletter</h3>
-      <p class="mt-2 text-sm text-dark-200">Cada sábado: 1 artículo destacado, 2-3 noticias IA, 1 prompt útil. Sin clickbait, sin AI slop.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/decodifica" method="post" class="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label for="blog-email-lm-studio-que-es-como-usar" class="sr-only">Email</label>
-        <input type="hidden" name="embed" value="1" />
-        <input id="blog-email-lm-studio-que-es-como-usar" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" class="flex-1 rounded-lg border border-dark-500 bg-dark-900 px-4 py-2.5 text-white placeholder-dark-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-        <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-800">
-          <span>Recibir gratis</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </form>
-    </aside>
-  </article>
+  </Articulo>
 
 </BaseLayout>
