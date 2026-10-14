@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Hermes Agent: qué es y cómo probar este agente open source";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/2026-07-17-hermes-agent-chino.png"
+  ogImage="/og/blog/2026-07-17-hermes-agent-chino.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -51,13 +52,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/2026-07-17-hermes-agent-chino.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="2026-07-17-hermes-agent-chino" />
 
 
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
@@ -16,7 +17,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/claude-skills-1000-gratis.png"
+  ogImage="/og/blog/claude-skills-1000-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -55,13 +56,7 @@ const pillarLabel = "Pilar 1: Apps web";
       </p>
     </header>
 
-    <img
-      src="/og/blog/claude-skills-1000-gratis.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="claude-skills-1000-gratis" />
 
     <p>En resumen: una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub, y te deja subir las tuyas en Claude.ai, Claude Code y la API. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
 

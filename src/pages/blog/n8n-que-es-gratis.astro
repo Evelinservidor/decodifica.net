@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "n8n: qué es, si es gratis y cómo empezar";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og-default.png"
+  ogImage="/og/blog/n8n-que-es-gratis.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -53,6 +54,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </header>
 
     <p>En resumen: n8n es una herramienta para automatizar tareas conectando aplicaciones entre sí (correo, hojas de cálculo, CRM, modelos de IA) mediante flujos que se dibujan como cajas unidas por flechas. Es gratis si lo instalas tú en tu ordenador o servidor (edición Community); si prefieres que lo aloje n8n, hay una prueba gratuita de 14 días y después los planes empiezan en 20 euros al mes pagando el año.</p>
+
+    <PortadaArticulo slug="n8n-que-es-gratis" />
     <p>Los datos de esta guía salen de la página de precios, la documentación y la licencia oficiales de n8n, consultadas el 7 de octubre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es n8n y para qué sirve</h2>

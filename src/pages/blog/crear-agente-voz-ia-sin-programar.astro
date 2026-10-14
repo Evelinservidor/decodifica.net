@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
@@ -16,7 +17,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/crear-agente-voz-ia-sin-programar.png"
+  ogImage="/og/blog/crear-agente-voz-ia-sin-programar.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -54,13 +55,7 @@ const pillarLabel = "Pilar 1: Apps web";
       </p>
     </header>
 
-    <img
-      src="/og/blog/crear-agente-voz-ia-sin-programar.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="crear-agente-voz-ia-sin-programar" />
 
     <p>En resumen: para probar un agente de voz sin programar, el camino más corto es el plan gratuito de ElevenLabs, que incluye 15 minutos de llamadas al mes. Para atender llamadas reales con más volumen están Retell y Vapi, que cobran por minuto. OpenAI Realtime y vocode son para equipos que programan.</p>
     <p>Todos los precios y límites de esta guía salen de las páginas oficiales de cada plataforma, consultadas el 12 de octubre de 2026. Están en dólares y sin impuestos.</p>

@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
-import { existsSync } from 'node:fs';
 import { blogPostIndex } from '~/lib/blog-post-index';
+import { portada } from '~/lib/portadas';
 
 // Se genera a partir de los propios artículos: las redirecciones quedan fuera solas.
 const posts = blogPostIndex.map((post) => ({
@@ -12,7 +12,7 @@ const posts = blogPostIndex.map((post) => ({
   excerpt: post.description,
   pubDate: post.pubDate,
   readTime: post.readingTime ?? '5 min',
-  cover: existsSync(`public/og/blog/${post.slug}.png`) ? `/og/blog/${post.slug}.png` : '/og-default.png',
+  cover: portada(post.slug),
 }));
 ---
 
@@ -56,12 +56,21 @@ const posts = blogPostIndex.map((post) => ({
           class="blog-card interactive-card pressable group block overflow-hidden rounded-2xl border border-dark-600 bg-gradient-to-br from-dark-700 to-dark-800"
         >
           <div class="aspect-video overflow-hidden bg-dark-700">
-            <img
-              src={post.cover}
-              alt={post.title}
-              class="h-full w-full object-cover transition-transform duration-200"
-              loading="lazy"
-            />
+            {post.cover ? (
+              <img
+                src={post.cover.tarjeta}
+                srcset={`${post.cover.tarjeta} 640w, ${post.cover.tarjeta960} 960w`}
+                sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                width="640"
+                height="360"
+                alt={post.cover.altOg}
+                class="h-full w-full object-cover transition-transform duration-200"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <img src="/og-default.png" alt="" width="1200" height="630" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+            )}
           </div>
           <div class="p-6">
             <div class="mb-2 flex items-center gap-2 text-xs text-dark-300">

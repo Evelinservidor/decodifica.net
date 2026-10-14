@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Kimi K3: cómo convertir miles de páginas en un informe";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/2026-08-05-kimi-k3-investigacion-visual.png"
+  ogImage="/og/blog/2026-08-05-kimi-k3-investigacion-visual.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -48,12 +49,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/2026-08-05-kimi-k3-investigacion-visual.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-    />
+    <PortadaArticulo slug="2026-08-05-kimi-k3-investigacion-visual" />
 
 
 

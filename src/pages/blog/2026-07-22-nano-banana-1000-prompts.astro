@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Prompts para Nano Banana: cómo usar una biblioteca gratuita";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/2026-07-22-nano-banana-1000-prompts.png"
+  ogImage="/og/blog/2026-07-22-nano-banana-1000-prompts.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -49,12 +50,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/2026-07-22-nano-banana-1000-prompts.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-    />
+    <PortadaArticulo slug="2026-07-22-nano-banana-1000-prompts" />
 
 
 

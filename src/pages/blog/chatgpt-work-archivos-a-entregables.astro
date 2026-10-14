@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "ChatGPT Work: cuándo usarlo en lugar del chat normal";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/chatgpt-work-archivos-a-entregables.png"
+  ogImage="/og/blog/chatgpt-work-archivos-a-entregables.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -49,13 +50,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/chatgpt-work-archivos-a-entregables.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="chatgpt-work-archivos-a-entregables" />
 
 
 

@@ -1,0 +1,26 @@
+---
+// Imagen de cabecera del artículo: versión limpia (sin texto) de la portada,
+// ligera (WebP) y con tamaño fijo para no mover la página al cargar.
+import { portada } from '~/lib/portadas';
+
+export interface Props {
+  slug: string;
+}
+
+const p = portada(Astro.props.slug);
+---
+
+{p && (
+  <img
+    src={p.cabecera800}
+    srcset={`${p.cabecera800} 800w, ${p.cabecera} 1600w`}
+    sizes="(min-width: 800px) 768px, 100vw"
+    width="1600"
+    height="900"
+    alt={p.alt}
+    class="mb-12 h-auto w-full rounded-2xl border border-dark-600"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+)}

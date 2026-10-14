@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -16,7 +17,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/alternativas-fable-5.png"
+  ogImage="/og/blog/alternativas-fable-5.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -56,13 +57,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <ReviewMethodology reviewed="6 de octubre de 2026" task="revisar alternativas abiertas y locales tras la suspensión temporal de Fable 5" />
 
-    <img
-      src="/og/blog/alternativas-fable-5.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="alternativas-fable-5" />
 
 
 

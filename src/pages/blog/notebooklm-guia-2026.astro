@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/notebooklm-guia-2026.png"
+  ogImage="/og/blog/notebooklm-guia-2026.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -62,13 +63,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <ReviewMethodology reviewed="6 de octubre de 2026" task="contrastar funciones, fuentes admitidas, idiomas, límites y planes de NotebookLM con la documentación oficial de Google" />
 
-    <img
-      src="/og/blog/notebooklm-guia-2026.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="notebooklm-guia-2026" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">Lo esencial sobre NotebookLM</h2>

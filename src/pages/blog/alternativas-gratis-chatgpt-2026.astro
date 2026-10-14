@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
@@ -17,7 +18,7 @@ const pillarLabel = "Pilar 1: Apps web";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/alternativas-gratis-chatgpt-2026.png"
+  ogImage="/og/blog/alternativas-gratis-chatgpt-2026.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -71,13 +72,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <ReviewMethodology reviewed="6 de octubre de 2026" task="elegir una alternativa gratuita a ChatGPT para una tarea concreta" />
 
-    <img
-      src="/og/blog/alternativas-gratis-chatgpt-2026.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="alternativas-gratis-chatgpt-2026" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
       <h2 class="font-display text-lg font-bold text-white mb-3">Resumen en cinco líneas</h2>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "LM Studio: qué es y cómo usar IA local en tu ordenador";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og-default.png"
+  ogImage="/og/blog/lm-studio-que-es-como-usar.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -58,6 +59,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </header>
 
     <p>En resumen: LM Studio es una aplicación de escritorio gratuita para Mac, Windows y Linux que descarga modelos de IA abiertos (Qwen, Gemma, Mistral, gpt-oss, DeepSeek y otros) y los ejecuta en tu propio ordenador. Una vez descargado el modelo, puedes chatear con él y con tus documentos sin conexión a internet: según su documentación, lo que escribes no sale de tu equipo.</p>
+
+    <PortadaArticulo slug="lm-studio-que-es-como-usar" />
     <p>Los datos de esta guía salen de la documentación oficial de LM Studio y de las páginas de precios de LM Studio y Ollama, consultadas el 7 de octubre de 2026. La versión de LM Studio publicada ese día era la 0.4.25.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es LM Studio y para qué sirve</h2>

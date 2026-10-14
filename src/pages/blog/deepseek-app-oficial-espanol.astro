@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "DeepSeek, Qwen y Kimi en español: cómo usarlos gratis";
@@ -15,7 +16,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 <BaseLayout
   title={title}
   description={description}
-  ogImage="/og/blog/deepseek-app-oficial-espanol.png"
+  ogImage="/og/blog/deepseek-app-oficial-espanol.jpg"
   type="article"
   pubDate={pubDate}
   modifiedDate={modifiedDate}
@@ -59,13 +60,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       </p>
     </header>
 
-    <img
-      src="/og/blog/deepseek-app-oficial-espanol.png"
-      alt={title}
-      class="mb-12 w-full rounded-2xl border border-dark-600"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <PortadaArticulo slug="deepseek-app-oficial-espanol" />
 
     <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
