@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 12 de octubre de 2026.
+Última actualización: 14 de octubre de 2026.
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -92,12 +92,27 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
   3. **Autocompletado de Google** (funciona desde aquí, sin volumen): para listar qué se busca en cada nicho y país.
   4. Revisión manual de quién ocupa los primeros resultados (competencia) y de los programas de afiliados públicos (dinero por visita).
 
+## Para que nos citen las IA (14-10-2026)
+
+Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANAL.md` («Para que nos citen las IA»).
+
+- `public/robots.txt`: permiso explícito a Googlebot, bingbot, Google-Extended, OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot y Perplexity-User (nombres comprobados en las páginas oficiales de Google, OpenAI, Anthropic, Perplexity y Bing).
+- **Cloudflare** devuelve 403 a GPTBot y ClaudeBot (robots que recogen textos para entrenar modelos); los robots de búsqueda de IA sí entran (comprobado con su identificador el 14-10-2026). Es un ajuste de Cloudflare, no del repositorio: **pregunta pendiente para Jordi** si lo deja así.
+- `/llms.txt` se genera en cada build (`src/pages/llms.txt.ts`) con qué es Decodifica, para quién, cómo se hace y todos los artículos. Se borró el `public/llms.txt` antiguo (mencionaba el canal y los vídeos).
+- Datos estructurados: un único `Article` por página, generado en `SEO.astro` (autor Jordi Castañeira con enlace a /sobre/, fechas de publicación y revisión, imagen, editor con logo, fuentes en `citation`). Se quitaron los bloques `Article` duplicados de 33 artículos y 5 páginas de herramientas/recursos. `Organization` y `WebSite` solo en la portada; `AboutPage` + `Person` en /sobre/. Componente `FaqSection` para preguntas frecuentes con `FAQPage` (añadido en 4 artículos). Validador de schema.org: 93 páginas, 0 errores, 0 avisos. La prueba de resultados enriquecidos de Google no se pudo pasar desde aquí.
+- Cabecera de todos los artículos: «Publicado el …» y, si cambió, «Revisado el …».
+- «En resumen:» añadido al principio de alternativas-fable-5, ia-resumir-reuniones, deepseek-app-oficial-espanol, kimi-k3, prompts-secretos-web y chatgpt-work; «TL;DR» → «En resumen» y «FAQ» → «Preguntas frecuentes».
+- /sobre/: sección «Cómo se hace cada artículo» (fuentes oficiales, fecha de consulta, IA para borradores y Jordi aprueba, precios revisados cada mes).
+- `scripts/seo_preflight.py` avisa si falta la respuesta corta, la fecha de revisión o `citations`, y da error si un artículo vuelve a meter su propio bloque `Article`.
+- Pendiente: respuesta corta en `2026-07-17-hermes-agent-chino`, `2026-07-22-nano-banana-1000-prompts`, `5-atajos-ia-gratis` y `gpt-live-voz-chatgpt` (empiezan bien, pero sin «En resumen:»). `ia-organiza-pendientes` sigue con un «caso real» en primera persona sin prueba documentada (solo se quitaron las dos frases prohibidas): reescribirlo es el siguiente arreglo semanal. `2026-08-01-qwen3-asr-transcribe-espanol` dice «Probamos» en la descripción: revisar si hay prueba documentada.
+- Preguntas para Jordi: ¿funciona el correo hola@decodifica.net (sale en contacto y en los datos estructurados)? ¿Dejas el bloqueo de Cloudflare a los robots de entrenamiento?
+
 ## Agente semanal
 
 - Rutina en la nube cada lunes (hora de España), después del informe de Search Console de las 9:00. Sigue `docs/AGENTE-SEMANAL.md`.
 - Modo actual: **propone y Jordi aprueba** (pull request). Pasar a «Publicar sola: SÍ» cuando Jordi lo diga.
 - Decisión de Jordi (07-10-2026): los arreglos pendientes de la web publicada los hace el agente, **uno por semana**.
-- Cola de arreglos para el agente (el preflight los marca): ~~`claude-emails-sonar-humanos`~~ (hecho el 07-10-2026), ~~`crear-agente-voz-ia-sin-programar`~~ (hecho el 12-10-2026), `ia-organiza-pendientes` («cambia las reglas del juego», «brutal»). Después: ficha `/herramientas/notebooklm/` y comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre nuevo «Gemini Notebook» y límites), y la revisión de fuentes de los artículos antiguos no reescritos.
+- Cola de arreglos para el agente (el preflight los marca): ~~`claude-emails-sonar-humanos`~~ (hecho el 07-10-2026), ~~`crear-agente-voz-ia-sin-programar`~~ (hecho el 12-10-2026), `ia-organiza-pendientes` (las frases prohibidas se quitaron el 14-10-2026; falta reescribir el «caso real» en primera persona sin prueba documentada). Después: ficha `/herramientas/notebooklm/` y comparativa `/herramientas/notebooklm-vs-perplexity/` (nombre nuevo «Gemini Notebook» y límites), y la revisión de fuentes de los artículos antiguos no reescritos.
 
 ### Ejecuciones
 
