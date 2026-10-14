@@ -18,7 +18,8 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/Decodificaia',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
-    reddit: 'https://www.reddit.com/user/PergaminosProhibidos/',
+    // 14-10-2026 (Jordi): sin Reddit en el pie: el enlace llevaba a la cuenta de otro proyecto (Pergaminos Prohibidos).
+    reddit: '',
   },
   newsletter: {
     url: 'https://buttondown.email/decodifica',

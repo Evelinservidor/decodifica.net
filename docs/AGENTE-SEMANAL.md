@@ -54,11 +54,12 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
 6. **Mejorar títulos y descripciones** de hasta 3 páginas que salen en Google pero casi no reciben clics (paso 2). No cambiar URLs. Anotar en el informe el antes y el después y por qué.
 7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy). Si el artículo no empieza con un «En resumen:», añadírselo (ver «Para que nos citen las IA»). Si tiene menos de 2 imágenes dentro del texto, añadirle 2-3 (ver paso 4).
 8. **Construir:** `npm ci` (si hace falta), `npm run type-check` y `npm run build`. Todo sin errores. Si falla, arreglarlo antes de seguir.
-9. **Borradores para redes** en `docs/redes/<AAAA-MM-DD>.md`, uno por artículo nuevo:
-   - Facebook: 2-4 frases y el enlace.
-   - Bluesky: máximo 300 caracteres con el enlace.
-   - Reddit: subreddit sugerido y un texto que aporte por sí mismo (no solo el enlace); avisar de que cada subreddit tiene sus normas sobre autopromoción.
-   Jordi los publica a mano; el agente no publica en redes.
+9. **Redes (desde el 14-10-2026 se publica solo).** Bluesky y Facebook los publica cada día a las 13:15 un programa del
+   móvil viejo de Jordi: coge los artículos NUEVOS de `rss.xml` y usa su `og:image` (la portada), su `og:title` y su
+   `og:description`. Por eso, en cada artículo nuevo: portada hecha, título y descripción buenos (son lo que se ve en
+   redes). Ya no hace falta escribir borradores de Facebook ni de Bluesky. Reddit no se publica solo: si un artículo
+   encaja de verdad en un subreddit, deja en `docs/redes/<AAAA-MM-DD>.md` el subreddit y un texto que aporte por sí
+   mismo, avisando de sus normas sobre autopromoción; Jordi decide si lo publica a mano.
 10. **Informe** en `docs/informes/<AAAA-MM-DD>.md`, en español sencillo, sin jerga:
     - cómo fue la semana en Google (impresiones, clics, posición; comparado con la semana anterior);
     - qué artículos nuevos y por qué esos temas (con el dato de demanda);
