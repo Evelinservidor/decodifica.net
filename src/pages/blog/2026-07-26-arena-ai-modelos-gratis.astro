@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Arena AI: compara modelos a ciegas antes de pagar";
 const description = "Cómo usar Battle Mode de Arena AI para comparar dos modelos anónimos con la misma tarea, qué criterios fijar antes de votar y qué datos no deberías subir.";
@@ -84,6 +85,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Ese orden cambia la decisión. En vez de elegir por marca, precio o ranking, puedes comprobar qué salida te sirve mejor para una tarea pequeña. El límite es igual de importante: según sus condiciones de uso, Arena puede compartir lo que escribes con los servicios de IA que generan las respuestas, que no están obligados a mantenerlo confidencial, y advierte de que las respuestas pueden ser inexactas.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Battle Mode</h2>
     <p>Battle Mode coloca dos respuestas lado a lado. Los nombres de los modelos permanecen ocultos durante la comparación y se revelan después del voto. Así reduces, al menos durante la prueba, el sesgo de preferir ChatGPT, Claude, Gemini u otro modelo por familiaridad.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-26-arena-ai-modelos-gratis/arena-ai-selector-battle.webp"
+      alt="Portada de arena.ai con el cuadro Ask anything y el selector Battle activado para comparar dos modelos anónimos"
+      width={720}
+      height={544}
+      caption="Portada de arena.ai con el modo Battle seleccionado (captura de octubre de 2026)."
+    />
     <p>La comparación no demuestra qué modelo es mejor en general. Solo responde una pregunta útil: cuál ha resuelto mejor este encargo, con este prompt y bajo este criterio.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo hacer una comparación que sirva</h2>
     <p>Empieza con una tarea breve, inocua y verificable. Por ejemplo: convertir unas notas ficticias en una tabla, proponer tres asuntos para un correo no confidencial o crear la estructura de una landing de prueba.</p>
@@ -96,6 +104,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Puntúa ambas salidas con los criterios definidos antes de empezar.</li>
       <li>Vota, revela los modelos y guarda solo la conclusión que puedas repetir.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/2026-07-26-arena-ai-modelos-gratis/metodo-cinco-pasos-battle-mode.webp"
+      alt="Esquema de cinco pasos para comparar modelos en Battle Mode: tarea revisable, quitar datos sensibles, misma entrada, puntuar con criterios previos y votar"
+      width={1200}
+      height={659}
+    />
     <p>Haz dos o tres rondas con tareas diferentes. Un modelo puede ganar redactando y perder al seguir un formato cerrado o razonar sobre una tabla.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que no deberías subir</h2>
     <p>No uses Arena con documentos reales de clientes, información médica, contratos, credenciales, código privado, historiales internos ni contenido que identifique a una persona o empresa. Sus condiciones de uso prohíben enviar información personal sensible (financiera, médica o números de documentos de identidad) y conceden a Arena una licencia amplia y perpetua sobre el contenido que envías.</p>
@@ -103,6 +117,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo leer el resultado</h2>
     <p>Una respuesta más larga no es necesariamente mejor. Comprueba si respeta el formato, mantiene las cifras, evita inventar datos y reduce el trabajo que tendrás que hacer después.</p>
     <p>Según Arena, los votos alimentan sus rankings públicos y parte de esa valoración se comparte con los desarrolladores de los modelos. Tu decisión práctica, en cambio, debe quedarse en la tarea. El ganador de una ronda no se convierte automáticamente en el modelo que debes pagar o usar para todo.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-26-arena-ai-modelos-gratis/como-funciona-arena-battle-mode.webp"
+      alt="Página How It Works de arena.ai: escribir el prompt, comparar las respuestas de dos modelos anónimos en battle mode y votar la mejor para los rankings públicos"
+      width={1200}
+      height={791}
+      caption="Página How It Works de arena.ai (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo sí merece la pena</h2>
     <p>Arena tiene sentido si estás valorando una suscripción, quieres descubrir alternativas o necesitas comparar modelos sin abrir varias cuentas y copiar el prompt manualmente. También sirve como banco de pruebas rápido antes de elegir qué herramienta evaluar con más profundidad.</p>
     <p>Tiene menos sentido si necesitas privacidad contractual, controles empresariales, resultados deterministas o una integración estable para producción. Battle Mode ayuda a explorar; no sustituye una prueba controlada en tu propio entorno.</p>

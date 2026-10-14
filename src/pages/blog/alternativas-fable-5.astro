@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Alternativas a Claude Fable 5: modelos abiertos y locales";
 const description = "Qué pasó con la suspensión de Claude Fable 5 en junio de 2026 y qué modelos abiertos y locales (Qwen, DeepSeek, Gemma) sirven como plan B.";
@@ -69,6 +70,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>30 de junio de 2026:</strong> Anthropic anunció que se habían levantado esos controles y que Fable 5 volvía a estar disponible desde el 1 de julio en Claude Platform, Claude.ai, Claude Code y Claude Cowork.</li>
       <li><strong>Cambios al volver:</strong> la empresa entrenó un clasificador de seguridad que bloquea la técnica descrita en el informe de investigadores de Amazon (en más del 99 % de los casos, según Anthropic). Cuando una petición se bloquea, se envía a Claude Opus 4.8 en lugar de a Fable 5.</li>
     </ul>
+    <FiguraArticulo
+      src="/img/blog/alternativas-fable-5/cronologia-suspension-fable-5.webp"
+      alt="Cronología de Claude Fable 5: suspensión el 12 de junio de 2026, controles levantados el 30 de junio, vuelta el 1 de julio y peticiones bloqueadas desviadas a Claude Opus 4.8"
+      width={1200}
+      height={669}
+    />
     <p>A fecha de consulta (octubre de 2026), la página oficial de Claude Fable presenta Fable 5.1 como el modelo más capaz disponible de forma general de Anthropic.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Alternativas abiertas y locales a Claude</h2>
     <p>Estas opciones publican sus pesos o permiten ejecutar modelos en tu propio equipo. No sustituyen a Fable 5 en todo, pero cubren tareas como resumir, redactar borradores o clasificar textos sin depender de un solo proveedor.</p>
@@ -79,6 +86,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Ollama:</strong> herramienta para descargar y ejecutar modelos abiertos en local; tiene instalador para macOS, Linux y Windows.</li>
       <li><strong>LM Studio:</strong> aplicación de escritorio para ejecutar modelos locales (lo explicamos paso a paso en <a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: qué es y cómo usar IA local</a>); su web menciona compatibilidad con modelos como GLM 5.2, Kimi K3 y DeepSeek V4 Pro.</li>
     </ul>
+    <FiguraArticulo
+      src="/img/blog/alternativas-fable-5/descarga-ollama-macos-linux-windows.webp"
+      alt="Página de descarga de Ollama en ollama.com con las pestañas macOS, Linux y Windows y el comando de instalación para Linux"
+      width={1200}
+      height={698}
+      caption="Página de descarga de ollama.com (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo preparar un plan B</h2>
     <p>Una forma sencilla de medir cuánto dependes de un modelo cerrado:</p>
     <ol>
@@ -87,6 +101,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Repítela con una alternativa abierta, por ejemplo Gemma 4 en Ollama o LM Studio, o un modelo Qwen.</li>
       <li>Compara calidad, tiempo, privacidad, coste y facilidad para repetir el flujo.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/alternativas-fable-5/plan-b-modelo-abierto-pasos.webp"
+      alt="Esquema en cuatro pasos para preparar un plan B: escoger una tarea repetida, hacerla con el modelo habitual, repetirla con Gemma 4 o Qwen en Ollama o LM Studio y comparar"
+      width={1200}
+      height={617}
+    />
     <p>Si la alternativa resuelve la mayor parte de la tarea, ya tienes un respaldo útil. Si requiere demasiada configuración o baja mucho la calidad, sigue siendo una opción de laboratorio y no de uso diario.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para quién tiene sentido</h2>
     <p>Tiene sentido para quien usa IA cada semana en tareas importantes, trabaja con datos sensibles o mantiene automatizaciones en las que una interrupción de acceso detiene el trabajo. Para tareas creativas o muy delicadas, un modelo cerrado puede seguir siendo mejor; para borradores, clasificación, resúmenes y trabajo privado, un modelo abierto puede ser suficiente.</p>

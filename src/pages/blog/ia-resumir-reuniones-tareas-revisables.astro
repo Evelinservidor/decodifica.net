@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 import ArticleResourceLinks from '../../components/ArticleResourceLinks.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Cómo convertir una reunión en tareas revisables con IA";
 const description = "Un workflow de cinco pasos para transformar una transcripción en decisiones, tareas y dudas sin inventar acuerdos ni compromisos.";
@@ -74,6 +75,7 @@ const conversionCtaStrategy = "diagnostic_only";
     <p>Una salida prudente que deja una duda marcada vale más que un acta convincente que inventa un compromiso.</p>
 
     <h2>El workflow en cinco pasos</h2>
+    <FiguraArticulo src="/img/blog/ia-resumir-reuniones-tareas-revisables/workflow-reunion-a-tareas-cinco-pasos.webp" alt="Esquema de los cinco pasos para convertir una transcripción de reunión en tareas con IA: limitar la entrada, pedir extracción, contrastar tres errores, confirmar antes de ejecutar y guardar lo reutilizable" width={1200} height={717} />
     <h3>1. Limita la entrada antes de pegarla</h3>
     <p>Para la primera prueba, elige una reunión breve y no sensible. Elimina datos de clientes, importes, enlaces privados y detalles personales que no cambien el resultado. Si tu empresa ya tiene una herramienta aprobada, úsala antes de enviar información de trabajo a otra cuenta.</p>
     <p>Escribe en una línea qué quieres cerrar: por ejemplo, “decisiones, tareas y bloqueos de la reunión semanal de proyecto”. Esa frase evita pedir un resumen genérico y recibir texto que nadie usa.</p>
@@ -115,6 +117,7 @@ Transcripción:
       <li><strong>Cinco minutos:</strong> marca cada fila como correcta, incompleta o inventada.</li>
     </ol>
     <p>Conserva el workflow si recupera los acuerdos reales, no añade compromisos y te deja una revisión más corta que redactar el cierre desde cero. Simplifícalo o descártalo si necesitas reconstruir la mayor parte de la salida.</p>
+    <FiguraArticulo src="/img/blog/ia-resumir-reuniones-tareas-revisables/prueba-20-minutos-resumen-reunion-ia.webp" alt="Cuadro de la prueba de 20 minutos: 5 minutos para preparar la transcripción, 10 para ejecutar el prompt y comparar, y 5 para marcar cada fila como correcta, incompleta o inventada" width={1200} height={599} />
 
     <h2>Qué hemos probado y qué no</h2>
     <p>Documentamos dos pruebas antes de preparar esta guía. La primera usó un <a href="https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf" rel="noreferrer">fragmento público de una audiencia</a> con siete acciones y un plazo común: la primera salida convirtió el plazo en una tarea adicional y el prompt se corrigió para separarlo como nota.</p>
