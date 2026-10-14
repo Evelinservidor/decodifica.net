@@ -5,6 +5,7 @@ import ConversionBand from '../../components/ConversionBand.astro';
 const title = "Higgsfield en DaVinci Resolve: IA sin exportar clips";
 const description = "Qué ofrece el plugin de Higgsfield para DaVinci Resolve, cómo medir si ahorra exportaciones y qué revisar sobre créditos, calidad y uso comercial.";
 const pubDate = "2026-07-28";
+const modifiedDate = pubDate;
 const readingTime = "5 min";
 const tags = ["Decodifica", "Higgsfield", "Higgsfield DaVinci", "Higgsfield AI", "DaVinci Resolve IA", "DaVinci Resolve plugin", "plugin IA DaVinci Resolve", "IA para vídeo"];
 const pillar = "tips-productividad";
@@ -17,13 +18,25 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/2026-07-28-higgsfield-davinci-plugin-ia.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://higgsfield.ai/plugins/davinci",
+    "https://higgsfield.ai/pricing",
+    "https://higgsfield.ai/terms-of-use-agreement",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -143,34 +156,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://higgsfield.ai/plugins/davinci"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://higgsfield.ai/pricing"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://higgsfield.ai/terms-of-use-agreement"
-      }
-]
-  })} />
 </BaseLayout>

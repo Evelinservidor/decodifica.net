@@ -21,11 +21,31 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://lmstudio.ai/docs/app",
+    "https://lmstudio.ai/docs/app/system-requirements",
+    "https://lmstudio.ai/docs/app/offline",
+    "https://lmstudio.ai/docs/app/basics/download-model",
+    "https://lmstudio.ai/docs/app/basics/rag",
+    "https://lmstudio.ai/docs/app/user-interface/languages",
+    "https://lmstudio.ai/docs/bionic",
+    "https://lmstudio.ai/pricing",
+    "https://lmstudio.ai/download",
+    "https://lmstudio.ai/app-terms",
+    "https://ollama.com/pricing",
+    "https://ollama.com/download",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -173,36 +193,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/system-requirements" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/offline" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/basics/download-model" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/basics/rag" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/app/user-interface/languages" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/docs/bionic" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/pricing" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/download" },
-      { "@type": "WebPage", "url": "https://lmstudio.ai/app-terms" },
-      { "@type": "WebPage", "url": "https://ollama.com/pricing" },
-      { "@type": "WebPage", "url": "https://ollama.com/download" }
-    ]
-  })} />
 </BaseLayout>

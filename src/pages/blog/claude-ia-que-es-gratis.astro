@@ -21,11 +21,28 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://claude.com/pricing",
+    "https://support.claude.com/en/articles/8114491-get-started-with-claude",
+    "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan",
+    "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+    "https://support.claude.com/en/articles/8461763-where-can-i-access-claude",
+    "https://support.claude.com/en/articles/9797557-usage-limit-best-practices",
+    "https://www.anthropic.com/legal/privacy",
+    "https://www.anthropic.com/company",
+    "https://claude.com/download",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -172,33 +189,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://claude.com/pricing" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8461763-where-can-i-access-claude" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/9797557-usage-limit-best-practices" },
-      { "@type": "WebPage", "url": "https://www.anthropic.com/legal/privacy" },
-      { "@type": "WebPage", "url": "https://www.anthropic.com/company" },
-      { "@type": "WebPage", "url": "https://claude.com/download" }
-    ]
-  })} />
 </BaseLayout>

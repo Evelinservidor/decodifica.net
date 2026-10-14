@@ -6,6 +6,7 @@ import ReviewMethodology from '../../components/ReviewMethodology.astro';
 const title = "Odysseus de PewDiePie: qué es y cómo instalarlo con seguridad";
 const description = "Qué es el workspace de IA autoalojado Odysseus, cómo se instala hoy y qué revisar antes de usar modelos locales o APIs.";
 const pubDate = "2026-06-15";
+const modifiedDate = pubDate;
 const tags = ["Odysseus", "IA autoalojada", "modelos locales", "agentes de IA"];
 const readingTime = "8 min";
 const pillar = "apps-web";
@@ -18,13 +19,27 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og-default.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://github.com/odysseus-dev/odysseus",
+    "https://github.com/odysseus-dev/odysseus/blob/dev/docs/setup.md",
+    "https://github.com/odysseus-dev/odysseus/blob/dev/LICENSE",
+    "https://www.youtube.com/watch?v=rAzT5lcezPs",
+    "https://www.reddit.com/r/pewdiepie/comments/1tu0nni/odysseus_megathread_information_and_conversation/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime="2026-06-15">15 junio 2026</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -39,7 +54,7 @@ const pillarLabel = "Pilar 1: Apps web";
     <ReviewMethodology reviewed="29 de julio de 2026" task="contrastar arquitectura, instalación y límites con la documentación oficial" />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
+      <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>
       <ul class="space-y-2 text-dark-200 text-sm">
         <li><strong>Odysseus no es un modelo de IA:</strong> es un espacio de trabajo autoalojado que reúne chat, agentes, investigación, documentos, correo, notas y flujos con modelos.</li>
         <li>Puede conectarse a modelos locales o a proveedores por API. Que una tarea sea privada depende de qué motor uses y de cómo configures red, credenciales y extensiones.</li>
@@ -155,7 +170,7 @@ powershell -ExecutionPolicy Bypass -File .\launch-windows.ps1</code></pre>
       Si solo quieres conversar con un modelo local, empezaría por una herramienta más pequeña. Si quieres la máxima calidad con cero mantenimiento, usaría un servicio alojado. Odysseus compensa cuando su integración te ahorra más pasos de los que añade.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Odysseus es gratis?</h3>
     <p>
@@ -288,49 +303,4 @@ powershell -ExecutionPolicy Bypass -File .\launch-windows.ps1</code></pre>
     ]
   })} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": "2026-06-15",
-    "dateModified": "2026-07-29",
-    "mainEntityOfPage": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
-    "author": {
-        "@type": "Person",
-        "name": "Jordi Castañeira"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Decodifica"
-    },
-    "about": [
-        "Odysseus",
-        "IA autoalojada",
-        "modelos locales",
-        "agentes de IA"
-    ],
-    "citation": [
-        {
-            "@type": "WebPage",
-            "url": "https://github.com/odysseus-dev/odysseus"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://github.com/odysseus-dev/odysseus/blob/dev/docs/setup.md"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://github.com/odysseus-dev/odysseus/blob/dev/LICENSE"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.youtube.com/watch?v=rAzT5lcezPs"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.reddit.com/r/pewdiepie/comments/1tu0nni/odysseus_megathread_information_and_conversation/"
-        }
-    ]
-})} />
 </BaseLayout>

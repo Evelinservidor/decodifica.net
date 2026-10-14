@@ -21,13 +21,34 @@ const pillarLabel = "Pilar 1: Apps web";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+    "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html",
+    "https://support.google.com/gemininotebook/answer/16164461",
+    "https://support.google.com/gemininotebook/answer/16213268",
+    "https://support.google.com/gemininotebook/answer/17670842",
+    "https://support.google.com/gemininotebook/answer/16215270",
+    "https://support.google.com/gemininotebook/answer/16206563",
+    "https://support.google.com/gemininotebook/answer/16212820",
+    "https://support.google.com/gemininotebook/answer/16454555",
+    "https://support.google.com/gemininotebook/answer/16261963",
+    "https://support.google.com/gemininotebook/answer/16296687",
+    "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-audio-overviews-50-languages/",
+    "https://one.google.com/about/google-ai-plans/",
+    "https://support.claude.com/en/articles/9517075-what-are-projects",
+    "https://intercom.help/perplexity-ai/en/articles/10352961-spaces",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime="2026-06-17">17 junio 2026</time>
-        <span>·</span>
-        <span>Actualizado el <time datetime={modifiedDate}>6 octubre 2026</time></span>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -425,39 +446,4 @@ const pillarLabel = "Pilar 1: Apps web";
     ]
   })} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/notebooklm-guia-2026/",
-    "author": {
-        "@type": "Person",
-        "name": "Jordi Castañeira"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-        { "@type": "WebPage", "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" },
-        { "@type": "WebPage", "url": "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16164461" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16213268" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/17670842" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16215270" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16206563" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16212820" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16454555" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16261963" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemininotebook/answer/16296687" },
-        { "@type": "WebPage", "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-audio-overviews-50-languages/" },
-        { "@type": "WebPage", "url": "https://one.google.com/about/google-ai-plans/" },
-        { "@type": "WebPage", "url": "https://support.claude.com/en/articles/9517075-what-are-projects" },
-        { "@type": "WebPage", "url": "https://intercom.help/perplexity-ai/en/articles/10352961-spaces" }
-    ]
-})} />
 </BaseLayout>

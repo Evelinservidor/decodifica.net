@@ -21,11 +21,22 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://www.kimi.ai/blog/kimi-k3",
+    "https://huggingface.co/moonshotai/Kimi-K3",
+    "https://www.kimi.com/help/agent/agent-overview",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -46,6 +57,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
 
+    <p><strong>En resumen:</strong> Kimi K3 es un modelo con visión nativa, un millón de tokens de contexto y pesos publicados en Hugging Face, pero el fabricante recomienda desplegarlo en 64 o más aceleradores, así que la mayoría lo usará desde el servicio de Kimi. Su caso de 11.000 páginas es una demostración oficial, no una evaluación independiente: para saber si te sirve, pruébalo con unos pocos documentos que ya conozcas y comprueba que cada dato lleve a su fuente.</p>
     <p>Kimi presenta K3 con un caso llamativo: convertir más de 11.000 páginas, 87 informes trimestrales y 99 PDF originales en una investigación interactiva sobre 42 años de la industria de los ASIC (chips diseñados para una tarea concreta). Según el blog de Kimi, para ello hizo más de 2.800 búsquedas y consultas web y más de 1.100 extracciones de datos desde terminal. La cifra importa menos que el tipo de salida: un informe navegable que permite volver a las fuentes y recorrer relaciones entre documentos.</p>
     <p>Es un caso oficial del fabricante, no una evaluación externa. Aun así, sirve para diseñar una prueba mucho mejor que pedir «resume estos PDF» y aceptar un bloque de texto imposible de auditar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué promete Kimi K3</h2>
@@ -110,35 +122,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://www.kimi.ai/blog/kimi-k3"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/moonshotai/Kimi-K3"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://www.kimi.com/help/agent/agent-overview"
-      }
-]
-  })} />
 </BaseLayout>

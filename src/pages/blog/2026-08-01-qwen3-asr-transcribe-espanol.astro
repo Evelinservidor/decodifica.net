@@ -5,6 +5,7 @@ import ConversionBand from '../../components/ConversionBand.astro';
 const title = "Qwen3-ASR: transcribir audio en español con marcas por palabra";
 const description = "Probamos Qwen3-ASR con audio en español: 45 marcas por palabra, límites de la demo web y criterios para revisar antes de usarlo.";
 const pubDate = "2026-07-30";
+const modifiedDate = pubDate;
 const readingTime = "4 min";
 const tags = ["ia", "herramientas ia", "Qwen3-ASR transcribe español y marca cada palabra: la prueba real"];
 const pillar = "apps-web";
@@ -17,13 +18,27 @@ const pillarLabel = "Pilar 1: Apps web";
   ogImage="/og/blog/2026-08-01-qwen3-asr-transcribe-espanol.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://decodifica.net/empieza?utm_source=blog&utm_medium=article&utm_campaign=2026-08-01-qwen3-asr-transcribe-espanol",
+    "https://qwen.ai/blog?id=qwen3asr",
+    "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
+    "https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B",
+    "https://huggingface.co/spaces/Qwen/Qwen3-ASR",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -43,7 +58,7 @@ const pillarLabel = "Pilar 1: Apps web";
     />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h3 class="font-display text-lg font-bold text-white mb-3">TL;DR</h3>
+      <h3 class="font-display text-lg font-bold text-white mb-3">En resumen</h3>
       <ul class="space-y-2 text-dark-200 text-sm">
         <li><strong>Prueba:</strong> un audio de 33,048 segundos en español produjo una transcripción y 45 segmentos temporales.</li>
         <li><strong>Valor:</strong> el texto permite buscar; la alineación ayuda a localizar frases, preparar subtítulos y editar.</li>
@@ -150,42 +165,4 @@ const pillarLabel = "Pilar 1: Apps web";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://decodifica.net/empieza?utm_source=blog&utm_medium=article&utm_campaign=2026-08-01-qwen3-asr-transcribe-espanol"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://qwen.ai/blog?id=qwen3asr"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://huggingface.co/spaces/Qwen/Qwen3-ASR"
-      }
-]
-  })} />
 </BaseLayout>

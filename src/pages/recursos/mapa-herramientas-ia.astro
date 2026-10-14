@@ -56,16 +56,6 @@ const gpt56Prices = [
   },
 ];
 
-const articleLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: title,
-  description,
-  url: pageUrl,
-  datePublished: '2026-07-08',
-  dateModified: '2026-08-10',
-  author: { '@type': 'Organization', name: 'Decodifica', url: siteConfig.url },
-};
 ---
 
 <BaseLayout
@@ -276,7 +266,6 @@ const articleLd = {
     </div>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Emergent IA: qué es, precios y cómo crear una app";
@@ -23,13 +24,33 @@ const linkClass = "text-brand-400 hover:text-brand-300";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://emergent.sh/",
+    "https://emergent.sh/pricing",
+    "https://www.ycombinator.com/companies/emergent",
+    "https://help.emergent.sh/",
+    "https://help.emergent.sh/how-credits-work-basics",
+    "https://help.emergent.sh/put-your-app-live",
+    "https://help.emergent.sh/plans-the-free-tier",
+    "https://help.emergent.sh/your-data-ownership",
+    "https://help.emergent.sh/ai-model-training",
+    "https://help.emergent.sh/where-your-data-is-stored",
+    "https://lovable.dev/pricing",
+    "https://bolt.new/pricing",
+    "https://replit.com/pricing",
+    "https://v0.app/pricing",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-        <span>·</span>
-        <span>Actualizado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -149,12 +170,23 @@ Interfaz en español, sencilla y usable en el teléfono.</code></pre>
     <p>Si dudas entre ellas, define antes la tarea y el criterio de éxito con nuestra guía sobre <a href="/blog/como-elegir-herramienta-ia/" class={linkClass}>cómo elegir una herramienta de IA</a>, y repite la misma prueba pequeña (mismo prompt, misma corrección) en dos de ellas para comparar créditos gastados y calidad del resultado.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Emergent es gratis?</h3>
-    <p>Tiene un plan gratuito con 10 créditos para construir y probar en el espacio de trabajo, pero no permite publicar en producción ni usar dominio propio. Para eso hace falta un plan de pago, desde 20 dólares al mes (17 en pago anual), según la página de precios consultada en octubre de 2026.</p>
-    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Se puede exportar el código de Emergent?</h3>
-    <p>Sí. El código es tuyo según sus condiciones de servicio. En cualquier plan puedes ver y copiar los archivos desde el botón Code, y desde el plan Standard puedes guardarlo en GitHub. Las variables de entorno, las claves y el contenido de la base de datos no van incluidos y se exportan aparte.</p>
-    <h3 class="font-display text-2xl font-bold mt-8 mb-4">¿Emergent está en español?</h3>
-    <p>La web oficial y el centro de ayuda están en inglés (consultados en octubre de 2026), y la documentación no indica en qué idiomas se pueden escribir los mensajes al agente. No hemos encontrado una confirmación oficial de soporte en español, así que el prompt de ejemplo de arriba pide la interfaz en español de forma explícita.</p>
+    <FaqSection
+      questionClass="font-display text-2xl font-bold mt-8 mb-4"
+      items={[
+  {
+    "q": "¿Emergent es gratis?",
+    "a": "Tiene un plan gratuito con 10 créditos para construir y probar en el espacio de trabajo, pero no permite publicar en producción ni usar dominio propio. Para eso hace falta un plan de pago, desde 20 dólares al mes (17 en pago anual), según la página de precios consultada en octubre de 2026."
+  },
+  {
+    "q": "¿Se puede exportar el código de Emergent?",
+    "a": "Sí. El código es tuyo según sus condiciones de servicio. En cualquier plan puedes ver y copiar los archivos desde el botón Code, y desde el plan Standard puedes guardarlo en GitHub. Las variables de entorno, las claves y el contenido de la base de datos no van incluidos y se exportan aparte."
+  },
+  {
+    "q": "¿Emergent está en español?",
+    "a": "La web oficial y el centro de ayuda están en inglés (consultados en octubre de 2026), y la documentación no indica en qué idiomas se pueden escribir los mensajes al agente. No hemos encontrado una confirmación oficial de soporte en español, así que el prompt de ejemplo de arriba pide la interfaz en español de forma explícita."
+  }
+]}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>Todas consultadas el 6 de octubre de 2026.</p>
@@ -203,37 +235,4 @@ Interfaz en español, sencilla y usable en el teléfono.</code></pre>
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      "https://emergent.sh/",
-      "https://emergent.sh/pricing",
-      "https://www.ycombinator.com/companies/emergent",
-      "https://help.emergent.sh/",
-      "https://help.emergent.sh/how-credits-work-basics",
-      "https://help.emergent.sh/put-your-app-live",
-      "https://help.emergent.sh/plans-the-free-tier",
-      "https://help.emergent.sh/your-data-ownership",
-      "https://help.emergent.sh/ai-model-training",
-      "https://help.emergent.sh/where-your-data-is-stored",
-      "https://lovable.dev/pricing",
-      "https://bolt.new/pricing",
-      "https://replit.com/pricing",
-      "https://v0.app/pricing"
-    ].map((url) => ({ "@type": "WebPage", "url": url }))
-  })} />
 </BaseLayout>

@@ -3,6 +3,7 @@ export type BlogPostIndexEntry = {
   title: string;
   description: string;
   pubDate: string;
+  modifiedDate: string;
   readingTime: string | null;
 };
 
@@ -25,6 +26,7 @@ export const blogPostIndex: BlogPostIndexEntry[] = Object.entries(sources)
       title: field(source, 'title'),
       description: field(source, 'description'),
       pubDate: field(source, 'pubDate'),
+      modifiedDate: field(source, 'modifiedDate') ?? field(source, 'pubDate'),
       readingTime: field(source, 'readingTime'),
     };
   })

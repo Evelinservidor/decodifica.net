@@ -21,13 +21,21 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-        <span>·</span>
-        <span>Actualizado el 7 de octubre de 2026</span>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -261,7 +269,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
       El email debe terminar siempre con un CTA: pregunta, propuesta de hora, link, o siguiente paso concreto. Nunca "espero tu respuesta".
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y si el destinatario ya sabe que uso IA?</h3>
     <p>
@@ -347,26 +355,4 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/claude-emails-sonar-humanos/",
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" }
-    ]
-  })} />
 </BaseLayout>

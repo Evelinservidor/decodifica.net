@@ -21,11 +21,33 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://www.deepseek.com/en/",
+    "https://api-docs.deepseek.com/news/news260910",
+    "https://api-docs.deepseek.com/news/news260424",
+    "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html",
+    "https://apps.apple.com/app/deepseek-ai-assistant/id6737597349",
+    "https://play.google.com/store/apps/details?id=com.deepseek.chat",
+    "https://github.com/QwenLM/Qwen3.8",
+    "https://qwen.ai/privacypolicy",
+    "https://www.moonshot.ai/",
+    "https://www.kimi.com/user/agreement/en/userPrivacy?version=v2",
+    "https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312",
+    "https://docs.z.ai/legal-agreement/privacy-policy",
+    "https://x.com/brian_armstrong/status/2070670644577280109",
+    "https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -45,7 +67,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       fetchpriority="high"
     />
 
-    <p>DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
+    <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (consultadas el 6 de octubre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Resumen rápido: qué ofrece cada uno hoy</h2>
     <div class="not-prose overflow-x-auto">
@@ -255,37 +277,4 @@ Tarea 3: [...]
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://www.deepseek.com/en/" },
-      { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260910" },
-      { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260424" },
-      { "@type": "WebPage", "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" },
-      { "@type": "WebPage", "url": "https://apps.apple.com/app/deepseek-ai-assistant/id6737597349" },
-      { "@type": "WebPage", "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat" },
-      { "@type": "WebPage", "url": "https://github.com/QwenLM/Qwen3.8" },
-      { "@type": "WebPage", "url": "https://qwen.ai/privacypolicy" },
-      { "@type": "WebPage", "url": "https://www.moonshot.ai/" },
-      { "@type": "WebPage", "url": "https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" },
-      { "@type": "WebPage", "url": "https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312" },
-      { "@type": "WebPage", "url": "https://docs.z.ai/legal-agreement/privacy-policy" },
-      { "@type": "WebPage", "url": "https://x.com/brian_armstrong/status/2070670644577280109" },
-      { "@type": "WebPage", "url": "https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" }
-    ]
-  })} />
 </BaseLayout>

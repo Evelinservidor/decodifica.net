@@ -1,4 +1,42 @@
+# Decodifica: todo el contenido público se puede rastrear.
+# Los grupos con nombre dejan explícito que los buscadores y asistentes de IA
+# pueden leer y citar la web. Nombres comprobados en las páginas oficiales
+# de cada empresa (octubre de 2026). Los robots que solo recogen textos para
+# entrenar modelos (GPTBot, ClaudeBot) quedan bajo la regla general «*».
+
 User-agent: *
+Allow: /
+
+# Buscadores clásicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# Google: uso del contenido en Gemini (no afecta al buscador de Google)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 Sitemap: https://decodifica.net/sitemap-index.xml

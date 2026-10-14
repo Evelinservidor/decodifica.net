@@ -19,6 +19,17 @@ Instrucciones para la rutina que se ejecuta cada lunes por la mañana (hora de E
 6. El antiguo canal de YouTube de Decodifica no existe: ni se enlaza ni se menciona. Tampoco `/comunidad/` ni `/login/`.
 7. Ortografía y tildes correctas.
 
+## Para que nos citen las IA
+
+Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y la citen. Las siguen todos los agentes (lunes, jueves, novedades y repaso mensual) en cada artículo nuevo o revisado:
+
+1. **Respuesta corta al principio.** Justo después de la cabecera, un párrafo que empiece por «<strong>En resumen:</strong>» y responda en 2-4 frases a lo que busca la gente (qué es, cuánto cuesta, cómo se hace, cuál elegir). Con datos concretos, no con una introducción.
+2. **Fecha visible.** La cabecera muestra «Publicado el …» y, si `modifiedDate` es distinta, «Revisado el …». Se cambia `modifiedDate` solo cuando se han vuelto a comprobar los datos, nunca para aparentar frescura.
+3. **Datos estructurados.** No escribir bloques JSON-LD `Article` dentro del artículo: los genera `SEO.astro` a partir de `BaseLayout` (`type="article"`, `pubDate`, `modifiedDate`, `keywords`) y las fuentes se pasan en `citations={[...]}` con las mismas URLs de la sección «Fuentes». Si el artículo tiene preguntas frecuentes, usar el componente `FaqSection` (pinta las preguntas y su `FAQPage` con el mismo texto).
+4. **llms.txt.** `/llms.txt` se genera solo en cada build con todos los artículos (`src/pages/llms.txt.ts`). Si se añade una sección nueva importante de la web (no un artículo), añadirla a mano en ese archivo.
+5. **Robots.** No tocar `public/robots.txt` para bloquear robots de buscadores de IA (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Google-Extended, bingbot) sin que lo decida Jordi.
+6. **/sobre/ dice la verdad.** La página explica que Jordi aprueba cada artículo antes de publicarlo. Si «Publicar sola» pasa a SÍ, cambiar esa frase en `src/pages/sobre.astro` en el mismo pull request.
+
 ## Pasos de cada lunes
 
 1. **Ponerse al día.** Leer `_ESTADO.md`, este archivo y el último informe de `docs/informes/` (si existe).
@@ -32,14 +43,14 @@ Instrucciones para la rutina que se ejecuta cada lunes por la mañana (hora de E
    - Preferir búsquedas con intención clara («cómo…», «qué es…», «mejor … para …», «alternativas a…», «… vs …») frente a búsquedas de marca sola.
 4. **Escribir los artículos** como archivos `src/pages/blog/<slug>.astro`:
    - Slug corto, sin fecha, en minúsculas con guiones, con la búsqueda principal.
-   - Copiar la estructura técnica de un artículo reciente bueno (por ejemplo `crear-app-web-ias-chinas-open-source.astro` o `claude-skills-1000-gratis.astro`): `const title`, `description`, `pubDate` (hoy), `modifiedDate` (hoy), `readingTime`, `tags`, `pillar`, `pillarLabel`, `BaseLayout` con `modifiedDate`, cabecera, `ConversionBand`, newsletter, JSON-LD con `citation` igual a las fuentes.
+   - Copiar la estructura técnica de un artículo reciente bueno (por ejemplo `crear-app-web-ias-chinas-open-source.astro` o `claude-skills-1000-gratis.astro`): `const title`, `description`, `pubDate` (hoy), `modifiedDate` (hoy), `readingTime`, `tags`, `pillar`, `pillarLabel`, `BaseLayout` con `modifiedDate` y `citations` (las URLs de «Fuentes»), cabecera con fecha de publicación y de revisión, párrafo «En resumen:», `ConversionBand` y newsletter. Sin bloque JSON-LD `Article` propio (ver «Para que nos citen las IA»).
    - Si no hay imagen OG propia, usar `ogImage="/og-default.png"` (no inventar rutas que no existen).
    - Título de 35 a 60 caracteres con la búsqueda al principio; descripción de 110 a 165 caracteres, concreta.
    - Al menos 3 secciones H2 útiles, al menos 2 fuentes externas originales y al menos 2 enlaces internos a páginas que existan.
    - Añadir enlaces desde 1-2 artículos existentes relacionados hacia el nuevo.
 5. **Revisión SEO y editorial:** `python3 scripts/seo_preflight.py --changed`. Corregir todos los errores (✗). Revisar los avisos (·) y corregir los razonables.
 6. **Mejorar títulos y descripciones** de hasta 3 páginas que salen en Google pero casi no reciben clics (paso 2). No cambiar URLs. Anotar en el informe el antes y el después y por qué.
-7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy).
+7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy). Si el artículo no empieza con un «En resumen:», añadírselo (ver «Para que nos citen las IA»).
 8. **Construir:** `npm ci` (si hace falta), `npm run type-check` y `npm run build`. Todo sin errores. Si falla, arreglarlo antes de seguir.
 9. **Borradores para redes** en `docs/redes/<AAAA-MM-DD>.md`, uno por artículo nuevo:
    - Facebook: 2-4 frases y el enlace.

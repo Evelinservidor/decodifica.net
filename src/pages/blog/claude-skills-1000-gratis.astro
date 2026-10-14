@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Claude Skills gratis: qué son, cómo instalarlas y crearlas";
@@ -21,13 +22,28 @@ const pillarLabel = "Pilar 1: Apps web";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+    "https://support.claude.com/en/articles/12512180-using-skills-in-claude",
+    "https://support.claude.com/en/articles/12512198-creating-custom-skills",
+    "https://support.claude.com/en/articles/12512176-what-are-skills",
+    "https://code.claude.com/docs/en/skills",
+    "https://github.com/anthropics/skills",
+    "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "https://github.com/sickn33/antigravity-awesome-skills",
+    "https://skillsmp.com/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-        <span>·</span>
-        <span>Actualizado el 6 de octubre de 2026</span>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -219,10 +235,19 @@ Cuando recibas un email, devuelve siempre una tabla con:
     <p>¿Prefieres tenerlo a mano? Descarga el resumen de esta guía en PDF: <a href="/lead-magnets/claude-skills-desde-cero.pdf" class="text-brand-400 hover:text-brand-300">Claude Skills desde cero (PDF, 5 páginas)</a>.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Las Skills funcionan con ChatGPT o Gemini?</h3>
-    <p>Anthropic publicó el formato como estándar abierto (agentskills.io) y colecciones como antigravity-awesome-skills las adaptan a herramientas como Codex CLI, Cursor o Gemini CLI. Que una Skill funcione en otra herramienta depende de cómo la soporte esa herramienta, no de Anthropic.</p>
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo compartir una Skill con mi equipo en Claude.ai?</h3>
-    <p>Las Skills personalizadas que subes en Claude.ai son individuales: cada persona tiene que subirlas. En la API se comparten con todo el espacio de trabajo, y en Claude Code basta con guardarlas en <code>.claude/skills/</code> dentro del repositorio.</p>
+    <FaqSection
+      questionClass="font-display text-xl font-bold mt-6 mb-3"
+      items={[
+  {
+    "q": "¿Las Skills funcionan con ChatGPT o Gemini?",
+    "a": "Anthropic publicó el formato como estándar abierto (agentskills.io) y colecciones como antigravity-awesome-skills las adaptan a herramientas como Codex CLI, Cursor o Gemini CLI. Que una Skill funcione en otra herramienta depende de cómo la soporte esa herramienta, no de Anthropic."
+  },
+  {
+    "q": "¿Puedo compartir una Skill con mi equipo en Claude.ai?",
+    "a": "Las Skills personalizadas que subes en Claude.ai son individuales: cada persona tiene que subirlas. En la API se comparten con todo el espacio de trabajo, y en Claude Code basta con guardarlas en <code>.claude/skills/</code> dentro del repositorio."
+  }
+]}
+    />
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>Consultadas el 6 de octubre de 2026.</p>
@@ -269,33 +294,4 @@ Cuando recibas un email, devuelve siempre una tabla con:
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/claude-skills-1000-gratis/",
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512180-using-skills-in-claude" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512198-creating-custom-skills" },
-      { "@type": "WebPage", "url": "https://support.claude.com/en/articles/12512176-what-are-skills" },
-      { "@type": "WebPage", "url": "https://code.claude.com/docs/en/skills" },
-      { "@type": "WebPage", "url": "https://github.com/anthropics/skills" },
-      { "@type": "WebPage", "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" },
-      { "@type": "WebPage", "url": "https://github.com/sickn33/antigravity-awesome-skills" },
-      { "@type": "WebPage", "url": "https://skillsmp.com/" }
-    ]
-  })} />
 </BaseLayout>

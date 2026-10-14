@@ -53,14 +53,18 @@ import { siteConfig } from '~/lib/site-config';
     </section>
 
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
-      <h2>Cómo trabajamos</h2>
-      <p>
-        Un vídeo o una publicación en redes puede inspirar una idea, pero no valida un dato. Para publicar una guía buscamos fuentes primarias, documentación oficial, repositorios, benchmarks con metodología y pruebas que expliquen qué cambia para una persona normal.
-      </p>
+      <h2>Cómo se hace cada artículo</h2>
+      <ol>
+        <li><strong>Se elige el tema por lo que la gente busca.</strong> Partimos de los datos de Google Search Console y de búsquedas reales en España y Latinoamérica, no de lo que está de moda esa semana.</li>
+        <li><strong>Cada dato se comprueba en la fuente oficial el mismo día.</strong> Precios, límites, funciones, fechas y licencias salen de la documentación, la página de precios, el blog o el repositorio oficial de cada herramienta. Si algo no se puede comprobar, no se publica o se dice claramente que no está confirmado.</li>
+        <li><strong>Las fuentes se enlazan.</strong> Al final de cada artículo hay una sección «Fuentes» con los enlaces y el día en que se consultaron.</li>
+        <li><strong>La IA ayuda, una persona decide.</strong> Usamos asistentes de IA para buscar fuentes, ordenar datos y redactar borradores. Jordi revisa y aprueba cada artículo antes de publicarlo.</li>
+        <li><strong>No decimos que hemos probado algo si no lo hemos probado.</strong> Cuando no hay una prueba documentada, el artículo propone los pasos para que la hagas tú.</li>
+        <li><strong>Los precios se revisan cada mes.</strong> Los precios y límites llevan la fecha de consulta («consultado en octubre de 2026») y se repasan una vez al mes. Cada artículo muestra la fecha de publicación y la de su última revisión.</li>
+      </ol>
       <p>
         Nuestro criterio es simple: una herramienta importa si ayuda a decidir, producir, aprender o ahorrar tiempo con menos fricción. Si solo suena espectacular pero no aterriza en una acción concreta, no es prioridad.
       </p>
-
       <h2>Qué no prometemos</h2>
       <p>
         No intentamos cubrir cada lanzamiento ni presentar una herramienta como solución universal. Precio, disponibilidad y condiciones pueden cambiar, por lo que las páginas indican su fecha de revisión y enlazan las fuentes relevantes siempre que es posible.
@@ -77,4 +81,18 @@ import { siteConfig } from '~/lib/site-config';
       <Button href="/newsletter/" variant="secondary">Recibir el filtro semanal</Button>
     </div>
   </article>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    url: `${siteConfig.url}/sobre/`,
+    name: 'Quién está detrás de Decodifica y cómo trabaja',
+    inLanguage: 'es',
+    mainEntity: {
+      '@type': 'Person',
+      '@id': `${siteConfig.url}/sobre/#jordi`,
+      name: siteConfig.author.name,
+      url: `${siteConfig.url}/sobre/`,
+      worksFor: { '@type': 'Organization', name: siteConfig.name, url: `${siteConfig.url}/` },
+    },
+  })} />
 </BaseLayout>

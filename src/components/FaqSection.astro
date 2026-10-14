@@ -1,0 +1,31 @@
+---
+// Preguntas frecuentes visibles + su FAQPage (schema.org) a partir de los mismos datos,
+// para que el marcado nunca diga algo distinto de lo que se ve en la página.
+export interface Props {
+  items: { q: string; a: string }[]; // `a` admite HTML sencillo (enlaces, <code>)
+  questionClass?: string;
+}
+
+const {
+  items,
+  questionClass = 'font-display text-xl font-bold mt-6 mb-3',
+} = Astro.props;
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+{items.map(({ q, a }) => (
+  <>
+    <h3 class={questionClass}>{q}</h3>
+    <p set:html={a} />
+  </>
+))}
+<script type="application/ld+json" set:html={JSON.stringify(faqLd)} />

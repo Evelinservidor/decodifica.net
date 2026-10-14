@@ -116,6 +116,15 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
     for mark in MOJIBAKE:
         if mark in text:
             errors.append(f"texto con caracteres rotos ({mark})")
+    # Para que nos citen las IA (docs/AGENTE-SEMANAL.md)
+    if re.search(r'["\']@type["\']\s*:\s*["\']Article["\']', body):
+        errors.append("bloque JSON-LD Article propio: usa citations={[...]} en BaseLayout")
+    if "citations=" not in text:
+        warnings.append("sin citations={[...]} en BaseLayout (fuentes en los datos estructurados)")
+    if "datetime={modifiedDate}" not in body:
+        warnings.append("la cabecera no muestra la fecha de revisión")
+    if not re.search(r"En resumen|En dos líneas|Lo esencial|Resumen en|Decisión rápida", body):
+        warnings.append("no empieza con una respuesta corta («En resumen:»)")
     if re.search(r"\b(TL;DR)\b", body) and "Qué mirar:</strong> si la herramienta" in body:
         errors.append("bloque TL;DR genérico de plantilla")
     return errors, warnings

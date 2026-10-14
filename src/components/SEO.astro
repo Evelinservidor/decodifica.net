@@ -15,6 +15,7 @@ export interface Props {
   imageAlt?: string;
   keywords?: string[];
   section?: string; // Pilar 1 / Pilar 2
+  citations?: string[]; // URLs de las fuentes del artículo
   noindex?: boolean;
 }
 
@@ -31,6 +32,7 @@ const {
   imageAlt,
   keywords = [],
   section,
+  citations = [],
   noindex = false,
 } = Astro.props;
 
@@ -38,16 +40,19 @@ const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} 
 const canonicalUrl = new URL(canonical, siteConfig.url).toString();
 const ogImageUrl = new URL(ogImage, siteConfig.url).toString();
 
-// JSON-LD Organization (site-wide identity) - emitted on every page
+// JSON-LD Organization (site-wide identity): solo en la portada
+const isHome = Astro.url.pathname === '/';
+const logoUrl = new URL('/og-default.png', siteConfig.url).toString();
 const orgLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${siteConfig.url}#org`,
+  '@id': `${siteConfig.url}/#org`,
   name: siteConfig.name,
-  url: siteConfig.url,
-  logo: new URL('/og-default.png', siteConfig.url).toString(),
+  url: `${siteConfig.url}/`,
+  logo: logoUrl,
   description: siteConfig.description,
   email: siteConfig.author.publicEmailLabel,
+  founder: { '@id': `${siteConfig.url}/sobre/#jordi` },
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'editorial',
@@ -62,18 +67,20 @@ const orgLd = {
   ].filter(Boolean),
 };
 
-// JSON-LD WebSite (search box + sitelinks) - emitted on every page
+// JSON-LD WebSite: solo en la portada
 const siteLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${siteConfig.url}/#website`,
   name: siteConfig.name,
-  url: siteConfig.url,
+  url: `${siteConfig.url}/`,
   description: siteConfig.description,
-  inLanguage: 'es-ES',
-  publisher: { '@id': `${siteConfig.url}#org` },
+  inLanguage: 'es',
+  publisher: { '@id': `${siteConfig.url}/#org` },
 };
 
-// JSON-LD Article (only when type=article and pubDate is present)
+// JSON-LD Article (only when type=article and pubDate is present).
+// Es el único bloque Article de cada página: los artículos pasan sus fuentes en `citations`.
 const articleLd = type === 'article' && pubDate
   ? {
       '@context': 'https://schema.org',
@@ -81,28 +88,38 @@ const articleLd = type === 'article' && pubDate
       '@id': `${canonicalUrl}#article`,
       headline: title ?? fullTitle,
       description,
-      image: {
-        '@type': 'ImageObject',
-        url: ogImageUrl,
-        ...(imageAlt ? { caption: imageAlt } : {}),
-      },
+      image: [ogImageUrl],
       datePublished: pubDate,
-      ...(modifiedDate ? { dateModified: modifiedDate } : {}),
+      dateModified: modifiedDate ?? pubDate,
       author: {
         '@type': 'Person',
+        '@id': `${siteConfig.url}/sobre/#jordi`,
         name: authorName,
         url: authorUrl,
       },
       publisher: {
-        '@id': `${siteConfig.url}#org`,
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#org`,
+        name: siteConfig.name,
+        url: `${siteConfig.url}/`,
+        logo: { '@type': 'ImageObject', url: logoUrl },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': canonicalUrl,
       },
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        name: siteConfig.name,
+        url: `${siteConfig.url}/`,
+      },
       ...(section ? { articleSection: section } : {}),
       ...(keywords.length ? { keywords: keywords.join(', ') } : {}),
-      inLanguage: 'es-ES',
+      ...(citations.length
+        ? { citation: citations.map((url) => ({ '@type': 'CreativeWork', url })) }
+        : {}),
+      inLanguage: 'es',
     }
   : null;
 ---
@@ -138,11 +155,9 @@ const articleLd = type === 'article' && pubDate
 <meta name="theme-color" content="#06b6d4" />
 <meta name="color-scheme" content="dark" />
 
-<!-- JSON-LD: Organization (site identity) -->
-<script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
-
-<!-- JSON-LD: WebSite (sitelinks search box) -->
-<script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+<!-- JSON-LD: Organization y WebSite (portada) -->
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />}
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />}
 
 <!-- JSON-LD: Article (only on blog posts) -->
 {articleLd && <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />}
