@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Hermes Agent: qué es y cómo probar este agente open source";
 const description = "Hermes Agent, de Nous Research, es un agente open source con licencia MIT, memoria persistente y Skills. Qué hace, cómo instalarlo y probarlo con seguridad.";
@@ -60,6 +61,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>La diferencia práctica está en el control: los archivos, la configuración y el historial pueden quedarse en tu entorno, pero la instalación y la revisión también pasan a ser responsabilidad tuya.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Hermes Agent</h2>
     <p>Según su repositorio oficial, el proyecto se distribuye con licencia MIT e incluye más de 40 herramientas: ejecución de comandos en varios entornos (local, Docker, SSH y otros), navegador en la nube a través de Nous Portal, un programador de tareas tipo cron y una pasarela para usar el agente desde Telegram, Discord, Slack, WhatsApp, Signal o la línea de comandos.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-17-hermes-agent-chino/repositorio-github-hermes-agent.webp"
+      alt="Captura del repositorio oficial NousResearch/hermes-agent en GitHub con la licencia MIT, el enlace a hermes-agent.nousresearch.com y carpetas como cron, docker y gateway"
+      width={1200}
+      height={791}
+      caption="Repositorio oficial de Hermes Agent en GitHub (captura de octubre de 2026)."
+    />
     <p>Se instala con un comando en Linux, macOS y WSL2, con un instalador de PowerShell en Windows y en Android mediante Termux. No te ata a un proveedor de modelos: puedes conectarlo a Nous Portal, OpenRouter, OpenAI o tu propio endpoint. El software es gratuito, pero el modelo que uses puede tener coste.</p>
     <p>Su memoria persistente conserva contexto entre sesiones, y el agente crea Skills reutilizables después de tareas complejas y las ajusta con el uso.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes hacer con él</h2>
@@ -81,6 +89,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Si la memoria y las Skills ahorran trabajo en una segunda ejecución.</li>
     </ol>
     <p>Evita activar desde el primer día tareas programadas, mensajería externa o acciones difíciles de revertir. El repositorio remite a una guía de seguridad con opciones como aprobación de comandos y aislamiento en contenedores; revísala antes de dar más permisos.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-17-hermes-agent-chino/guia-seguridad-hermes-agent.webp"
+      alt="Captura de la guía de seguridad oficial de Hermes Agent con sus capas de protección, entre ellas la aprobación de comandos peligrosos y el aislamiento en contenedores Docker"
+      width={1200}
+      height={791}
+      caption="Guía de seguridad de la documentación oficial de Hermes Agent, en inglés (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Hermes frente a DeepSeek, Qwen y GLM</h2>
     <p>No es una comparación de modelo contra modelo: Hermes es la capa de agente que organiza herramientas y tareas; DeepSeek, Qwen o GLM pueden actuar como modelos o como alternativas cloud con menos configuración.</p>
     <p>Hermes tiene más sentido si priorizas control local, personalización y procesos persistentes. Las opciones web de DeepSeek, Qwen o Z.ai resultan más rápidas si quieres entrar, preguntar y obtener una respuesta sin mantener infraestructura propia.</p>

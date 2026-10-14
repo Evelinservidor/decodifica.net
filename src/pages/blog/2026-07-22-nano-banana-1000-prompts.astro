@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Prompts para Nano Banana: cómo usar una biblioteca gratuita";
 const description = "Cómo aprovechar la biblioteca abierta de prompts para Nano Banana Pro: una fórmula de cinco partes, usos prácticos y cómo compararla con Qwen-Image.";
@@ -58,6 +59,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>La forma útil de aprovecharla es empezar con una tarea real, elegir una plantilla cercana y cambiar solo lo necesario. Así descubres qué parte del prompt mejora el resultado y evitas gastar créditos repitiendo instrucciones vagas.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué contiene la biblioteca</h2>
     <p>El repositorio se publica en GitHub como proyecto gratuito y de código abierto, muestra cada prompt con una imagen de vista previa y tiene el README traducido a 16 idiomas, entre ellos el español.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-22-nano-banana-1000-prompts/biblioteca-prompts-nano-banana-pro-github.webp"
+      alt="Captura del repositorio awesome-nano-banana-pro-prompts de YouMind-OpenLab en GitHub, que se describe con más de 10.000 prompts con imágenes de vista previa, 16 idiomas, gratis y de código abierto"
+      width={1200}
+      height={791}
+      caption="Repositorio de la biblioteca en GitHub, con los README traducidos (captura de octubre de 2026)."
+    />
     <p>No necesitas guardarlos todos. Busca una categoría próxima a tu objetivo, revisa cómo describe la escena y conserva tres o cinco plantillas que puedas reutilizar.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">La fórmula de cinco partes</h2>
     <p>Cuando ninguna plantilla encaje exactamente, estructura el prompt con cinco piezas:</p>
@@ -68,6 +76,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Encuadre y fondo:</strong> plano, ángulo, composición, profundidad y entorno.</li>
       <li><strong>Emoción o intención:</strong> qué debe transmitir la imagen y para qué se va a usar.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/2026-07-22-nano-banana-1000-prompts/formula-prompt-cinco-partes.webp"
+      alt="Esquema de la fórmula de cinco partes para un prompt de imagen: sujeto, estilo, iluminación, encuadre y fondo, y emoción o intención"
+      width={1200}
+      height={770}
+    />
     <p>Esta estructura no garantiza una imagen perfecta, pero reduce la ambigüedad. También facilita corregir: si el encuadre falla, cambias el encuadre; no reescribes todo el prompt.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres usos que sí merecen una prueba</h2>
     <p><strong>Miniatura para vídeo.</strong> Define un sujeto claro, contraste fuerte, espacio para texto y una emoción legible incluso en pequeño. Evita pedir demasiados elementos compitiendo por atención.</p>
@@ -79,6 +93,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Nano Banana frente a Qwen Image</h2>
     <p>Nano Banana es la familia de modelos de imagen de Google construida sobre Gemini (Nano Banana 2 Lite, Nano Banana 2 y Nano Banana Pro). Está disponible en la app de Gemini, Google AI Studio y la API de Gemini, y permite generar y editar imágenes con instrucciones en lenguaje natural.</p>
     <p>Qwen-Image es un modelo de 20.000 millones de parámetros del equipo Qwen, con pesos descargables bajo licencia Apache 2.0. Su blog oficial destaca el renderizado de texto complejo (también en chino) y la edición de imágenes.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-22-nano-banana-1000-prompts/nano-banana-frente-qwen-image.webp"
+      alt="Comparativa de Nano Banana de Google, disponible en la app de Gemini, AI Studio y la API, frente a Qwen-Image, de 20.000 millones de parámetros con pesos bajo licencia Apache 2.0"
+      width={1200}
+      height={634}
+    />
     <p>Para compararlos, usa el mismo objetivo, la misma referencia y un criterio sencillo: fidelidad al sujeto, legibilidad, facilidad de edición y número de intentos necesarios.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene revisar</h2>
     <p>Una biblioteca pública puede contener estilos, marcas o personajes que no debas usar comercialmente. Revisa derechos, privacidad y exactitud antes de publicar. No subas imágenes sensibles solo porque la herramienta permita editarlas.</p>

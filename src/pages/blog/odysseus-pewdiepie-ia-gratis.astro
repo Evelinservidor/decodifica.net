@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Odysseus de PewDiePie: qué es y cómo instalarlo con seguridad";
 const description = "Qué es el workspace de IA autoalojado Odysseus, cómo se instala hoy y qué revisar antes de usar modelos locales o APIs.";
@@ -74,6 +75,14 @@ const pillarLabel = "Pilar 1: Apps web";
     <p>
       Puede usar modelos locales, servidores remotos o APIs comerciales. Esa flexibilidad es su principal ventaja y también su límite: instalar la interfaz no garantiza que todo funcione sin internet, sin coste o sin enviar datos a terceros. Cada proveedor y cada modelo tienen su propia licencia, precio y política.
     </p>
+
+    <FiguraArticulo
+      src="/img/blog/odysseus-pewdiepie-ia-gratis/repositorio-github-odysseus.webp"
+      alt="Captura del repositorio oficial odysseus-dev/odysseus en GitHub con la descripción Self-hosted AI workspace, la licencia AGPL-3.0 y las carpetas del proyecto"
+      width={1200}
+      height={791}
+      caption="Repositorio oficial de Odysseus en GitHub (captura de octubre de 2026)."
+    />
     <p>
       PewDiePie presentó el proyecto en su canal y ayudó a darle visibilidad. No usamos cifras históricas de estrellas, comentarios o crecimiento porque no existe una fuente primaria persistente que permita reconstruirlas con precisión.
     </p>
@@ -156,6 +165,13 @@ powershell -ExecutionPolicy Bypass -File .\launch-windows.ps1</code></pre>
       <li><strong>Separa secretos y datos:</strong> no subas credenciales al repositorio y revisa extensiones, conectores, logs y retención antes de usar documentos sensibles.</li>
       <li><strong>Actualiza con criterio:</strong> la rama <code>dev</code> recibe cambios primero; la propia documentación presenta <code>main</code> como la rama más curada.</li>
     </ul>
+
+    <FiguraArticulo
+      src="/img/blog/odysseus-pewdiepie-ia-gratis/privacidad-seguridad-odysseus.webp"
+      alt="Cuadro resumen de privacidad y seguridad en Odysseus: las API externas procesan fuera del equipo, autenticación activada, Docker en 127.0.0.1, socket de Docker solo si hace falta, secretos fuera del repositorio y rama main más curada"
+      width={1200}
+      height={679}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué está verificado y qué no</h2>
     <p>
