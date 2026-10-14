@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "LM Studio: qué es y cómo usar IA local en tu ordenador";
@@ -82,7 +83,21 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Remotos</strong>, ejecutados en otro equipo tuyo a través de LM Link.</li>
     </ul>
     <p>La aplicación clásica, LM Studio, se sigue descargando desde la misma página de descargas y es la que explica esta guía. LM Studio recomienda seguir usándola para la configuración avanzada de los modelos.</p>
+    <FiguraArticulo
+      src="/img/blog/lm-studio-que-es-como-usar/descargar-lm-studio.webp"
+      alt="Captura de la página de descargas de lmstudio.ai con dos apartados separados: Download LM Studio Bionic, el agente, y Download LM Studio, la aplicación clásica con chat y API"
+      width={1200}
+      height={576}
+      caption="Página de descargas de lmstudio.ai (captura de octubre de 2026)."
+    />
     <p><strong>Precios (consultados en octubre de 2026):</strong> el plan gratuito incluye el agente Bionic, los modelos locales, la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Bionic+ cuesta 20 dólares al mes y añade los modelos en la nube; Pro cuesta 100 dólares al mes con cinco veces más uso. Para usar modelos en tu propio ordenador no necesitas pagar nada.</p>
+    <FiguraArticulo
+      src="/img/blog/lm-studio-que-es-como-usar/precios-lm-studio.webp"
+      alt="Captura de la página de precios de LM Studio con tres planes: Free a 0 dólares con modelos locales y LM Link para 5 dispositivos, Bionic+ a 20 dólares al mes y Pro a 100 dólares al mes"
+      width={1200}
+      height={791}
+      caption="Página de precios de lmstudio.ai (captura de octubre de 2026)."
+    />
     <p><strong>Uso en el trabajo:</strong> las condiciones de uso de la aplicación (versión del 23 de agosto de 2026) conceden una licencia para uso personal o para fines internos de la empresa. Lo que no permiten es revender la aplicación o ofrecerla como servicio a terceros.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué ordenador necesitas</h2>
@@ -120,6 +135,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Elige la versión del archivo.</strong> Verás opciones con nombres como <code>Q3_K_S</code> o <code>Q_8</code>: son el mismo modelo comprimido en distintos grados (cuantización). Más compresión ocupa menos memoria pero pierde algo de calidad. La documentación recomienda una opción de 4 bits o superior si tu equipo puede con ella.</li>
       <li><strong>Carga el modelo y abre un chat.</strong> A partir de aquí ya no necesitas internet para conversar.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/lm-studio-que-es-como-usar/primeros-pasos-lm-studio.webp"
+      alt="Esquema de cinco pasos para empezar con LM Studio: descargar la aplicación clásica, ponerla en español, buscar un modelo en Discover, elegir una cuantización de 4 bits o más y cargar el modelo para chatear"
+      width={1200}
+      height={717}
+    />
     <p>Una prueba sencilla para saber si un modelo te sirve: dale una tarea que hagas de verdad (resumir un correo largo, reescribir un párrafo, extraer fechas de un documento) y compara el resultado con el de tu asistente habitual. Si se queda corto, prueba otro modelo antes de descartar la idea.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Chatear con tus documentos</h3>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
@@ -90,6 +91,13 @@ const linkClass = "text-brand-400 hover:text-brand-300";
       <li><strong>Ajústala.</strong> Después de la primera versión pides cambios en el chat y el agente actualiza la app.</li>
     </ol>
     <p>Para publicar hay dos entornos separados, según la guía <a href="https://help.emergent.sh/put-your-app-live" class={linkClass} target="_blank" rel="noopener noreferrer">Put your app live</a>: la <strong>vista previa</strong> (privada, se suspende tras unos 30 minutos sin uso) y la <strong>producción</strong> (pública, activa las 24 horas). Los cambios en la vista previa no llegan a la versión publicada hasta que vuelves a publicar.</p>
+    <FiguraArticulo
+      src="/img/blog/crear-app-web-ias-chinas-open-source/publicar-app-emergent.webp"
+      alt="Captura de la guía Put your app live del centro de ayuda de Emergent: la vista previa es privada y se suspende tras unos 30 minutos sin uso, y la producción es pública y está activa 24 horas"
+      width={1200}
+      height={702}
+      caption="Guía «Put your app live» en help.emergent.sh (captura de octubre de 2026)."
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Precios de Emergent: planes y créditos</h2>
     <p>Datos de la <a href="https://emergent.sh/pricing" class={linkClass} target="_blank" rel="noopener noreferrer">página de precios oficial</a>, consultada el 6 de octubre de 2026. Los precios están en dólares estadounidenses y pueden cambiar.</p>
@@ -107,6 +115,13 @@ const linkClass = "text-brand-400 hover:text-brand-300";
         </tbody>
       </table>
     </div>
+    <FiguraArticulo
+      src="/img/blog/crear-app-web-ias-chinas-open-source/precios-emergent.webp"
+      alt="Captura de la página de precios de Emergent con tres planes individuales: Free a 0 dólares con 10 créditos, Standard a 20 dólares al mes con 100 créditos e integración con GitHub, y Pro a 200 dólares al mes con 750 créditos"
+      width={1200}
+      height={618}
+      caption="Página de precios de emergent.sh, pago mensual (captura de octubre de 2026)."
+    />
     <h3 class="font-display text-2xl font-bold mt-8 mb-4">En qué se gastan los créditos</h3>
     <p>La guía <a href="https://help.emergent.sh/how-credits-work-basics" class={linkClass} target="_blank" rel="noopener noreferrer">How credits work</a> explica que consumen créditos:</p>
     <ul class="space-y-2">
@@ -119,6 +134,12 @@ const linkClass = "text-brand-400 hover:text-brand-300";
     </ul>
     <p>Los créditos del plan mensual se rellenan hasta el tope en cada ciclo de facturación y <strong>no se acumulan</strong>. Los créditos comprados aparte no caducan.</p>
     <p>El dato que más pesa en el presupuesto: una app publicada cuesta <strong>entre 50 y 1.100 créditos al mes</strong> según el nivel de publicación elegido, y eso cubre alojamiento, ancho de banda, monitorización y escalado. Con los 100 créditos del plan Standard, la publicación más barata ya se lleva la mitad del mes antes de pedir ningún cambio.</p>
+    <FiguraArticulo
+      src="/img/blog/crear-app-web-ias-chinas-open-source/creditos-emergent-cuanto-rinden.webp"
+      alt="Cuadro resumen de los créditos de Emergent: 10 en el plan Free sin publicar, 100 al mes en Standard por 20 dólares, mínimo 50 para publicar, una app publicada gasta entre 50 y 1.100 al mes y los créditos del plan no se acumulan"
+      width={1200}
+      height={705}
+    />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">¿Tiene plan gratis? Qué incluye</h2>
     <p>Sí. La página de precios habla de "10 créditos gratis al mes", mientras que la guía <a href="https://help.emergent.sh/plans-the-free-tier" class={linkClass} target="_blank" rel="noopener noreferrer">Plans &amp; the free tier</a> los describe como "10 créditos en tu primer día". Las dos fuentes oficiales no coinciden, así que conviene mirar el saldo dentro de la cuenta.</p>
