@@ -53,11 +53,16 @@ Comparativas de la primera pantalla en el móvil: [inicio](comparativa-inicio-mo
 
 ## Por qué recomendamos la A
 
-INVESTIGACION_RECOMENDACION
+- **Las portadas se ven más.** Son de colores fuertes; sobre fondo claro destacan, sobre fondo oscuro compiten con él.
+- **Se lee mejor un texto largo.** Para artículos de 8-10 minutos, el texto oscuro sobre fondo claro cansa menos a la mayoría de la gente, y quien prefiera oscuro tiene el modo oscuro.
+- **Parece una revista**, que es lo que se echaba en falta: es el formato de los medios de tecnología con más visitas.
+- **Es la más fácil de mantener**: tarjetas y listas sencillas que los agentes de cada semana no pueden romper.
+
+La B también arregla los problemas principales (artículo y portada arriba, aviso de cookies pequeño) y se parece más a la web de hoy. Su punto débil: las filas que se deslizan esconden artículos a la derecha y mucha gente no las desliza.
 
 ## Lo que se ha aprendido de otras webs
 
-INVESTIGACION_PATRONES
+Pendiente: se añade aquí el resumen de la investigación (revistas y blogs de tecnología en español e inglés).
 
 ## Qué se haría en la fase 2 (con la propuesta elegida)
 
