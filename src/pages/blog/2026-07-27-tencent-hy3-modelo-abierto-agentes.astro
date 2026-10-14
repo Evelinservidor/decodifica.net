@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Tencent Hy3: cómo probar este modelo abierto por API";
@@ -86,12 +87,26 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué ha publicado Tencent</h2>
     <p>Hy3 es un modelo de mezcla de expertos. Aunque suma 295B parámetros, activa 21B en cada paso. Tencent lo presenta para tareas de productividad como desarrollo de software, ofimática, modelos financieros, diseño frontend y producción de videojuegos, y su ficha destaca la fiabilidad como agente, el código y la comprensión de contexto largo. La licencia Apache 2.0 permite estudiar, modificar y desplegar el modelo con mucha más libertad que una API cerrada.</p>
     <p>Eso no convierte automáticamente las cifras oficiales en una victoria frente a otros modelos. Los resultados que publica, como una evaluación ciega con 270 expertos o la bajada de la tasa de alucinaciones del 12,5 % al 5,4 % tras el postentrenamiento, son datos de Tencent, no evaluaciones independientes. Sirven para decidir qué probar, no para dar por resuelta la comparación.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/ficha-hy3-parametros-contexto.webp"
+      alt="Captura de la ficha de Hy3 en Hugging Face: modelo de mezcla de expertos con 295B parámetros totales, 21B activos y 256K de contexto"
+      width={630}
+      height={964}
+      caption="Ficha oficial de tencent/Hy3 en Hugging Face (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué significan los 256K para un agente</h2>
     <p>Un contexto de hasta 256.000 tokens puede ser útil cuando el agente necesita mantener a la vez documentación, varios archivos de código, instrucciones y el historial de una tarea larga. El beneficio no es «recordarlo todo», sino reducir cortes artificiales entre piezas que deben analizarse juntas.</p>
     <p>Para comprobarlo, usa un caso que obligue a aprovechar ese contexto: un repositorio pequeño con documentación desactualizada, cinco documentos que se contradigan o un conjunto de reglas con excepciones. La salida debe incluir citas a archivos o fragmentos concretos. Si no puedes volver a la evidencia, el contexto grande solo hace más difícil detectar una respuesta convincente pero incorrecta.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">La trampa de las ocho GPUs</h2>
     <p>La ficha oficial en Hugging Face incluye recetas de despliegue con vLLM y SGLang para servir el modelo en ocho GPUs H20-3e u otras con más memoria. Esa referencia deja claro que el modelo completo no está pensado para el ordenador normal de casa. Cuantizar, repartir el modelo o reducir el contexto puede cambiar el requisito, pero también cambia la prueba y puede afectar velocidad o calidad.</p>
     <p>Por eso conviene no empezar comprando hardware ni montando una instalación compleja. Primero comprueba si Hy3 aporta algo en la tarea que te importa. Si no supera a una opción más accesible, la apertura de los pesos no compensa la infraestructura.</p>
+    <FiguraArticulo
+      src="/img/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/despliegue-hy3-ocho-gpus.webp"
+      alt="Captura de la sección Deployment de la ficha de Hy3: recomienda ocho GPUs H20-3e u otras con más memoria y recetas de vLLM y SGLang"
+      width={630}
+      height={374}
+      caption="Sección de despliegue de la ficha de Hy3 en Hugging Face (captura de octubre de 2026)."
+    />
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo sin instalarlo</h2>
     <p>Una prueba corta y repetible:</p>
     <ol>
@@ -101,6 +116,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li>Medir cumplimiento de instrucciones, citas correctas, errores y tiempo de revisión.</li>
       <li>Repetir con una segunda tarea antes de decidir.</li>
     </ol>
+    <FiguraArticulo
+      src="/img/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/prueba-hy3-por-api-cinco-pasos.webp"
+      alt="Esquema en cinco pasos para probar Hy3 sin instalarlo: tarea verificable, quitar datos sensibles, comparar con tu modelo, medir errores y repetir"
+      width={1200}
+      height={659}
+    />
     <p>OpenRouter lista una variante gratuita de Hy3 (precio cero por token, consultado en octubre de 2026), con límites de uso como el resto de sus endpoints gratuitos. Revisa el estado y el precio antes de construir un flujo: una opción gratuita sirve para evaluar, pero no debería convertirse sin querer en una dependencia de producción.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tres pruebas que sí dicen algo</h2>
     <p>Para código, pide localizar una causa en varios archivos y proponer un parche pequeño citando cada ruta afectada. Para documentos largos, introduce una contradicción conocida y exige una tabla con afirmación, fuente y discrepancia. Para un agente, define una secuencia con una herramienta simulada y comprueba si respeta cuándo usarla y cuándo detenerse.</p>
