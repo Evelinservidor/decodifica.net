@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortadaArticulo from '../../components/PortadaArticulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
@@ -72,6 +73,13 @@ const pillarLabel = "Pilar 1: Apps web";
     </ul>
     <p>Frente a otras funciones de Claude, el centro de ayuda de Anthropic las sitúa así: las <strong>instrucciones personalizadas</strong> se aplican a todas las conversaciones; los <strong>Proyectos</strong> dan conocimiento de fondo que siempre está cargado dentro de ese espacio; <strong>MCP</strong> conecta Claude con servicios y datos externos; y las <strong>Skills</strong> aportan procedimientos ("cómo hacer esta tarea") que se activan solo cuando son relevantes. Una Skill y un conector MCP pueden usarse juntos.</p>
 
+    <FiguraArticulo
+      src="/img/blog/claude-skills-1000-gratis/tres-niveles-de-carga.webp"
+      alt="Esquema de los tres niveles de carga de una Skill de Claude: siempre el nombre y la descripción, al activarse las instrucciones de SKILL.md y, si hace falta, archivos y scripts"
+      width={1200}
+      height={489}
+    />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde funcionan y qué plan necesitas</h2>
     <div class="not-prose my-8 overflow-x-auto">
       <table class="w-full text-left text-sm text-dark-200">
@@ -114,6 +122,14 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><strong>Son ejemplos:</strong> el propio repositorio avisa de que se ofrecen "con fines de demostración y educativos" y de que conviene probarlas antes de usarlas en tareas críticas.</li>
     </ul>
 
+    <FiguraArticulo
+      src="/img/blog/claude-skills-1000-gratis/repositorio-anthropics-skills.webp"
+      alt="Captura del repositorio oficial anthropics/skills en GitHub con las carpetas skills, spec y template"
+      width={1200}
+      height={754}
+      caption="Repositorio oficial de Skills de Anthropic en GitHub (captura de octubre de 2026)."
+    />
+
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">2. Colecciones de la comunidad con más de mil Skills</h3>
     <p>La cifra de "+1.000 Skills gratis" que circula en vídeos y listas no viene de Anthropic, sino de recopilaciones de la comunidad. Las dos más citadas:</p>
     <ul class="space-y-2">
@@ -133,6 +149,13 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Actívala y prueba con varias peticiones. No hace falta invocarla: Claude la usa cuando la petición encaja con su descripción.</li>
     </ol>
     <p>En planes Team y Enterprise, un administrador tiene que habilitar antes "Cloud code execution and file creation" y "Skills" en <strong>Organization settings &gt; Plugins &amp; skills</strong>.</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-skills-1000-gratis/instalar-skill-claude-ai.webp"
+      alt="Esquema de cuatro pasos para instalar una Skill en Claude.ai: activar la ejecución de código, abrir Customize > Skills, subir el ZIP y probarla"
+      width={1200}
+      height={617}
+    />
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Claude Code</h3>
     <ol class="space-y-2">

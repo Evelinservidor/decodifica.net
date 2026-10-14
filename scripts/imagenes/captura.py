@@ -89,12 +89,13 @@ def main() -> int:
     ap.add_argument("--sin-marco", action="store_true")
     ap.add_argument("--dejar-fijos", action="store_true", help="no quitar elementos fijos (menús flotantes)")
     ap.add_argument("--calidad", type=int, default=78)
+    ap.add_argument("--idioma", default="es-ES", help="idioma del navegador (por defecto es-ES)")
     a = ap.parse_args()
 
     vp = {"width": 390, "height": 844} if a.movil else {"width": a.ancho, "height": a.alto}
     with sync_playwright() as p:
         nav = abrir_navegador(p)
-        ctx = nav.new_context(viewport=vp, user_agent=AGENTE, locale="es-ES", device_scale_factor=1 if not a.movil else 2)
+        ctx = nav.new_context(viewport=vp, user_agent=AGENTE, locale=a.idioma, device_scale_factor=1 if not a.movil else 2)
         pg = ctx.new_page()
         pg.goto(a.url, timeout=60000, wait_until="domcontentloaded")
         try:
@@ -122,6 +123,9 @@ def main() -> int:
         if a.desplazar:
             pg.locator(a.desplazar).first.scroll_into_view_if_needed(timeout=8000)
             pg.wait_for_timeout(800)
+        texto = pg.evaluate("document.body ? document.body.innerText.trim() : ''")
+        if len(texto) < 200 or "application error" in texto.lower():
+            print("  · La página tiene muy poco texto o muestra un error: MIRA la captura antes de usarla.")
         if a.selector:
             png = pg.locator(a.selector).first.screenshot(timeout=15000)
         elif a.zona:
