@@ -71,6 +71,7 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 Si en el paso 4 Google dice que la creación de claves está bloqueada por una política de la organización, la alternativa es pasar la app OAuth a «producción» (https://console.cloud.google.com/auth/audience → **Publicar app**) y regenerar `GSC_REFRESH_TOKEN`.
 
 ## Decisiones de Jordi
+- (14-10-2026) Cloudflare sigue bloqueando los robots de entrenamiento (GPTBot, ClaudeBot); los de búsqueda de IA pueden entrar. El correo hola@decodifica.net funciona.
 - (07-10-2026) Nicho: **opción 2, solo IA práctica**. La «casa autosuficiente» (solar aislada, baterías, domótica, IA en casa) queda como propuesta para más adelante, posiblemente en una **web nueva aparte**. Datos en `docs/fase-2-nichos.md`.
 - (06-10-2026) Publicar la Fase 1: sí.
 - (06-10-2026) Apellido: **Castañeira** (con ñ). Corregido en toda la web.
@@ -97,7 +98,7 @@ Si en el paso 4 Google dice que la creación de claves está bloqueada por una p
 Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANAL.md` («Para que nos citen las IA»).
 
 - `public/robots.txt`: permiso explícito a Googlebot, bingbot, Google-Extended, OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot y Perplexity-User (nombres comprobados en las páginas oficiales de Google, OpenAI, Anthropic, Perplexity y Bing).
-- **Cloudflare** devuelve 403 a GPTBot y ClaudeBot (robots que recogen textos para entrenar modelos); los robots de búsqueda de IA sí entran (comprobado con su identificador el 14-10-2026). Es un ajuste de Cloudflare, no del repositorio: **pregunta pendiente para Jordi** si lo deja así.
+- **Cloudflare** devuelve 403 a GPTBot y ClaudeBot (robots que recogen textos para entrenar modelos); los robots de búsqueda de IA sí entran (comprobado con su identificador el 14-10-2026). Es un ajuste de Cloudflare, no del repositorio. Jordi decide dejarlo así (14-10-2026).
 - `/llms.txt` se genera en cada build (`src/pages/llms.txt.ts`) con qué es Decodifica, para quién, cómo se hace y todos los artículos. Se borró el `public/llms.txt` antiguo (mencionaba el canal y los vídeos).
 - Datos estructurados: un único `Article` por página, generado en `SEO.astro` (autor Jordi Castañeira con enlace a /sobre/, fechas de publicación y revisión, imagen, editor con logo, fuentes en `citation`). Se quitaron los bloques `Article` duplicados de 33 artículos y 5 páginas de herramientas/recursos. `Organization` y `WebSite` solo en la portada; `AboutPage` + `Person` en /sobre/. Componente `FaqSection` para preguntas frecuentes con `FAQPage` (añadido en 4 artículos). Validador de schema.org: 93 páginas, 0 errores, 0 avisos. La prueba de resultados enriquecidos de Google no se pudo pasar desde aquí.
 - Cabecera de todos los artículos: «Publicado el …» y, si cambió, «Revisado el …».
@@ -105,7 +106,7 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
 - /sobre/: sección «Cómo se hace cada artículo» (fuentes oficiales, fecha de consulta, IA para borradores y Jordi aprueba, precios revisados cada mes).
 - `scripts/seo_preflight.py` avisa si falta la respuesta corta, la fecha de revisión o `citations`, y da error si un artículo vuelve a meter su propio bloque `Article`.
 - Pendiente: respuesta corta en `2026-07-17-hermes-agent-chino`, `2026-07-22-nano-banana-1000-prompts`, `5-atajos-ia-gratis` y `gpt-live-voz-chatgpt` (empiezan bien, pero sin «En resumen:»). `ia-organiza-pendientes` sigue con un «caso real» en primera persona sin prueba documentada (solo se quitaron las dos frases prohibidas): reescribirlo es el siguiente arreglo semanal. `2026-08-01-qwen3-asr-transcribe-espanol` dice «Probamos» en la descripción: revisar si hay prueba documentada.
-- Preguntas para Jordi: ¿funciona el correo hola@decodifica.net (sale en contacto y en los datos estructurados)? ¿Dejas el bloqueo de Cloudflare a los robots de entrenamiento?
+- Respondido por Jordi (14-10-2026): el correo hola@decodifica.net funciona; el bloqueo de Cloudflare a GPTBot y ClaudeBot se queda como está.
 
 ## Agente semanal
 
