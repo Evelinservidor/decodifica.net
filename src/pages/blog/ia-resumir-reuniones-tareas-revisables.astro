@@ -6,6 +6,7 @@ import ArticleResourceLinks from '../../components/ArticleResourceLinks.astro';
 const title = "Cómo convertir una reunión en tareas revisables con IA";
 const description = "Un workflow de cinco pasos para transformar una transcripción en decisiones, tareas y dudas sin inventar acuerdos ni compromisos.";
 const pubDate = "2026-07-11";
+const modifiedDate = pubDate;
 const readingTime = "7 min";
 const tags = ["actas con IA", "resumir reuniones", "tareas revisables", "workflow IA", "productividad con IA"];
 const pillarLabel = "Pilar 2: Productividad práctica";
@@ -18,13 +19,25 @@ const conversionCtaStrategy = "diagnostic_only";
   ogImage="/og/blog/ia-resumir-reuniones-tareas-revisables.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf",
+    "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>11 julio 2026</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -42,6 +55,9 @@ const conversionCtaStrategy = "diagnostic_only";
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="convertir transcripciones en decisiones, tareas y dudas revisables" />
 
+    <p>
+      <strong>En resumen:</strong> para convertir una reunión en tareas con IA, pega la transcripción (sin datos sensibles) con un prompt que pida solo lo que se dijo de forma explícita: decisiones, tareas con responsable y fecha, y dudas abiertas. Todo lo que no esté claro debe salir como «por confirmar». Después revisa el borrador con quien dirigió la reunión antes de enviar nada o crear tareas.
+    </p>
     <p>
       Una transcripción no es un acta. Puede mezclar propuestas, frases a medias, nombres mal reconocidos y asuntos sin cierre. La IA puede ordenar ese material, pero la persona que conoce la reunión debe seguir confirmando qué se acordó y qué se comunica.
     </p>
@@ -136,29 +152,4 @@ Transcripción:
       <a href="/empieza/" class="mt-5 inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600">Diagnosticar mi tarea</a>
     </div>
   </article>
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    description,
-    datePublished: pubDate,
-    author: { '@type': 'Person', name: 'Jordi Castañeira' },
-    publisher: { '@type': 'Organization', name: 'Decodifica' },
-    about: tags,
-    citation: [
-      {
-        '@type': 'WebPage',
-        url: 'https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf',
-      },
-      {
-        '@type': 'WebPage',
-        url: 'https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf',
-      },
-      {
-        '@type': 'WebPage',
-        url: 'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/',
-      },
-    ],
-  })} />
 </BaseLayout>

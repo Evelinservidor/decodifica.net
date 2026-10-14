@@ -22,11 +22,27 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://www.anthropic.com/news/fable-mythos-access",
+    "https://www.anthropic.com/news/redeploying-fable-5",
+    "https://www.anthropic.com/claude/fable",
+    "https://huggingface.co/Qwen",
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+    "https://deepmind.google/models/gemma",
+    "https://ollama.com/download",
+    "https://lmstudio.ai/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -50,7 +66,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
 
-    <p>Del 12 de junio al 1 de julio de 2026, Claude Fable 5 dejó de estar disponible para todos los usuarios. No fue un fallo técnico: Anthropic retiró el acceso para cumplir una directiva de control de exportaciones del Gobierno de EE. UU. Ese episodio sirve como recordatorio práctico: si todo tu flujo depende de un único modelo, conviene tener un plan B. Aquí tienes qué pasó, según los comunicados oficiales, y qué alternativas abiertas y locales puedes preparar.</p>
+    <p><strong>En resumen:</strong> Claude Fable 5 volvió a estar disponible el 1 de julio de 2026, tras estar suspendido desde el 12 de junio por una directiva de control de exportaciones del Gobierno de EE. UU. Como plan B por si vuelve a pasar, las alternativas abiertas más útiles son Qwen, DeepSeek-V4-Pro y Gemma 4, y las dos formas más sencillas de usarlas en tu ordenador son Ollama y LM Studio. Lo práctico es probar ahora una tarea que repites con una de ellas y comprobar si te sirve.</p>
+    <p>Abajo tienes qué pasó, según los comunicados oficiales de Anthropic, y cómo preparar ese plan B.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué pasó con Claude Fable 5</h2>
     <ul class="space-y-2">
       <li><strong>12 de junio de 2026:</strong> Anthropic publicó que el Gobierno de EE. UU. le había ordenado suspender el acceso a Fable 5 y Mythos 5 para cualquier ciudadano extranjero. Según la empresa, el Gobierno creía conocer un método para saltarse (hacer <em>jailbreak</em>) las salvaguardas de Fable 5. Como no podía aplicar la orden de forma selectiva, Anthropic suspendió el acceso para todos los usuarios. El resto de modelos de Anthropic no se vieron afectados.</li>
@@ -122,31 +139,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      {"@type": "WebPage", "url": "https://www.anthropic.com/news/fable-mythos-access"},
-      {"@type": "WebPage", "url": "https://www.anthropic.com/news/redeploying-fable-5"},
-      {"@type": "WebPage", "url": "https://www.anthropic.com/claude/fable"},
-      {"@type": "WebPage", "url": "https://huggingface.co/Qwen"},
-      {"@type": "WebPage", "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"},
-      {"@type": "WebPage", "url": "https://deepmind.google/models/gemma"},
-      {"@type": "WebPage", "url": "https://ollama.com/download"},
-      {"@type": "WebPage", "url": "https://lmstudio.ai/"}
-]
-  })} />
 </BaseLayout>

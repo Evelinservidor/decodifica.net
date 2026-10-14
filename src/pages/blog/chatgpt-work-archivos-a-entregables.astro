@@ -21,11 +21,23 @@ const pillarLabel = "Pilar 2: Tips productividad";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://openai.com/chatgpt-work/",
+    "https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app",
+    "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt-and-codex",
+    "https://openai.com/index/gpt-5-6/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -47,6 +59,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
 
 
+    <p><strong>En resumen:</strong> usa ChatGPT Work cuando quieras un entregable concreto (un informe, una presentación o un dashboard) a partir de varios archivos; para respuestas rápidas, sigue en el chat normal. Antes de fiarte del resultado, comprueba tres cosas: que indica qué archivos ha usado, que tres cifras coinciden con el original y que puedes editarlo sin romperlo.</p>
     <p>ChatGPT Work no intenta darte una respuesta más larga: cambia la unidad de trabajo. En lugar de encadenar prompts para resumir, calcular, diseñar y copiar resultados entre aplicaciones, defines un entregable y revisas el plan antes de ejecutarlo.</p>
     <p>Lo que hay que vigilar en ese tipo de entregable es que conserve las cifras, indique de qué archivos sale cada dato y se pueda editar después.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Work y cuándo seguir en Chat</h2>
@@ -106,39 +119,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      {
-            "@type": "WebPage",
-            "url": "https://openai.com/chatgpt-work/"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt-and-codex"
-      },
-      {
-            "@type": "WebPage",
-            "url": "https://openai.com/index/gpt-5-6/"
-      }
-]
-  })} />
 </BaseLayout>

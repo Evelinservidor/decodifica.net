@@ -21,6 +21,7 @@ export interface Props {
   imageAlt?: string;
   keywords?: string[];
   section?: string;
+  citations?: string[];
   noindex?: boolean;
 }
 
@@ -36,6 +37,7 @@ const {
   imageAlt,
   keywords,
   section,
+  citations,
   noindex,
 } = Astro.props;
 ---
@@ -74,6 +76,7 @@ const {
       imageAlt={imageAlt}
       keywords={keywords}
       section={section}
+      citations={citations}
       noindex={noindex}
     />
 

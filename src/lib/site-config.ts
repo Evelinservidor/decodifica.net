@@ -10,7 +10,7 @@ export const siteConfig = {
   url: 'https://decodifica.net',
   ogImage: '/og-default.png',
   author: {
-    name: 'Jordi',
+    name: 'Jordi Castañeira',
     email: 'hola@decodifica.net',
     publicEmailLabel: 'hola@decodifica.net',
     collaborationsEmail: 'colaboraciones@decodifica.net',

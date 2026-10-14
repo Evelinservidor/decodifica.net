@@ -6,6 +6,7 @@ import ReviewMethodology from '../../components/ReviewMethodology.astro';
 const title = "5 IAs para Excel en 2026: ahorra horas con tus fórmulas";
 const description = "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.";
 const pubDate = "2026-06-23";
+const modifiedDate = pubDate;
 const tags = ["ia para excel", "microsoft copilot", "excel ia", "quadratic", "productividad ia"];
 const readingTime = "12 min";
 const pillar = "tips-productividad";
@@ -18,13 +19,31 @@ const pillarLabel = "Pilar 2: Tips productividad";
   ogImage="/og/blog/ia-mejora-excel.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487",
+    "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
+    "https://workspace.google.com/resources/spreadsheet-ai/",
+    "https://support.google.com/docs/answer/14356410?hl=en",
+    "https://openai.com/",
+    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://www.quadratichq.com/pricing",
+    "https://equals.com/pricing/",
+    "https://decodifica.net/contacto/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime="2026-06-23">23 junio 2026</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -47,7 +66,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
 
     <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-6 mb-8">
-      <h2 class="font-display text-lg font-bold text-white mb-3">TL;DR</h2>
+      <h2 class="font-display text-lg font-bold text-white mb-3">En resumen</h2>
       <ul class="space-y-2 text-dark-200 text-sm">
         <li><strong>Microsoft =COPILOT()</strong>: función de Excel que permite usar un prompt y referencias de celda. Su disponibilidad depende del programa y la licencia de Copilot.</li>
         <li><strong>Google Gemini en Sheets</strong>: puede crear fórmulas, tablas, análisis y cambios en hojas nativas de Google Sheets con un plan elegible.</li>
@@ -257,7 +276,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       Para empezar: =COPILOT() si tienes licencia, Gemini en Sheets si no, Quadratic gratis si quieres curiosear. Para escalar, ya evaluarás según el caso.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">FAQ</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
 
     <div itemscope itemtype="https://schema.org/FAQPage">
       <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
@@ -371,65 +390,4 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "5 IAs para Excel en 2026: ahorra horas con tus fórmulas",
-    "description": "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.",
-    "datePublished": "2026-06-23",
-    "mainEntityOfPage": "https://decodifica.net/blog/ia-mejora-excel/",
-    "author": {
-        "@type": "Person",
-        "name": "Jordi Castañeira"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Decodifica"
-    },
-    "about": [
-        "ia para excel",
-        "microsoft copilot",
-        "excel ia",
-        "quadratic",
-        "productividad ia"
-    ],
-    "citation": [
-        {
-            "@type": "WebPage",
-            "url": "https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://workspace.google.com/resources/spreadsheet-ai/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://support.google.com/docs/answer/14356410?hl=en"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://openai.com/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://www.quadratichq.com/pricing"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://equals.com/pricing/"
-        },
-        {
-            "@type": "WebPage",
-            "url": "https://decodifica.net/contacto/"
-        }
-    ]
-})} />
 </BaseLayout>

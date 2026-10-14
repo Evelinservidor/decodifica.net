@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 
 const title = "Cómo crear un agente de voz con IA sin programar";
@@ -21,13 +22,27 @@ const pillarLabel = "Pilar 1: Apps web";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://elevenlabs.io/pricing/agents",
+    "https://elevenlabs.io/docs/eleven-agents/overview",
+    "https://www.retellai.com/pricing",
+    "https://vapi.ai/pricing",
+    "https://docs.vapi.ai/quickstart/introduction",
+    "https://developers.openai.com/api/docs/guides/realtime",
+    "https://docs.vocode.dev/welcome",
+    "https://raw.githubusercontent.com/vocodedev/vocode-core/main/LICENSE",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-        <span>·</span>
-        <span>Actualizado el 12 de octubre de 2026</span>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -150,12 +165,23 @@ Reglas:
     <p>Con pocas llamadas, en cambio, el plan gratuito o el Starter de ElevenLabs pueden bastar para un autónomo.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Necesito saber programar?</h3>
-    <p>Para ElevenLabs, no: se configura desde un panel. Retell ofrece plantillas de agentes ya hechas, y su API es opcional. Vapi tiene panel, pero se presenta como plataforma para desarrolladores. OpenAI Realtime y vocode sí requieren programar.</p>
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona en español?</h3>
-    <p>Sí. ElevenAgents anuncia 31 idiomas, y Vapi y Retell permiten elegir proveedores de voz con voces en español. Escucha varias voces antes de decidir: no todas suenan igual de naturales ni con el mismo acento.</p>
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Puedo usar el plan gratuito para mi negocio?</h3>
-    <p>En ElevenLabs, la licencia comercial empieza en el plan Starter (6 $/mes). Para un uso comercial, revisa siempre las condiciones del plan que vayas a usar.</p>
+    <FaqSection
+      questionClass="font-display text-xl font-bold mt-6 mb-3"
+      items={[
+  {
+    "q": "¿Necesito saber programar?",
+    "a": "Para ElevenLabs, no: se configura desde un panel. Retell ofrece plantillas de agentes ya hechas, y su API es opcional. Vapi tiene panel, pero se presenta como plataforma para desarrolladores. OpenAI Realtime y vocode sí requieren programar."
+  },
+  {
+    "q": "¿Funciona en español?",
+    "a": "Sí. ElevenAgents anuncia 31 idiomas, y Vapi y Retell permiten elegir proveedores de voz con voces en español. Escucha varias voces antes de decidir: no todas suenan igual de naturales ni con el mismo acento."
+  },
+  {
+    "q": "¿Puedo usar el plan gratuito para mi negocio?",
+    "a": "En ElevenLabs, la licencia comercial empieza en el plan Starter (6 $/mes). Para un uso comercial, revisa siempre las condiciones del plan que vayas a usar."
+  }
+]}
+    />
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>Consultadas el 12 de octubre de 2026.</p>
@@ -207,32 +233,4 @@ Reglas:
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "datePublished": pubDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/",
-    "author": {
-      "@type": "Person",
-      "name": "Jordi Castañeira"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Decodifica"
-    },
-    "about": tags,
-    "citation": [
-      { "@type": "WebPage", "url": "https://elevenlabs.io/pricing/agents" },
-      { "@type": "WebPage", "url": "https://elevenlabs.io/docs/eleven-agents/overview" },
-      { "@type": "WebPage", "url": "https://www.retellai.com/pricing" },
-      { "@type": "WebPage", "url": "https://vapi.ai/pricing" },
-      { "@type": "WebPage", "url": "https://docs.vapi.ai/quickstart/introduction" },
-      { "@type": "WebPage", "url": "https://developers.openai.com/api/docs/guides/realtime" },
-      { "@type": "WebPage", "url": "https://docs.vocode.dev/welcome" },
-      { "@type": "WebPage", "url": "https://raw.githubusercontent.com/vocodedev/vocode-core/main/LICENSE" }
-    ]
-  })} />
 </BaseLayout>

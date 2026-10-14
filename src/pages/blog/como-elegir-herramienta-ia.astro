@@ -6,6 +6,7 @@ import NewsletterForm from '../../components/NewsletterForm.astro';
 const title = 'Cómo elegir una herramienta de IA sin perder tiempo';
 const description = 'Un método práctico para decidir qué IA probar, cuál descartar y cómo medir si una herramienta merece entrar en tu flujo de trabajo.';
 const pubDate = '2026-07-06';
+const modifiedDate = pubDate;
 const readingTime = '8 min';
 const tags = ['herramientas IA', 'productividad con IA', 'prompts', 'workflow IA', 'Decodifica'];
 const pillarLabel = 'Pilar 2: Productividad práctica';
@@ -17,13 +18,24 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
   ogImage="/og/blog/como-elegir-herramienta-ia.png"
   type="article"
   pubDate={pubDate}
+  modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://www.nist.gov/itl/ai-risk-management-framework",
+    "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
-      <div class="mb-4 flex items-center gap-2 text-sm text-dark-300">
-        <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>-</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -197,31 +209,4 @@ const pillarLabel = 'Pilar 2: Productividad práctica';
       />
     </div>
   </article>
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    description,
-    datePublished: pubDate,
-    author: {
-      '@type': 'Person',
-      name: 'Jordi Castañeira',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Decodifica',
-    },
-    about: tags,
-    citation: [
-      {
-        '@type': 'WebPage',
-        url: 'https://www.nist.gov/itl/ai-risk-management-framework',
-      },
-      {
-        '@type': 'WebPage',
-        url: 'https://owasp.org/www-project-top-10-for-large-language-model-applications/',
-      },
-    ],
-  })} />
 </BaseLayout>

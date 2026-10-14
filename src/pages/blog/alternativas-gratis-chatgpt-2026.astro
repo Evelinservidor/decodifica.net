@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 import ConversionBand from '../../components/ConversionBand.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
@@ -22,13 +23,41 @@ const pillarLabel = "Pilar 1: Apps web";
   modifiedDate={modifiedDate}
   section={pillarLabel}
   keywords={tags}
+  citations={[
+    "https://gemini.google/subscriptions/",
+    "https://support.google.com/gemini/answer/13575153",
+    "https://support.google.com/gemini/answer/13594961",
+    "https://claude.com/pricing",
+    "https://support.claude.com/en/articles/8114491-get-started-with-claude",
+    "https://www.anthropic.com/supported-countries",
+    "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+    "https://support.microsoft.com/topic/understanding-the-different-microsoft-copilot-experiences-cfff4791-694a-4d90-9c9c-1eb3fb28e842",
+    "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+    "https://support.microsoft.com/en-us/Microsoft-Copilot/supported-regions-and-languages-in-microsoft-copilot",
+    "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls",
+    "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html",
+    "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349",
+    "https://api-docs.deepseek.com/news/news260910",
+    "https://github.com/QwenLM/Qwen3.8",
+    "https://chat.qwen.ai",
+    "https://mistral.ai/products/vibe/",
+    "https://mistral.ai/pricing",
+    "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models",
+    "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data",
+    "https://huggingface.co/chat/",
+    "https://huggingface.co/docs/inference-providers/pricing",
+  ]}
 >
   <article class="prose prose-invert mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <header class="mb-12">
       <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-dark-300">
-        <time datetime="2026-06-15">15 junio 2026</time>
-        <span>·</span>
-        <span>Actualizado: <time datetime="2026-10-06">6 octubre 2026</time></span>
+        <span>Publicado el <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+        {modifiedDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span>Revisado el <time datetime={modifiedDate}>{new Date(modifiedDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+          </>
+        )}
         <span>·</span>
         <span>~ {readingTime} lectura</span>
       </div>
@@ -280,26 +309,27 @@ const pillarLabel = "Pilar 1: Apps web";
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuál de estas IA no usa mis chats para entrenar?</h3>
-    <p>
-      Claude es la única de la lista cuya documentación indica que en cuentas Free no entrena con tus chats salvo que lo permitas. Gemini, Copilot y Mistral Vibe permiten excluirte desde la configuración. DeepSeek los usa según su política, que recoge un derecho de oposición; de Qwen y HuggingChat no hemos podido verificarlo.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Hay alguna que funcione sin registrarse?</h3>
-    <p>
-      Microsoft Copilot, según su página de ayuda. Gemini pide una cuenta de Google, HuggingChat una de Hugging Face y Claude exige ser mayor de 18 años.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funcionan en Venezuela o Cuba?</h3>
-    <p>
-      Claude.ai no incluye Venezuela ni Cuba en su lista de países admitidos. Copilot excluye los mercados con embargo. Para el resto, consulta la página de disponibilidad de cada servicio.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y ChatGPT gratis?</h3>
-    <p>
-      Esta guía trata de alternativas. Para comparar con ChatGPT tienes su <a href="/herramientas/chatgpt/" class="text-brand-400 hover:text-brand-300">ficha en el directorio de herramientas</a> y el <a href="/recursos/mapa-herramientas-ia/" class="text-brand-400 hover:text-brand-300">mapa de herramientas IA</a> por tarea.
-    </p>
+    <FaqSection
+      questionClass="font-display text-xl font-bold mt-6 mb-3"
+      items={[
+  {
+    "q": "¿Cuál de estas IA no usa mis chats para entrenar?",
+    "a": "Claude es la única de la lista cuya documentación indica que en cuentas Free no entrena con tus chats salvo que lo permitas. Gemini, Copilot y Mistral Vibe permiten excluirte desde la configuración. DeepSeek los usa según su política, que recoge un derecho de oposición; de Qwen y HuggingChat no hemos podido verificarlo."
+  },
+  {
+    "q": "¿Hay alguna que funcione sin registrarse?",
+    "a": "Microsoft Copilot, según su página de ayuda. Gemini pide una cuenta de Google, HuggingChat una de Hugging Face y Claude exige ser mayor de 18 años."
+  },
+  {
+    "q": "¿Funcionan en Venezuela o Cuba?",
+    "a": "Claude.ai no incluye Venezuela ni Cuba en su lista de países admitidos. Copilot excluye los mercados con embargo. Para el resto, consulta la página de disponibilidad de cada servicio."
+  },
+  {
+    "q": "¿Y ChatGPT gratis?",
+    "a": "Esta guía trata de alternativas. Para comparar con ChatGPT tienes su <a href=\"/herramientas/chatgpt/\" class=\"text-brand-400 hover:text-brand-300\">ficha en el directorio de herramientas</a> y el <a href=\"/recursos/mapa-herramientas-ia/\" class=\"text-brand-400 hover:text-brand-300\">mapa de herramientas IA</a> por tarea."
+  }
+]}
+    />
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>Todas consultadas el 6 de octubre de 2026.</p>
@@ -351,50 +381,4 @@ const pillarLabel = "Pilar 1: Apps web";
     </aside>
   </article>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Alternativas gratis a ChatGPT en 2026: 7 IA comparadas",
-    "description": "Gemini, Claude, Copilot, DeepSeek, Qwen, Mistral Vibe y HuggingChat: qué dan gratis hoy, sus límites, qué hacen con tus datos y cuál elegir según la tarea.",
-    "datePublished": "2026-06-15",
-    "dateModified": "2026-10-06",
-    "mainEntityOfPage": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
-    "author": {
-        "@type": "Person",
-        "name": "Jordi Castañeira"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Decodifica"
-    },
-    "about": [
-        "ia gratis",
-        "alternativas chatgpt",
-        "herramientas ia"
-    ],
-    "citation": [
-        { "@type": "WebPage", "url": "https://gemini.google/subscriptions/" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemini/answer/13575153" },
-        { "@type": "WebPage", "url": "https://support.google.com/gemini/answer/13594961" },
-        { "@type": "WebPage", "url": "https://claude.com/pricing" },
-        { "@type": "WebPage", "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude" },
-        { "@type": "WebPage", "url": "https://www.anthropic.com/supported-countries" },
-        { "@type": "WebPage", "url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" },
-        { "@type": "WebPage", "url": "https://support.microsoft.com/topic/understanding-the-different-microsoft-copilot-experiences-cfff4791-694a-4d90-9c9c-1eb3fb28e842" },
-        { "@type": "WebPage", "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals" },
-        { "@type": "WebPage", "url": "https://support.microsoft.com/en-us/Microsoft-Copilot/supported-regions-and-languages-in-microsoft-copilot" },
-        { "@type": "WebPage", "url": "https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" },
-        { "@type": "WebPage", "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" },
-        { "@type": "WebPage", "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349" },
-        { "@type": "WebPage", "url": "https://api-docs.deepseek.com/news/news260910" },
-        { "@type": "WebPage", "url": "https://github.com/QwenLM/Qwen3.8" },
-        { "@type": "WebPage", "url": "https://chat.qwen.ai" },
-        { "@type": "WebPage", "url": "https://mistral.ai/products/vibe/" },
-        { "@type": "WebPage", "url": "https://mistral.ai/pricing" },
-        { "@type": "WebPage", "url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
-        { "@type": "WebPage", "url": "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
-        { "@type": "WebPage", "url": "https://huggingface.co/chat/" },
-        { "@type": "WebPage", "url": "https://huggingface.co/docs/inference-providers/pricing" }
-    ]
-})} />
 </BaseLayout>
