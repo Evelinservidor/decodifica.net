@@ -238,12 +238,12 @@
     "alt": "Logos de DeepSeek, Qwen y Kimi, tres asistentes de IA chinos que se pueden usar gratis"
   },
   "gpt-live-voz-chatgpt": {
-    "plantilla": "herramienta",
+    "plantilla": "novedad",
     "logos": [
       "openai"
     ],
-    "gancho": "ChatGPT habla *y escucha*",
-    "etiqueta": "Voz",
+    "gancho": "Voces nuevas *en español*",
+    "etiqueta": "Nuevo · 15-10-2026",
     "fondo": "rosa",
     "alt": "Logo de OpenAI, la empresa de ChatGPT, en una ficha sobre fondo rosa"
   },
