@@ -7,7 +7,7 @@ import ReviewMethodology from '../../components/ReviewMethodology.astro';
 const title = "5 IAs para organizar Gmail, Calendar y Notion en 2026";
 const description = "Manus, ChatGPT apps, Claude MCP, Gemini Workspace y Microsoft Copilot comparadas para organizar pendientes, permisos y tareas sin sustos.";
 const pubDate = "2026-06-26";
-const modifiedDate = pubDate;
+const modifiedDate = "2026-10-18";
 const tags = ["ia organiza pendientes", "ia para gestión de tareas", "conectores ia", "manus ai", "chatgpt apps", "claude mcp", "gemini workspace", "microsoft copilot"];
 const readingTime = "11 min";
 const tema = "oficina";
@@ -87,7 +87,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La mayoría de profesionales tiene su información repartida entre cinco o seis aplicaciones. Los correos en Gmail, los documentos en Drive, las reuniones en Calendar, las tareas en Notion o en otra app de gestión, los mensajes del equipo en Slack o Teams. El problema es que, hasta hace poco, ninguna inteligencia artificial podía leer de todas esas fuentes a la vez. Tú tenías que copiar, pegar y reescribir cada dato a mano para que la IA pudiera trabajar con él.
     </p>
     <p>
-      El resultado es predecible. Acabas la semana con la sensación de haber hecho dos veces el mismo trabajo: una vez en tus herramientas reales, otra vez pegando en el chat de la IA. Pierdes entre treinta minutos y una hora al día en ese ida y vuelta. Si lo sumas, son tres o cuatro horas a la semana que podrías dedicar a otra cosa.
+      El resultado es predecible. Acabas la semana con la sensación de haber hecho dos veces el mismo trabajo: una vez en tus herramientas reales, otra vez pegando en el chat de la IA. Ese ida y vuelta se come cada día un rato que podrías dedicar a otra cosa.
     </p>
     <p>
       La nueva generación de IAs con conectores cambia esto por completo. Se vinculan a tus herramientas reales, leen de allí, escriben de vuelta y mueven la información entre apps. Tú solo les dices qué quieres, y ellas se conectan, leen, organizan y actualizan. Esto es el siguiente paso natural de la inteligencia artificial aplicada al trabajo: dejar de trabajar a ciegas.
@@ -250,31 +250,31 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={699}
     />
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Caso real: domingo noche, de cuatro horas a veinte minutos</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo de flujo: preparar la semana un domingo</h2>
     <p>
-      Para que veas el impacto real, este es el flujo que he seguido este domingo con ChatGPT apps. Lo he elegido porque es el más fácil de replicar si ya pagas ChatGPT Plus, pero el patrón sirve para cualquiera de las cinco herramientas con adaptaciones menores. Necesitas: cuenta de ChatGPT de pago, acceso a tu Gmail y a tu Google Calendar, y veinte minutos de un domingo.
+      Para que veas cómo se monta, este es un flujo de ejemplo con ChatGPT apps, preparado a partir de su documentación oficial (enlazada al final). Lo usamos de ejemplo porque es el más fácil de replicar si ya pagas ChatGPT Plus, pero el patrón sirve para cualquiera de las cinco herramientas con adaptaciones menores. Necesitas: cuenta de ChatGPT de pago, acceso a tu Gmail y a tu Google Calendar, y un rato tranquilo del domingo.
     </p>
-    <p><strong>Paso 1. Prepara el contexto.</strong> Antes de pedirle nada a la IA, dedícale dos minutos a tener claro qué quieres esta semana. En mi caso: "preparar la semana entrante, detectar reuniones pendientes, bloquear tiempo de trabajo profundo y dejar una lista de tareas derivada en Notion agrupada por proyecto".</p>
+    <p><strong>Paso 1. Prepara el contexto.</strong> Antes de pedirle nada a la IA, dedícale dos minutos a tener claro qué quieres esta semana. Por ejemplo: "preparar la semana entrante, detectar reuniones pendientes, bloquear tiempo de trabajo profundo y dejar una lista de tareas derivada en Notion agrupada por proyecto".</p>
     <p><strong>Paso 2. Activa la app de Gmail en ChatGPT.</strong> Abre ChatGPT, ve a Configuración → Apps y conecta Gmail. La primera vez te pide permiso de OAuth para que ChatGPT pueda leer tus correos. Concédele solo el permiso de lectura por ahora.</p>
     <p><strong>Paso 3. Pídele el trabajo a la IA.</strong> Escribe en ChatGPT: "Revisa mis correos de esta semana. Identifica las reuniones que tengo pendientes. Para cada una, dime fecha, hora, asistentes y contexto. Después crea los eventos correspondientes en mi Google Calendar con los enlaces de Meet que aparezcan en los correos. No agendes nada que ya tenga una respuesta mía diciendo que no voy".</p>
-    <p><strong>Paso 4. Revisa antes de aprobar.</strong> Antes de que ChatGPT escriba nada en tu Calendar, te mostrará un resumen con lo que va a hacer. Lee cada reunión propuesta. En mi caso, identificó ocho reuniones en seis minutos. Tuve que corregir dos: una era una invitación a un webinar al que no pensaba asistir, y otra era un café informal que ya tenía en el calendario.</p>
+    <p><strong>Paso 4. Revisa antes de aprobar.</strong> Antes de que ChatGPT escriba nada en tu Calendar, te mostrará un resumen con lo que va a hacer. Lee cada reunión propuesta y quita lo que sobre: por ejemplo, la invitación a un webinar al que no piensas ir o una cita que ya tenías en el calendario.</p>
     <p><strong>Paso 5. Aprobación y ejecución.</strong> Cuando estás conforme, dile "adelante". ChatGPT crea los eventos en Calendar, uno por uno, con título, descripción, asistentes y enlace de Meet. Si tienes que cancelar alguno, lo borras como siempre desde Calendar.</p>
     <p><strong>Paso 6. Crea las tareas derivadas en Notion.</strong> Vuelve a ChatGPT y dile "ahora agrupa las reuniones por proyecto y crea una tarea derivada en mi base de Notion 'Pendientes semana' para cada preparación que tenga que hacer antes de cada reunión". La IA crea las tareas en Notion con la fecha de la reunión como deadline.</p>
     <p><strong>Paso 7. Revisa y bloquea tiempo profundo.</strong> Mira tu semana montada. Identifica los huecos de dos o tres horas y bloquéate tiempo de trabajo profundo en Calendar. Etiquétalo como "Foco". Esa es la parte que la IA no puede hacer por ti, pero la haces en tres minutos con todo organizado delante.</p>
     <p>
-      Tiempo total real: veintitrés minutos desde que abrí ChatGPT hasta que tenía la semana organizada con eventos, tareas derivadas y bloques de foco. Comparado con las tres o cuatro horas que solía dedicarle un domingo, el ahorro es grande. Lo mejor de todo: lo hice con un café en la mano, no con prisa un lunes a las ocho de la mañana.
+      Cuánto tardes depende de cuántos correos tengas y de cuánto haya que corregir. Lo que cambia es el reparto del trabajo: la IA prepara el borrador de la semana y tú revisas y apruebas, con calma el domingo en vez de con prisa el lunes a primera hora.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Permisos: el truco que casi nadie te cuenta</h2>
     <p>
-      Lo que hace que estos conectores funcionen bien es también lo que puede salirte mal si no gestionas los permisos con cabeza. Estas cinco reglas son las que yo aplico, y las que recomiendo a cualquier persona que vaya a usar una IA conectada a su trabajo por primera vez.
+      Lo que hace que estos conectores funcionen bien es también lo que puede salirte mal si no gestionas los permisos con cabeza. Estas cinco reglas son las que recomendamos a cualquier persona que vaya a usar una IA conectada a su trabajo por primera vez.
     </p>
     <ul>
       <li><strong>Empieza con el mínimo indispensable.</strong> Si solo quieres que la IA te organice el correo, no le des acceso a tu calendario ni a tus documentos personales. Empieza con un solo conector, pruébalo durante una semana, y añade el siguiente cuando confíes en el resultado.</li>
       <li><strong>Lee cada app antes de aprobar el OAuth.</strong> Cuando conectas Gmail, Drive, Notion o cualquier otra app, la pantalla de OAuth te dice exactamente qué permisos estás dando. Léelo. Si ves "leer, escribir y borrar", pregúntate por qué necesita borrar. Si ves "acceso completo a tu cuenta", casi nunca es necesario.</li>
       <li><strong>Revisa qué apps tienen acceso cada mes.</strong> Igual que revisas los dispositivos conectados a tu banco, revisa una vez al mes qué IA tiene acceso a qué herramientas. ChatGPT, Claude y Gemini tienen una página de "Apps conectadas" o "Connected apps" donde puedes ver y revocar permisos uno a uno.</li>
       <li><strong>No conectes datos sensibles por defecto.</strong> Si tu cuenta de correo es personal y contiene contraseñas, datos bancarios o correos médicos, considera tener una cuenta secundaria solo para conectar con la IA. Es una capa extra de seguridad que cuesta diez minutos configurar y te ahorra disgustos.</li>
-      <li><strong>Audita los resultados durante las primeras semanas.</strong> Las primeras veces, no te fíes del output sin revisarlo. La IA puede confundir reuniones con invitaciones, citas con notificaciones de calendario, o tareas con mensajes informativos. Hasta que veas que acierta en más del 80% de los casos, revisa cada movimiento antes de aprobarlo.</li>
+      <li><strong>Audita los resultados durante las primeras semanas.</strong> Las primeras veces, no te fíes del output sin revisarlo. La IA puede confundir reuniones con invitaciones, citas con notificaciones de calendario, o tareas con mensajes informativos. Hasta que veas que acierta de forma constante, revisa cada movimiento antes de aprobarlo.</li>
     </ul>
     <p>
       La inteligencia artificial conectada a tu trabajo es una de las herramientas más potentes que han aparecido en los últimos años. Como toda herramienta potente, requiere que seas responsable con cómo la usas. La parte buena: una vez configurados los permisos, el resto del flujo funciona solo.
@@ -282,12 +282,12 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que NO te dicen: limitaciones reales</h2>
     <p>
-      Después de probar las cinco herramientas y leer la documentación oficial hasta hartarme, esto es lo que los vendedores callan y que te interesa saber antes de comprometerte con una de ellas:
+      Tras repasar la documentación oficial de las cinco herramientas, esto es lo que los vendedores callan y que te interesa saber antes de comprometerte con una de ellas:
     </p>
     <ul>
       <li><strong>Los precios cambian cada pocas semanas.</strong> Manus, ChatGPT, Claude y Copilot actualizan sus planes con frecuencia. El precio que veas hoy puede no ser el de la semana que viene. Antes de pagar, mira la página de precios oficial y guarda una captura por si acaso.</li>
       <li><strong>La integración depende del conector, no de la IA.</strong> Si la app a la que te quieres conectar tiene un conector oficial bien mantenido, la integración es fluida. Si el conector es no oficial o está abandonado, prepárate para fallos puntuales. Antes de elegir una IA por su lista de apps, busca experiencias recientes de usuarios en Reddit o en foros.</li>
-      <li><strong>El idioma importa más de lo que parece.</strong> Gemini y Microsoft Copilot están más afinados en español que Manus o los servidores MCP no oficiales de Claude. Si todo tu trabajo es en castellano y no quieres revisar cada output, prioriza las herramientas con mejor soporte en español.</li>
+      <li><strong>El idioma importa más de lo que parece.</strong> Antes de elegir, comprueba en la documentación de cada herramienta qué idiomas admite y haz una prueba pequeña con tus propios correos. Si todo tu trabajo es en castellano, prioriza la que mejor lo maneje en esa prueba.</li>
       <li><strong>No esperes magia con tareas ambiguas.</strong> "Organízame la semana" no funciona. "Revisa estos doce correos, identifica reuniones, créalas en Calendar con estos datos concretos y agrupa las tareas por proyecto" sí funciona. La calidad del resultado depende directamente de la calidad del prompt, como en cualquier IA generativa.</li>
       <li><strong>El rendimiento baja con datos antiguos.</strong> Si le pides a la IA que revise correos de hace tres meses, el contexto se vuelve enorme y la respuesta pierde precisión. Mejor pídele ventanas cortas: "esta semana", "los últimos siete días", "los correos desde el lunes".</li>
       <li><strong>Las IAs no se hablan entre sí.</strong> Si usas Manus para organizar Gmail y Calendar pero quieres pasar los resúmenes a Claude para un análisis más profundo, vas a tener que copiar y pegar manualmente. Cada IA vive en su ecosistema, no hay un estándar universal que permita que el output de una sea input directo de otra (todavía).</li>
@@ -298,7 +298,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       Si quieres un agente versátil que conecte con casi cualquier app y mueva información entre todas, <strong>Manus es la opción más completa</strong>. Si ya pagas ChatGPT Plus, sus apps son lo más cómodo. Si necesitas flexibilidad máxima y te gusta la tecnología, <strong>Claude con MCP es para ti</strong>. Si vives en Google, <strong>Gemini en Workspace es lo natural</strong>. Y si vives en Microsoft, <strong>Copilot es la opción</strong>.
     </p>
     <p>
-      La regla que yo aplico: empieza por la IA que ya estés pagando. Si ya tienes ChatGPT Plus, prueba ChatGPT apps antes de pagar otra cosa. Si ya pagas Workspace, prueba Gemini antes de añadir coste. Solo si ninguna de esas cubre lo que necesitas, sal a buscar Manus o Claude con MCP como solución complementaria.
+      Nuestra recomendación: empieza por la IA que ya estés pagando. Si ya tienes ChatGPT Plus, prueba ChatGPT apps antes de pagar otra cosa. Si ya pagas Workspace, prueba Gemini antes de añadir coste. Solo si ninguna de esas cubre lo que necesitas, sal a buscar Manus o Claude con MCP como solución complementaria.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
@@ -335,7 +335,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Y si la IA comete un error al crear eventos o tareas?</h3>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
           <p itemprop="text">
-            Ninguna IA es perfecta al cien por cien. Lo habitual es que confunda reuniones con simples invitaciones, que meta en Calendar eventos a los que no ibas a asistir, o que asigne tareas al proyecto equivocado. Por eso la regla de oro es revisar el resumen que la IA te muestra antes de aprobar la ejecución. Si la IA está mal configurada o el prompt es vago, los errores se multiplican. Con el tiempo y prompts más específicos, el ratio de acierto sube del 70-80% al 90% o más.
+            Ninguna IA es perfecta al cien por cien. Lo habitual es que confunda reuniones con simples invitaciones, que meta en Calendar eventos a los que no ibas a asistir, o que asigne tareas al proyecto equivocado. Por eso la regla de oro es revisar el resumen que la IA te muestra antes de aprobar la ejecución. Si la IA está mal configurada o el prompt es vago, los errores se multiplican. Con prompts más específicos, los errores bajan.
           </p>
         </div>
       </div>
@@ -367,7 +367,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La IA aplicada a la gestión personal y profesional en 2026 ya no es una promesa: es una herramienta más en tu flujo, igual que el calendario o el gestor de correo. Lo que cambia con los conectores es que la IA por fin puede trabajar con la información real, no con la versión que tú le pegas en el chat. Eso se traduce en horas ahorradas cada semana, en menos trabajo invisible y en llegar al lunes con la cabeza despejada.
     </p>
     <p>
-      Lo que he aprendido estos meses probándolas: la IA no te hace mejor profesional, te hace más rápido. La parte difícil sigue siendo decidir qué quieres esta semana, qué proyectos priorizar y qué compromisos mantener. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras las tardes de domingo.
+      La idea de fondo: la IA no te hace mejor profesional, te hace más rápido. La parte difícil sigue siendo decidir qué quieres esta semana, qué proyectos priorizar y qué compromisos mantener. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras las tardes de domingo.
     </p>
     <p>
       Si quieres profundizar más, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
