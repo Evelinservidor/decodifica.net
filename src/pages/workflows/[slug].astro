@@ -2,8 +2,9 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import { practicalWorkflows } from '~/data/workflows';
 import { getToolBySlug } from '~/data/tools';
+import { estaRedirigida } from '~/lib/poda-seo';
 
-export function getStaticPaths() { return practicalWorkflows.map((workflow) => ({ params: { slug: workflow.slug }, props: { workflow } })); }
+export function getStaticPaths() { return practicalWorkflows.filter((workflow) => !estaRedirigida(`/workflows/${workflow.slug}/`)).map((workflow) => ({ params: { slug: workflow.slug }, props: { workflow } })); }
 const { workflow } = Astro.props;
 const relatedTools = workflow.tools.map(getToolBySlug).filter(Boolean);
 ---

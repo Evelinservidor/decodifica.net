@@ -5,6 +5,7 @@ import SEO from '~/components/SEO.astro';
 import CookieConsent from '~/components/CookieConsent.astro';
 import ConversionTracker from '~/components/ConversionTracker.astro';
 import { env } from '~/lib/env';
+import { esNoindex } from '~/lib/poda-seo';
 import '~/styles/global.css';
 
 export interface Props {
@@ -39,6 +40,8 @@ const {
   citations,
   noindex,
 } = Astro.props;
+// Limpieza del plan SEO: las páginas de src/data/poda-seo.json llevan noindex.
+const sinIndexar = noindex || esNoindex(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -75,7 +78,7 @@ const {
       keywords={keywords}
       section={section}
       citations={citations}
-      noindex={noindex}
+      noindex={sinIndexar}
     />
 
     <!-- RSS auto-discovery -->

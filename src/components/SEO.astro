@@ -135,7 +135,7 @@ const articleLd = type === 'article' && pubDate
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 {noindex
-  ? <meta name="robots" content="noindex, nofollow" />
+  ? <meta name="robots" content="noindex, follow" />
   : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
 {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonicalUrl} />

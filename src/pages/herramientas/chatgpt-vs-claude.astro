@@ -1,4 +1,5 @@
 ---
+import { enlace } from '~/lib/poda-seo';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import { getToolBySlug } from '~/data/tools';
@@ -167,7 +168,7 @@ const faqLd = {
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/herramientas/chatgpt/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha ChatGPT</a>
-          <a href="/herramientas/claude/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver ficha Claude</a>
+          <a href="/blog/claude-ia-que-es-gratis/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver guía de Claude</a>
         </div>
       </div>
 
@@ -281,9 +282,8 @@ const faqLd = {
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Fichas relacionadas</h2>
         <ul class="mt-4 space-y-3 text-sm leading-6">
-          {chatgpt && <li><a href={`/herramientas/${chatgpt.slug}/`} class="text-brand-300 hover:text-brand-200">{chatgpt.name}: cuando usarlo</a></li>}
-          {claude && <li><a href={`/herramientas/${claude.slug}/`} class="text-brand-300 hover:text-brand-200">{claude.name}: cuando usarlo</a></li>}
-          <li><a href="/herramientas/notebooklm/" class="text-brand-300 hover:text-brand-200">NotebookLM si trabajas con fuentes propias</a></li>
+          {chatgpt && <li><a href={enlace(`/herramientas/${chatgpt.slug}/`)} class="text-brand-300 hover:text-brand-200">{chatgpt.name}: cuando usarlo</a></li>}
+                    <li><a href="/herramientas/notebooklm/" class="text-brand-300 hover:text-brand-200">NotebookLM si trabajas con fuentes propias</a></li>
           <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-300 hover:text-brand-200">Guía de Claude en español: qué es, si es gratis y cuánto cuesta</a></li>
           <li><a href="/blog/claude-skills-1000-gratis/" class="text-brand-300 hover:text-brand-200">Guía de Claude Skills</a></li>
         </ul>

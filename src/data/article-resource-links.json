@@ -55,17 +55,17 @@
     { "kind": "Caso de uso", "label": "IA para documentos y PDF", "description": "Elige un flujo para leer, transformar y revisar archivos sin perder el original.", "href": "/herramientas/casos/para-documentos-pdf/" }
   ],
   "claude-emails-sonar-humanos": [
-    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Comprueba cuándo encaja en escritura larga, documentos y contexto reutilizable.", "href": "/herramientas/claude/" },
+    { "kind": "Guía", "label": "Guía de Claude en español", "description": "Qué es, si es gratis, cuánto cuesta y cuándo elegirlo.", "href": "/blog/claude-ia-que-es-gratis/" },
     { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Elige según el tipo de texto, la longitud del contexto y el trabajo de revisión.", "href": "/herramientas/chatgpt-vs-claude/" },
     { "kind": "Utilidad", "label": "Generador de prompts", "description": "Prepara instrucciones de tono, objetivo y límites sin enviar el contenido fuera.", "href": "/herramientas/generador-prompts/" }
   ],
   "claude-skills-1000-gratis": [
-    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Sitúa las Skills dentro de los usos, planes, límites y riesgos de Claude.", "href": "/herramientas/claude/" },
+    { "kind": "Guía", "label": "Guía de Claude en español", "description": "Qué es, si es gratis, cuánto cuesta y cuándo elegirlo.", "href": "/blog/claude-ia-que-es-gratis/" },
     { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Decide si necesitas instrucciones reutilizables o un asistente más general.", "href": "/herramientas/chatgpt-vs-claude/" },
     { "kind": "Utilidad", "label": "Generador de prompts", "description": "Convierte una tarea repetida en una instrucción clara antes de guardarla como Skill.", "href": "/herramientas/generador-prompts/" }
   ],
   "claude-skills-desde-cero": [
-    { "kind": "Herramienta", "label": "Ficha de Claude", "description": "Revisa planes, privacidad y casos de uso antes de montar instrucciones persistentes.", "href": "/herramientas/claude/" },
+    { "kind": "Guía", "label": "Guía de Claude en español", "description": "Qué es, si es gratis, cuánto cuesta y cuándo elegirlo.", "href": "/blog/claude-ia-que-es-gratis/" },
     { "kind": "Comparativa", "label": "ChatGPT vs Claude", "description": "Compara contexto, escritura y forma de reutilizar instrucciones en cada entorno.", "href": "/herramientas/chatgpt-vs-claude/" },
     { "kind": "Utilidad", "label": "Generador de prompts", "description": "Escribe la primera versión de la instrucción con objetivo, límites y formato de salida.", "href": "/herramientas/generador-prompts/" }
   ],
@@ -121,8 +121,7 @@
   ],
   "ia-resumir-reuniones-tareas-revisables": [
     { "kind": "Caso de uso", "label": "IA para reuniones", "description": "Compara opciones y revisa consentimiento, captura y seguimiento.", "href": "/herramientas/casos/para-reuniones/" },
-    { "kind": "Comparativa", "label": "Granola vs Fathom", "description": "Decide entre notas humanas enriquecidas y grabación automatizada.", "href": "/herramientas/comparativas/granola-vs-fathom/" },
-    { "kind": "Workflow", "label": "Reunión a decisiones y tareas", "description": "Usa el proceso completo sin inventar responsables, fechas ni acuerdos.", "href": "/workflows/reunion-a-decisiones-y-tareas/" }
+    { "kind": "Comparativa", "label": "Granola vs Fathom", "description": "Decide entre notas humanas enriquecidas y grabación automatizada.", "href": "/herramientas/comparativas/granola-vs-fathom/" }
   ],
   "notebooklm-google-openai": [
     { "kind": "Herramienta", "label": "Ficha de NotebookLM", "description": "Revisa privacidad, límites, precio y cuándo trabajar con fuentes propias.", "href": "/herramientas/notebooklm/" },
@@ -161,7 +160,7 @@
   ],
   "2026-08-01-qwen3-asr-transcribe-espanol": [
     { "kind": "Caso de uso", "label": "IA para reuniones", "description": "Compara opciones para capturar, transcribir y revisar audio con atención al consentimiento y al seguimiento.", "href": "/herramientas/casos/para-reuniones/" },
-    { "kind": "Workflow", "label": "Reunión a decisiones y tareas", "description": "Convierte una transcripción revisada en acuerdos y tareas sin inventar responsables, fechas ni decisiones.", "href": "/workflows/reunion-a-decisiones-y-tareas/" },
+    { "kind": "Guía", "label": "Reunión a tareas revisables", "description": "Convierte una transcripción revisada en acuerdos y tareas sin inventar responsables, fechas ni decisiones.", "href": "/blog/ia-resumir-reuniones-tareas-revisables/" },
     { "kind": "Control", "label": "Preflight de datos", "description": "Decide si el audio puede enviarse a una demo web o necesita una ruta local con mayor control.", "href": "/herramientas/preflight-datos/" }
   ]
 }
