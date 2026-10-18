@@ -1,11 +1,11 @@
-# GSC Weekly Summary — 2026-10-12
+# GSC Summary (7 days) — 2026-10-18
 
-_Current: 2026-10-03 → 2026-10-09  |  Previous: 2026-09-26 → 2026-10-02_
+_Current: 2026-10-09 → 2026-10-15  |  Previous: 2026-10-02 → 2026-10-08_
 Sites: 5 requested, 2 fetched OK
 
 | Site | Clicks | Clicks Δ | Impressions | Impr Δ | CTR | Avg Pos |
 |---|---|---|---|---|---|---|
-| sc-domain:decodifica.net | 6 | +1 | 417 | +41 | 1.4% | 7.5 |
+| sc-domain:decodifica.net | 4 | -2 | 407 | +6 | 1.0% | 7.8 |
 | https://drulenterror.blogspot.com/ | ERROR | — | — | — | — | — |
 | https://calm-mind-meditation-souns.blogspot.com/ | ERROR | — | — | — | — | — |
 | https://pergaminosprohibidos.blogspot.com/ | ERROR | — | — | — | — | — |

@@ -1,0 +1,2721 @@
+{
+  "fetched_at": "2026-10-18",
+  "days": 90,
+  "sites_requested": [
+    "sc-domain:decodifica.net"
+  ],
+  "sites_available": [
+    "https://jc-automation-n8n.blogspot.com/",
+    "sc-domain:decodifica.net"
+  ],
+  "per_site": {
+    "sc-domain:decodifica.net": {
+      "site": "sc-domain:decodifica.net",
+      "period": {
+        "current": {
+          "start": "2026-07-18",
+          "end": "2026-10-15"
+        },
+        "previous": {
+          "start": "2026-04-19",
+          "end": "2026-07-17"
+        }
+      },
+      "totals": {
+        "current": {
+          "clicks": 27,
+          "impressions": 3202,
+          "position_impressions_sum": 26402.0
+        },
+        "previous": {
+          "clicks": 2,
+          "impressions": 174,
+          "position_impressions_sum": 2115.0
+        },
+        "ctr_current": 0.8432229856339788,
+        "ctr_previous": 1.1494252873563218,
+        "avg_position_current": 8.245471580262336,
+        "avg_position_previous": 12.155172413793103
+      },
+      "queries": {
+        "current": [
+          {
+            "query": "decodifica",
+            "clicks": 4,
+            "impressions": 526,
+            "ctr": 0.0076045627376425855,
+            "position": 8.020912547528518
+          },
+          {
+            "query": "\"3xhdkb7-9pe\"",
+            "clicks": 0,
+            "impressions": 20,
+            "ctr": 0,
+            "position": 3.95
+          },
+          {
+            "query": "canva. ai",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 44
+          },
+          {
+            "query": "chatgpt o gemini",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 68.5
+          },
+          {
+            "query": "chatgpt vs gemini",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 87
+          },
+          {
+            "query": "constructor de prompts",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 8.941176470588236
+          },
+          {
+            "query": "copilot vs gemini para empresas",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 80
+          },
+          {
+            "query": "creadores de prompts",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "cursor vs github copilot",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 16
+          },
+          {
+            "query": "decofica",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "descrita",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 16
+          },
+          {
+            "query": "diferencia entre gemini y chat gpt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 76
+          },
+          {
+            "query": "dime ias",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "query": "donde crear prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "donde hacer prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "emergent ia",
+            "clicks": 0,
+            "impressions": 150,
+            "ctr": 0,
+            "position": 9.693333333333333
+          },
+          {
+            "query": "emergent.ia",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 64
+          },
+          {
+            "query": "es mejor chatgpt o gemini",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 85
+          },
+          {
+            "query": "es mejor gemini o chatgpt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 84
+          },
+          {
+            "query": "gemini o chatgpt cual es mejor",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 89
+          },
+          {
+            "query": "gemini or chatgpt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 78
+          },
+          {
+            "query": "gemini vs chatgpt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 89
+          },
+          {
+            "query": "generadores de prompt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "generadores de prompts",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 2.8
+          },
+          {
+            "query": "github copilot vs cursor",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 61
+          },
+          {
+            "query": "granola vs fathom",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "hermed agent",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 46
+          },
+          {
+            "query": "herramientas de estudio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 80
+          },
+          {
+            "query": "hugging face",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "query": "hy3 modelo",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 8.538461538461538
+          },
+          {
+            "query": "ia para documentos",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 55
+          },
+          {
+            "query": "ia para estudiar",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 76.5
+          },
+          {
+            "query": "ias para diapositivas",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 20.5
+          },
+          {
+            "query": "llamada de herramienta ollama",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 45
+          },
+          {
+            "query": "mapa ia",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 33
+          },
+          {
+            "query": "mejores herramientas ia para reuniones",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 24
+          },
+          {
+            "query": "modelo hy3",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 8.333333333333332
+          },
+          {
+            "query": "nekodificador",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 74.33333333333333
+          },
+          {
+            "query": "no",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "ollama",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 37
+          },
+          {
+            "query": "pagina para crear prompts",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "paginas para crear prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "paginas para hacer prompts",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "presidio ia",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 8.6
+          },
+          {
+            "query": "que es mejor chatgpt o gemini",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 69
+          },
+          {
+            "query": "que ia es mejor chatgpt o gemini",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 82
+          },
+          {
+            "query": "valuador ia",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 28
+          },
+          {
+            "query": "workflows reuniones",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 21
+          }
+        ],
+        "previous": [
+          {
+            "query": "novedades notebooklm",
+            "clicks": 1,
+            "impressions": 1,
+            "ctr": 1,
+            "position": 2
+          },
+          {
+            "query": "canva ai",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "query": "canvaai",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 14.5
+          },
+          {
+            "query": "chatgpt vs claude",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 60
+          },
+          {
+            "query": "claude o chatgpt",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 60
+          },
+          {
+            "query": "claude vs chatgpt",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 62.333333333333336
+          },
+          {
+            "query": "decodifica",
+            "clicks": 0,
+            "impressions": 43,
+            "ctr": 0,
+            "position": 15.930232558139535
+          },
+          {
+            "query": "decodificadas",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 63
+          },
+          {
+            "query": "decodificados",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 35
+          },
+          {
+            "query": "decofica",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "deep seek en español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 75
+          },
+          {
+            "query": "deepseek español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 62
+          },
+          {
+            "query": "gamma o canva",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 12
+          }
+        ]
+      },
+      "query_pages": [
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/",
+          "clicks": 3,
+          "impressions": 201,
+          "ctr": 0.014925373134328358,
+          "position": 7.587064676616915
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/quienes-somos/",
+          "clicks": 1,
+          "impressions": 260,
+          "ctr": 0.0038461538461538464,
+          "position": 8.03076923076923
+        },
+        {
+          "query": "\"3xhdkb7-9pe\"",
+          "page": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 3.95
+        },
+        {
+          "query": "canva. ai",
+          "page": "https://decodifica.net/herramientas/canva-ai/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44
+        },
+        {
+          "query": "chatgpt o gemini",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 68.5
+        },
+        {
+          "query": "chatgpt vs gemini",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 87
+        },
+        {
+          "query": "constructor de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 8.941176470588236
+        },
+        {
+          "query": "copilot vs gemini para empresas",
+          "page": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 80
+        },
+        {
+          "query": "creadores de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "cursor vs github copilot",
+          "page": "https://decodifica.net/herramientas/comparativas/cursor-vs-github-copilot/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 16
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/blog/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 9.5
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/decodifica/",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 6.714285714285714
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/sobre/",
+          "clicks": 0,
+          "impressions": 88,
+          "ctr": 0,
+          "position": 9.477272727272727
+        },
+        {
+          "query": "decofica",
+          "page": "https://decodifica.net/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "descrita",
+          "page": "https://decodifica.net/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 16
+        },
+        {
+          "query": "diferencia entre gemini y chat gpt",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 76
+        },
+        {
+          "query": "dime ias",
+          "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 7
+        },
+        {
+          "query": "donde crear prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "donde hacer prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "emergent ia",
+          "page": "https://decodifica.net/blog/crear-app-web-ias-chinas-open-source/",
+          "clicks": 0,
+          "impressions": 150,
+          "ctr": 0,
+          "position": 9.693333333333333
+        },
+        {
+          "query": "emergent.ia",
+          "page": "https://decodifica.net/blog/crear-app-web-ias-chinas-open-source/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 64
+        },
+        {
+          "query": "es mejor chatgpt o gemini",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 85
+        },
+        {
+          "query": "es mejor gemini o chatgpt",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 84
+        },
+        {
+          "query": "gemini o chatgpt cual es mejor",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 89
+        },
+        {
+          "query": "gemini or chatgpt",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 78
+        },
+        {
+          "query": "gemini vs chatgpt",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 89
+        },
+        {
+          "query": "generadores de prompt",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "generadores de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 2.8
+        },
+        {
+          "query": "github copilot vs cursor",
+          "page": "https://decodifica.net/herramientas/comparativas/cursor-vs-github-copilot/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 61
+        },
+        {
+          "query": "granola vs fathom",
+          "page": "https://decodifica.net/herramientas/comparativas/granola-vs-fathom/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "hermed agent",
+          "page": "https://decodifica.net/blog/2026-07-17-hermes-agent-chino/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 46
+        },
+        {
+          "query": "herramientas de estudio",
+          "page": "https://decodifica.net/herramientas/para-estudiar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 80
+        },
+        {
+          "query": "hugging face",
+          "page": "https://decodifica.net/herramientas/huggingchat/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "hy3 modelo",
+          "page": "https://decodifica.net/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/",
+          "clicks": 0,
+          "impressions": 13,
+          "ctr": 0,
+          "position": 8.538461538461538
+        },
+        {
+          "query": "ia para documentos",
+          "page": "https://decodifica.net/herramientas/casos/para-documentos-pdf/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 55
+        },
+        {
+          "query": "ia para estudiar",
+          "page": "https://decodifica.net/herramientas/para-estudiar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 76.5
+        },
+        {
+          "query": "ias para diapositivas",
+          "page": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 20.5
+        },
+        {
+          "query": "llamada de herramienta ollama",
+          "page": "https://decodifica.net/herramientas/ollama/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 45
+        },
+        {
+          "query": "mapa ia",
+          "page": "https://decodifica.net/recursos/mapas-ia/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 33
+        },
+        {
+          "query": "mejores herramientas ia para reuniones",
+          "page": "https://decodifica.net/herramientas/casos/para-reuniones/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 24
+        },
+        {
+          "query": "modelo hy3",
+          "page": "https://decodifica.net/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 8.333333333333332
+        },
+        {
+          "query": "nekodificador",
+          "page": "https://decodifica.net/blog/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 74.33333333333333
+        },
+        {
+          "query": "no",
+          "page": "https://decodifica.net/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "ollama",
+          "page": "https://decodifica.net/herramientas/ollama/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 37
+        },
+        {
+          "query": "pagina para crear prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "paginas para crear prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "paginas para hacer prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "presidio ia",
+          "page": "https://decodifica.net/blog/2026-07-25-ia-local-oculta-datos/",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 8.6
+        },
+        {
+          "query": "que es mejor chatgpt o gemini",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 69
+        },
+        {
+          "query": "que ia es mejor chatgpt o gemini",
+          "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 82
+        },
+        {
+          "query": "valuador ia",
+          "page": "https://decodifica.net/herramientas/evaluador/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 28
+        },
+        {
+          "query": "workflows reuniones",
+          "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 21
+        }
+      ],
+      "pages": {
+        "current": [
+          {
+            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+            "clicks": 10,
+            "impressions": 646,
+            "ctr": 0.015479876160990712,
+            "position": 7.868421052631579
+          },
+          {
+            "page": "https://decodifica.net/",
+            "clicks": 4,
+            "impressions": 314,
+            "ctr": 0.012738853503184714,
+            "position": 7.085987261146497
+          },
+          {
+            "page": "https://decodifica.net/herramientas/generador-prompts/",
+            "clicks": 3,
+            "impressions": 100,
+            "ctr": 0.03,
+            "position": 4.779999999999999
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
+            "clicks": 2,
+            "impressions": 87,
+            "ctr": 0.022988505747126436,
+            "position": 7.471264367816092
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
+            "clicks": 2,
+            "impressions": 24,
+            "ctr": 0.08333333333333333,
+            "position": 5.75
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-08-05-kimi-k3-investigacion-visual/",
+            "clicks": 1,
+            "impressions": 17,
+            "ctr": 0.058823529411764705,
+            "position": 6.882352941176471
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-fable-5/",
+            "clicks": 1,
+            "impressions": 22,
+            "ctr": 0.045454545454545456,
+            "position": 6.7272727272727275
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/manus-vs-chatgpt-apps/",
+            "clicks": 1,
+            "impressions": 71,
+            "ctr": 0.014084507042253521,
+            "position": 9.661971830985916
+          },
+          {
+            "page": "https://decodifica.net/herramientas/glm/",
+            "clicks": 1,
+            "impressions": 22,
+            "ctr": 0.045454545454545456,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/granola/",
+            "clicks": 1,
+            "impressions": 37,
+            "ctr": 0.02702702702702703,
+            "position": 7.486486486486487
+          },
+          {
+            "page": "https://decodifica.net/quienes-somos/",
+            "clicks": 1,
+            "impressions": 351,
+            "ctr": 0.002849002849002849,
+            "position": 7.672364672364672
+          },
+          {
+            "page": "https://decodifica.net/aviso-legal/",
+            "clicks": 0,
+            "impressions": 20,
+            "ctr": 0,
+            "position": 4.75
+          },
+          {
+            "page": "https://decodifica.net/blog/",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 20.529411764705884
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-16-prompts-secretos-web/",
+            "clicks": 0,
+            "impressions": 24,
+            "ctr": 0,
+            "position": 6.25
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-17-hermes-agent-chino/",
+            "clicks": 0,
+            "impressions": 14,
+            "ctr": 0,
+            "position": 11.928571428571429
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-25-ia-local-oculta-datos/",
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 8.666666666666668
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/",
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 5.709677419354839
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/?utm_source=decodifica&utm_medium=email&utm_campaign=antes-de-pagar-otra-ia-comparala-asi",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 4.75
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-27-tencent-hy3-modelo-abierto-agentes/",
+            "clicks": 0,
+            "impressions": 42,
+            "ctr": 0,
+            "position": 7.190476190476191
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
+            "clicks": 0,
+            "impressions": 29,
+            "ctr": 0,
+            "position": 7.379310344827586
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 6.428571428571429
+          },
+          {
+            "page": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
+            "clicks": 0,
+            "impressions": 60,
+            "ctr": 0,
+            "position": 5.066666666666666
+          },
+          {
+            "page": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/",
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 6.806451612903226
+          },
+          {
+            "page": "https://decodifica.net/blog/crear-app-web-ias-chinas-open-source/",
+            "clicks": 0,
+            "impressions": 157,
+            "ctr": 0,
+            "position": 9.878980891719745
+          },
+          {
+            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+            "clicks": 0,
+            "impressions": 133,
+            "ctr": 0,
+            "position": 8.172932330827066
+          },
+          {
+            "page": "https://decodifica.net/blog/gpt-live-voz-chatgpt/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 4
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-gratis-silicon-valley/",
+            "clicks": 0,
+            "impressions": 25,
+            "ctr": 0,
+            "position": 6.8
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-mejora-excel/",
+            "clicks": 0,
+            "impressions": 39,
+            "ctr": 0,
+            "position": 8.025641025641026
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
+            "clicks": 0,
+            "impressions": 137,
+            "ctr": 0,
+            "position": 7.197080291970803
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-google-openai/",
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 8.526315789473685
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-guia-2026/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 6.5
+          },
+          {
+            "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 5.5
+          },
+          {
+            "page": "https://decodifica.net/blog/prompts-chinos-abiertos/",
+            "clicks": 0,
+            "impressions": 18,
+            "ctr": 0,
+            "position": 7.111111111111111
+          },
+          {
+            "page": "https://decodifica.net/blog/qwen-code-agent-terminal/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 7.769230769230769
+          },
+          {
+            "page": "https://decodifica.net/contacto/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 5.25
+          },
+          {
+            "page": "https://decodifica.net/cookies/",
+            "clicks": 0,
+            "impressions": 15,
+            "ctr": 0,
+            "position": 6.2
+          },
+          {
+            "page": "https://decodifica.net/decodifica/",
+            "clicks": 0,
+            "impressions": 23,
+            "ctr": 0,
+            "position": 6.608695652173913
+          },
+          {
+            "page": "https://decodifica.net/empieza/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 7.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/alternativas-elevenlabs/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/anythingllm/",
+            "clicks": 0,
+            "impressions": 24,
+            "ctr": 0,
+            "position": 7.041666666666667
+          },
+          {
+            "page": "https://decodifica.net/herramientas/beautiful-ai/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 8.1
+          },
+          {
+            "page": "https://decodifica.net/herramientas/canva-ai/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 24
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-documentos-pdf/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 30
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-excel-hojas-calculo/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 11.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-ia-local-abierta/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-investigar/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 24.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-organizar-trabajo/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 12.125
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-reuniones/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 24
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt-vs-claude/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 15.88888888888889
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/claude/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 6.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparador/",
+            "clicks": 0,
+            "impressions": 29,
+            "ctr": 0,
+            "position": 8.137931034482758
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/chatgpt-vs-gemini/",
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 73.83333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/cursor-vs-github-copilot/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 34
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/gamma-vs-beautiful-ai/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/granola-vs-fathom/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/kimi-vs-glm/",
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 8.181818181818182
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 14.272727272727273
+          },
+          {
+            "page": "https://decodifica.net/herramientas/cursor/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 7.75
+          },
+          {
+            "page": "https://decodifica.net/herramientas/deepseek/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/elevenlabs/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/evaluador/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 24
+          },
+          {
+            "page": "https://decodifica.net/herramientas/fathom/",
+            "clicks": 0,
+            "impressions": 41,
+            "ctr": 0,
+            "position": 6.682926829268292
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
+            "clicks": 0,
+            "impressions": 98,
+            "ctr": 0,
+            "position": 7.020408163265306
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma/",
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 7.157894736842105
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gemini/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/github-copilot/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/hermes-agent/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/huggingchat/",
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 6.454545454545454
+          },
+          {
+            "page": "https://decodifica.net/herramientas/kimi/",
+            "clicks": 0,
+            "impressions": 50,
+            "ctr": 0,
+            "position": 9.04
+          },
+          {
+            "page": "https://decodifica.net/herramientas/manus/",
+            "clicks": 0,
+            "impressions": 14,
+            "ctr": 0,
+            "position": 7.714285714285714
+          },
+          {
+            "page": "https://decodifica.net/herramientas/microsoft-copilot/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 10.125
+          },
+          {
+            "page": "https://decodifica.net/herramientas/mistral-le-chat/",
+            "clicks": 0,
+            "impressions": 21,
+            "ctr": 0,
+            "position": 9.428571428571429
+          },
+          {
+            "page": "https://decodifica.net/herramientas/motion/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 4
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm-vs-perplexity/",
+            "clicks": 0,
+            "impressions": 113,
+            "ctr": 0,
+            "position": 5.814159292035399
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notion-ai/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "page": "https://decodifica.net/herramientas/ollama/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 16.77777777777778
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-crear-contenido/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-estudiar/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 47
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-presentaciones/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 4.333333333333334
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-programar/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 8.666666666666668
+          },
+          {
+            "page": "https://decodifica.net/herramientas/perplexity/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/plus-ai/",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 5.529411764705882
+          },
+          {
+            "page": "https://decodifica.net/herramientas/preflight-datos/",
+            "clicks": 0,
+            "impressions": 18,
+            "ctr": 0,
+            "position": 4.944444444444445
+          },
+          {
+            "page": "https://decodifica.net/herramientas/quadratic/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7.666666666666667
+          },
+          {
+            "page": "https://decodifica.net/herramientas/qwen-code/",
+            "clicks": 0,
+            "impressions": 44,
+            "ctr": 0,
+            "position": 7.886363636363637
+          },
+          {
+            "page": "https://decodifica.net/herramientas/reclaim/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/slidesai/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/zapier/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/newsletter/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 3.4285714285714284
+          },
+          {
+            "page": "https://decodifica.net/privacidad/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 3.25
+          },
+          {
+            "page": "https://decodifica.net/recursos/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 4
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapa-herramientas-ia/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 6.125
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapas-ia/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 10.222222222222221
+          },
+          {
+            "page": "https://decodifica.net/sobre/",
+            "clicks": 0,
+            "impressions": 145,
+            "ctr": 0,
+            "position": 8.36551724137931
+          },
+          {
+            "page": "https://decodifica.net/workflows/investigar-con-fuentes/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 5.25
+          },
+          {
+            "page": "https://decodifica.net/workflows/prototipo-app-revisable/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 5.75
+          },
+          {
+            "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 14.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/workflows/verificar-formula-hoja-calculo/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 4.285714285714286
+          }
+        ],
+        "previous": [
+          {
+            "page": "https://decodifica.net/blog/notebooklm-google-openai/",
+            "clicks": 1,
+            "impressions": 2,
+            "ctr": 0.5,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/claude/",
+            "clicks": 1,
+            "impressions": 5,
+            "ctr": 0.2,
+            "position": 5.6
+          },
+          {
+            "page": "https://decodifica.net/",
+            "clicks": 0,
+            "impressions": 94,
+            "ctr": 0,
+            "position": 10.382978723404255
+          },
+          {
+            "page": "https://decodifica.net/aviso-legal/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-fable-5/",
+            "clicks": 0,
+            "impressions": 18,
+            "ctr": 0,
+            "position": 5.611111111111111
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
+            "clicks": 0,
+            "impressions": 14,
+            "ctr": 0,
+            "position": 3.857142857142857
+          },
+          {
+            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 11.222222222222221
+          },
+          {
+            "page": "https://decodifica.net/blog/crear-app-web-ias-chinas-open-source/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 36.5
+          },
+          {
+            "page": "https://decodifica.net/blog/glm-52-kimi-coinbase/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-gratis-silicon-valley/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-mejora-excel/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 4.461538461538462
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-guia-2026/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/contacto/",
+            "clicks": 0,
+            "impressions": 16,
+            "ctr": 0,
+            "position": 3.0625
+          },
+          {
+            "page": "https://decodifica.net/cookies/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 4.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/canva-ai/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 16.666666666666664
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt-vs-claude/",
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 45.916666666666664
+          },
+          {
+            "page": "https://decodifica.net/herramientas/deepseek/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 7.25
+          },
+          {
+            "page": "https://decodifica.net/herramientas/elevenlabs/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 17.2
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-estudiar/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-presentaciones/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-programar/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/perplexity/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/qwen-code/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/login/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 3.25
+          },
+          {
+            "page": "https://decodifica.net/newsletter/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 4.333333333333334
+          },
+          {
+            "page": "https://decodifica.net/quienes-somos/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 4.5
+          },
+          {
+            "page": "https://decodifica.net/recursos/",
+            "clicks": 0,
+            "impressions": 15,
+            "ctr": 0,
+            "position": 2.1333333333333333
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapa-herramientas-ia/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 4.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/sobre/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 3
+          }
+        ]
+      },
+      "countries": [
+        {
+          "country": "esp",
+          "clicks": 11,
+          "impressions": 647
+        },
+        {
+          "country": "col",
+          "clicks": 3,
+          "impressions": 304
+        },
+        {
+          "country": "mex",
+          "clicks": 3,
+          "impressions": 515
+        },
+        {
+          "country": "ven",
+          "clicks": 3,
+          "impressions": 175
+        },
+        {
+          "country": "and",
+          "clicks": 1,
+          "impressions": 1
+        },
+        {
+          "country": "arg",
+          "clicks": 1,
+          "impressions": 205
+        },
+        {
+          "country": "bol",
+          "clicks": 1,
+          "impressions": 49
+        },
+        {
+          "country": "chl",
+          "clicks": 1,
+          "impressions": 164
+        },
+        {
+          "country": "ecu",
+          "clicks": 1,
+          "impressions": 91
+        },
+        {
+          "country": "gtm",
+          "clicks": 1,
+          "impressions": 39
+        },
+        {
+          "country": "per",
+          "clicks": 1,
+          "impressions": 381
+        },
+        {
+          "country": "alb",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "are",
+          "clicks": 0,
+          "impressions": 4
+        },
+        {
+          "country": "aut",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "bel",
+          "clicks": 0,
+          "impressions": 3
+        },
+        {
+          "country": "blz",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "bra",
+          "clicks": 0,
+          "impressions": 11
+        },
+        {
+          "country": "can",
+          "clicks": 0,
+          "impressions": 6
+        },
+        {
+          "country": "che",
+          "clicks": 0,
+          "impressions": 4
+        },
+        {
+          "country": "chn",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "cri",
+          "clicks": 0,
+          "impressions": 23
+        },
+        {
+          "country": "cub",
+          "clicks": 0,
+          "impressions": 28
+        },
+        {
+          "country": "deu",
+          "clicks": 0,
+          "impressions": 11
+        },
+        {
+          "country": "dom",
+          "clicks": 0,
+          "impressions": 31
+        },
+        {
+          "country": "est",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "fra",
+          "clicks": 0,
+          "impressions": 10
+        },
+        {
+          "country": "gbr",
+          "clicks": 0,
+          "impressions": 32
+        },
+        {
+          "country": "gnq",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "hkg",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "hnd",
+          "clicks": 0,
+          "impressions": 19
+        },
+        {
+          "country": "hrv",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "idn",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "ind",
+          "clicks": 0,
+          "impressions": 6
+        },
+        {
+          "country": "irl",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "irn",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "irq",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "ita",
+          "clicks": 0,
+          "impressions": 7
+        },
+        {
+          "country": "jam",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "jpn",
+          "clicks": 0,
+          "impressions": 3
+        },
+        {
+          "country": "kaz",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "kor",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "mar",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "mdv",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "mmr",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "mys",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "nic",
+          "clicks": 0,
+          "impressions": 14
+        },
+        {
+          "country": "nld",
+          "clicks": 0,
+          "impressions": 13
+        },
+        {
+          "country": "nzl",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "pan",
+          "clicks": 0,
+          "impressions": 21
+        },
+        {
+          "country": "phl",
+          "clicks": 0,
+          "impressions": 3
+        },
+        {
+          "country": "pol",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "pri",
+          "clicks": 0,
+          "impressions": 14
+        },
+        {
+          "country": "prt",
+          "clicks": 0,
+          "impressions": 6
+        },
+        {
+          "country": "pry",
+          "clicks": 0,
+          "impressions": 17
+        },
+        {
+          "country": "rou",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "rus",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "sau",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "sgp",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "slv",
+          "clicks": 0,
+          "impressions": 21
+        },
+        {
+          "country": "tha",
+          "clicks": 0,
+          "impressions": 3
+        },
+        {
+          "country": "tkm",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "tur",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "ukr",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "ury",
+          "clicks": 0,
+          "impressions": 20
+        },
+        {
+          "country": "usa",
+          "clicks": 0,
+          "impressions": 266
+        },
+        {
+          "country": "vnm",
+          "clicks": 0,
+          "impressions": 3
+        }
+      ],
+      "devices": [
+        {
+          "device": "DESKTOP",
+          "clicks": 17,
+          "impressions": 1930
+        },
+        {
+          "device": "MOBILE",
+          "clicks": 10,
+          "impressions": 1250
+        },
+        {
+          "device": "TABLET",
+          "clicks": 0,
+          "impressions": 22
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-07-18",
+          "clicks": 0,
+          "impressions": 5,
+          "position": 9.4
+        },
+        {
+          "date": "2026-07-19",
+          "clicks": 0,
+          "impressions": 6,
+          "position": 4.666666666666666
+        },
+        {
+          "date": "2026-07-20",
+          "clicks": 0,
+          "impressions": 10,
+          "position": 18
+        },
+        {
+          "date": "2026-07-21",
+          "clicks": 0,
+          "impressions": 8,
+          "position": 6.25
+        },
+        {
+          "date": "2026-07-22",
+          "clicks": 0,
+          "impressions": 15,
+          "position": 26.533333333333335
+        },
+        {
+          "date": "2026-07-23",
+          "clicks": 0,
+          "impressions": 10,
+          "position": 29.6
+        },
+        {
+          "date": "2026-07-24",
+          "clicks": 0,
+          "impressions": 10,
+          "position": 8.7
+        },
+        {
+          "date": "2026-07-25",
+          "clicks": 0,
+          "impressions": 6,
+          "position": 11.666666666666666
+        },
+        {
+          "date": "2026-07-26",
+          "clicks": 0,
+          "impressions": 8,
+          "position": 7.125
+        },
+        {
+          "date": "2026-07-27",
+          "clicks": 0,
+          "impressions": 11,
+          "position": 9.090909090909092
+        },
+        {
+          "date": "2026-07-28",
+          "clicks": 0,
+          "impressions": 14,
+          "position": 11.071428571428571
+        },
+        {
+          "date": "2026-07-29",
+          "clicks": 0,
+          "impressions": 15,
+          "position": 4.266666666666667
+        },
+        {
+          "date": "2026-07-30",
+          "clicks": 0,
+          "impressions": 15,
+          "position": 9.466666666666667
+        },
+        {
+          "date": "2026-07-31",
+          "clicks": 0,
+          "impressions": 23,
+          "position": 6.043478260869565
+        },
+        {
+          "date": "2026-08-01",
+          "clicks": 0,
+          "impressions": 14,
+          "position": 9.071428571428571
+        },
+        {
+          "date": "2026-08-02",
+          "clicks": 0,
+          "impressions": 17,
+          "position": 8.352941176470587
+        },
+        {
+          "date": "2026-08-03",
+          "clicks": 0,
+          "impressions": 21,
+          "position": 8.523809523809524
+        },
+        {
+          "date": "2026-08-04",
+          "clicks": 0,
+          "impressions": 47,
+          "position": 5.659574468085107
+        },
+        {
+          "date": "2026-08-05",
+          "clicks": 0,
+          "impressions": 23,
+          "position": 7.434782608695652
+        },
+        {
+          "date": "2026-08-06",
+          "clicks": 0,
+          "impressions": 21,
+          "position": 8.333333333333332
+        },
+        {
+          "date": "2026-08-07",
+          "clicks": 0,
+          "impressions": 14,
+          "position": 7.928571428571429
+        },
+        {
+          "date": "2026-08-08",
+          "clicks": 0,
+          "impressions": 7,
+          "position": 8.571428571428571
+        },
+        {
+          "date": "2026-08-09",
+          "clicks": 0,
+          "impressions": 10,
+          "position": 7.9
+        },
+        {
+          "date": "2026-08-10",
+          "clicks": 0,
+          "impressions": 29,
+          "position": 7.517241379310345
+        },
+        {
+          "date": "2026-08-11",
+          "clicks": 0,
+          "impressions": 21,
+          "position": 7.428571428571429
+        },
+        {
+          "date": "2026-08-12",
+          "clicks": 0,
+          "impressions": 30,
+          "position": 7.666666666666667
+        },
+        {
+          "date": "2026-08-13",
+          "clicks": 0,
+          "impressions": 24,
+          "position": 7.958333333333333
+        },
+        {
+          "date": "2026-08-14",
+          "clicks": 0,
+          "impressions": 20,
+          "position": 8.7
+        },
+        {
+          "date": "2026-08-15",
+          "clicks": 0,
+          "impressions": 18,
+          "position": 17.38888888888889
+        },
+        {
+          "date": "2026-08-16",
+          "clicks": 0,
+          "impressions": 27,
+          "position": 11.88888888888889
+        },
+        {
+          "date": "2026-08-17",
+          "clicks": 0,
+          "impressions": 32,
+          "position": 7.25
+        },
+        {
+          "date": "2026-08-18",
+          "clicks": 0,
+          "impressions": 34,
+          "position": 6.235294117647059
+        },
+        {
+          "date": "2026-08-19",
+          "clicks": 0,
+          "impressions": 44,
+          "position": 8.886363636363637
+        },
+        {
+          "date": "2026-08-20",
+          "clicks": 0,
+          "impressions": 24,
+          "position": 12.25
+        },
+        {
+          "date": "2026-08-21",
+          "clicks": 0,
+          "impressions": 21,
+          "position": 13.476190476190476
+        },
+        {
+          "date": "2026-08-22",
+          "clicks": 1,
+          "impressions": 16,
+          "position": 6.5625
+        },
+        {
+          "date": "2026-08-23",
+          "clicks": 0,
+          "impressions": 18,
+          "position": 8.11111111111111
+        },
+        {
+          "date": "2026-08-24",
+          "clicks": 0,
+          "impressions": 13,
+          "position": 8.153846153846153
+        },
+        {
+          "date": "2026-08-25",
+          "clicks": 0,
+          "impressions": 28,
+          "position": 10.428571428571429
+        },
+        {
+          "date": "2026-08-26",
+          "clicks": 0,
+          "impressions": 29,
+          "position": 7.758620689655173
+        },
+        {
+          "date": "2026-08-27",
+          "clicks": 0,
+          "impressions": 18,
+          "position": 7.944444444444445
+        },
+        {
+          "date": "2026-08-28",
+          "clicks": 0,
+          "impressions": 24,
+          "position": 10.875
+        },
+        {
+          "date": "2026-08-29",
+          "clicks": 0,
+          "impressions": 17,
+          "position": 8.705882352941178
+        },
+        {
+          "date": "2026-08-30",
+          "clicks": 0,
+          "impressions": 19,
+          "position": 10.421052631578947
+        },
+        {
+          "date": "2026-08-31",
+          "clicks": 0,
+          "impressions": 20,
+          "position": 6.55
+        },
+        {
+          "date": "2026-09-01",
+          "clicks": 0,
+          "impressions": 17,
+          "position": 8
+        },
+        {
+          "date": "2026-09-02",
+          "clicks": 0,
+          "impressions": 23,
+          "position": 11.173913043478262
+        },
+        {
+          "date": "2026-09-03",
+          "clicks": 0,
+          "impressions": 19,
+          "position": 7.368421052631579
+        },
+        {
+          "date": "2026-09-04",
+          "clicks": 0,
+          "impressions": 25,
+          "position": 16.439999999999998
+        },
+        {
+          "date": "2026-09-05",
+          "clicks": 0,
+          "impressions": 21,
+          "position": 16.666666666666664
+        },
+        {
+          "date": "2026-09-06",
+          "clicks": 0,
+          "impressions": 65,
+          "position": 9.492307692307692
+        },
+        {
+          "date": "2026-09-07",
+          "clicks": 0,
+          "impressions": 96,
+          "position": 10.010416666666666
+        },
+        {
+          "date": "2026-09-08",
+          "clicks": 0,
+          "impressions": 88,
+          "position": 9.125
+        },
+        {
+          "date": "2026-09-09",
+          "clicks": 1,
+          "impressions": 55,
+          "position": 7.127272727272727
+        },
+        {
+          "date": "2026-09-10",
+          "clicks": 0,
+          "impressions": 43,
+          "position": 7.976744186046512
+        },
+        {
+          "date": "2026-09-11",
+          "clicks": 0,
+          "impressions": 35,
+          "position": 8.057142857142857
+        },
+        {
+          "date": "2026-09-12",
+          "clicks": 1,
+          "impressions": 22,
+          "position": 5.636363636363637
+        },
+        {
+          "date": "2026-09-13",
+          "clicks": 0,
+          "impressions": 36,
+          "position": 6.722222222222222
+        },
+        {
+          "date": "2026-09-14",
+          "clicks": 2,
+          "impressions": 57,
+          "position": 7.719298245614035
+        },
+        {
+          "date": "2026-09-15",
+          "clicks": 1,
+          "impressions": 39,
+          "position": 6.948717948717949
+        },
+        {
+          "date": "2026-09-16",
+          "clicks": 0,
+          "impressions": 42,
+          "position": 7.523809523809524
+        },
+        {
+          "date": "2026-09-17",
+          "clicks": 2,
+          "impressions": 44,
+          "position": 7
+        },
+        {
+          "date": "2026-09-18",
+          "clicks": 0,
+          "impressions": 34,
+          "position": 7.147058823529412
+        },
+        {
+          "date": "2026-09-19",
+          "clicks": 0,
+          "impressions": 47,
+          "position": 7.617021276595745
+        },
+        {
+          "date": "2026-09-20",
+          "clicks": 0,
+          "impressions": 44,
+          "position": 6.5227272727272725
+        },
+        {
+          "date": "2026-09-21",
+          "clicks": 2,
+          "impressions": 68,
+          "position": 6.426470588235294
+        },
+        {
+          "date": "2026-09-22",
+          "clicks": 0,
+          "impressions": 84,
+          "position": 7.880952380952381
+        },
+        {
+          "date": "2026-09-23",
+          "clicks": 0,
+          "impressions": 70,
+          "position": 7.9
+        },
+        {
+          "date": "2026-09-24",
+          "clicks": 2,
+          "impressions": 61,
+          "position": 7.098360655737705
+        },
+        {
+          "date": "2026-09-25",
+          "clicks": 0,
+          "impressions": 66,
+          "position": 6.621212121212121
+        },
+        {
+          "date": "2026-09-26",
+          "clicks": 0,
+          "impressions": 32,
+          "position": 6.75
+        },
+        {
+          "date": "2026-09-27",
+          "clicks": 0,
+          "impressions": 38,
+          "position": 8.052631578947368
+        },
+        {
+          "date": "2026-09-28",
+          "clicks": 0,
+          "impressions": 61,
+          "position": 7.19672131147541
+        },
+        {
+          "date": "2026-09-29",
+          "clicks": 2,
+          "impressions": 76,
+          "position": 7.092105263157895
+        },
+        {
+          "date": "2026-09-30",
+          "clicks": 2,
+          "impressions": 66,
+          "position": 8.257575757575758
+        },
+        {
+          "date": "2026-10-01",
+          "clicks": 1,
+          "impressions": 64,
+          "position": 7.46875
+        },
+        {
+          "date": "2026-10-02",
+          "clicks": 0,
+          "impressions": 39,
+          "position": 7.82051282051282
+        },
+        {
+          "date": "2026-10-03",
+          "clicks": 1,
+          "impressions": 40,
+          "position": 7.325
+        },
+        {
+          "date": "2026-10-04",
+          "clicks": 1,
+          "impressions": 48,
+          "position": 6.479166666666667
+        },
+        {
+          "date": "2026-10-05",
+          "clicks": 2,
+          "impressions": 88,
+          "position": 7.738636363636363
+        },
+        {
+          "date": "2026-10-06",
+          "clicks": 2,
+          "impressions": 63,
+          "position": 7.238095238095238
+        },
+        {
+          "date": "2026-10-07",
+          "clicks": 0,
+          "impressions": 64,
+          "position": 7.921875
+        },
+        {
+          "date": "2026-10-08",
+          "clicks": 0,
+          "impressions": 59,
+          "position": 8
+        },
+        {
+          "date": "2026-10-09",
+          "clicks": 0,
+          "impressions": 55,
+          "position": 7.527272727272727
+        },
+        {
+          "date": "2026-10-10",
+          "clicks": 1,
+          "impressions": 37,
+          "position": 7.594594594594595
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 0,
+          "impressions": 43,
+          "position": 7.813953488372093
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 0,
+          "impressions": 68,
+          "position": 7.073529411764706
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 1,
+          "impressions": 72,
+          "position": 6.819444444444445
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 2,
+          "impressions": 76,
+          "position": 7.565789473684211
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 0,
+          "impressions": 56,
+          "position": 10.357142857142858
+        }
+      ]
+    }
+  }
+}
