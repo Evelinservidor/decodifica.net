@@ -7,7 +7,8 @@ Instrucciones para la rutina que se ejecuta cada lunes por la mañana (hora de E
 - **Publicar sola: NO.** Mientras diga NO, el agente abre un pull request y Jordi lo aprueba. Cuando Jordi diga que la calidad es buena, se cambia a SÍ y el agente fusiona su propio pull request si la revisión SEO y el build pasan sin errores.
 - Nicho: **IA práctica en español** (herramientas, prompts, comparativas, guías de uso). Decidido por Jordi el 07-10-2026. La «casa autosuficiente» queda como idea para otra web: no escribir de eso aquí.
 - Público: España y toda Latinoamérica (México, Perú, Colombia, Argentina, Chile, EE. UU. hispano). Español neutro.
-- Artículos por semana: 2 (máximo 3 si hay demanda clara y fuentes sólidas). Mejor 2 buenos que 3 flojos.
+- Piezas por semana: 2, siempre dentro de los grupos de `docs/plan-seo.md` (normalmente 1 artículo nuevo y 1 mejora o fusión). Mejor 2 buenas que 3 flojas.
+- **Mapa de temas: `docs/plan-seo.md`** (aprobado por Jordi el 18-10-2026). Manda sobre el volumen de búsqueda. La casa sin red y la energía solar no van en esta web.
 
 ## Reglas de la casa (no se rompen nunca)
 
@@ -30,17 +31,34 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
 5. **Robots.** No tocar `public/robots.txt` para bloquear robots de buscadores de IA (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Google-Extended, bingbot) sin que lo decida Jordi.
 6. **/sobre/ dice la verdad.** La página explica que Jordi aprueba cada artículo antes de publicarlo. Si «Publicar sola» pasa a SÍ, cambiar esa frase en `src/pages/sobre.astro` en el mismo pull request.
 
+## El plan SEO en los otros agentes
+
+Todos leen `docs/plan-seo.md` además de este archivo:
+
+- **Jueves (títulos y clics), punto 4:** elige primero artículos de los grupos de docs/plan-seo.md.
+- **Novedades (martes y viernes), punto 4:** solo si la novedad cae dentro de un grupo de docs/plan-seo.md; si no, no escribas.
+- **Repaso mensual (día 20), punto 5:** saca la tabla por grupos (apariciones, clics, posición y páginas en Google, 28 días; con `data/gsc_weekly/latest_28d.json` y `latest_indexacion.json`) y la lista de páginas sin apariciones en 3 meses (`latest_90d.json`; candidatas a noindex). Apúntalo en docs/repaso-mensual/.
+
 ## Pasos de cada lunes
 
 1. **Ponerse al día.** Leer `_ESTADO.md`, este archivo y el último informe de `docs/informes/` (si existe).
-2. **Leer Search Console.** El informe automático se genera los lunes a las 9:00 en `data/gsc_weekly/latest.json` (y `latest.md`). Si es de hoy, usarlo; si no, usar el último disponible y decirlo en el informe. Mirar:
+2. **Leer Search Console.** El informe automático se genera los lunes temprano (04:17 UTC) en `data/gsc_weekly/`: `latest.json` (7 días), `latest_28d.json` y `latest_90d.json` (28 y 90 días: con 7 días Google esconde la mayoría de las búsquedas) y `latest_indexacion.md` (qué páginas están en Google y cuáles no). Si es de hoy, usarlo; si no, usar el último disponible y decirlo en el informe. Para decidir, mejor 28 y 90 días que 7. Mirar:
    - búsquedas con impresiones y posición 4-20 (casi en primera página);
    - páginas con impresiones y CTR por debajo del 2 %;
    - búsquedas que no tienen una página que las responda (`query_pages` dice qué página sale).
-3. **Elegir 2-3 temas** con demanda dentro del nicho:
-   - Fuentes de demanda, por este orden: Search Console; `data/keyword-planner/` (datos del planificador de Google Ads); sugerencias de Google (`https://suggestqueries.google.com/complete/search?client=firefox&hl=es&gl=es&q=...`, también `gl=mx`, `gl=co`, `gl=ar`).
-   - Antes de elegir, comprobar que no existe ya un artículo parecido en `src/pages/blog/` (títulos y slugs). Si existe, mejorarlo en vez de duplicarlo.
-   - Preferir búsquedas con intención clara («cómo…», «qué es…», «mejor … para …», «alternativas a…», «… vs …») frente a búsquedas de marca sola.
+3. **Elegir el trabajo con docs/plan-seo.md** (el mapa de temas que aprobó Jordi):
+   - Solo se escribe dentro de sus grupos, aunque fuera haya búsquedas con mucho más volumen.
+   - Cada semana, 2 piezas del grupo que toque: si su pilar no está hecho, el pilar primero; si
+     no, la siguiente de su cola (nueva) y una mejora o fusión de una página del mismo grupo.
+   - Antes de escribir, mira los diez primeros de Google para esa búsqueda (España y México). Si
+     solo salen la web oficial, medios grandes o quienes lo venden, y no hay nada concreto en que
+     ganarles, pasa a la siguiente de la cola y dilo en el informe.
+   - Nunca una búsqueda de marca sola («claude ia», «ollama», «deepseek»): esas las gana la web
+     oficial. Se eligen preguntas concretas («ollama o lm studio», «límites de claude gratis»).
+   - Cada pieza enlaza a su pilar en el primer párrafo y en «Sigue leyendo», y se añade a la
+     lista del pilar.
+   - Al acabar, marca en docs/plan-seo.md lo hecho y apunta ideas nuevas al final de la cola (no
+     las escribas: Jordi las ve en el pull request).
 4. **Escribir los artículos** como archivos `src/pages/blog/<slug>.astro`:
    - Slug corto, sin fecha, en minúsculas con guiones, con la búsqueda principal.
    - Copiar la estructura técnica de un artículo reciente bueno (por ejemplo `ollama-que-es-como-usar.astro` o `claude-skills-1000-gratis.astro`): `const title`, `description`, `pubDate` (hoy), `modifiedDate` (hoy), `readingTime`, `tema`, `tags`, `pillar`, `pillarLabel`, y `BaseLayout` con `modifiedDate` y `citations` (las URLs de «Fuentes»). Sin bloque JSON-LD `Article` propio (ver «Para que nos citen las IA»).
@@ -62,6 +80,7 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
    mismo, avisando de sus normas sobre autopromoción; Jordi decide si lo publica a mano.
 10. **Informe** en `docs/informes/<AAAA-MM-DD>.md`, en español sencillo, sin jerga:
     - cómo fue la semana en Google (impresiones, clics, posición; comparado con la semana anterior);
+    - cómo va cada grupo de docs/plan-seo.md (apariciones, clics y páginas en Google) y qué pieza toca la semana que viene;
     - qué artículos nuevos y por qué esos temas (con el dato de demanda);
     - qué títulos se cambiaron;
     - fuentes usadas;
