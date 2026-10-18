@@ -65,6 +65,31 @@ def inspeccionar(token: str, site: str, page: str) -> dict:
     }
 
 
+def sitemaps_enviados(token: str, site: str) -> list[dict]:
+    """Los sitemaps que tiene Search Console y cuándo los leyó Google por última vez."""
+    from urllib.parse import quote
+
+    r = requests.get(
+        f"https://www.googleapis.com/webmasters/v3/sites/{quote(site, safe='')}/sitemaps",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=30,
+    )
+    if r.status_code != 200:
+        return [{"error": f"HTTP {r.status_code}: {r.text[:200]}"}]
+    return [
+        {
+            "path": m.get("path"),
+            "lastSubmitted": m.get("lastSubmitted"),
+            "lastDownloaded": m.get("lastDownloaded"),
+            "isPending": m.get("isPending"),
+            "errors": m.get("errors"),
+            "warnings": m.get("warnings"),
+            "contents": m.get("contents"),
+        }
+        for m in r.json().get("sitemap", [])
+    ]
+
+
 def main() -> int:
     site = os.environ.get("GSC_SITE", "sc-domain:decodifica.net")
     sitemap = os.environ.get("SITEMAP_URL", "https://decodifica.net/sitemap-0.xml")
@@ -75,6 +100,7 @@ def main() -> int:
     print(f"{len(pages)} páginas en el sitemap", file=sys.stderr)
     token = get_access_token()
 
+    mapas = sitemaps_enviados(token, site)
     filas = []
     for i, page in enumerate(pages, 1):
         filas.append(inspeccionar(token, site, page))
@@ -84,7 +110,8 @@ def main() -> int:
 
     hoy = date.today().isoformat()
     (out / "latest_indexacion.json").write_text(
-        json.dumps({"fetched_at": hoy, "site": site, "sitemap": sitemap, "pages": filas},
+        json.dumps({"fetched_at": hoy, "site": site, "sitemap": sitemap,
+                    "sitemaps_en_search_console": mapas, "pages": filas},
                    indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
@@ -100,6 +127,15 @@ def main() -> int:
         "|---|---|",
     ]
     md += [f"| {k} | {v} |" for k, v in estados.most_common()]
+    md += ["", "## Sitemaps enviados a Search Console", ""]
+    if mapas:
+        md += [
+            f"- {m.get('path') or m.get('error')}: enviado {m.get('lastSubmitted') or '—'}, "
+            f"leído por Google {m.get('lastDownloaded') or '—'}, errores {m.get('errors', '—')}"
+            for m in mapas
+        ]
+    else:
+        md += ["- Ninguno: hay que enviar https://decodifica.net/sitemap-index.xml en Search Console."]
     fuera = [f for f in filas if f.get("verdict") != "PASS"]
     if fuera:
         md += ["", "## Las que no están en Google", "", "| Página | Estado | Último rastreo |", "|---|---|---|"]
