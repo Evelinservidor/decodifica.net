@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 14 de octubre de 2026 (rediseño).
+Última actualización: 18 de octubre de 2026 (plan SEO).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -14,6 +14,24 @@ Reglas de la casa: nada de relleno hecho con IA, toda afirmación con fuente ori
 1. **Fase 1 · Dejar la web impecable** — **publicada el 06-10-2026** (pull request #6 fusionado; comprobado en línea).
 2. **Fase 2 · Elegir el nicho con datos** — **hecha (07-10-2026)**: Jordi elige seguir con **IA práctica**. Datos y comparación en `docs/fase-2-nichos.md`. Antes de usar Semrush/Ahrefs/OpenRush hay que preguntar a Jordi si gastan créditos o son de pago.
 3. **Fase 3 · Agente semanal** — en marcha: instrucciones en `docs/AGENTE-SEMANAL.md`, revisión SEO en `scripts/seo_preflight.py`. (rutina en la nube, lunes por la mañana, hora de España) — pendiente. Al principio abre un pull request y Jordi aprueba; más adelante, publicación automática.
+
+## Plan SEO (18-10-2026)
+
+Jordi aprobó el plan de posicionamiento: **`docs/plan-seo.md`** es el mapa de temas (grupos A Claude en español, B IA en tu
+ordenador, C prompts y generador, D IA en casa sin nube como puente; nada de energía solar ni vida sin red, que irá a otra
+web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENTE-SEMANAL.md`).
+- Hecho: #19 el mapa · #20 los agentes lo siguen · #21 el informe de Google guarda también 28 y 90 días y qué páginas
+  están en Google (`data/gsc_weekly/latest_28d.json`, `latest_90d.json`, `latest_indexacion.md`), los lunes a las 04:17 UTC ·
+  #22 enlaces internos de cada grupo (la guía de Claude es la guía principal del grupo A).
+- Espera a Jordi: **#23 limpieza** (35 páginas finas con noindex y 3 fusionadas con redirección; lista en `src/data/poda-seo.json`).
+- Los 4 artículos de octubre no salen en Google: **no hay nada técnico que lo impida** (se abren bien, `index, follow`,
+  canónica correcta, están en el sitemap, robots.txt permite todo). Search Console (18-10): `lm-studio-que-es-como-usar` y
+  `n8n-que-es-gratis` «descubierta: actualmente sin indexar» (Google sabe que existen y aún no las ha leído);
+  `claude-ia-que-es-gratis` y `ollama-que-es-como-usar` «Google no reconoce esta URL»: Google leyó el sitemap por última vez
+  el 09-10-2026, antes de publicarlas. Es prioridad baja de Google para la web (lo que ataca el plan). Pendiente de Jordi
+  (el robot del informe solo tiene permiso de lectura): en Search Console, reenviar el sitemap
+  (`sitemap-index.xml`) y «Solicitar indexación» de esas 4 direcciones.
+- Primera comparación por grupos (28 días contra 28 días): hacia el 21-12-2026.
 
 ## Fase 1: hecho
 
