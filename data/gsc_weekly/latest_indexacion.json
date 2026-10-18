@@ -2,6 +2,23 @@
   "fetched_at": "2026-10-18",
   "site": "sc-domain:decodifica.net",
   "sitemap": "https://decodifica.net/sitemap-0.xml",
+  "sitemaps_en_search_console": [
+    {
+      "path": "https://decodifica.net/sitemap-index.xml",
+      "lastSubmitted": "2026-08-15T22:52:50.413Z",
+      "lastDownloaded": "2026-10-09T18:15:34.320Z",
+      "isPending": false,
+      "errors": "0",
+      "warnings": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "108",
+          "indexed": "0"
+        }
+      ]
+    }
+  ],
   "pages": [
     {
       "page": "https://decodifica.net/",
@@ -72,7 +89,7 @@
     {
       "page": "https://decodifica.net/blog/2026-07-22-nano-banana-1000-prompts/",
       "verdict": "NEUTRAL",
-      "coverageState": "Descubierta: actualmente sin indexar",
+      "coverageState": "Google no reconoce esta URL",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -138,7 +155,7 @@
     {
       "page": "https://decodifica.net/blog/2026-08-01-qwen3-asr-transcribe-espanol/",
       "verdict": "NEUTRAL",
-      "coverageState": "Google no reconoce esta URL",
+      "coverageState": "Descubierta: actualmente sin indexar",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -226,7 +243,7 @@
     {
       "page": "https://decodifica.net/blog/como-elegir-herramienta-ia/",
       "verdict": "NEUTRAL",
-      "coverageState": "Descubierta: actualmente sin indexar",
+      "coverageState": "Google no reconoce esta URL",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -424,7 +441,7 @@
     {
       "page": "https://decodifica.net/herramientas/",
       "verdict": "NEUTRAL",
-      "coverageState": "Google no reconoce esta URL",
+      "coverageState": "Descubierta: actualmente sin indexar",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
