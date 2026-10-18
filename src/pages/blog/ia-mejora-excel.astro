@@ -7,7 +7,7 @@ import ReviewMethodology from '../../components/ReviewMethodology.astro';
 const title = "5 IAs para Excel en 2026: ahorra horas con tus fórmulas";
 const description = "Comparamos Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals para trabajar mejor en Excel. Tutorial con =COPILOT, precios y límites reales.";
 const pubDate = "2026-06-23";
-const modifiedDate = pubDate;
+const modifiedDate = "2026-10-18";
 const tags = ["ia para excel", "microsoft copilot", "excel ia", "quadratic", "productividad ia"];
 const readingTime = "12 min";
 const tema = "oficina";
@@ -40,11 +40,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <ReviewMethodology reviewed="11 de julio de 2026" task="crear, revisar y aplicar fórmulas o cambios en una hoja de cálculo" />
 
+    <aside class="not-prose my-8 rounded-2xl border border-brand-500/40 bg-brand-500/10 p-5 text-sm text-dark-100" role="note">
+      <p><strong>Aviso (18 de octubre de 2026):</strong> Microsoft ha retirado la función <code>=COPILOT()</code> de Excel: dejó de estar disponible el 14 de septiembre de 2026. Según Microsoft, Copilot en Excel sigue disponible desde el panel lateral y permite muchas de las mismas tareas (<a href="https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487" rel="noopener" target="_blank">anuncio de Microsoft</a>). Lo que esta guía cuenta de <code>=COPILOT()</code> describe cómo funcionaba hasta esa fecha.</p>
+    </aside>
+
 
     <section class="respuesta-rapida" aria-label="Respuesta rápida">
       <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
       <ul>
-        <li><strong>Microsoft =COPILOT()</strong>: función de Excel que permite usar un prompt y referencias de celda. Su disponibilidad depende del programa y la licencia de Copilot.</li>
+        <li><strong>Microsoft =COPILOT()</strong>: función de Excel que permitía usar un prompt y referencias de celda. Microsoft la retiró el 14 de septiembre de 2026; Copilot sigue en Excel desde el panel lateral.</li>
         <li><strong>Google Gemini en Sheets</strong>: puede crear fórmulas, tablas, análisis y cambios en hojas nativas de Google Sheets con un plan elegible.</li>
         <li><strong>ChatGPT for Excel (beta)</strong>: plugin oficial de OpenAI, en pruebas desde marzo de 2026. Solo disponible para usuarios de pago en EE. UU., Canadá y Australia.</li>
         <li><strong>Quadratic</strong>: la nueva generación de hoja de cálculo. Lleva Python, SQL y múltiples modelos de IA en una misma cuadrícula. Plan Personal gratis con IA limitada.</li>
@@ -81,7 +85,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <p>
-      Regla rápida: si ya dispones de la licencia compatible, prueba <code>=COPILOT()</code> con una copia de la hoja. Si no, compara Gemini en Sheets o Quadratic antes de gastar dinero. Para una fórmula puntual, un chat puede servir para explicarla, pero valida el resultado en la hoja.
+      Regla rápida: si ya dispones de la licencia de Microsoft 365 Copilot, prueba Copilot en Excel (el panel lateral, porque <code>=COPILOT()</code> ya no está disponible) con una copia de la hoja. Si no, compara Gemini en Sheets o Quadratic antes de gastar dinero. Para una fórmula puntual, un chat puede servir para explicarla, pero valida el resultado en la hoja.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Excel sigue siendo un cuello de botella en 2026</h2>
@@ -225,7 +229,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p><strong>Paso 2. Prepara tu hoja.</strong> Necesitas al menos una columna con datos que la IA pueda procesar. Para este tutorial, vamos a clasificar comentarios de clientes. En la columna A, filas 2 a 20, pon comentarios ficticios: "El envío llegó rápido", "Tuve que esperar tres semanas", etc. En la columna B, queremos que COPILOT nos devuelva el sentimiento.</p>
     <p><strong>Paso 3. Escribe la primera función.</strong> En la celda B2, escribe exactamente:</p>
     <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>=COPILOT("Clasifica el sentimiento de este comentario como positivo, neutro o negativo", A2)</code></pre>
-    <p>Pulsa Intro. En uno o dos segundos, B2 muestra "positivo", "neutro" o "negativo". Si no te gusta el resultado, reformula el prompt: "Devuelve una sola palabra: positivo, neutro o negativo, en minúsculas".</p>
+    <p>Pulsa Intro. B2 debería mostrar "positivo", "neutro" o "negativo". Si no te gusta el resultado, reformula el prompt: "Devuelve una sola palabra: positivo, neutro o negativo, en minúsculas".</p>
     <p><strong>Paso 4. Rellena hacia abajo.</strong> Selecciona B2, pon el cursor en la esquina inferior derecha de la celda (el cuadradito negro), y arrastra hasta B20. La función se copia a todas las filas y clasifica cada comentario. Cada celda es una llamada a la IA, así que respeta los límites: 100 llamadas cada 10 minutos, 300 a la hora.</p>
     <p><strong>Paso 5. Añade contexto a la función.</strong> Lo potente de COPILOT es que puedes pasarle varias referencias. Por ejemplo, en C2 escribe:</p>
     <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>=COPILOT("Resume en una frase el comentario y asigna una prioridad de 1 a 3", A2, "Máximo 15 palabras")</code></pre>
@@ -235,25 +239,25 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>COPILOT devuelve "sí" o "no", y la función SI decide la acción. Tienes IA dentro de la lógica de tu hoja, sin perder la estructura que ya conocías.</p>
     <p><strong>Paso 7. Cuida los límites.</strong> Cada llamada a COPILOT consume uno de tus 100 calls cada 10 minutos. Si arrastras 500 filas de golpe, la mitad te dará error. La solución: pasa arrays. En vez de <code>=COPILOT(..., A2)</code> en cada fila, escribe <code>=COPILOT("Clasifica el sentimiento", A2:A20)</code> en una sola celda. Una llamada, 19 clasificaciones, mucho más eficiente.</p>
     <p>
-      Tiempo total: entre cinco y diez minutos para tener la primera clasificación funcionando. La parte difícil no es la herramienta, es decidir qué le pides y cómo le pides que responda. Ahí es donde se nota la diferencia entre un resultado útil y un resultado que tienes que revisar tres veces.
+      La parte difícil no es la herramienta, es decidir qué le pides y cómo le pides que responda. Ahí es donde se nota la diferencia entre un resultado útil y un resultado que tienes que revisar tres veces.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que NO te dicen: limitaciones reales</h2>
     <p>
-      Después de probar las cinco herramientas y leer la documentación oficial hasta hartarme, esto es lo que los vendedores callan:
+      Tras repasar la documentación oficial de las cinco herramientas, esto es lo que los vendedores no destacan:
     </p>
     <ul>
-      <li><strong>La IA no accede a internet (todavía).</strong> En la versión beta de COPILOT, la función no puede buscar en la web ni leer documentos internos. Si le pides "dime el IBAN de este cliente", no sabe. Tiene que tener los datos ya en la hoja. Microsoft ha prometido que añadirá acceso a datos en vivo, pero no hay fecha cerrada.</li>
-      <li><strong>El idioma importa.</strong> COPILOT funciona en español, pero los prompts en inglés dan resultados más consistentes, sobre todo para tareas técnicas. Para clasificar sentimientos en español va bien, pero si necesitas generar SQL, el LLM responde mejor a un prompt en inglés aunque los datos estén en español.</li>
+      <li><strong>La IA no accede a internet (todavía).</strong> En la versión beta de COPILOT, la función no puede buscar en la web ni leer documentos internos. Si le pides "dime el IBAN de este cliente", no sabe. Tiene que tener los datos ya en la hoja.</li>
+      <li><strong>El idioma importa.</strong> El anuncio de Microsoft no detalla cómo se comporta la función en español. Prueba tus prompts en tu idioma con una copia de la hoja antes de fiarte del resultado.</li>
       <li><strong>La privacidad no es total.</strong> Microsoft asegura que los datos que pasas por COPILOT no se usan para entrenar sus modelos. Pero el contenido sale de tu hoja, va a sus servidores, vuelve procesado. Si trabajas con datos sanitarios, legales o financieros sensibles, necesitas un plan enterprise con garantías contractuales de Zero Data Retention, que no está en todas las regiones.</li>
       <li><strong>Las hallucinations siguen pasando.</strong> COPILOT puede inventar clasificaciones, resúmenes o números que parecen coherentes pero no son correctos. Siempre hay que revisar el resultado. Para datos críticos, combínalo con validación humana o con reglas duras en la misma hoja.</li>
       <li><strong>La versión gratis no existe.</strong> La función =COPILOT() requiere la licencia de pago de Microsoft 365 Copilot. Si solo tienes la licencia básica de Microsoft 365, no la ves. Esto es un punto importante si en tu empresa la IA "se compra aparte" del paquete ofimático, como pasa en muchos sitios.</li>
-      <li><strong>Las fechas vienen como texto.</strong> Si le pides a COPILOT que te devuelva fechas, te las devuelve en formato texto, no como número de serie de Excel. Tienes que envolver la salida en FECHANUMERO() o similar para que Excel las entienda como fechas. Microsoft ya ha dicho que lo arreglarán, pero hoy sigue así.</li>
+      <li><strong>Las fechas vienen como texto.</strong> Si le pides a COPILOT que te devuelva fechas, te las devuelve en formato texto, no como número de serie de Excel. Tienes que envolver la salida en FECHANUMERO() o similar para que Excel las entienda como fechas. Así lo indica Microsoft en su anuncio de la función.</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo SÍ vale la pena pagar</h2>
     <p>
-      Si ya tienes Microsoft 365 Copilot por tu empresa, usar =COPILOT() no te cuesta más y el ROI es inmediato para casi cualquier rol que toque Excel. Si no lo tienes, las reglas que yo aplico son estas:
+      Si ya tienes Microsoft 365 Copilot por tu empresa, usar =COPILOT() no te cuesta más y el ROI es inmediato para casi cualquier rol que toque Excel. Si no lo tienes, estas son nuestras recomendaciones:
     </p>
     <ul>
       <li>Pasas más de dos horas al día peleando con fórmulas en Excel: pídeselo a tu empresa o amortizas los 30 dólares al mes en una semana.</li>
@@ -333,7 +337,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La IA en Excel en 2026 ya no es una promesa: es una celda más, con la misma sintaxis que SUMA o BUSCARV, que se recalcula sola cuando cambian los datos. Para el usuario medio, lo más práctico y rentable es =COPILOT() si ya pagas Microsoft 365, o Gemini en Sheets si vives en Google. Para data analysts, Quadratic es la primera hoja de cálculo de nueva generación que merece la pena probar. Y para empresas con stack serio, Equals existe, pero a un precio que solo se justifica con volumen.
     </p>
     <p>
-      Lo que he aprendido estos meses usándolas: la IA no te hace mejor con Excel, te hace más rápido. La parte difícil sigue siendo saber qué pregunta hacer, qué resultado esperas y cómo validarlo. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras horas cada semana.
+      La idea de fondo: la IA no te hace mejor con Excel, te hace más rápido. La parte difícil sigue siendo saber qué pregunta hacer, qué resultado esperas y cómo validarlo. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras horas cada semana.
     </p>
     <p>
       Si quieres profundizar más, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
