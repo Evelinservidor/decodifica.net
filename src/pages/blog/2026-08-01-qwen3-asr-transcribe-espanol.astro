@@ -4,12 +4,12 @@ import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Qwen3-ASR: transcribir audio en español con marcas por palabra";
-const description = "Probamos Qwen3-ASR con audio en español: 45 marcas por palabra, límites de la demo web y criterios para revisar antes de usarlo.";
+const description = "Qwen3-ASR transcribe audio en español con marcas por palabra: qué dice la documentación oficial, límites de la demo web y cómo evaluarlo antes de usarlo.";
 const pubDate = "2026-07-30";
-const modifiedDate = pubDate;
+const modifiedDate = "2026-10-18";
 const readingTime = "4 min";
 const tema = "local";
-const tags = ["ia", "herramientas ia", "Qwen3-ASR transcribe español y marca cada palabra: la prueba real"];
+const tags = ["ia", "herramientas ia", "Qwen3-ASR transcribe español y marca cada palabra"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -37,9 +37,9 @@ const pillarLabel = "Pilar 1: Apps web";
     <section class="respuesta-rapida" aria-label="Respuesta rápida">
       <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
       <ul>
-        <li><strong>Prueba:</strong> un audio de 33,048 segundos en español produjo una transcripción y 45 segmentos temporales.</li>
+        <li><strong>Qué es:</strong> Qwen3-ASR-1.7B reconoce voz (el español está entre sus idiomas) y Qwen3-ForcedAligner-0.6B añade marcas de tiempo por palabra.</li>
         <li><strong>Valor:</strong> el texto permite buscar; la alineación ayuda a localizar frases, preparar subtítulos y editar.</li>
-        <li><strong>Límite:</strong> algunas palabras compartían inicio y final, así que nombres, cifras y tiempos todavía requieren revisión.</li>
+        <li><strong>Límite:</strong> es una salida automática: nombres, cifras y tiempos conviene revisarlos antes de usarlos.</li>
         <li><strong>Decisión Decodifica:</strong> usa la demo para probar rápido y valora la ruta local cuando el audio sea sensible.</li>
       </ul>
     </section>
@@ -59,7 +59,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Vigila</p>
         <h3 class="mt-2 font-display text-xl font-bold text-white">Los límites de palabra</h3>
-        <p class="mt-2 text-sm text-dark-200">La alineación ayuda, pero algunas marcas necesitan corrección antes de editar o subtitular.</p>
+        <p class="mt-2 text-sm text-dark-200">La alineación ayuda, pero es automática: revisa las marcas antes de editar o subtitular.</p>
       </div>
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Siguiente paso</p>
@@ -69,9 +69,8 @@ const pillarLabel = "Pilar 1: Apps web";
     </div>
 
     <p>Qwen3-ASR convierte audio en texto y puede añadir marcas de tiempo por palabra. La diferencia práctica está ahí: no entrega solo un párrafo para leer, sino una línea temporal que puede ayudar a localizar una frase, preparar subtítulos o revisar una edición.</p>
-    <p>En Decodifica lo probamos con un audio en español de 33,048 segundos. La demo oficial detectó el idioma, conservó el mensaje completo y devolvió 45 segmentos con inicio y final. El resultado fue útil, pero no perfecto: algunas marcas temporales todavía necesitaban revisión.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué probamos exactamente</h2>
-    <p>La prueba se hizo en el Space oficial de Qwen en Hugging Face. Subimos un audio de Decodifica, dejamos la detección de idioma en automático y activamos la salida con timestamps.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo es la demo oficial</h2>
+    <p>La demo está en el Space oficial de Qwen en Hugging Face. Se sube un audio, la detección de idioma puede quedarse en automático y se puede activar la salida con timestamps.</p>
 
     <FiguraArticulo
       src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/demo-oficial-qwen3-asr.webp"
@@ -80,13 +79,12 @@ const pillarLabel = "Pilar 1: Apps web";
       height={791}
       caption="Demo oficial de Qwen3-ASR en Hugging Face Spaces (captura de octubre de 2026)."
     />
-    <p>Comprobamos tres cosas:</p>
+    <p>Con tu propio audio, fíjate en tres cosas:</p>
     <ol>
       <li>si reconocía el español;</li>
       <li>si mantenía el significado del audio;</li>
       <li>si las marcas de palabra eran utilizables para buscar y editar.</li>
     </ol>
-    <p>El sistema detectó español y produjo una transcripción legible. También normalizó cifras como «veinte» y «noventa» a números, conservó nombres como ChatGPT y creó 45 segmentos temporales.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Para qué sirven las marcas de tiempo</h2>
     <p>Una transcripción normal permite leer y buscar. La alineación añade una segunda capa: indica cuándo empieza y termina cada palabra.</p>
     <p>Eso puede servir para:</p>
@@ -96,7 +94,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>encontrar un corte durante la edición;</li>
       <li>conectar una búsqueda de texto con un punto concreto de la grabación.</li>
     </ul>
-    <p>No conviene tratar esa salida como definitiva. En nuestra prueba, algunas palabras compartían el mismo inicio y final. Antes de automatizar subtítulos o cortes hay que revisar nombres propios, números, puntuación y límites temporales.</p>
+    <p>No conviene tratar esa salida como definitiva: es automática. Antes de automatizar subtítulos o cortes hay que revisar nombres propios, números, puntuación y límites temporales.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Demo web o ejecución local</h2>
     <p>La demo oficial es la ruta rápida: permite subir un audio y ver la transcripción sin preparar un entorno técnico. Ese archivo se procesa en un servicio web, así que la comodidad no equivale a privacidad local.</p>
     <p>Qwen publica dos piezas distintas. Qwen3-ASR-1.7B realiza el reconocimiento de voz y Qwen3-ForcedAligner-0.6B alinea texto y audio. La documentación oficial incluye el español, describe compatibilidad con 30 idiomas y 22 dialectos chinos y distribuye los pesos con licencia Apache 2.0.</p>
@@ -108,7 +106,7 @@ const pillarLabel = "Pilar 1: Apps web";
       height={879}
       caption="Tabla de modelos e idiomas de la ficha de Qwen3-ASR-1.7B en Hugging Face (captura de octubre de 2026)."
     />
-    <p>La ruta local ofrece más control sobre archivos sensibles, pero exige instalar los pesos y preparar el entorno. No hemos probado esa instalación local: aquí comparamos la utilidad de la demo con la decisión de ejecutar el modelo por cuenta propia.</p>
+    <p>La ruta local ofrece más control sobre archivos sensibles, pero exige instalar los pesos y preparar el entorno. Este artículo no explica esa instalación: aquí se compara la comodidad de la demo con la decisión de ejecutar el modelo por cuenta propia.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo evaluar una transcripción</h2>
     <p>Una prueba pequeña basta para saber si el modelo encaja en tu flujo:</p>
     <ol>
@@ -125,7 +123,7 @@ const pillarLabel = "Pilar 1: Apps web";
       width={1200}
       height={607}
     />
-    <p>La conclusión de nuestra prueba es concreta: Qwen3-ASR acelera la primera transcripción y sus tiempos aportan una salida útil para edición y subtítulos, pero no elimina la revisión humana.</p>
+    <p>En resumen: Qwen3-ASR puede acelerar la primera transcripción y sus marcas de tiempo sirven de punto de partida para editar y subtitular, pero, como toda transcripción automática, no elimina la revisión humana.</p>
     <p>Si quieres elegir qué herramienta probar según tu tarea, empieza por la <a href="/empieza/" class="text-brand-400 hover:text-brand-300">ruta de Decodifica</a>.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes oficiales</h2>
     <ul class="space-y-2">
