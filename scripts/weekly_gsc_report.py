@@ -19,6 +19,9 @@ Auth (set as GitHub Actions secrets), in order of preference:
   GSC_SITE_URLS      - Comma-separated list of site URLs in GSC format
                        e.g. "sc-domain:decodifica.net,https://drulenterror.blogspot.com/"
   DAYS_BACK          - (optional) days to look back, default 7
+  OUTPUT_SUFFIX      - (optional) sufijo de los ficheros, p. ej. "_28d" escribe
+                       AAAA-MM-DD_gsc_28d.json y latest_28d.json (vacío = los de
+                       siempre: AAAA-MM-DD_gsc_weekly.json y latest.json)
   OUTPUT_DIR         - (optional) where to write the JSON/MD outputs
                        default: /tmp/gsc_weekly (CI) or ./data/gsc_weekly (local)
 """
@@ -273,6 +276,8 @@ def build_site_payload(token: str, site: str, days: int) -> dict[str, Any]:
 
 def main() -> int:
     days = int(os.environ.get("DAYS_BACK", "7"))
+    # Sufijo para guardar a la vez el informe de 7, 28 y 90 días sin pisarse.
+    suffix = os.environ.get("OUTPUT_SUFFIX", "").strip()
     sites_str = os.environ.get(
         "GSC_SITE_URLS",
         "sc-domain:decodifica.net,"
@@ -344,7 +349,7 @@ def main() -> int:
             results["per_site"][site] = {"error": repr(e)}
 
     # Write the combined JSON
-    output_json = output_dir / f"{today_str}_gsc_weekly.json"
+    output_json = output_dir / f"{today_str}_gsc{suffix or '_weekly'}.json"
     output_json.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {output_json}", file=sys.stderr)
 
@@ -358,7 +363,7 @@ def main() -> int:
             first_period = f"Current: {curr_p['start']} → {curr_p['end']}  |  Previous: {prev_p['start']} → {prev_p['end']}"
 
     md_lines = [
-        f"# GSC Weekly Summary — {today_str}",
+        f"# GSC Summary ({days} days) — {today_str}",
         "",
         f"_{first_period}_",
         f"Sites: {len(sites)} requested, {len([s for s,v in results['per_site'].items() if 'error' not in v])} fetched OK",
@@ -382,13 +387,13 @@ def main() -> int:
             f"{t['ctr_current']:.1f}% | {t['avg_position_current']:.1f} |"
         )
     md_text = "\n".join(md_lines)
-    output_md = output_dir / f"{today_str}_gsc_summary.md"
+    output_md = output_dir / f"{today_str}_gsc{suffix}_summary.md"
     output_md.write_text(md_text, encoding="utf-8")
     print(f"Wrote {output_md}", file=sys.stderr)
 
     # Also write a "latest" symlink-like file for easy access
-    latest_json = output_dir / "latest.json"
-    latest_md = output_dir / "latest.md"
+    latest_json = output_dir / f"latest{suffix}.json"
+    latest_md = output_dir / f"latest{suffix}.md"
     latest_json.write_text(output_json.read_text(encoding="utf-8"), encoding="utf-8")
     latest_md.write_text(md_text, encoding="utf-8")
 

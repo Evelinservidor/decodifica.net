@@ -2,8 +2,10 @@ name: Weekly GSC Report
 
 on:
   schedule:
-    # Lunes 07:00 UTC = 09:00 Europe/Madrid (CEST). Cron usa UTC siempre.
-    - cron: '0 7 * * 1'
+    # Lunes 04:17 UTC (06:17 en Madrid en verano, 05:17 en invierno). Cron usa UTC.
+    # A un minuto que no es en punto: a las horas en punto GitHub va saturado y el
+    # 12-10-2026 el de las 07:00 corrió a las 16:29, después del agente de los lunes.
+    - cron: '17 4 * * 1'
   workflow_dispatch:
     inputs:
       days:
@@ -23,7 +25,7 @@ concurrency:
 jobs:
   report:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -44,7 +46,7 @@ jobs:
       - name: Install deps
         run: pip install --quiet requests google-auth
 
-      - name: Run weekly GSC report
+      - name: Run weekly GSC report (7 días)
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
@@ -54,6 +56,36 @@ jobs:
           DAYS_BACK: ${{ inputs.days || '7' }}
           OUTPUT_DIR: ${{ github.workspace }}/data/gsc_weekly
         run: python scripts/weekly_gsc_report.py
+
+      # 28 y 90 días: con 7 días Google esconde la mayoría de las búsquedas.
+      # Solo decodifica.net (los blogs de Blogspot no hacen falta aquí).
+      - name: Informe de 28 días (latest_28d.json)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GSC_SITE_URLS: sc-domain:decodifica.net
+          DAYS_BACK: '28'
+          OUTPUT_SUFFIX: _28d
+          OUTPUT_DIR: ${{ github.workspace }}/data/gsc_weekly
+        run: python scripts/weekly_gsc_report.py
+
+      - name: Informe de 90 días (latest_90d.json)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GSC_SITE_URLS: sc-domain:decodifica.net
+          DAYS_BACK: '90'
+          OUTPUT_SUFFIX: _90d
+          OUTPUT_DIR: ${{ github.workspace }}/data/gsc_weekly
+        run: python scripts/weekly_gsc_report.py
+
+      # Qué páginas del sitemap tiene Google (latest_indexacion.json / .md).
+      - name: Páginas en Google (inspección de URLs)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          OUTPUT_DIR: ${{ github.workspace }}/data/gsc_weekly
+        run: python scripts/gsc_indexacion.py
 
       - name: Commit outputs to repo
         if: always()
