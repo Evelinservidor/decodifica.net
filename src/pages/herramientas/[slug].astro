@@ -3,9 +3,10 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import { detailedTools, tools } from '~/data/tools';
 import { siteConfig } from '~/lib/site-config';
+import { enlace, estaRedirigida } from '~/lib/poda-seo';
 
 export function getStaticPaths() {
-  return detailedTools.map((tool) => ({
+  return detailedTools.filter((tool) => !estaRedirigida(`/herramientas/${tool.slug}/`)).map((tool) => ({
     params: { slug: tool.slug },
     props: { tool },
   }));
@@ -167,7 +168,7 @@ const softwareLd = {
       <h2 class="font-display text-2xl font-bold text-white">Otras herramientas del mapa</h2>
       <div class="mt-5 grid gap-4 md:grid-cols-3">
         {otherTools.map((candidate) => (
-          <a href={candidate.hasDetailPage ? `/herramientas/${candidate.slug}/` : candidate.officialUrl} target={candidate.hasDetailPage ? undefined : '_blank'} rel={candidate.hasDetailPage ? undefined : 'noopener'} class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
+          <a href={candidate.hasDetailPage ? enlace(`/herramientas/${candidate.slug}/`) : candidate.officialUrl} target={candidate.hasDetailPage ? undefined : '_blank'} rel={candidate.hasDetailPage ? undefined : 'noopener'} class="interactive-card pressable rounded-xl border border-dark-600 bg-dark-900 p-4">
             <h3 class="font-display text-lg font-bold text-white">{candidate.name}</h3>
             <p class="mt-2 text-sm leading-6 text-dark-300">{candidate.bestFor}</p>
           </a>

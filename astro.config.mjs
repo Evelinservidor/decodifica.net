@@ -14,6 +14,16 @@ const sitemapExcludedPaths = new Set([
   '/decodifica',
 ]);
 
+// Limpieza del plan SEO (docs/plan-seo.md): fuera del sitemap las páginas con noindex
+// y las fusionadas en otra (que pasan a ser redirecciones).
+const poda = JSON.parse(readFileSync('./src/data/poda-seo.json', 'utf8'));
+for (const ruta of [...poda.noindex, ...Object.keys(poda.redirigir)]) {
+  sitemapExcludedPaths.add(ruta.replace(/\/$/, ''));
+}
+const redirects = Object.fromEntries(
+  Object.entries(poda.redirigir).map(([desde, hasta]) => [desde.replace(/\/$/, ''), { status: /** @type {301} */ (301), destination: String(hasta) }]),
+);
+
 // lastmod real de cada artículo: modifiedDate si existe, si no pubDate.
 const articleLastmod = new Map();
 for (const file of readdirSync('./src/pages/blog')) {
@@ -34,6 +44,7 @@ export default defineConfig({
   site: 'https://decodifica.net',
   base: '/',
   output: 'static',
+  redirects,
   integrations: [
     mdx(),
     sitemap({

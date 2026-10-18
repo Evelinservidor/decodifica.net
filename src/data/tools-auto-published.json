@@ -27,8 +27,8 @@
         "href": "/herramientas/casos/para-ia-local-abierta/"
       },
       {
-        "label": "Ficha de Ollama",
-        "href": "/herramientas/ollama/"
+        "label": "Guía de Ollama",
+        "href": "/blog/ollama-que-es-como-usar/"
       }
     ],
     "hasDetailPage": true,

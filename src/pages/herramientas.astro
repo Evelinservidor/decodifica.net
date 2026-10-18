@@ -1,4 +1,5 @@
 ---
+import { enlace, estaRedirigida } from '~/lib/poda-seo';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import { tools } from '~/data/tools';
@@ -145,9 +146,9 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
 
     <section class="mt-8 grid gap-5 lg:grid-cols-3" id="tool-grid">
       {tools.map((tool) => {
-        const detailHref = `/herramientas/${tool.slug}/`;
+        const detailHref = enlace(`/herramientas/${tool.slug}/`);
         const primaryHref = tool.hasDetailPage ? detailHref : tool.officialUrl;
-        const primaryLabel = tool.hasDetailPage ? 'Ver ficha práctica' : 'Ver página oficial';
+        const primaryLabel = tool.hasDetailPage ? (estaRedirigida(`/herramientas/${tool.slug}/`) ? 'Ver guía' : 'Ver ficha práctica') : 'Ver página oficial';
         return (
           <article
             class="tool-card surface-panel flex h-full flex-col rounded-xl border border-dark-600 bg-dark-800 p-5"

@@ -39,7 +39,6 @@ export const GET: APIRoute = () => {
     '',
     '## Flujos de trabajo',
     '',
-    link('Convertir una reunión en decisiones y tareas', '/workflows/reunion-a-decisiones-y-tareas/', 'de una transcripción a tareas revisables sin inventar acuerdos.'),
     link('Investigar un tema sin perder las fuentes', '/workflows/investigar-con-fuentes/', 'separar búsqueda, fuentes, análisis y redacción.'),
     link('Verificar una fórmula de hoja de cálculo', '/workflows/verificar-formula-hoja-calculo/', 'comprobar una fórmula generada por IA antes de usarla.'),
     '',
