@@ -35,10 +35,10 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Pilar:** `/blog/claude-ia-que-es-gratis/`, que se convertirá en «Claude en español: guía completa (gratis, planes y
   cómo usarlo)». Su dirección no cambia.
 - **Apoyos que ya hay:** ✔ `/blog/claude-skills-1000-gratis/` (la página más fuerte de la web; su dirección no se toca) ·
-  ✔ `/blog/claude-emails-sonar-humanos/` · ✔ `/blog/alternativas-fable-5/` · ✔ `/herramientas/chatgpt-vs-claude/`
+  ✔ `/blog/claude-emails-sonar-humanos/` (revisado el 19-10-2026) · ✔ `/blog/alternativas-fable-5/` · ✔ `/herramientas/chatgpt-vs-claude/`
 - **Cola de apoyos nuevos** (en este orden; antes de escribir, comprobar en la web oficial que la función existe hoy y
   cómo se llama):
-  - [ ] Pilar: rehacer `/blog/claude-ia-que-es-gratis/` como guía completa
+  - [x] ✔ (19-10-2026) Pilar: rehacer `/blog/claude-ia-que-es-gratis/` como guía completa («Claude en español: guía completa, gratis y planes»)
   - [ ] Prompts para Claude con ejemplos (y cómo escribirlos según su guía oficial)
   - [ ] Claude Code sin saber programar: primeros pasos
   - [ ] Límites del plan gratis de Claude y cómo aprovecharlos
@@ -46,6 +46,7 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Claude vs Gemini: cuál elegir según para qué
   - [ ] Conectores de Claude explicados sin jerga
   - [ ] Crear tu primera skill paso a paso (solo si no pisa a Claude Skills; si lo pisa, va como sección dentro)
+  - [ ] Idea (19-10-2026): Memoria de Claude y chats de incógnito: qué recuerda y cómo borrarlo (el centro de ayuda lo explica con detalle; hoy es solo un apartado del pilar)
 
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
 - **Pilar (nuevo):** «IA local en español: cómo usar IA en tu ordenador sin internet» (qué programa elegir según tu
