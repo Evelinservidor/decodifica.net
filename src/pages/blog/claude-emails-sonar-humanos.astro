@@ -6,7 +6,7 @@ import FiguraArticulo from '../../components/FiguraArticulo.astro';
 const title = "Claude para escribir emails que no suenen a robot";
 const description = "Cómo darle a Claude tu tono, tu relación con el destinatario y un correo de ejemplo para que escriba emails claros y naturales. Con plantillas copiables.";
 const pubDate = "2026-06-19";
-const modifiedDate = "2026-10-07";
+const modifiedDate = "2026-10-19";
 const readingTime = "8 min";
 const tema = "oficina";
 const tags = ["emails con ia", "claude prompts", "productividad email"];
@@ -31,9 +31,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
   <Articulo slug="claude-emails-sonar-humanos">
 
 
-    <p><strong>En resumen:</strong> los emails suenan a robot cuando le pides a Claude "escribe un email profesional" sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo mismo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo detrás de cada instrucción y ejemplos.
-    </p>
-    <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía de Claude en español</a>: qué es, si es gratis y cuánto cuesta.</p>
+    <p><strong>En resumen:</strong> los emails suenan a robot cuando le pides a Claude «escribe un email profesional» sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo de cada petición y ejemplos, que según Anthropic son «una de las formas más fiables» de guiar el tono.</p>
+    <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía completa de Claude en español</a> (qué incluye gratis, planes, Proyectos y memoria). Si repites siempre las mismas normas, mira también <a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Claude para emails</h2>
     <p>
@@ -54,7 +53,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Email repetido</p>
         <h3 class="mt-2 font-display text-xl font-bold text-white">Seguimiento y recordatorios</h3>
-        <p class="mt-2 text-sm text-dark-200">Perfecto para convertir notas sueltas en mensajes claros sin empezar de cero cada vez.</p>
+        <p class="mt-2 text-sm text-dark-200">Sirve para convertir notas sueltas en mensajes claros sin empezar de cero cada vez.</p>
       </div>
       <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">No lo uses</p>
@@ -93,7 +92,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       Son instrucciones fijas que Claude tiene en cuenta sin que las repitas. En Claude.ai tienes dos sitios para guardarlas:</p>
     <ul class="space-y-2">
       <li><strong>Settings &gt; Instructions for Claude:</strong> se aplican a todas tus conversaciones. Sirve si casi todo lo que escribes con Claude son correos.</li>
-      <li><strong>Las instrucciones de un Proyecto:</strong> solo afectan a los chats de ese proyecto. Es la opción más limpia: creas un proyecto "Emails" y no mezclas este tono con otras tareas. Los Proyectos están también en el plan gratuito, con un máximo de cinco.</li>
+      <li><strong>Las instrucciones de un Proyecto:</strong> solo afectan a los chats de ese proyecto. Es la opción más limpia: creas un proyecto "Emails" y no mezclas este tono con otras tareas. Los Proyectos están también en el plan gratuito (hasta cinco), aunque el centro de ayuda se contradice sobre si sus instrucciones son solo de pago: si en tu plan no te aparece la opción, usa la de arriba o pega tus normas al empezar el chat.</li>
     </ul>
 
     <FiguraArticulo
@@ -260,12 +259,12 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ Aceptar el primer borrador</h3>
     <p>
-      Siempre pide una segunda versión más corta, o más directa, o más formal. La segunda iteración suele ser mejor que la primera.
+      Pide una segunda versión más corta, más directa o más formal, y di qué falla de la primera («sobra el segundo párrafo», «suena demasiado formal»). Con esa corrección concreta, Claude sabe qué cambiar.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">❌ Olvidar el siguiente paso</h3>
     <p>
-      El email debe terminar siempre con un CTA: pregunta, propuesta de hora, link, o siguiente paso concreto. Nunca "espero tu respuesta".
+      El email debe terminar con algo que la otra persona pueda hacer: una pregunta, una propuesta de hora, un enlace o un siguiente paso concreto. Mejor que "espero tu respuesta".
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
@@ -292,7 +291,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>
-      Consultadas el 7 de octubre de 2026.
+      Consultadas el 19 de octubre de 2026.
     </p>
     <ul class="space-y-2">
       <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: instrucciones claras, contexto y uso de ejemplos.</li>
@@ -312,7 +311,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
       Si quieres convertir esto en un sistema de comunicación y productividad, seguiría por aquí:
     </p>
     <ul>
-      <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Claude IA: qué es, si es gratis y cuánto cuesta</a>, para elegir plan antes de configurarlo.</li>
+      <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Claude en español: guía completa</a>, para elegir plan y ver qué trae cada uno.</li>
       <li><a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>, para guardar tus normas de escritura y no repetirlas en cada email.</li>
       <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres conectar correos con tareas reales.</li>
       <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">NotebookLM</a>, si antes de escribir necesitas resumir documentos largos o reuniones.</li>
@@ -329,7 +328,7 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
       <ul class="mt-4 space-y-3 text-sm leading-6">
         <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Guía de Claude en español</a>, para revisar cuándo usarlo para texto largo y documentos.</li>
         <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas qué herramienta abrir para escribir.</li>
-        <li><a href="/herramientas/para-crear-contenido/" class="text-brand-400 hover:text-brand-300">Herramientas IA para crear contenido</a>, si quieres separar escritura, diseño y revisión.</li>
+        <li><a href="/herramientas/generador-prompts/" class="text-brand-400 hover:text-brand-300">Generador de prompts gratis</a>, si quieres que te ayude a montar la petición paso a paso.</li>
       </ul>
     </section>
 
