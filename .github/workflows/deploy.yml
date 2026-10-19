@@ -59,3 +59,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  # Avisa a Google de que el sitemap ha cambiado (sustituye a reenviarlo a mano en
+  # Search Console). Si falla, la web ya está publicada: no se marca la publicación
+  # como fallida, solo este paso.
+  avisar-google:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Autenticar en Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: projects/979898982695/locations/global/workloadIdentityPools/github/providers/decodifica
+          service_account: informe-gsc@decodifica-informes-510822.iam.gserviceaccount.com
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install --quiet requests google-auth
+
+      - name: Reenviar el sitemap a Search Console
+        run: python scripts/gsc_enviar_sitemap.py

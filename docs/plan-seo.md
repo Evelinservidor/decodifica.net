@@ -96,8 +96,10 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   fusión** de una página del mismo grupo, alternando A y B (D cuando A y B tengan su pilar).
 - Al acabar cada pieza, marcarla aquí con ✔ (y la fecha). Las ideas nuevas van al final de su cola, sin escribirlas:
   Jordi las ve en el pull request.
-- Pedir a Google que mire cada pilar nuevo: Search Console → «Inspección de URLs» → «Solicitar indexación» (lo hace
-  Jordi, o Jarvis con el navegador compartido).
+- Avisar a Google: desde el 19-10-2026 el sitemap se reenvía solo a Search Console después de cada publicación
+  (`deploy.yml` → `scripts/gsc_enviar_sitemap.py`; el robot tiene «Acceso total»). El botón «Solicitar indexación» no
+  tiene API: no se le pide a Jordi cada semana. Solo si un artículo lleva más de 14 días fuera de Google (lo dice
+  `latest_indexacion.md`), el informe lo apunta y Jordi (o Jarvis con el navegador compartido) lo pide a mano.
 
 ## Cómo se mide
 Siempre **28 días contra 28 días**, **por grupos y por páginas** (no por búsquedas sueltas: Google esconde la mayoría).
