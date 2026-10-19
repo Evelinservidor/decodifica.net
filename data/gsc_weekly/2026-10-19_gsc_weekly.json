@@ -1,0 +1,1353 @@
+{
+  "fetched_at": "2026-10-19",
+  "days": 7,
+  "sites_requested": [
+    "sc-domain:decodifica.net",
+    "https://drulenterror.blogspot.com/",
+    "https://calm-mind-meditation-souns.blogspot.com/",
+    "https://pergaminosprohibidos.blogspot.com/",
+    "https://jc-automation-n8n.blogspot.com/"
+  ],
+  "sites_available": [
+    "https://jc-automation-n8n.blogspot.com/",
+    "sc-domain:decodifica.net"
+  ],
+  "per_site": {
+    "sc-domain:decodifica.net": {
+      "site": "sc-domain:decodifica.net",
+      "period": {
+        "current": {
+          "start": "2026-10-10",
+          "end": "2026-10-16"
+        },
+        "previous": {
+          "start": "2026-10-03",
+          "end": "2026-10-09"
+        }
+      },
+      "totals": {
+        "current": {
+          "clicks": 4,
+          "impressions": 418,
+          "position_impressions_sum": 3350.0
+        },
+        "previous": {
+          "clicks": 6,
+          "impressions": 417,
+          "position_impressions_sum": 3134.0
+        },
+        "ctr_current": 0.9569377990430622,
+        "ctr_previous": 1.4388489208633095,
+        "avg_position_current": 8.014354066985646,
+        "avg_position_previous": 7.5155875299760195
+      },
+      "queries": {
+        "current": [
+          {
+            "query": "decodifica",
+            "clicks": 1,
+            "impressions": 72,
+            "ctr": 0.013888888888888888,
+            "position": 7.347222222222222
+          },
+          {
+            "query": "constructor de prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "creadores de prompts",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "donde hacer prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "generadores de prompt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "generadores de prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "nekodificador",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 88
+          },
+          {
+            "query": "paginas para hacer prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "workflows reuniones",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          }
+        ],
+        "previous": [
+          {
+            "query": "decodifica",
+            "clicks": 1,
+            "impressions": 89,
+            "ctr": 0.011235955056179775,
+            "position": 7.292134831460674
+          },
+          {
+            "query": "constructor de prompts",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 7.25
+          },
+          {
+            "query": "creadores de prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "donde crear prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "pagina para crear prompts",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "paginas para hacer prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "workflows reuniones",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          }
+        ]
+      },
+      "query_pages": [
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/",
+          "clicks": 1,
+          "impressions": 40,
+          "ctr": 0.025,
+          "position": 7.025
+        },
+        {
+          "query": "constructor de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "creadores de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/decodifica/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 7.333333333333333
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/quienes-somos/",
+          "clicks": 0,
+          "impressions": 35,
+          "ctr": 0,
+          "position": 7.628571428571429
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/sobre/",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 7.5
+        },
+        {
+          "query": "donde hacer prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "generadores de prompt",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "generadores de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "nekodificador",
+          "page": "https://decodifica.net/blog/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 88
+        },
+        {
+          "query": "paginas para hacer prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "workflows reuniones",
+          "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 20
+        }
+      ],
+      "pages": {
+        "current": [
+          {
+            "page": "https://decodifica.net/herramientas/generador-prompts/",
+            "clicks": 2,
+            "impressions": 25,
+            "ctr": 0.08,
+            "position": 2.92
+          },
+          {
+            "page": "https://decodifica.net/",
+            "clicks": 1,
+            "impressions": 49,
+            "ctr": 0.02040816326530612,
+            "position": 6.857142857142857
+          },
+          {
+            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+            "clicks": 1,
+            "impressions": 115,
+            "ctr": 0.008695652173913044,
+            "position": 8.269565217391303
+          },
+          {
+            "page": "https://decodifica.net/aviso-legal/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2.5
+          },
+          {
+            "page": "https://decodifica.net/blog/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 45
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-16-prompts-secretos-web/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 6.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-17-hermes-agent-chino/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 4.8
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-08-05-kimi-k3-investigacion-visual/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-fable-5/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 4
+          },
+          {
+            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+            "clicks": 0,
+            "impressions": 24,
+            "ctr": 0,
+            "position": 7.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-mejora-excel/",
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 8.578947368421051
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
+            "clicks": 0,
+            "impressions": 21,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-google-openai/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 10.4
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-guia-2026/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/blog/prompts-chinos-abiertos/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/blog/qwen-code-agent-terminal/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/contacto/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/cookies/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/decodifica/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 7.25
+          },
+          {
+            "page": "https://decodifica.net/empieza/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/alternativas-elevenlabs/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 3
+          },
+          {
+            "page": "https://decodifica.net/herramientas/anythingllm/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 6.571428571428571
+          },
+          {
+            "page": "https://decodifica.net/herramientas/beautiful-ai/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-documentos-pdf/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-excel-hojas-calculo/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-ia-local-abierta/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt-vs-claude/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparador/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 6.666666666666667
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/manus-vs-chatgpt-apps/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 7.538461538461538
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 5.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/elevenlabs/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/fathom/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "page": "https://decodifica.net/herramientas/glm/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8.75
+          },
+          {
+            "page": "https://decodifica.net/herramientas/granola/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 5.75
+          },
+          {
+            "page": "https://decodifica.net/herramientas/hermes-agent/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/kimi/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/herramientas/manus/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/microsoft-copilot/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/mistral-le-chat/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 7.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm-vs-perplexity/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 6.428571428571429
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notion-ai/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "page": "https://decodifica.net/herramientas/ollama/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "page": "https://decodifica.net/herramientas/perplexity/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/plus-ai/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 5.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/quadratic/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/qwen-code/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 10.8
+          },
+          {
+            "page": "https://decodifica.net/newsletter/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "page": "https://decodifica.net/privacidad/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 2.666666666666667
+          },
+          {
+            "page": "https://decodifica.net/quienes-somos/",
+            "clicks": 0,
+            "impressions": 45,
+            "ctr": 0,
+            "position": 7.444444444444445
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapa-herramientas-ia/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6.5
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapas-ia/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/sobre/",
+            "clicks": 0,
+            "impressions": 11,
+            "ctr": 0,
+            "position": 7.181818181818182
+          },
+          {
+            "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          }
+        ],
+        "previous": [
+          {
+            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+            "clicks": 3,
+            "impressions": 116,
+            "ctr": 0.02586206896551724,
+            "position": 7.568965517241379
+          },
+          {
+            "page": "https://decodifica.net/",
+            "clicks": 1,
+            "impressions": 45,
+            "ctr": 0.022222222222222223,
+            "position": 6.511111111111111
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-fable-5/",
+            "clicks": 1,
+            "impressions": 3,
+            "ctr": 0.3333333333333333,
+            "position": 6.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/granola/",
+            "clicks": 1,
+            "impressions": 5,
+            "ctr": 0.2,
+            "position": 7.4
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-16-prompts-secretos-web/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 6.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 7.3
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-08-05-kimi-k3-investigacion-visual/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+            "clicks": 0,
+            "impressions": 22,
+            "ctr": 0,
+            "position": 7.863636363636363
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-gratis-silicon-valley/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-mejora-excel/",
+            "clicks": 0,
+            "impressions": 18,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
+            "clicks": 0,
+            "impressions": 15,
+            "ctr": 0,
+            "position": 6.4
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "page": "https://decodifica.net/blog/notebooklm-google-openai/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/blog/prompts-chinos-abiertos/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/blog/qwen-code-agent-terminal/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/decodifica/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 6.923076923076923
+          },
+          {
+            "page": "https://decodifica.net/empieza/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/anythingllm/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 7.428571428571429
+          },
+          {
+            "page": "https://decodifica.net/herramientas/beautiful-ai/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9.333333333333334
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-organizar-trabajo/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt-vs-claude/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparador/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/kimi-vs-glm/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/manus-vs-chatgpt-apps/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 8.285714285714285
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/evaluador/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/fathom/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 7.625
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gemini/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/generador-prompts/",
+            "clicks": 0,
+            "impressions": 14,
+            "ctr": 0,
+            "position": 4.428571428571429
+          },
+          {
+            "page": "https://decodifica.net/herramientas/glm/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/huggingchat/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/kimi/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/manus/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8.25
+          },
+          {
+            "page": "https://decodifica.net/herramientas/microsoft-copilot/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 13.333333333333334
+          },
+          {
+            "page": "https://decodifica.net/herramientas/mistral-le-chat/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/motion/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 4
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm-vs-perplexity/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/ollama/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-crear-contenido/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "page": "https://decodifica.net/herramientas/para-presentaciones/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/qwen-code/",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 5.4
+          },
+          {
+            "page": "https://decodifica.net/quienes-somos/",
+            "clicks": 0,
+            "impressions": 56,
+            "ctr": 0,
+            "position": 7.696428571428571
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapa-herramientas-ia/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/recursos/mapas-ia/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/sobre/",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 10.235294117647058
+          },
+          {
+            "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          },
+          {
+            "page": "https://decodifica.net/workflows/verificar-formula-hoja-calculo/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          }
+        ]
+      },
+      "countries": [
+        {
+          "country": "esp",
+          "clicks": 2,
+          "impressions": 103
+        },
+        {
+          "country": "ven",
+          "clicks": 2,
+          "impressions": 43
+        },
+        {
+          "country": "arg",
+          "clicks": 0,
+          "impressions": 28
+        },
+        {
+          "country": "bol",
+          "clicks": 0,
+          "impressions": 4
+        },
+        {
+          "country": "bra",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "can",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "che",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "chl",
+          "clicks": 0,
+          "impressions": 22
+        },
+        {
+          "country": "col",
+          "clicks": 0,
+          "impressions": 24
+        },
+        {
+          "country": "cri",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "cub",
+          "clicks": 0,
+          "impressions": 8
+        },
+        {
+          "country": "dom",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "ecu",
+          "clicks": 0,
+          "impressions": 11
+        },
+        {
+          "country": "fra",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "gbr",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "grc",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "gtm",
+          "clicks": 0,
+          "impressions": 5
+        },
+        {
+          "country": "hnd",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "hrv",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "kor",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "mex",
+          "clicks": 0,
+          "impressions": 62
+        },
+        {
+          "country": "nic",
+          "clicks": 0,
+          "impressions": 5
+        },
+        {
+          "country": "pan",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
+          "country": "per",
+          "clicks": 0,
+          "impressions": 60
+        },
+        {
+          "country": "pri",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "prt",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "slv",
+          "clicks": 0,
+          "impressions": 5
+        },
+        {
+          "country": "ury",
+          "clicks": 0,
+          "impressions": 6
+        },
+        {
+          "country": "usa",
+          "clicks": 0,
+          "impressions": 13
+        }
+      ],
+      "devices": [
+        {
+          "device": "DESKTOP",
+          "clicks": 2,
+          "impressions": 247
+        },
+        {
+          "device": "MOBILE",
+          "clicks": 2,
+          "impressions": 167
+        },
+        {
+          "device": "TABLET",
+          "clicks": 0,
+          "impressions": 4
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-10-10",
+          "clicks": 1,
+          "impressions": 37,
+          "position": 7.594594594594595
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 0,
+          "impressions": 43,
+          "position": 7.813953488372093
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 0,
+          "impressions": 68,
+          "position": 7.073529411764706
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 1,
+          "impressions": 72,
+          "position": 6.819444444444445
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 2,
+          "impressions": 76,
+          "position": 7.565789473684211
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 0,
+          "impressions": 56,
+          "position": 10.357142857142858
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 0,
+          "impressions": 66,
+          "position": 9.181818181818182
+        }
+      ]
+    },
+    "https://drulenterror.blogspot.com/": {
+      "error": "not_in_gsc_or_no_access"
+    },
+    "https://calm-mind-meditation-souns.blogspot.com/": {
+      "error": "not_in_gsc_or_no_access"
+    },
+    "https://pergaminosprohibidos.blogspot.com/": {
+      "error": "not_in_gsc_or_no_access"
+    },
+    "https://jc-automation-n8n.blogspot.com/": {
+      "site": "https://jc-automation-n8n.blogspot.com/",
+      "period": {
+        "current": {
+          "start": "2026-10-10",
+          "end": "2026-10-16"
+        },
+        "previous": {
+          "start": "2026-10-03",
+          "end": "2026-10-09"
+        }
+      },
+      "totals": {
+        "current": {
+          "clicks": 0,
+          "impressions": 0,
+          "position_impressions_sum": 0
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 0,
+          "position_impressions_sum": 0
+        },
+        "ctr_current": 0,
+        "ctr_previous": 0,
+        "avg_position_current": 0,
+        "avg_position_previous": 0
+      },
+      "queries": {
+        "current": [],
+        "previous": []
+      },
+      "query_pages": [],
+      "pages": {
+        "current": [],
+        "previous": []
+      },
+      "countries": [],
+      "devices": [],
+      "daily": [
+        {
+          "date": "2026-10-10",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0
+        }
+      ]
+    }
+  }
+}
