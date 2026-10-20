@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { blogPostIndex } from '~/lib/blog-post-index';
 import { siteConfig } from '~/lib/site-config';
+import { esNoindex } from '~/lib/poda-seo';
 
 // llms.txt (https://llmstxt.org/): resumen de la web para asistentes de IA.
 // La lista de artículos se genera en cada build a partir de src/pages/blog/.
@@ -11,7 +12,8 @@ const SITE_URL = siteConfig.url;
 const link = (title: string, path: string, note: string) => `- [${title}](${SITE_URL}${path}): ${note}`;
 
 export const GET: APIRoute = () => {
-  const articles = blogPostIndex.map((post) =>
+  // Las páginas con noindex (src/data/poda-seo.json) no se anuncian.
+  const articles = blogPostIndex.filter((post) => !esNoindex(`/blog/${post.slug}/`)).map((post) =>
     link(post.title, `/blog/${post.slug}/`, `${post.description} (actualizado el ${post.modifiedDate})`),
   );
 
