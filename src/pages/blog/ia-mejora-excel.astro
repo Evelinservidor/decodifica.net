@@ -2,14 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
 const title = "IA para Excel: cuál elegir y cuáles tienen plan gratis";
 const description = "Copilot, Gemini en Sheets, ChatGPT, Quadratic y Equals: cuál encaja según tu caso, cuáles tienen plan gratis y cómo hacer tu primera fórmula con IA.";
 const pubDate = "2026-06-23";
-const modifiedDate = "2026-10-18";
-const tags = ["ia para excel", "microsoft copilot", "excel ia", "quadratic", "productividad ia"];
-const readingTime = "12 min";
+const modifiedDate = "2026-10-20";
+const tags = ["ia para excel", "copilot en excel", "excel ia", "chatgpt para excel", "gemini en sheets", "quadratic"];
+const readingTime = "11 min";
 const tema = "oficina";
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
@@ -26,343 +28,196 @@ const pillarLabel = "Pilar 2: Tips productividad";
   keywords={tags}
   citations={[
     "https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487",
+    "https://support.microsoft.com/excel/copilot/get-started-with-copilot-in-excel",
+    "https://support.microsoft.com/en-US/Excel/copilot/generate-formula-rows-and-columns-with-copilot-in-excel",
+    "https://support.microsoft.com/en-us/excel/copilot/frequently-asked-questions-about-copilot-in-excel",
+    "https://support.microsoft.com/en-us/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot",
     "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
-    "https://workspace.google.com/resources/spreadsheet-ai/",
+    "https://www.microsoft.com/en-us/microsoft-365-copilot/enterprise",
+    "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals",
     "https://support.google.com/docs/answer/14356410?hl=en",
-    "https://openai.com/",
-    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://support.google.com/docs/answer/15877199?hl=en",
+    "https://support.google.com/docs/answer/14925782?hl=en",
+    "https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets",
+    "https://openai.com/index/chatgpt-for-excel/",
+    "https://help.openai.com/en/articles/6950777",
+    "https://gemini.google/subscriptions/",
     "https://www.quadratichq.com/pricing",
     "https://equals.com/pricing/",
-    "https://decodifica.net/contacto/",
   ]}
 >
   <Articulo slug="ia-mejora-excel">
 
-    <ReviewMethodology reviewed="11 de julio de 2026" task="crear, revisar y aplicar fórmulas o cambios en una hoja de cálculo" />
+    <p><strong>En resumen:</strong> si ya tienes Microsoft 365, la IA más directa es Copilot en Excel, que hoy se usa desde su panel (el icono de Copilot, abajo a la derecha): le pides en español una columna de fórmulas, un gráfico o una tabla dinámica y la crea. La función <code>=COPILOT()</code> ya no existe: Microsoft la retiró el 14 de septiembre de 2026. Gratis, de las cinco opciones, solo hay ChatGPT para Excel (uso limitado en los planes Free y Go) y Quadratic (plan Personal); Copilot y Gemini en Sheets necesitan un plan de pago que los incluya.</p>
 
-    <aside class="not-prose my-8 rounded-2xl border border-brand-500/40 bg-brand-500/10 p-5 text-sm text-dark-100" role="note">
-      <p><strong>Aviso (18 de octubre de 2026):</strong> Microsoft ha retirado la función <code>=COPILOT()</code> de Excel: dejó de estar disponible el 14 de septiembre de 2026. Según Microsoft, Copilot en Excel sigue disponible desde el panel lateral y permite muchas de las mismas tareas (<a href="https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487" rel="noopener" target="_blank">anuncio de Microsoft</a>). Lo que esta guía cuenta de <code>=COPILOT()</code> describe cómo funcionaba hasta esa fecha.</p>
-    </aside>
+    <ReviewMethodology reviewed="20 de octubre de 2026" task="crear, revisar y aplicar fórmulas o cambios en una hoja de cálculo" />
 
+    <Caja tipo="ojo">La función <code>=COPILOT()</code>, que dejaba escribir un prompt dentro de una celda, dejó de estar disponible el 14 de septiembre de 2026. Según Microsoft, Copilot sigue en Excel desde su panel y permite muchas de las mismas tareas (<a href="https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487" rel="noopener" target="_blank">aviso de Microsoft</a>). Si una hoja tuya usaba esa función, tendrás que rehacer esas columnas con el panel o con fórmulas normales.</Caja>
 
-    <section class="respuesta-rapida" aria-label="Respuesta rápida">
-      <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
-      <ul>
-        <li><strong>Microsoft =COPILOT()</strong>: función de Excel que permitía usar un prompt y referencias de celda. Microsoft la retiró el 14 de septiembre de 2026; Copilot sigue en Excel desde el panel lateral.</li>
-        <li><strong>Google Gemini en Sheets</strong>: puede crear fórmulas, tablas, análisis y cambios en hojas nativas de Google Sheets con un plan elegible.</li>
-        <li><strong>ChatGPT for Excel (beta)</strong>: plugin oficial de OpenAI, en pruebas desde marzo de 2026. Solo disponible para usuarios de pago en EE. UU., Canadá y Australia.</li>
-        <li><strong>Quadratic</strong>: la nueva generación de hoja de cálculo. Lleva Python, SQL y múltiples modelos de IA en una misma cuadrícula. Plan Personal gratis con IA limitada.</li>
-        <li><strong>Equals</strong>: para empresas con datos en Snowflake, BigQuery o HubSpot. Pensado para equipos de finanzas que ya gastan $24k al año en herramientas, no para un usuario normal.</li>
-      </ul>
-    </section>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué IA para Excel elegir según tu caso</h2>
-    <p>
-      Si quieres ir directo a la decisión, sepáralo así:
-    </p>
-
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Excel de empresa</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Microsoft =COPILOT()</h3>
-        <p class="mt-2 text-sm text-dark-200">La opción más natural si ya trabajas en Excel y tu empresa paga Microsoft 365 Copilot.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Google Workspace</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Gemini en Sheets</h3>
-        <p class="mt-2 text-sm text-dark-200">La mejor si tu hoja vive en Google Sheets y quieres rellenar columnas sin pelearte con fórmulas.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Datos + código</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Quadratic</h3>
-        <p class="mt-2 text-sm text-dark-200">Para analistas que mezclan hojas, SQL, Python y modelos de IA en un mismo trabajo.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Finance enterprise</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Equals</h3>
-        <p class="mt-2 text-sm text-dark-200">Sólo tiene sentido si tu empresa ya trabaja con stack de datos serio y reporting recurrente.</p>
-      </div>
-    </div>
-
-    <p>
-      Regla rápida: si ya dispones de la licencia de Microsoft 365 Copilot, prueba Copilot en Excel (el panel lateral, porque <code>=COPILOT()</code> ya no está disponible) con una copia de la hoja. Si no, compara Gemini en Sheets o Quadratic antes de gastar dinero. Para una fórmula puntual, un chat puede servir para explicarla, pero valida el resultado en la hoja.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué Excel sigue siendo un cuello de botella en 2026</h2>
-    <p>
-      Excel sigue siendo potente, pero una fórmula compleja puede obligarte a buscar, probar, corregir y volver a probar. La IA puede acelerar esa primera versión; no elimina la necesidad de comprobarla con datos reales.
-    </p>
-    <p>
-      Algunas funciones ya integran IA dentro de Excel o Sheets. Eso puede reducir el salto entre el encargo y una primera fórmula, pero no impide errores de lógica, permisos o formato. Revisa el plan, la disponibilidad y el comportamiento de recálculo antes de depender de una función en un proceso recurrente.
-    </p>
-    <p>
-      Una prueba prudente consiste en copiar una hoja no crítica, elegir tres fórmulas repetitivas, pedir una propuesta y comparar el resultado con los datos conocidos. Conserva el flujo solo si reduce tiempo sin introducir discrepancias.
-    </p>
+    <h2>Qué IA para Excel elegir según tu caso</h2>
+    <div><table>
+      <thead>
+        <tr><th>Si…</th><th>Elige</th><th>Por qué</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Trabajas en Excel y tienes Microsoft 365 Personal, Family, Premium o un plan de empresa</td><td>Copilot en Excel</td><td>Está dentro de Excel y puede editar el libro directamente.</td></tr>
+        <tr><td>Tu hoja vive en Google Sheets</td><td>Gemini en Sheets</td><td>Panel lateral y función <code>=AI()</code> para rellenar columnas con un prompt.</td></tr>
+        <tr><td>Quieres probar gratis dentro de Excel</td><td>ChatGPT para Excel</td><td>Complemento oficial de OpenAI con uso limitado en los planes Free y Go.</td></tr>
+        <tr><td>Mezclas hoja de cálculo, Python y SQL</td><td>Quadratic</td><td>Hoja de cálculo nueva con código e IA en la misma cuadrícula; plan Personal gratis.</td></tr>
+        <tr><td>Eres un equipo de finanzas con datos en varias plataformas</td><td>Equals</td><td>Solo compensa a empresas: empieza en 24.000 dólares al año.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Regla rápida: empieza por la que ya pagas. Si tienes Microsoft 365 con Copilot, prueba el panel con una copia de la hoja. Si no pagas nada, ChatGPT para Excel o Quadratic te dejan probar sin coste. Sea cual sea, comprueba unas filas a mano antes de fiarte del resultado.</p>
 
     <FiguraArticulo
       src="/img/blog/ia-mejora-excel/ia-excel-gratis-o-de-pago.webp"
-      alt="Cuadro resumen de si cada IA para Excel tiene plan gratis: Copilot no, Gemini en Sheets sí limitado, ChatGPT for Excel no, Quadratic sí con IA limitada y Equals no"
+      alt="Cuadro resumen de si cada IA para hojas de cálculo tiene plan gratis: Copilot en Excel no, Gemini en Sheets no, ChatGPT para Excel sí con uso limitado en Free y Go, Quadratic sí con IA limitada y Equals no, desde 24.000 dólares al año"
       width={1200}
       height={639}
     />
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las 5 IAs que de verdad cambian Excel en 2026</h2>
-
-    <p>
-      La comparación se basa en la documentación oficial disponible y en criterios por caso de uso, no en un ranking universal.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">1. Microsoft =COPILOT() — La que más cambia el día a día</h3>
-    <p>
-      En agosto de 2025, Catherine Pidgeon (Partner Director del equipo de Excel en Microsoft) anunció en el blog oficial de Microsoft 365 Insider la nueva función <strong>=COPILOT()</strong>, que pone un modelo de lenguaje directamente dentro de la cuadrícula de Excel. No es un panel lateral, no es un add-in, no es un script: es una función de hoja de cálculo más, con la misma sintaxis que SUMA o SI.
-    </p>
-    <p>
-      La sintaxis es: <code>=COPILOT(prompt_parte1, [contexto1], [prompt_parte2], [contexto2], ...)</code>. El primer argumento es un texto entre comillas que describe la tarea, y los siguientes son referencias a celdas o rangos que dan contexto. La función devuelve texto, números o tablas que se derraman en la cuadrícula, y se recalcula sola cada vez que cambian los datos de entrada. Igual que cualquier otra fórmula.
-    </p>
-    <p>
-      La función usa un prompt y contexto de celdas. Microsoft indica que requiere una licencia compatible y que su disponibilidad está ligada a los programas Frontier e Insider; confirma ambas condiciones en tu cuenta antes de diseñar un flujo alrededor de ella.
-    </p>
-    <p>
-      Importante: la función solo recibe el contexto que le pases como argumentos; Microsoft advierte que el resultado puede variar con el tiempo. Para datos críticos, importa y valida las fuentes en la hoja antes de usar la respuesta.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">2. Google Gemini en Sheets — opción para Google Workspace</h3>
-    <p>
-      Si vives en Google Workspace, Gemini lleva ya un año integrado en Sheets y ha mejorado mucho. La función estrella se llama <strong>"Fill with Gemini"</strong> (rellenar con Gemini) y permite generar o rellenar una columna entera a partir de un ejemplo y un prompt. Por ejemplo: "En la columna C, a partir del nombre del cliente en la columna A, deduce el sector industrial y devuelve solo el nombre del sector en minúsculas".
-    </p>
-    <p>
-      La gracia: <strong>no necesitas saber fórmulas</strong>. Seleccionas la columna, escribes en lenguaje natural lo que quieres, Gemini lo genera. La otra función útil es la creación de tablas desde cero: "Crea una tabla de seguimiento de proyectos con columnas para nombre, fecha de inicio, fecha de fin, responsable y estado", y te aparece la tabla con tipos de dato coherentes.
-    </p>
-    <p>
-      Pricing: Gemini en Sheets viene incluido en los planes <strong>Google AI Pro y AI Ultra</strong> para empresas. Para usuarios individuales con cuenta personal de Google, las funciones están disponibles dentro de los límites de Gemini Advanced. Si ya pagas Workspace, el coste extra es marginal. Si no, la opción gratuita es bastante limitada en volumen de prompts al mes.
-    </p>
-    <p>
-      Limitación importante: las funciones de Gemini en Sheets están optimizadas para <strong>archivos nativos de Google Sheets</strong>. Si abres un .xlsx y lo trabajas tal cual, algunas funciones de IA no aparecen. Tienes que ir a Archivo > Guardar como Google Sheets para que Gemini trabaje en condiciones. Es un detalle, pero te hace perder quince minutos la primera vez.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">3. ChatGPT for Excel — El plugin oficial de OpenAI</h3>
-    <p>
-      En marzo de 2026, OpenAI lanzó en beta <strong>ChatGPT for Excel</strong>, un plugin que se integra como un panel lateral en Excel y permite generar tablas, explicar fórmulas, corregir errores y mantener el formato existente. A diferencia de COPILOT, este sí conserva tus fórmulas y formatos a la vez que modifica la estructura, y te explica cada cambio paso a paso antes de aplicarlo.
-    </p>
-    <p>
-      Lo más interesante: integración nativa con <strong>Moody's y Dow Jones Factiva</strong> para datos financieros. Si trabajas en análisis de inversiones, research o finanzas, puedes pedirle a ChatGPT que cruce tus datos internos con cotizaciones o noticias de empresa sin salir de Excel. Es un caso de uso muy vertical, pero donde está, está muy bien.
-    </p>
-    <p>
-      Pricing: <strong>no hay plan gratuito</strong>. El plugin viene con las suscripciones de pago de ChatGPT: Plus (20 dólares al mes), Pro, Business, Enterprise y Edu. Pero el acceso beta está limitado a usuarios de <strong>Estados Unidos, Canadá y Australia</strong>. Si estás en España, de momento no puedes probarlo, aunque OpenAI ha dicho que ampliará países en los próximos meses.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">4. Quadratic — La nueva generación de hoja de cálculo con IA</h3>
-    <p>
-      Quadratic no es un plugin para Excel: <strong>es una hoja de cálculo nueva</strong>, construida desde cero con Python, SQL y modelos de IA como ciudadanos de primera clase. Tú escribes en una celda, en otra celda escribes una query SQL que ataca una base de datos PostgreSQL conectada, en una tercera celda llamas a GPT-4o o Claude para que resuma los resultados. Todo en la misma cuadrícula, con gráficos nativos.
-    </p>
-    <p>
-      El caso de uso ideal: data analysts y equipos de producto que ya tocan Python o SQL y quieren dejar de hacer malabares entre Jupyter Notebook, Excel y Looker. Si tu trabajo es cruzar datos de Postgres con un CSV, hacer un join, calcular una métrica y mandarla a Slack, Quadratic te ahorra las cinco herramientas intermedias.
-    </p>
-    <p>
-      Pricing: plan <strong>Personal gratis</strong> con uso limitado de IA, <strong>Pro a 18 dólares al mes por usuario</strong> (con 20 dólares en créditos de IA al mes) y <strong>Business a 36 dólares al mes por usuario</strong> con el doble de créditos. Tiene SSO, opción de self-hosting para enterprise y conector con bases de datos, CRMs, Mixpanel, Plaid, Stripe, etc. Es, con diferencia, la herramienta más seria para análisis avanzado con IA integrada.
-    </p>
-    <p>
-      La pega: <strong>no es Excel</strong>. Si tu equipo trabaja con .xlsx, con macros VBA, con Power Query, migrar a Quadratic es un proyecto, no un swap. Para un usuario individual que quiere probar, el plan gratis llega para hacer demos y pequeños análisis. Para producción en una empresa mediana, hay que justificar la inversión.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">5. Equals — Para equipos de finanzas con stack serio</h3>
-    <p>
-      Equals se posiciona como la <strong>hoja de cálculo para equipos de finanzas y revenue operations</strong> que ya gastan dinero en Snowflake, BigQuery, HubSpot o Salesforce. Su modelo es BI dentro de una spreadsheet: conectas tus fuentes de datos, sincronizas cada hora o cada quince minutos, y construyes dashboards, modelos de retención, cohortes y forecasts directamente en la cuadrícula.
-    </p>
-    <p>
-      La IA de Equals es un agente interno que responde preguntas sobre tus datos en lenguaje natural y construye reports por ti. El plan Essential cuesta <strong>24.000 dólares al año</strong> e incluye 250 dólares al mes de gasto en IA, el Business son 36k al año con 500 dólares al mes de IA, y el Enterprise son 60k al año. No, no es un error de coma.
-    </p>
-    <p>
-      ¿Por qué está en la lista si vale 24k al año? Porque si eres una startup Serie B con un equipo de finance de tres personas, el tiempo que ahorras en reporting mensual compensa el coste. Para un autónomo, una pyme o un usuario individual, <strong>no es una opción realista</strong>. Lo mencionó para que sepas que existe, no para que lo compres.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
-
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-dark-600">
-            <th class="text-left p-2 text-white">Herramienta</th>
-            <th class="text-left p-2 text-white">Plan gratis</th>
-            <th class="text-left p-2 text-white">Plan de pago</th>
-            <th class="text-left p-2 text-white">Idioma</th>
-            <th class="text-left p-2 text-white">Ideal para</th>
-          </tr>
-        </thead>
-        <tbody class="text-dark-200">
-          <tr class="border-b border-dark-700"><td class="p-2">Microsoft =COPILOT()</td><td class="p-2">No (requiere licencia)</td><td class="p-2">$30/usuario/mes</td><td class="p-2">Es (beta)</td><td class="p-2">Equipos con Microsoft 365, fórmulas a medida</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">Gemini en Sheets</td><td class="p-2">Sí (limitado)</td><td class="p-2">Incluido en AI Pro/Ultra</td><td class="p-2">En (Es pronto)</td><td class="p-2">Usuarios de Workspace, rellenar columnas</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">ChatGPT for Excel</td><td class="p-2">No</td><td class="p-2">Desde $20/mes (Plus)</td><td class="p-2">En</td><td class="p-2">Análisis financiero con datos externos</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">Quadratic</td><td class="p-2">Sí (IA limitada)</td><td class="p-2">$18/usuario/mes</td><td class="p-2">En</td><td class="p-2">Data analysts, Python + SQL + IA</td></tr>
-          <tr><td class="p-2">Equals</td><td class="p-2">No</td><td class="p-2">$24k/año mínimo</td><td class="p-2">En</td><td class="p-2">Equipos de finance con stack empresarial</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="text-sm text-dark-300 mt-2">Precios verificados en las páginas oficiales en junio de 2026. La disponibilidad geográfica y los límites de uso cambian con cada release; consulta la web del proveedor antes de comprar.</p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">3 prompts útiles para empezar</h2>
-    <p>
-      Antes de montar un sistema entero, prueba con tareas pequeñas. Estos tres prompts te dicen rápido si la IA te está ahorrando trabajo real:
-    </p>
+    <h2>1. Copilot en Excel: el panel de Microsoft</h2>
+    <p>Copilot se abre con el <strong>icono de Copilot, en la esquina inferior derecha de Excel</strong>. Tiene tres modos:</p>
     <ul>
-      <li><strong>Clasificar comentarios:</strong> "Clasifica este comentario como positivo, neutro o negativo y devuelve sólo una palabra".</li>
-      <li><strong>Limpiar datos:</strong> "Normaliza estos nombres de empresa: elimina sufijos legales, espacios dobles y devuelve el nombre comercial".</li>
-      <li><strong>Detectar anomalías:</strong> "Revisa esta fila y dime si el importe parece fuera de rango comparado con el histórico".</li>
+      <li><strong>Editar</strong> (el modo por defecto): Copilot cambia el libro directamente según lo que le pidas.</li>
+      <li><strong>Planificar</strong>: te propone los pasos antes de hacer nada.</li>
+      <li><strong>Solo chat</strong>: responde, pero no toca la hoja.</li>
     </ul>
-    <p>
-      La clave es pedir una salida cerrada: una palabra, una categoría, una prioridad o una frase corta. Cuanto más libre sea la respuesta, más difícil será usarla dentro de una hoja.
-    </p>
+    <p>Según la ayuda de Microsoft, puede editar celdas, formato y diseño; aplicar cálculos y fórmulas en varias hojas; crear gráficos, tablas dinámicas y formas; ordenar, filtrar y resaltar con formato condicional; buscar en la web citando las fuentes, e importar datos de otros libros. Funciona en Excel para Windows, Mac y la web (con los tres modos), y en iPad, iPhone y Android con menos opciones.</p>
+    <p><strong>Qué necesitas.</strong> Microsoft lo da con una de estas suscripciones: Microsoft 365 Personal o Family con créditos de IA, Microsoft 365 Premium, una suscripción comercial de Copilot o una suscripción de empresa de Microsoft 365 compatible con Copilot Chat. En el plan Family, Copilot solo lo usa la persona titular.</p>
+    <p><strong>Precios en dólares</strong> (Estados Unidos, consultados el 20 de octubre de 2026):</p>
+    <ul>
+      <li><strong>Para casa:</strong> Personal, 99,99 al año; Family, 129,99 al año; Premium, 199,99 al año. Personal y Family incluyen créditos de IA con límites que Microsoft no cuantifica en su página.</li>
+      <li><strong>Para empresas pequeñas:</strong> Microsoft 365 Copilot Business, 21 por usuario y mes con pago anual (18 en promoción hasta el 31 de diciembre de 2026, el primer año, para clientes con un plan Business compatible).</li>
+      <li><strong>Para grandes empresas:</strong> Microsoft 365 Copilot, 30 por usuario y mes con pago anual.</li>
+    </ul>
+    <p>En otros países el precio cambia: mira la página de Microsoft de tu país antes de pagar.</p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primera fórmula con =COPILOT() en 5 minutos</h2>
-    <p>
-      Elijo COPILOT para el tutorial porque es la única que cumple la promesa "dentro de Excel, sin salir, sin copy-paste". El resto requiere abrir otra herramienta o estar en otro país. Necesitas: Excel para Windows versión 2509 o superior, licencia Microsoft 365 Copilot, y una hoja con datos.
-    </p>
+    <h2>2. Gemini en Google Sheets</h2>
+    <p>En Sheets, Gemini se abre con <strong>Preguntar a Gemini</strong> (arriba a la derecha) y aparece en un panel lateral. Desde ahí puede crear tablas, fórmulas, gráficos, tablas dinámicas, formato condicional y filtros, o sacarte conclusiones de los datos. Además tiene una función de hoja, <code>=AI("prompt", rango)</code> (también vale <code>=Gemini()</code>), para rellenar una columna entera a partir de una instrucción, y la opción de insertar una columna de IA.</p>
+    <p>Necesitas un plan de Google Workspace o de Google AI que lo incluya; no hay opción gratis. Para cuentas personales, Google AI Pro cuesta 19,99 dólares al mes en Estados Unidos, aunque la página de planes no nombra Sheets expresamente: confirma que tu plan lo incluye. El panel funciona en español, y la función <code>=AI()</code> admite español de Latinoamérica.</p>
+
+    <h2>3. ChatGPT para Excel: el complemento de OpenAI</h2>
+    <p>OpenAI lo lanzó en beta en marzo de 2026, con conexiones a datos financieros de Moody's y Dow Jones Factiva, entre otros. Su centro de ayuda dice hoy que está disponible para los planes Free, Go, Plus, Pro, Business, Enterprise, Edu y K-12, también en Google Sheets. <strong>Free y Go tienen un uso limitado</strong>; en Plus y Pro cuenta contra el límite de uso de agentes de tu plan, y los libros grandes o los cambios complejos gastan más.</p>
+    <p>Se instala desde Excel (escritorio o web): <strong>Inicio &gt; Complementos</strong>, buscas «ChatGPT», lo añades, lo abres desde la cinta e inicias sesión con tu cuenta de ChatGPT. ChatGPT Plus cuesta 20 dólares al mes.</p>
+
+    <h2>4. Quadratic: una hoja de cálculo nueva con código e IA</h2>
+    <p>Quadratic no es un complemento para Excel: es otra hoja de cálculo, en el navegador, donde una celda puede llevar Python o SQL y la IA trabaja en la misma cuadrícula. Encaja si ya analizas datos con código y quieres dejar de saltar entre Excel y otras herramientas.</p>
+    <p>Precios (consultados el 20 de octubre de 2026): plan <strong>Personal gratis</strong> con uso de IA limitado; <strong>Pro a 18 dólares por usuario y mes</strong> con pago anual y 20 dólares en créditos de IA al mes; <strong>Business a 36 dólares</strong> con 40 dólares en créditos. La pega: no es Excel. Si tu equipo depende de macros VBA o de Power Query, pasarse a Quadratic es un proyecto, no un cambio de un día.</p>
+
+    <h2>5. Equals: solo para equipos de finanzas</h2>
+    <p>Equals es una hoja de cálculo que se conecta a las bases de datos y herramientas de la empresa y lleva un asistente de IA para analizarlas. Sus planes: <strong>Essential, 24.000 dólares al año</strong> con 250 dólares al mes de IA incluidos; Business, 36.000 al año con 500; Enterprise, 60.000 al año con 1.000. Para un autónomo o una pyme no es una opción realista: está en la lista para que sepas que existe y dónde está su sitio.</p>
+
+    <h2>Comparativa de precios y planes gratis</h2>
+    <div><table>
+      <thead>
+        <tr><th>Herramienta</th><th>Plan gratis</th><th>Desde (pago)</th><th>Dónde funciona</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Copilot en Excel</td><td>No</td><td>Microsoft 365 Personal, 99,99 $/año</td><td>Excel en Windows, Mac, web y móvil</td></tr>
+        <tr><td>Gemini en Sheets</td><td>No</td><td>Plan de Workspace o Google AI que lo incluya</td><td>Google Sheets</td></tr>
+        <tr><td>ChatGPT para Excel</td><td>Sí (uso limitado)</td><td>ChatGPT Plus, 20 $/mes</td><td>Excel y Google Sheets</td></tr>
+        <tr><td>Quadratic</td><td>Sí (IA limitada)</td><td>Pro, 18 $/usuario/mes (anual)</td><td>Su propia hoja, en el navegador</td></tr>
+        <tr><td>Equals</td><td>No</td><td>24.000 $/año</td><td>Su propia hoja</td></tr>
+      </tbody>
+    </table></div>
+    <p>Precios en dólares de Estados Unidos, consultados en las webs oficiales el 20 de octubre de 2026. Cambian a menudo: compruébalos antes de comprar.</p>
+
+    <h2>Tu primera columna de fórmulas con Copilot en Excel</h2>
+    <p>Es el sustituto directo de lo que antes se hacía con <code>=COPILOT()</code>: en vez de escribir la función en cada celda, le pides la columna al panel y Copilot escribe la fórmula por ti. Necesitas una de las suscripciones de arriba y un libro en formato moderno (.xlsx).</p>
+
     <FiguraArticulo
-      src="/img/blog/ia-mejora-excel/primera-formula-copilot.webp"
-      alt="Esquema de cinco pasos para usar la función =COPILOT() en Excel: comprobar la versión, preparar los datos, escribir la fórmula, arrastrarla y vigilar el límite de llamadas"
+      src="/img/blog/ia-mejora-excel/copilot-panel-excel-pasos.webp"
+      alt="Esquema de cinco pasos para crear una columna de fórmulas con Copilot en Excel: hacer una copia de la hoja, abrir Copilot con el icono de abajo a la derecha, elegir el modo Editar, Planificar o Solo chat, pedir la columna y revisar la fórmula"
       width={1200}
-      height={717}
+      height={770}
     />
 
-    <p><strong>Paso 1. Verifica que tienes COPILOT.</strong> Abre Excel, ve a Archivo > Cuenta y comprueba que tu versión es la 2509 o posterior. Si no, actualiza. En la barra de fórmulas, escribe <code>=COPILOT(</code>. Si Excel te ofrece ayuda contextual, la tienes. Si te da error #NAME?, la función aún no está disponible en tu build.</p>
-    <p><strong>Paso 2. Prepara tu hoja.</strong> Necesitas al menos una columna con datos que la IA pueda procesar. Para este tutorial, vamos a clasificar comentarios de clientes. En la columna A, filas 2 a 20, pon comentarios ficticios: "El envío llegó rápido", "Tuve que esperar tres semanas", etc. En la columna B, queremos que COPILOT nos devuelva el sentimiento.</p>
-    <p><strong>Paso 3. Escribe la primera función.</strong> En la celda B2, escribe exactamente:</p>
-    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>=COPILOT("Clasifica el sentimiento de este comentario como positivo, neutro o negativo", A2)</code></pre>
-    <p>Pulsa Intro. B2 debería mostrar "positivo", "neutro" o "negativo". Si no te gusta el resultado, reformula el prompt: "Devuelve una sola palabra: positivo, neutro o negativo, en minúsculas".</p>
-    <p><strong>Paso 4. Rellena hacia abajo.</strong> Selecciona B2, pon el cursor en la esquina inferior derecha de la celda (el cuadradito negro), y arrastra hasta B20. La función se copia a todas las filas y clasifica cada comentario. Cada celda es una llamada a la IA, así que respeta los límites: 100 llamadas cada 10 minutos, 300 a la hora.</p>
-    <p><strong>Paso 5. Añade contexto a la función.</strong> Lo potente de COPILOT es que puedes pasarle varias referencias. Por ejemplo, en C2 escribe:</p>
-    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>=COPILOT("Resume en una frase el comentario y asigna una prioridad de 1 a 3", A2, "Máximo 15 palabras")</code></pre>
-    <p>El primer contexto es la celda, el segundo argumento es texto adicional que matiza el prompt. Útil para controlar tono, longitud o formato.</p>
-    <p><strong>Paso 6. Combínalo con otras funciones.</strong> Aquí viene la magia. En D2, escribe:</p>
-    <pre class="overflow-x-auto rounded-lg bg-dark-900 p-4 text-sm text-dark-100"><code>=SI(COPILOT("¿Es urgente?", A2) = "sí", "Atender hoy", "Esta semana")</code></pre>
-    <p>COPILOT devuelve "sí" o "no", y la función SI decide la acción. Tienes IA dentro de la lógica de tu hoja, sin perder la estructura que ya conocías.</p>
-    <p><strong>Paso 7. Cuida los límites.</strong> Cada llamada a COPILOT consume uno de tus 100 calls cada 10 minutos. Si arrastras 500 filas de golpe, la mitad te dará error. La solución: pasa arrays. En vez de <code>=COPILOT(..., A2)</code> en cada fila, escribe <code>=COPILOT("Clasifica el sentimiento", A2:A20)</code> en una sola celda. Una llamada, 19 clasificaciones, mucho más eficiente.</p>
-    <p>
-      La parte difícil no es la herramienta, es decidir qué le pides y cómo le pides que responda. Ahí es donde se nota la diferencia entre un resultado útil y un resultado que tienes que revisar tres veces.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que NO te dicen: limitaciones reales</h2>
-    <p>
-      Tras repasar la documentación oficial de las cinco herramientas, esto es lo que los vendedores no destacan:
-    </p>
+    <p><strong>Paso 1. Trabaja sobre una copia.</strong> En modo Editar, Copilot cambia el libro directamente. Para la primera prueba, duplica la hoja o el archivo.</p>
+    <p><strong>Paso 2. Ordena los datos.</strong> Una tabla con encabezados claros en la primera fila (por ejemplo «Producto», «Precio», «Coste») ayuda a que Copilot entienda qué hay en cada columna.</p>
+    <p><strong>Paso 3. Abre Copilot.</strong> Pulsa el icono de Copilot en la esquina inferior derecha de Excel. Si quieres ver qué va a hacer antes de que lo haga, cambia al modo Planificar.</p>
+    <p><strong>Paso 4. Pide la columna.</strong> Estos son ejemplos que da la propia Microsoft, traducidos:</p>
     <ul>
-      <li><strong>La IA no accede a internet (todavía).</strong> En la versión beta de COPILOT, la función no puede buscar en la web ni leer documentos internos. Si le pides "dime el IBAN de este cliente", no sabe. Tiene que tener los datos ya en la hoja.</li>
-      <li><strong>El idioma importa.</strong> El anuncio de Microsoft no detalla cómo se comporta la función en español. Prueba tus prompts en tu idioma con una copia de la hoja antes de fiarte del resultado.</li>
-      <li><strong>La privacidad no es total.</strong> Microsoft asegura que los datos que pasas por COPILOT no se usan para entrenar sus modelos. Pero el contenido sale de tu hoja, va a sus servidores, vuelve procesado. Si trabajas con datos sanitarios, legales o financieros sensibles, necesitas un plan enterprise con garantías contractuales de Zero Data Retention, que no está en todas las regiones.</li>
-      <li><strong>Las hallucinations siguen pasando.</strong> COPILOT puede inventar clasificaciones, resúmenes o números que parecen coherentes pero no son correctos. Siempre hay que revisar el resultado. Para datos críticos, combínalo con validación humana o con reglas duras en la misma hoja.</li>
-      <li><strong>La versión gratis no existe.</strong> La función =COPILOT() requiere la licencia de pago de Microsoft 365 Copilot. Si solo tienes la licencia básica de Microsoft 365, no la ves. Esto es un punto importante si en tu empresa la IA "se compra aparte" del paquete ofimático, como pasa en muchos sitios.</li>
-      <li><strong>Las fechas vienen como texto.</strong> Si le pides a COPILOT que te devuelva fechas, te las devuelve en formato texto, no como número de serie de Excel. Tienes que envolver la salida en FECHANUMERO() o similar para que Excel las entienda como fechas. Así lo indica Microsoft en su anuncio de la función.</li>
+      <li>«Añade una columna que calcule el margen de beneficio de cada producto».</li>
+      <li>«Añade una columna con el porcentaje de cada región sobre el total de ventas».</li>
+      <li>«Crea una columna que busque las existencias de cada artículo en la hoja de inventario».</li>
+    </ul>
+    <p><strong>Paso 5. Revisa la fórmula.</strong> Haz clic en una celda de la columna nueva y lee la fórmula en la barra de fórmulas. Calcula a mano dos o tres filas y compáralas. Microsoft lo pide igual: revisa, edita y verifica todo lo que cree Copilot.</p>
+    <p><strong>Paso 6. Afina con otra petición.</strong> Si el resultado no es el que querías, díselo en el mismo panel («redondea a dos decimales», «usa la columna Coste con IVA»). Cuanto más concreta sea la petición, menos tendrás que corregir.</p>
+
+    <h2>Prompts útiles para empezar</h2>
+    <p>Sirven para el panel de Copilot, para Gemini en Sheets y para ChatGPT para Excel. Pide siempre una salida cerrada (una palabra, una categoría, un número): es más fácil de comprobar y de usar después en otras fórmulas.</p>
+    <ul>
+      <li><strong>Clasificar:</strong> «Añade una columna que clasifique cada comentario de la columna A como positivo, neutro o negativo, con una sola palabra».</li>
+      <li><strong>Limpiar:</strong> «Añade una columna con los nombres de empresa de la columna B sin sufijos legales ni espacios dobles».</li>
+      <li><strong>Revisar:</strong> «Resalta las filas cuyo importe esté muy por encima de la media de su categoría».</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo SÍ vale la pena pagar</h2>
-    <p>
-      Si ya tienes Microsoft 365 Copilot por tu empresa, usar =COPILOT() no te cuesta más y el ROI es inmediato para casi cualquier rol que toque Excel. Si no lo tienes, estas son nuestras recomendaciones:
-    </p>
+    <h2>Límites que conviene saber</h2>
     <ul>
-      <li>Pasas más de dos horas al día peleando con fórmulas en Excel: pídeselo a tu empresa o amortizas los 30 dólares al mes en una semana.</li>
-      <li>Mantenienes reportes recurrentes (financieros, de ventas, de operaciones) que tardas horas en actualizar: el copago se paga solo.</li>
-      <li>Vives en Google Workspace y no necesitas Python ni SQL: Gemini en Sheets con AI Pro es más que suficiente, y barato.</li>
-      <li>Eres data analyst y tocas Python o SQL a diario: Quadratic Personal gratis para probar, Pro a 18 dólares al mes si lo conviertes en herramienta diaria.</li>
-      <li>Tu empresa factura más de 5 millones al año y tiene un equipo de finance: Equals a 24k al año es calderilla si te ahorra una persona a tiempo parcial.</li>
-    </ul>
-    <p>
-      Para empezar: =COPILOT() si tienes licencia, Gemini en Sheets si no, Quadratic gratis si quieres curiosear. Para escalar, ya evaluarás según el caso.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-
-    <div itemscope itemtype="https://schema.org/FAQPage">
-      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Necesito una licencia de pago para usar IA en Excel?</h3>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">
-            Para la función =COPILOT() nativa, sí: hace falta Microsoft 365 Copilot, que cuesta 30 dólares al mes por usuario. Para el plugin ChatGPT for Excel, también: desde 20 dólares al mes con ChatGPT Plus, y de momento solo en EE. UU., Canadá y Australia. Para Gemini en Sheets, hay una capa gratuita limitada y otra completa con Google AI Pro o AI Ultra. Para Quadratic, el plan Personal es gratis con IA limitada. Y para Equals, no hay plan gratis: empieza en 24.000 dólares al año.
-          </p>
-        </div>
-      </div>
-
-      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Puede la IA romper mis fórmulas existentes?</h3>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">
-            Con =COPILOT() no, porque la función vive en su propia celda y solo afecta a la celda en la que la escribes. Con ChatGPT for Excel y Gemini en Sheets, sí puede modificar la estructura de la hoja, aunque siempre piden confirmación antes de aplicar cambios. Mi consejo: haz una copia de seguridad de la hoja antes de probar cualquier plugin por primera vez, y revisa cada cambio antes de aceptarlo.
-          </p>
-        </div>
-      </div>
-
-      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Funciona en español de España?</h3>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">
-            Sí, las cinco herramientas soportan español. =COPILOT() entiende prompts en castellano y devuelve resultados en castellano. Gemini en Sheets también, aunque algunas funciones avanzadas están en beta solo en inglés. ChatGPT for Excel responde en español sin problema. Quadratic y Equals, en cambio, están más pensados para prompts en inglés, sobre todo cuando se trata de generar SQL o código Python: el LLM responde mejor en inglés aunque los datos estén en español.
-          </p>
-        </div>
-      </div>
-
-      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Qué pasa con la privacidad de mis hojas de cálculo?</h3>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">
-            Microsoft asegura que los datos enviados a =COPILOT() no se usan para entrenar sus modelos, pero el contenido sale de tu hoja y vuelve procesado desde sus servidores. OpenAI tiene políticas similares para ChatGPT for Excel, pero los datos en el plan Plus pueden usarse por defecto para mejorar los modelos (se puede desactivar en ajustes). Para datos sensibles (sanidad, legal, finanzas), necesitas planes enterprise con "Zero Data Retention" o, mejor todavía, Quadratic self-hosted en tu propio servidor. Equals, al ser enterprise, tiene SOC 2 Type II y cifrado en reposo.
-          </p>
-        </div>
-      </div>
-
-      <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h3 class="font-display text-xl font-bold mt-6 mb-3" itemprop="name">¿Qué herramienta me recomiendas si solo puedo elegir una?</h3>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">
-            Si ya pagas Microsoft 365 Copilot: usa =COPILOT() en tu Excel de siempre, sin dudarlo. Si no tienes Copilot y vives en Google: Gemini en Sheets con AI Pro. Si quieres una herramienta nueva y no te importa salir de Excel: Quadratic, empieza por el plan Personal gratis. ChatGPT for Excel, de momento, solo si estás en EE. UU., Canadá o Australia y necesitas datos financieros en vivo. Y Equals, si tu empresa factura más de 5 millones al año y tiene un equipo de finance.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes verificadas</h2>
-    <p>
-      Todos los datos de precios, funciones, disponibilidad geográfica y características de este artículo están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026:
-    </p>
-    <ul>
-      <li><strong>Microsoft =COPILOT() en Excel</strong> — anuncio oficial de Catherine Pidgeon (Partner Director, Excel team), sintaxis, escenarios, límites de uso y disponibilidad: <a href="https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487" class="text-brand-400 hover:text-brand-300">techcommunity.microsoft.com</a></li>
-      <li><strong>Microsoft 365 Copilot pricing</strong> — precio de $30/usuario/mes, planes y características: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing" class="text-brand-400 hover:text-brand-300">microsoft.com/microsoft-365-copilot/pricing</a></li>
-      <li><strong>Google Gemini en Sheets</strong> — funciones nativas, "Fill with Gemini" y disponibilidad para Workspace: <a href="https://workspace.google.com/resources/spreadsheet-ai/" class="text-brand-400 hover:text-brand-300">workspace.google.com/resources/spreadsheet-ai</a> y <a href="https://support.google.com/docs/answer/14356410?hl=en" class="text-brand-400 hover:text-brand-300">support.google.com</a></li>
-      <li><strong>ChatGPT for Excel</strong> — beta lanzado en marzo de 2026, integración con Moody's y Dow Jones Factiva, disponibilidad geográfica: <a href="https://openai.com/" class="text-brand-400 hover:text-brand-300">openai.com</a> y <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt" class="text-brand-400 hover:text-brand-300">help.openai.com</a></li>
-      <li><strong>Quadratic pricing</strong> — plan Personal gratis, Pro a $18/usuario/mes, Business a $36/usuario/mes, conectores y self-hosting: <a href="https://www.quadratichq.com/pricing" class="text-brand-400 hover:text-brand-300">quadratichq.com/pricing</a></li>
-      <li><strong>Equals pricing</strong> — planes desde $24k/año, integraciones con Snowflake y HubSpot, "Forward Deployed Analyst" incluido: <a href="https://equals.com/pricing/" class="text-brand-400 hover:text-brand-300">equals.com/pricing</a></li>
+      <li><strong>Puede equivocarse.</strong> Copilot, Gemini y ChatGPT pueden devolver fórmulas o clasificaciones que parecen correctas y no lo son. Comprueba siempre una muestra.</li>
+      <li><strong>El modo Editar no pide permiso.</strong> Cambia el libro directamente. Usa Planificar o Solo chat si no quieres sorpresas, y guarda una copia.</li>
+      <li><strong>El español funciona, pero peor que el inglés.</strong> Microsoft lo incluye entre los idiomas admitidos, pero avisa de que Copilot puede funcionar peor cuando los prompts o los datos están en otros idiomas. Si un resultado sale raro, prueba a pedirlo de otra forma.</li>
+      <li><strong>Los créditos se acaban.</strong> Los planes Personal y Family de Microsoft y los Free y Go de ChatGPT tienen límites de uso. En hojas grandes se notan antes.</li>
+      <li><strong>Algunas ubicaciones no valen.</strong> Según Microsoft, los sitios de SharePoint que obligan a «desproteger» el archivo antes de editarlo no funcionan con Copilot en Windows y Mac.</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
-    <p>
-      La IA en Excel en 2026 ya no es una promesa: es una celda más, con la misma sintaxis que SUMA o BUSCARV, que se recalcula sola cuando cambian los datos. Para el usuario medio, lo más práctico y rentable es =COPILOT() si ya pagas Microsoft 365, o Gemini en Sheets si vives en Google. Para data analysts, Quadratic es la primera hoja de cálculo de nueva generación que merece la pena probar. Y para empresas con stack serio, Equals existe, pero a un precio que solo se justifica con volumen.
-    </p>
-    <p>
-      La idea de fondo: la IA no te hace mejor con Excel, te hace más rápido. La parte difícil sigue siendo saber qué pregunta hacer, qué resultado esperas y cómo validarlo. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras horas cada semana.
-    </p>
-    <p>
-      Si quieres profundizar más, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
-    </p>
-    <p>
-      Y si antes de meterte con Excel quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
-    <p>
-      Si quieres seguir por productividad práctica con IA, iría por aquí:
-    </p>
+    <h2>Cuándo vale la pena pagar</h2>
     <ul>
-      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si tu problema no es sólo Excel sino toda la semana.</li>
-      <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails humanos</a>, si necesitas comunicar mejor los análisis que salen de tus hojas.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+      <li><strong>Ya pagas Microsoft 365 Personal, Family o Premium:</strong> prueba Copilot en Excel antes de contratar otra cosa.</li>
+      <li><strong>Tu empresa tiene Microsoft 365:</strong> pregunta a quien lleve las licencias si tu cuenta ya tiene Copilot en Excel antes de pedir una licencia aparte.</li>
+      <li><strong>Vives en Google Sheets:</strong> mira si tu plan de Workspace o de Google AI ya incluye Gemini.</li>
+      <li><strong>No pagas nada y solo quieres probar:</strong> ChatGPT para Excel en el plan gratis, o Quadratic Personal si te interesa mezclar código y hoja.</li>
+      <li><strong>Equipo de finanzas con muchas fuentes de datos:</strong> Equals, si el presupuesto lo permite.</li>
     </ul>
-    <p>
-      ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial de Quadratic o de Gemini en Sheets? Déjamelo en comentarios o escríbeme a <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
-    </p>
-    <p>
-      — Jordi
-    </p>
 
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Sigue existiendo la función =COPILOT() en Excel?",
+          a: "No. Microsoft la retiró el 14 de septiembre de 2026. Copilot sigue en Excel, pero se usa desde su panel: el icono de Copilot, en la esquina inferior derecha. Desde ahí puedes pedirle columnas de fórmulas, gráficos o tablas dinámicas.",
+        },
+        {
+          q: "¿Necesito pagar para usar IA en Excel?",
+          a: "Para Copilot en Excel, sí: hace falta Microsoft 365 Personal, Family o Premium, o una suscripción de empresa compatible. ChatGPT para Excel tiene uso limitado en los planes gratis de ChatGPT (Free y Go). Quadratic tiene un plan Personal gratis, aunque es otra hoja de cálculo, no Excel.",
+        },
+        {
+          q: "¿Puede la IA romper mis fórmulas?",
+          a: "Puede cambiarlas. En modo Editar, Copilot modifica el libro directamente. Trabaja sobre una copia, usa el modo Planificar para ver los pasos antes de que los aplique y revisa cada fórmula nueva.",
+        },
+        {
+          q: "¿Copilot en Excel funciona en español?",
+          a: "Sí. Microsoft incluye el español (y el español de México) entre los idiomas de Copilot, aunque avisa de que puede funcionar peor cuando los prompts o los datos no están en inglés. Revisa los resultados con más cuidado.",
+        },
+        {
+          q: "¿Qué IA para Excel elijo si solo puedo una?",
+          a: "La que ya pagas: Copilot si tienes Microsoft 365 con Copilot, Gemini si trabajas en Google Sheets con un plan que lo incluya. Si no pagas nada, empieza por ChatGPT para Excel en su plan gratis.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 20 de octubre de 2026.</p>
+    <ul>
+      <li>Retirada de <code>=COPILOT()</code>: <a href="https://techcommunity.microsoft.com/blog/microsoft365insiderblog/bring-ai-to-your-formulas-with-the-copilot-function-in-excel/4443487" rel="noopener" target="_blank">Microsoft 365 Insider Blog</a>.</li>
+      <li>Cómo se abre Copilot en Excel, sus modos y qué puede hacer: <a href="https://support.microsoft.com/excel/copilot/get-started-with-copilot-in-excel" rel="noopener" target="_blank">Get started with Copilot in Excel</a>.</li>
+      <li>Columnas de fórmulas con Copilot y prompts de ejemplo: <a href="https://support.microsoft.com/en-US/Excel/copilot/generate-formula-rows-and-columns-with-copilot-in-excel" rel="noopener" target="_blank">Generate formula rows and columns with Copilot in Excel</a>.</li>
+      <li>Suscripciones necesarias, idiomas y límites: <a href="https://support.microsoft.com/en-us/excel/copilot/frequently-asked-questions-about-copilot-in-excel" rel="noopener" target="_blank">FAQ de Copilot en Excel</a> y <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot" rel="noopener" target="_blank">idiomas admitidos</a>.</li>
+      <li>Precios de Microsoft: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing" rel="noopener" target="_blank">Copilot para empresas</a>, <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/enterprise" rel="noopener" target="_blank">Copilot Enterprise</a> y <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals" rel="noopener" target="_blank">planes para casa</a>.</li>
+      <li>Gemini en Sheets: <a href="https://support.google.com/docs/answer/14356410?hl=en" rel="noopener" target="_blank">Collaborate with Gemini in Google Sheets</a>, <a href="https://support.google.com/docs/answer/15877199?hl=en" rel="noopener" target="_blank">función AI</a> e <a href="https://support.google.com/docs/answer/14925782?hl=en" rel="noopener" target="_blank">idiomas</a>; precio de Google AI Pro en <a href="https://gemini.google/subscriptions/" rel="noopener" target="_blank">gemini.google</a>.</li>
+      <li>ChatGPT para Excel: <a href="https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets" rel="noopener" target="_blank">centro de ayuda de OpenAI</a> (planes, límites e instalación) y <a href="https://openai.com/index/chatgpt-for-excel/" rel="noopener" target="_blank">anuncio de marzo de 2026</a>; precio de Plus en <a href="https://help.openai.com/en/articles/6950777" rel="noopener" target="_blank">What is ChatGPT Plus?</a>.</li>
+      <li>Quadratic: <a href="https://www.quadratichq.com/pricing" rel="noopener" target="_blank">quadratichq.com/pricing</a>.</li>
+      <li>Equals: <a href="https://equals.com/pricing/" rel="noopener" target="_blank">equals.com/pricing</a>.</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/ia-organiza-pendientes/">IA para organizar tareas y correos</a>, si además de Excel quieres ordenar correos y reuniones.</li>
+      <li><a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>, para contar bien lo que sale de tus hojas.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/">Alternativas gratis a ChatGPT</a>, si buscas un asistente sin pagar.</li>
+      <li><a href="/recursos/">Recursos gratuitos de Decodifica</a>, con prompts copiables.</li>
+    </ul>
 
   </Articulo>
-
 </BaseLayout>
