@@ -44,14 +44,14 @@ GSC_ANALYTICS_URL = (
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 
 
-def get_access_token() -> str:
+def get_access_token(scope: str = SCOPE) -> str:
     # Federación de identidades de GitHub (sin claves): la acción
     # google-github-actions/auth deja GOOGLE_APPLICATION_CREDENTIALS preparado.
     if os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
         import google.auth
         from google.auth.transport.requests import Request
 
-        creds, _ = google.auth.default(scopes=[SCOPE])
+        creds, _ = google.auth.default(scopes=[scope])
         creds.refresh(Request())
         return creds.token
 
@@ -61,7 +61,7 @@ def get_access_token() -> str:
         from google.auth.transport.requests import Request
 
         creds = service_account.Credentials.from_service_account_info(
-            json.loads(sa_json), scopes=[SCOPE]
+            json.loads(sa_json), scopes=[scope]
         )
         creds.refresh(Request())
         return creds.token

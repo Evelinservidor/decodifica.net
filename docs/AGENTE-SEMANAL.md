@@ -155,5 +155,6 @@ Además de los pasos de cada lunes:
 ## Qué no hace el agente
 
 - No toca `astro.config.mjs`, los workflows de GitHub, el aviso legal ni los datos personales de Jordi.
+- No pide a Jordi «Solicitar indexación» cada semana: el sitemap se reenvía solo al publicar (ver `docs/plan-seo.md`, «El ritmo»). Solo lo apunta en el informe si un artículo lleva más de 14 días fuera de Google.
 - No borra páginas con impresiones; si hay que fusionar, redirige con `return Astro.redirect('/destino/', 301);`.
 - No añade enlaces de afiliado ni anuncios (eso lo decide Jordi más adelante y requiere NIF y domicilio en el aviso legal).

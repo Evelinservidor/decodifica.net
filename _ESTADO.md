@@ -28,9 +28,10 @@ web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENT
   canónica correcta, están en el sitemap, robots.txt permite todo). Search Console (18-10): `lm-studio-que-es-como-usar` y
   `n8n-que-es-gratis` «descubierta: actualmente sin indexar» (Google sabe que existen y aún no las ha leído);
   `claude-ia-que-es-gratis` y `ollama-que-es-como-usar` «Google no reconoce esta URL»: Google leyó el sitemap por última vez
-  el 09-10-2026, antes de publicarlas. Es prioridad baja de Google para la web (lo que ataca el plan). Pendiente de Jordi
-  (el robot del informe solo tiene permiso de lectura): en Search Console, reenviar el sitemap
-  (`sitemap-index.xml`) y «Solicitar indexación» de esas 4 direcciones.
+  el 09-10-2026, antes de publicarlas. Es prioridad baja de Google para la web (lo que ataca el plan). Desde el 19-10-2026
+  el robot tiene «Acceso total» en Search Console y el sitemap se reenvía solo después de cada publicación
+  (`deploy.yml`, trabajo `avisar-google`). «Solicitar indexación» no tiene API: solo se pide a mano si un artículo lleva
+  más de 14 días fuera de Google.
 - Primera comparación por grupos (28 días contra 28 días): hacia el 21-12-2026.
 
 ## Fase 1: hecho
@@ -165,4 +166,4 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Pendiente: precio de la API Realtime de OpenAI (openai.com da 403).
 - **16-10-2026 (agente de novedades):** rama `agente/novedad-2026-10-16`. Novedad: GPT-Live-1.1 y voces en español de México en la voz de ChatGPT (15-10-2026), añadida como sección al artículo `gpt-live-voz-chatgpt` (título, descripción y portada `novedad` nuevos). Nota: `docs/novedades/2026-10-16.md`. Las páginas de ayuda de OpenAI se abren con el navegador sin pantalla (Chromium de Playwright) aunque con curl den 403. Ideas para el lunes: GPT-6 en ChatGPT gratis (07-10-2026) y Gemini 4 Argon (13-10-2026, solo Pro/Ultra).
 - **19-10-2026 (semana 1 del plan SEO):** rama `agente/2026-10-19`, pull request #27 (espera a Jordi). Pilar A rehecho: `claude-ia-que-es-gratis` → «Claude en español: guía completa, gratis y planes» (países, límites, planes al día, Proyectos, memoria, conectores, cómo pedirle las cosas, FAQ; portada nueva). Mejora y artículo antiguo de la semana: `claude-emails-sonar-humanos` (resumen cortado arreglado, fuentes revisadas). Título nuevo de `/sobre/`. Informe: `docs/informes/2026-10-19.md`.
-  - Pendiente: Emergent cayó de 153 apariciones a 0 en 28 días (decide Jordi). Jordi: «Solicitar indexación» del pilar A. Semana que viene: pilar B (IA local en español) y guía del generador (pilar C). Sigue en la cola de arreglos `ia-organiza-pendientes`.
+  - Pendiente: Emergent cayó de 153 apariciones a 0 en 28 días (decide Jordi). Semana que viene: pilar B (IA local en español) y guía del generador (pilar C). Sigue en la cola de arreglos `ia-organiza-pendientes`.
