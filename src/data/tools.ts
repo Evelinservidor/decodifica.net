@@ -160,7 +160,7 @@ const coreTools: Tool[] = [
       alternatives: ['ChatGPT para uso general', 'NotebookLM para documentos con citas', 'Gemini para ecosistema Google'],
       sources: [
         { label: 'Planes oficiales de Claude', href: 'https://claude.com/pricing' },
-        { label: 'Guía de planes de Anthropic', href: 'https://support.anthropic.com/en/articles/11049762-choosing-a-claude-plan' },
+        { label: 'Planes y precios de Claude', href: 'https://claude.com/pricing' },
       ],
     },
   },
