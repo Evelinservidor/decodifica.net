@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
+import FaqSection from '~/components/FaqSection.astro';
 import { detailedTools, tools } from '~/data/tools';
 import { siteConfig } from '~/lib/site-config';
 import { enlace, estaRedirigida } from '~/lib/poda-seo';
@@ -37,12 +38,13 @@ const softwareLd = {
 ---
 
 <BaseLayout
-  title={`${tool.name}: guía práctica y cuándo usarla`}
+  title={tool.seoTitle ?? `${tool.name}: guía práctica y cuándo usarla`}
   description={tool.metaDescription}
   type="article"
   pubDate={tool.publishedAt ?? '2026-07-07'}
   modifiedDate={tool.verifiedAt ?? '2026-07-14'}
   keywords={tool.tags}
+  citations={detail.sources.map((source) => source.href)}
   section="Herramientas IA"
 >
   <article class="page-shell mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8" data-track-read-min="tool_ficha_read_minimum" data-track-label={tool.slug} data-track-component="tool_detail">
@@ -144,6 +146,13 @@ const softwareLd = {
         ))}
       </div>
     </section>
+
+    {tool.faq && tool.faq.length > 0 && (
+      <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6 text-sm leading-6 text-dark-200 [&_a]:text-brand-300 [&_a]:underline [&_code]:break-all [&_code]:text-xs">
+        <h2 class="font-display text-2xl font-bold text-white">Preguntas frecuentes</h2>
+        <FaqSection items={tool.faq} questionClass="font-display text-lg font-bold text-white mt-6 mb-2" />
+      </section>
+    )}
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">

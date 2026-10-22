@@ -23,10 +23,16 @@ export type ToolDetail = {
   sources: ToolSource[];
 };
 
+export type ToolFaq = {
+  q: string;
+  a: string; // admite HTML sencillo (enlaces)
+};
+
 export type Tool = {
   slug: string;
   name: string;
   summary: string;
+  seoTitle?: string;
   metaDescription: string;
   useCase: string;
   price: string;
@@ -48,6 +54,7 @@ export type Tool = {
   evidenceLevel?: 'official' | 'controlled-test' | 'decodifica-test';
   platforms?: string[];
   language?: string;
+  faq?: ToolFaq[];
   detail?: ToolDetail;
 };
 
@@ -445,8 +452,9 @@ const coreTools: Tool[] = [
   {
     slug: 'qwen-code',
     name: 'Qwen Code',
-    summary: 'Agente de código abierto para trabajar desde terminal con bases de código y tareas técnicas.',
-    metaDescription: 'Ficha práctica de Qwen Code: agente open source de terminal, dificultad, privacidad y cuando usarlo.',
+    summary: 'Agente de programación de código abierto (licencia Apache 2.0) para trabajar desde la terminal, el editor o su app de escritorio con bases de código y tareas técnicas.',
+    seoTitle: 'Qwen Code: qué es, si es gratis y cómo instalarlo',
+    metaDescription: 'Qwen Code es un agente de programación de código abierto para la terminal. Cómo instalarlo, con qué modelos funciona y por qué ya no tiene plan gratis.',
     useCase: 'Código',
     price: 'Open source',
     privacy: 'Alta',
@@ -457,13 +465,13 @@ const coreTools: Tool[] = [
     officialUrl: 'https://qwen.ai/qwencode',
     relatedLinks: [
       { label: 'Qwen Code en terminal', href: '/blog/qwen-code-agent-terminal/' },
-      { label: 'Herramientas IA para programar', href: '/herramientas/para-programar/' },
+      { label: 'Ollama: usar modelos de IA en tu ordenador', href: '/blog/ollama-que-es-como-usar/' },
       { label: 'Crear app web con IAs chinas open source', href: '/blog/crear-app-web-ias-chinas-open-source/' },
       { label: 'Alternativas Fable 5', href: '/blog/alternativas-fable-5/' },
     ],
     hasDetailPage: true,
     detail: {
-      verdict: 'Qwen Code tiene sentido si ya trabajas con repositorios, terminal y control de cambios. No es la mejor puerta de entrada a la IA, pero si una pieza potente para tareas técnicas supervisadas.',
+      verdict: 'Qwen Code tiene sentido si ya trabajas con repositorios, terminal y control de cambios. No es la mejor puerta de entrada a la IA, pero sí una pieza potente para tareas técnicas supervisadas.',
       idealFor: [
         'Explorar una base de código y pedir cambios acotados.',
         'Automatizar tareas técnicas repetitivas desde terminal.',
@@ -477,7 +485,7 @@ const coreTools: Tool[] = [
       ],
       workflow: [
         'Empieza en una rama limpia o con un diff controlado.',
-        'Pide una tarea pequena y verificable.',
+        'Pide una tarea pequeña y verificable.',
         'Ejecuta tests o build antes de aceptar el resultado.',
         'Revisa manualmente cambios de seguridad, datos y dependencias.',
       ],
@@ -486,7 +494,8 @@ const coreTools: Tool[] = [
         'No confundas open source con privado automáticamente: revisa configuración y llamadas externas.',
       ],
       priceNotes: [
-        'La herramienta es open source, pero el coste real depende del modelo o API que uses detrás.',
+        'El programa es gratuito y de código abierto, pero necesita un modelo detrás: el coste real depende del proveedor o la API que conectes.',
+        'El acceso gratis con cuenta de Qwen (Qwen OAuth) se cerró el 15-04-2026. Hoy se usa con QwenCloud (Token Plan o pago por uso), el Coding Plan de Alibaba Cloud, otro proveedor con clave API o un modelo local (consultado en octubre de 2026).',
         'Si lo conectas a servicios de pago, controla consumo y límites.',
       ],
       alternatives: ['Cursor para experiencia integrada', 'Codex para flujos agenticos', 'Claude Code si priorizas ecosistema Anthropic'],
@@ -494,8 +503,27 @@ const coreTools: Tool[] = [
         { label: 'Web oficial de Qwen Code', href: 'https://qwen.ai/qwencode' },
         { label: 'Repositorio oficial Qwen Code', href: 'https://github.com/QwenLM/qwen-code' },
         { label: 'Documentación de Qwen Code', href: 'https://qwenlm.github.io/qwen-code-docs/en/users/overview/' },
+        { label: 'Qwen Code: autenticación y proveedores', href: 'https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/' },
       ],
     },
+    faq: [
+      {
+        q: '¿Qwen Code es gratis?',
+        a: 'El programa sí: es de código abierto con licencia Apache 2.0 y se instala sin pagar. Lo que puede costar es el modelo que lo hace funcionar. El acceso gratis con cuenta de Qwen (Qwen OAuth) terminó el 15 de abril de 2026; ahora hay que conectar QwenCloud (con Token Plan o pago por uso), el Coding Plan de Alibaba Cloud, otro proveedor con clave API (DeepSeek, Kimi, OpenRouter…) o un modelo que corra en tu ordenador. Consultado en octubre de 2026.',
+      },
+      {
+        q: '¿Cómo se instala Qwen Code?',
+        a: 'En Linux y macOS, con el instalador oficial: <code>curl -fsSL https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.sh | bash</code>. En Windows, desde PowerShell: <code>irm https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.ps1 | iex</code>. Si el instalador tiene que usar npm, hace falta Node.js 22 o posterior. Después abre la terminal en la carpeta de tu proyecto, escribe <code>qwen</code> y elige proveedor con <code>/auth</code>.',
+      },
+      {
+        q: '¿Puedo usar Qwen Code con modelos locales?',
+        a: 'Sí. Su documentación indica que admite modelos locales servidos con Ollama o vLLM, además de APIs compatibles con OpenAI, Anthropic y Gemini. Así no pagas por uso, pero la calidad y la velocidad dependen de tu ordenador. Si nunca has usado modelos locales, empieza por la <a href="/blog/ollama-que-es-como-usar/">guía de Ollama</a>.',
+      },
+      {
+        q: '¿Qwen Code o Claude Code?',
+        a: 'Hacen un trabajo parecido (un agente que lee tu proyecto, edita archivos y ejecuta órdenes) y Qwen Code nació de Gemini CLI. Según la tabla de su propio repositorio, lo que le distingue es que el programa y los modelos Qwen son abiertos y que acepta muchos proveedores de modelos, dos cosas que esa misma tabla no marca en Claude Code. Si lo que buscas es solo el mejor resultado sin montar nada, compara ambos con la misma tarea pequeña antes de decidir.',
+      },
+    ],
   },
   {
     slug: 'deepseek',
