@@ -1,4 +1,4 @@
-import type { Tool, ToolSource } from './tools';
+import type { Tool, ToolFaq, ToolSource } from './tools';
 
 type ExpandedSpec = {
   slug: string;
@@ -18,6 +18,12 @@ type ExpandedSpec = {
   workflow: string[];
   alternatives: string[];
   sources: ToolSource[];
+  seoTitle?: string;
+  metaDescription?: string;
+  language?: string;
+  priceNotes?: string[];
+  privacyNotes?: string[];
+  faq?: ToolFaq[];
 };
 
 const specs: ExpandedSpec[] = [
@@ -120,7 +126,10 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'kimi', name: 'Kimi', useCase: 'Asistente general',
-    summary: 'Asistente de Moonshot AI orientado a contexto largo, búsqueda, documentos y tareas multimodales.',
+    summary: 'Asistente de Moonshot AI orientado a contexto largo, búsqueda, documentos y tareas multimodales. Puede crear presentaciones, documentos y hojas de cálculo editables, y su interfaz se puede poner en español.',
+    seoTitle: 'Kimi IA en español: qué es, precios y cómo usarla',
+    metaDescription: 'Kimi, la IA de Moonshot AI: cómo ponerla en español, qué hace (presentaciones, documentos, investigación), cuánto cuestan sus planes y qué pasa con tus datos.',
+    language: 'Interfaz en español: Ajustes → General → Idioma',
     bestFor: 'Cuando quieres comparar un asistente chino con modelos generalistas occidentales.',
     avoidIf: 'Vas a introducir datos sensibles sin revisar proveedor, región, cuenta y política aplicable.',
     tags: ['china', 'contexto-largo', 'documentos', 'modelos'], officialUrl: 'https://www.kimi.com/',
@@ -128,7 +137,42 @@ const specs: ExpandedSpec[] = [
     notFor: ['Datos regulados.', 'Uso corporativo sin revisión.', 'Claims sin fuente.'],
     workflow: ['Usa material público.', 'Registra modelo y fecha.', 'Pide estructura y citas.', 'Contrasta con otra herramienta.'],
     alternatives: ['GLM', 'DeepSeek', 'Gemini'],
-    sources: [{ label: 'Kimi oficial', href: 'https://www.kimi.com/' }, { label: 'Moonshot AI', href: 'https://www.moonshot.ai/' }],
+    sources: [
+      { label: 'Kimi oficial', href: 'https://www.kimi.com/' },
+      { label: 'Planes de Kimi', href: 'https://www.kimi.com/membership/pricing' },
+      { label: 'Kimi: qué puede hacer (centro de ayuda)', href: 'https://www.kimi.com/help/others/capability' },
+      { label: 'Kimi: modelos K2.6 y K3 (centro de ayuda)', href: 'https://www.kimi.com/help/others/model-mode-selection' },
+      { label: 'Kimi: uso de tus datos (centro de ayuda)', href: 'https://www.kimi.com/help/others/data-usage' },
+      { label: 'Moonshot AI', href: 'https://www.moonshot.ai/' },
+    ],
+    priceNotes: [
+      'Planes individuales en dólares (consultado el 22-10-2026): Plus 19 $/mes, Pro 39 $/mes, Max 99 $/mes y Ultra 199 $/mes; con pago anual salen a 15, 31, 79 y 159 $ al mes.',
+      'Según su centro de ayuda, las funciones de pago comparten un mismo saldo mensual: si lo gastas en una (por ejemplo, agentes), te queda menos para las demás.',
+      'La página de precios no detalla qué incluye el uso sin suscripción: compruébalo en tu cuenta antes de contar con él.',
+    ],
+    privacyNotes: [
+      'Según su centro de ayuda, los datos se guardan en servidores en China.',
+      'Kimi puede usar tus conversaciones, sin datos que te identifiquen, para entrenar sus modelos. Para salirte hay que escribir a support@moonshot.cn; se aplica a toda la cuenta.',
+      'No subas documentos de clientes, datos de salud ni nada que no publicarías.',
+    ],
+    faq: [
+      {
+        q: '¿Kimi está en español?',
+        a: 'Sí. La interfaz se cambia en Ajustes → General → Idioma, y el español está entre los idiomas disponibles. Sus modelos K2.6 y K3 también conversan, buscan y escriben en otros idiomas además del chino, según su centro de ayuda.',
+      },
+      {
+        q: '¿Cuánto cuesta Kimi?',
+        a: 'Los planes individuales cuestan 19 $ al mes (Plus), 39 $ (Pro), 99 $ (Max) y 199 $ (Ultra); pagando el año entero salen a 15, 31, 79 y 159 $ al mes. Todos incluyen agentes, Deep Research, publicar webs y Kimi Code; cambia cuánto uso tienes. Consultado el 22-10-2026 en su página de planes.',
+      },
+      {
+        q: '¿Kimi puede hacer presentaciones?',
+        a: 'Sí. Con el modelo K3 crea de principio a fin archivos editables: presentaciones (.pptx), documentos (.docx), hojas de cálculo (.xlsx) y PDF. Con K2.6, más rápido, solo da el texto (por ejemplo, el guion de la presentación). Si buscas otras opciones, mira la <a href="/blog/ia-crea-presentaciones-completas/">comparativa de IA para hacer presentaciones</a>.',
+      },
+      {
+        q: '¿Kimi usa mis conversaciones para entrenar su IA?',
+        a: 'Puede hacerlo: su centro de ayuda dice que usa entradas y respuestas, sin datos que identifiquen a la persona, para mejorar los modelos. Para pedir que no se usen hay que escribir a support@moonshot.cn; tardan de 5 a 7 días laborables y se aplica a toda la cuenta. Los datos se guardan en servidores en China.',
+      },
+    ],
   },
   {
     slug: 'glm', name: 'GLM', useCase: 'Asistente general',
@@ -293,13 +337,20 @@ const relatedBySlug: Record<string, Array<{ label: string; href: string }>> = {
   emergent: [{ label: 'Herramientas para crear aplicaciones', href: '/herramientas/casos/para-crear-apps/' }],
   'beautiful-ai': [{ label: 'Gamma vs Beautiful.ai', href: '/herramientas/comparativas/gamma-vs-beautiful-ai/' }],
   ollama: [{ label: 'AnythingLLM para trabajar con modelos locales', href: '/herramientas/anythingllm/' }],
+  kimi: [
+    { label: 'Kimi K3: investigación con resultados visuales', href: '/blog/2026-08-05-kimi-k3-investigacion-visual/' },
+    { label: 'Kimi vs GLM', href: '/herramientas/comparativas/kimi-vs-glm/' },
+    { label: 'DeepSeek en español: la app oficial', href: '/blog/deepseek-app-oficial-espanol/' },
+  ],
+  manus: [{ label: 'Manus vs ChatGPT: cuál es mejor', href: '/herramientas/comparativas/manus-vs-chatgpt-apps/' }],
 };
 
 export const expandedTools: Tool[] = specs.map((spec) => ({
   slug: spec.slug,
   name: spec.name,
   summary: spec.summary,
-  metaDescription: `${spec.name}: cuándo usarla, cuándo evitarla, privacidad, dificultad, alternativas y fuentes oficiales.`,
+  seoTitle: spec.seoTitle,
+  metaDescription: spec.metaDescription ?? `${spec.name}: cuándo usarla, cuándo evitarla, privacidad, dificultad, alternativas y fuentes oficiales.`,
   useCase: spec.useCase,
   price: spec.price ?? 'Freemium',
   privacy: spec.privacy ?? 'Media',
@@ -318,14 +369,15 @@ export const expandedTools: Tool[] = specs.map((spec) => ({
   status: 'active',
   evidenceLevel: 'official',
   platforms: spec.platforms ?? ['Web'],
-  language: 'Comprobar disponibilidad en español en la cuenta y región',
+  language: spec.language ?? 'Comprobar disponibilidad en español en la cuenta y región',
+  faq: spec.faq,
   detail: {
     verdict: `${spec.name} tiene sentido ${spec.bestFor.charAt(0).toLowerCase()}${spec.bestFor.slice(1)} No es una recomendación universal: conviene probarla con una tarea pequeña y revisar el resultado antes de incorporarla a un proceso.`,
     idealFor: spec.idealFor,
     notFor: spec.notFor,
     workflow: spec.workflow,
-    privacyNotes: [spec.avoidIf, 'Antes de usar datos internos, revisa cuenta, permisos, retención y condiciones oficiales vigentes.'],
-    priceNotes: ['La categoría de precio es orientativa y puede cambiar.', 'Comprueba el plan oficial antes de pagar o diseñar un flujo dependiente de límites.'],
+    privacyNotes: spec.privacyNotes ?? [spec.avoidIf, 'Antes de usar datos internos, revisa cuenta, permisos, retención y condiciones oficiales vigentes.'],
+    priceNotes: spec.priceNotes ?? ['La categoría de precio es orientativa y puede cambiar.', 'Comprueba el plan oficial antes de pagar o diseñar un flujo dependiente de límites.'],
     alternatives: spec.alternatives,
     sources: spec.sources,
   },

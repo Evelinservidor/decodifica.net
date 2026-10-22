@@ -52,7 +52,7 @@
   "chatgpt-work-archivos-a-entregables": [
     { "kind": "Herramienta", "label": "Ficha de ChatGPT", "description": "Revisa usos, límites, privacidad y alternativas antes de conectar tus archivos.", "href": "/herramientas/chatgpt/" },
     { "kind": "Comparativa", "label": "Copilot vs Gemini Workspace", "description": "La decisión depende de dónde viven tus documentos y qué permisos heredan.", "href": "/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/" },
-    { "kind": "Caso de uso", "label": "IA para documentos y PDF", "description": "Elige un flujo para leer, transformar y revisar archivos sin perder el original.", "href": "/herramientas/casos/para-documentos-pdf/" }
+    { "kind": "Comparativa", "label": "Manus vs ChatGPT", "description": "Si quieres delegar una tarea de varios pasos entera: qué hace cada uno y cuánto cuesta Manus.", "href": "/herramientas/comparativas/manus-vs-chatgpt-apps/" }
   ],
   "claude-emails-sonar-humanos": [
     { "kind": "Guía", "label": "Guía de Claude en español", "description": "Qué es, si es gratis, cuánto cuesta y cuándo elegirlo.", "href": "/blog/claude-ia-que-es-gratis/" },
