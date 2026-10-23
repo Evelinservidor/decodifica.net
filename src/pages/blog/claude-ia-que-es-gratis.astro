@@ -8,10 +8,10 @@ import Caja from '../../components/Caja.astro';
 const title = "Claude en español: guía completa, gratis y planes";
 const description = "Cómo usar Claude en español: qué incluye gratis, cuánto cuestan Pro y Max, Proyectos, memoria, cómo pedirle las cosas y qué hace con tus datos.";
 const pubDate = "2026-10-12";
-const modifiedDate = "2026-10-19";
-const readingTime = "11 min";
+const modifiedDate = "2026-10-23";
+const readingTime = "13 min";
 const tema = "chatbots";
-const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "anthropic"];
+const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "anthropic"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -36,13 +36,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
     "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
     "https://www.anthropic.com/legal/privacy",
+    "https://claude.com/resources/articles/claude-duet",
+    "https://support.claude.com/en/articles/17631495-get-started-with-claude-duet",
+    "https://claude.com/product/claude-duet",
   ]}
 >
   <Articulo slug="claude-ia-que-es-gratis">
 
     <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso que se renueva cada cinco horas. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code.</p>
 
-    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026. Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
+    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (los precios y la novedad de Claude Duet, el 23 de octubre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
 
     <h2>Qué es Claude y quién lo hace</h2>
     <p>Claude es un modelo de lenguaje creado por <strong>Anthropic</strong>. Como ChatGPT o Gemini, conversa contigo: responde preguntas, resume y escribe textos, analiza documentos que le subes y crea archivos. Se usa en tres sitios:</p>
@@ -163,6 +166,30 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h3>Skills</h3>
     <p>Una Skill es un paquete de instrucciones que Claude usa cuando hace falta, para que haga siempre igual una tarea que repites. Están también en el plan gratuito. Cómo instalarlas y crear la tuya: <a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>.</p>
 
+    <h2>Claude Duet: qué es y si se puede usar en España</h2>
+    <Caja tipo="nota"><strong>Novedad del 21 de octubre de 2026.</strong> Datos del anuncio de Anthropic y de su centro de ayuda, consultados el 23 de octubre de 2026. Es una versión de prueba y puede cambiar.</Caja>
+    <p><strong>Respuesta corta:</strong> Claude Duet es una aplicación nueva en la que Claude toma la iniciativa: cada mañana te resume lo importante de tu correo y tu calendario, hace los encargos que le mandas por mensaje y te pide permiso antes de enviar, pagar, firmar o borrar algo. Por ahora <strong>solo pueden usarla cuentas Pro y Max de Estados Unidos</strong>, con lista de espera. Desde España y Latinoamérica todavía no se puede, y Anthropic no ha dado fecha para otros países.</p>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-duet-web.webp"
+      alt="Página de Claude Duet en claude.com: vista previa de investigación con formulario de lista de espera y el aviso de que funciona con Opus 5.5 y está disponible en los planes Pro y Max en EE. UU."
+      width={1200}
+      height={791}
+      caption="Página de Claude Duet con la lista de espera (captura del 23 de octubre de 2026)."
+    />
+    <h3>Qué hace</h3>
+    <ul>
+      <li><strong>Un resumen cada mañana:</strong> revisa tu correo y tu calendario, elige lo que más necesita tu atención y puede dejarte borradores de respuesta para que los revises.</li>
+      <li><strong>Encargos por mensaje</strong>, escritos o de voz: preparar un informe sobre una empresa antes de una reunión, buscar facturas sin cobrar y redactar los recordatorios, montar una presentación o un panel de datos. Trabaja en un ordenador propio en la nube, así que sigue aunque cierres la aplicación.</li>
+      <li><strong>Usa lo que ya tienes en Claude:</strong> la memoria, las <a href="/blog/claude-skills-1000-gratis/">Skills</a> y los conectores de tu cuenta (Gmail, Google Calendar, Google Drive, Slack, HubSpot, Docusign, Calendly…).</li>
+      <li><strong>Pide permiso antes de lo importante:</strong> enviar un mensaje, pagar, firmar o borrar. Hay cosas que no hace ni con tu permiso, como comprar o vender acciones o mover dinero entre cuentas.</li>
+    </ul>
+    <h3>Cuánto cuesta y qué límites tiene</h3>
+    <p>Durante la prueba va incluido en Pro y Max sin pagar más, pero gasta el mismo límite de uso que tus chats (el de cinco horas y el semanal), y lo que hace por su cuenta, como el resumen de la mañana, también cuenta: el límite se acaba antes. Funciona siempre con Opus 5.5 (no se puede elegir modelo). No está en el plan gratis ni en Team o Enterprise; Anthropic dice que llegará a estos dos más adelante. Hay aplicación para iPhone y Android y se abre también en claude.ai.</p>
+    <Caja tipo="ojo">Al ser una prueba, Anthropic avisa de que puede equivocarse al decidir qué es urgente o entender mal un correo. Revisa cada borrador y cada petición de permiso antes de aceptarla.</Caja>
+    <h3>¿Cómo probarlo?</h3>
+    <p>Hacen falta tres cosas: plan Pro o Max, una cuenta de Claude en Estados Unidos y una invitación de la lista de espera. Si vives allí, apúntate en la <a href="https://claude.com/product/claude-duet" target="_blank" rel="noopener noreferrer">página de Claude Duet</a> con el mismo correo de tu cuenta de Claude; las invitaciones llegan por tandas y sin fecha garantizada. Anthropic no dice en qué idiomas funciona, así que no está confirmado que entienda bien el español.</p>
+    <p>Desde España o Latinoamérica, parte de lo que hace Duet ya está en Claude: conectar tu correo y tu calendario con los conectores, guardar como Skill lo que repites y, en Pro, encargar y programar tareas (así lo dice la página de precios). Si buscas otras formas de ordenar correos y tareas con IA, mira <a href="/blog/ia-organiza-pendientes/">la comparativa de IA para organizar tareas y correos</a>.</p>
+
     <h2>Cómo pedirle las cosas a Claude</h2>
     <p>La guía oficial de prompts de Anthropic resume casi todo en una idea: trata a Claude como a <strong>una persona brillante pero recién llegada</strong>, que no conoce tus costumbres. Cuanto más preciso seas, mejor el resultado. Su «regla de oro»: si un compañero sin contexto se perdería leyendo tu petición, Claude también. En la práctica:</p>
     <ul>
@@ -221,11 +248,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
           q: "¿Puedo usar Claude en Venezuela o Cuba?",
           a: "Ninguno de los dos aparece en la lista oficial de países disponibles (consultada en octubre de 2026), así que no se puede usar de forma oficial desde allí.",
         },
+        {
+          q: "¿Qué es Claude Duet y se puede usar en España?",
+          a: "Es una aplicación de Anthropic, presentada el 21 de octubre de 2026, en la que Claude te resume cada mañana lo importante de tu correo y tu calendario y hace encargos por su cuenta, pidiendo permiso antes de enviar, pagar, firmar o borrar. Por ahora es una prueba con lista de espera solo para cuentas Pro y Max de Estados Unidos: desde España y Latinoamérica aún no se puede usar.",
+        },
       ]}
     />
 
     <h2 id="fuentes">Fuentes</h2>
-    <p>Consultadas el 19 de octubre de 2026.</p>
+    <p>Consultadas el 19 de octubre de 2026; la página de precios y las tres de Claude Duet, el 23 de octubre de 2026.</p>
     <ul>
       <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: Pricing</a>: planes, precios, modelos y funciones de cada uno.</li>
       <li><a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" target="_blank" rel="noopener noreferrer">Get started with Claude (centro de ayuda)</a>: qué es, dónde se usa, edad mínima, idiomas y límite del plan gratuito.</li>
@@ -237,6 +268,9 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener noreferrer">Get started with custom connectors</a>: conectores por plan.</li>
       <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: cómo escribir peticiones claras.</li>
       <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Anthropic</a>: uso de conversaciones para entrenar y cómo desactivarlo.</li>
+      <li><a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">Introducing Claude Duet (anuncio de Anthropic, 21-10-2026)</a>: qué hace, conectores, permisos y para quién es.</li>
+      <li><a href="https://support.claude.com/en/articles/17631495-get-started-with-claude-duet" target="_blank" rel="noopener noreferrer">Get started with Claude Duet (centro de ayuda)</a>: requisitos, lista de espera, precio, límites de uso y lo que aún no hace.</li>
+      <li><a href="https://claude.com/product/claude-duet" target="_blank" rel="noopener noreferrer">Claude Duet (página del producto)</a>: disponibilidad en Pro y Max en EE. UU. y lista de espera.</li>
     </ul>
 
     <h2>Guías de este tema</h2>
