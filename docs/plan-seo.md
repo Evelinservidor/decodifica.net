@@ -49,18 +49,24 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Idea (19-10-2026): Memoria de Claude y chats de incógnito: qué recuerda y cómo borrarlo (el centro de ayuda lo explica con detalle; hoy es solo un apartado del pilar)
 
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
-- **Pilar (nuevo):** «IA local en español: cómo usar IA en tu ordenador sin internet» (qué programa elegir según tu
-  ordenador, qué se puede hacer y qué no, privacidad).
+- **Pilar:** ✔ `/blog/ia-local-sin-internet/` «IA local en español: cómo usar IA en tu PC sin internet» (qué programa
+  elegir según tu ordenador, qué se puede hacer y qué no, privacidad). Publicado el 26-10-2026.
 - **Apoyos que ya hay:** ✔ `/blog/ollama-que-es-como-usar/` · ✔ `/blog/lm-studio-que-es-como-usar/` ·
   ✔ `/blog/2026-07-25-ia-local-oculta-datos/` · ✔ `/blog/2026-08-01-qwen3-asr-transcribe-espanol/` ·
-  ✔ `/blog/odysseus-pewdiepie-ia-gratis/` · ✔ `/blog/2026-07-17-hermes-agent-chino/`
+  ✔ `/blog/odysseus-pewdiepie-ia-gratis/` · ✔ `/blog/2026-07-17-hermes-agent-chino/` (revisado el 26-10-2026)
 - **Cola:**
-  - [ ] Pilar: «IA local en español» (nuevo)
+  - [x] ✔ (26-10-2026) Pilar: «IA local en español» → `/blog/ia-local-sin-internet/` (la ficha `/herramientas/anythingllm/` se puso al día el mismo día: título, datos y preguntas)
   - [ ] Ollama o LM Studio: cuál elegir
   - [ ] Qué ordenador hace falta para la IA local (memoria y tarjeta gráfica, con las cifras oficiales de cada modelo)
   - [ ] Chatear con tus PDF sin subirlos a internet (AnythingLLM; aquí se fusiona la ficha `/herramientas/anythingllm/`)
   - [ ] Pasar audio a texto en tu ordenador (Whisper y similares)
   - [ ] Modelos que funcionan bien en español en local (con datos publicados; nunca «lo hemos probado» sin prueba de Jordi)
+  - [ ] Idea (26-10-2026): IA sin internet en el móvil (Google AI Edge Gallery, AnythingLLM Mobile). El autocompletado de
+    Google en España y México sugiere «ia local android», «ia sin internet apk» e «ia sin internet para celular»; hoy es
+    solo una fila de la tabla del pilar.
+  - [ ] Idea (26-10-2026): crear imágenes en tu ordenador. «ia local para generar imagenes» sale en el autocompletado,
+    pero pide tarjeta gráfica potente y en Ollama aún es experimental y solo en Mac: mirar antes si hay algo concreto
+    que contar.
 
 ## Grupo C · Prompts y el generador — CUIDAR (mejorar lo que hay, poco nuevo)
 - **Pilar:** `/herramientas/generador-prompts/` (sale en la posición 1-2 para «páginas para crear prompts»). Se mantiene
@@ -69,8 +75,11 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Apoyos que ya hay:** ✔ `/blog/2026-07-16-prompts-secretos-web/` · ✔ `/blog/2026-07-22-nano-banana-1000-prompts/` ·
   ✔ `/herramientas/evaluador/`
 - **Cola:**
-  - [ ] Pilar: la guía corta debajo del generador
+  - [x] ✔ (26-10-2026) Pilar: la guía corta debajo del generador (cómo hacer un buen prompt, 5 ejemplos, errores típicos,
+    3 preguntas frecuentes; unas 800 palabras)
   - [ ] Como mucho uno nuevo: «Cómo hacer un prompt: guía con ejemplos». Los «prompts para fotos», no (ganan las apps).
+    Nota (26-10-2026): la guía del generador ya responde a esto; propuesta a Jordi de no escribirlo aparte y decidir con
+    datos en diciembre.
 
 ## Grupo D · IA en casa sin nube — PUENTE (después de A y B)
 - Solo IA: asistente de voz, Home Assistant con IA local, avisos al móvil sin servicios de pago. **Nada de energía solar,
