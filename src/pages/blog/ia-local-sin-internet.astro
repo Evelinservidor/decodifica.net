@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
+
+const title = "IA local en español: cómo usar IA en tu PC sin internet";
+const description = "Qué es la IA local, qué programa elegir (LM Studio, Ollama, Jan), cuánta memoria pide tu ordenador, qué hace sin internet y cómo empezar paso a paso.";
+const pubDate = "2026-10-26";
+const modifiedDate = "2026-10-26";
+const readingTime = "11 min";
+const tema = "local";
+const tags = ["ia local", "ia sin internet", "lm studio", "ollama", "jan", "gemma 4", "qwen 3.5", "privacidad"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/ia-local-sin-internet.jpg"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+  citations={[
+    "https://lmstudio.ai/docs/app/offline",
+    "https://lmstudio.ai/docs/app/system-requirements",
+    "https://lmstudio.ai/docs/app/basics/rag",
+    "https://lmstudio.ai/docs/app/basics/download-model",
+    "https://lmstudio.ai/docs/app/user-interface/languages",
+    "https://lmstudio.ai/app-terms",
+    "https://docs.ollama.com/faq",
+    "https://docs.ollama.com/windows",
+    "https://docs.ollama.com/macos",
+    "https://docs.ollama.com/context-length",
+    "https://ollama.com/download",
+    "https://ollama.com/blog/new-app",
+    "https://ollama.com/blog/speech-models",
+    "https://ollama.com/blog/image-generation",
+    "https://ollama.com/blog/cloud-models",
+    "https://ollama.com/library/gemma4/tags",
+    "https://ollama.com/library/qwen3.5/tags",
+    "https://ai.google.dev/gemma/docs/core/model_card_4",
+    "https://docs.jan.ai/desktop/quickstart",
+    "https://github.com/janhq/jan",
+    "https://anythingllm.com/download",
+    "https://docs.anythingllm.com/installation-desktop/system-requirements",
+    "https://github.com/google-ai-edge/gallery",
+    "https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery",
+    "https://github.com/openai/whisper",
+  ]}
+>
+  <Articulo slug="ia-local-sin-internet">
+
+    <p><strong>En resumen:</strong> La IA local es un modelo de IA abierto, como Gemma 4 de Google o Qwen 3.5 de Alibaba, que descargas una vez y funciona en tu ordenador o en tu móvil sin conexión, sin que lo que escribes salga de tu equipo. Se usa con un programa gratuito: LM Studio (con la ventana en español), Ollama (para conectarlo con otras aplicaciones), Jan (de código abierto) o, en el móvil, Google AI Edge Gallery. LM Studio recomienda 16 GB de memoria; con 8 GB, solo modelos pequeños.</p>
+
+    <p>Esta es la guía principal de Decodifica sobre IA en tu ordenador: qué es, qué programa elegir, qué equipo hace falta y qué se puede hacer sin internet. Al final tienes las guías concretas de este tema. Los datos salen de la documentación oficial de cada programa y de las fichas de los modelos, consultadas el 26 de octubre de 2026.</p>
+
+    <h2>Qué es la IA local y qué significa «sin internet»</h2>
+    <p>Para usar IA en tu ordenador hacen falta dos piezas:</p>
+    <ul>
+      <li><strong>El modelo:</strong> un archivo grande con la IA ya entrenada. Los hay abiertos, que cualquiera puede descargar, como Gemma 4 (Google) o Qwen 3.5 (Alibaba).</li>
+      <li><strong>El programa que lo ejecuta:</strong> LM Studio, Ollama, Jan o AnythingLLM en el ordenador; Google AI Edge Gallery en el móvil.</li>
+    </ul>
+    <p>Internet solo hace falta para descargar el programa y los modelos. La documentación de LM Studio lo explica así: chatear con un modelo, chatear con tus documentos o usarlo como servidor en tu red no necesita conexión, y «nada de lo que escribes» sale de tu equipo. Lo que sí necesita internet es buscar y descargar modelos nuevos, bajar sus motores y buscar actualizaciones. Ollama dice lo mismo con otras palabras: cuando un modelo se ejecuta en local, ellos no ven lo que escribes.</p>
+    <Caja tipo="ojo"><strong>No todo lo que sale en estos programas es local.</strong> Ollama también ofrece modelos que se ejecutan en sus servidores: se reconocen porque su nombre termina en <code>:cloud</code>. Jan puede conectarse a OpenAI, Anthropic o Google con tu propia clave. Esos modelos no funcionan sin conexión y tu texto sí sale de tu equipo. En Ollama se pueden apagar las funciones en la nube con <code>"disable_ollama_cloud": true</code> en el archivo <code>~/.ollama/server.json</code>.</Caja>
+
+    <h2>Qué puedes hacer sin internet y qué no</h2>
+    <ul>
+      <li><strong>Chatear, resumir y redactar:</strong> lo hacen todos los programas de esta guía.</li>
+      <li><strong>Preguntar a tus documentos:</strong> LM Studio acepta archivos .docx, .pdf y .txt. Si el documento cabe en la memoria del modelo, lo lee entero; si es muy largo, busca los trozos que tienen que ver con tu pregunta, y su documentación avisa de que eso «a veces requiere ajustes». La aplicación de Ollama para Mac y Windows también deja arrastrar textos y PDF al chat. <a href="/herramientas/anythingllm/">AnythingLLM</a> está pensado sobre todo para esto.</li>
+      <li><strong>Describir fotos e imágenes:</strong> con modelos que aceptan imágenes, como Gemma 4 o Qwen 3.5 (lo indica su ficha en Ollama: «Text, Image»).</li>
+      <li><strong>Pasar audio a texto:</strong> Whisper, de OpenAI, es de código abierto (licencia MIT) y funciona en tu ordenador; su modelo más pequeño necesita alrededor de 1 GB de memoria de la tarjeta gráfica y el más grande, unos 10 GB. Los Gemma 4 E2B, E4B y 12B también entienden audio. Otra opción, con sus límites, en <a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR para transcribir en español</a>.</li>
+      <li><strong>Leer un texto en voz alta:</strong> Ollama lo añadió el 24 de octubre de 2026 con el modelo Phonon, que tiene versión en español (<code>phonon:40m-es</code>). Por ahora solo en Mac, y esa versión tiene una licencia que no permite el uso comercial.</li>
+      <li><strong>Crear imágenes:</strong> es otro tipo de modelo. Ollama lo tiene en pruebas («experimental») y, según su anuncio de enero de 2026, solo en Mac.</li>
+    </ul>
+    <p><strong>Lo que no puede hacer:</strong> sin conexión, el modelo solo sabe lo que aprendió al entrenarse, así que no puede buscar en la web ni conocer noticias recientes. Y los modelos más grandes no caben en un ordenador personal: por eso Ollama los ofrece en su nube, y su página de descarga avisa de que los modelos grandes van lentos en un ordenador sin una buena tarjeta gráfica.</p>
+
+    <h2>Qué programa elegir</h2>
+    <div>
+      <table>
+        <thead>
+          <tr><th>Programa</th><th>Para quién</th><th>Dónde funciona</th><th>Licencia</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LM Studio</strong></td>
+            <td>Quieres una ventana en español con buscador de modelos y chat con documentos.</td>
+            <td>Mac con chip Apple (M1 a M4), Windows (x64 y ARM) y Linux. No funciona en Mac con Intel.</td>
+            <td>Gratis, código cerrado. Uso personal y uso interno en empresas.</td>
+          </tr>
+          <tr>
+            <td><strong>Ollama</strong></td>
+            <td>Quieres conectar el modelo con otras aplicaciones o con agentes. Tiene aplicación con chat en Mac y Windows, y órdenes en la terminal.</td>
+            <td>Mac (con Intel, solo con el procesador), Windows 10 22H2 o posterior y Linux.</td>
+            <td>Código abierto (MIT).</td>
+          </tr>
+          <tr>
+            <td><strong>Jan</strong></td>
+            <td>Quieres una ventana sencilla y de código abierto: al abrirla descarga un modelo y su catálogo te dice si cada modelo cabe en tu equipo.</td>
+            <td>Mac, Windows y Linux.</td>
+            <td>Código abierto (Apache 2.0).</td>
+          </tr>
+          <tr>
+            <td><strong>AnythingLLM</strong></td>
+            <td>Tu prioridad es preguntar a tus documentos. No pide cuenta.</td>
+            <td>Mac (chip Apple e Intel), Windows (x64 y ARM) y Linux.</td>
+            <td>Código abierto (MIT).</td>
+          </tr>
+          <tr>
+            <td><strong>Google AI Edge Gallery</strong></td>
+            <td>Quieres probar IA sin conexión en el móvil. Es una versión beta experimental.</td>
+            <td>Android 12 o posterior e iOS 17 o posterior.</td>
+            <td>Código abierto (Apache 2.0).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <FiguraArticulo
+      src="/img/blog/ia-local-sin-internet/que-programa-elegir.webp"
+      alt="Cuadro resumen para elegir programa de IA local: ventana en español, LM Studio; conectar con otras aplicaciones, Ollama; código abierto con ventana, Jan; preguntar a tus documentos, AnythingLLM; en el móvil, Google AI Edge Gallery"
+      width={1200}
+      height={769}
+    />
+    <p>Si nunca has usado ninguno, empieza por <strong>LM Studio</strong>: su documentación confirma que la ventana se puede poner en español. Lo explicamos paso a paso en <a href="/blog/lm-studio-que-es-como-usar/">LM Studio: qué es y cómo usar IA local</a>. Si quieres conectar el modelo con otras aplicaciones o tienes un Mac con Intel, mira <a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usar modelos en local</a>.</p>
+
+    <h2>Qué ordenador necesitas</h2>
+    <p>Lo que más manda es la <strong>memoria</strong>: la RAM del ordenador y, si tienes tarjeta gráfica, la memoria de la gráfica. Esto es lo que recomiendan los propios programas:</p>
+    <div>
+      <table>
+        <thead>
+          <tr><th>Programa</th><th>Requisitos oficiales</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LM Studio</strong></td>
+            <td>Mac: chip Apple y macOS 14 o posterior; 16 GB de memoria o más recomendados (con 8 GB, «modelos más pequeños»). Windows: procesador con AVX2 (en x64), 16 GB de RAM y al menos 4 GB de memoria gráfica dedicada recomendados.</td>
+          </tr>
+          <tr>
+            <td><strong>AnythingLLM</strong></td>
+            <td>16 GB de RAM y procesador de 8 núcleos recomendados. En Windows, una gráfica con 8-12 GB de memoria o más; en Mac, cualquier chip de la serie M.</td>
+          </tr>
+          <tr>
+            <td><strong>Ollama</strong></td>
+            <td>macOS Sonoma (14) o posterior, Windows 10 22H2 o posterior, o Linux. Funciona con tarjetas NVIDIA y AMD de su lista oficial. En Windows pide al menos 4 GB de disco para el programa.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Los modelos ocupan mucho:</strong> la documentación de Ollama avisa de que pueden sumar «de decenas a cientos de GB». Cada modelo viene en varios tamaños; la biblioteca de Ollama da para cada uno una cifra en GB que sirve de guía para saber si te cabe:</p>
+    <div>
+      <table>
+        <thead>
+          <tr><th>Modelo</th><th>Tamaños y cifra en GB (biblioteca de Ollama)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gemma 4</strong> (Google)</td>
+            <td>e2b: 4,6-7,5 · e4b: 6,6-9,5 · 12b: 7,7-8,0 · 26b: 16-19 · 31b: 19-20</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen 3.5</strong> (Alibaba)</td>
+            <td>0.8b: 1,2-1,3 · 2b: 2,7-3,1 · 4b: 3,3-4,0 · 9b: 6,6-7,6 · 27b: 17-20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <FiguraArticulo
+      src="/img/blog/ia-local-sin-internet/tamanos-gemma4-ollama.webp"
+      alt="Captura de la lista de versiones de gemma4 en la biblioteca de Ollama con la cifra en GB de cada tamaño: e2b de 4,6 a 7,5 GB, e4b de 6,6 a 9,5 GB, 12b de 7,7 a 8,0 GB, 26b de 16 a 19 GB y 31b de 19 a 20 GB"
+      width={808}
+      height={904}
+      caption="Versiones de Gemma 4 en ollama.com/library (captura del 26 de octubre de 2026)."
+    />
+    <p>Con esas cifras, un ordenador de 8 GB se queda en los tamaños más pequeños, y los de 26b o 27b ya pasan de 16 GB. Ollama recomienda, para ir más rápido, que el modelo no tenga que pasar parte del trabajo al procesador, es decir, que quepa en la gráfica; y avisa de que darle más memoria de trabajo (el «contexto», útil para documentos largos) también pide más memoria. Por eso conviene empezar por un tamaño pequeño y subir solo si las respuestas no te bastan.</p>
+
+    <h2>Cómo empezar, paso a paso</h2>
+    <p>Con LM Studio, que es el que tiene la ventana en español:</p>
+    <ol>
+      <li><strong>Descárgalo</strong> desde <a href="https://lmstudio.ai" target="_blank" rel="noopener noreferrer">lmstudio.ai</a> e instálalo.</li>
+      <li><strong>Ponlo en español:</strong> en los ajustes, <strong>Preferences &gt; Language</strong>. Para ver los ajustes hay que estar en el modo «Power User» o superior.</li>
+      <li><strong>Descarga un modelo pequeño</strong> desde la pestaña Discover (<code>Ctrl + 2</code> en Windows y Linux, <code>⌘ + 2</code> en Mac): busca «gemma» o «qwen». La documentación recomienda elegir una versión de 4 bits o más si tu equipo puede con ella.</li>
+      <li><strong>Desconecta internet y hazle una pregunta.</strong> Si responde, todo está pasando en tu ordenador.</li>
+      <li><strong>Prueba con un documento:</strong> arrastra un PDF, un .docx o un .txt al chat y pregúntale por él.</li>
+    </ol>
+    <FiguraArticulo
+      src="/img/blog/ia-local-sin-internet/primeros-pasos-ia-local.webp"
+      alt="Esquema de cinco pasos para usar IA sin internet con LM Studio: descargar el programa, ponerlo en español, descargar un modelo pequeño, desconectar internet y preguntar, y probar con un documento"
+      width={1200}
+      height={717}
+    />
+    <p>Con Jan es aún más directo: al abrirlo por primera vez descarga su modelo por defecto y ya puedes escribirle. Con Ollama basta una orden, <code>ollama run gemma4</code>, o elegir el modelo en su aplicación.</p>
+
+    <h2>¿Funciona bien en español?</h2>
+    <p>Depende del modelo, no del programa. Google dice que Gemma 4 funciona «de serie» en más de 35 idiomas y que se entrenó con textos de más de 140, aunque su ficha no trae la lista. La ficha de Qwen 3.5 habla de 201 idiomas y dialectos. La de Gemma 4 avisa, además, de que los modelos pueden fallar con matices, ironía o lenguaje figurado.</p>
+    <p>Lo práctico es comprobarlo tú: dale a dos modelos la misma tarea real (resumir un documento tuyo, contestar un correo) y quédate con el que menos tengas que corregir. Si el modelo responde a veces en inglés, empieza la conversación pidiéndole que conteste siempre en español.</p>
+
+    <h2>Privacidad: qué se queda en tu equipo</h2>
+    <ul>
+      <li><strong>LM Studio:</strong> los modelos y los documentos que arrastras se procesan en tu equipo; solo se conecta para buscar o descargar modelos y actualizaciones.</li>
+      <li><strong>Ollama:</strong> en local no ven tus mensajes. Con sus modelos en la nube los procesan para responder, pero dicen que no los guardan ni los usan para entrenar.</li>
+      <li><strong>AnythingLLM:</strong> según su web, tus modelos, documentos e historial se quedan en tu equipo, y no pide cuenta.</li>
+      <li><strong>Jan:</strong> los modelos locales son la opción por defecto; los de la nube (OpenAI, Anthropic y otros) necesitan tu clave y envían el texto a ese proveedor.</li>
+      <li><strong>Google AI Edge Gallery:</strong> dice que todo se procesa en el móvil y que no necesita internet. Aun así, su ficha de Google Play indica que la aplicación puede recoger datos de actividad y de rendimiento.</li>
+    </ul>
+    <Caja tipo="consejo">Si para una tarea necesitas una IA en la nube, puedes quitar antes los datos personales del documento con una herramienta que funciona en tu ordenador: lo explicamos en <a href="/blog/2026-07-25-ia-local-oculta-datos/">ocultar datos personales con Presidio</a>.</Caja>
+
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Se puede usar una IA sin internet?",
+          a: "Sí. Con un programa como LM Studio, Ollama o Jan descargas un modelo abierto (por ejemplo, Gemma 4 o Qwen 3.5) y después funciona sin conexión. Internet solo hace falta para descargar el programa, los modelos y las actualizaciones.",
+        },
+        {
+          q: "¿La IA local es gratis?",
+          a: "Los programas de esta guía son gratuitos y los modelos abiertos se descargan sin pagar. Los modelos en la nube van aparte: Ollama incluye un poco de uso gratis al mes y el resto es de pago, y en Jan necesitan tu propia clave del proveedor.",
+        },
+        {
+          q: "¿Cuánta memoria RAM necesito?",
+          a: "LM Studio y AnythingLLM recomiendan 16 GB. Con 8 GB, LM Studio aconseja quedarse en modelos pequeños, como Qwen 3.5 de 4b o menos (de 1,2 a 4 GB según la biblioteca de Ollama). Los de 26b o más ya pasan de 16 GB.",
+        },
+        {
+          q: "¿Hay IA sin internet para el móvil?",
+          a: "Sí: Google AI Edge Gallery, gratuita y de código abierto, ejecuta modelos como Gemma 4 en el móvil sin conexión. Pide Android 12 o iOS 17 o posteriores y es una versión beta experimental.",
+        },
+        {
+          q: "¿Es igual que ChatGPT?",
+          a: "No del todo. Los modelos más grandes no caben en un ordenador personal y, sin internet, el modelo no puede buscar en la web. A cambio, lo que escribes no sale de tu equipo y funciona aunque no tengas conexión.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 26 de octubre de 2026.</p>
+    <ul>
+      <li><a href="https://lmstudio.ai/docs/app/offline" target="_blank" rel="noopener noreferrer">LM Studio: Offline Operation</a>: qué funciona sin internet y qué no.</li>
+      <li><a href="https://lmstudio.ai/docs/app/system-requirements" target="_blank" rel="noopener noreferrer">LM Studio: System Requirements</a>: memoria, procesador y gráfica recomendados.</li>
+      <li><a href="https://lmstudio.ai/docs/app/basics/rag" target="_blank" rel="noopener noreferrer">LM Studio: Chat with Documents</a> y <a href="https://lmstudio.ai/docs/app/basics/download-model" target="_blank" rel="noopener noreferrer">Download an LLM</a>: documentos admitidos y qué versión de modelo elegir.</li>
+      <li><a href="https://lmstudio.ai/docs/app/user-interface/languages" target="_blank" rel="noopener noreferrer">LM Studio in your language</a>: la ventana en español y dónde se cambia.</li>
+      <li><a href="https://lmstudio.ai/app-terms" target="_blank" rel="noopener noreferrer">LM Studio: App Terms of Service</a>: uso personal e interno en empresas.</li>
+      <li><a href="https://docs.ollama.com/faq" target="_blank" rel="noopener noreferrer">Ollama Docs: FAQ</a>: privacidad en local y en la nube, cómo apagar la nube y cuándo carga el modelo en la gráfica.</li>
+      <li><a href="https://docs.ollama.com/windows" target="_blank" rel="noopener noreferrer">Ollama Docs: Windows</a> y <a href="https://docs.ollama.com/macos" target="_blank" rel="noopener noreferrer">macOS</a>: requisitos y espacio en disco.</li>
+      <li><a href="https://docs.ollama.com/context-length" target="_blank" rel="noopener noreferrer">Ollama Docs: Context length</a>: el contexto pide más memoria.</li>
+      <li><a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama: Download</a>: aviso sobre modelos grandes sin tarjeta gráfica y modelos <code>:cloud</code>.</li>
+      <li>Blog de Ollama: <a href="https://ollama.com/blog/new-app" target="_blank" rel="noopener noreferrer">la aplicación con chat y archivos</a>, <a href="https://ollama.com/blog/speech-models" target="_blank" rel="noopener noreferrer">modelos de voz (24-10-2026)</a>, <a href="https://ollama.com/blog/image-generation" target="_blank" rel="noopener noreferrer">creación de imágenes (experimental)</a> y <a href="https://ollama.com/blog/cloud-models" target="_blank" rel="noopener noreferrer">modelos en la nube</a>.</li>
+      <li>Biblioteca de Ollama: <a href="https://ollama.com/library/gemma4/tags" target="_blank" rel="noopener noreferrer">gemma4</a> y <a href="https://ollama.com/library/qwen3.5/tags" target="_blank" rel="noopener noreferrer">qwen3.5</a>: tamaños, cifras en GB y tipo de entrada. La ficha de Qwen 3.5 recoge los 201 idiomas.</li>
+      <li><a href="https://ai.google.dev/gemma/docs/core/model_card_4" target="_blank" rel="noopener noreferrer">Ficha oficial de Gemma 4 (Google)</a>: idiomas, audio, licencia y limitaciones.</li>
+      <li><a href="https://docs.jan.ai/desktop/quickstart" target="_blank" rel="noopener noreferrer">Jan: Quickstart</a> y <a href="https://github.com/janhq/jan" target="_blank" rel="noopener noreferrer">repositorio de Jan</a>: primer arranque, modelos locales y en la nube, licencia.</li>
+      <li><a href="https://anythingllm.com/download" target="_blank" rel="noopener noreferrer">AnythingLLM: Download</a> y <a href="https://docs.anythingllm.com/installation-desktop/system-requirements" target="_blank" rel="noopener noreferrer">System Requirements</a>: sistemas, privacidad y requisitos.</li>
+      <li><a href="https://github.com/google-ai-edge/gallery" target="_blank" rel="noopener noreferrer">Google AI Edge Gallery (repositorio oficial)</a> y <a href="https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery" target="_blank" rel="noopener noreferrer">su ficha en Google Play</a>: requisitos, privacidad y datos que recoge.</li>
+      <li><a href="https://github.com/openai/whisper" target="_blank" rel="noopener noreferrer">Whisper (repositorio oficial de OpenAI)</a>: tamaños, memoria necesaria y licencia.</li>
+    </ul>
+
+    <h2>Guías de este tema</h2>
+    <ul>
+      <li><a href="/blog/lm-studio-que-es-como-usar/">LM Studio: qué es y cómo usar IA local</a>: instalarlo, descargar un modelo y chatear con tus documentos.</li>
+      <li><a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usar modelos de IA en local</a>: órdenes básicas, conexión con otras aplicaciones y precios de su nube.</li>
+      <li><a href="/blog/2026-07-25-ia-local-oculta-datos/">Ocultar datos personales con Presidio</a>: limpiar un documento en tu ordenador antes de pasarlo a una IA en la nube.</li>
+      <li><a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR</a>: transcribir audio en español con marcas por palabra.</li>
+      <li><a href="/blog/odysseus-pewdiepie-ia-gratis/">Odysseus de PewDiePie</a>: un espacio de trabajo de IA que instalas tú.</li>
+      <li><a href="/blog/2026-07-17-hermes-agent-chino/">Hermes Agent</a>: un agente de código abierto que puede usar modelos locales.</li>
+      <li><a href="/herramientas/anythingllm/">AnythingLLM</a>: ficha del programa para preguntar a tus documentos.</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/alternativas-fable-5/">Alternativas a Claude Fable 5: modelos abiertos y locales</a>, para tener un plan B si una IA en la nube deja de estar disponible.</li>
+      <li><a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>, si prefieres un asistente en la nube y quieres saber qué hace con tus datos.</li>
+    </ul>
+
+  </Articulo>
+
+</BaseLayout>
