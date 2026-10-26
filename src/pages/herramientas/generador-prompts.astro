@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
+import FaqSection from '~/components/FaqSection.astro';
 ---
 
 <BaseLayout title="Generador de prompts gratis y sin registro" description="Crea un prompt claro para ChatGPT, Claude o Gemini: eliges tarea, contexto, resultado y restricciones. Gratis, sin registro y sin salir de tu navegador.">
@@ -15,7 +16,77 @@ import NewsletterForm from '~/components/NewsletterForm.astro';
       <button class="w-fit rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white">Construir prompt</button><p id="prompt-error" class="hidden text-sm text-red-300" role="alert">Completa tarea, resultado y formato.</p>
     </form>
     <section id="prompt-result" hidden class="mt-8 rounded-lg border border-brand-500/30 bg-dark-800 p-6" aria-live="polite"><h2 class="font-display text-2xl font-bold">Prompt listo para adaptar</h2><pre class="mt-5 overflow-x-auto whitespace-pre-wrap rounded-lg bg-dark-900 p-5 text-sm leading-7"><code id="prompt-text"></code></pre><div class="mt-5 flex flex-wrap gap-3"><button id="prompt-copy" type="button" class="rounded-lg bg-brand-500 px-4 py-2.5 font-semibold">Copiar prompt</button><button id="prompt-print" type="button" class="rounded-lg border border-dark-600 px-4 py-2.5 font-semibold">Imprimir</button></div><h3 class="mt-8 font-display text-xl font-bold">Antes de usar la respuesta</h3><ul class="mt-4 grid gap-3 md:grid-cols-3 text-sm text-dark-200"><li class="rounded-lg bg-dark-900 p-4">Comprueba hechos, cifras y nombres.</li><li class="rounded-lg bg-dark-900 p-4">Marca supuestos y datos ausentes.</li><li class="rounded-lg bg-dark-900 p-4">Decide qué no debes delegar.</li></ul></section>
-    <section class="mt-12"><h2 class="font-display text-2xl font-bold">Guías de prompts</h2><ul class="mt-4 space-y-2"><li><a href="/blog/2026-07-16-prompts-secretos-web/" class="text-brand-400 hover:text-brand-300">5 prompts para crear tu web con IA</a>, listos para copiar.</li><li><a href="/blog/2026-07-22-nano-banana-1000-prompts/" class="text-brand-400 hover:text-brand-300">Prompts para Nano Banana</a>: cómo usar una biblioteca gratuita de prompts de imagen.</li><li><a href="/herramientas/evaluador/" class="text-brand-400 hover:text-brand-300">Evaluador de resultados de IA</a>, para comprobar si la respuesta te sirvió de verdad.</li></ul></section>
+    <article id="guia" class="mt-14 max-w-3xl leading-7 text-dark-200">
+      <h2 class="font-display text-3xl font-bold text-white mt-12 mb-4">Cómo hacer un buen prompt</h2>
+      <p class="mt-4">Un prompt es lo que le escribes a una IA para pedirle algo. Las guías oficiales de OpenAI (ChatGPT), Anthropic (Claude) y Google (Gemini) coinciden en lo básico: pedir con claridad, dar el contexto que hace falta, decir en qué formato quieres la respuesta y, si puedes, poner un ejemplo. Anthropic lo resume con una imagen: trata a la IA como a una persona brillante pero recién llegada, que no conoce tus costumbres. Si un compañero sin contexto se perdería leyendo tu petición, la IA también.</p>
+      <p class="mt-4">Un buen prompt tiene cinco piezas, las mismas que te pide el generador de arriba:</p>
+      <ol class="mt-4 list-decimal space-y-3 pl-6">
+        <li><strong class="text-white">La tarea y el resultado:</strong> qué quieres exactamente. «Compara tres presupuestos con los mismos criterios» en lugar de «ayúdame con estos presupuestos».</li>
+        <li><strong class="text-white">El contexto y para qué es:</strong> lo que la IA no sabe y necesita. Anthropic explica que dar el motivo ayuda: en vez de «no uses puntos suspensivos», di que el texto lo leerá en voz alta un programa que no sabe pronunciarlos.</li>
+        <li><strong class="text-white">Para quién es:</strong> no se escribe igual para tu jefa que para un cliente o para un niño. OpenAI recomienda nombrar el tono con adjetivos: formal, cercano, directo.</li>
+        <li><strong class="text-white">El formato:</strong> tabla, lista de pasos, un correo de 100 palabras. Mejor con cifras: OpenAI propone «de 3 a 5 frases» en lugar de «más bien corto».</li>
+        <li><strong class="text-white">Los límites y un ejemplo:</strong> qué no debe inventar y qué hacer cuando le falte un dato. Un ejemplo de lo que te gusta guía el formato y el tono: Anthropic recomienda de 3 a 5, y Google aconseja incluir siempre alguno, sin pasarse.</li>
+      </ol>
+      <p class="mt-4">Separa tus instrucciones del texto que pegas, por ejemplo con <code>###</code> o con comillas triples (lo propone OpenAI). Si el texto es muy largo, Anthropic y Google aconsejan ponerlo primero y dejar la pregunta para el final.</p>
+
+      <h2 class="font-display text-3xl font-bold text-white mt-12 mb-4">5 ejemplos de prompts: de vago a claro</h2>
+      <div class="mt-6 overflow-x-auto rounded-lg border border-dark-600">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-dark-600 text-white"><th class="p-3">Para qué</th><th class="p-3">Prompt vago</th><th class="p-3">Prompt claro</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-dark-700"><td class="p-3 font-semibold text-white">Resumir</td><td class="p-3">Resume este informe.</td><td class="p-3">Resume este informe en 5 puntos para mi jefe, que no conoce el proyecto. Pon aparte las fechas y las cifras, y marca lo que el texto no deje claro.</td></tr>
+            <tr class="border-b border-dark-700"><td class="p-3 font-semibold text-white">Escribir un correo</td><td class="p-3">Escribe un correo para pedir más tiempo.</td><td class="p-3">Escribe un correo de unas 100 palabras a un cliente al que trato de usted para mover la entrega del día 10 al 17. Tono amable y directo. Termina proponiendo una llamada.</td></tr>
+            <tr class="border-b border-dark-700"><td class="p-3 font-semibold text-white">Comparar</td><td class="p-3">¿Qué presupuesto es mejor?</td><td class="p-3">Compara estos tres presupuestos de reforma en una tabla con precio, plazo, garantía y qué incluye. Si un dato no aparece, escribe «no consta». Después dime cuál elegirías y por qué.</td></tr>
+            <tr class="border-b border-dark-700"><td class="p-3 font-semibold text-white">Organizarte</td><td class="p-3">Ayúdame a organizarme.</td><td class="p-3">Tengo estas 8 tareas esta semana y 2 horas libres al día. Repártelas de lunes a viernes por urgencia en una lista y dime cuáles podría delegar.</td></tr>
+            <tr><td class="p-3 font-semibold text-white">Aprender algo</td><td class="p-3">Explícame qué es la inflación.</td><td class="p-3">Explícame qué es la inflación como si tuviera 15 años, en 3 párrafos cortos y con un ejemplo con el precio de la compra. Al final, hazme 3 preguntas para ver si lo he entendido.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4">Los cinco siguen el mismo patrón: qué quieres, para quién, en qué formato y qué hacer con lo que falte. Es lo que ordena el generador cuando rellenas sus campos.</p>
+
+      <h2 class="font-display text-3xl font-bold text-white mt-12 mb-4">Errores típicos al escribir un prompt</h2>
+      <ul class="mt-4 list-disc space-y-3 pl-6">
+        <li><strong class="text-white">Pedir sin contexto.</strong> «Haz un resumen» deja a la IA adivinar para quién, de qué largo y para qué. Las tres guías oficiales piden ser claro y concreto.</li>
+        <li><strong class="text-white">Describir con vaguedades.</strong> «No muy largo» o «algo profesional» se entienden de muchas maneras; un número de palabras o de puntos, no.</li>
+        <li><strong class="text-white">Decir solo lo que no quieres.</strong> OpenAI y Anthropic aconsejan decir qué hacer en su lugar: mejor «escribe para alguien que no es del sector» que «no uses jerga».</li>
+        <li><strong class="text-white">Meterlo todo en un solo prompt.</strong> Para tareas largas, Google recomienda dividirlas en pasos y encadenarlos: la respuesta de uno es el punto de partida del siguiente.</li>
+        <li><strong class="text-white">Quedarte con la primera respuesta.</strong> OpenAI explica que escribir prompts es ir probando: revisa lo que sale y ajusta la petición (más contexto, otra palabra, algo más simple).</li>
+        <li><strong class="text-white">Fiarte de cifras, citas y fechas sin comprobarlas.</strong> OpenAI avisa de que ChatGPT puede dar datos incorrectos con mucha seguridad e inventar citas o fuentes. Por eso el generador añade «no inventes datos» y una lista de dudas por comprobar.</li>
+      </ul>
+
+      <h2 class="font-display text-3xl font-bold text-white mt-12 mb-4">Preguntas frecuentes</h2>
+      <FaqSection
+        questionClass="font-display text-lg font-bold text-white mt-6 mb-2"
+        items={[
+          {
+            q: "¿Qué es un prompt?",
+            a: "Es el texto que le escribes a un modelo de IA, como ChatGPT, Claude o Gemini, para que responda o haga una tarea. También puede ser una imagen o un audio.",
+          },
+          {
+            q: "¿Sirve el mismo prompt para ChatGPT, Claude y Gemini?",
+            a: "Sí, en lo básico: las guías oficiales de OpenAI, Anthropic y Google dan los mismos consejos (claridad, contexto, formato y ejemplos). El prompt que crea este generador vale para los tres; si un modelo no responde como esperas, ajusta la petición y vuelve a probar.",
+          },
+          {
+            q: "¿Este generador usa IA o guarda lo que escribo?",
+            a: "No. No llama a ningún modelo ni API: un pequeño programa ordena lo que escribes en una plantilla dentro de tu navegador, y el texto no sale de él.",
+          },
+        ]}
+      />
+
+      <h2 id="fuentes" class="font-display text-3xl font-bold text-white mt-12 mb-4">Fuentes</h2>
+      <p class="mt-4">Consultadas el 26 de octubre de 2026.</p>
+      <ul class="mt-4 list-disc space-y-2 pl-6 text-sm">
+        <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline hover:text-brand-200">Anthropic: Prompting best practices</a>: la persona recién llegada, dar el motivo, ejemplos y documentos largos primero.</li>
+        <li><a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline hover:text-brand-200">OpenAI: Best practices for prompt engineering</a>: separar instrucciones y texto, cifras en vez de vaguedades, decir qué hacer.</li>
+        <li><a href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline hover:text-brand-200">OpenAI: Prompt engineering best practices for ChatGPT</a>: qué es un prompt, claridad, ir ajustando y el tono.</li>
+        <li><a href="https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline hover:text-brand-200">OpenAI: Does ChatGPT tell the truth?</a>: datos incorrectos y citas inventadas.</li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline hover:text-brand-200">Google: Prompt design strategies (Gemini)</a>: instrucciones claras, ejemplos, contexto y dividir las tareas en pasos.</li>
+      </ul>
+    </article>
+
+    <section class="mt-12"><h2 class="font-display text-2xl font-bold">Guías de este tema</h2><ul class="mt-4 space-y-2"><li><a href="/blog/2026-07-16-prompts-secretos-web/" class="text-brand-400 hover:text-brand-300">5 prompts para crear tu web con IA</a>, listos para copiar.</li><li><a href="/blog/2026-07-22-nano-banana-1000-prompts/" class="text-brand-400 hover:text-brand-300">Prompts para Nano Banana</a>: cómo usar una biblioteca gratuita de prompts de imagen.</li><li><a href="/herramientas/evaluador/" class="text-brand-400 hover:text-brand-300">Evaluador de resultados de IA</a>, para comprobar si la respuesta te sirvió de verdad.</li></ul></section>
     <div class="mt-12"><NewsletterForm title="Recibe prompts que nacen de una tarea real" description="Plantillas, workflows y pruebas para pasar de prompt suelto a proceso revisable." buttonLabel="Recibir el filtro" /></div>
   </div>
   <script>
