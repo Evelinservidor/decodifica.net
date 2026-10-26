@@ -466,7 +466,7 @@ const coreTools: Tool[] = [
     relatedLinks: [
       { label: 'Qwen Code en terminal', href: '/blog/qwen-code-agent-terminal/' },
       { label: 'Ollama: usar modelos de IA en tu ordenador', href: '/blog/ollama-que-es-como-usar/' },
-      { label: 'Crear app web con IAs chinas open source', href: '/blog/crear-app-web-ias-chinas-open-source/' },
+      { label: 'Hermes Agent: otro agente de código abierto', href: '/blog/2026-07-17-hermes-agent-chino/' },
       { label: 'Alternativas Fable 5', href: '/blog/alternativas-fable-5/' },
     ],
     hasDetailPage: true,
