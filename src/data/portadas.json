@@ -367,5 +367,17 @@
     "etiqueta": "Qwen Code",
     "fondo": "indigo",
     "alt": "Captura del repositorio oficial de Qwen Code en GitHub con el logo de Qwen"
+  },
+  "ia-local-sin-internet": {
+    "plantilla": "herramienta",
+    "logos": [
+      "lmstudio",
+      "ollama",
+      "anythingllm"
+    ],
+    "gancho": "Elige tu IA *sin internet*",
+    "etiqueta": "Guía completa",
+    "fondo": "azul",
+    "alt": "Logos de LM Studio, Ollama y AnythingLLM, tres programas para usar IA en tu ordenador sin conexión"
   }
 }

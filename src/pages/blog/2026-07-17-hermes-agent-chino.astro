@@ -2,14 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import Caja from '../../components/Caja.astro';
 
 const title = "Hermes Agent: qué es y cómo probar este agente open source";
 const description = "Hermes Agent, de Nous Research, es un agente open source con licencia MIT, memoria persistente y Skills. Qué hace, cómo instalarlo y probarlo con seguridad.";
-const modifiedDate = "2026-10-06";
+const modifiedDate = "2026-10-26";
 const pubDate = "2026-07-14";
-const readingTime = "4 min";
+const readingTime = "6 min";
 const tema = "automatizar";
-const tags = ["ia", "herramientas ia", "Hermes Agent: el agente open source que compite con los chinos (así lo pruebas gratis)"];
+const tags = ["hermes agent", "nous research", "agente de ia", "ollama", "ia local", "código abierto"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -26,21 +27,29 @@ const pillarLabel = "Pilar 2: Tips productividad";
   citations={[
     "https://github.com/NousResearch/hermes-agent",
     "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+    "https://hermes-agent.nousresearch.com/",
+    "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
     "https://hermes-agent.nousresearch.com/docs/user-guide/security",
-    "https://api-docs.deepseek.com/news/news260424",
-    "https://qwen.ai/",
-    "https://z.ai/blog/glm-5",
+    "https://docs.ollama.com/integrations/hermes",
+    "https://docs.ollama.com/integrations/hermes-desktop",
+    "https://docs.ollama.com/context-length",
   ]}
 >
   <Articulo slug="2026-07-17-hermes-agent-chino">
 
+    <p><strong>En resumen:</strong> Hermes Agent es un agente de IA gratuito y de código abierto (licencia MIT) creado por Nous Research. Lo instalas en tu ordenador o en un servidor, le encargas tareas (investigar, ordenar archivos, programar avisos) y guarda memoria y Skills entre sesiones. Tiene aplicación de escritorio para Mac con chip Apple y Windows, y con Ollama se usa con modelos en tu propio equipo con una sola orden. El programa no cuesta nada; el modelo que conectes puede costar.</p>
 
+    <p>Esta guía forma parte de nuestra <a href="/blog/ia-local-sin-internet/" class="text-brand-400 hover:text-brand-300">guía de IA local en español</a>: qué programa elegir, qué ordenador hace falta y qué se puede hacer sin internet. Los datos salen del repositorio oficial, la documentación de Hermes Agent y la de Ollama, consultados el 26 de octubre de 2026.</p>
 
-
-    <p>Hermes Agent no es un nuevo modelo ni otro chat dentro del navegador. Es un agente open source de Nous Research que puedes instalar en tu propio equipo para darle tareas, conservar memoria entre sesiones y ampliar capacidades mediante Skills.</p>
-    <p>La diferencia práctica está en el control: los archivos, la configuración y el historial pueden quedarse en tu entorno, pero la instalación y la revisión también pasan a ser responsabilidad tuya.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Hermes Agent</h2>
-    <p>Según su repositorio oficial, el proyecto se distribuye con licencia MIT e incluye más de 40 herramientas: ejecución de comandos en varios entornos (local, Docker, SSH y otros), navegador en la nube a través de Nous Portal, un programador de tareas tipo cron y una pasarela para usar el agente desde Telegram, Discord, Slack, WhatsApp, Signal o la línea de comandos.</p>
+    <p>Hermes Agent no es un modelo ni otro chat en el navegador: es un agente, un programa que recibe una tarea y usa herramientas para hacerla. Según su repositorio oficial, trae más de 40 herramientas, entre ellas:</p>
+    <ul class="space-y-2">
+      <li><strong>Ejecutar órdenes</strong> en tu equipo o en entornos aislados (Docker, SSH y servicios en la nube).</li>
+      <li><strong>Navegador y control del ordenador:</strong> el instalador los añade por defecto, y se pueden dejar fuera.</li>
+      <li><strong>Tareas programadas</strong> que se escriben en lenguaje normal («cada lunes, un informe de…») y se ejecutan solas.</li>
+      <li><strong>Una pasarela de mensajería</strong> para hablarle desde Telegram, Discord, Slack, WhatsApp, Signal o el correo.</li>
+    </ul>
+    <p>Su rasgo propio es la memoria: guarda lo que considera importante entre sesiones, busca en tus conversaciones anteriores y, después de una tarea compleja, crea una Skill (unas instrucciones reutilizables) que va mejorando con el uso. Según la documentación de Ollama, viene con más de 70 Skills de serie, y su repositorio dice que es compatible con el estándar abierto de Agent Skills.</p>
 
     <FiguraArticulo
       src="/img/blog/2026-07-17-hermes-agent-chino/repositorio-github-hermes-agent.webp"
@@ -49,27 +58,38 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={791}
       caption="Repositorio oficial de Hermes Agent en GitHub (captura de octubre de 2026)."
     />
-    <p>Se instala con un comando en Linux, macOS y WSL2, con un instalador de PowerShell en Windows y en Android mediante Termux. No te ata a un proveedor de modelos: puedes conectarlo a Nous Portal, OpenRouter, OpenAI o tu propio endpoint. El software es gratuito, pero el modelo que uses puede tener coste.</p>
-    <p>Su memoria persistente conserva contexto entre sesiones, y el agente crea Skills reutilizables después de tareas complejas y las ajusta con el uso.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo instalarlo</h2>
+    <ul class="space-y-2">
+      <li><strong>Aplicación de escritorio (Hermes Desktop):</strong> se descarga en <a href="https://hermes-agent.nousresearch.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">hermes-agent.nousresearch.com</a>. En Windows se abre con el Instalador de aplicaciones; en Mac se arrastra a Aplicaciones. El paquete lleva todo lo necesario. Ojo: el de Mac es <strong>solo para chip Apple</strong>; los Mac con Intel no están admitidos.</li>
+      <li><strong>Desde la terminal:</strong> en Linux, macOS y WSL2, con <code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</code>; en Windows, desde PowerShell, con <code>iex (irm https://hermes-agent.nousresearch.com/install.ps1)</code>. Después, <code>hermes</code> para empezar a hablarle.</li>
+      <li><strong>Android:</strong> con Termux, mediante su paquete para móviles aarch64 (la documentación tiene una guía aparte).</li>
+    </ul>
+    <p>Hermes no te ata a un proveedor de modelos: puedes conectarlo a Nous Portal, OpenRouter, OpenAI, tu propio servidor y otros, y cambiar cuando quieras con <code>hermes model</code>. El repositorio tiene también la presentación en español.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Usarlo con modelos en tu ordenador (Ollama)</h2>
+    <p>Si ya tienes <a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama</a>, basta con <code>ollama launch hermes</code>. Según la documentación de Ollama, la orden instala Hermes si no lo tienes, te deja elegir el modelo (local o de su nube), configura la conexión con Ollama y, si quieres, enlaza una aplicación de mensajería. Para la aplicación de escritorio, <code>ollama launch hermes-desktop</code>.</p>
+    <Caja tipo="ojo">Un agente necesita mucha «memoria de trabajo». Ollama recomienda un contexto de al menos 64.000 tokens para agentes y herramientas de programación, y avisa de que un contexto mayor pide más memoria; en los equipos con menos de 24 GB de memoria gráfica, Ollama arranca con solo 4.000. Con un ordenador normal, prueba antes con una tarea pequeña o usa un modelo en la nube.</Caja>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué puedes hacer con él</h2>
-    <p>Los casos de uso más claros son los que terminan en una salida revisable:</p>
+    <p>Los usos más claros son los que terminan en algo que puedes revisar:</p>
     <ul class="space-y-2">
       <li>investigar un tema y guardar las fuentes;</li>
-      <li>ordenar o transformar archivos locales;</li>
+      <li>ordenar o transformar archivos de una carpeta;</li>
       <li>crear una pequeña aplicación o automatización;</li>
-      <li>programar tareas recurrentes;</li>
-      <li>usar el mismo agente desde distintos canales.</li>
+      <li>programar tareas que se repiten, como un resumen semanal;</li>
+      <li>usar el mismo agente, con la misma memoria, desde el ordenador y desde el móvil por mensajería.</li>
     </ul>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo probarlo sin perder el control</h2>
-    <p>Empieza con una carpeta de prueba y datos que no sean sensibles. Después pídele una tarea cerrada, por ejemplo resumir varios documentos con enlaces a las fuentes o crear una página sencilla en un directorio nuevo.</p>
-    <p>Antes de incorporarlo a tu trabajo, comprueba cuatro puntos:</p>
+    <p>Empieza con una carpeta de prueba y datos que no sean sensibles. Después pídele una tarea cerrada, por ejemplo resumir varios documentos con enlaces a las fuentes o crear una página sencilla en una carpeta nueva. Antes de usarlo en tu trabajo, comprueba cuatro puntos:</p>
     <ol>
       <li>Qué archivos ha leído y cuáles ha modificado.</li>
-      <li>Si la salida se puede revisar sin reconstruirla.</li>
+      <li>Si el resultado se puede revisar sin rehacerlo.</li>
       <li>Qué permisos, claves o conexiones necesita.</li>
-      <li>Si la memoria y las Skills ahorran trabajo en una segunda ejecución.</li>
+      <li>Si la memoria y las Skills ahorran trabajo la segunda vez.</li>
     </ol>
-    <p>Evita activar desde el primer día tareas programadas, mensajería externa o acciones difíciles de revertir. El repositorio remite a una guía de seguridad con opciones como aprobación de comandos y aislamiento en contenedores; revísala antes de dar más permisos.</p>
+    <p>No actives el primer día las tareas programadas, la mensajería ni acciones difíciles de deshacer. La guía de seguridad oficial describe ocho capas de protección; las dos que más importan al empezar son la <strong>aprobación de órdenes peligrosas</strong> (te pregunta antes de algo destructivo) y el <strong>aislamiento en contenedores</strong> (Docker), para que el agente trabaje separado de tus archivos.</p>
 
     <FiguraArticulo
       src="/img/blog/2026-07-17-hermes-agent-chino/guia-seguridad-hermes-agent.webp"
@@ -78,35 +98,31 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={791}
       caption="Guía de seguridad de la documentación oficial de Hermes Agent, en inglés (captura de octubre de 2026)."
     />
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Hermes frente a DeepSeek, Qwen y GLM</h2>
-    <p>No es una comparación de modelo contra modelo: Hermes es la capa de agente que organiza herramientas y tareas; DeepSeek, Qwen o GLM pueden actuar como modelos o como alternativas cloud con menos configuración.</p>
-    <p>Hermes tiene más sentido si priorizas control local, personalización y procesos persistentes. Las opciones web de DeepSeek, Qwen o Z.ai resultan más rápidas si quieres entrar, preguntar y obtener una respuesta sin mantener infraestructura propia.</p>
-    <p>También puedes combinar enfoques: usar Hermes como entorno de agente y elegir un modelo compatible según coste, privacidad y calidad para cada tarea.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene tener presentes</h2>
-    <p>Open source no significa automático ni libre de riesgo. Un agente que toca archivos, ejecuta comandos o envía mensajes puede equivocarse con más impacto que un chat que solo responde texto.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
-    <p>Hermes Agent merece una prueba si quieres un agente configurable bajo tu control y tienes una tarea repetida que justifique la instalación. Para una consulta ocasional, una herramienta cloud será más sencilla.</p>
-    <p>La recomendación es instalarlo en un entorno de prueba, limitar permisos y medir si la memoria y las Skills reducen pasos en una segunda tarea. Si no hay ahorro repetible, la complejidad local no compensa.</p>
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
-    <ul class="space-y-2">
-      <li><a href="https://github.com/NousResearch/hermes-agent" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/NousResearch/hermes-agent</a></li>
-      <li><a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://github.com/NousResearch/hermes-agent/blob/main/LICENSE</a></li>
-      <li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/security" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Guía de seguridad de Hermes Agent</a></li>
-      <li><a href="https://api-docs.deepseek.com/news/news260424" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://api-docs.deepseek.com/news/news260424</a></li>
-      <li><a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://qwen.ai/</a></li>
-      <li><a href="https://z.ai/blog/glm-5" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://z.ai/blog/glm-5</a></li>
-    </ul>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Hermes, DeepSeek, Qwen y GLM: no son lo mismo</h2>
+    <p>No es una comparación de modelo contra modelo: Hermes es la capa de agente que organiza herramientas y tareas, y DeepSeek, Qwen o GLM son modelos que puede usar por debajo. Si solo quieres preguntar y obtener una respuesta, sus chats en la web son más directos. Hermes compensa cuando quieres que el agente trabaje con tus archivos, recuerde tus preferencias o repita tareas, eligiendo para cada una el modelo que encaje en coste, privacidad y calidad.</p>
+
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
+    <p>Merece la prueba si tienes una tarea que se repite y quieres un agente bajo tu control. Para una consulta suelta, un chat en la nube es más sencillo. Lo práctico: instálalo en un entorno de prueba, limita los permisos y mira si la memoria y las Skills te ahorran pasos en la segunda tarea. Si no hay ahorro, no compensa mantenerlo.</p>
+
+    <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
+    <p>Consultadas el 26 de octubre de 2026.</p>
+    <ul class="space-y-2">
+      <li><a href="https://github.com/NousResearch/hermes-agent" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Repositorio oficial de Hermes Agent</a> y su <a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">licencia MIT</a>: herramientas, memoria, Skills, proveedores e instalación.</li>
+      <li><a href="https://hermes-agent.nousresearch.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Web oficial de Hermes Agent</a>: aplicación de escritorio y plataformas de mensajería.</li>
+      <li><a href="https://hermes-agent.nousresearch.com/docs/getting-started/installation" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Hermes Agent: Installation</a>: paquetes de escritorio (solo Mac con chip Apple), terminal y Android.</li>
+      <li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/security" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Guía de seguridad de Hermes Agent</a>: las ocho capas, aprobación de órdenes y contenedores.</li>
+      <li><a href="https://docs.ollama.com/integrations/hermes" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: Hermes Agent</a> y <a href="https://docs.ollama.com/integrations/hermes-desktop" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Hermes Desktop</a>: instalarlo y configurarlo con Ollama.</li>
+      <li><a href="https://docs.ollama.com/context-length" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: Context length</a>: contexto recomendado para agentes y memoria que pide.</li>
+    </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
-      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte más práctica de agentes y modelos chinos.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
-      <li><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama: qué es y cómo usar modelos de IA en local</a>, si prefieres modelos en tu propio ordenador.</li>
+      <li><a href="/blog/ia-local-sin-internet/" class="text-brand-400 hover:text-brand-300">IA local en español: cómo usar IA en tu PC sin internet</a>, la guía principal de este tema.</li>
+      <li><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama: qué es y cómo usar modelos de IA en local</a>, para tener los modelos que usará Hermes.</li>
+      <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, otro agente de código abierto, pensado para programar.</li>
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, si prefieres un chat sin instalar nada.</li>
     </ul>
-
 
   </Articulo>
 

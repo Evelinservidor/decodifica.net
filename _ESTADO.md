@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 23 de octubre de 2026 (agente de novedades).
+Última actualización: 26 de octubre de 2026 (agente semanal).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -23,7 +23,7 @@ web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENT
 - Hecho: #19 el mapa · #20 los agentes lo siguen · #21 el informe de Google guarda también 28 y 90 días y qué páginas
   están en Google (`data/gsc_weekly/latest_28d.json`, `latest_90d.json`, `latest_indexacion.md`), los lunes a las 04:17 UTC ·
   #22 enlaces internos de cada grupo (la guía de Claude es la guía principal del grupo A).
-- Espera a Jordi: **#23 limpieza** (35 páginas finas con noindex y 3 fusionadas con redirección; lista en `src/data/poda-seo.json`).
+- Hecho (fusionado el 18-10): **#23 limpieza** (35 páginas finas con noindex y 3 fusionadas con redirección; lista en `src/data/poda-seo.json`).
 - Los 4 artículos de octubre no salen en Google: **no hay nada técnico que lo impida** (se abren bien, `index, follow`,
   canónica correcta, están en el sitemap, robots.txt permite todo). Search Console (18-10): `lm-studio-que-es-como-usar` y
   `n8n-que-es-gratis` «descubierta: actualmente sin indexar» (Google sabe que existen y aún no las ha leído);
@@ -32,6 +32,7 @@ web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENT
   el robot tiene «Acceso total» en Search Console y el sitemap se reenvía solo después de cada publicación
   (`deploy.yml`, trabajo `avisar-google`). «Solicitar indexación» no tiene API: solo se pide a mano si un artículo lleva
   más de 14 días fuera de Google.
+- Pilares: A `claude-ia-que-es-gratis` (19-10), B `ia-local-sin-internet` (26-10) y C la guía debajo de `/herramientas/generador-prompts/` (26-10). Desde la semana 3 (02-11), 1 apoyo nuevo y 1 mejora por semana, alternando A y B.
 - Primera comparación por grupos (28 días contra 28 días): hacia el 21-12-2026.
 
 ## Fase 1: hecho
@@ -172,3 +173,6 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
 - **22-10-2026 (agente de los jueves, primer repaso):** rama `agente/jueves-2026-10-22`, pull request #32 (espera a Jordi). Ningún artículo del blog se podía tocar (todos cambiaron título o descripción desde el 06-10; los del 06-10 se pueden tocar desde el 29-10). Títulos, descripciones, preguntas frecuentes y enlaces nuevos en tres páginas de herramientas: Manus vs ChatGPT, ficha de Kimi y ficha de Qwen Code (las plantillas de fichas y comparativas aceptan ahora título propio, preguntas, fuentes y «Sigue leyendo»). Repaso: `docs/repaso-jueves/2026-10-22.md`.
   - Medir hacia el 30-11-2026. Pendiente: ver si los títulos del 07-10 (Gamma vs Canva, NotebookLM vs Perplexity) funcionan cuando el informe de 28 días cubra solo el título nuevo.
 - **23-10-2026 (agente de novedades):** rama `agente/novedad-2026-10-23`, pull request #33 (espera a Jordi). Novedad: Claude Duet (21-10-2026, solo EE. UU., Pro y Max con lista de espera), añadida como sección a la guía `claude-ia-que-es-gratis` (respuesta corta, captura, qué hace, precio, cómo probarlo, pregunta frecuente; `modifiedDate` 23-10) con enlace desde `ia-organiza-pendientes`. Nota: `docs/novedades/2026-10-23.md`. Para el lunes: dato de Agent Skills en la Agentic AI Foundation (22-10) para `claude-skills-1000-gratis`.
+- **26-10-2026 (semana 2 del plan SEO):** rama `agente/2026-10-26`, pull request #34 (espera a Jordi). Pilar B nuevo: `ia-local-sin-internet` («IA local en español: cómo usar IA en tu PC sin internet»; programas, requisitos oficiales, primeros pasos, español, privacidad; portada y 3 imágenes); los apoyos del grupo B y la guía de Claude lo enlazan. Pilar C: guía corta (unas 800 palabras, 3 preguntas frecuentes) debajo del generador de prompts. Títulos: ficha de AnythingLLM (título, descripción, datos y preguntas nuevos) y tildes de ChatGPT vs Claude. Artículo antiguo: Hermes Agent al día (escritorio, Ollama, seguridad). Informe: `docs/informes/2026-10-26.md`.
+  - Pendiente de Jordi: «Solicitar indexación» de LM Studio, Claude, Ollama y n8n (14 días o más fuera de Google) y de la guía nueva; Emergent (Google ya lo sacó de su índice; recomendación: noindex); bloque «Empieza aquí» con los tres pilares; no escribir aparte «Cómo hacer un prompt».
+  - Semana que viene (semana 3): grupo A, «Prompts para Claude con ejemplos» (centrado en Proyectos, Skills e instrucciones, para no competir con la guía del generador) y mejora de Claude Skills con el dato de la Agentic AI Foundation. OpenRush sin créditos (402): los diez primeros de Google se miran con el buscador desde EE. UU. y el autocompletado de España y México.

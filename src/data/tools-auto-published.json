@@ -2,12 +2,13 @@
   {
     "slug": "anythingllm",
     "name": "AnythingLLM",
-    "summary": "Aplicación open source para consultar documentos, organizar espacios de conocimiento y conectar modelos locales o servicios externos.",
-    "metaDescription": "Ficha práctica de AnythingLLM: documentos con IA, opciones de despliegue, privacidad, dificultad y cuándo compensa usarlo.",
+    "summary": "Aplicación gratuita y de código abierto para preguntar a tus documentos con IA, con modelos en tu ordenador o tu móvil o con servicios externos.",
+    "seoTitle": "AnythingLLM: qué es, si es gratis y cómo usarlo con tus PDF",
+    "metaDescription": "AnythingLLM es una app gratuita y de código abierto para preguntar a tus documentos con IA en tu ordenador o tu móvil, sin cuenta. Requisitos y privacidad.",
     "useCase": "Documentos y conocimiento propio",
     "price": "Open source",
     "privacy": "Media",
-    "difficulty": "Alta",
+    "difficulty": "Media",
     "bestFor": "Cuando necesitas consultar colecciones de documentos y quieres elegir entre modelos locales, APIs externas o un despliegue propio.",
     "avoidIf": "Buscas una herramienta inmediata sin configurar modelos, almacenamiento, permisos, telemetría ni mantenimiento del entorno.",
     "tags": [
@@ -19,21 +20,25 @@
     "officialUrl": "https://github.com/Mintplex-Labs/anything-llm",
     "relatedLinks": [
       {
-        "label": "IA para documentos y PDF",
-        "href": "/herramientas/casos/para-documentos-pdf/"
+        "label": "IA local en español: cómo usar IA en tu PC sin internet",
+        "href": "/blog/ia-local-sin-internet/"
       },
       {
-        "label": "IA local y abierta",
-        "href": "/herramientas/casos/para-ia-local-abierta/"
+        "label": "LM Studio: qué es y cómo usar IA local",
+        "href": "/blog/lm-studio-que-es-como-usar/"
       },
       {
         "label": "Guía de Ollama",
         "href": "/blog/ollama-que-es-como-usar/"
+      },
+      {
+        "label": "Ocultar datos personales con Presidio",
+        "href": "/blog/2026-07-25-ia-local-oculta-datos/"
       }
     ],
     "hasDetailPage": true,
     "publishedAt": "2026-07-27",
-    "verifiedAt": "2026-07-27",
+    "verifiedAt": "2026-10-26",
     "reviewCadenceDays": 30,
     "status": "active",
     "evidenceLevel": "official",
@@ -41,11 +46,12 @@
       "Windows",
       "macOS",
       "Linux",
+      "Android",
       "Docker"
     ],
-    "language": "Uso con documentos en español; documentación principal revisada en inglés",
+    "language": "Interfaz traducida al español en su repositorio oficial; documentación en inglés",
     "detail": {
-      "verdict": "AnythingLLM tiene sentido si quieres reunir documentos y modelos en un espacio controlable. Su principal límite es que privacidad y coste dependen del despliegue y de los proveedores conectados.",
+      "verdict": "AnythingLLM tiene sentido si quieres preguntar a tus documentos con un modelo que funcione en tu equipo. La versión de escritorio se instala sin terminal ni cuenta; la privacidad depende de que elijas un modelo local y no un proveedor externo.",
       "idealFor": [
         "Consultar PDF, documentos y notas desde un espacio de conocimiento propio.",
         "Elegir entre modelos locales y proveedores externos según cada tarea.",
@@ -57,39 +63,73 @@
         "Quien solo necesita resumir un documento puntual con una herramienta ya configurada."
       ],
       "workflow": [
-        "Revisa la documentación y decide si necesitas escritorio, Docker o servicio alojado.",
-        "Elige el modelo y comprueba qué datos salen del dispositivo antes de añadir documentos.",
-        "Empieza con una colección no sensible y fórmula preguntas cuya respuesta puedas verificar.",
-        "Revisa citas, permisos, telemetría y coste antes de ampliar el espacio o añadir usuarios."
+        "Descarga la versión de escritorio desde anythingllm.com (Mac, Windows o Linux) o la app de Android.",
+        "Elige un modelo: el que trae la propia aplicación, uno de LM Studio u Ollama, o un proveedor externo.",
+        "Empieza con documentos no sensibles y haz preguntas cuya respuesta puedas comprobar en el texto.",
+        "Antes de añadir documentos delicados, revisa qué proveedores tienes conectados y desactiva la telemetría si no la quieres."
       ],
       "privacyNotes": [
-        "El proyecto incluye telemetría opcional; la documentación explica cómo desactivarla.",
-        "Los proveedores de modelos, embeddings o bases vectoriales pueden generar conexiones externas aunque el servicio esté autoalojado.",
-        "Autoalojar no garantiza privacidad: debes revisar permisos, copias, registros y servicios conectados."
+        "Según su web, en la versión de escritorio tus modelos, documentos e historial se quedan en tu equipo.",
+        "Recoge telemetría anónima (su documentación dice que sin datos personales) y se puede desactivar en los ajustes.",
+        "Si conectas un proveedor externo (OpenAI, Anthropic, Gemini…), lo que preguntes y los trozos de tus documentos que use salen hacia ese proveedor."
       ],
       "priceNotes": [
-        "El repositorio usa licencia MIT, pero el coste real puede incluir APIs, modelos, almacenamiento, servidor y mantenimiento.",
-        "La edición de escritorio y el despliegue propio no eliminan los costes de los proveedores externos que decidas conectar."
+        "La aplicación es gratuita y el código tiene licencia MIT. El coste extra aparece si conectas APIs de pago o la despliegas en un servidor.",
+        "Existe una suscripción Pro opcional que quita los límites diarios de sus funciones «Magic» (dictado, autocompletar, preguntar sobre lo que ves en pantalla). Según su documentación, todo lo demás sigue siendo gratis; el precio no aparece en la documentación (consultado en octubre de 2026)."
       ],
       "alternatives": [
-        "NotebookLM para trabajar con fuentes sin administrar infraestructura",
-        "Ollama para ejecutar modelos locales sin esta capa documental",
-        "Dify para construir flujos y aplicaciones de IA"
+        "LM Studio para chatear con tus documentos con la ventana en español",
+        "NotebookLM para trabajar con fuentes sin instalar nada (en la nube)",
+        "Ollama para ejecutar modelos locales sin esta capa documental"
       ],
       "sources": [
         {
-          "label": "Repositorio oficial de AnythingLLM",
+          "label": "Descarga de AnythingLLM (web oficial)",
+          "href": "https://anythingllm.com/download"
+        },
+        {
+          "label": "AnythingLLM Mobile (web oficial)",
+          "href": "https://anythingllm.com/mobile"
+        },
+        {
+          "label": "Requisitos de la versión de escritorio",
+          "href": "https://docs.anythingllm.com/installation-desktop/system-requirements"
+        },
+        {
+          "label": "Privacidad y telemetría",
+          "href": "https://docs.anythingllm.com/features/privacy-and-data-handling"
+        },
+        {
+          "label": "AnythingLLM Pro: qué incluye",
+          "href": "https://docs.anythingllm.com/pro/overview"
+        },
+        {
+          "label": "Repositorio oficial de AnythingLLM (licencia MIT)",
           "href": "https://github.com/Mintplex-Labs/anything-llm"
-        },
-        {
-          "label": "Documentación oficial de AnythingLLM",
-          "href": "https://docs.anythingllm.com/"
-        },
-        {
-          "label": "Web oficial de AnythingLLM",
-          "href": "https://anythingllm.com/"
         }
       ]
-    }
+    },
+    "faq": [
+      {
+        "q": "¿Qué es AnythingLLM y para qué sirve?",
+        "a": "Es una aplicación para preguntar a tus documentos (PDF, textos, notas) con IA. Puede usar un modelo que funciona en tu propio equipo, uno de LM Studio u Ollama, o un proveedor externo como OpenAI o Anthropic. La versión de escritorio no pide cuenta."
+      },
+      {
+        "q": "¿AnythingLLM es gratis?",
+        "a": "Sí. La aplicación de escritorio es gratuita y su código es abierto (licencia MIT). Hay una suscripción Pro opcional que solo quita los límites diarios de sus funciones «Magic»; según su documentación, no hace falta para usar el resto. Consultado en octubre de 2026."
+      },
+      {
+        "q": "¿Está en español?",
+        "a": "Su repositorio oficial incluye la traducción de la interfaz al español. La documentación está en inglés. Que las respuestas salgan bien en español depende del modelo que elijas."
+      },
+      {
+        "q": "¿Qué ordenador necesito?",
+        "a": "Su documentación recomienda 16 GB de RAM y un procesador de 8 núcleos para usar un modelo local. En Windows ayuda una tarjeta gráfica con 8-12 GB de memoria; en Mac vale cualquier chip de la serie M. Funciona en Mac (chip Apple e Intel), Windows (x64 y ARM) y Linux. Más detalles en la <a href=\"/blog/ia-local-sin-internet/\">guía de IA local</a>."
+      },
+      {
+        "q": "¿Hay versión para el móvil?",
+        "a": "Sí: AnythingLLM Mobile para Android (Google Play o archivo APK). Puede usar un modelo pequeño en el propio teléfono o conectarse a tu AnythingLLM de escritorio, LM Studio u Ollama en tu red."
+      }
+    ]
   }
 ]
