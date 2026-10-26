@@ -28,7 +28,8 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Cada apoyo** enlaza a su pilar en el «En resumen» o en el primer párrafo, y otra vez en «Sigue leyendo»; y enlaza a
   1-2 apoyos hermanos del mismo grupo.
 - **Cada pilar** tiene una lista «Guías de este tema» con todos sus apoyos. Al publicar un apoyo nuevo, se añade ahí.
-- Portada y `/blog/`: un bloque «Empieza aquí» con los pilares. En el filtro de su tema, el pilar va el primero.
+- ✔ (26-10-2026, aprobado por Jordi) Portada y `/blog/`: un bloque «Empieza aquí» con los pilares. En el filtro de su tema, el pilar va el primero.
+  La lista está en `src/lib/pilares.ts`: al publicar el pilar de un grupo nuevo (por ejemplo, el del grupo D), se añade allí.
 - Desde las páginas fuertes (Claude Skills, el generador) se enlaza a su pilar: así Google llega antes a lo nuevo.
 
 ## Grupo A · Claude en español (para quien no programa) — CRECER
@@ -94,7 +95,8 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 ## Fuera de los grupos (no se escribe nada nuevo)
 - Oficina (Excel, presentaciones, reuniones, pendientes): ganan los que venden. Solo lo cuida el agente de los jueves.
 - IA china, «IA gratis», crear apps, novedades sueltas: caducan en semanas. Se cuida lo que ya tiene apariciones.
-- Emergent: no tocar hasta ver cómo sale en el informe del 19-10-2026.
+- Emergent: Google lo sacó de su índice (informe del 26-10-2026). Jordi decide el 26-10-2026: noindex al artículo
+  `/blog/crear-app-web-ias-chinas-open-source/` (también en `src/data/poda-seo.json`).
 - Las novedades (martes y viernes) solo si caen dentro de un grupo; si no, no se escriben.
 
 ## El ritmo
