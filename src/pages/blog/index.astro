@@ -2,9 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import TarjetaArticulo from '../../components/TarjetaArticulo.astro';
+import EmpiezaAqui from '../../components/EmpiezaAqui.astro';
 
 import { blogPostIndex } from '~/lib/blog-post-index';
 import { nombreTema, temas } from '~/lib/temas';
+import { slugsPilar } from '~/lib/pilares';
 
 // Se genera a partir de los propios artículos: las redirecciones quedan fuera solas.
 const posts = blogPostIndex;
@@ -29,6 +31,8 @@ const quitarTildes = (texto: string) => texto.normalize('NFD').replace(/[̀-ͯ]/
       </label>
     </header>
 
+    <EmpiezaAqui track="blog_pillar_click" />
+
     <div class="chips my-4" role="group" aria-label="Filtrar por tema">
       <button type="button" class="chip" data-tema="" aria-pressed="true">Todas</button>
       {Object.entries(temas).map(([clave, tema]) => (
@@ -45,6 +49,7 @@ const quitarTildes = (texto: string) => texto.normalize('NFD').replace(/[̀-ͯ]/
         <div
           data-guia
           data-tema={post.tema ?? ''}
+          data-pilar={slugsPilar.has(post.slug) ? '' : undefined}
           data-texto={quitarTildes(`${post.title} ${post.description} ${post.tags.join(' ')} ${nombreTema(post.tema)}`)}
         >
           <TarjetaArticulo post={post} prioridad={i === 0} nivel="h2" track="blog_card_click" />
@@ -93,6 +98,8 @@ const quitarTildes = (texto: string) => texto.normalize('NFD').replace(/[̀-ͯ]/
         if (ok) coinciden += 1;
         const mostrar = ok && (filtrando || todas || coinciden <= VISIBLES);
         guia.hidden = !mostrar;
+        // Al filtrar por tema, la guía principal de ese tema va la primera (docs/plan-seo.md).
+        guia.style.order = tema && 'pilar' in guia.dataset ? '-1' : '';
         if (mostrar) visibles += 1;
       }
       chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.tema === tema)));

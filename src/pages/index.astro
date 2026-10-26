@@ -2,6 +2,7 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
 import TarjetaArticulo from '~/components/TarjetaArticulo.astro';
+import EmpiezaAqui from '~/components/EmpiezaAqui.astro';
 import { blogPostIndex } from '~/lib/blog-post-index';
 import { masLeidos } from '~/lib/mas-leidos';
 import { nombreTema, temas } from '~/lib/temas';
@@ -35,6 +36,8 @@ const cuenta = (clave: string) => blogPostIndex.filter((post) => post.tema === c
         Qué es cada herramienta, cuánto cuesta y cómo se usa. Con fuentes oficiales y sin relleno.
       </p>
     </header>
+
+    <EmpiezaAqui track="home_pillar_click" />
 
     <section class="py-6" aria-labelledby="lo-ultimo">
       <div class="seccion-cabecera">

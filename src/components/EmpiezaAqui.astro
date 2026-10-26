@@ -1,0 +1,71 @@
+---
+// Bloque «Empieza aquí»: las guías principales de cada grupo del plan SEO (src/lib/pilares.ts).
+import { pilares } from '~/lib/pilares';
+
+export interface Props {
+  track: string;
+}
+
+const { track } = Astro.props;
+---
+
+<section class="py-6" aria-labelledby="empieza-aqui">
+  <div class="seccion-cabecera"><h2 id="empieza-aqui" class="font-display text-white">Empieza aquí</h2></div>
+  <div class="pilares">
+    {pilares.map((pilar) => (
+      <a href={pilar.href} class={`fondo-${pilar.color}`} data-track={track} data-track-label={pilar.slug ?? pilar.href}>
+        <span class="pilar-grupo">{pilar.grupo}</span>
+        <b>{pilar.titulo}</b>
+        <span>{pilar.texto}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .pilares {
+    display: grid;
+    gap: 10px;
+  }
+
+  @media (min-width: 760px) {
+    .pilares {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pilares a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 120px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    color: #fff;
+  }
+
+  .pilares a:hover b {
+    text-decoration: underline;
+  }
+
+  .pilares b {
+    font-family: 'Inter Display', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .pilares span {
+    font-size: 14px;
+    line-height: 1.45;
+    opacity: 0.92;
+  }
+
+  .pilares .pilar-grupo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+</style>
