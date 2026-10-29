@@ -2,14 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
-const title = "Google Maps con Gemini: cómo añadir una parada en tu ruta";
-const description = "Cómo pedir a Gemini en Google Maps que busque un sitio durante la navegación y lo añada como parada, cómo activarlo y qué revisar antes de aceptar el desvío.";
-const modifiedDate = "2026-10-06";
+const title = "Gemini en Google Maps: cómo activarlo y añadir paradas";
+const description = "Cómo usar Gemini en Google Maps mientras conduces: activarlo con «Hey Google», pedirle una parada y qué revisar. Y cómo añadir paradas a mano, hasta nueve.";
+const modifiedDate = "2026-10-29";
 const pubDate = "2026-07-29";
 const readingTime = "4 min";
 const tema = "oficina";
-const tags = ["Google Maps", "Gemini", "añadir parada", "paradas en ruta", "navegación con IA", "Google Maps Gemini", "rutas Google Maps"];
+const tags = ["Google Maps", "Gemini", "Gemini en Google Maps", "activar Gemini en Google Maps", "añadir parada", "paradas en ruta", "navegación con IA", "Google Maps Gemini", "rutas Google Maps"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -26,20 +27,13 @@ const pillarLabel = "Pilar 1: Apps web";
   citations={[
     "https://support.google.com/maps/answer/6041199?hl=es-19",
     "https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/",
+    "https://support.google.com/maps/answer/144339?hl=es",
   ]}
 >
   <Articulo slug="2026-07-31-google-maps-gemini-paradas-ruta">
 
 
-    <section class="respuesta-rapida" aria-label="Respuesta rápida">
-      <p class="respuesta-rapida-titulo">Respuesta rápida · En dos líneas</p>
-      <ul>
-        <li><strong>Qué cambia:</strong> Gemini puede buscar, refinar y añadir una parada mientras mantienes la ruta.</li>
-        <li><strong>Petición útil:</strong> combina lugar, condición y un límite de desvío.</li>
-        <li><strong>Comprueba:</strong> tiempo añadido, horario, dirección y ruta final antes de aceptar.</li>
-        <li><strong>Decisión:</strong> usa la conversación cuando reduce pasos; conserva los filtros manuales para búsquedas simples.</li>
-      </ul>
-    </section>
+    <p><strong>En resumen:</strong> durante la navegación de Google Maps, di «Hey Google» o toca el icono de Gemini y pídele lo que necesites: «Añadir parada», «Evitar peajes» o «Búscame una cafetería cerca de mi destino». Funciona en Android y en iPhone allí donde está disponible Gemini. Antes de aceptar la parada, mira cuánto tiempo añade y si el sitio está abierto. Sin Gemini, también puedes añadir paradas a mano: hasta nueve, contando el destino final.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -116,15 +110,26 @@ const pillarLabel = "Pilar 1: Apps web";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>Lo útil es poder encadenar búsqueda, refinado y acción dentro de una ruta sin salir de la navegación. Para una parada con condiciones puede reducir bastante la fricción; para una búsqueda simple, los filtros de siempre siguen siendo suficientes.</p>
     <p>Usa una petición concreta y haz tú la última comprobación: desvío, horario, dirección y ruta final.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+    <FaqSection items={[
+      { q: "¿Cómo se activa Gemini en Google Maps?", a: "Abre Google Maps, empieza a navegar y di «Hey Google» o toca el icono de Gemini. Después pide lo que necesites. Si la voz no responde, comprueba que «Hey Google» y Voice Match están activados en el teléfono. Maps usa el idioma y la voz que tengas configurados en Gemini con la misma cuenta de Google." },
+      { q: "¿Qué le puedo pedir mientras conduzco?", a: "La ayuda de Google pone estos ejemplos: «Añadir parada», «Evitar peajes», «Mostrar rutas alternativas», «¿Cuándo llego?», «¿Qué tiempo hace en mi destino?», avisar de tráfico u obras, buscar un sitio en la ruta, llamar a alguien o poner música." },
+      { q: "¿Funciona en iPhone y en España o México?", a: "Google anunció Gemini en la navegación de Maps para Android e iOS «everywhere Gemini is available» (noviembre de 2025), y su ayuda dice que está disponible en muchos países e idiomas, sin dar la lista. Si en tu teléfono no aparece el icono de Gemini al navegar, todavía no lo tienes en tu cuenta o en tu país." },
+      { q: "¿Cómo añado una parada en Google Maps sin Gemini?", a: "En el ordenador: abre Google Maps, pulsa «Cómo llegar», pon el punto de partida y el destino, y haz clic en «Añadir destino» debajo de ellos. Puedes añadir hasta nueve paradas, incluido el destino final, y arrastrarlas para cambiar el orden. No funciona con transporte público ni con vuelos." },
+    ]} />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
       <li><a href="https://support.google.com/maps/answer/6041199?hl=es-19" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ayuda de Google Maps: usar Gemini durante la navegación</a></li>
-      <li><a href="https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Blog de Google: nuevas funciones de Gemini en la navegación de Maps</a></li>
+      <li><a href="https://blog.google/products-and-platforms/products/maps/gemini-navigation-features-landmark-lens/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Blog de Google: nuevas funciones de Gemini en la navegación de Maps</a> (5 de noviembre de 2025)</li>
+      <li><a href="https://support.google.com/maps/answer/144339?hl=es" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ayuda de Google Maps: añadir varios destinos</a> (consultada el 29-10-2026)</li>
     </ul>
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
+      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, con lo que da gratis Gemini y en qué se diferencia de las demás.</li>
+      <li><a href="/blog/gpt-live-voz-chatgpt/" class="text-brand-400 hover:text-brand-300">GPT-Live: la voz de ChatGPT en español</a>, si quieres hablar con una IA fuera del coche.</li>
       <li><a href="/empieza/" class="text-brand-400 hover:text-brand-300">Empieza con IA sin perderte</a>, para aplicar herramientas útiles con un criterio sencillo.</li>
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>

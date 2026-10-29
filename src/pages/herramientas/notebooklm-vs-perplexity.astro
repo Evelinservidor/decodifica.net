@@ -1,33 +1,29 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
-import { getToolBySlug } from '~/data/tools';
 import { siteConfig } from '~/lib/site-config';
 
-const notebooklm = getToolBySlug('notebooklm');
-const perplexity = getToolBySlug('perplexity');
-
 const pageUrl = `${siteConfig.url}/herramientas/notebooklm-vs-perplexity/`;
-const title = 'NotebookLM vs Perplexity: cuál usar y para qué';
-const description = 'Comparativa práctica entre NotebookLM y Perplexity: fuentes propias, búsqueda web, investigación, privacidad, precio y flujo recomendado.';
+const title = 'NotebookLM vs Perplexity: cuál es mejor y qué dan gratis';
+const description = 'NotebookLM (ahora Gemini Notebook) trabaja con tus documentos y Perplexity busca en la web con fuentes. Qué da gratis cada uno y cuándo usar los dos.';
 
 const rows = [
   {
     criterion: 'Punto de partida',
     notebooklm: 'Trabaja mejor cuando ya tienes fuentes: PDFs, notas, enlaces, transcripciones o documentos que quieres entender.',
-    perplexity: 'Trabaja mejor cuando aun no sabes que fuentes leer y necesitas descubrir contexto en la web.',
+    perplexity: 'Trabaja mejor cuando aún no sabes qué fuentes leer y necesitas descubrir contexto en la web.',
     winner: 'Depende de si ya tienes fuentes',
   },
   {
     criterion: 'Fuentes propias',
-    notebooklm: 'Su ventaja principal es preguntar y organizar material que tu aportas al cuaderno.',
+    notebooklm: 'Su ventaja principal es preguntar y organizar material que tú aportas al cuaderno.',
     perplexity: 'Puede usar enlaces y archivos, pero su identidad principal sigue siendo búsqueda y respuesta con fuentes web.',
     winner: 'NotebookLM',
   },
   {
     criterion: 'Búsqueda web',
     notebooklm: 'Puede ayudar con investigación, pero no es el sustituto natural de un buscador con IA.',
-    perplexity: 'Esta pensado para buscar, citar y explorar información publica de forma rápida.',
+    perplexity: 'Está pensado para buscar, citar y explorar información pública de forma rápida.',
     winner: 'Perplexity',
   },
   {
@@ -39,7 +35,7 @@ const rows = [
   {
     criterion: 'Investigación rápida',
     notebooklm: 'Mejor cuando ya has reunido documentos y quieres interrogarlos.',
-    perplexity: 'Mejor para orientarte rápido, localizar fuentes y decidir que merece lectura profunda.',
+    perplexity: 'Mejor para orientarte rápido, localizar fuentes y decidir qué merece lectura profunda.',
     winner: 'Perplexity',
   },
   {
@@ -63,7 +59,7 @@ const decisions = [
   {
     title: 'Elige Perplexity si...',
     items: [
-      'Todavía no sabes que fuentes son relevantes.',
+      'Todavía no sabes qué fuentes son relevantes.',
       'Quieres contexto rápido antes de leer a fondo.',
       'Necesitas encontrar páginas oficiales, artículos, informes o comparativas.',
       'Buscas una primera respuesta con enlaces para abrir y verificar.',
@@ -78,7 +74,7 @@ const useCases = [
     reason: 'Sube el documento, pregunta por estructura, puntos clave y citas. Aquí gana trabajar sobre tu fuente.',
   },
   {
-    task: 'No se por donde empezar un tema',
+    task: 'No sé por dónde empezar un tema',
     choice: 'Perplexity',
     reason: 'Empieza buscando contexto, fuentes primarias y términos importantes antes de construir tu propio cuaderno.',
   },
@@ -90,10 +86,10 @@ const useCases = [
   {
     task: 'Estudiar para una clase o examen',
     choice: 'NotebookLM',
-    reason: 'Cuando el material viene de apuntes, capitulos o PDFs, NotebookLM suele ordenar mejor el repaso.',
+    reason: 'Cuando el material viene de apuntes, capítulos o PDFs, NotebookLM suele ordenar mejor el repaso.',
   },
   {
-    task: 'Comprobar una noticia o claim reciente',
+    task: 'Comprobar una noticia o un dato reciente',
     choice: 'Perplexity',
     reason: 'Primero necesitas encontrar fuentes actuales. Luego puedes guardar las buenas y analizarlas aparte.',
   },
@@ -103,30 +99,39 @@ const workflow = [
   'Empieza en Perplexity si no tienes fuentes claras.',
   'Abre las fuentes importantes y descarta resultados flojos o secundarios.',
   'Lleva las fuentes buenas a NotebookLM cuando necesites estudiar, resumir o escribir con base documental.',
-  'Antes de publicar o decidir, vuelve a las fuentes originales y verifica los claims importantes.',
+  'Antes de publicar o decidir, vuelve a las fuentes originales y comprueba los datos importantes.',
 ];
 
 const sources = [
-  { label: 'Web oficial de NotebookLM', href: 'https://notebooklm.google/' },
-  { label: 'Audio Overview en NotebookLM - Google Help', href: 'https://support.google.com/notebooklm/answer/16212820?hl=en' },
-  { label: 'Privacidad y términos de NotebookLM - Google Help', href: 'https://support.google.com/notebooklm/answer/17004255?hl=en' },
-  { label: 'Perplexity Pro', href: 'https://www.perplexity.ai/pro' },
-  { label: 'Precios Enterprise de Perplexity', href: 'https://www.perplexity.ai/enterprise/pricing' },
-  { label: 'FAQ de precios Enterprise de Perplexity', href: 'https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions.html' },
+  { label: 'Web oficial de Gemini Notebook (antes NotebookLM)', href: 'https://notebook.google/' },
+  { label: 'Planes y límites de Gemini Notebook - Ayuda de Google', href: 'https://support.google.com/gemininotebook/answer/16213268?hl=es' },
+  { label: 'Límites de uso de Gemini Notebook - Ayuda de Google', href: 'https://support.google.com/gemininotebook/answer/17670842?hl=es' },
+  { label: 'Aplicación móvil de Gemini Notebook - Ayuda de Google', href: 'https://support.google.com/gemininotebook/answer/16296687?hl=es' },
+  { label: 'Privacidad y términos de NotebookLM - Ayuda de Google', href: 'https://support.google.com/notebooklm/answer/17004255?hl=en' },
+  { label: 'Qué plan de Perplexity elegir (plan gratis, Pro, Max) - Centro de ayuda', href: 'https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you' },
+  { label: 'Qué es Perplexity Pro - Centro de ayuda', href: 'https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro' },
 ];
 
 const faq = [
   {
-    question: 'Es mejor NotebookLM o Perplexity?',
-    answer: 'NotebookLM es mejor si ya tienes fuentes propias. Perplexity es mejor si necesitas encontrar fuentes y contexto en la web. Lo normal es usar Perplexity primero y NotebookLM después.',
+    question: '¿Qué es mejor, NotebookLM o Perplexity?',
+    answer: 'Depende de si ya tienes las fuentes. NotebookLM es mejor para trabajar con documentos que tú subes (PDF, notas, enlaces). Perplexity es mejor para buscar en la web y encontrar fuentes con sus enlaces. Lo práctico es usar Perplexity para encontrar material y NotebookLM para estudiarlo.',
   },
   {
-    question: 'Cual conviene para estudiar?',
-    answer: 'NotebookLM suele encajar mejor para estudiar porque trabaja sobre tus materiales: documentos, notas, enlaces y fuentes concretas.',
+    question: '¿NotebookLM y Perplexity son gratis?',
+    answer: 'Los dos tienen plan gratis. NotebookLM (Gemini Notebook) se usa sin pagar con una cuenta de Google: hasta 100 cuadernos y 50 fuentes por cuaderno; los planes Google AI Plus, Pro y Ultra suben esos límites. El plan gratis de Perplexity incluye 3 búsquedas Pro al día, 1 consulta de investigación al mes y subida de archivos limitada. Datos de sus centros de ayuda, consultados en octubre de 2026.',
   },
   {
-    question: 'Cual conviene para investigar un tema nuevo?',
-    answer: 'Perplexity suele ser mejor para arrancar un tema nuevo porque ayuda a descubrir fuentes, contexto y términos importantes antes de profundizar.',
+    question: '¿NotebookLM ahora se llama Gemini Notebook?',
+    answer: 'Sí. Google lo ha renombrado Gemini Notebook y la dirección notebooklm.google lleva ahora a notebook.google. Es la misma herramienta: cuadernos con tus fuentes, resúmenes, preguntas y resúmenes en audio.',
+  },
+  {
+    question: '¿NotebookLM funciona en español?',
+    answer: 'Sí. Según la ayuda de Google, Gemini Notebook admite más de 80 idiomas y su aplicación móvil (Android 10 o posterior, iPhone y iPad) está en español de España, de Latinoamérica y de México. La aplicación se está lanzando poco a poco y todavía no hace todo lo que hace la web.',
+  },
+  {
+    question: '¿Cuál conviene para estudiar?',
+    answer: 'NotebookLM, porque trabaja sobre tus materiales: apuntes, capítulos en PDF, enlaces y transcripciones. Perplexity sirve antes, para encontrar lecturas sobre un tema que aún no conoces.',
   },
 ];
 
@@ -150,9 +155,10 @@ const faqLd = {
   description={description}
   type="article"
   pubDate="2026-07-08"
-  modifiedDate="2026-07-08"
-  keywords={['NotebookLM vs Perplexity', 'NotebookLM', 'Perplexity', 'investigacion IA', 'herramientas IA']}
+  modifiedDate="2026-10-29"
+  keywords={['NotebookLM vs Perplexity', 'NotebookLM', 'Gemini Notebook', 'Perplexity', 'investigación IA', 'herramientas IA']}
   section="Herramientas IA"
+  citations={sources.map((source) => source.href)}
 >
   <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
     <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
@@ -170,10 +176,10 @@ const faqLd = {
           NotebookLM vs Perplexity: cuál usar para investigar
         </h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
-          Perplexity es mejor para descubrir fuentes. NotebookLM es mejor para trabajar con fuentes que ya has elegido. La decisión práctica es sencilla: primero encuentra buen material, luego conviértelo en conocimiento útil.
+          Perplexity es mejor para descubrir fuentes. NotebookLM (que Google ha renombrado Gemini Notebook) es mejor para trabajar con fuentes que ya has elegido. Los dos tienen plan gratis. La decisión práctica es sencilla: primero encuentra buen material, luego conviértelo en conocimiento útil.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="/herramientas/notebooklm/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha NotebookLM</a>
+          <a href="/blog/notebooklm-guia-2026/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Guía de NotebookLM</a>
           <a href="/herramientas/perplexity/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver ficha Perplexity</a>
         </div>
       </div>
@@ -203,7 +209,7 @@ const faqLd = {
     <section class="prose prose-invert mt-12 max-w-none text-dark-200">
       <h2>Veredicto Decodifica</h2>
       <p>
-        Si estas empezando desde cero, abre Perplexity. Si ya tienes material fiable, abre NotebookLM. La combinación buena es usar Perplexity como radar y NotebookLM como mesa de trabajo.
+        Si estás empezando desde cero, abre Perplexity. Si ya tienes material fiable, abre NotebookLM. La combinación buena es usar Perplexity como radar y NotebookLM como mesa de trabajo.
       </p>
     </section>
 
@@ -275,25 +281,25 @@ const faqLd = {
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          NotebookLM tiene acceso gratuito y opciones ampliadas dentro del ecosistema Google. Perplexity tiene plan gratuito, Pro, Max y planes Enterprise por asiento. En ambos casos, revisa límites de fuentes, búsquedas, archivos y funciones antes de construir un flujo que dependa de volumen.
+          NotebookLM (Gemini Notebook) es gratis con una cuenta de Google: hasta 100 cuadernos y 50 fuentes por cuaderno, con un uso que se renueva cada 5 horas hasta un límite semanal. Google AI Plus da el doble, AI Pro cuatro veces más y AI Ultra entre 5 y 20 veces lo de Pro. El plan gratis de Perplexity da 3 búsquedas Pro al día y 1 consulta de investigación al mes; Pro y Max tienen límites más altos. El precio de Perplexity Pro no se pudo comprobar en su web: míralo en perplexity.ai/pro antes de pagar. Consultado en octubre de 2026.
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          En NotebookLM el riesgo principal esta en que subes material propio. En Perplexity, el riesgo aparece si metes datos privados en una herramienta pensada para investigar la web publica. En los dos casos: no subas material sensible sin revisar cuenta, plan, feedback, retención y política aplicable.
+          En NotebookLM el riesgo principal está en que subes material propio. En Perplexity, el riesgo aparece si metes datos privados en una herramienta pensada para investigar la web pública. En los dos casos: no subas material sensible sin revisar cuenta, plan, feedback, retención y política aplicable.
         </p>
       </div>
     </section>
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Fichas relacionadas</h2>
+        <h2 class="font-display text-2xl font-bold text-white">Sigue leyendo</h2>
         <ul class="mt-4 space-y-3 text-sm leading-6">
-          {notebooklm && <li><a href={`/herramientas/${notebooklm.slug}/`} class="text-brand-300 hover:text-brand-200">{notebooklm.name}: cuando usarlo</a></li>}
-          {perplexity && <li><a href={`/herramientas/${perplexity.slug}/`} class="text-brand-300 hover:text-brand-200">{perplexity.name}: cuando usarlo</a></li>}
-          <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-300 hover:text-brand-200">Guía NotebookLM 2026</a></li>
-          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Cómo elegir una herramienta IA</a></li>
+          <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-300 hover:text-brand-200">NotebookLM (Gemini Notebook): qué es y cómo usarlo</a>, paso a paso y con sus límites.</li>
+          <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-300 hover:text-brand-200">Alternativas gratis a ChatGPT</a>, si buscas un asistente general sin pagar.</li>
+          <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-300 hover:text-brand-200">ChatGPT vs Claude: cuál elegir</a>, para redactar y razonar sobre lo que ya has investigado.</li>
+          <li><a href="/blog/2026-07-26-arena-ai-modelos-gratis/" class="text-brand-300 hover:text-brand-200">Arena AI</a>, para comparar modelos a ciegas con tu propia tarea.</li>
         </ul>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
@@ -320,7 +326,7 @@ const faqLd = {
 
     <section class="mt-10 rounded-lg border border-brand-500/30 bg-dark-800 p-6">
       <p class="text-sm font-semibold text-brand-300">Recurso Decodifica</p>
-      <h2 class="mt-2 font-display text-2xl font-bold text-white">Si aun no sabes por donde empezar</h2>
+      <h2 class="mt-2 font-display text-2xl font-bold text-white">Si aún no sabes por dónde empezar</h2>
       <p class="mt-3 text-sm leading-6 text-dark-200">
         Abre el mapa de herramientas IA y elige la primera herramienta por tarea, riesgo y tipo de resultado.
       </p>
@@ -332,7 +338,7 @@ const faqLd = {
     <div id="newsletter" class="mt-12">
       <NewsletterForm
         title="Recibe comparativas sin ruido"
-        description="Una vez por semana: que herramienta merece probar, cual evitar y que revisar antes de pagar o subir datos."
+        description="Una vez por semana: qué herramienta merece probar, cuál evitar y qué revisar antes de pagar o subir datos."
         buttonLabel="Recibir el filtro"
       />
     </div>
