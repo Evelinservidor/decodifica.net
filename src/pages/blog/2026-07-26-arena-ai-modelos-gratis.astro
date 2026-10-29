@@ -2,14 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
-const title = "Arena AI: compara modelos a ciegas antes de pagar";
-const description = "Cómo usar Battle Mode de Arena AI para comparar dos modelos anónimos con la misma tarea, qué criterios fijar antes de votar y qué datos no deberías subir.";
-const modifiedDate = "2026-10-06";
+const title = "Arena AI: qué es, si es gratis y cómo comparar modelos";
+const description = "Arena (antes LMArena) es gratis: envía tu pregunta a dos IA anónimas y vota la mejor. Cómo funciona su ranking, sus créditos diarios y qué datos no subir.";
+const modifiedDate = "2026-10-29";
 const pubDate = "2026-07-25";
 const readingTime = "4 min";
 const tema = "chatbots";
-const tags = ["Arena AI", "Battle Mode", "comparar modelos IA", "modelos IA gratis", "elegir modelo IA", "privacidad IA", "ChatGPT", "Claude"];
+const tags = ["Arena AI", "LMArena", "Arena AI gratis", "ranking de IA", "Battle Mode", "comparar modelos IA", "modelos IA gratis", "elegir modelo IA", "privacidad IA", "ChatGPT", "Claude"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -27,20 +28,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://arena.ai/",
     "https://arena.ai/how-it-works",
     "https://help.arena.ai/articles/5629909088-terms-of-use",
+    "https://arena.ai/faq",
+    "https://help.arena.ai/articles/5476762589-credit-sytem",
+    "https://help.arena.ai/articles/9130232616-how-to-delete-your-chat-sessions-and-data-from-arena",
   ]}
 >
   <Articulo slug="2026-07-26-arena-ai-modelos-gratis">
 
 
-    <section class="respuesta-rapida" aria-label="Respuesta rápida">
-      <p class="respuesta-rapida-titulo">Respuesta rápida · En dos líneas</p>
-      <ul>
-        <li><strong>Mecanismo:</strong> Battle Mode compara dos respuestas anónimas y revela los modelos después del voto.</li>
-        <li><strong>Prueba útil:</strong> una tarea pequeña, criterios definidos antes de empezar y revisión del resultado completo.</li>
-        <li><strong>Límite:</strong> Arena puede compartir tus mensajes con los servicios de IA de terceros; no subas documentos ni datos sensibles.</li>
-        <li><strong>Decisión:</strong> sirve para elegir qué modelo evaluar, no para declarar un ganador universal.</li>
-      </ul>
-    </section>
+    <p><strong>En resumen:</strong> Arena (arena.ai, antes LMArena) es una web gratuita para comparar modelos de IA: escribes una pregunta, dos modelos anónimos responden y votas la mejor antes de saber cuáles eran. Hay un saldo diario de uso gratis, pero el modo Battle de texto y de código no lo gasta. Úsalo con tareas pequeñas y sin datos sensibles: lo que escribes puede compartirse con las empresas de los modelos. Si buscas un asistente gratis para el día a día, mira las <a href="/blog/alternativas-gratis-chatgpt-2026/">alternativas gratis a ChatGPT</a>.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión rápida</h2>
     <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
@@ -98,7 +94,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Borrar los nombres visibles tampoco vuelve seguro un documento. Fechas, importes, referencias internas o combinaciones de detalles pueden seguir identificando el caso. Si la información no debe salir de tu equipo, la decisión correcta puede ser no enviarla.</p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cómo leer el resultado</h2>
     <p>Una respuesta más larga no es necesariamente mejor. Comprueba si respeta el formato, mantiene las cifras, evita inventar datos y reduce el trabajo que tendrás que hacer después.</p>
-    <p>Según Arena, los votos alimentan sus rankings públicos y parte de esa valoración se comparte con los desarrolladores de los modelos. Tu decisión práctica, en cambio, debe quedarse en la tarea. El ganador de una ronda no se convierte automáticamente en el modelo que debes pagar o usar para todo.</p>
+    <p>Según Arena, los votos alimentan sus rankings públicos con el sistema Bradley-Terry (parecido al Elo del ajedrez) y parte de esa valoración se comparte con los desarrolladores de los modelos. Solo cuentan los votos dados mientras los modelos son anónimos: en el modo lado a lado, donde eliges tú los modelos, el voto no entra en el ranking. Tu decisión práctica, en cambio, debe quedarse en la tarea. El ganador de una ronda no se convierte automáticamente en el modelo que debes pagar o usar para todo.</p>
 
     <FiguraArticulo
       src="/img/blog/2026-07-26-arena-ai-modelos-gratis/como-funciona-arena-battle-mode.webp"
@@ -113,18 +109,31 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Decisión Decodifica</h2>
     <p>Arena AI sirve para elegir por resultado y no por marca, siempre con tareas pequeñas y datos inocuos: fija un criterio, compara el tiempo de revisión de cada respuesta y repite la prueba con otra tarea.</p>
     <p>Si un modelo gana varias tareas que de verdad haces, entonces merece una prueba directa. Si solo gana una demo llamativa, todavía no hay motivo para pagar ni mover tu flujo.</p>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+    <FaqSection items={[
+      { q: "¿Arena AI es gratis o de pago?", a: "Es gratis. Sus condiciones de uso dicen que el servicio se ofrece «free of charge» por ahora, aunque se reservan el derecho a cobrar en el futuro. Cada día tienes un saldo de créditos gratis que empieza a contar con tu primer mensaje y se renueva a las 24 horas; el modo Battle de texto y de código no lo gasta. Arena se financia vendiendo evaluaciones de modelos a empresas y laboratorios." },
+      { q: "¿Arena es lo mismo que LMArena?", a: "Sí. La dirección lmarena.ai lleva ahora a arena.ai. Es el mismo proyecto que antes se llamaba LMArena." },
+      { q: "¿Cómo se hace el ranking de Arena?", a: "Con los votos de la gente en el modo Battle. Arena usa el sistema Bradley-Terry, parecido al Elo, y solo cuenta los votos dados antes de ver el nombre de los modelos. Hay rankings separados para texto, código (WebDev), imágenes, vídeo, visión, documentos y búsqueda." },
+      { q: "¿Necesito una cuenta?", a: "Para algunas funciones, sí: sus condiciones dicen que sin cuenta «certain features of the Service may not be available». Puedes empezar a preguntar desde la portada y registrarte cuando lo pida." },
+      { q: "¿Puedo borrar mis conversaciones?", a: "Sí, una a una: archiva el chat desde los tres puntos junto a su título, búscalo en «Archived» y pulsa «Delete». Arena dice que se borra de sus sistemas normalmente en 30 días, pero lo que ya se haya compartido de forma anónima en sus datos de investigación no queda cubierto por ese borrado." },
+    ]} />
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <ul class="space-y-2">
-      <li><a href="https://arena.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://arena.ai/</a></li>
-      <li><a href="https://arena.ai/how-it-works" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://arena.ai/how-it-works</a></li>
-      <li><a href="https://help.arena.ai/articles/5629909088-terms-of-use" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">https://help.arena.ai/articles/5629909088-terms-of-use</a></li>
+      <li>Arena — <a href="https://arena.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">portada de arena.ai</a> (modos Battle y Auto)</li>
+      <li>Arena — <a href="https://arena.ai/how-it-works" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">How It Works</a> (cómo se vota y qué se recoge)</li>
+      <li>Arena — <a href="https://arena.ai/faq" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">preguntas frecuentes</a> (sistema Bradley-Terry, modos, uso de las conversaciones, financiación)</li>
+      <li>Arena — <a href="https://help.arena.ai/articles/5476762589-credit-sytem" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sistema de créditos</a> (saldo diario gratis)</li>
+      <li>Arena — <a href="https://help.arena.ai/articles/9130232616-how-to-delete-your-chat-sessions-and-data-from-arena" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">cómo borrar tus conversaciones</a></li>
+      <li>Arena — <a href="https://help.arena.ai/articles/5629909088-terms-of-use" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">condiciones de uso</a> (actualizadas el 23-02-2026; consultadas el 29-10-2026)</li>
     </ul>
 
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
       <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratuitas a ChatGPT</a>, para comparar opciones antes de pagar o instalar nada.</li>
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">IAs gratis que están cambiando el mercado</a>, si quieres más contexto sobre herramientas útiles sin suscripción.</li>
+      <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude: cuál elegir</a>, si tu duda es entre esos dos.</li>
+      <li><a href="/herramientas/notebooklm-vs-perplexity/" class="text-brand-400 hover:text-brand-300">NotebookLM vs Perplexity</a>, si lo que quieres comparar es para investigar con fuentes.</li>
       <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa la parte más práctica de agentes y modelos chinos.</li>
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts, workflows y plantillas que puedes aplicar después de leer.</li>
     </ul>
