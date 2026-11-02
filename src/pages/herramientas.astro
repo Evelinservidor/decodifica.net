@@ -71,6 +71,7 @@ const useCaseHref = (slug: string) => legacyUseCases.has(slug) ? `/herramientas/
         { title: 'Construir un prompt', description: 'Convierte una tarea en un prompt estructurado y revisable.', href: '/herramientas/generador-prompts/', event: 'utility_prompt_opened' },
         { title: 'Revisar datos', description: 'Comprueba riesgos antes de subir información a una IA.', href: '/herramientas/preflight-datos/', event: 'utility_preflight_opened' },
         { title: 'Evaluar un resultado', description: 'Decide si el flujo merece conservarse, repetirse o descartarse.', href: '/herramientas/evaluador/', event: 'utility_evaluator_opened' },
+        { title: '¿Qué IA local cabe en tu PC?', description: 'Elige tu memoria y tu gráfica y mira qué tamaños de Gemma 4 y Qwen 3.5 caben.', href: '/herramientas/ia-local-mi-ordenador/', event: 'utility_local_ai_opened' },
       ].map((utility) => (
         <a href={utility.href} data-track={utility.event} data-track-label={utility.title} data-track-component="tools_utility_hub" class="interactive-card pressable rounded-xl border border-brand-500/30 bg-dark-800 p-5">
           <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">Utilidad gratuita</p><h2 class="mt-2 font-display text-xl font-bold">{utility.title}</h2><p class="mt-2 text-sm leading-6 text-dark-300">{utility.description}</p>

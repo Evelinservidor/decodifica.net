@@ -1,0 +1,90 @@
+---
+// «Lo que sale en los vídeos»: las fuentes de cada reel de Decodifica (plan de crecimiento del 02-11-2026, apartado 4.1).
+// Es el enlace de la bio de Facebook, Instagram, TikTok y Bluesky. Una sola página que se actualiza: no se crea una página
+// por vídeo. La lista la escribe el móvil viejo después de publicar cada reel (docs/redes/CAMBIOS-MOVIL-NOV-2026.md, 4.5)
+// en src/data/videos-redes.json. Va en noindex (src/data/poda-seo.json): es la página de la bio, no una página para
+// Google, y así tampoco sale en el sitemap.
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { siteConfig } from '~/lib/site-config';
+import videos from '~/data/videos-redes.json';
+
+interface Video {
+  fecha: string;
+  titulo: string;
+  serie?: string;
+  numero_serie?: number;
+  resumen?: string;
+  fuentes?: { nombre: string; url: string }[];
+  guia?: string | null;
+  enlaces?: Record<string, string | null>;
+}
+
+const lista = (videos as Video[]).slice(0, 60);
+const redes = [
+  ['Facebook', siteConfig.social.facebook],
+  ['Instagram', siteConfig.social.instagram],
+  ['TikTok', siteConfig.social.tiktok],
+  ['Bluesky', siteConfig.social.bluesky],
+].filter(([, url]) => url) as [string, string][];
+const fecha = (f: string) => new Date(`${f}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const nombreRed: Record<string, string> = { facebook: 'Facebook', instagram: 'Instagram', tiktok: 'TikTok', bluesky: 'Bluesky' };
+---
+
+<BaseLayout
+  title="Vídeos de Decodifica: fuentes y guías de cada uno"
+  description="Los vídeos cortos de Decodifica sobre IA práctica, con las fuentes oficiales de cada dato y la guía de la web que lo explica más a fondo."
+>
+  <div class="redes mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <header>
+      <h1>Lo que sale en los vídeos</h1>
+      <p class="entradilla">Cada vídeo corto de Decodifica explica una herramienta o un truco de IA en menos de un minuto. Aquí tienes las fuentes oficiales de cada dato y, cuando la hay, la guía de la web que lo cuenta con calma.</p>
+      {redes.length > 0 && (
+        <p class="seguir">Síguenos en {redes.map(([nombre, url], i) => (
+          <>{i > 0 && (i === redes.length - 1 ? ' y ' : ', ')}<a href={url} target="_blank" rel="noopener">{nombre}</a></>
+        ))}.</p>
+      )}
+    </header>
+
+    {lista.length === 0 ? (
+      <p class="vacio">Todavía no hay vídeos en esta lista. Mientras tanto, empieza por las guías: <a href="/blog/claude-ia-que-es-gratis/">Claude en español</a>, <a href="/blog/ia-local-sin-internet/">IA en tu ordenador sin internet</a> o el <a href="/herramientas/generador-prompts/">generador de prompts</a>.</p>
+    ) : (
+      <ol class="lista">
+        {lista.map((v) => (
+          <li class="video">
+            <p class="meta">{fecha(v.fecha)}{v.numero_serie ? ` · nº ${v.numero_serie}` : ''}</p>
+            <h2>{v.titulo}</h2>
+            {v.resumen && <p>{v.resumen}</p>}
+            {v.guia && <p><a href={v.guia}>La guía completa en la web</a></p>}
+            {v.fuentes && v.fuentes.length > 0 && (
+              <p class="fuentes">Fuentes: {v.fuentes.map((f, i) => (
+                <>{i > 0 && ' · '}<a href={f.url} target="_blank" rel="noopener noreferrer">{f.nombre}</a></>
+              ))}</p>
+            )}
+            {v.enlaces && (
+              <p class="donde">Verlo en: {Object.entries(v.enlaces).filter(([, u]) => u).map(([red, u], i) => (
+                <>{i > 0 && ' · '}<a href={u as string} target="_blank" rel="noopener">{nombreRed[red] ?? red}</a></>
+              ))}</p>
+            )}
+          </li>
+        ))}
+      </ol>
+    )}
+
+    <div class="boletin"><NewsletterForm title="Los mejores trucos de la semana, por correo" /></div>
+  </div>
+</BaseLayout>
+
+<style>
+  .redes h1 { font-family: 'Inter Display', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 7vw, 44px); line-height: 1.1; letter-spacing: -0.02em; color: var(--tinta); }
+  .entradilla { margin-top: 14px; font-size: 18px; line-height: 1.6; color: var(--tinta-2); }
+  .seguir, .vacio { margin-top: 14px; color: var(--tinta); }
+  .redes a { color: var(--marca); text-decoration: underline; text-underline-offset: 2px; }
+  .lista { margin-top: 28px; display: grid; gap: 16px; list-style: none; padding: 0; }
+  .video { border: 1px solid var(--linea); background: var(--superficie); border-radius: 14px; padding: 16px 18px; color: var(--tinta); }
+  .video h2 { font-family: 'Inter Display', system-ui, sans-serif; font-weight: 800; font-size: 21px; margin: 4px 0 6px; }
+  .video p { margin-top: 6px; line-height: 1.55; }
+  .meta { font-size: 13px; color: var(--tinta-3); }
+  .fuentes, .donde { font-size: 14px; color: var(--tinta-2); }
+  .boletin { margin-top: 36px; }
+</style>

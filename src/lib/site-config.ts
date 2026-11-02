@@ -18,6 +18,10 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/Decodificaia',
     bluesky: 'https://bsky.app/profile/jc-ia.bsky.social',
+    // 02-11-2026: plan de crecimiento aprobado por Jordi (el vídeo corto, en Facebook, Instagram y TikTok).
+    tiktok: 'https://www.tiktok.com/@decodificalaia',
+    // Instagram: se rellena cuando Jordi cree la cuenta (docs/PARA-JORDI-PASOS.md, paso 2). Vacío = no sale en la web.
+    instagram: '',
     // 14-10-2026 (Jordi): sin Reddit en el pie: el enlace llevaba a la cuenta de otro proyecto (Pergaminos Prohibidos).
     reddit: '',
   },

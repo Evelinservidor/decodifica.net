@@ -43,7 +43,16 @@ dinero y riesgos. **Fase 1: del 9 al 30 de noviembre.**
 - Lo que hace Jordi, paso a paso: `docs/PARA-JORDI-PASOS.md`.
 - Lo que cambia Jarvis en el móvil viejo (`redes.py`, `reel.py`): `docs/redes/CAMBIOS-MOVIL-NOV-2026.md`.
 - Los datos del móvil que sirvieron para el plan están en `docs/redes/entrada_01-11/`.
-- Web y agentes: rama `agente/plan-nov-web` (pull request aparte, espera a Jordi).
+- Web y agentes: rama `agente/plan-nov-web` (pull request aparte, espera a Jordi). Contenido:
+  - herramienta del mes de noviembre, `/herramientas/ia-local-mi-ordenador/`;
+  - página `/redes/` para la bio, con noindex; la lista la escribe el móvil en `src/data/videos-redes.json`;
+  - TikTok en el pie de la web; Instagram, cuando exista (`siteConfig.social.instagram`);
+  - juez de fuentes (`docs/jueces/fuentes.md`);
+  - preflight: aviso de «prueba propia» y error si un enlace de afiliado no lleva `sponsored`;
+  - `docs/AGENTE-SEMANAL.md`: herramienta del mes, guion de reel por artículo, metas del mes y 3 piezas cuando se
+    cumpla la condición.
+- Pendiente: `ia-resumir-reuniones-tareas-revisables` dice «Documentamos dos pruebas» («Qué hemos probado y qué no»).
+  Comprobar si Jordi tiene esa prueba documentada; si no, reescribirlo (regla 3). Lo marca el aviso nuevo del preflight.
 
 ## Fase 1: hecho
 

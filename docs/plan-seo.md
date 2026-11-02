@@ -148,5 +148,18 @@ A `/herramientas/claude/`; B `/herramientas/ollama/`, `/herramientas/anythingllm
 - cada mes (día 20), la tabla por grupos en `docs/repaso-mensual/` y la lista de páginas sin apariciones en 3 meses;
 - a las 12 semanas decide Jordi: el grupo que no haya doblado sus apariciones se cambia; si va bien, se sube el ritmo.
 
+## Herramientas del mes (plan de crecimiento, 02-11-2026)
+Una al mes, el primer lunes, en lugar de la mejora de esa semana (`docs/AGENTE-SEMANAL.md`, paso 3). Son herramientas que
+se usan en la propia web, gratis, sin registro y sin IA por detrás, con datos oficiales y la fecha de consulta.
+- [x] ✔ (02-11-2026) Grupo B: «¿Qué IA local puede mover tu ordenador?» → `/herramientas/ia-local-mi-ordenador/`
+  (datos en `src/data/ia-local-modelos.ts`; enlazada desde el pilar B y desde `/herramientas/`).
+- [ ] Grupos A y C: «Planes gratis de IA: qué te dan hoy». Tabla viva de los planes gratis de ChatGPT, Claude, Gemini,
+  Copilot, DeepSeek y Mistral, con límites, precio en euros y disponibilidad en cada país hispanohablante. La revisa el
+  repaso del día 20.
+- [ ] Grupo A: «¿Me compensa pagar?». Dices qué haces y cuánto, y te dice si basta el plan gratis o qué plan conviene,
+  según los límites oficiales.
+- [ ] Grupo C: plantillas por tarea dentro del generador de prompts (correo, estudiar, Excel, viajes). Van dentro de la
+  herramienta, no como páginas sueltas.
+
 ## Ideas para más adelante (no escribir sin que entren en un grupo)
 - (vacío)
