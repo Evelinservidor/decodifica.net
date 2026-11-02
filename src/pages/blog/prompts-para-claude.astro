@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
+
+const title = "Prompts para Claude: ejemplos y cómo darle instrucciones";
+const description = "Seis prompts para Claude listos para copiar (CV, entrevista, estudiar, resúmenes, correos) y dónde guardar tus instrucciones: cuenta, Proyecto o Skill.";
+const pubDate = "2026-11-02";
+const modifiedDate = "2026-11-02";
+const readingTime = "9 min";
+const tema = "chatbots";
+const tags = ["prompts para claude", "instrucciones para claude", "proyectos de claude", "claude skills", "prompts en español", "anthropic"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/prompts-para-claude.jpg"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+  citations={[
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "https://support.claude.com/es/articles/10185728-comprender-las-funciones-de-personalizacion-de-claude",
+    "https://support.claude.com/es/articles/9519177-como-puedo-crear-y-gestionar-proyectos",
+    "https://support.claude.com/en/articles/9517075-what-are-projects",
+    "https://support.claude.com/en/articles/12512176-what-are-skills",
+    "https://support.claude.com/es/articles/12512180-usar-habilidades-en-claude",
+    "https://support.claude.com/en/articles/9797557-usage-limit-best-practices",
+    "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+    "https://claude.com/pricing",
+  ]}
+>
+  <Articulo slug="prompts-para-claude">
+
+    <p><strong>En resumen:</strong> un buen prompt para Claude dice qué quieres, para qué es y en qué formato, lleva un ejemplo de lo que te gusta y, si hay un documento largo, lo pone arriba y deja la pregunta para el final, como recomienda la guía oficial de Anthropic. Lo que repites cada día no hace falta escribirlo siempre: se guarda en las «Instrucciones» de tu cuenta, en las de un Proyecto (el plan gratis permite 5) o en una Skill. Más abajo tienes seis prompts listos para copiar.</p>
+
+    <p>Esta guía forma parte de <a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>, donde está lo básico (planes, límites y cómo ponerlo en español). Aquí va lo propio de Claude: cómo ordenar una petición, dónde guardar tus instrucciones y ejemplos para tareas concretas. Si lo que quieres es montar un prompt para cualquier IA rellenando un formulario, usa el <a href="/herramientas/generador-prompts/">generador de prompts gratis</a>. Los datos salen de la guía de prompts de Anthropic, de su centro de ayuda y de su página de precios, consultados el 2 de noviembre de 2026.</p>
+
+    <h2>Cómo escribir un prompt para Claude</h2>
+    <p>La guía oficial («Prompting best practices») parte de una idea: Claude es como una persona brillante pero recién llegada, que no conoce tus costumbres. Si un compañero sin contexto se perdería con tu petición, Claude también. A partir de ahí, estas son las recomendaciones que más se notan al usarlo en el chat:</p>
+    <ol>
+      <li><strong>El documento, arriba; la pregunta, al final.</strong> Con textos largos, la guía pide poner primero el documento y después la pregunta y las instrucciones. En las pruebas de Anthropic, dejar la pregunta al final mejoró la calidad de las respuestas hasta un 30 %, sobre todo con varios documentos a la vez.</li>
+      <li><strong>Separa las partes con etiquetas.</strong> Anthropic recomienda envolver cada tipo de contenido en etiquetas como <code>&lt;instrucciones&gt;</code>, <code>&lt;contexto&gt;</code> o <code>&lt;documento&gt;</code>, con nombres descriptivos y siempre los mismos. Así Claude no confunde el texto que le pasas con lo que le pides.</li>
+      <li><strong>Explica para qué es.</strong> El motivo le ayuda a acertar en casos que no has previsto. El ejemplo de la guía: en vez de «nunca uses puntos suspensivos», di que el texto lo leerá un programa de voz que no sabe pronunciarlos.</li>
+      <li><strong>Di qué hacer, no qué evitar.</strong> «Escribe en párrafos» funciona mejor que «no uses viñetas». Además, el estilo de tu prompt puede contagiarse: según la guía, si quitas viñetas y negritas de tu petición, la respuesta también lleva menos.</li>
+      <li><strong>Pide la acción, no la sugerencia.</strong> La guía avisa de que con «¿puedes sugerir cambios?» Claude a veces solo sugiere. Si quieres el texto corregido, dilo así: «Corrige este texto».</li>
+      <li><strong>Pega ejemplos y pídele que se revise.</strong> Los ejemplos son, según Anthropic, una de las formas más fiables de fijar el tono y el formato: recomienda de 3 a 5, cada uno entre etiquetas <code>&lt;ejemplo&gt;</code>. Y al final puedes añadir «Antes de terminar, comprueba que cumple…» con tu criterio.</li>
+    </ol>
+
+    <FiguraArticulo
+      src="/img/blog/prompts-para-claude/partes-prompt-claude.webp"
+      alt="Esquema de las cinco partes de un prompt para Claude: el documento arriba entre etiquetas, la tarea y para qué es, un ejemplo entre etiquetas, el formato de la respuesta y pedirle que lo compruebe"
+      width={1200}
+      height={717}
+      caption="Las partes de un prompt según la guía oficial de Anthropic. No todas hacen falta siempre: una pregunta corta no necesita etiquetas."
+    />
+
+    <h2>Dónde guardar tus instrucciones: cuenta, Proyecto o Skill</h2>
+    <p>Si empiezas siempre igual («escríbeme en español de México», «soy profesora de primaria»), no hace falta repetirlo en cada chat. Claude tiene tres sitios para guardar instrucciones y su centro de ayuda explica para qué sirve cada uno:</p>
+    <div>
+      <table>
+        <thead>
+          <tr><th>Dónde</th><th>Se aplica a</th><th>Sirve para</th><th>Plan gratis</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Instrucciones de la cuenta</strong>: tus iniciales (abajo a la izquierda) › Configuración › Tu Claude › Instrucciones</td>
+            <td>Todas tus conversaciones</td>
+            <td>Tu forma de trabajar: métodos que prefieres, términos que usas, situaciones habituales, cómo quieres que te hable</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td><strong>Instrucciones del Proyecto</strong>: Proyectos › «+ Nuevo proyecto» › «Establecer instrucciones del proyecto»</td>
+            <td>Solo los chats de ese Proyecto</td>
+            <td>El contexto de un trabajo concreto, el papel que debe adoptar Claude y los documentos que usas siempre</td>
+            <td>Hasta 5 Proyectos</td>
+          </tr>
+          <tr>
+            <td><strong>Skill</strong> (en el menú en español, «Habilidades»): Personalizar › Habilidades</td>
+            <td>Se carga sola cuando la tarea la necesita</td>
+            <td>Un procedimiento que repites: un formato de informe, tu plantilla de actas, las normas de tu marca</td>
+            <td>Sí, con «Ejecución de código y creación de archivos» activada en Configuración › Capacidades</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La diferencia entre las dos últimas, en palabras de Anthropic: un Proyecto da un conocimiento de fondo que siempre está cargado en sus chats; una Skill es un procedimiento que se activa solo cuando hace falta y funciona en cualquier chat. Y las instrucciones de la cuenta se aplican a todo, mientras que una Skill solo entra cuando la tarea la pide.</p>
+
+    <FiguraArticulo
+      src="/img/blog/prompts-para-claude/donde-poner-instrucciones-claude.webp"
+      alt="Esquema con tres columnas: instrucciones de la cuenta en Configuración para todas las conversaciones, instrucciones del Proyecto solo para sus chats con hasta 5 Proyectos gratis, y Skill que se activa cuando la tarea la pide"
+      width={1200}
+      height={739}
+    />
+
+    <Caja tipo="ojo">El centro de ayuda se contradice en un punto: la página de personalización dice al final que las instrucciones del Proyecto son «solo planes pagos», pero esa misma página, la de Proyectos y la de precios dicen que el plan gratis permite crear hasta 5 Proyectos, y los pasos para poner instrucciones no mencionan ningún plan. Si en tu cuenta gratis no aparece «Establecer instrucciones del proyecto», escribe esas instrucciones al principio de cada chat del Proyecto.</Caja>
+
+    <h2>Qué poner en las Instrucciones de tu cuenta</h2>
+    <p>La ayuda de Anthropic propone cuatro tipos de cosas: tus enfoques o métodos preferidos, los términos que usas, las situaciones que te encuentras a menudo y cómo quieres que se comunique contigo. Un ejemplo para adaptar (cambia los corchetes por lo tuyo):</p>
+    <pre class="whitespace-pre-wrap">Vivo en [país] y trabajo como [profesión].
+Escríbeme en español de [país], de tú y sin tecnicismos.
+Cuando te pida un texto para clientes, que sea corto y amable.
+Si te falta un dato para hacer bien la tarea, pregúntamelo en vez de inventarlo.
+Si me das una cifra, una fecha o una norma, dime de dónde sale.</pre>
+    <p>Mejor cortas y generales: se aplican a todo, también a la pregunta rápida sobre una receta. Lo que solo sirve para una tarea va en un Proyecto o en una Skill.</p>
+
+    <h2>Un Proyecto con instrucciones: ejemplo para buscar trabajo</h2>
+    <p>Un Proyecto es un espacio con sus propios chats y sus documentos. Para montarlo, según la ayuda oficial:</p>
+    <ol>
+      <li>Entra en <code>claude.ai/projects</code> y pulsa «+ Nuevo proyecto». Ponle nombre y descripción (Claude no los lee: son para ti).</li>
+      <li>En la parte derecha, con el botón «+», sube los documentos que vas a usar siempre; en este caso, tu CV.</li>
+      <li>Pulsa «Establecer instrucciones del proyecto», escribe las instrucciones y guárdalas.</li>
+    </ol>
+    <p>Unas instrucciones para este Proyecto:</p>
+    <pre class="whitespace-pre-wrap">Estoy buscando trabajo de [puesto] en [ciudad o país].
+En los documentos del proyecto tienes mi CV actual.
+Cuando te pase una oferta, compárala con mi CV: qué pide que ya tengo,
+qué me falta y cómo contarlo sin inventar experiencia.
+Escribe en un tono profesional y cercano.
+No añadas títulos, empresas, cifras ni fechas que no estén en mi CV.</pre>
+    <p>Dos detalles de la ayuda que conviene saber. Los chats de un mismo Proyecto no se pasan información entre ellos, salvo lo que está en sus documentos: si algo importa, súbelo ahí. Y los documentos de un Proyecto se guardan en caché, así que volver a usarlos <strong>gasta menos de tu límite</strong> que subirlos en cada chat (la caché caduca si pasas un tiempo sin usar el Proyecto).</p>
+
+    <h2>Seis prompts para Claude, listos para copiar</h2>
+    <p>Cada uno sigue el orden de arriba: primero lo que le pasas, entre etiquetas, y después la tarea y el formato. Cambia los corchetes y borra lo que no te sirva.</p>
+
+    <h3>1. Adaptar tu CV a una oferta</h3>
+    <pre class="whitespace-pre-wrap">&lt;cv&gt;
+[pega aquí tu CV]
+&lt;/cv&gt;
+&lt;oferta&gt;
+[pega aquí la oferta]
+&lt;/oferta&gt;
+Reescribe el apartado de experiencia de mi CV para esta oferta.
+Usa solo lo que ya está en el CV: no inventes logros ni cifras.
+Si algo te parece flojo, márcalo entre corchetes y pregúntame el dato que falta.
+Formato: el apartado reescrito y, debajo, una lista de lo que has cambiado y por qué.</pre>
+
+    <h3>2. Ensayar una entrevista de trabajo</h3>
+    <pre class="whitespace-pre-wrap">&lt;oferta&gt;
+[pega aquí la oferta]
+&lt;/oferta&gt;
+Hazme una entrevista para este puesto, de pregunta en pregunta:
+haz una, espera mi respuesta y dime qué mejorarías antes de pasar a la siguiente.
+Ocho preguntas en total: experiencia, situaciones difíciles y por qué quiero el puesto.</pre>
+
+    <h3>3. Estudiar un tema con tus apuntes</h3>
+    <pre class="whitespace-pre-wrap">&lt;apuntes&gt;
+[pega aquí tus apuntes]
+&lt;/apuntes&gt;
+Estudio [curso o asignatura]. Explícame [tema] usando solo estos apuntes,
+con un ejemplo de la vida diaria.
+Después hazme cinco preguntas tipo test, de una en una,
+y corrige cada respuesta explicando por qué.
+Si te pregunto algo que no está en los apuntes, dímelo en vez de completarlo.</pre>
+
+    <h3>4. Resumir un documento largo sin perder lo importante</h3>
+    <pre class="whitespace-pre-wrap">&lt;documento&gt;
+[pega aquí el contrato, las bases o el documento]
+&lt;/documento&gt;
+Primero copia, entre &lt;citas&gt;, las frases del documento que hablan de plazos, pagos y obligaciones.
+Después, usando solo esas citas, resume en cinco puntos qué tengo que hacer y cuándo.
+Escríbelo para alguien que no es abogado.</pre>
+    <p>Pedir primero las citas es una recomendación de la guía de Anthropic para documentos largos: ayuda a Claude a centrarse en lo relevante, y a ti te deja comprobar de dónde sale cada punto.</p>
+
+    <h3>5. Un correo con tu propio tono</h3>
+    <pre class="whitespace-pre-wrap">&lt;ejemplo&gt;
+[pega un correo tuyo que te guste]
+&lt;/ejemplo&gt;
+Escribe un correo a [persona] para [qué quieres conseguir].
+Imita el tono y la longitud del ejemplo. Le hablo de [tú / usted].
+Termina proponiendo [el siguiente paso].</pre>
+    <p>El método completo, con el destinatario y tu estilo guardado, está en <a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>.</p>
+
+    <h3>6. Publicaciones para las redes de tu negocio</h3>
+    <pre class="whitespace-pre-wrap">&lt;negocio&gt;
+[qué vendes, a quién y en qué ciudad o país]
+&lt;/negocio&gt;
+&lt;ejemplos&gt;
+[dos o tres publicaciones tuyas que te gustaron]
+&lt;/ejemplos&gt;
+Escribe tres ideas de publicación para Instagram sobre [tema],
+de 60 a 90 palabras cada una, con el mismo tono que los ejemplos.
+Sin promesas que no pueda cumplir y sin inventar opiniones de clientes.
+Para cada una, dime qué foto pondrías.</pre>
+    <p>Si haces una de estas tareas cada semana, guarda las instrucciones en un Proyecto o conviértelas en una Skill: en <a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a> explicamos cómo se crea una.</p>
+
+    <FiguraArticulo
+      src="/img/blog/prompts-para-claude/planes-claude-proyectos-skills.webp"
+      alt="Captura de la tabla de planes de claude.com: el plan Free incluye Proyectos hasta 5, Skills, preferencias de usuario, memoria y chats de incógnito; Pro, Max y Ultra, Proyectos sin ese tope"
+      width={1200}
+      height={754}
+      caption="Comparativa de planes de claude.com (captura del 2 de noviembre de 2026)."
+    />
+
+    <h2>Cómo gastar menos uso con tus prompts</h2>
+    <p>El plan gratis tiene un límite que se renueva cada cinco horas y otro semanal (página de precios). Según la ayuda de Anthropic, gastan más los mensajes largos, los archivos grandes, las conversaciones largas, las búsquedas en la web, el modelo y el nivel de esfuerzo que elijas, los artifacts y las tareas de varios pasos. Lo que recomienda para que te cunda:</p>
+    <ul>
+      <li><strong>Piensa la petición antes de escribir</strong> y da el contexto desde el principio: menos idas y venidas.</li>
+      <li><strong>Junta en un mensaje las preguntas relacionadas</strong> en lugar de mandarlas de una en una.</li>
+      <li><strong>Relee el prompt antes de enviarlo</strong>: un dato que falta suele costar un mensaje más.</li>
+      <li><strong>Sube a un Proyecto lo que vas a consultar varias veces</strong>, por la caché que explicamos arriba.</li>
+      <li><strong>Remite a lo ya dicho</strong> («como te dije antes») en vez de volver a pegarlo.</li>
+    </ul>
+    <p>Como la longitud de la conversación cuenta, cuando cambies de tema conviene abrir un chat nuevo. Los detalles del límite gratis están en <a href="/blog/claude-ia-que-es-gratis/#los-limites-del-plan-gratis-y-como-aprovecharlos">la guía principal de Claude</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Puedo escribirle los prompts a Claude en español?",
+          a: "Sí. Claude conversa en el idioma en el que le escribes, aunque la interfaz esté en otro. Los menús se pueden poner en español de España o de Latinoamérica desde el apartado Language de tu perfil.",
+        },
+        {
+          q: "¿Qué diferencia hay entre las instrucciones de la cuenta y una Skill?",
+          a: "Las instrucciones de la cuenta se aplican a todas tus conversaciones. Una Skill es un procedimiento para una tarea concreta que Claude carga solo cuando la tarea lo necesita, así que va mejor para trabajos especializados.",
+        },
+        {
+          q: "¿Cuántos Proyectos puedo tener en el plan gratis?",
+          a: "Hasta 5, según el centro de ayuda y la página de precios de Claude (consultados en noviembre de 2026). En Pro, Max y Ultra no aparece ese tope.",
+        },
+        {
+          q: "¿Claude recuerda lo que le dije en otros chats?",
+          a: "La memoria viene activada por defecto en los planes Free, Pro, Max y Ultra, en la web, el escritorio y el móvil. Cada Proyecto tiene su propia memoria, y puedes desactivarla para un chat concreto en el menú «+» antes de enviar el primer mensaje.",
+        },
+        {
+          q: "¿Hace falta usar etiquetas en todos los prompts?",
+          a: "No. Anthropic las recomienda cuando el prompt mezcla instrucciones, contexto, ejemplos y textos pegados, porque así Claude no los confunde. Para una pregunta corta no hacen falta.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 2 de noviembre de 2026.</p>
+    <ul>
+      <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: claridad, contexto, ejemplos, etiquetas, documentos largos, citas, formato y revisión.</li>
+      <li><a href="https://support.claude.com/es/articles/10185728-comprender-las-funciones-de-personalizacion-de-claude" target="_blank" rel="noopener noreferrer">Comprender las funciones de personalización de Claude</a>: instrucciones de la cuenta, del Proyecto y Skills, y dónde se configura cada una.</li>
+      <li><a href="https://support.claude.com/es/articles/9519177-como-puedo-crear-y-gestionar-proyectos" target="_blank" rel="noopener noreferrer">¿Cómo puedo crear y gestionar proyectos?</a>: pasos, base de conocimiento, instrucciones y memoria de cada Proyecto.</li>
+      <li><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener noreferrer">What are projects?</a>: qué es un Proyecto y cuántos hay en el plan gratis.</li>
+      <li><a href="https://support.claude.com/en/articles/12512176-what-are-skills" target="_blank" rel="noopener noreferrer">What are skills?</a> y <a href="https://support.claude.com/es/articles/12512180-usar-habilidades-en-claude" target="_blank" rel="noopener noreferrer">Usar habilidades en Claude</a>: qué son, en qué planes están, cómo se activan y en qué se diferencian de los Proyectos y las instrucciones.</li>
+      <li><a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" target="_blank" rel="noopener noreferrer">Usage limit best practices</a>: qué gasta más uso y cómo aprovechar la caché de los Proyectos.</li>
+      <li><a href="https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" target="_blank" rel="noopener noreferrer">How to use Claude in your preferred language</a>: idiomas de la interfaz y de la conversación.</li>
+      <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: planes y precios</a>: qué incluye cada plan (Proyectos, Skills, preferencias de usuario, memoria y límites).</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>: planes, límites, privacidad y todas las guías de este tema.</li>
+      <li><a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>: qué son, dónde encontrarlas y cómo crear la tuya.</li>
+      <li><a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>: el método paso a paso con tu tono.</li>
+      <li><a href="/herramientas/generador-prompts/">Generador de prompts gratis</a>: para montar un prompt rellenando cinco casillas.</li>
+    </ul>
+
+  </Articulo>
+
+</BaseLayout>
