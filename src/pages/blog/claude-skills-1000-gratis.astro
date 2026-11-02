@@ -5,12 +5,12 @@ import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
 
 const title = "Claude Skills gratis: qué son, cómo instalarlas y crearlas";
-const description = "Qué son las Skills de Claude, en qué planes funcionan, dónde descargar Skills gratis, cómo instalarlas en Claude.ai y Claude Code, y cómo crear la tuya.";
+const description = "Dónde descargar Skills de Claude gratis (repositorio oficial y directorio), qué son, en qué planes funcionan, cómo instalarlas y cómo crear la tuya.";
 const pubDate = "2026-07-09";
-const modifiedDate = "2026-10-06";
+const modifiedDate = "2026-11-02";
 const readingTime = "10 min";
 const tema = "automatizar";
-const tags = ["claude skills", "agent skills", "claude code", "anthropic", "skill.md"];
+const tags = ["claude skills", "agent skills", "descargar skills claude", "claude code", "anthropic", "skill.md", "agentic ai foundation"];
 const pillar = "apps-web";
 const pillarLabel = "Pilar 1: Apps web";
 ---
@@ -26,33 +26,37 @@ const pillarLabel = "Pilar 1: Apps web";
   keywords={tags}
   citations={[
     "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+    "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+    "https://agentskills.io",
+    "https://support.claude.com/es/articles/12512180-usar-habilidades-en-claude",
     "https://support.claude.com/en/articles/12512180-using-skills-in-claude",
     "https://support.claude.com/en/articles/12512198-creating-custom-skills",
     "https://support.claude.com/en/articles/12512176-what-are-skills",
     "https://code.claude.com/docs/en/skills",
     "https://github.com/anthropics/skills",
     "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
-    "https://github.com/sickn33/antigravity-awesome-skills",
+    "https://github.com/sickn33/agentic-awesome-skills",
     "https://skillsmp.com/",
   ]}
 >
   <Articulo slug="claude-skills-1000-gratis">
 
 
-    <p><strong>En resumen:</strong> una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub, y te deja subir las tuyas en Claude.ai, Claude Code y la API. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
+    <p><strong>En resumen:</strong> una Skill es una carpeta con un archivo <code>SKILL.md</code> (y, si hace falta, scripts y documentos de apoyo) que Claude carga solo cuando tu petición encaja con su descripción. Anthropic incluye cuatro Skills propias (Word, Excel, PowerPoint y PDF), publica más de forma gratuita en el repositorio <code>anthropics/skills</code> de GitHub y en un directorio dentro de Claude, y te deja subir las tuyas en Claude.ai, Claude Code y la API. El formato es un estándar abierto que desde el 22 de octubre de 2026 gestiona la Agentic AI Foundation. Como una Skill puede ejecutar código, las de terceros hay que revisarlas antes de activarlas, igual que cualquier programa que instalas.</p>
     <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía de Claude en español</a>: qué es, si es gratis y cuánto cuesta.</p>
 
-    <p>Todos los datos de esta guía salen de la documentación oficial de Anthropic y de los repositorios citados, consultados el 6 de octubre de 2026. Esta función cambia a menudo: si algo no coincide con lo que ves en tu cuenta, manda la página oficial enlazada en <a href="#fuentes" class="text-brand-400 hover:text-brand-300">Fuentes</a>.</p>
+    <p>Todos los datos de esta guía salen de la documentación oficial de Anthropic y de los repositorios citados, consultados el 6 de octubre de 2026 y revisados el 2 de noviembre de 2026. Esta función cambia a menudo: si algo no coincide con lo que ves en tu cuenta, manda la página oficial enlazada en <a href="#fuentes" class="text-brand-400 hover:text-brand-300">Fuentes</a>.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es una Skill de Claude</h2>
     <p>Anthropic las llama <strong>Agent Skills</strong> y las define como "carpetas organizadas de instrucciones, scripts y recursos que los agentes pueden descubrir y cargar de forma dinámica" para hacer mejor una tarea concreta. Las presentó en su blog de ingeniería el 16 de octubre de 2025 y en diciembre de 2025 publicó el formato como estándar abierto en agentskills.io.</p>
+    <p>El 22 de octubre de 2026 Anthropic <strong>cedió ese estándar a la Agentic AI Foundation (AAIF)</strong>, la fundación de la Linux Foundation que creó con Block y OpenAI y a la que ya había cedido MCP. Según el anuncio, más de 70 plataformas de agentes lo han integrado, entre ellas ChatGPT, Cursor, GitHub Copilot y VS Code, y ya hay 1 millón de Skills publicadas y casi 280 millones de instalaciones. Lo mantendrán ingenieros de Anthropic, Google, OpenAI y otras empresas. Para quien usa Skills no cambia nada: el estándar se puede seguir usando sin unirse a la fundación, y una Skill no queda atada a Claude: el mismo formato sirve en las herramientas que adoptan el estándar.</p>
     <p>Lo que las distingue de un prompt largo es cómo se cargan. La documentación lo llama <em>progressive disclosure</em> (carga progresiva) y lo divide en tres niveles:</p>
     <ul class="space-y-2">
       <li><strong>Metadatos (siempre cargados):</strong> solo el <code>name</code> y la <code>description</code> del encabezado de <code>SKILL.md</code>, unos 100 tokens por Skill. Por eso puedes tener muchas instaladas sin llenar el contexto.</li>
       <li><strong>Instrucciones (al activarse):</strong> el cuerpo de <code>SKILL.md</code>, que Anthropic recomienda mantener por debajo de 5.000 tokens.</li>
       <li><strong>Recursos y código (cuando se necesitan):</strong> archivos extra y scripts. De los scripts solo entra en el contexto su salida, no el código.</li>
     </ul>
-    <p>Frente a otras funciones de Claude, el centro de ayuda de Anthropic las sitúa así: las <strong>instrucciones personalizadas</strong> se aplican a todas las conversaciones; los <strong>Proyectos</strong> dan conocimiento de fondo que siempre está cargado dentro de ese espacio; <strong>MCP</strong> conecta Claude con servicios y datos externos; y las <strong>Skills</strong> aportan procedimientos ("cómo hacer esta tarea") que se activan solo cuando son relevantes. Una Skill y un conector MCP pueden usarse juntos.</p>
+    <p>Frente a otras funciones de Claude, el centro de ayuda de Anthropic las sitúa así: las <strong>instrucciones personalizadas</strong> se aplican a todas las conversaciones; los <strong>Proyectos</strong> dan conocimiento de fondo que siempre está cargado dentro de ese espacio; <strong>MCP</strong> conecta Claude con servicios y datos externos; y las <strong>Skills</strong> aportan procedimientos ("cómo hacer esta tarea") que se activan solo cuando son relevantes. Una Skill y un conector MCP pueden usarse juntos. Cuándo conviene cada sitio, con ejemplos de instrucciones para copiar, en <a href="/blog/prompts-para-claude/" class="text-brand-400 hover:text-brand-300">Prompts para Claude: ejemplos y cómo darle instrucciones</a>.</p>
 
     <FiguraArticulo
       src="/img/blog/claude-skills-1000-gratis/tres-niveles-de-carga.webp"
@@ -90,13 +94,13 @@ const pillarLabel = "Pilar 1: Apps web";
         </tbody>
       </table>
     </div>
-    <p><strong>Planes:</strong> el artículo de ayuda "Using Skills in Claude" indica que las Skills están disponibles en los planes Free, Pro, Max, Team y Enterprise, siempre que esté activada la ejecución de código ("Code execution and file creation"). La documentación para desarrolladores, en cambio, menciona solo Pro, Max, Team y Enterprise para subir Skills personalizadas en Claude.ai. Si usas el plan gratuito y no ves la opción de subir una Skill, esa es la razón probable. Para precios actuales, consulta la <a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de precios de Claude</a>.</p>
+    <p><strong>Planes:</strong> el artículo de ayuda «Usar habilidades en Claude» indica que las Skills están disponibles en los planes Free, Pro, Max, Ultra, Team y Enterprise, siempre que esté activada la ejecución de código («Ejecución de código y creación de archivos»). La documentación para desarrolladores, en cambio, menciona solo Pro, Max, Ultra, Team y Enterprise para subir Skills personalizadas en Claude.ai (revisado el 2 de noviembre de 2026). Si usas el plan gratuito y no ves la opción de subir una Skill, esa es la razón probable. Para precios actuales, consulta la <a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">página de precios de Claude</a>.</p>
     <p><strong>No se sincronizan:</strong> una Skill subida a Claude.ai no aparece en la API ni en Claude Code, y al revés. Hay que instalarla en cada sitio donde la quieras usar.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Dónde conseguir Skills gratis</h2>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">1. El repositorio oficial: anthropics/skills</h3>
-    <p>Es el punto de partida más seguro porque lo mantiene Anthropic. A 6 de octubre de 2026 la carpeta <code>skills/</code> contiene 19 Skills, entre ellas <code>docx</code>, <code>xlsx</code>, <code>pptx</code>, <code>pdf</code>, <code>skill-creator</code> (ayuda a crear Skills nuevas), <code>mcp-builder</code>, <code>webapp-testing</code>, <code>frontend-design</code>, <code>brand-guidelines</code> y <code>claude-api</code>.</p>
+    <p>Es el punto de partida más seguro porque lo mantiene Anthropic. A 2 de noviembre de 2026 la carpeta <code>skills/</code> contiene 19 Skills, entre ellas <code>docx</code>, <code>xlsx</code>, <code>pptx</code>, <code>pdf</code>, <code>skill-creator</code> (ayuda a crear Skills nuevas), <code>mcp-builder</code>, <code>webapp-testing</code>, <code>frontend-design</code>, <code>brand-guidelines</code> y <code>claude-api</code>.</p>
     <p>Dos detalles que conviene saber:</p>
     <ul class="space-y-2">
       <li><strong>Licencias distintas:</strong> la mayoría son Apache 2.0 (puedes reutilizarlas y modificarlas). Las de documentos (<code>docx</code>, <code>pdf</code>, <code>pptx</code>, <code>xlsx</code>) son <em>source-available</em>: puedes leerlas como referencia, pero no son código abierto.</li>
@@ -111,11 +115,14 @@ const pillarLabel = "Pilar 1: Apps web";
       caption="Repositorio oficial de Skills de Anthropic en GitHub (captura de octubre de 2026)."
     />
 
-    <h3 class="font-display text-2xl font-bold mt-8 mb-3">2. Colecciones de la comunidad con más de mil Skills</h3>
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">2. El directorio de Skills dentro de Claude</h3>
+    <p>En Claude.ai, en <strong>Personalizar › Habilidades</strong>, el botón <strong>+</strong> abre también un directorio para explorar Skills («Browse skills» en la ayuda en inglés). Además de las de Anthropic, incluye Skills hechas por empresas como Notion, Figma o Atlassian, pensadas para funcionar con el conector de su servicio, así que solo te sirven si usas ese servicio.</p>
+
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">3. Colecciones de la comunidad con más de mil Skills</h3>
     <p>La cifra de "+1.000 Skills gratis" que circula en vídeos y listas no viene de Anthropic, sino de recopilaciones de la comunidad. Las dos más citadas:</p>
     <ul class="space-y-2">
-      <li><strong><a href="https://github.com/sickn33/antigravity-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/antigravity-awesome-skills</a>:</strong> repositorio con licencia MIT que en su README declara más de 2.658 Skills instalables para Claude Code, Codex CLI, Cursor, Gemini CLI y otras herramientas. Es un proyecto independiente, sin relación con Anthropic, y el propio README advierte de que su validación no certifica que una Skill sea segura de aplicar.</li>
-      <li><strong><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>:</strong> un buscador que indexa Skills publicadas en repositorios públicos de GitHub. En su portada afirma tener más de 3.000.000. No indica quién lo gestiona ni tiene relación declarada con Anthropic. Funciona como un buscador, no como una tienda revisada.</li>
+      <li><strong><a href="https://github.com/sickn33/agentic-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/agentic-awesome-skills</a></strong> (antes «antigravity-awesome-skills»; la dirección antigua redirige a la nueva): repositorio con licencia MIT que en su README declara más de 2.900 Skills instalables para Claude Code, Codex CLI, Cursor, Gemini CLI y otras herramientas. Es un proyecto independiente, sin relación con Anthropic, y el propio README advierte de que su validación no certifica que una Skill sea segura de aplicar.</li>
+      <li><strong><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>:</strong> un buscador que indexa Skills publicadas en repositorios públicos de GitHub. En octubre de 2026 su portada afirmaba tener más de 3.000.000; el 2 de noviembre no dejó abrirla a nuestro navegador automático, así que no hemos podido confirmar la cifra actual. No indica quién lo gestiona ni tiene relación declarada con Anthropic. Funciona como un buscador, no como una tienda revisada.</li>
     </ul>
     <p>Las cifras de ambas son las que declaran sus responsables; no hemos podido contarlas de forma independiente, y una cifra alta incluye duplicados, versiones abandonadas y Skills pensadas para otras herramientas. Para encontrar ideas o un punto de partida sirven. Para instalar sin revisar, no (ver la sección de seguridad).</p>
 
@@ -123,19 +130,19 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Claude.ai</h3>
     <ol class="space-y-2">
-      <li>Ve a <strong>Settings &gt; Capabilities</strong> y comprueba que está activado <strong>Code execution and file creation</strong>. Sin eso, las Skills no funcionan.</li>
-      <li>Abre <strong>Customize &gt; Skills</strong>. Ahí verás las Skills de Anthropic y podrás activarlas o desactivarlas una por una.</li>
-      <li>Para añadir una propia o descargada: pulsa <strong>+</strong>, luego <strong>+ Create skill</strong> y <strong>Upload a skill</strong>, y sube un archivo ZIP.</li>
+      <li>Ve a <strong>Configuración › Capacidades</strong> y comprueba que está activado <strong>Ejecución de código y creación de archivos</strong> (en el diseño nuevo de Configuración se llama «Crear y editar archivos»). Sin eso, las Skills no funcionan.</li>
+      <li>Abre <strong>Personalizar › Habilidades</strong>. Ahí verás las Skills de Anthropic y podrás activarlas o desactivarlas una por una.</li>
+      <li>Para añadir una propia o descargada: pulsa <strong>+</strong>, luego <strong>+ Crear habilidad</strong> y <strong>Cargar una habilidad</strong>, y sube un archivo ZIP.</li>
       <li>El ZIP debe contener la carpeta de la Skill (no los archivos sueltos en la raíz), y el nombre de la carpeta debe coincidir con el de la Skill.</li>
       <li>Actívala y prueba con varias peticiones. No hace falta invocarla: Claude la usa cuando la petición encaja con su descripción.</li>
     </ol>
-    <p>En planes Team y Enterprise, un administrador tiene que habilitar antes "Cloud code execution and file creation" y "Skills" en <strong>Organization settings &gt; Plugins &amp; skills</strong>.</p>
+    <p>Los nombres de los menús son los del centro de ayuda en español; en inglés son <em>Settings › Capabilities</em>, <em>Customize › Skills</em> y <em>Upload a skill</em>. En el plan Enterprise, un propietario tiene que habilitar antes la ejecución de código y las Skills en <strong>Configuración de la organización › Complementos y habilidades</strong>, pestaña «Política»; en Team vienen activadas.</p>
 
     <FiguraArticulo
       src="/img/blog/claude-skills-1000-gratis/instalar-skill-claude-ai.webp"
-      alt="Esquema de cuatro pasos para instalar una Skill en Claude.ai: activar la ejecución de código, abrir Customize > Skills, subir el ZIP y probarla"
+      alt="Esquema de cuatro pasos para instalar una Skill en Claude.ai: activar la ejecución de código en Configuración, abrir Personalizar › Habilidades, subir el ZIP y probarla"
       width={1200}
-      height={617}
+      height={675}
     />
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Claude Code</h3>
@@ -210,6 +217,9 @@ Cuando recibas un email, devuelve siempre una tabla con:
       <li><strong>Sin escribir desde cero:</strong> la Skill <code>skill-creator</code> del repositorio oficial está pensada para ayudarte a redactar una nueva.</li>
     </ul>
 
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">Sin escribirla: grabar la tarea</h3>
+    <p>Desde la aplicación de Claude para Mac, en Cowork, puedes grabarte haciendo la tarea (pantalla, clics, lo que escribes y lo que dices en voz alta) y Claude propone una Skill a partir de lo que ve, que revisas antes de guardarla. Según la ayuda oficial, está en los planes Pro, Max, Ultra y Team; no funciona en el chat, en Windows ni en los planes Free y Enterprise. Cada grabación dura unos 10 minutos como máximo, y no se guardan el vídeo ni el audio, solo unas capturas de la sesión. La propia ayuda avisa: no escribas contraseñas ni enseñes datos privados mientras grabas, porque se captura todo lo que sale en pantalla.</p>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Riesgos de instalar Skills de terceros</h2>
     <p>La documentación de Anthropic es directa: usa Skills solo de fuentes de confianza, es decir, las que creas tú o las que publica Anthropic. Una Skill da a Claude instrucciones y código, así que una maliciosa puede hacer que Claude use herramientas o ejecute código de formas que no coinciden con lo que dice hacer. Según Anthropic, eso puede acabar en robo de datos o accesos no autorizados, dependiendo de los permisos que tenga Claude en ese momento.</p>
     <p>Antes de activar una Skill descargada:</p>
@@ -238,33 +248,40 @@ Cuando recibas un email, devuelve siempre una tabla con:
       questionClass="font-display text-xl font-bold mt-6 mb-3"
       items={[
   {
+    "q": "¿Las Skills de Claude son gratis?",
+    "a": "El centro de ayuda de Claude las incluye en todos los planes, también en el gratuito, con la ejecución de código activada. Las del repositorio oficial anthropics/skills se descargan gratis de GitHub. La documentación para desarrolladores dice, en cambio, que subir Skills propias en Claude.ai es de Pro en adelante: si en el plan gratis no ves la opción, esa es la razón probable."
+  },
+  {
     "q": "¿Las Skills funcionan con ChatGPT o Gemini?",
-    "a": "Anthropic publicó el formato como estándar abierto (agentskills.io) y colecciones como antigravity-awesome-skills las adaptan a herramientas como Codex CLI, Cursor o Gemini CLI. Que una Skill funcione en otra herramienta depende de cómo la soporte esa herramienta, no de Anthropic."
+    "a": "El formato es un estándar abierto (agentskills.io) que desde octubre de 2026 gestiona la Agentic AI Foundation. Según Anthropic, más de 70 plataformas lo han integrado, entre ellas ChatGPT, Cursor, GitHub Copilot y VS Code, y colecciones como agentic-awesome-skills las instalan también en Gemini CLI o Codex CLI. Que una Skill concreta funcione igual en otra herramienta depende de esa herramienta."
   },
   {
     "q": "¿Puedo compartir una Skill con mi equipo en Claude.ai?",
-    "a": "Las Skills personalizadas que subes en Claude.ai son individuales: cada persona tiene que subirlas. En la API se comparten con todo el espacio de trabajo, y en Claude Code basta con guardarlas en <code>.claude/skills/</code> dentro del repositorio."
+    "a": "Según el centro de ayuda (noviembre de 2026), en los planes Team y Enterprise sí: desde Personalizar › Habilidades, menú de tres puntos y Compartir, con personas concretas (y con grupos en Enterprise), si el propietario de la organización lo permite. Quien la recibe puede usarla pero no editarla. En la API se comparten con todo el espacio de trabajo, y en Claude Code basta con guardarlas en <code>.claude/skills/</code> dentro del repositorio."
   }
 ]}
     />
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
-    <p>Consultadas el 6 de octubre de 2026.</p>
+    <p>Consultadas el 6 de octubre de 2026 y revisadas el 2 de noviembre de 2026.</p>
     <ul class="space-y-2">
       <li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Agent Skills: overview (documentación de Anthropic)</a>: niveles de carga, superficies, límites de <code>name</code> y <code>description</code>, seguridad, entornos de ejecución y sincronización.</li>
-      <li><a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Using Skills in Claude (centro de ayuda)</a>: planes, activación y subida en Claude.ai.</li>
-      <li><a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">How to create custom Skills (centro de ayuda)</a>: estructura del ZIP y límite de 200 caracteres en la descripción.</li>
-      <li><a href="https://support.claude.com/en/articles/12512176-what-are-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">What are Skills? (centro de ayuda)</a>: diferencias con Proyectos, instrucciones personalizadas y MCP.</li>
+      <li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Donating Agent Skills to the Agentic AI Foundation (Anthropic, 22-10-2026)</a>: cesión del estándar, plataformas que lo usan y cifras de Skills publicadas e instaladas.</li>
+      <li><a href="https://agentskills.io" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">agentskills.io</a>: especificación del estándar abierto.</li>
+      <li><a href="https://support.claude.com/es/articles/12512180-usar-habilidades-en-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Usar habilidades en Claude (centro de ayuda, en español)</a> y <a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">su versión en inglés</a>: planes, activación, subida y cómo compartirlas en Team y Enterprise.</li>
+      <li><a href="https://support.claude.com/en/articles/12512198-creating-custom-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">How to create custom Skills (centro de ayuda)</a>: estructura del ZIP, límite de 200 caracteres en la descripción y cómo grabar una Skill en Cowork.</li>
+      <li><a href="https://support.claude.com/en/articles/12512176-what-are-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">What are Skills? (centro de ayuda)</a>: diferencias con Proyectos, instrucciones personalizadas y MCP, y el directorio de Skills.</li>
       <li><a href="https://code.claude.com/docs/en/skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use Skills in Claude Code</a>: rutas de instalación, invocación con <code>/</code>, campos opcionales y recomendación de 500 líneas.</li>
       <li><a href="https://github.com/anthropics/skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">github.com/anthropics/skills</a>: lista de Skills, licencias, aviso de uso educativo y comandos de instalación como plugin.</li>
       <li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Equipping agents for the real world with Agent Skills (blog de ingeniería de Anthropic)</a>: definición, fecha de lanzamiento y estándar abierto.</li>
-      <li><a href="https://github.com/sickn33/antigravity-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/antigravity-awesome-skills</a>: cifra declarada de Skills, licencia y herramientas compatibles.</li>
-      <li><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>: cifra declarada de Skills indexadas.</li>
+      <li><a href="https://github.com/sickn33/agentic-awesome-skills" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">sickn33/agentic-awesome-skills</a>: cifra declarada de Skills, licencia y herramientas compatibles.</li>
+      <li><a href="https://skillsmp.com/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">SkillsMP</a>: cifra declarada de Skills indexadas (consultada el 6 de octubre de 2026; el 2 de noviembre no se pudo abrir).</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
-      <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Claude IA: qué es, si es gratis y cuánto cuesta</a>, si aún no tienes claro qué plan necesitas.</li>
+      <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Claude en español: guía completa</a>, si aún no tienes claro qué plan necesitas.</li>
+      <li><a href="/blog/prompts-para-claude/" class="text-brand-400 hover:text-brand-300">Prompts para Claude</a>: seis ejemplos para copiar y cuándo usar instrucciones, un Proyecto o una Skill.</li>
       <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas entre los dos asistentes.</li>
       <li><a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">Claude para escribir emails que suenen humanos</a>, que encaja con la Skill de ejemplo de esta guía.</li>
       <li><a href="/blog/qwen-code-agent-terminal/" class="text-brand-400 hover:text-brand-300">Qwen Code como agente de terminal</a>, si te interesa comparar con otros agentes de programación.</li>
