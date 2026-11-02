@@ -35,12 +35,15 @@ web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENT
 - Pilares: A `claude-ia-que-es-gratis` (19-10), B `ia-local-sin-internet` (26-10) y C la guía debajo de `/herramientas/generador-prompts/` (26-10). Desde la semana 3 (02-11), 1 apoyo nuevo y 1 mejora por semana, alternando A y B.
 - Primera comparación por grupos (28 días contra 28 días): hacia el 21-12-2026.
 
-## Plan de crecimiento de noviembre (02-11-2026, pendiente de aprobar)
+## Plan de crecimiento de noviembre (aprobado por Jordi el 02-11-2026)
 
-`docs/PLAN-CRECIMIENTO-NOV-2026.md`: diagnóstico de web y redes desde el 18-10, investigación con fuentes, plan por canal
-en 6 fases de 4 semanas (noviembre de 2026 a abril de 2027), marcador semanal con metas por mes, dinero y riesgos.
-Rama `plan/crecimiento-nov-2026`. **No se ha aplicado nada**: ni `redes.py`, ni las rutinas, ni la web. Si Jordi lo
-aprueba, empieza con la fase 1 (lista de cambios en su apartado 9).
+`docs/PLAN-CRECIMIENTO-NOV-2026.md` (PR #39, fusionado): diagnóstico de web y redes desde el 18-10, investigación con
+fuentes, plan por canal en 6 fases de 4 semanas (noviembre de 2026 a abril de 2027), marcador semanal con metas por mes,
+dinero y riesgos. **Fase 1: del 9 al 30 de noviembre.**
+- Lo que hace Jordi, paso a paso: `docs/PARA-JORDI-PASOS.md`.
+- Lo que cambia Jarvis en el móvil viejo (`redes.py`, `reel.py`): `docs/redes/CAMBIOS-MOVIL-NOV-2026.md`.
+- Los datos del móvil que sirvieron para el plan están en `docs/redes/entrada_01-11/`.
+- Web y agentes: rama `agente/plan-nov-web` (pull request aparte, espera a Jordi).
 
 ## Fase 1: hecho
 
