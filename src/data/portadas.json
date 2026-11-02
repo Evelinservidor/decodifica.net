@@ -379,5 +379,15 @@
     "etiqueta": "Guía completa",
     "fondo": "azul",
     "alt": "Logos de LM Studio, Ollama y AnythingLLM, tres programas para usar IA en tu ordenador sin conexión"
+  },
+  "prompts-para-claude": {
+    "plantilla": "herramienta",
+    "logos": [
+      "claude"
+    ],
+    "gancho": "Prompts e instrucciones *para copiar*",
+    "etiqueta": "Con ejemplos",
+    "fondo": "verde",
+    "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo verde"
   }
 }

@@ -8,7 +8,7 @@ import Caja from '../../components/Caja.astro';
 const title = "Claude en español: guía completa, gratis y planes";
 const description = "Cómo usar Claude en español: qué incluye gratis, cuánto cuestan Pro y Max, Proyectos, memoria, cómo pedirle las cosas y qué hace con tus datos.";
 const pubDate = "2026-10-12";
-const modifiedDate = "2026-10-23";
+const modifiedDate = "2026-11-02";
 const readingTime = "13 min";
 const tema = "chatbots";
 const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "anthropic"];
@@ -27,6 +27,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   keywords={tags}
   citations={[
     "https://claude.com/pricing",
+    "https://claude.com/download",
     "https://support.claude.com/en/articles/8114491-get-started-with-claude",
     "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
     "https://support.claude.com/en/articles/8461763-where-can-i-access-claude",
@@ -43,15 +44,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
 >
   <Articulo slug="claude-ia-que-es-gratis">
 
-    <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso que se renueva cada cinco horas. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code.</p>
+    <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso cada cinco horas y otro semanal. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code; Max cuesta 100 y Ultra, 200.</p>
 
-    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (los precios y la novedad de Claude Duet, el 23 de octubre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
+    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (la novedad de Claude Duet, el 23 de octubre; los precios y los planes, el 2 de noviembre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
 
     <h2>Qué es Claude y quién lo hace</h2>
     <p>Claude es un modelo de lenguaje creado por <strong>Anthropic</strong>. Como ChatGPT o Gemini, conversa contigo: responde preguntas, resume y escribe textos, analiza documentos que le subes y crea archivos. Se usa en tres sitios:</p>
     <ul>
       <li><strong>Navegador:</strong> en <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a>.</li>
-      <li><strong>Ordenador:</strong> la aplicación Claude Desktop, para Mac y Windows.</li>
+      <li><strong>Ordenador:</strong> la aplicación Claude Desktop, para Mac, Windows y Linux (en Linux está en beta y solo para Ubuntu y Debian).</li>
       <li><strong>Móvil:</strong> aplicaciones para iOS y Android.</li>
     </ul>
     <p>Hay que tener al menos 18 años y estar en un país donde Claude esté disponible.</p>
@@ -76,7 +77,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
 
     <h2>¿Claude es gratis? Qué incluye el plan Free</h2>
-    <p>Sí. El plan Free cuesta 0 dólares. Según la página de precios (consultada en octubre de 2026), incluye:</p>
+    <p>Sí. El plan Free cuesta 0 dólares. Según la página de precios (consultada el 2 de noviembre de 2026), incluye:</p>
     <ul>
       <li>Los modelos <strong>Sonnet y Haiku</strong>. Opus y Fable no están en el plan gratuito.</li>
       <li><strong>Artifacts</strong> (documentos, tablas o pequeñas aplicaciones que Claude crea en un panel aparte) y las herramientas Claude Design, Slides y Docs.</li>
@@ -87,13 +88,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <FiguraArticulo
       src="/img/blog/claude-ia-que-es-gratis/claude-gratis-vs-pro.webp"
-      alt="Comparativa del plan Free de Claude (0 dólares, hasta 5 Proyectos, Sonnet y Haiku, límite cada 5 horas) frente a Pro (20 dólares al mes o 17 pagando el año, Opus, Research y Claude Code)"
+      alt="Comparativa del plan Free de Claude (0 dólares, hasta 5 Proyectos, Sonnet y Haiku, límite cada 5 horas y otro semanal) frente a Pro (20 dólares al mes o 17 pagando el año, Opus, Research y Claude Code)"
       width={1200}
-      height={768}
+      height={762}
     />
 
     <h2>Los límites del plan gratis y cómo aprovecharlos</h2>
-    <p>El plan gratuito tiene un <strong>límite de uso por sesión que se renueva cada cinco horas</strong>, y la cantidad de mensajes que caben varía según la demanda del momento. No hay un número fijo de mensajes porque no todos gastan lo mismo. Según la guía oficial, gastan más:</p>
+    <p>El plan gratuito tiene un <strong>límite de uso por sesión que se renueva cada cinco horas</strong> y, según la página de precios, otro semanal; la cantidad de mensajes que caben varía según la demanda del momento. No hay un número fijo de mensajes porque no todos gastan lo mismo. Según la guía oficial, gastan más:</p>
     <ul>
       <li>los mensajes largos y los archivos grandes;</li>
       <li>las conversaciones largas (cada mensaje nuevo arrastra todo lo anterior);</li>
@@ -108,10 +109,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><strong>Guarda en un Proyecto los documentos que consultas a menudo.</strong> Lo que hay en un Proyecto se guarda en caché y, al reutilizarlo, cuenta menos contra el límite que volver a subirlo. Esa caché caduca tras un rato sin uso: después de una pausa larga, el primer mensaje vuelve a contar el contenido entero.</li>
       <li><strong>Abre una conversación nueva para cada tema</strong> en lugar de alargar una sin fin.</li>
     </ul>
-    <Caja tipo="ojo">Pagar no quita los límites. Pro y Max también tienen un límite por sesión de cinco horas y otro semanal; en los ajustes de uso ves cuánto llevas gastado de cada uno.</Caja>
+    <Caja tipo="ojo">Pagar no quita los límites. Pro y Max también tienen un límite por sesión de cinco horas y otro semanal; Ultra no tiene el de cinco horas (en cuentas verificadas), pero sí el semanal. En los ajustes de uso ves cuánto llevas gastado de cada uno.</Caja>
 
     <h2>Cuánto cuesta Claude: planes de pago</h2>
-    <p>Precios en dólares estadounidenses, consultados en octubre de 2026. Anthropic indica que en muchos países se cobra en moneda local y que el precio y los impuestos varían por región: el precio exacto para tu país aparece en <code>claude.ai/upgrade</code> o en la tienda de aplicaciones del móvil.</p>
+    <p>Precios en dólares estadounidenses, consultados el 2 de noviembre de 2026. Anthropic indica que en muchos países se cobra en moneda local y que el precio y los impuestos varían por región: el precio exacto para tu país aparece en <code>claude.ai/upgrade</code> o en la tienda de aplicaciones del móvil.</p>
     <div>
       <table>
         <thead>
@@ -134,8 +135,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
           </tr>
           <tr>
             <td><strong>Max</strong></td>
-            <td>Desde 100 $/mes (solo pago mensual)</td>
-            <td>5 o 20 veces el uso de Pro, prioridad en horas de mucha demanda, Fable hasta el 50 % del límite semanal y entre 100 y 200 $ al mes de crédito para la API.</td>
+            <td>100 $/mes</td>
+            <td>5 veces el uso de Pro (cada cinco horas y cada semana), acceso prioritario en horas de mucha demanda, Fable incluido hasta la mitad del límite semanal y 100 $ al mes de crédito para la API.</td>
+          </tr>
+          <tr>
+            <td><strong>Ultra</strong></td>
+            <td>200 $/mes</td>
+            <td>Todo lo de Max, sin límite de cinco horas (en cuentas verificadas), 10 veces el uso semanal de Pro y 200 $ al mes de crédito para la API.</td>
           </tr>
           <tr>
             <td><strong>Team</strong></td>
@@ -147,20 +153,20 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <FiguraArticulo
-      src="/img/blog/claude-ia-que-es-gratis/precios-claude-free-pro-max.webp"
-      alt="Captura de la página de precios de claude.com con los planes Free a 0 dólares, Pro a 17 dólares al mes pagando el año (20 mes a mes) y Max desde 100 dólares al mes"
+      src="/img/blog/claude-ia-que-es-gratis/precios-claude-planes.webp"
+      alt="Captura de la página de precios de claude.com con los planes Free a 0 dólares, Pro a 17 dólares al mes pagando el año (20 mes a mes), Max a 100 dólares al mes y Ultra a 200 dólares al mes"
       width={1200}
-      height={454}
-      caption="Página de precios de claude.com (captura de octubre de 2026)."
+      height={503}
+      caption="Página de precios de claude.com (captura del 2 de noviembre de 2026)."
     />
-    <p>Antes de pagar, ten en cuenta que <strong>la suscripción no incluye la API</strong> (salvo los créditos de Max y Team): si quieres usar Claude desde tus propios programas, se paga aparte. Una forma sencilla de decidir: usa el plan gratis una semana con tus tareas reales. Si chocas con el límite casi todos los días o necesitas Claude Code, Pro tiene sentido; si no, no.</p>
+    <p>Antes de pagar, ten en cuenta que <strong>la suscripción no incluye la API</strong> (salvo los créditos de Max, Ultra y Team): si quieres usar Claude desde tus propios programas, se paga aparte. Una forma sencilla de decidir: usa el plan gratis una semana con tus tareas reales. Si chocas con el límite casi todos los días o necesitas Claude Code, Pro tiene sentido; si no, no.</p>
 
     <h2>Qué puedes hacer con Claude además de chatear</h2>
     <h3>Proyectos</h3>
     <p>Un Proyecto es un espacio de trabajo con su propio historial de chats, sus documentos y sus instrucciones (por ejemplo, el tono que quieres o el papel que debe adoptar Claude). Están en todos los planes; en el gratuito, hasta cinco. Sirven para lo que repites: un Proyecto «Correos» con tu estilo, otro con los documentos de un cliente. En los planes de pago, cuando los documentos de un Proyecto no caben, Claude pasa a buscar dentro de ellos y la capacidad se multiplica hasta por 10.</p>
     <p>Un detalle sin aclarar: la página de ayuda de los Proyectos no limita sus instrucciones a ningún plan, pero la de personalización dice que las instrucciones de Proyecto son solo de pago. Si en el plan gratis no te aparece esa opción, usa las instrucciones generales de tu cuenta (<strong>Settings &gt; Instructions for Claude</strong>), que se aplican a todas tus conversaciones.</p>
     <h3>Memoria y chats de incógnito</h3>
-    <p>La memoria viene activada por defecto en Free, Pro y Max: Claude guarda temas sueltos de lo que habláis y los usa en conversaciones nuevas. Se cambia en <strong>Settings &gt; Memory</strong>, donde puedes pausarla o borrarla entera. Si no quieres que una conversación se guarde, abre un <strong>chat de incógnito</strong> (el icono del fantasma), disponible también gratis. Buscar en tus conversaciones anteriores es solo de los planes de pago.</p>
+    <p>La memoria viene activada por defecto en Free, Pro, Max y Ultra: Claude guarda temas sueltos de lo que habláis y los usa en conversaciones nuevas. Se cambia en <strong>Settings &gt; Memory</strong>, donde puedes pausarla o borrarla entera. Si no quieres que una conversación se guarde, abre un <strong>chat de incógnito</strong> (el icono del fantasma), disponible también gratis. Buscar en tus conversaciones anteriores es solo de los planes de pago.</p>
     <h3>Conectores</h3>
     <p>Los conectores enlazan Claude con otras aplicaciones y fuentes de datos para que pueda leerlas o trabajar con ellas. Se gestionan en <strong>Customize &gt; Connectors</strong>. Los conectores propios (los que añades tú con una dirección de servidor) están en todos los planes, pero en el gratuito solo se permite uno.</p>
     <h3>Skills</h3>
@@ -215,7 +221,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         </tbody>
       </table>
     </div>
-    <p>Para correos con tu propio tono tienes el método paso a paso en <a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>, y si prefieres que te ayuden a montar la petición, usa nuestro <a href="/herramientas/generador-prompts/">generador de prompts gratis</a>.</p>
+    <p>Seis prompts listos para copiar y cómo guardar tus instrucciones en la cuenta, en un Proyecto o en una Skill: <a href="/blog/prompts-para-claude/">Prompts para Claude: ejemplos y cómo darle instrucciones</a>. Para correos con tu propio tono tienes el método paso a paso en <a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>, y si prefieres que te ayuden a montar la petición, usa nuestro <a href="/herramientas/generador-prompts/">generador de prompts gratis</a>.</p>
 
     <h2>Privacidad: qué hace Anthropic con tus conversaciones</h2>
     <p>La política de privacidad de Anthropic (en vigor desde el 10 de septiembre de 2026) dice que puede usar lo que escribes y lo que responde Claude para entrenar sus modelos, <strong>salvo que lo desactives en los ajustes de tu cuenta</strong>. Aunque lo desactives, hay dos excepciones: las conversaciones marcadas para revisión de seguridad y el material que tú mismo les envíes. Además, si valoras una respuesta con el pulgar arriba o abajo, pueden guardar la conversación entera como comentario tuyo.</p>
@@ -230,7 +236,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       items={[
         {
           q: "¿Claude es gratis de verdad?",
-          a: "Sí: el plan Free cuesta 0 dólares e incluye Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills. Tiene un límite de uso que se renueva cada cinco horas.",
+          a: "Sí: el plan Free cuesta 0 dólares e incluye Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills. Tiene un límite de uso que se renueva cada cinco horas y otro semanal.",
         },
         {
           q: "¿Claude habla español?",
@@ -238,7 +244,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         },
         {
           q: "¿Cuántos mensajes puedo mandar gratis?",
-          a: "No hay un número fijo: depende de la demanda del momento y de cuánto pese cada mensaje (longitud, archivos, búsquedas, código). El límite se renueva cada cinco horas y Claude avisa cuando lo alcanzas.",
+          a: "No hay un número fijo: depende de la demanda del momento y de cuánto pese cada mensaje (longitud, archivos, búsquedas, código). El límite se renueva cada cinco horas (hay además uno semanal) y Claude avisa cuando lo alcanzas.",
         },
         {
           q: "¿Cuánto cuesta Claude Pro?",
@@ -256,9 +262,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
 
     <h2 id="fuentes">Fuentes</h2>
-    <p>Consultadas el 19 de octubre de 2026; la página de precios y las tres de Claude Duet, el 23 de octubre de 2026.</p>
+    <p>Consultadas el 19 de octubre de 2026; las tres de Claude Duet, el 23 de octubre de 2026; la página de precios (planes Individual y Team) y la de buenas prácticas de uso, el 2 de noviembre de 2026.</p>
     <ul>
       <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: Pricing</a>: planes, precios, modelos y funciones de cada uno.</li>
+      <li><a href="https://claude.com/download" target="_blank" rel="noopener noreferrer">Descargar Claude</a>: aplicaciones para Mac, Windows y Linux (beta), consultada el 2 de noviembre de 2026.</li>
       <li><a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" target="_blank" rel="noopener noreferrer">Get started with Claude (centro de ayuda)</a>: qué es, dónde se usa, edad mínima, idiomas y límite del plan gratuito.</li>
       <li><a href="https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" target="_blank" rel="noopener noreferrer">How to use Claude in your preferred language</a>: cómo poner la interfaz y la voz en español.</li>
       <li><a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" target="_blank" rel="noopener noreferrer">Where can I access Claude?</a>: países donde está disponible.</li>
@@ -276,6 +283,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2>Guías de este tema</h2>
     <ul>
       <li><a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>: qué son, cómo instalarlas y cómo crear la tuya.</li>
+      <li><a href="/blog/prompts-para-claude/">Prompts para Claude</a>: seis ejemplos para copiar y dónde guardar tus instrucciones.</li>
       <li><a href="/blog/claude-emails-sonar-humanos/">Claude para escribir emails que no suenen a robot</a>: tu tono, el destinatario y un ejemplo.</li>
       <li><a href="/herramientas/chatgpt-vs-claude/">ChatGPT vs Claude</a>: cuál elegir según la tarea.</li>
       <li><a href="/blog/alternativas-fable-5/">Alternativas a Claude Fable 5</a>: modelos abiertos y locales como plan B.</li>
