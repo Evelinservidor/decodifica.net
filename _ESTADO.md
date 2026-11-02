@@ -35,6 +35,13 @@ web más adelante). Los agentes eligen el trabajo con él (paso 3 de `docs/AGENT
 - Pilares: A `claude-ia-que-es-gratis` (19-10), B `ia-local-sin-internet` (26-10) y C la guía debajo de `/herramientas/generador-prompts/` (26-10). Desde la semana 3 (02-11), 1 apoyo nuevo y 1 mejora por semana, alternando A y B.
 - Primera comparación por grupos (28 días contra 28 días): hacia el 21-12-2026.
 
+## Plan de crecimiento de noviembre (02-11-2026, pendiente de aprobar)
+
+`docs/PLAN-CRECIMIENTO-NOV-2026.md`: diagnóstico de web y redes desde el 18-10, investigación con fuentes, plan por canal
+en 6 fases de 4 semanas (noviembre de 2026 a abril de 2027), marcador semanal con metas por mes, dinero y riesgos.
+Rama `plan/crecimiento-nov-2026`. **No se ha aplicado nada**: ni `redes.py`, ni las rutinas, ni la web. Si Jordi lo
+aprueba, empieza con la fase 1 (lista de cambios en su apartado 9).
+
 ## Fase 1: hecho
 
 - Vídeos privados del canal antiguo quitados de 13 artículos (incrustados, tarjetas «ver el vídeo», párrafos y citas en JSON-LD). Se mantienen los vídeos públicos de terceros que se citan como fuente (PewDiePie, canales «IA PRACTICA» e «Inteligencia Artificial»).
