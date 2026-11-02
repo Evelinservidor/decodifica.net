@@ -1,0 +1,135 @@
+2026-10-14 19:09 publicado «Claude IA: qué es, si es gratis y cuánto cuesta» (nuevo): bluesky, facebook
+2026-10-14 19:11 📊 Redes de Decodifica, esta semana: • Bluesky: 26 seguidores; 1 publicaciones, 0 me gusta, 0 compartidas, 0 respuestas. • Facebook: 7 seguidores; 1 publicaciones, 0 reacciones, 0 comentarios, 0 compartidas.
+2026-10-14 20:36 valor «¿Cuál uso?: *Audio a texto* en español: 4 formas, cuál te va mejor»: bluesky, facebook
+2026-10-15 13:21 publicado «Ollama: qué es y cómo usar modelos de IA en local» (nuevo): bluesky, facebook
+2026-10-15 20:34 valor «Error común: Evita *datos inventados* de la IA con 4 trucos»: bluesky, facebook
+2026-10-16 13:21 publicado «LM Studio: qué es y cómo usar IA local en tu ordenador» (nuevo): bluesky, facebook
+2026-10-16 20:37 valor «Lo de la semana: Lo de la semana: *4 novedades de IA* de Google»: bluesky, facebook
+2026-10-18 12:58 reel de muestra (prueba, sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_2026-10-18_1204/reel.mp4 (33,1 s; MiniMax: 337 puntos)
+2026-10-18 13:15 no hay nada que publicar (no hay artículos nuevos)
+2026-10-18 13:29 ronda: empieza el 2026-10-20
+2026-10-18 14:01 reel de prueba ESTILO RÁPIDO (sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_estilo_rapido/reel.mp4 (28 s; MiniMax: 0 puntos nuevos, voz reutilizada)
+2026-10-18 14:26 reel de prueba 3.ª versión, IMÁGENES SIN TEXTO (sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_visual/reel.mp4 (28 s; MiniMax: 0 puntos nuevos)
+2026-10-18 19:20 reel de prueba 4.ª versión (mejoras aprobadas, sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_mejoras/reel.mp4 (28 s; MiniMax: 0 puntos nuevos); copia para TikTok en Descargas del Nothing (decodifica_prueba-2026-10-18.mp4)
+2026-10-18 19:38 reel de prueba con título más arriba y subtítulos más abajo (sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_mejoras/reel.mp4 (0 puntos de MiniMax)
+2026-10-18 20:34 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:39 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:39 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:40 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:43 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:48 FALLO en «valor»: URLError: <urlopen error [Errno 101] Network is unreachable>
+2026-10-18 20:56 la web no contesta por Cloudflare (<urlopen error [Errno 101] Network is unreachable>); la leo directamente de GitHub Pages
+2026-10-18 20:58 la web no contesta por Cloudflare (<urlopen error [Errno 101] Network is unreachable>); la leo directamente de GitHub Pages
+2026-10-18 21:00 la web no contesta por Cloudflare (<urlopen error [Errno 101] Network is unreachable>); la leo directamente de GitHub Pages
+2026-10-18 21:00 la web no contesta por Cloudflare (ya ha fallado antes en esta vuelta); la leo directamente de GitHub Pages
+2026-10-18 21:00 la web no contesta por Cloudflare (<urlopen error [Errno 101] Network is unreachable>); la leo directamente de GitHub Pages
+2026-10-18 21:00 la web no contesta por Cloudflare (ya ha fallado antes en esta vuelta); la leo directamente de GitHub Pages
+2026-10-18 21:02 valor: lector escéptico (España): publicar — Es útil, gratis y aplicable aquí, y nada suena inventado, aunque convendría revisar el nombre actual del ajuste de Gemini y avisar de que apagarlo borra tu historial.
+2026-10-18 21:03 valor «Mito o realidad: ¿La IA se entrena sí o sí con tus chats? *Puedes evitarlo*»: bluesky, facebook
+2026-10-18 21:25 reel de prueba con CLIPS 3D (sin publicar): /data/data/com.termux/files/home/decodifica-reels/prueba_3d/reel.mp4 (28 s; 0 puntos de MiniMax); copia en Descargas del Nothing: decodifica_prueba_3d.mp4
+2026-10-18 21:31 📊 Redes de Decodifica, esta semana: • Bluesky: 28 seguidores (+2); 7 publicaciones, 0 me gusta, 0 compartidas, 0 respuestas. • Facebook: 7 seguidores (+0); 7 publicaciones, 6 reacciones, 0 comentarios, 0 compartidas.
+2026-10-19 12:00 ronda: empieza el 2026-10-20
+2026-10-19 13:17 no hay nada que publicar (no hay artículos nuevos)
+2026-10-19 20:34 la web no contesta por Cloudflare (Remote end closed connection without response); la leo directamente de GitHub Pages
+2026-10-19 20:35 la web no contesta por Cloudflare (ya ha fallado antes en esta vuelta); la leo directamente de GitHub Pages
+2026-10-19 20:43 valor: lector escéptico (México): publicar — Es un prompt concreto, gratis y útil en México; lo de España y la frase exagerada son detalles, no inventa ningún dato.
+2026-10-19 20:45 valor «Prompt para copiar: *Menú semanal y lista de la compra* con un solo prompt»: facebook · FALLOS: ['bluesky: <urlopen error The write operation timed out>']
+2026-10-19 21:12 valor «*Menú semanal y lista de la compra* con un solo prompt»: bluesky publicado a mano a petición de Jordi (esta tarde falló por tiempo de espera): https://bsky.app/profile/jc-ia.bsky.social/post/3myata4tbpu2r
+2026-10-20 12:03 ronda: 56 preguntas vistas, 2 respuestas preparadas para Jordi
+2026-10-20 12:19 ronda: respuesta 1 a @syngamus.bsky.social publicada: https://bsky.app/profile/jc-ia.bsky.social/post/3mycfvadqy422
+2026-10-20 12:19 ronda: respuesta 2 a @drulax.bsky.social publicada: https://bsky.app/profile/jc-ia.bsky.social/post/3mycfvclspu2a
+2026-10-20 13:19 no hay nada que publicar (no hay artículos nuevos)
+2026-10-20 20:31 valor: texto mal (intento 1): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:31 valor: texto mal (intento 2): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:31 valor: texto mal (intento 3): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:31 FALLO en «valor»: RuntimeError: Claude no ha dado un texto de valor válido
+2026-10-20 20:34 valor: texto mal (intento 1): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:35 valor: texto mal (intento 2): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:35 valor: texto mal (intento 3): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:35 FALLO en «valor»: RuntimeError: Claude no ha dado un texto de valor válido
+2026-10-20 20:38 valor: texto mal (intento 1): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:38 valor: texto mal (intento 2): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:39 valor: texto mal (intento 3): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:39 FALLO en «valor»: RuntimeError: Claude no ha dado un texto de valor válido
+2026-10-20 20:42 valor: texto mal (intento 1): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:42 valor: texto mal (intento 2): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:42 valor: texto mal (intento 3): "You've hit your weekly limit · resets 9pm (Europe/Madrid)\n" ''
+2026-10-20 20:42 FALLO en «valor»: RuntimeError: Claude no ha dado un texto de valor válido
+2026-10-20 21:09 valor: lector escéptico (Colombia): rehacer — El truco me sirve, pero en Facebook el texto repite la tarjeta, la ruta «Personalizar o Más» es confusa y no aclara si está disponible en el móvil y en Colombia ni en qué se diferencia de los Gems.
+2026-10-20 21:12 valor: lector escéptico, 2.ª versión: publicar — Es un truco concreto, gratis y fácil de probar desde el móvil, aunque me quedo con la duda de si ya está disponible aquí y en español.
+2026-10-20 21:16 valor: lector escéptico (Colombia): publicar — Es gratis, me sirve en Colombia y en español, y no todo el mundo lo sabe; solo le falta aclarar si se puede hacer desde el móvil.
+2026-10-20 21:17 valor «Truco: Que ChatGPT *te responda siempre a tu manera*»: bluesky, facebook
+2026-10-20 21:22 valor «Truco: Deja de repetir instrucciones: *habilidades de Gemini*» (segunda del día, la pidió Jordi): bluesky, facebook
+2026-10-21 12:01 ronda: 48 preguntas vistas, 1 respuestas preparadas para Jordi
+2026-10-21 13:17 no hay nada que publicar (no hay artículos nuevos)
+2026-10-21 20:34 valor: lector escéptico (Argentina): rehacer — El contenido sirve, pero en el reel la voz omite condiciones que la tarjeta sí pone y el 💳 contradice el «gratis»: así parece que te esconden la letra chica.
+2026-10-21 20:37 valor: lector escéptico, 2.ª versión: rehacer — El límite diario de Firefly me suena inventado, y en el reel la voz dice «En Android, Adobe Firefly en el navegador», como si fuera solo para Android, cuando la tarjeta dice que va en el navegador y t
+2026-10-21 20:37 valor «¿Cuál uso?: Quita el fondo a una foto *gratis*: 3 formas»: NO publicada (el lector escéptico dijo «rehacer» dos veces)
+2026-10-21 21:26 valor del 21-10 publicado a mano (Jordi): Bluesky https://bsky.app/profile/jc-ia.bsky.social/post/3myfuvnivor2l (tarjeta de hoy); Facebook https://www.facebook.com/reel/1429635091915519 (reel prueba_3d del 18-10)
+2026-10-22 12:06 ronda: 58 preguntas vistas, 1 respuestas preparadas para Jordi
+2026-10-22 12:17 ronda: respuesta 1 a @pepegonzalezpas.bsky.social publicada: https://bsky.app/profile/jc-ia.bsky.social/post/3myhgpl7hl72f
+2026-10-22 13:17 no hay nada que publicar (no hay artículos nuevos)
+2026-10-22 20:34 valor: lector escéptico (Chile): publicar — Son consejos concretos que me sirven gratis desde Chile y no veo nada falso, aunque debería precisar lo de la memoria y aclarar si los Proyectos son gratis.
+2026-10-22 20:34 valor «Error común: *Un chat por tema*: la IA va más rápida y gastas menos»: bluesky, facebook
+2026-10-23 12:02 ronda: 60 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-23 13:18 no hay nada que publicar (no hay artículos nuevos)
+2026-10-23 20:36 valor: lector escéptico (Perú): publicar — Es útil, me sirve en Perú sin pagar, el aviso de borrado vale la pena y el reel engancha y dice lo mismo que la tarjeta; solo cambiaría el 💳 y comprobaría lo del borrado y Proyectos antes de subirlo.
+2026-10-23 20:42 reel: /data/data/com.termux/files/home/decodifica-reels/2026-10-23/reel.mp4 (21.1 s; MiniMax: 260 puntos esta vez, 260 el reel entero; 360 s en hacerlo)
+2026-10-23 20:42 valor «Lo de la semana: Esconde tus chats de ChatGPT *con un PIN*, gratis»: bluesky
+2026-10-24 12:05 ronda: 48 preguntas vistas, 1 respuestas preparadas para Jordi
+2026-10-24 12:26 ronda: respuesta 1 a @evocid.bsky.social publicada: https://bsky.app/profile/jc-ia.bsky.social/post/3mymi6llzsa2q
+2026-10-24 12:29 reel del 2026-10-23: el reel, en Facebook: https://www.facebook.com/reel/1348727153865169
+2026-10-24 13:16 no hay nada que publicar (no hay artículos nuevos)
+2026-10-24 20:30 la web no contesta directa (<urlopen error [Errno 101] Network is unreachable>); la leo por el WARP
+2026-10-24 20:30 la web no contesta directa (ya ha fallado antes en esta vuelta); la leo por el WARP
+2026-10-24 20:32 valor: lector escéptico (Venezuela): publicar — Es una herramienta útil, gratis y en español, y avisa claro de la marca de agua y del límite semanal, aunque las cuentas de los créditos merecen media línea más para no prometer «textos largos».
+2026-10-24 20:32 valor «Gratis: Napkin: convierte texto en *esquemas e infografías*»: bluesky, facebook
+2026-10-25 12:04 ronda: 50 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-25 13:19 no hay nada que publicar (no hay artículos nuevos)
+2026-10-25 20:33 la web no contesta directa (<urlopen error [Errno 101] Network is unreachable>); la leo por el WARP
+2026-10-25 20:33 la web no contesta directa (ya ha fallado antes en esta vuelta); la leo por el WARP
+2026-10-25 20:35 valor: lector escéptico (España): publicar — Los datos cuadran con lo publicado por Google (agosto de 2025) y por la Agencia Internacional de la Energía, y aprendo algo útil, aunque le faltaría avisar de que la cifra la da la propia Google y baj
+2026-10-25 20:35 valor «Mito o realidad: ¿Una botella de agua por pregunta? *Son unas 5 gotas*»: bluesky, facebook
+2026-10-25 21:31 📊 Redes de Decodifica, esta semana: • Bluesky: 30 seguidores (+2); 12 publicaciones, 4 me gusta, 0 compartidas, 2 respuestas. • Facebook: 7 seguidores (+0); 8 publicaciones, 4 reacciones, 0 comentarios, 0 compartidas.
+2026-10-26 12:08 ronda: 47 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-26 13:19 no hay nada que publicar (no hay artículos nuevos)
+2026-10-26 20:32 valor: lector escéptico (México): publicar — Es útil, funciona gratis y en español. El gancho del reel ('Tus apuntes, en un examen tipo test') se entiende al instante, y la voz cuenta lo mismo que la tarjeta sin prometer de más.
+2026-10-26 20:35 reel: /data/data/com.termux/files/home/decodifica-reels/2026-10-26/reel.mp4 (19.8 s; MiniMax: 237 puntos esta vez, 237 el reel entero; 184 s en hacerlo)
+2026-10-26 20:35 valor «Prompt para copiar: Tus apuntes, convertidos en *un examen tipo test*»: bluesky
+2026-10-26 20:45 reel del 2026-10-26: el reel, en Facebook: https://www.facebook.com/reel/1700266098370057
+2026-10-27 12:04 ronda: la búsqueda «recomiendan IA» ha fallado (502 {"error":"UpstreamFailure","message":"UpstreamFailure"})
+2026-10-27 12:05 ronda: 44 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-27 13:16 publicado «IA local en español: cómo usar IA en tu PC sin internet» (nuevo): bluesky, facebook
+2026-10-27 20:37 valor: lector escéptico (Colombia): rehacer — El truco es útil y sirve en Colombia, pero el supuesto cambio de nombre a «Gemini Notebook» suena falso, y si eso falla ya no me fío del resto.
+2026-10-27 20:40 valor: lector escéptico, 2.ª versión: publicar — Es útil, gratis y funciona en español desde Colombia; solo conviene comprobar el nombre nuevo y el de los formatos antes de publicarlo.
+2026-10-27 20:40 valor «Truco: Convierte un PDF en un *pódcast en español*, gratis»: bluesky, facebook
+2026-10-28 12:03 ronda: la búsqueda «inteligencia artificial» ha fallado (502 {"error":"UpstreamFailure","message":"UpstreamFailure"})
+2026-10-28 12:04 ronda: 63 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-28 13:18 no hay nada que publicar (no hay artículos nuevos)
+2026-10-28 20:36 valor: lector escéptico (Argentina): publicar — Son tres opciones gratis, reales y usables desde acá, con sus límites dichos claro; el gancho del reel me frena y la voz coincide con la tarjeta, aunque yo sacaría el 💳 porque confunde.
+2026-10-28 20:48 reel: /data/data/com.termux/files/home/decodifica-reels/2026-10-28/reel.mp4 (25.8 s; MiniMax: 304 puntos esta vez, 304 el reel entero; 725 s en hacerlo)
+2026-10-28 20:49 valor «¿Cuál uso?: Foto pixelada o pequeña: *3 formas gratis de mejorarla*»: bluesky, facebook
+2026-10-29 12:07 ronda: 64 preguntas vistas, 1 respuestas preparadas para Jordi
+2026-10-29 13:19 no hay nada que publicar (no hay artículos nuevos)
+2026-10-29 19:18 ronda: respuesta 1 a @ontoterrorist.bsky.social publicada: https://bsky.app/profile/jc-ia.bsky.social/post/3myzuuligyp2c
+2026-10-29 20:36 valor: lector escéptico (Chile): publicar — Es básico pero claro, gratis y aplicable en Chile, y el cuarto punto sí es algo que mucha gente no hace.
+2026-10-29 20:36 valor «Error común: Pedir sin contexto: *4 claves para respuestas útiles*»: bluesky, facebook
+2026-10-30 12:01 ronda: 57 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-30 13:17 no hay nada que publicar (no hay artículos nuevos)
+2026-10-30 20:39 valor: lector escéptico (Perú): rehacer — El reel se contradice (💳 con «gratis»), lo de iCloud apenas sirve en Perú sin decirlo, «peloteo» no se entiende aquí y el gancho «3 novedades de IA gratis» es igual al de otras cincuenta publicaciones
+2026-10-30 20:46 valor: lector escéptico, 2.ª versión: rehacer — El dato sirve, pero la voz del reel no dice lo mismo que la tarjeta: quita las presentaciones y no aclara lo de la cuenta gratuita y el español.
+2026-10-30 20:46 valor «Lo de la semana: Retoca el PDF que te hace Gemini *sin salir del chat*»: NO publicada (el lector escéptico dijo «rehacer» dos veces)
+2026-10-30 21:02 reel: /data/data/com.termux/files/home/decodifica-reels/prueba_2026-10-30_2053/reel.mp4 (20.9 s; MiniMax: 275 puntos esta vez, 275 el reel entero; 527 s en hacerlo)
+2026-10-30 21:07 reel del 2026-10-30 (prueba rehecha, aprobada por Jordi): en Facebook https://www.facebook.com/reel/1096523156319932
+2026-10-30 21:12 valor del 2026-10-30 (lo de la semana, aprobado por Jordi): tarjeta en Bluesky https://bsky.app/profile/jc-ia.bsky.social/post/3mz4loo2asv2k
+2026-10-31 12:03 ronda: 46 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-10-31 13:16 no hay nada que publicar (no hay artículos nuevos)
+2026-10-31 20:36 valor: lector escéptico (Venezuela): publicar — Es una herramienta gratis y útil que puedo usar desde el móvil en Venezuela, con límites claros. Solo conviene revisar lo de los 90 idiomas y lo de las 400 páginas antes de que alguien lo cuestione en
+2026-10-31 20:36 valor «Gratis: Que la IA te *lea en voz alta* tus PDF: ElevenReader»: bluesky, facebook
+2026-11-01 12:08 ronda: 54 preguntas vistas, 0 respuestas preparadas para Jordi
+2026-11-01 13:17 no hay nada que publicar (no hay artículos nuevos)
+2026-11-01 20:31 la web no contesta directa (<urlopen error [Errno 101] Network is unreachable>); la leo por el WARP
+2026-11-01 20:31 la web no contesta directa (ya ha fallado antes en esta vuelta); la leo por el WARP
+2026-11-01 20:34 valor: lector escéptico (España): publicar — Los datos cuadran con las fuentes, me sirve en España y aprendo algo útil, aunque el punto 4 se podría escribir más claro.
+2026-11-01 20:34 valor «Mito o realidad: Detectores de IA: *su porcentaje no es una prueba*»: bluesky, facebook
+2026-11-01 21:30 📊 Redes de Decodifica, esta semana: • Bluesky: 31 seguidores (+1); 9 publicaciones, 1 me gusta, 0 compartidas, 0 respuestas. • Facebook: 7 seguidores (+0); 8 publicaciones, 7 reacciones, 1 comentarios, 0 compartidas.
