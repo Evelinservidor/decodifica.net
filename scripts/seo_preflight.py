@@ -34,6 +34,11 @@ BANNED = [
     "no te lo vas a creer", "increíble", "brutal",
 ]
 FORBIDDEN_LINKS = ["youtube.com/@decodifica", "/comunidad/", "/login/"]
+# Frases que pueden insinuar una prueba propia (regla 3). Aviso, no error: «las comparamos en la guía» es legítimo.
+# Si aparecen, comprobar que no se dice que Decodifica o Jordi lo ha probado sin prueba documentada (plan del 02-11-2026).
+PRUEBA_PROPIA = ["probamos", "hemos probado", "nuestra prueba", "nuestras pruebas", "comparamos", "en nuestra experiencia"]
+# Enlaces de afiliado: llevan rel="sponsored" y se avisan en el texto (LSSI y normas de Google sobre enlaces).
+AFILIADO = re.compile(r"[?&](via|ref|aff|affiliate|fpr|partner|referral|tag)=|partnerstack|/affiliates?/|impact\.com|awin1\.com|amzn\.to", re.I)
 PORTADAS = ROOT / "src" / "data" / "portadas.json"
 VARIANTES = [".jpg", "-tarjeta.webp", "-tarjeta-960.webp", "-16x9.webp", "-16x9-800.webp", "-4x3.webp", "-1x1.webp"]
 MIN_FIGURAS = 2
@@ -122,6 +127,13 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
     for link in FORBIDDEN_LINKS:
         if link in text:
             errors.append(f"enlace prohibido: {link}")
+    for phrase in PRUEBA_PROPIA:
+        if re.search(rf"\b{phrase}\b", lower):
+            warnings.append(f"«{phrase}»: comprueba que no insinúa una prueba propia sin prueba de Jordi (regla 3)")
+    for tag in re.findall(r"<a\s[^>]*href=\"https?://[^\"]+\"[^>]*>", body):
+        href = re.search(r'href="([^"]+)"', tag).group(1)
+        if AFILIADO.search(href) and "sponsored" not in tag:
+            errors.append(f'enlace de afiliado sin rel="sponsored": {href}')
     for mark in MOJIBAKE:
         if mark in text:
             errors.append(f"texto con caracteres rotos ({mark})")

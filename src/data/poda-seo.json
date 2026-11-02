@@ -1,6 +1,7 @@
 {
   "_que_es": "Limpieza del plan SEO (docs/plan-seo.md, 18-10-2026). noindex: la página sigue en la web para quien llega navegando, pero Google deja de juzgarla y sale del sitemap; se quita de la lista cuando alguien la amplíe. redirigir: la página se ha fusionado en otra y lleva a ella (Google lo trata como redirección permanente). Nada que tenga apariciones se borra sin redirigir.",
   "noindex": [
+    "/redes/",
     "/herramientas/canva-ai/",
     "/herramientas/chatgpt/",
     "/herramientas/cursor/",

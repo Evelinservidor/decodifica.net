@@ -1,0 +1,245 @@
+---
+// Herramienta del mes de noviembre de 2026 (plan de crecimiento, docs/PLAN-CRECIMIENTO-NOV-2026.md, apartado 4.1).
+// Datos y fuentes en src/data/ia-local-modelos.ts. Todo se calcula en el navegador: no se envía nada.
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import FaqSection from '~/components/FaqSection.astro';
+import NewsletterForm from '~/components/NewsletterForm.astro';
+import { modelos, fuentes, consultado, margenSistemaGb, margenGraficaGb } from '~/data/ia-local-modelos';
+
+const title = '¿Qué IA local puede mover tu ordenador? Calculadora';
+const description = 'Dinos tu memoria RAM y tu tarjeta gráfica y te decimos qué tamaños de Gemma 4 y Qwen 3.5 caben, con las cifras oficiales de Ollama. Gratis y sin registro.';
+const fecha = new Date(`${consultado}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const gb = (n: number) => n.toLocaleString('es-ES', { maximumFractionDigits: 1 });
+---
+
+<BaseLayout title={title} description={description} citations={fuentes.map((f) => f.url)}>
+  <div class="herramienta mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <header>
+      <p class="etiqueta">Herramienta gratis · sin registro · no sale nada de tu navegador</p>
+      <h1>¿Qué IA local puede mover tu ordenador?</h1>
+      <p class="entradilla">Elige cómo es tu equipo y te decimos qué tamaños de dos familias de modelos abiertos, Gemma 4 y Qwen 3.5, caben en tu memoria. Las cifras son las de la biblioteca oficial de Ollama, consultadas el {fecha}.</p>
+    </header>
+
+    <form id="calc" class="tarjeta" novalidate>
+      <fieldset>
+        <legend>1. Tu equipo</legend>
+        <div class="opciones">
+          <label><input type="radio" name="equipo" value="mac" checked /> Mac con chip Apple (M1, M2, M3, M4…)</label>
+          <label><input type="radio" name="equipo" value="pc-grafica" /> Windows o Linux con tarjeta gráfica NVIDIA o AMD compatible (abajo, cuáles)</label>
+          <label><input type="radio" name="equipo" value="pc-sin" /> Windows o Linux sin tarjeta gráfica aparte</label>
+          <label><input type="radio" name="equipo" value="mac-intel" /> Mac con procesador Intel</label>
+        </div>
+      </fieldset>
+
+      <label class="campo">
+        <span>2. Memoria RAM <small>(en Windows: Configuración → Sistema → Información; en Mac: menú de la manzana → Acerca de este Mac)</small></span>
+        <select id="ram">
+          <option value="8">8 GB</option>
+          <option value="16" selected>16 GB</option>
+          <option value="24">24 GB</option>
+          <option value="32">32 GB</option>
+          <option value="48">48 GB</option>
+          <option value="64">64 GB</option>
+          <option value="96">96 GB o más</option>
+        </select>
+      </label>
+
+      <label class="campo" id="campo-vram" hidden>
+        <span>3. Memoria de la tarjeta gráfica <small>(en Windows: Administrador de tareas → Rendimiento → GPU → «Memoria de GPU dedicada»)</small></span>
+        <select id="vram">
+          <option value="4">4 GB</option>
+          <option value="6">6 GB</option>
+          <option value="8" selected>8 GB</option>
+          <option value="12">12 GB</option>
+          <option value="16">16 GB</option>
+          <option value="24">24 GB</option>
+          <option value="32">32 GB o más</option>
+        </select>
+      </label>
+    </form>
+
+    <section id="resultado" class="tarjeta" aria-live="polite">
+      <h2 id="res-titulo">Lo que cabe en tu equipo</h2>
+      <p id="res-resumen"></p>
+      <ul id="res-avisos" class="avisos"></ul>
+      <div class="tabla"><table>
+        <thead><tr><th>Modelo</th><th>Cifra de Ollama</th><th>¿Cabe?</th></tr></thead>
+        <tbody id="res-tabla"></tbody>
+      </table></div>
+      <p class="pequeno">Empieza por un tamaño pequeño de los que salen en verde y sube solo si las respuestas no te bastan: los grandes van más despacio y dejan menos memoria para el resto. Para descargarlo con Ollama, copia la orden de su fila; en LM Studio, búscalo por su nombre en la pestaña de descargas.</p>
+    </section>
+
+    <script type="application/json" id="datos-modelos" set:html={JSON.stringify({ modelos, margen: margenSistemaGb, margenGrafica: margenGraficaGb })}></script>
+
+    <article class="prosa guia">
+      <h2>Cómo se calcula</h2>
+      <p>Para la IA local, lo que más manda es la <strong>memoria</strong>: la RAM del ordenador y, si tienes tarjeta gráfica, la memoria de la gráfica. Cada modelo viene en varios tamaños (los «b» son miles de millones de parámetros) y la biblioteca de Ollama da para cada uno una cifra en GB. Ollama no aclara si es lo que ocupa o la memoria que usa, así que la tomamos como guía y usamos siempre la <strong>cifra más alta</strong>.</p>
+      <ul>
+        <li><strong>Mac con chip Apple:</strong> la memoria es la misma para todo. Cabe si la cifra del modelo no pasa de tu memoria menos {margenSistemaGb} GB.</li>
+        <li><strong>Con tarjeta gráfica:</strong> va rápido si el modelo cabe entero en la memoria de la gráfica, dejando {margenGraficaGb} GB libres. Si no cabe, Ollama reparte el trabajo entre la gráfica y el procesador (su documentación explica cómo verlo con <code>ollama ps</code>) y va más lento; lo marcamos en amarillo si cabe en la RAM.</li>
+        <li><strong>Sin tarjeta gráfica, o con un Mac con Intel:</strong> todo lo hace el procesador. Funciona, pero Ollama avisa de que los modelos grandes van lentos sin una gráfica potente. En los Mac con Intel, Ollama funciona «solo con el procesador» (macOS 14 o posterior) y LM Studio no es compatible.</li>
+      </ul>
+      <p><strong>Los márgenes son una regla prudente nuestra, no una cifra oficial:</strong> {margenSistemaGb} GB de la RAM para el sistema y los programas abiertos, y {margenGraficaGb} GB de la gráfica para el contexto, que según Ollama pide más memoria cuanto más grande es. Ninguna de las fuentes da un margen exacto. Si cierras todo lo demás, puede caberte algo más; si tienes el navegador lleno de pestañas, algo menos.</p>
+      <p><strong>Qué gráficas usa Ollama:</strong> las NVIDIA con «compute capability» 5.0 o superior y controlador 550 o posterior (las de 5.0 a 6.2 piden el 570), y las AMD Radeon de su lista oficial. Si la tuya no está, elige «sin tarjeta gráfica aparte».</p>
+
+      <h2>Qué pide cada programa</h2>
+      <p>Según la documentación de LM Studio (consultada el {fecha}):</p>
+      <ul>
+        <li><strong>Mac:</strong> chip Apple (M1 a M4) y macOS 14 o posterior. Recomienda 16 GB de memoria o más; con 8 GB se puede, pero con modelos pequeños y poco contexto. Los Mac con Intel no son compatibles.</li>
+        <li><strong>Windows:</strong> funciona en procesadores x64 y ARM (Snapdragon X Elite). En los x64, el procesador tiene que tener instrucciones AVX2 (es obligatorio). Recomienda al menos 16 GB de RAM y al menos 4 GB de memoria de gráfica dedicada.</li>
+        <li><strong>Linux:</strong> se instala como AppImage y pide Ubuntu 20.04 o posterior.</li>
+      </ul>
+      <p>Ollama ajusta además el «contexto» (cuánto texto tiene en memoria a la vez) según la gráfica: con menos de 24 GB de memoria de gráfica, empieza con 4.000 tokens. Para tareas que necesitan mucho contexto, como buscar en internet, agentes o herramientas de programación, recomienda al menos 64.000, y más contexto pide más memoria. Por eso, si vas justo, elige un tamaño más pequeño del que te salga.</p>
+
+      <h2>Todos los tamaños, con su cifra</h2>
+      <div class="tabla"><table>
+        <thead><tr><th>Modelo</th><th>Cifra en la biblioteca de Ollama</th></tr></thead>
+        <tbody>
+          {modelos.map((m) => (
+            <tr><td>{m.familia} {m.tamano}</td><td>{m.gb[0] === m.gb[1] ? `${gb(m.gb[0])} GB` : `${gb(m.gb[0])}-${gb(m.gb[1])} GB`}</td></tr>
+          ))}
+        </tbody>
+      </table></div>
+
+      <h2>Preguntas frecuentes</h2>
+      <FaqSection
+        questionClass="pregunta"
+        items={[
+          {
+            q: '¿Cuánta RAM necesito para usar IA en mi ordenador?',
+            a: 'LM Studio recomienda 16 GB. En los Mac, su documentación dice que con 8 GB se puede, pero con modelos pequeños y poco contexto: según las cifras de la biblioteca de Ollama, Qwen 3.5 de 0.8b a 4b (de 1,2 a 4 GB). Los modelos de 26b o más piden 16 GB o más.',
+          },
+          {
+            q: '¿Sirve un Mac con procesador Intel?',
+            a: 'Con Ollama, sí, pero solo con el procesador: su documentación pide macOS 14 o posterior y dice que en los Mac con Intel funciona «solo con el procesador». LM Studio no es compatible con los Mac con Intel.',
+          },
+          {
+            q: '¿Esta calculadora sabe si mi ordenador es compatible?',
+            a: 'No del todo: solo compara la memoria con la cifra de cada modelo. Antes de instalar, mira los requisitos del programa (procesador, sistema y gráfica), que están más arriba y en la <a href="/blog/ia-local-sin-internet/">guía de IA local</a>.',
+          },
+        ]}
+      />
+
+      <h2 id="fuentes">Fuentes</h2>
+      <p>Consultadas el {fecha}. El repaso mensual de Decodifica las vuelve a comprobar.</p>
+      <ul>
+        {fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.nombre}</a></li>)}
+      </ul>
+
+      <h2>Sigue leyendo</h2>
+      <ul>
+        <li><a href="/blog/ia-local-sin-internet/">IA local en español: cómo usar IA en tu PC sin internet</a>: qué programa elegir y primeros pasos.</li>
+        <li><a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usarlo</a>: las órdenes básicas para descargar un modelo.</li>
+        <li><a href="/blog/lm-studio-que-es-como-usar/">LM Studio: qué es y cómo usarlo</a>: la guía del programa, paso a paso.</li>
+      </ul>
+    </article>
+
+    <div class="boletin"><NewsletterForm /></div>
+  </div>
+
+  <script>
+    type Modelo = { familia: string; autor: string; tamano: string; orden: string; gb: [number, number] };
+    const datos = JSON.parse(document.getElementById('datos-modelos')?.textContent || '{}') as { modelos: Modelo[]; margen: number; margenGrafica: number };
+    const form = document.getElementById('calc') as HTMLFormElement | null;
+    const campoVram = document.getElementById('campo-vram') as HTMLElement | null;
+    const ram = document.getElementById('ram') as HTMLSelectElement | null;
+    const vram = document.getElementById('vram') as HTMLSelectElement | null;
+    const tabla = document.getElementById('res-tabla');
+    const resumen = document.getElementById('res-resumen');
+    const avisos = document.getElementById('res-avisos');
+    const num = (n: number) => n.toLocaleString('es-ES', { maximumFractionDigits: 1 });
+
+    function aviso(texto: string) {
+      const li = document.createElement('li');
+      li.textContent = texto;
+      avisos?.appendChild(li);
+    }
+
+    function calcular() {
+      if (!form || !ram || !vram || !tabla || !resumen || !avisos) return;
+      const equipo = (form.querySelector('input[name="equipo"]:checked') as HTMLInputElement | null)?.value || 'mac';
+      const r = Number(ram.value);
+      const v = Number(vram.value);
+      if (campoVram) campoVram.hidden = equipo !== 'pc-grafica';
+      const util = Math.max(r - datos.margen, 0);
+      tabla.innerHTML = '';
+      avisos.innerHTML = '';
+      let verdes = 0;
+      let inicio = '';
+
+      for (const m of datos.modelos) {
+        const alto = m.gb[1];
+        let estado = 'no';
+        let texto = 'No cabe';
+        if (equipo === 'mac') {
+          if (alto <= util) { estado = 'si'; texto = 'Sí'; }
+        } else if (equipo === 'pc-grafica') {
+          if (alto <= v - datos.margenGrafica) { estado = 'si'; texto = 'Sí, en la gráfica'; }
+          else if (alto <= util) { estado = 'lento'; texto = 'Sí, pero más lento'; }
+        } else if (equipo === 'pc-sin' || equipo === 'mac-intel') {
+          if (alto <= util) { estado = 'lento'; texto = 'Sí, pero lento'; }
+        }
+        // Para empezar, uno pequeño que quepa (el primero de 3,5 GB o más; si no hay, el más pequeño), como dice el pilar.
+        if (estado === 'si') { verdes++; if (!inicio || (m.gb[1] >= 3.5 && datos.modelos.find((x) => `${x.familia} ${x.tamano}` === inicio)!.gb[1] < 3.5)) inicio = `${m.familia} ${m.tamano}`; }
+        const cifra = m.gb[0] === m.gb[1] ? `${num(m.gb[0])} GB` : `${num(m.gb[0])}-${num(m.gb[1])} GB`;
+        const tr = document.createElement('tr');
+        tr.className = `estado-${estado}`;
+        const orden = estado === 'no' ? '' : `<br><code>${m.orden}</code>`;
+        tr.innerHTML = `<td><strong>${m.familia} ${m.tamano}</strong>${orden}</td><td>${cifra}</td><td>${texto}</td>`;
+        tabla.appendChild(tr);
+      }
+
+      if (equipo === 'mac-intel') {
+        resumen.textContent = `En un Mac con Intel, Ollama funciona solo con el procesador (macOS 14 o posterior) y LM Studio no es compatible. Los modelos que caben en tu memoria (${r} GB menos ${datos.margen} de margen) funcionan, pero lentos. Empieza por los más pequeños.`;
+      } else if (equipo === 'pc-sin') {
+        resumen.textContent = `Sin tarjeta gráfica, todo lo hace el procesador: los modelos que caben en tu memoria (${r} GB menos ${datos.margen} de margen) funcionan, pero lentos. Empieza por los más pequeños.`;
+      } else if (verdes > 0) {
+        resumen.textContent = `Con tu equipo caben ${verdes} de los ${datos.modelos.length} tamaños sin problema. Para empezar, uno pequeño: ${inicio}. Sube de tamaño solo si las respuestas no te bastan.`;
+      } else {
+        resumen.textContent = 'Ningún tamaño cabe con soltura. Mira los que salen en amarillo: funcionan, pero más lentos.';
+      }
+
+      if (equipo === 'mac' && r < 16) aviso('LM Studio recomienda 16 GB de memoria. En los Mac, con 8 GB se puede, pero con modelos pequeños y poco contexto.');
+      if ((equipo === 'pc-grafica' || equipo === 'pc-sin') && r < 16) aviso('LM Studio recomienda al menos 16 GB de RAM en Windows.');
+      if (equipo === 'pc-grafica' && v < 4) aviso('LM Studio recomienda al menos 4 GB de memoria de gráfica dedicada.');
+      if (equipo === 'pc-grafica') aviso('Ollama solo usa las gráficas NVIDIA y AMD de su lista (más abajo). Si la tuya no está, elige «sin tarjeta gráfica aparte».');
+      if (equipo === 'pc-grafica' || equipo === 'pc-sin') aviso('En Windows (x64), LM Studio pide un procesador con instrucciones AVX2.');
+      const margenes = equipo === 'pc-grafica' ? `${datos.margen} GB de la RAM y ${datos.margenGrafica} GB de la gráfica` : `${datos.margen} GB`;
+      aviso(`Dejamos libres ${margenes} para el sistema y el contexto. Es una regla prudente nuestra, no una cifra oficial.`);
+    }
+
+    form?.addEventListener('change', calcular);
+    calcular();
+  </script>
+</BaseLayout>
+
+<style>
+  .herramienta h1 { font-family: 'Inter Display', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 7vw, 44px); line-height: 1.1; letter-spacing: -0.02em; color: var(--tinta); margin-top: 12px; }
+  .etiqueta { display: inline-block; font-size: 13px; font-weight: 700; color: var(--marca); background: var(--marca-suave); border-radius: 999px; padding: 4px 12px; }
+  .entradilla { margin-top: 14px; font-size: 18px; line-height: 1.6; color: var(--tinta-2); }
+  .tarjeta { margin-top: 28px; border: 1px solid var(--linea); background: var(--superficie); border-radius: 16px; padding: 20px; }
+  .tarjeta h2 { font-family: 'Inter Display', system-ui, sans-serif; font-weight: 800; font-size: 24px; color: var(--tinta); }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  legend, .campo > span { display: block; font-weight: 700; color: var(--tinta); margin-bottom: 8px; }
+  .campo { display: block; margin-top: 18px; }
+  .campo small { display: block; font-weight: 400; color: var(--tinta-3); font-size: 14px; }
+  .opciones { display: grid; gap: 8px; }
+  .opciones label { display: flex; gap: 10px; align-items: flex-start; border: 1px solid var(--linea); border-radius: 10px; padding: 10px 12px; cursor: pointer; color: var(--tinta); background: var(--fondo); }
+  select { width: 100%; border: 1px solid var(--linea); border-radius: 10px; padding: 10px 12px; background: var(--fondo); color: var(--tinta); font-size: 16px; }
+  #res-resumen { margin-top: 8px; font-size: 17px; color: var(--tinta); }
+  .avisos { margin-top: 10px; padding-left: 1.2em; list-style: disc; color: var(--tinta-2); font-size: 15px; }
+  .tabla { overflow-x: auto; margin-top: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  /* Las filas del resultado las crea el script: por eso estos selectores son globales (dentro de .herramienta). */
+  .herramienta :global(th), .herramienta :global(td) { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--linea); vertical-align: top; color: var(--tinta); }
+  .herramienta :global(.estado-si td:last-child) { color: var(--ok); font-weight: 700; }
+  .herramienta :global(.estado-lento td:last-child) { color: var(--aviso); font-weight: 700; }
+  .herramienta :global(.estado-no) { opacity: .6; }
+  .herramienta :global(.estado-no td:last-child) { color: var(--tinta-3); }
+  .herramienta :global(#res-tabla code) { font-size: 13px; }
+  .pequeno { margin-top: 12px; font-size: 14px; color: var(--tinta-3); }
+  .guia { margin-top: 36px; }
+  .guia :global(.pregunta) { font-weight: 800; font-size: 19px; margin: 1.2em 0 .3em; color: var(--tinta); }
+  .boletin { margin-top: 36px; }
+  code { font-size: 13px; }
+</style>

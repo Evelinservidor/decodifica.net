@@ -7,7 +7,8 @@ Instrucciones para la rutina que se ejecuta cada lunes por la mañana (hora de E
 - **Publicar sola: NO.** Mientras diga NO, el agente abre un pull request y Jordi lo aprueba. Cuando Jordi diga que la calidad es buena, se cambia a SÍ y el agente fusiona su propio pull request si la revisión SEO y el build pasan sin errores.
 - Nicho: **IA práctica en español** (herramientas, prompts, comparativas, guías de uso). Decidido por Jordi el 07-10-2026. La «casa autosuficiente» queda como idea para otra web: no escribir de eso aquí.
 - Público: España y toda Latinoamérica (México, Perú, Colombia, Argentina, Chile, EE. UU. hispano). Español neutro.
-- Piezas por semana: 2, siempre dentro de los grupos de `docs/plan-seo.md` (normalmente 1 artículo nuevo y 1 mejora o fusión). Mejor 2 buenas que 3 flojas.
+- Piezas por semana: 2, siempre dentro de los grupos de `docs/plan-seo.md` (normalmente 1 artículo nuevo y 1 mejora o fusión). Mejor 2 buenas que 3 flojas. **Se pasa a 3** solo cuando los artículos nuevos entren en Google en 14 días o menos durante 4 semanas seguidas (lo dice `latest_indexacion.md`; plan de crecimiento, apartado 4.1). Nunca más de 3: publicar mucho y flojo es lo que Google castiga («scaled content abuse»).
+- **Herramienta del mes** (plan de crecimiento aprobado por Jordi el 02-11-2026, `docs/PLAN-CRECIMIENTO-NOV-2026.md`): el primer lunes de cada mes, en lugar de la mejora, una herramienta gratis que se usa en la propia web (sin IA por detrás, sin registro). Es lo que hace que otras webs nos enlacen. La cola está en `docs/plan-seo.md` («Herramientas del mes»).
 - **Mapa de temas: `docs/plan-seo.md`** (aprobado por Jordi el 18-10-2026). Manda sobre el volumen de búsqueda. La casa sin red y la energía solar no van en esta web.
 
 ## Reglas de la casa (no se rompen nunca)
@@ -36,8 +37,8 @@ Reglas para que ChatGPT, Claude, Gemini, Perplexity y Copilot entiendan la web y
 Todos leen `docs/plan-seo.md` además de este archivo:
 
 - **Jueves (títulos y clics), punto 4:** elige primero artículos de los grupos de docs/plan-seo.md.
-- **Novedades (martes y viernes), punto 4:** solo si la novedad cae dentro de un grupo de docs/plan-seo.md; si no, no escribas.
-- **Repaso mensual (día 20), punto 5:** saca la tabla por grupos (apariciones, clics, posición y páginas en Google, 28 días; con `data/gsc_weekly/latest_28d.json` y `latest_indexacion.json`) y la lista de páginas sin apariciones en 3 meses (`latest_90d.json`; candidatas a noindex). Apúntalo en docs/repaso-mensual/.
+- **Novedades (martes y viernes), punto 4:** solo si la novedad cae dentro de un grupo de docs/plan-seo.md; si no, no escribas el artículo. Pero si es oficial y sirve en España o Latinoamérica, deja en `docs/redes/<AAAA-MM-DD>.md` un «Guion de reel» de la serie «Lo de la semana» (formato del paso 9 de los lunes), con la fuente oficial: el móvil lo publica en vídeo.
+- **Repaso mensual (día 20), punto 5:** saca la tabla por grupos (apariciones, clics, posición y páginas en Google, 28 días; con `data/gsc_weekly/latest_28d.json` y `latest_indexacion.json`) y la lista de páginas sin apariciones en 3 meses (`latest_90d.json`; candidatas a noindex). Apúntalo en docs/repaso-mensual/. Añade la tabla de metas del plan de crecimiento (`docs/PLAN-CRECIMIENTO-NOV-2026.md`, 7.2) con lo conseguido en la web y, si están en `docs/marcador/`, las cifras de redes del último marcador. Comprueba los datos de las herramientas del mes (`src/data/`) contra sus fuentes y actualiza su fecha de consulta.
 
 ## Pasos de cada lunes
 
@@ -57,6 +58,12 @@ Todos leen `docs/plan-seo.md` además de este archivo:
      oficial. Se eligen preguntas concretas («ollama o lm studio», «límites de claude gratis»).
    - Cada pieza enlaza a su pilar en el primer párrafo y en «Sigue leyendo», y se añade a la
      lista del pilar.
+   - **Primer lunes del mes:** la herramienta del mes (la siguiente de la cola de `docs/plan-seo.md`)
+     en lugar de la mejora. Va en `src/pages/herramientas/<slug>.astro`, con sus datos en `src/data/`
+     (cada cifra con su fuente y la fecha de consulta), una guía corta debajo (cómo leer el
+     resultado, fuentes y preguntas frecuentes) y enlaces desde su pilar y desde `/herramientas/`.
+     Copia la estructura de `/herramientas/ia-local-mi-ordenador/`. Si no da tiempo a hacerla bien,
+     se deja para la semana siguiente y se dice en el informe.
    - Al acabar, marca en docs/plan-seo.md lo hecho y apunta ideas nuevas al final de la cola (no
      las escribas: Jordi las ve en el pull request).
 4. **Escribir los artículos** como archivos `src/pages/blog/<slug>.astro`:
@@ -68,7 +75,8 @@ Todos leen `docs/plan-seo.md` además de este archivo:
    - Título de 35 a 60 caracteres con la búsqueda al principio; descripción de 110 a 165 caracteres, concreta.
    - Al menos 3 secciones H2 útiles, al menos 2 fuentes externas originales y al menos 2 enlaces internos a páginas que existan.
    - Añadir enlaces desde 1-2 artículos existentes relacionados hacia el nuevo.
-5. **Revisión SEO y editorial:** `python3 scripts/seo_preflight.py --changed`. Corregir todos los errores (✗). Revisar los avisos (·) y corregir los razonables.
+5. **Revisión SEO y editorial:** `python3 scripts/seo_preflight.py --changed`. Corregir todos los errores (✗). Revisar los avisos (·) y corregir los razonables. El aviso «insinúa una prueba propia» se revisa siempre: si la frase dice o da a entender que Decodifica o Jordi lo ha probado sin prueba documentada, se cambia.
+   Después, en cada artículo nuevo o con datos cambiados, el **juez de fuentes** (`docs/jueces/fuentes.md`): un subagente que no ha escrito el artículo abre las fuentes y marca cada dato. Contesta cada punto en el informe: «arreglado» o «no, porque…». Como mucho dos vueltas; lo que quede, en «Lo que no se pudo comprobar».
 6. **Mejorar títulos y descripciones** de hasta 3 páginas que salen en Google pero casi no reciben clics (paso 2). No cambiar URLs. Anotar en el informe el antes y el después y por qué.
 7. **Un artículo antiguo por semana:** elegir uno que `python3 scripts/seo_preflight.py src/pages/blog/*.astro` marque con errores o que tenga datos desfasados, comprobar sus datos con fuentes oficiales y arreglarlo (con `modifiedDate` de hoy). Si el artículo no empieza con un «En resumen:», añadírselo (ver «Para que nos citen las IA»). Si tiene menos de 2 imágenes dentro del texto, añadirle 2-3 (ver paso 4).
 8. **Construir:** `npm ci` (si hace falta), `npm run type-check` y `npm run build`. Todo sin errores. Si falla, arreglarlo antes de seguir.
@@ -78,9 +86,20 @@ Todos leen `docs/plan-seo.md` además de este archivo:
    redes). Ya no hace falta escribir borradores de Facebook ni de Bluesky. Reddit no se publica solo: si un artículo
    encaja de verdad en un subreddit, deja en `docs/redes/<AAAA-MM-DD>.md` el subreddit y un texto que aporte por sí
    mismo, avisando de sus normas sobre autopromoción; Jordi decide si lo publica a mano.
+   **Guion de reel (desde el 02-11-2026):** el vídeo corto es ahora lo principal en redes (un reel al día en Facebook,
+   Instagram, TikTok y Bluesky; `docs/redes/CAMBIOS-MOVIL-NOV-2026.md`). Por cada artículo nuevo, deja en
+   `docs/redes/<AAAA-MM-DD>.md` un apartado «Guion de reel» que el móvil usa antes que un tema inventado:
+   - `gancho` (3-6 palabras con el beneficio o la cifra) y `gancho_b` (otra forma de decirlo);
+   - `gancho_visual`: qué se ve en el segundo 0 (el resultado: captura oficial, antes y después);
+   - `aportacion`: lo que el vídeo añade a la web de la herramienta (comparación, límite del plan gratis, el paso que
+     nadie explica). Si no hay nada que añadir, no hay reel;
+   - 3-4 puntos de una frase, cada uno con su dato y su fuente oficial (las mismas del artículo);
+   - la guía de la web que lo amplía.
+   Mismas reglas de la casa: nada que el artículo no diga, nunca «lo hemos probado», nada de 💳 junto a «gratis».
 10. **Informe** en `docs/informes/<AAAA-MM-DD>.md`, en español sencillo, sin jerga:
     - cómo fue la semana en Google (impresiones, clics, posición; comparado con la semana anterior);
     - cómo va cada grupo de docs/plan-seo.md (apariciones, clics y páginas en Google) y qué pieza toca la semana que viene;
+    - las metas de la web del mes (plan de crecimiento, apartado 7.2): clics de Google en 28 días, páginas en Google y días que tarda un artículo nuevo en entrar, con la meta al lado;
     - qué artículos nuevos y por qué esos temas (con el dato de demanda);
     - qué títulos se cambiaron;
     - fuentes usadas;
@@ -157,4 +176,4 @@ Además de los pasos de cada lunes:
 - No toca `astro.config.mjs`, los workflows de GitHub, el aviso legal ni los datos personales de Jordi.
 - No pide a Jordi «Solicitar indexación» cada semana: el sitemap se reenvía solo al publicar (ver `docs/plan-seo.md`, «El ritmo»). Solo lo apunta en el informe si un artículo lleva más de 14 días fuera de Google.
 - No borra páginas con impresiones; si hay que fusionar, redirige con `return Astro.redirect('/destino/', 301);`.
-- No añade enlaces de afiliado ni anuncios (eso lo decide Jordi más adelante y requiere NIF y domicilio en el aviso legal).
+- No añade enlaces de afiliado ni anuncios hasta que el aviso legal tenga los datos de Jordi y él haya dado de alta el programa. Entonces, solo en guías donde ya se recomienda esa herramienta por lo que hace, con `rel="sponsored noopener"` y una línea visible «Enlace de afiliado: si te das de alta, Decodifica cobra una comisión; a ti no te cuesta más». Un afiliado nunca cambia lo que se dice de una herramienta. `seo_preflight.py` da error si falta `sponsored`.
