@@ -35,12 +35,14 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 ## Grupo A · Claude en español (para quien no programa) — CRECER
 - **Pilar:** `/blog/claude-ia-que-es-gratis/`, que se convertirá en «Claude en español: guía completa (gratis, planes y
   cómo usarlo)». Su dirección no cambia.
-- **Apoyos que ya hay:** ✔ `/blog/claude-skills-1000-gratis/` (la página más fuerte de la web; su dirección no se toca) ·
-  ✔ `/blog/claude-emails-sonar-humanos/` (revisado el 19-10-2026) · ✔ `/blog/alternativas-fable-5/` · ✔ `/herramientas/chatgpt-vs-claude/`
+- **Apoyos que ya hay:** ✔ `/blog/claude-skills-1000-gratis/` (la página más fuerte de la web; su dirección no se toca;
+  revisada el 02-11-2026) · ✔ `/blog/claude-emails-sonar-humanos/` (revisado el 19-10-2026) · ✔ `/blog/alternativas-fable-5/` ·
+  ✔ `/herramientas/chatgpt-vs-claude/` · ✔ `/blog/prompts-para-claude/` (02-11-2026)
 - **Cola de apoyos nuevos** (en este orden; antes de escribir, comprobar en la web oficial que la función existe hoy y
   cómo se llama):
   - [x] ✔ (19-10-2026) Pilar: rehacer `/blog/claude-ia-que-es-gratis/` como guía completa («Claude en español: guía completa, gratis y planes»)
-  - [ ] Prompts para Claude con ejemplos (y cómo escribirlos según su guía oficial)
+  - [x] ✔ (02-11-2026) Prompts para Claude con ejemplos → `/blog/prompts-para-claude/` («Prompts para Claude: ejemplos y
+    cómo darle instrucciones»; seis prompts, instrucciones de cuenta, Proyecto y Skill). Mejora de la semana: Claude Skills.
   - [ ] Claude Code sin saber programar: primeros pasos
   - [ ] Límites del plan gratis de Claude y cómo aprovecharlos
   - [ ] Proyectos de Claude: qué son y para qué sirven
@@ -48,6 +50,9 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Conectores de Claude explicados sin jerga
   - [ ] Crear tu primera skill paso a paso (solo si no pisa a Claude Skills; si lo pisa, va como sección dentro)
   - [ ] Idea (19-10-2026): Memoria de Claude y chats de incógnito: qué recuerda y cómo borrarlo (el centro de ayuda lo explica con detalle; hoy es solo un apartado del pilar)
+  - [ ] Idea (02-11-2026): Claude Design, Slides y Docs: qué son y qué se puede hacer gratis (la página de precios los
+    incluye en el plan Free; el autocompletado de España y México sugiere «prompts para claude design»). Antes, comprobar
+    que hay ayuda oficial con pasos.
 
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
 - **Pilar:** ✔ `/blog/ia-local-sin-internet/` «IA local en español: cómo usar IA en tu PC sin internet» (qué programa
@@ -73,7 +78,8 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Pilar:** `/herramientas/generador-prompts/` (sale en la posición 1-2 para «páginas para crear prompts»). Se mantiene
   la herramienta arriba y debajo se añade una guía corta (cómo hacer un buen prompt, 5 ejemplos, errores típicos; 600-900
   palabras con fuentes oficiales).
-- **Apoyos que ya hay:** ✔ `/blog/2026-07-16-prompts-secretos-web/` · ✔ `/blog/2026-07-22-nano-banana-1000-prompts/` ·
+- **Apoyos que ya hay:** ✔ `/blog/2026-07-16-prompts-secretos-web/` · ✔ `/blog/2026-07-22-nano-banana-1000-prompts/` (revisado el
+  02-11-2026 con la guía oficial de Google) ·
   ✔ `/herramientas/evaluador/`
 - **Cola:**
   - [x] ✔ (26-10-2026) Pilar: la guía corta debajo del generador (cómo hacer un buen prompt, 5 ejemplos, errores típicos,
