@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 26 de octubre de 2026 (agente semanal).
+Última actualización: 2 de noviembre de 2026 (agente semanal).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -192,3 +192,7 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Medir hacia el 07-12-2026.
 - **27-10-2026 (agente de novedades):** rama `agente/novedad-2026-10-27`, pull request #36 (espera a Jordi). Novedad: Ollama ya lee textos en voz alta con Phonon, con modelo en español (24-10-2026, solo Mac con chip Apple), añadida como sección a la guía `ollama-que-es-como-usar` (pasos, voces, licencia no comercial, límites, captura) con enlace desde el pilar `ia-local-sin-internet`. De paso, precios de Ollama (ahora «Pay as you go» y plan Team) y contexto por defecto corregidos; `modifiedDate` 27-10. Nota: `docs/novedades/2026-10-27.md`.
 - **30-10-2026 (agente de novedades):** rama `agente/novedad-2026-10-30`, solo la nota `docs/novedades/2026-10-30.md` (sin artículo: nada oficial, para el público y dentro de los grupos del plan). Para el lunes: comprobar si Phonon ya funciona en Windows y Linux (la documentación «Speech» de Ollama ya explica cómo suena en los dos) y, si es así, quitar «solo en Mac» de la guía de Ollama y del pilar de IA local.
+- **02-11-2026 (semana 3 del plan SEO, grupo A, y repaso de principio de mes):** rama `agente/2026-11-02`, pull request #42 (espera a Jordi). Nuevo: `prompts-para-claude` («Prompts para Claude: ejemplos y cómo darle instrucciones»; seis prompts, instrucciones de cuenta, Proyecto y Skill; portada y 3 imágenes). Mejora: Claude Skills (Agentic AI Foundation, Ultra, directorio, grabar Skills, compartir en Team/Enterprise; descripción nueva, título igual). Artículo antiguo: Nano Banana (guía oficial de Google, licencia CC BY 4.0). Repaso: precios de Claude en la guía principal (Max 100 $, Ultra 200 $, límite semanal en el plan gratis, app para Linux). Informe: `docs/informes/2026-11-02.md`.
+  - La guía de IA local entró en Google al día siguiente de publicarse (27-10). Siguen fuera más de 14 días: Claude, Ollama, LM Studio y n8n (pedido a Jordi otra vez); Nano Banana salió de Google.
+  - Pendiente: medir la descripción nueva de Claude Skills hacia el 07-12 (si no mejora, probar título con «descargar»); del informe de imágenes del 14-10 quedan alternativas a ChatGPT, NotebookLM, Qwen Code, Tencent Hy3, n8n y Odysseus (repaso del día 20). La herramienta del mes está en el PR de `agente/plan-nov-web`, que espera a Jordi.
+  - Semana que viene (semana 4): grupo B, «Ollama o LM Studio: cuál elegir» y mejora de la guía de LM Studio (26 días fuera de Google; versión 0.4.25 → 0.4.28).
