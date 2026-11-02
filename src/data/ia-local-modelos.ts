@@ -40,6 +40,12 @@ export const modelos: ModeloLocal[] = [
  */
 export const margenSistemaGb = 4;
 
+/**
+ * Margen que se deja libre en la memoria de la gráfica para el contexto (Ollama: más contexto pide más memoria).
+ * Tampoco es oficial: regla prudente de Decodifica, dicha así en la página (juez de fuentes, 02-11-2026).
+ */
+export const margenGraficaGb = 1;
+
 export const fuentes = [
   { nombre: 'Biblioteca de Ollama: gemma4 (tamaños y cifra en GB)', url: 'https://ollama.com/library/gemma4/tags' },
   { nombre: 'Biblioteca de Ollama: qwen3.5 (tamaños y cifra en GB)', url: 'https://ollama.com/library/qwen3.5/tags' },
@@ -47,4 +53,6 @@ export const fuentes = [
   { nombre: 'Ollama Docs: FAQ (cómo saber si el modelo cabe en la gráfica o pasa al procesador)', url: 'https://docs.ollama.com/faq' },
   { nombre: 'Ollama: Download (los modelos grandes van lentos sin una gráfica potente)', url: 'https://ollama.com/download' },
   { nombre: 'Ollama Docs: Context length (contexto según la memoria de la gráfica)', url: 'https://docs.ollama.com/context-length' },
+  { nombre: 'Ollama Docs: macOS (requisitos; en los Mac con Intel, solo con el procesador)', url: 'https://docs.ollama.com/macos' },
+  { nombre: 'Ollama Docs: Hardware support (gráficas NVIDIA y AMD compatibles)', url: 'https://docs.ollama.com/gpu' },
 ];
