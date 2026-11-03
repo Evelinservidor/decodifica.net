@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 2 de noviembre de 2026 (agente semanal).
+Última actualización: 3 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -206,3 +206,4 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - La guía de IA local entró en Google al día siguiente de publicarse (27-10). Siguen fuera más de 14 días: Claude, Ollama, LM Studio y n8n (pedido a Jordi otra vez); Nano Banana salió de Google.
   - Pendiente: medir la descripción nueva de Claude Skills hacia el 07-12 (si no mejora, probar título con «descargar»); del informe de imágenes del 14-10 quedan alternativas a ChatGPT, NotebookLM, Qwen Code, Tencent Hy3, n8n y Odysseus (repaso del día 20). La herramienta del mes está en el PR de `agente/plan-nov-web`, que espera a Jordi.
   - Semana que viene (semana 4): grupo B, «Ollama o LM Studio: cuál elegir» y mejora de la guía de LM Studio (26 días fuera de Google; versión 0.4.25 → 0.4.28).
+- **03-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-03`, solo la nota `docs/novedades/2026-11-03.md` (sin artículo: nada oficial, grande y dentro de los grupos del plan entre el 30-10 y el 03-11). Comprobado que Phonon de Ollama sigue siendo solo para Mac con chip Apple (la guía está bien). Para el lunes: LM Studio Bionic 1.1.10 (29-10) ya lee en voz alta sin internet en Windows y Linux; puede ir en «Ollama o LM Studio».
