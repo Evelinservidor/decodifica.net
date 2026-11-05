@@ -26,8 +26,8 @@
   "notion-ai": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
   "reclaim": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
   "motion": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
-  "granola": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
-  "fathom": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
+  "granola": { "verifiedAt": "2026-11-05", "reviewCadenceDays": 14 },
+  "fathom": { "verifiedAt": "2026-11-05", "reviewCadenceDays": 14 },
   "zapier": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
   "ollama": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 60 }
 }
