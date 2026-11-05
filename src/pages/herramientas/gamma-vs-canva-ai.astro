@@ -1,21 +1,17 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import NewsletterForm from '~/components/NewsletterForm.astro';
-import { getToolBySlug } from '~/data/tools';
 import { siteConfig } from '~/lib/site-config';
 
-const gamma = getToolBySlug('gamma');
-const canva = getToolBySlug('canva-ai');
-
 const pageUrl = `${siteConfig.url}/herramientas/gamma-vs-canva-ai/`;
-const title = 'Gamma vs Canva AI: cuál usar para presentaciones';
-const description = 'Comparativa práctica entre Gamma y Canva AI: presentaciones, documentos visuales, marca, redes, precio, privacidad y flujo recomendado.';
+const title = 'Gamma vs Canva: cuál es mejor y qué da gratis cada una';
+const description = 'Gamma crea la presentación desde un texto y Canva la diseña con tu marca. Qué da gratis cada una, si funcionan en español y cuál elegir según la tarea.';
 
 const rows = [
   {
     criterion: 'Crear desde una idea',
     gamma: 'Muy fuerte para convertir un prompt, esquema o documento en una presentación o página visual inicial.',
-    canva: 'Puede generar y editar, pero su ventaja aparece más cuando ya estas trabajando dentro de formatos visuales concretos.',
+    canva: 'Puede generar y editar, pero su ventaja aparece más cuando ya estás trabajando dentro de formatos visuales concretos.',
     winner: 'Gamma',
   },
   {
@@ -26,26 +22,26 @@ const rows = [
   },
   {
     criterion: 'Presentaciones',
-    gamma: 'Gana para pasar de idea a deck rápido y con narrativa visual.',
-    canva: 'Gana si necesitas editar mucho el estilo, adaptar la pieza a marca o reutilizar elementos de diseno.',
+    gamma: 'Gana para pasar de una idea a una presentación rápida y con narrativa visual.',
+    canva: 'Gana si necesitas editar mucho el estilo, adaptar la pieza a marca o reutilizar elementos de diseño.',
     winner: 'Depende del momento',
   },
   {
     criterion: 'Redes y piezas de marketing',
-    gamma: 'Puede generar social content, pero no es su terreno más diferencial.',
+    gamma: 'Puede generar contenido para redes, pero no es su punto fuerte.',
     canva: 'Muy fuerte para formatos de redes, banners, miniaturas, carruseles y piezas reutilizables.',
     winner: 'Canva AI',
   },
   {
     criterion: 'Documentos visuales',
-    gamma: 'Buen encaje para one-pagers, white papers, páginas y documentos visuales estructurados.',
-    canva: 'Buen encaje si quieres una pieza más disenada y ligada a marca o plantilla.',
+    gamma: 'Buen encaje para documentos de una página, informes, páginas web sencillas y documentos visuales estructurados.',
+    canva: 'Buen encaje si quieres una pieza más diseñada y ligada a marca o plantilla.',
     winner: 'Empate según salida',
   },
   {
     criterion: 'Privacidad y equipos',
     gamma: 'Revisa plan, workspace, archivos subidos y permisos antes de usar información sensible.',
-    canva: 'Ofrece controles de AI y permisos por plan; aun así, revisa contenido, marca y datos de cliente antes de subirlos.',
+    canva: 'Ofrece controles de IA y permisos por plan; aun así, revisa contenido, marca y datos de cliente antes de subirlos.',
     winner: 'Revisar plan',
   },
 ];
@@ -54,10 +50,10 @@ const decisions = [
   {
     title: 'Elige Gamma si...',
     items: [
-      'Tienes una idea, texto o esquema y quieres convertirlo rápido en deck o documento visual.',
-      'Necesitas ordenar una propuesta antes de entrar en diseno fino.',
+      'Tienes una idea, texto o esquema y quieres convertirlo rápido en presentación o documento visual.',
+      'Necesitas ordenar una propuesta antes de entrar en diseño fino.',
       'Quieres generar varias estructuras de presentación para comparar enfoques.',
-      'La velocidad del primer borrador importa más que el control pixel a pixel.',
+      'La velocidad del primer borrador importa más que el control píxel a píxel.',
     ],
   },
   {
@@ -95,7 +91,7 @@ const useCases = [
   {
     task: 'Quiero un documento visual para explicar una idea',
     choice: 'Gamma',
-    reason: 'Gamma es muy cómodo para one-pagers, documentos y páginas visuales que nacen de texto.',
+    reason: 'Gamma es muy cómodo para documentos de una página y páginas visuales que nacen de un texto.',
   },
 ];
 
@@ -107,29 +103,36 @@ const workflow = [
 ];
 
 const sources = [
-  { label: 'Web oficial de Gamma', href: 'https://gamma.app/' },
-  { label: 'Precios oficiales de Gamma', href: 'https://gamma.app/pricing' },
-  { label: 'Precios oficiales de Canva', href: 'https://www.canva.com/en/pricing/' },
-  { label: 'Canva AI', href: 'https://www.canva.com/canva-ai/' },
-  { label: 'Magic Studio y privacidad de Canva', href: 'https://www.canva.com/newsroom/news/magic-studio/' },
-  { label: 'Uso de IA en Canva', href: 'https://www.canva.com/help/ai-access/' },
+  { label: 'Planes de Gamma: Free, Plus, Pro, Ultra y Business (centro de ayuda de Gamma)', href: 'https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription' },
+  { label: 'Cómo funcionan los créditos en Gamma (centro de ayuda de Gamma)', href: 'https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma' },
+  { label: 'Usar Gamma en tu idioma (centro de ayuda de Gamma)', href: 'https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language' },
+  { label: 'Traducir una presentación en Gamma (centro de ayuda de Gamma)', href: 'https://help.gamma.app/en/articles/11016513-can-i-translate-a-gamma-document' },
+  { label: 'Planes y precios de Canva', href: 'https://www.canva.com/es_es/precios/' },
+  { label: 'Cuánto uso de IA da cada plan de Canva (ayuda de Canva)', href: 'https://www.canva.com/help/ai-access/' },
 ];
 
 const faq = [
   {
-    question: 'Es mejor Gamma o Canva AI para presentaciones?',
-    answer: 'Gamma suele ser mejor para generar el primer deck desde una idea o documento. Canva AI suele ser mejor si necesitas controlar marca, plantilla, formato y piezas derivadas.',
+    question: '¿Qué es mejor, Gamma o Canva?',
+    answer: 'Depende de en qué punto estés. Gamma es mejor para sacar la primera versión de una presentación o un documento a partir de una idea, unas notas o un texto. Canva es mejor para darle tu diseño y tu marca, y para adaptar la misma idea a redes, carteles o vídeos. Muchas veces conviene usar las dos: Gamma para ordenar el contenido y Canva para pulir el diseño.',
   },
   {
-    question: 'Cual conviene para redes sociales?',
-    answer: 'Canva AI encaja mejor para redes porque su ecosistema esta pensado para formatos visuales, plantillas, brand kits y adaptaciones rápidas.',
+    question: '¿Gamma es gratis?',
+    answer: 'Tiene un plan gratis sin límite de tiempo y sin tarjeta. Al registrarte recibes 400 créditos, que se gastan cada vez que usas la IA (crear una presentación, editar con el agente, generar imágenes) y no se renuevan: para tener más hay que invitar a otras personas (200 créditos por cada una) o pagar. Con el plan gratis, cada presentación generada tiene como máximo 10 diapositivas y, al compartirla o exportarla, lleva la marca «Made with Gamma». Lo que haces a mano (escribir, mover, cambiar el tema) no gasta créditos. Datos de su centro de ayuda, consultados el 05-11-2026.',
   },
   {
-    question: 'Tiene sentido usar las dos?',
-    answer: 'Si. Un flujo práctico es usar Gamma para ordenar una propuesta o presentación y Canva para pulir diseno, marca y materiales de distribución.',
+    question: '¿Canva tiene IA gratis para hacer presentaciones?',
+    answer: 'Sí, pero limitada. Canva Gratis da «acceso limitado» a sus herramientas de IA estándar y premium, entre ellas generar un diseño con Canva AI, con un saldo mensual que comparten todas. Canva Pro tiene 10 veces más uso de IA que el plan gratis y Canva Business, 20 veces más. Cuando se acaba el saldo del plan gratis, la IA sigue funcionando con pausas entre una petición y otra. Datos de la página de precios y la ayuda de Canva, consultados el 05-11-2026.',
+  },
+  {
+    question: '¿Gamma está en español?',
+    answer: 'Sí. La interfaz se pone sola en el idioma del navegador (también se cambia en los ajustes de usuario) y su centro de ayuda tiene versión en español. Para que la presentación salga en español, escribe el prompt o las notas en español, o pide en el prompt el idioma que quieres. También puede traducir una presentación ya hecha, diapositiva a diapositiva o entera, gastando créditos.',
+  },
+  {
+    question: '¿Tiene sentido usar las dos?',
+    answer: 'Sí. Un flujo práctico es crear la estructura y el texto en Gamma y llevar después la portada, las imágenes de marca y las piezas para redes a Canva. Antes de pagar ninguna, prueba el plan gratis de las dos con la misma presentación.',
   },
 ];
-
 
 const faqLd = {
   '@context': 'https://schema.org',
@@ -150,9 +153,10 @@ const faqLd = {
   description={description}
   type="article"
   pubDate="2026-07-08"
-  modifiedDate="2026-07-08"
-  keywords={['Gamma vs Canva AI', 'Gamma', 'Canva AI', 'presentaciones IA', 'herramientas IA']}
+  modifiedDate="2026-11-05"
+  keywords={['Gamma vs Canva', 'Gamma o Canva', 'Gamma app gratis', 'Canva IA presentaciones', 'presentaciones con IA']}
   section="Herramientas IA"
+  citations={sources.map((source) => source.href)}
 >
   <article class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
     <nav class="mb-8 text-sm text-dark-300" aria-label="Migas de pan">
@@ -170,11 +174,11 @@ const faqLd = {
           Gamma vs Canva AI: cuál usar para presentaciones y diseño
         </h1>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-dark-200">
-          Gamma es mejor para convertir una idea en una presentación o documento visual. Canva AI es mejor para producir, adaptar y mantener piezas visuales con marca. No compiten siempre por la misma fase: muchas veces se complementan.
+          Gamma es mejor para convertir una idea en una presentación o documento visual. Canva AI es mejor para producir, adaptar y mantener piezas visuales con marca. Las dos tienen plan gratis con la IA limitada: Gamma da 400 créditos que no se renuevan y Canva, un saldo mensual limitado. No compiten siempre por la misma fase: muchas veces se complementan.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/herramientas/gamma/" class="inline-flex rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">Ver ficha Gamma</a>
-          <a href="/herramientas/canva-ai/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Ver ficha Canva AI</a>
+          <a href="/blog/ia-crea-presentaciones-completas/" class="inline-flex rounded-lg border border-brand-700 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-dark-800">Otras IA para presentaciones</a>
         </div>
       </div>
 
@@ -274,8 +278,8 @@ const faqLd = {
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
-        <p class="mt-4 text-sm leading-6 text-dark-200">
-          Gamma tiene plan gratuito y planes de pago que amplian modelos, tarjetas por prompt, marca, dominios, API y opciones de equipo. Canva tiene Free, Pro, Business y Enterprise, con límites de uso de herramientas IA y controles según plan. En los dos casos, revisa exportación, marca, créditos o allowances antes de montar un flujo recurrente.
+        <p class="mt-4 text-sm leading-6 text-dark-200 [&_strong]:text-white">
+          <strong>Gamma</strong> funciona con créditos. El plan gratis da 400 al registrarte, que no se renuevan, y genera presentaciones de hasta 10 diapositivas que llevan la marca «Made with Gamma» al compartirlas o exportarlas. Los planes de pago (Plus, Pro, Ultra y Business) renuevan los créditos cada mes: Plus da 1.500 y Pro, 4.000; los dos quitan la marca y generan hasta 100 diapositivas. El precio de cada plan no se pudo comprobar (su página de precios no se deja leer a programas automáticos): míralo en gamma.app/pricing. <strong>Canva</strong> tiene plan gratis con acceso limitado a su IA; Pro da 10 veces más uso de IA y Business, 20 veces más. Su página de precios mostraba, en dólares y sin impuestos, 144 US$ al año por persona en Pro y 250 US$ en Business (consultada el 05-11-2026 desde fuera de España: mira el precio de tu país en canva.com).
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
@@ -288,12 +292,12 @@ const faqLd = {
 
     <section class="mt-10 grid gap-5 lg:grid-cols-2">
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
-        <h2 class="font-display text-2xl font-bold text-white">Fichas relacionadas</h2>
-        <ul class="mt-4 space-y-3 text-sm leading-6">
-          {gamma && <li><a href={`/herramientas/${gamma.slug}/`} class="text-brand-300 hover:text-brand-200">{gamma.name}: cuando usarla</a></li>}
-          {canva && <li><a href={`/herramientas/${canva.slug}/`} class="text-brand-300 hover:text-brand-200">{canva.name}: cuando usarla</a></li>}
-          <li><a href="/blog/ia-crea-presentaciones-completas/" class="text-brand-300 hover:text-brand-200">IA para crear presentaciones completas</a></li>
-          <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-300 hover:text-brand-200">Cómo elegir una herramienta IA</a></li>
+        <h2 class="font-display text-2xl font-bold text-white">Sigue leyendo</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-dark-200">
+          <li><a href="/blog/ia-crea-presentaciones-completas/" class="text-brand-300 hover:text-brand-200">IA para crear presentaciones completas</a>: Gamma, Canva, Beautiful.ai y otras, con sus precios.</li>
+          <li><a href="/herramientas/gamma/" class="text-brand-300 hover:text-brand-200">Ficha de Gamma</a>, cuándo usarla y cuándo no.</li>
+          <li><a href="/herramientas/kimi/" class="text-brand-300 hover:text-brand-200">Kimi IA</a>, que también crea presentaciones editables (.pptx).</li>
+          <li><a href="/herramientas/generador-prompts/" class="text-brand-300 hover:text-brand-200">Generador de prompts</a>, para escribir el encargo que le das a Gamma o a Canva.</li>
         </ul>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
@@ -320,7 +324,7 @@ const faqLd = {
 
     <section class="mt-10 rounded-lg border border-brand-500/30 bg-dark-800 p-6">
       <p class="text-sm font-semibold text-brand-300">Recurso Decodifica</p>
-      <h2 class="mt-2 font-display text-2xl font-bold text-white">Si aun no sabes por donde empezar</h2>
+      <h2 class="mt-2 font-display text-2xl font-bold text-white">Si aún no sabes por dónde empezar</h2>
       <p class="mt-3 text-sm leading-6 text-dark-200">
         Abre el mapa de herramientas IA y elige la primera herramienta por tarea, riesgo y tipo de resultado.
       </p>
@@ -332,7 +336,7 @@ const faqLd = {
     <div id="newsletter" class="mt-12">
       <NewsletterForm
         title="Recibe comparativas sin ruido"
-        description="Una vez por semana: que herramienta merece probar, cual evitar y que revisar antes de pagar o subir datos."
+        description="Una vez por semana: qué herramienta merece probar, cuál evitar y qué revisar antes de pagar o subir datos."
         buttonLabel="Recibir el filtro"
       />
     </div>

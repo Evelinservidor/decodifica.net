@@ -284,7 +284,11 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'granola', name: 'Granola', useCase: 'Reuniones',
-    summary: 'Bloc de notas para reuniones que combina tus apuntes con una transcripción y un resumen asistido.',
+    summary: 'Bloc de notas con IA para reuniones: escucha el audio del ordenador o del móvil (sin meter un bot en la llamada), lo transcribe y completa tus apuntes con un resumen. Transcribe en español, aunque sus menús están en inglés.',
+    seoTitle: 'Granola IA: qué es, si es gratis y si funciona en español',
+    metaDescription: 'Granola toma notas de tus reuniones sin meter un bot en la llamada. Qué incluye el plan gratis, cuánto cuesta, si transcribe en español y en qué móviles funciona.',
+    language: 'Transcribe y resume en español; la interfaz solo está en inglés',
+    platforms: ['macOS', 'Windows', 'iPhone', 'Android'],
     bestFor: 'Cuando quieres tomar notas propias y completarlas después sin delegar la reunión entera.',
     avoidIf: 'No puedes grabar o procesar la conversación o necesitas una automatización empresarial completa.',
     tags: ['reuniones', 'notas', 'transcripción', 'resumen'], officialUrl: 'https://www.granola.ai/',
@@ -292,19 +296,98 @@ const specs: ExpandedSpec[] = [
     notFor: ['Conversaciones sin consentimiento.', 'Información regulada.', 'Crear tareas sin confirmación.'],
     workflow: ['Confirma permisos.', 'Toma notas propias.', 'Genera el resumen.', 'Contrasta decisiones y responsables.'],
     alternatives: ['Fathom', 'Otter', 'NotebookLM'],
-    sources: [{ label: 'Granola', href: 'https://www.granola.ai/' }, { label: 'Precios de Granola', href: 'https://www.granola.ai/pricing' }],
+    sources: [
+      { label: 'Granola', href: 'https://www.granola.ai/' },
+      { label: 'Precios de Granola', href: 'https://www.granola.ai/pricing' },
+      { label: 'Granola: idiomas admitidos (centro de ayuda)', href: 'https://docs.granola.ai/help-center/customising-granola/multi-language' },
+      { label: 'Granola: cómo funciona la transcripción (centro de ayuda)', href: 'https://docs.granola.ai/help-center/taking-notes/transcription' },
+      { label: 'Granola: modelos y entrenamiento (centro de ayuda)', href: 'https://docs.granola.ai/help-center/consent-security-privacy/model-training' },
+    ],
+    priceNotes: [
+      'Planes en dólares, por persona y mes (consultado el 05-11-2026): Basic gratis, Business 14 $ y Enterprise 35 $.',
+      'El plan gratis (Basic) incluye notas con IA, el chat sobre tus reuniones, plantillas y transcripción en varios idiomas, pero solo guarda el historial de los últimos 30 días.',
+      'Business quita ese límite (historial ilimitado), deja elegir el modelo en el chat y añade integraciones con Notion, HubSpot o Zapier, resúmenes antes de la reunión y correos de seguimiento.',
+    ],
+    privacyNotes: [
+      'No mete un bot en la videollamada: graba el audio de tu dispositivo, y solo cuando abres la nota de la reunión. Aun así, avisa a los demás de que la usas.',
+      'Por defecto puede usar datos anonimizados para mejorar sus modelos. Se desactiva en Settings → Preferences («Use my data to improve models for everyone»); en Android aún no está ese ajuste, pero lo que cambies en el ordenador o el iPhone vale para todo.',
+      'No la uses en reuniones con datos de salud, de clientes o confidenciales sin permiso de tu organización.',
+    ],
+    faq: [
+      {
+        q: '¿Granola es gratis?',
+        a: 'Tiene un plan gratis (Basic) con notas con IA, chat sobre tus reuniones y plantillas, pero solo conserva el historial de los últimos 30 días. Para guardar todo hay que pasar a Business, que cuesta 14 $ por persona y mes. Precios de su web, consultados el 05-11-2026.',
+      },
+      {
+        q: '¿Granola funciona en español?',
+        a: 'Sí para transcribir y resumir: el español está entre los 31 idiomas del ordenador (Mac y Windows) y los 17 del móvil. En el ordenador, activa «Multi-language» en Settings → Preferences → Language y pon el idioma del resumen en «Auto» para que las notas salgan en español. Los menús y botones de la aplicación, en cambio, solo están en inglés.',
+      },
+      {
+        q: '¿Granola funciona en Windows y Android?',
+        a: 'Sí. Tiene aplicación para Mac, Windows, iPhone y Android (y Apple Watch). La web notes.granola.ai solo sirve para ver y editar notas: para grabar una reunión hace falta la aplicación.',
+      },
+      {
+        q: '¿Granola mete un bot en la reunión?',
+        a: 'No. Capta el audio del propio dispositivo, así que nadie ve un participante extra en Zoom, Meet o Teams. Por eso mismo conviene decir a los demás que estás tomando notas con IA.',
+      },
+      {
+        q: '¿Granola o Fathom?',
+        a: 'Granola encaja si quieres escribir tus propias notas y que la IA las complete, sin bot en la llamada; su plan gratis guarda 30 días. <a href="/herramientas/fathom/">Fathom</a> graba la videollamada entera (con bot o, en Mac, sin él), y su plan gratis guarda grabaciones y transcripciones sin límite.',
+      },
+    ],
   },
   {
     slug: 'fathom', name: 'Fathom', useCase: 'Reuniones',
-    summary: 'Asistente de reuniones para grabar, transcribir, resumir y compartir momentos o acciones.',
+    summary: 'Asistente de reuniones para grabar, transcribir, resumir y compartir momentos o acciones de tus videollamadas en Zoom, Google Meet o Microsoft Teams. Transcribe en español y, en los planes de pago, da el resumen en español.',
+    seoTitle: 'Fathom AI en español: qué es, si es gratis y precios',
+    metaDescription: 'Fathom graba y resume tus reuniones de Zoom, Meet y Teams. Qué da gratis (grabaciones ilimitadas), cuánto cuesta, si funciona en español y qué hace con tus datos.',
+    language: 'Transcribe en 38 idiomas, entre ellos el español; resúmenes en español en Premium y planes de equipo',
     bestFor: 'Cuando necesitas un registro revisable de videollamadas y seguimiento posterior.',
     avoidIf: 'No existe consentimiento o la política de la reunión impide grabación y procesamiento externo.',
-    tags: ['reuniones', 'transcripción', 'acciones', 'videollamadas'], officialUrl: 'https://fathom.video/',
+    tags: ['reuniones', 'transcripción', 'acciones', 'videollamadas'], officialUrl: 'https://www.fathom.ai/',
     idealFor: ['Videollamadas recurrentes.', 'Resúmenes compartibles.', 'Revisión de acciones.'],
     notFor: ['Reuniones confidenciales.', 'Consentimiento ambiguo.', 'Enviar acciones sin validar.'],
     workflow: ['Confirma consentimiento.', 'Prueba una reunión no sensible.', 'Contrasta el resumen.', 'Corrige antes de compartir.'],
     alternatives: ['Granola', 'Otter', 'Fireflies'],
-    sources: [{ label: 'Fathom', href: 'https://fathom.video/' }, { label: 'Precios de Fathom', href: 'https://fathom.video/pricing' }],
+    sources: [
+      { label: 'Fathom', href: 'https://www.fathom.ai/' },
+      { label: 'Precios de Fathom', href: 'https://www.fathom.ai/pricing' },
+      { label: 'Fathom: plan gratis frente a Premium (centro de ayuda)', href: 'https://help.fathom.video/en/articles/5290881' },
+      { label: 'Fathom: idiomas admitidos (centro de ayuda)', href: 'https://help.fathom.video/en/articles/296192' },
+      { label: 'Fathom: seguridad y uso de datos (centro de ayuda)', href: 'https://help.fathom.video/en/articles/296512' },
+    ],
+    priceNotes: [
+      'Plan gratis para siempre: grabaciones, almacenamiento y transcripciones ilimitadas, con resúmenes avanzados en las 5 primeras llamadas de cada mes (después, el resumen general).',
+      'Premium (una persona): 20 $ al mes, o 16 $ al mes pagando el año. Añade resúmenes avanzados sin límite, tareas sacadas por la IA, correos de seguimiento y «Ask Fathom».',
+      'Para equipos (mínimo 2 personas), por persona y mes: Team 19 $ (15 $ con pago anual), Business 34 $ (25 $ con pago anual) y Enterprise 35 $ (solo anual). Precios en dólares consultados el 05-11-2026.',
+    ],
+    privacyNotes: [
+      'Según su centro de ayuda, guarda los datos en Estados Unidos y cumple el RGPD; para la UE ofrece firmar un acuerdo de tratamiento de datos.',
+      'Sus proveedores de IA (Anthropic, OpenAI y Google) no pueden entrenar con tus reuniones, pero Fathom sí usa datos anonimizados para mejorar sus propios modelos. Se desactiva en «My Settings».',
+      'Pide permiso antes de grabar: el resto de participantes verá al grabador en la llamada, salvo con la grabación sin bot (en pruebas y solo en Mac).',
+    ],
+    faq: [
+      {
+        q: '¿Fathom es gratis?',
+        a: 'Sí, tiene un plan gratis sin fecha de caducidad con grabaciones, almacenamiento y transcripciones ilimitadas. Lo que limita son los resúmenes avanzados: 5 llamadas al mes; después te da el resumen general. Las tareas sacadas por la IA, los correos de seguimiento y «Ask Fathom» son de Premium (20 $ al mes, o 16 $ al mes pagando el año). Precios consultados el 05-11-2026.',
+      },
+      {
+        q: '¿Fathom funciona en español?',
+        a: 'Sí. Transcribe en 38 idiomas, entre ellos el español, también en el plan gratis. Según su centro de ayuda, el resumen traducido es para Premium y los planes de equipo: si detecta que la reunión es en español, te da el resumen en español (también en el correo que envía al terminar), y desde cada llamada puedes cambiarlo entre español, inglés, portugués, alemán, francés, italiano y neerlandés.',
+      },
+      {
+        q: '¿Con qué videollamadas funciona Fathom?',
+        a: 'Con Zoom, Google Meet y Microsoft Teams. Normalmente entra un grabador en la llamada; en Mac hay también una grabación sin bot, todavía en pruebas. Se conecta además con Slack, HubSpot, Salesforce, Notion o Asana.',
+      },
+      {
+        q: '¿Fathom usa mis reuniones para entrenar la IA?',
+        a: 'Sus proveedores de IA (Anthropic, OpenAI y Google) no pueden hacerlo por contrato. Fathom sí usa datos anonimizados para mejorar sus propios modelos, y puedes desactivarlo cuando quieras en «My Settings». Los datos se guardan en Estados Unidos.',
+      },
+      {
+        q: '¿Fathom o Granola?',
+        a: 'Fathom graba la videollamada entera y su plan gratis no limita las grabaciones. <a href="/herramientas/granola/">Granola</a> no mete un bot en la llamada y está pensada para completar tus propias notas, pero su plan gratis solo guarda 30 días de historial. Si quieres hacer tú el resumen con cualquier chat de IA, mira <a href="/blog/ia-resumir-reuniones-tareas-revisables/">cómo pasar una reunión a tareas revisables</a>.',
+      },
+    ],
   },
   {
     slug: 'zapier', name: 'Zapier', useCase: 'Automatización',
@@ -343,6 +426,16 @@ const relatedBySlug: Record<string, Array<{ label: string; href: string }>> = {
     { label: 'DeepSeek en español: la app oficial', href: '/blog/deepseek-app-oficial-espanol/' },
   ],
   manus: [{ label: 'Manus vs ChatGPT: cuál es mejor', href: '/herramientas/comparativas/manus-vs-chatgpt-apps/' }],
+  granola: [
+    { label: 'Fathom: grabar y resumir videollamadas (plan gratis)', href: '/herramientas/fathom/' },
+    { label: 'Resumir una reunión con IA y sacar tareas revisables', href: '/blog/ia-resumir-reuniones-tareas-revisables/' },
+    { label: 'IA local sin internet (para lo que no quieras subir a la nube)', href: '/blog/ia-local-sin-internet/' },
+  ],
+  fathom: [
+    { label: 'Granola: notas de reuniones sin bot', href: '/herramientas/granola/' },
+    { label: 'Resumir una reunión con IA y sacar tareas revisables', href: '/blog/ia-resumir-reuniones-tareas-revisables/' },
+    { label: 'Prompts para Claude: resumir un documento largo', href: '/blog/prompts-para-claude/' },
+  ],
 };
 
 export const expandedTools: Tool[] = specs.map((spec) => ({
