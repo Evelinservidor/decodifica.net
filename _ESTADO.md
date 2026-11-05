@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 3 de noviembre de 2026 (agente de novedades).
+Última actualización: 5 de noviembre de 2026 (agente de los jueves).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -207,3 +207,6 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Pendiente: medir la descripción nueva de Claude Skills hacia el 07-12 (si no mejora, probar título con «descargar»); del informe de imágenes del 14-10 quedan alternativas a ChatGPT, NotebookLM, Qwen Code, Tencent Hy3, n8n y Odysseus (repaso del día 20). La herramienta del mes está en el PR de `agente/plan-nov-web`, que espera a Jordi.
   - Semana que viene (semana 4): grupo B, «Ollama o LM Studio: cuál elegir» y mejora de la guía de LM Studio (26 días fuera de Google; versión 0.4.25 → 0.4.28).
 - **03-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-03`, solo la nota `docs/novedades/2026-11-03.md` (sin artículo: nada oficial, grande y dentro de los grupos del plan entre el 30-10 y el 03-11). Comprobado que Phonon de Ollama sigue siendo solo para Mac con chip Apple (la guía está bien). Para el lunes: LM Studio Bionic 1.1.10 (29-10) ya lee en voz alta sin internet en Windows y Linux; puede ir en «Ollama o LM Studio».
+- **05-11-2026 (agente de los jueves):** rama `agente/jueves-2026-11-05`, pull request PR_PENDIENTE (espera a Jordi). Títulos, descripciones, preguntas frecuentes y enlaces nuevos en Gamma vs Canva AI (qué da gratis cada una: 400 créditos de Gamma, IA limitada de Canva; precios de Canva; idioma), ficha de Granola (gratis con 30 días de historial, español, sin bot, en el móvil no capta videollamadas) y ficha de Fathom (grabaciones ilimitadas gratis, precios, español, ahora parte de Superhuman). Las dos fichas se enlazan entre sí y desde «Resumir una reunión con IA». Juez de fuentes pasado en las tres. Repaso: `docs/repaso-jueves/2026-11-05.md`.
+  - Medir hacia el 14-12-2026, pero solo si Google ha vuelto a leer las páginas: ninguna página de los jueves anteriores se había rastreado después de cambiarla (Gamma vs Canva no se leía desde el 12-08, así que su bajada no fue por el título del 07-10).
+  - Pendiente: precios de Gamma (su página pide comprobación anti-robots); «Qué hemos probado» en «Resumir una reunión con IA» (aviso del preflight, regla 3); alternativas gratis a ChatGPT necesita datos al día de las 7 IA (repaso del 20-11).

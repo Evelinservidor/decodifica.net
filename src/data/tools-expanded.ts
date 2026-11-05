@@ -284,7 +284,7 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'granola', name: 'Granola', useCase: 'Reuniones',
-    summary: 'Bloc de notas con IA para reuniones: escucha el audio del ordenador o del móvil (sin meter un bot en la llamada), lo transcribe y completa tus apuntes con un resumen. Transcribe en español, aunque sus menús están en inglés.',
+    summary: 'Bloc de notas con IA para reuniones: capta el audio del ordenador (sin meter un bot en la llamada), lo transcribe y completa tus apuntes con un resumen. Transcribe en español, aunque sus menús están en inglés.',
     seoTitle: 'Granola IA: qué es, si es gratis y si funciona en español',
     metaDescription: 'Granola toma notas de tus reuniones sin meter un bot en la llamada. Qué incluye el plan gratis, cuánto cuesta, si transcribe en español y en qué móviles funciona.',
     language: 'Transcribe y resume en español; la interfaz solo está en inglés',
@@ -305,18 +305,18 @@ const specs: ExpandedSpec[] = [
     ],
     priceNotes: [
       'Planes en dólares, por persona y mes (consultado el 05-11-2026): Basic gratis, Business 14 $ y Enterprise 35 $.',
-      'El plan gratis (Basic) incluye notas con IA, el chat sobre tus reuniones, plantillas y transcripción en varios idiomas, pero solo guarda el historial de los últimos 30 días.',
+      'El plan gratis (Basic) incluye notas con IA, el chat sobre tus reuniones, plantillas y transcripción en varios idiomas, pero solo deja ver el historial de reuniones de los últimos 30 días.',
       'Business quita ese límite (historial ilimitado), deja elegir el modelo en el chat y añade integraciones con Notion, HubSpot o Zapier, resúmenes antes de la reunión y correos de seguimiento.',
     ],
     privacyNotes: [
-      'No mete un bot en la videollamada: graba el audio de tu dispositivo, y solo cuando abres la nota de la reunión. Aun así, avisa a los demás de que la usas.',
+      'No mete un bot en la videollamada: capta el audio de tu dispositivo, solo cuando abres la nota de la reunión, y según su web borra el audio después de transcribirlo. Aun así, avisa a los demás de que la usas.',
       'Por defecto puede usar datos anonimizados para mejorar sus modelos. Se desactiva en Settings → Preferences («Use my data to improve models for everyone»); en Android aún no está ese ajuste, pero lo que cambies en el ordenador o el iPhone vale para todo.',
       'No la uses en reuniones con datos de salud, de clientes o confidenciales sin permiso de tu organización.',
     ],
     faq: [
       {
         q: '¿Granola es gratis?',
-        a: 'Tiene un plan gratis (Basic) con notas con IA, chat sobre tus reuniones y plantillas, pero solo conserva el historial de los últimos 30 días. Para guardar todo hay que pasar a Business, que cuesta 14 $ por persona y mes. Precios de su web, consultados el 05-11-2026.',
+        a: 'Tiene un plan gratis (Basic) con notas con IA, chat sobre tus reuniones y plantillas, pero solo deja ver el historial de los últimos 30 días. Para tener el historial completo hay que pasar a Business, que cuesta 14 $ por persona y mes. Precios de su web, consultados el 05-11-2026.',
       },
       {
         q: '¿Granola funciona en español?',
@@ -324,15 +324,15 @@ const specs: ExpandedSpec[] = [
       },
       {
         q: '¿Granola funciona en Windows y Android?',
-        a: 'Sí. Tiene aplicación para Mac, Windows, iPhone y Android (y Apple Watch). La web notes.granola.ai solo sirve para ver y editar notas: para grabar una reunión hace falta la aplicación.',
+        a: 'Sí. Tiene aplicación para Mac, Windows, iPhone y Android (y Apple Watch). Pero en el móvil no puede captar el audio de las aplicaciones de videollamada (Zoom, Meet, Teams): ahí sirve para reuniones en persona y llamadas. Para videollamadas, usa la aplicación de Mac o Windows. La web notes.granola.ai solo sirve para ver y editar notas.',
       },
       {
         q: '¿Granola mete un bot en la reunión?',
-        a: 'No. Capta el audio del propio dispositivo, así que nadie ve un participante extra en Zoom, Meet o Teams. Por eso mismo conviene decir a los demás que estás tomando notas con IA.',
+        a: 'No. En el ordenador capta el audio del propio equipo, así que nadie ve un participante extra en Zoom, Meet o Teams, y según su web no guarda el audio después de transcribirlo. Por eso mismo conviene decir a los demás que estás tomando notas con IA.',
       },
       {
         q: '¿Granola o Fathom?',
-        a: 'Granola encaja si quieres escribir tus propias notas y que la IA las complete, sin bot en la llamada; su plan gratis guarda 30 días. <a href="/herramientas/fathom/">Fathom</a> graba la videollamada entera (con bot o, en Mac, sin él), y su plan gratis guarda grabaciones y transcripciones sin límite.',
+        a: 'Granola encaja si quieres escribir tus propias notas y que la IA las complete, sin bot en la llamada; su plan gratis deja ver 30 días de historial. <a href="/herramientas/fathom/">Fathom</a> graba la videollamada entera (con bot o, en Mac, sin él), y su plan gratis guarda grabaciones y transcripciones sin límite.',
       },
     ],
   },
@@ -363,6 +363,7 @@ const specs: ExpandedSpec[] = [
     ],
     privacyNotes: [
       'Según su centro de ayuda, guarda los datos en Estados Unidos y cumple el RGPD; para la UE ofrece firmar un acuerdo de tratamiento de datos.',
+      'Su web dice que Fathom «ahora es parte de Superhuman». Si te importa quién trata tus reuniones, revisa su política de privacidad antes de usarlo en el trabajo.',
       'Sus proveedores de IA (Anthropic, OpenAI y Google) no pueden entrenar con tus reuniones, pero Fathom sí usa datos anonimizados para mejorar sus propios modelos. Se desactiva en «My Settings».',
       'Pide permiso antes de grabar: el resto de participantes verá al grabador en la llamada, salvo con la grabación sin bot (en pruebas y solo en Mac).',
     ],
@@ -385,7 +386,7 @@ const specs: ExpandedSpec[] = [
       },
       {
         q: '¿Fathom o Granola?',
-        a: 'Fathom graba la videollamada entera y su plan gratis no limita las grabaciones. <a href="/herramientas/granola/">Granola</a> no mete un bot en la llamada y está pensada para completar tus propias notas, pero su plan gratis solo guarda 30 días de historial. Si quieres hacer tú el resumen con cualquier chat de IA, mira <a href="/blog/ia-resumir-reuniones-tareas-revisables/">cómo pasar una reunión a tareas revisables</a>.',
+        a: 'Fathom graba la videollamada entera y su plan gratis no limita las grabaciones. <a href="/herramientas/granola/">Granola</a> no mete un bot en la llamada y está pensada para completar tus propias notas, pero su plan gratis solo deja ver 30 días de historial. Si quieres hacer tú el resumen con cualquier chat de IA, mira <a href="/blog/ia-resumir-reuniones-tareas-revisables/">cómo pasar una reunión a tareas revisables</a>.',
       },
     ],
   },

@@ -10,7 +10,7 @@ const description = 'Gamma crea la presentación desde un texto y Canva la dise�
 const rows = [
   {
     criterion: 'Crear desde una idea',
-    gamma: 'Muy fuerte para convertir un prompt, esquema o documento en una presentación o página visual inicial.',
+    gamma: 'Está pensada para convertir un prompt, un esquema o un documento en una presentación o página visual inicial.',
     canva: 'Puede generar y editar, pero su ventaja aparece más cuando ya estás trabajando dentro de formatos visuales concretos.',
     winner: 'Gamma',
   },
@@ -29,7 +29,7 @@ const rows = [
   {
     criterion: 'Redes y piezas de marketing',
     gamma: 'Puede generar contenido para redes, pero no es su punto fuerte.',
-    canva: 'Muy fuerte para formatos de redes, banners, miniaturas, carruseles y piezas reutilizables.',
+    canva: 'Tiene plantillas para formatos de redes, banners, miniaturas, carruseles y piezas reutilizables.',
     winner: 'Canva AI',
   },
   {
@@ -41,7 +41,7 @@ const rows = [
   {
     criterion: 'Privacidad y equipos',
     gamma: 'Revisa plan, workspace, archivos subidos y permisos antes de usar información sensible.',
-    canva: 'Ofrece controles de IA y permisos por plan; aun así, revisa contenido, marca y datos de cliente antes de subirlos.',
+    canva: 'Las herramientas de equipo dependen del plan (Business las añade); revisa contenido, marca y datos de cliente antes de subirlos.',
     winner: 'Revisar plan',
   },
 ];
@@ -91,7 +91,7 @@ const useCases = [
   {
     task: 'Quiero un documento visual para explicar una idea',
     choice: 'Gamma',
-    reason: 'Gamma es muy cómodo para documentos de una página y páginas visuales que nacen de un texto.',
+    reason: 'Gamma también genera documentos y páginas visuales a partir de un texto, no solo presentaciones.',
   },
 ];
 
@@ -118,15 +118,15 @@ const faq = [
   },
   {
     question: '¿Gamma es gratis?',
-    answer: 'Tiene un plan gratis sin límite de tiempo y sin tarjeta. Al registrarte recibes 400 créditos, que se gastan cada vez que usas la IA (crear una presentación, editar con el agente, generar imágenes) y no se renuevan: para tener más hay que invitar a otras personas (200 créditos por cada una) o pagar. Con el plan gratis, cada presentación generada tiene como máximo 10 diapositivas y, al compartirla o exportarla, lleva la marca «Made with Gamma». Lo que haces a mano (escribir, mover, cambiar el tema) no gasta créditos. Datos de su centro de ayuda, consultados el 05-11-2026.',
+    answer: 'Tiene un plan gratis sin límite de tiempo y sin tarjeta. Al registrarte recibes 400 créditos, que se gastan cada vez que usas la IA (crear una presentación, editar con el agente, generar imágenes) y no se renuevan: para tener más hay que pagar o compartir tu enlace de invitación (200 créditos por cada persona que se registre con él, hasta tener 2.000 a la vez). Con el plan gratis, cada petición a la IA genera como máximo 10 diapositivas (puedes añadir más a mano) y, al compartirla o exportarla, lleva la marca «Made with Gamma». Lo que haces a mano (escribir, mover, cambiar el tema) no gasta créditos. Datos de su centro de ayuda, consultados el 05-11-2026.',
   },
   {
     question: '¿Canva tiene IA gratis para hacer presentaciones?',
-    answer: 'Sí, pero limitada. Canva Gratis da «acceso limitado» a sus herramientas de IA estándar y premium, entre ellas generar un diseño con Canva AI, con un saldo mensual que comparten todas. Canva Pro tiene 10 veces más uso de IA que el plan gratis y Canva Business, 20 veces más. Cuando se acaba el saldo del plan gratis, la IA sigue funcionando con pausas entre una petición y otra. Datos de la página de precios y la ayuda de Canva, consultados el 05-11-2026.',
+    answer: 'Sí, pero limitada. Canva Gratis da «acceso limitado» a sus herramientas de IA estándar y premium, entre ellas generar un diseño con Canva AI, con un saldo mensual que comparten todas. Canva Pro tiene 10 veces más uso de IA que el plan gratis y Canva Business, 20 veces más. Lo que no tiene el plan gratis es la IA «Ultra», que incluye Canva AI 2.0 (diseñar presentaciones de varias páginas conversando con ella). Cuando se acaba el saldo del plan gratis, la IA estándar y premium sigue funcionando con pausas entre una petición y otra. Datos de la página de precios y la ayuda de Canva, consultados el 05-11-2026.',
   },
   {
     question: '¿Gamma está en español?',
-    answer: 'Sí. La interfaz se pone sola en el idioma del navegador (también se cambia en los ajustes de usuario) y su centro de ayuda tiene versión en español. Para que la presentación salga en español, escribe el prompt o las notas en español, o pide en el prompt el idioma que quieres. También puede traducir una presentación ya hecha, diapositiva a diapositiva o entera, gastando créditos.',
+    answer: 'Sí. La interfaz se adapta al idioma del navegador si está entre los disponibles (también se cambia en los ajustes de usuario) y su centro de ayuda tiene versión en español. Para que la presentación salga en español, escribe el prompt o las notas en español, o pide en el prompt el idioma que quieres. También puede traducir una presentación ya hecha, diapositiva a diapositiva o entera, gastando créditos.',
   },
   {
     question: '¿Tiene sentido usar las dos?',
@@ -168,7 +168,7 @@ const faqLd = {
     <header class="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
       <div>
         <p class="mb-4 inline-flex rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
-          Comparativa práctica
+          Comparativa con datos oficiales
         </p>
         <h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">
           Gamma vs Canva AI: cuál usar para presentaciones y diseño
@@ -224,6 +224,7 @@ const faqLd = {
 
     <section class="mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
       <h2 class="font-display text-2xl font-bold text-white">Comparativa por criterio</h2>
+      <p class="mt-2 text-sm leading-6 text-dark-300">La columna «Mejor opción» es el criterio de Decodifica a partir de lo que cada herramienta dice que hace en su web; no es el resultado de una prueba.</p>
       <div class="mt-5 overflow-x-auto">
         <table class="min-w-full border-separate border-spacing-0 text-left text-sm">
           <thead>
@@ -279,13 +280,13 @@ const faqLd = {
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Precio y límites</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200 [&_strong]:text-white">
-          <strong>Gamma</strong> funciona con créditos. El plan gratis da 400 al registrarte, que no se renuevan, y genera presentaciones de hasta 10 diapositivas que llevan la marca «Made with Gamma» al compartirlas o exportarlas. Los planes de pago (Plus, Pro, Ultra y Business) renuevan los créditos cada mes: Plus da 1.500 y Pro, 4.000; los dos quitan la marca y generan hasta 100 diapositivas. El precio de cada plan no se pudo comprobar (su página de precios no se deja leer a programas automáticos): míralo en gamma.app/pricing. <strong>Canva</strong> tiene plan gratis con acceso limitado a su IA; Pro da 10 veces más uso de IA y Business, 20 veces más. Su página de precios mostraba, en dólares y sin impuestos, 144 US$ al año por persona en Pro y 250 US$ en Business (consultada el 05-11-2026 desde fuera de España: mira el precio de tu país en canva.com).
+          <strong>Gamma</strong> funciona con créditos. El plan gratis da 400 al registrarte, que no se renuevan, y genera hasta 10 diapositivas por petición (se pueden añadir más a mano); lo que compartes o exportas lleva la marca «Made with Gamma». Los planes de pago (Plus, Pro, Ultra y Business) renuevan los créditos cada mes: Plus da 1.500 y Pro, 4.000; los dos quitan la marca y generan hasta 100 diapositivas por petición. El precio de cada plan no se pudo comprobar (su página de precios pide una comprobación anti-robots): míralo en gamma.app/pricing. <strong>Canva</strong> tiene plan gratis con acceso limitado a su IA (sin Canva AI 2.0, la que diseña conversando); Pro da 10 veces más uso de IA y Business, 20 veces más. Su página de precios mostraba, en dólares y sin impuestos, 144 US$ al año por persona en Pro y 250 US$ en Business (consultada el 05-11-2026 desde fuera de España: mira el precio de tu país en canva.com).
         </p>
       </div>
       <div class="rounded-lg border border-dark-600 bg-dark-800 p-6">
         <h2 class="font-display text-2xl font-bold text-white">Privacidad</h2>
         <p class="mt-4 text-sm leading-6 text-dark-200">
-          En estas herramientas el riesgo suele estar en subir propuestas, datos de clientes, logos, imágenes o material de marca. Canva publica controles de IA y permisos por plan; Gamma también debe revisarse por workspace, archivos y permisos. Si hay datos sensibles, usa material anonimizado para el borrador.
+          En estas herramientas el riesgo suele estar en subir propuestas, datos de clientes, logos, imágenes o material de marca. En las dos, revisa quién tiene acceso al espacio de trabajo y a los archivos que subes. Si hay datos sensibles, usa material anonimizado para el borrador.
         </p>
       </div>
     </section>
