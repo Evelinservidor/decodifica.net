@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 5 de noviembre de 2026 (agente de los jueves).
+Última actualización: 6 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -210,3 +210,4 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
 - **05-11-2026 (agente de los jueves):** rama `agente/jueves-2026-11-05`, pull request #45 (espera a Jordi). Títulos, descripciones, preguntas frecuentes y enlaces nuevos en Gamma vs Canva AI (qué da gratis cada una: 400 créditos de Gamma, IA limitada de Canva; precios de Canva; idioma), ficha de Granola (gratis con 30 días de historial, español, sin bot, en el móvil no capta videollamadas) y ficha de Fathom (grabaciones ilimitadas gratis, precios, español, ahora parte de Superhuman). Las dos fichas se enlazan entre sí y desde «Resumir una reunión con IA». Juez de fuentes pasado en las tres. Repaso: `docs/repaso-jueves/2026-11-05.md`.
   - Medir hacia el 14-12-2026, pero solo si Google ha vuelto a leer las páginas: ninguna página de los jueves anteriores se había rastreado después de cambiarla (Gamma vs Canva no se leía desde el 12-08, así que su bajada no fue por el título del 07-10).
   - Pendiente: precios de Gamma (su página pide comprobación anti-robots); «Qué hemos probado» en «Resumir una reunión con IA» (aviso del preflight, regla 3); alternativas gratis a ChatGPT necesita datos al día de las 7 IA (repaso del 20-11).
+- **06-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-06`. Novedad: Finanzas personales en Claude («Personal Finance», 05-11-2026: conectar banco, tarjetas, préstamos e inversiones con acceso de solo lectura vía Plaid; beta solo en EE. UU., Pro, Max y Ultra), añadida como sección a la guía `claude-ia-que-es-gratis` (respuesta corta, captura, qué datos ve, privacidad, cómo probarlo, alternativa desde España, pregunta frecuente; `modifiedDate` 06-11). Juez de fuentes pasado. Nota: `docs/novedades/2026-11-06.md`. Sin guion de reel (no se puede usar en España ni en Latinoamérica). Para el lunes: ChatGPT Images 2.6 con GIF en el plan gratis (04-11) podría ser un reel si se abre la fuente de OpenAI (hoy da 403).
