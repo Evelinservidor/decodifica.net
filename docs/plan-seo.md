@@ -57,12 +57,15 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
 - **Pilar:** ✔ `/blog/ia-local-sin-internet/` «IA local en español: cómo usar IA en tu PC sin internet» (qué programa
   elegir según tu ordenador, qué se puede hacer y qué no, privacidad). Publicado el 26-10-2026.
-- **Apoyos que ya hay:** ✔ `/blog/ollama-que-es-como-usar/` · ✔ `/blog/lm-studio-que-es-como-usar/` ·
+- **Apoyos que ya hay:** ✔ `/blog/ollama-que-es-como-usar/` · ✔ `/blog/lm-studio-que-es-como-usar/` (revisada el 09-11-2026) ·
+  ✔ `/blog/ollama-o-lm-studio/` (09-11-2026) ·
   ✔ `/blog/2026-07-25-ia-local-oculta-datos/` · ✔ `/blog/2026-08-01-qwen3-asr-transcribe-espanol/` ·
   ✔ `/blog/odysseus-pewdiepie-ia-gratis/` · ✔ `/blog/2026-07-17-hermes-agent-chino/` (revisado el 26-10-2026)
 - **Cola:**
   - [x] ✔ (26-10-2026) Pilar: «IA local en español» → `/blog/ia-local-sin-internet/` (la ficha `/herramientas/anythingllm/` se puso al día el mismo día: título, datos y preguntas)
-  - [ ] Ollama o LM Studio: cuál elegir
+  - [x] ✔ (09-11-2026) Ollama o LM Studio: cuál elegir → `/blog/ollama-o-lm-studio/` («Ollama o LM Studio: cuál es mejor
+    según tu ordenador»; por casos, tabla punto por punto, requisitos, Claude Code, privacidad, Bionic, los dos a la vez).
+    Mejora de la semana: la guía de LM Studio (0.4.28, Bionic, API de Anthropic, preguntas frecuentes).
   - [ ] Qué ordenador hace falta para la IA local (memoria y tarjeta gráfica, con las cifras oficiales de cada modelo)
   - [ ] Chatear con tus PDF sin subirlos a internet (AnythingLLM; aquí se fusiona la ficha `/herramientas/anythingllm/`)
   - [ ] Pasar audio a texto en tu ordenador (Whisper y similares)
@@ -73,6 +76,9 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Idea (26-10-2026): crear imágenes en tu ordenador. «ia local para generar imagenes» sale en el autocompletado,
     pero pide tarjeta gráfica potente y en Ollama aún es experimental y solo en Mac: mirar antes si hay algo concreto
     que contar.
+  - [ ] Idea (09-11-2026): LM Studio Bionic, el agente gratis con modelos locales. «lm studio vs bionic» sale en el
+    autocompletado de España y México; hoy es un apartado de la guía de LM Studio y de la comparativa. Solo si hay
+    ayuda oficial con pasos (proyectos, sesiones, documentos) para contar algo más que esos apartados.
 
 ## Grupo C · Prompts y el generador — CUIDAR (mejorar lo que hay, poco nuevo)
 - **Pilar:** `/herramientas/generador-prompts/` (sale en la posición 1-2 para «páginas para crear prompts»). Se mantiene
