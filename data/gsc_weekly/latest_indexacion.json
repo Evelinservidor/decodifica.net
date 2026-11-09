@@ -1,19 +1,19 @@
 {
-  "fetched_at": "2026-11-02",
+  "fetched_at": "2026-11-09",
   "site": "sc-domain:decodifica.net",
   "sitemap": "https://decodifica.net/sitemap-0.xml",
   "sitemaps_en_search_console": [
     {
       "path": "https://decodifica.net/sitemap-index.xml",
-      "lastSubmitted": "2026-11-02T11:24:02.714Z",
-      "lastDownloaded": "2026-11-02T11:24:04.067Z",
+      "lastSubmitted": "2026-11-09T12:20:00.570Z",
+      "lastDownloaded": "2026-11-09T12:20:02.017Z",
       "isPending": false,
       "errors": "0",
       "warnings": "0",
       "contents": [
         {
           "type": "web",
-          "submitted": "69",
+          "submitted": "71",
           "indexed": "0"
         }
       ]
@@ -27,7 +27,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-28T01:10:24Z",
+      "lastCrawlTime": "2026-11-03T13:25:41Z",
       "googleCanonical": "https://decodifica.net/",
       "userCanonical": "https://decodifica.net/"
     },
@@ -38,7 +38,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-19T09:33:10Z",
+      "lastCrawlTime": "2026-11-06T03:08:13Z",
       "googleCanonical": "https://decodifica.net/aviso-legal/",
       "userCanonical": "https://decodifica.net/aviso-legal/"
     },
@@ -133,7 +133,7 @@
     {
       "page": "https://decodifica.net/blog/2026-08-01-qwen3-asr-transcribe-espanol/",
       "verdict": "NEUTRAL",
-      "coverageState": "Google no reconoce esta URL",
+      "coverageState": "Descubierta: actualmente sin indexar",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -181,7 +181,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-09-06T19:06:47Z",
+      "lastCrawlTime": "2026-11-05T15:47:09Z",
       "googleCanonical": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
       "userCanonical": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/"
     },
@@ -199,7 +199,7 @@
     {
       "page": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
       "verdict": "NEUTRAL",
-      "coverageState": "Descubierta: actualmente sin indexar",
+      "coverageState": "Google no reconoce esta URL",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -214,7 +214,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-24T03:55:36Z",
+      "lastCrawlTime": "2026-11-03T15:55:40Z",
       "googleCanonical": "https://decodifica.net/blog/claude-skills-1000-gratis/",
       "userCanonical": "https://decodifica.net/blog/claude-skills-1000-gratis/"
     },
@@ -231,12 +231,12 @@
     },
     {
       "page": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/",
-      "verdict": "NEUTRAL",
-      "coverageState": "Rastreada: actualmente sin indexar",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-08-17T13:23:26Z",
+      "lastCrawlTime": "2026-11-06T00:02:23Z",
       "googleCanonical": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/",
       "userCanonical": "https://decodifica.net/blog/crear-agente-voz-ia-sin-programar/"
     },
@@ -280,7 +280,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-27T05:27:37Z",
+      "lastCrawlTime": "2026-11-06T00:38:16Z",
       "googleCanonical": "https://decodifica.net/blog/ia-local-sin-internet/",
       "userCanonical": "https://decodifica.net/blog/ia-local-sin-internet/"
     },
@@ -313,7 +313,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-25T02:51:45Z",
+      "lastCrawlTime": "2026-11-06T10:38:12Z",
       "googleCanonical": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
       "userCanonical": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/"
     },
@@ -341,8 +341,8 @@
     },
     {
       "page": "https://decodifica.net/blog/notebooklm-guia-2026/",
-      "verdict": "PASS",
-      "coverageState": "Enviada e indexada",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
@@ -352,12 +352,12 @@
     },
     {
       "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
-      "verdict": "NEUTRAL",
-      "coverageState": "Rastreada: actualmente sin indexar",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-07-20T16:00:36Z",
+      "lastCrawlTime": "2026-11-06T03:19:37Z",
       "googleCanonical": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
       "userCanonical": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/"
     },
@@ -365,6 +365,17 @@
       "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
       "verdict": "NEUTRAL",
       "coverageState": "Google no reconoce esta URL",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "lastCrawlTime": null,
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
+      "page": "https://decodifica.net/blog/prompts-para-claude/",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
       "indexingState": "INDEXING_STATE_UNSPECIFIED",
       "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
@@ -390,7 +401,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-21T01:10:54Z",
+      "lastCrawlTime": "2026-11-03T12:10:41Z",
       "googleCanonical": "https://decodifica.net/contacto/",
       "userCanonical": "https://decodifica.net/contacto/"
     },
@@ -401,7 +412,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-24T02:02:15Z",
+      "lastCrawlTime": "2026-11-05T01:25:53Z",
       "googleCanonical": "https://decodifica.net/cookies/",
       "userCanonical": "https://decodifica.net/cookies/"
     },
@@ -412,7 +423,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-25T01:21:44Z",
+      "lastCrawlTime": "2026-11-03T22:54:10Z",
       "googleCanonical": "https://decodifica.net/empieza/",
       "userCanonical": "https://decodifica.net/empieza/"
     },
@@ -511,7 +522,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-08-30T12:47:47Z",
+      "lastCrawlTime": "2026-11-05T16:41:11Z",
       "googleCanonical": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
       "userCanonical": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/"
     },
@@ -544,7 +555,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-08-12T01:16:38Z",
+      "lastCrawlTime": "2026-11-06T15:05:35Z",
       "googleCanonical": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
       "userCanonical": "https://decodifica.net/herramientas/gamma-vs-canva-ai/"
     },
@@ -626,6 +637,17 @@
       "userCanonical": "https://decodifica.net/herramientas/huggingchat/"
     },
     {
+      "page": "https://decodifica.net/herramientas/ia-local-mi-ordenador/",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "lastCrawlTime": null,
+      "googleCanonical": null,
+      "userCanonical": null
+    },
+    {
       "page": "https://decodifica.net/herramientas/kimi/",
       "verdict": "PASS",
       "coverageState": "Enviada e indexada",
@@ -698,7 +720,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-27T16:53:28Z",
+      "lastCrawlTime": "2026-11-07T00:07:21Z",
       "googleCanonical": "https://decodifica.net/herramientas/preflight-datos/",
       "userCanonical": "https://decodifica.net/herramientas/preflight-datos/"
     },
@@ -709,7 +731,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-18T19:48:18Z",
+      "lastCrawlTime": "2026-11-06T16:20:35Z",
       "googleCanonical": "https://decodifica.net/herramientas/qwen-code/",
       "userCanonical": "https://decodifica.net/herramientas/qwen-code/"
     },
@@ -720,7 +742,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-27T07:57:38Z",
+      "lastCrawlTime": "2026-11-07T01:38:14Z",
       "googleCanonical": "https://decodifica.net/newsletter/",
       "userCanonical": "https://decodifica.net/newsletter/"
     },
@@ -731,7 +753,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-23T14:44:00Z",
+      "lastCrawlTime": "2026-11-05T22:08:12Z",
       "googleCanonical": "https://decodifica.net/privacidad/",
       "userCanonical": "https://decodifica.net/privacidad/"
     },
@@ -753,7 +775,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-09-07T04:33:47Z",
+      "lastCrawlTime": "2026-11-06T20:39:12Z",
       "googleCanonical": "https://decodifica.net/recursos/mapa-herramientas-ia/",
       "userCanonical": "https://decodifica.net/recursos/mapa-herramientas-ia/"
     },
@@ -775,7 +797,7 @@
       "indexingState": "INDEXING_ALLOWED",
       "robotsTxtState": "ALLOWED",
       "pageFetchState": "SUCCESSFUL",
-      "lastCrawlTime": "2026-10-24T06:21:25Z",
+      "lastCrawlTime": "2026-11-05T13:13:06Z",
       "googleCanonical": "https://decodifica.net/sobre/",
       "userCanonical": "https://decodifica.net/sobre/"
     }
