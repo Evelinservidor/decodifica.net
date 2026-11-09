@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "fecha": "2026-11-09",
+    "titulo": "Claude gratis: no te repitas",
+    "serie": "gratis-y-util",
+    "numero_serie": 1,
+    "resumen": "La ayuda de Claude explica cada función por separado. El vídeo dice cuál usar para qué: las Instrucciones de la cuenta para lo que vale siempre y un Proyecto para un trabajo con sus documentos. También dice qué límite tiene el plan gratis (",
+    "fuentes": [
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/es/articles/10185728-comprender-las-funciones-de-personalizacion-de-claude"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/es/articles/9519177-como-puedo-crear-y-gestionar-proyectos"
+      },
+      {
+        "nombre": "claude.com",
+        "url": "https://claude.com/es/pricing"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
+      }
+    ],
+    "guia": "/blog/prompts-para-claude/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1087774377576110",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3mzuvvjj7r62p"
+    }
+  }
+]
