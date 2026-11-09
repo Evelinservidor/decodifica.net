@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 6 de noviembre de 2026 (agente de novedades).
+Última actualización: 9 de noviembre de 2026 (agente semanal).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -51,8 +51,8 @@ dinero y riesgos. **Fase 1: del 9 al 30 de noviembre.**
   - preflight: aviso de «prueba propia» y error si un enlace de afiliado no lleva `sponsored`;
   - `docs/AGENTE-SEMANAL.md`: herramienta del mes, guion de reel por artículo, metas del mes y 3 piezas cuando se
     cumpla la condición.
-- Pendiente: `ia-resumir-reuniones-tareas-revisables` dice «Documentamos dos pruebas» («Qué hemos probado y qué no»).
-  Comprobar si Jordi tiene esa prueba documentada; si no, reescribirlo (regla 3). Lo marca el aviso nuevo del preflight.
+- ~~Pendiente: `ia-resumir-reuniones-tareas-revisables` dice «Documentamos dos pruebas»~~ Hecho el 09-11-2026 (pull
+  request #48): no había prueba documentada por Jordi; el apartado es ahora una práctica que hace quien lee.
 
 ## Fase 1: hecho
 
@@ -211,3 +211,8 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Medir hacia el 14-12-2026, pero solo si Google ha vuelto a leer las páginas: ninguna página de los jueves anteriores se había rastreado después de cambiarla (Gamma vs Canva no se leía desde el 12-08, así que su bajada no fue por el título del 07-10).
   - Pendiente: precios de Gamma (su página pide comprobación anti-robots); «Qué hemos probado» en «Resumir una reunión con IA» (aviso del preflight, regla 3); alternativas gratis a ChatGPT necesita datos al día de las 7 IA (repaso del 20-11).
 - **06-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-06`, pull request #46. Novedad: Finanzas personales en Claude («Personal Finance», 05-11-2026: conectar banco, tarjetas, préstamos e inversiones con acceso de solo lectura vía Plaid; beta solo en EE. UU., Pro, Max y Ultra), añadida como sección a la guía `claude-ia-que-es-gratis` (respuesta corta, captura, qué datos ve, privacidad, cómo probarlo, alternativa desde España, pregunta frecuente; `modifiedDate` 06-11). Juez de fuentes pasado (de paso, arreglados datos antiguos de la guía: Duet con Ultra, rutas de ajustes, precios sin «moneda local»). Fusionado el mismo día a petición de Jordi (publicado y comprobado en línea). Esquema `claude-en-espanol-pasos.webp` rehecho también el 06-11 con la ruta nueva de la voz (rama `agente/imagen-claude-voz-2026-11-06`, a petición de Jordi). Nota: `docs/novedades/2026-11-06.md`. Sin guion de reel (no se puede usar en España ni en Latinoamérica). Para el lunes: ChatGPT Images 2.6 con GIF en el plan gratis (04-11) podría ser un reel si se abre la fuente de OpenAI (hoy da 403).
+- **09-11-2026 (semana 4 del plan SEO, grupo B):** rama `agente/2026-11-09`, pull request #48 (espera a Jordi). El informe de Search Console llegó tarde (la tarea de las 04:17 UTC corrió de 12:56 a 13:04 UTC); se usó el de hoy. Nuevo: `ollama-o-lm-studio` («Ollama o LM Studio: cuál es mejor según tu ordenador»; por casos, tabla punto por punto, requisitos, Claude Code, privacidad, Bionic, los dos a la vez; portada y 3 imágenes), enlazado desde el pilar B, Ollama y LM Studio. Mejora: guía de LM Studio (0.4.28, Bionic en español, convivencia y voz en Windows y Linux, API de Anthropic, 5 preguntas frecuentes). Artículo antiguo: `ia-resumir-reuniones-tareas-revisables` sin «Qué hemos probado» (regla 3), con práctica sobre una transcripción pública y fuentes de Fathom y Granola; descripción nueva. `ReviewMethodology` dice «Tarea que explica» en vez de «Tarea evaluada» (8 artículos). Juez de fuentes en las tres páginas. Títulos: ninguno. Informe: `docs/informes/2026-11-09.md`; reel: `docs/redes/2026-11-09.md`.
+  - Google: semana 663 apariciones y 9 clics (antes 542 y 2); 28 días 2.043 y 19; 56 de 71 páginas en Google. El grupo B tiene sus primeros clics (4, guía de IA local). NotebookLM (`notebooklm-guia-2026`) ha salido de Google; Odysseus y el agente de voz han vuelto.
+  - Pendiente de Jordi: «Solicitar indexación» de Claude, Ollama, LM Studio y n8n (tercera semana que se pide).
+  - Pendiente: la guía de la ICO (fuente de reuniones) no abre desde aquí (Cloudflare); medir la descripción de Claude Skills hacia el 07-12.
+  - Semana que viene (semana 5): grupo A, «Claude Code sin saber programar: primeros pasos» y mejora de `claude-emails-sonar-humanos` (fuera de Google). El 07-12, herramienta del mes de diciembre: «Planes gratis de IA: qué te dan hoy».
