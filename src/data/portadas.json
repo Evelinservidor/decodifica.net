@@ -389,5 +389,16 @@
     "etiqueta": "Con ejemplos",
     "fondo": "verde",
     "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo verde"
+  },
+  "ollama-o-lm-studio": {
+    "plantilla": "herramienta",
+    "logos": [
+      "lmstudio",
+      "ollama"
+    ],
+    "gancho": "Cuál te conviene *según tu PC*",
+    "etiqueta": "Comparativa",
+    "fondo": "naranja",
+    "alt": "Logos de LM Studio y Ollama, los dos programas gratuitos para usar IA en tu ordenador que compara el artículo"
   }
 }

@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
+
+const title = "Ollama o LM Studio: cuál es mejor según tu ordenador";
+const description = "Ollama o LM Studio, comparados con su documentación oficial: en qué ordenadores funciona cada uno, cuál está en español, licencias, nube de pago y cuál elegir.";
+const pubDate = "2026-11-09";
+const modifiedDate = "2026-11-09";
+const readingTime = "8 min";
+const tema = "local";
+const tags = ["ollama o lm studio", "ollama vs lm studio", "lm studio", "ollama", "ia local", "lm studio bionic"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/ollama-o-lm-studio.jpg"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+  citations={[
+    "https://lmstudio.ai/docs/app/system-requirements",
+    "https://lmstudio.ai/docs/app",
+    "https://lmstudio.ai/docs/app/offline",
+    "https://lmstudio.ai/docs/app/basics/download-model",
+    "https://lmstudio.ai/docs/app/basics/rag",
+    "https://lmstudio.ai/docs/app/user-interface/languages",
+    "https://lmstudio.ai/docs/integrations/claude-code",
+    "https://lmstudio.ai/docs/bionic",
+    "https://lmstudio.ai/docs/bionic/voice-input",
+    "https://lmstudio.ai/changelog/bionic-v1.1.3",
+    "https://lmstudio.ai/changelog/bionic-v1.1.8",
+    "https://lmstudio.ai/changelog/bionic-v1.1.10",
+    "https://lmstudio.ai/pricing",
+    "https://lmstudio.ai/download",
+    "https://lmstudio.ai/app-terms",
+    "https://docs.ollama.com/macos",
+    "https://docs.ollama.com/windows",
+    "https://docs.ollama.com/linux",
+    "https://docs.ollama.com/gpu",
+    "https://docs.ollama.com/quickstart",
+    "https://docs.ollama.com/faq",
+    "https://docs.ollama.com/context-length",
+    "https://docs.ollama.com/integrations/claude-code",
+    "https://docs.ollama.com/api/anthropic-compatibility",
+    "https://ollama.com/blog/new-app",
+    "https://ollama.com/library/phonon",
+    "https://ollama.com/download",
+    "https://ollama.com/pricing",
+    "https://raw.githubusercontent.com/ollama/ollama/main/LICENSE",
+  ]}
+>
+  <Articulo slug="ollama-o-lm-studio">
+
+    <p><strong>En resumen:</strong> los dos son gratis para usar modelos de IA en tu ordenador y los dos funcionan sin internet una vez descargado el modelo. Elige <strong>LM Studio</strong> si prefieres una ventana en español con buscador de modelos y chat con tus documentos, o si tu Windows lleva un procesador ARM. Elige <strong>Ollama</strong> si tienes un Mac con Intel (LM Studio no los admite), quieres un programa de código abierto (licencia MIT) o vas a conectarlo con otras aplicaciones desde la terminal. Si dudas, instala los dos: usan puertos distintos y pueden convivir.</p>
+
+    <p>Esta comparación forma parte de nuestra <a href="/blog/ia-local-sin-internet/">guía de IA local en español</a>, donde está lo básico: qué es, qué se puede hacer sin internet y otros programas como Jan o AnythingLLM. Si ya has elegido, tienes la guía paso a paso de <a href="/blog/lm-studio-que-es-como-usar/">LM Studio</a> y la de <a href="/blog/ollama-que-es-como-usar/">Ollama</a>. Los datos salen de la documentación oficial de los dos programas, de sus páginas de precios y de sus licencias, consultadas el 9 de noviembre de 2026. No es una prueba de velocidad: en las preguntas frecuentes te contamos cómo compararlos en tu propio equipo.</p>
+
+    <h2>Cuál elegir según tu caso</h2>
+    <ul>
+      <li><strong>Nunca has abierto una terminal: LM Studio.</strong> Todo se hace con el ratón: buscas el modelo en la pestaña Discover (<code>Ctrl + 2</code> en Windows y Linux, <code>Cmd + 2</code> en Mac), eliges la versión y chateas. Ollama también tiene una aplicación con chat en Mac y Windows, pero buena parte de su documentación (descargar, ver, parar o borrar modelos) se explica con órdenes como <code>ollama pull</code> o <code>ollama rm</code>.</li>
+      <li><strong>Quieres la ventana en español: LM Studio.</strong> Su documentación lo confirma: se elige en <strong>Settings &gt; Preferences &gt; Language</strong>, y para ver los ajustes hay que estar en el modo «Power User» o superior. La documentación de Ollama no habla de otros idiomas para su aplicación.</li>
+      <li><strong>Tienes un Mac con Intel: Ollama.</strong> LM Studio lo dice claro: «Intel-based Macs are currently not supported». Ollama sí funciona en ellos, aunque solo con el procesador (sin la gráfica).</li>
+      <li><strong>Tu Windows tiene procesador ARM: LM Studio.</strong> Admite expresamente los equipos con Snapdragon X Elite. La documentación de Ollama para Windows no menciona ARM.</li>
+      <li><strong>Prefieres código abierto: Ollama.</strong> Su licencia es MIT. LM Studio es gratis, pero de código cerrado.</li>
+      <li><strong>Lo vas a conectar con Claude Code u otros programas: los dos sirven.</strong> Con Ollama basta una orden, <code>ollama launch claude</code>. Con LM Studio arrancas su servidor y le das dos variables a Claude Code.</li>
+    </ul>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-o-lm-studio/cual-elegir-ollama-lm-studio.webp"
+      alt="Cuadro para elegir entre Ollama y LM Studio: sin terminal, ventana en español o Windows con ARM, LM Studio; Mac con Intel o código abierto, Ollama; Claude Code, los dos; si no te decides, instala los dos porque usan puertos distintos"
+      width={1200}
+      height={952}
+    />
+
+    <h2>LM Studio y Ollama, punto por punto</h2>
+    <div>
+      <table>
+        <thead>
+          <tr><th></th><th>LM Studio</th><th>Ollama</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cómo se usa</strong></td>
+            <td>Una ventana con buscador de modelos, chat y ajustes. También tiene órdenes (<code>lms</code>) y una versión sin ventana para servidores (llmster).</td>
+            <td>Órdenes cortas en la terminal (<code>ollama run gemma4</code>) y una aplicación con chat en Mac y Windows. En Linux se instala y se usa desde la terminal.</td>
+          </tr>
+          <tr>
+            <td><strong>Idioma de la ventana</strong></td>
+            <td>Español, entre otros muchos idiomas.</td>
+            <td>Su documentación no menciona otros idiomas.</td>
+          </tr>
+          <tr>
+            <td><strong>Mac</strong></td>
+            <td>Solo con chip Apple (su documentación cita de M1 a M4) y macOS 14 o posterior.</td>
+            <td>Chip Apple (procesador y gráfica) o Intel (solo procesador), con macOS 14 o posterior.</td>
+          </tr>
+          <tr>
+            <td><strong>Windows</strong></td>
+            <td>x64 con instrucciones AVX2, o ARM (Snapdragon X Elite).</td>
+            <td>Windows 10 22H2 o posterior (Home o Pro). Gráficas NVIDIA y AMD.</td>
+          </tr>
+          <tr>
+            <td><strong>Linux</strong></td>
+            <td>x64 y ARM64, en AppImage o .deb. Pide Ubuntu 20.04 o posterior.</td>
+            <td>Se instala con una orden. Paquetes para x64 y ARM64; gráficas NVIDIA, AMD y otras mediante Vulkan.</td>
+          </tr>
+          <tr>
+            <td><strong>De dónde salen los modelos</strong></td>
+            <td>Los busca y descarga de Hugging Face sin salir de la aplicación. En Mac con chip Apple también puede usar MLX, el motor de Apple.</td>
+            <td>De su biblioteca, <a href="https://ollama.com/library" target="_blank" rel="noopener noreferrer">ollama.com/library</a>. También puede importar modelos GGUF y Safetensors.</td>
+          </tr>
+          <tr>
+            <td><strong>Tus documentos</strong></td>
+            <td>Adjuntas archivos .pdf, .docx y .txt. Si son largos, busca los trozos que tienen que ver con tu pregunta (RAG).</td>
+            <td>La aplicación acepta textos y PDF arrastrándolos al chat. Para documentos largos hay que subir el contexto en los ajustes.</td>
+          </tr>
+          <tr>
+            <td><strong>Conectarlo con otras aplicaciones</strong></td>
+            <td>Servidor en el puerto 1234 que imita las API de OpenAI y de Anthropic. Usa servidores MCP. Guías para Claude Code, Codex, Hermes Agent y OpenClaw.</td>
+            <td>Servidor en el puerto 11434 que imita las API de OpenAI y de Anthropic. <code>ollama launch</code> abre Claude Code, Codex u OpenCode. En Mac se conecta con la aplicación de Claude y la de ChatGPT.</td>
+          </tr>
+          <tr>
+            <td><strong>Voz</strong></td>
+            <td>En Bionic, su aplicación de agente: dictado sin internet con Voxtral (Mistral) y, desde el 29 de octubre de 2026, lectura en voz alta en el propio equipo también en Windows y Linux.</td>
+            <td>Lee textos en voz alta con Phonon, que tiene un modelo en español, pero solo en Mac con chip Apple.</td>
+          </tr>
+          <tr>
+            <td><strong>Nube de pago (opcional)</strong></td>
+            <td>Bionic+, 20 $/mes (modelos abiertos alojados en EE. UU.), y Pro, 100 $/mes.</td>
+            <td>Pago por uso; Pro, 20 $/mes con 60 $ de créditos; Team, 500 $/mes.</td>
+          </tr>
+          <tr>
+            <td><strong>Licencia</strong></td>
+            <td>Gratis, código cerrado. Uso personal e interno en empresas; no se puede revender ni ofrecer como servicio a terceros.</td>
+            <td>Código abierto (MIT).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Precios en dólares, consultados el 9 de noviembre de 2026. Para usar modelos en tu ordenador no hace falta pagar ninguno de los dos.</p>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-o-lm-studio/ollama-lm-studio-comparativa.webp"
+      alt="Comparativa de LM Studio y Ollama, los dos gratis en local: LM Studio tiene ventana con buscador de modelos, interfaz en español, chat con PDF, Word y TXT y versión para Windows ARM, pero no funciona en Mac con Intel y es de código cerrado; Ollama tiene órdenes en la terminal, app con chat en Mac y Windows, funciona en Mac con Intel solo con el procesador y es de código abierto MIT"
+      width={1200}
+      height={656}
+    />
+
+    <h2>¿Cuál funciona en mi ordenador?</h2>
+    <p>Lo primero que descarta uno u otro es el equipo, no el gusto:</p>
+    <ul>
+      <li><strong>Mac con Intel:</strong> solo Ollama, y sin usar la gráfica.</li>
+      <li><strong>Mac con chip Apple:</strong> los dos. LM Studio recomienda 16 GB de memoria; con 8 GB, dice, se puede usar si te quedas en modelos pequeños y contextos modestos.</li>
+      <li><strong>Windows con ARM:</strong> LM Studio, que lo documenta. En x64, LM Studio pide un procesador con AVX2 y recomienda al menos 16 GB de RAM y una tarjeta gráfica con 4 GB de memoria propia.</li>
+      <li><strong>Linux:</strong> los dos, en x64 y ARM64. LM Studio avisa de que las versiones de Ubuntu posteriores a la 22 «no están bien probadas».</li>
+    </ul>
+
+    <FiguraArticulo
+      src="/img/blog/ollama-o-lm-studio/requisitos-lm-studio.webp"
+      alt="Página de requisitos de LM Studio: en macOS, chip Apple Silicon de M1 a M4, macOS 14 o posterior, 16 GB de RAM recomendados y Mac con Intel no admitidos; en Windows, x64 con AVX2 o ARM Snapdragon X Elite, 16 GB de RAM y 4 GB de VRAM; en Linux, x64 y ARM64 con Ubuntu 20.04 o posterior"
+      width={744}
+      height={1339}
+      caption="Requisitos oficiales de LM Studio en lmstudio.ai (captura del 9 de noviembre de 2026)."
+    />
+    <p>Ollama no da una cifra mínima de memoria. Avisa de que los modelos grandes van lentos en un ordenador sin una buena tarjeta gráfica y de que cada modelo puede ocupar «de decenas a cientos de GB» en disco. Tiene además un ajuste que conviene conocer: fija el contexto (la memoria de trabajo del modelo) según la memoria de tu gráfica, y con menos de 24 GB lo deja en unos 4.000 tokens. Para documentos largos, agentes o Claude Code recomienda subirlo al menos a 64.000, lo que pide más memoria.</p>
+    <Caja tipo="consejo"><strong>Compruébalo con tu equipo:</strong> en la <a href="/herramientas/ia-local-mi-ordenador/">calculadora de IA local</a> eliges tu memoria y tu tarjeta gráfica y te dice qué tamaños de Gemma 4 y Qwen 3.5 caben. Usa las cifras de la biblioteca de Ollama; en LM Studio, lo que ocupa un modelo depende de la versión comprimida (cuantización) que elijas.</Caja>
+
+    <h2>Conectarlo con Claude Code y otras aplicaciones</h2>
+    <p>Aquí las diferencias se han acortado: los dos funcionan como servidor en tu ordenador e imitan tanto la API de OpenAI como la de Anthropic, así que muchas herramientas pensadas para ChatGPT o Claude pueden usar tu modelo local.</p>
+    <ul>
+      <li><strong>Ollama:</strong> desde la carpeta de tu proyecto, <code>ollama launch claude</code> abre Claude Code con un modelo de Ollama (y te ofrece instalarlo si no lo tienes). Hay órdenes parecidas para Codex y OpenCode. En Mac, desde <strong>Apps</strong>, conecta la aplicación de escritorio de Claude o la de ChatGPT.</li>
+      <li><strong>LM Studio:</strong> arrancas el servidor (desde la aplicación o con <code>lms server start --port 1234</code>) y le dices a Claude Code dónde está con dos variables, <code>ANTHROPIC_BASE_URL=http://localhost:1234</code> y <code>ANTHROPIC_AUTH_TOKEN=lmstudio</code>. Además, LM Studio puede usar servidores MCP con tus modelos locales.</li>
+    </ul>
+    <p>Las dos documentaciones coinciden en algo: los agentes de programación gastan mucho contexto. LM Studio recomienda más de unos 25.000 tokens para Claude Code y Ollama, al menos 64.000 para agentes y herramientas de programación.</p>
+
+    <h2>Privacidad: qué se queda en tu equipo</h2>
+    <ul>
+      <li><strong>Con modelos locales, en los dos, nada sale de tu ordenador.</strong> LM Studio: «Nothing you enter into LM Studio when chatting with LLMs leaves your device», y los documentos que arrastras se procesan en tu equipo. Ollama dice que, cuando el modelo se ejecuta en local, no ve tus mensajes ni tus datos.</li>
+      <li><strong>Lo que sí usa internet:</strong> buscar y descargar modelos, bajar los motores que los ejecutan y buscar actualizaciones (lo detalla LM Studio).</li>
+      <li><strong>La nube es aparte.</strong> Ollama dice que procesa tus mensajes para responder, pero que no los guarda, no los registra y no entrena con ellos; puedes apagar todo lo de la nube con <code>"disable_ollama_cloud": true</code> en <code>~/.ollama/server.json</code>. La nube de LM Studio (Bionic+) está en EE. UU. y promete no guardar tus peticiones ni las respuestas; su búsqueda web, también, aunque avisa de que lo que llega de internet debe tratarse como no fiable.</li>
+    </ul>
+
+    <h2>¿Y LM Studio Bionic?</h2>
+    <p>Si entras en lmstudio.ai verás primero <strong>Bionic</strong>: es otra aplicación de la misma empresa, un agente para programar, investigar y trabajar con documentos y archivos usando modelos abiertos, locales o en su nube. Está traducida al español desde septiembre de 2026 y su plan gratis incluye el agente con modelos locales. No sustituye a LM Studio: la documentación recomienda seguir usando LM Studio para la configuración avanzada, y desde octubre de 2026 las dos pueden abrirse a la vez (con LM Studio 0.4.26 o posterior, Bionic usa LM Studio para ejecutar los modelos locales). Lo explicamos en la <a href="/blog/lm-studio-que-es-como-usar/">guía de LM Studio</a>.</p>
+    <p>Si lo que quieres es que la IA te lea textos en voz alta sin internet, hoy es una diferencia real: Bionic lo hace en Mac, Windows y Linux (no dice en qué idiomas leen sus voces), mientras que Phonon, la voz de Ollama, tiene modelo en español pero solo funciona en Mac con chip Apple.</p>
+
+    <h2>¿Se pueden tener los dos a la vez?</h2>
+    <p>Sí. LM Studio sirve los modelos en el puerto 1234 y Ollama en el 11434, así que no chocan. Dos cosas a tener en cuenta:</p>
+    <ul>
+      <li><strong>Cada uno guarda sus modelos en su carpeta:</strong> Ollama, en <code>~/.ollama</code>; LM Studio, en la que marques en <strong>My Models</strong>. Si bajas el mismo modelo en los dos, ocupa espacio dos veces.</li>
+      <li><strong>La memoria se comparte:</strong> si cargas un modelo en cada programa, los dos ocupan memoria a la vez. Para comparar, cierra uno antes de abrir el otro (en Ollama, <code>ollama stop</code> y el nombre del modelo).</li>
+    </ul>
+
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Cuál es más rápido, Ollama o LM Studio?",
+          a: "Ninguno de los dos publica una comparación oficial, y la velocidad depende sobre todo de tu ordenador, del modelo y de su tamaño. Para salir de dudas en tu equipo, descarga en los dos el mismo modelo, del mismo tamaño y con la misma compresión (por ejemplo, de 4 bits), hazles la misma pregunta con el otro programa cerrado y mira cuál responde antes. En Mac con chip Apple, LM Studio puede usar además MLX, el motor de Apple.",
+        },
+        {
+          q: "¿Ollama y LM Studio son gratis?",
+          a: "Sí, para usar modelos en tu ordenador. Lo que se paga es la nube, que es opcional: en Ollama, pago por uso o Pro a 20 $ al mes con 60 $ de créditos; en LM Studio, Bionic+ a 20 $ al mes y Pro a 100 $ al mes (precios consultados el 9 de noviembre de 2026). Ollama es de código abierto (MIT); LM Studio es gratuito pero de código cerrado y su licencia permite el uso personal y el uso interno en empresas.",
+        },
+        {
+          q: "¿Funcionan sin internet?",
+          a: "Sí, los dos, una vez descargado el modelo. Internet solo hace falta para buscar y descargar modelos, bajar sus motores y actualizar el programa. Los modelos de su nube, claro, necesitan conexión.",
+        },
+        {
+          q: "¿Cuál va mejor en un ordenador con poca memoria?",
+          a: "En los dos, lo que más cuenta es el tamaño del modelo que eliges. LM Studio recomienda 16 GB de memoria y, con 8 GB en Mac, quedarse en modelos pequeños y contextos modestos. Ollama no da un mínimo y avisa de que los modelos grandes van lentos sin una buena tarjeta gráfica. La calculadora de IA local de Decodifica te dice qué tamaños de Gemma 4 y Qwen 3.5 caben en tu equipo.",
+        },
+        {
+          q: "¿Cuál tiene la ventana en español?",
+          a: "LM Studio: su documentación confirma el español y explica dónde se cambia (Settings > Preferences > Language, en el modo «Power User» o superior). Bionic, su aplicación de agente, también está traducida al español. La documentación de Ollama no habla de otros idiomas para su aplicación.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 9 de noviembre de 2026.</p>
+    <ul>
+      <li><a href="https://lmstudio.ai/docs/app/system-requirements" target="_blank" rel="noopener noreferrer">LM Studio: System Requirements</a>: Mac, Windows y Linux, memoria recomendada y Mac con Intel no admitidos.</li>
+      <li><a href="https://lmstudio.ai/docs/app" target="_blank" rel="noopener noreferrer">Documentación de LM Studio</a>: qué hace, MLX en Mac, MCP, llmster y API.</li>
+      <li><a href="https://lmstudio.ai/docs/app/offline" target="_blank" rel="noopener noreferrer">LM Studio: Offline Operation</a>: qué funciona sin internet y qué no.</li>
+      <li><a href="https://lmstudio.ai/docs/app/basics/download-model" target="_blank" rel="noopener noreferrer">LM Studio: Download an LLM</a> y <a href="https://lmstudio.ai/docs/app/basics/rag" target="_blank" rel="noopener noreferrer">Chat with Documents</a>: modelos de Hugging Face, carpeta de modelos y documentos.</li>
+      <li><a href="https://lmstudio.ai/docs/app/user-interface/languages" target="_blank" rel="noopener noreferrer">LM Studio in your language</a>: la ventana en español.</li>
+      <li><a href="https://lmstudio.ai/docs/integrations/claude-code" target="_blank" rel="noopener noreferrer">LM Studio: Claude Code</a>: puerto 1234, variables y contexto recomendado.</li>
+      <li><a href="https://lmstudio.ai/docs/bionic" target="_blank" rel="noopener noreferrer">Welcome to LM Studio Bionic</a> y <a href="https://lmstudio.ai/docs/bionic/voice-input" target="_blank" rel="noopener noreferrer">Voice Input in Bionic</a>: qué es Bionic y el dictado con Voxtral.</li>
+      <li>Notas de versión de Bionic: <a href="https://lmstudio.ai/changelog/bionic-v1.1.3" target="_blank" rel="noopener noreferrer">1.1.3</a> (15-09-2026, traducción al español), <a href="https://lmstudio.ai/changelog/bionic-v1.1.8" target="_blank" rel="noopener noreferrer">1.1.8</a> (12-10-2026, convivencia con LM Studio) y <a href="https://lmstudio.ai/changelog/bionic-v1.1.10" target="_blank" rel="noopener noreferrer">1.1.10</a> (29-10-2026, lectura en voz alta en Windows y Linux).</li>
+      <li><a href="https://lmstudio.ai/pricing" target="_blank" rel="noopener noreferrer">LM Studio: Pricing</a>, <a href="https://lmstudio.ai/download" target="_blank" rel="noopener noreferrer">descargas</a> y <a href="https://lmstudio.ai/app-terms" target="_blank" rel="noopener noreferrer">App Terms of Service</a>: planes, versión 0.4.28 y licencia.</li>
+      <li><a href="https://docs.ollama.com/macos" target="_blank" rel="noopener noreferrer">Ollama Docs: macOS</a>, <a href="https://docs.ollama.com/windows" target="_blank" rel="noopener noreferrer">Windows</a>, <a href="https://docs.ollama.com/linux" target="_blank" rel="noopener noreferrer">Linux</a> y <a href="https://docs.ollama.com/gpu" target="_blank" rel="noopener noreferrer">Hardware support</a>: requisitos, carpeta de modelos, puerto 11434 y gráficas.</li>
+      <li><a href="https://docs.ollama.com/quickstart" target="_blank" rel="noopener noreferrer">Ollama Docs: Quickstart</a> y <a href="https://docs.ollama.com/integrations/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>: <code>ollama launch</code> y conexión con aplicaciones de escritorio.</li>
+      <li><a href="https://docs.ollama.com/api/anthropic-compatibility" target="_blank" rel="noopener noreferrer">Ollama Docs: Anthropic compatibility</a>: API compatible con la de Anthropic.</li>
+      <li><a href="https://docs.ollama.com/faq" target="_blank" rel="noopener noreferrer">Ollama Docs: FAQ</a> y <a href="https://docs.ollama.com/context-length" target="_blank" rel="noopener noreferrer">Context length</a>: privacidad, cómo apagar la nube y contexto por defecto.</li>
+      <li><a href="https://ollama.com/blog/new-app" target="_blank" rel="noopener noreferrer">Ollama's new app</a>: aplicación con chat y archivos en Mac y Windows.</li>
+      <li><a href="https://ollama.com/library/phonon" target="_blank" rel="noopener noreferrer">Ollama: phonon</a>: voz en español, solo con chip Apple.</li>
+      <li><a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama: Download</a> y <a href="https://ollama.com/pricing" target="_blank" rel="noopener noreferrer">Pricing</a>: instalación, aviso sobre modelos grandes y planes.</li>
+      <li><a href="https://raw.githubusercontent.com/ollama/ollama/main/LICENSE" target="_blank" rel="noopener noreferrer">Licencia de Ollama (MIT)</a>.</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/ia-local-sin-internet/">IA local en español: cómo usar IA en tu PC sin internet</a>, la guía principal de este tema.</li>
+      <li><a href="/blog/lm-studio-que-es-como-usar/">LM Studio: qué es y cómo usar IA local en tu ordenador</a>, paso a paso.</li>
+      <li><a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usar modelos de IA en local</a>, con las órdenes básicas y la voz en español.</li>
+      <li><a href="/herramientas/ia-local-mi-ordenador/">¿Qué IA local cabe en tu ordenador?</a>, la calculadora con las cifras oficiales de cada modelo.</li>
+    </ul>
+
+  </Articulo>
+
+</BaseLayout>
