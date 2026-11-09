@@ -5,7 +5,7 @@ import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 
 const title = "Cómo convertir una reunión en tareas revisables con IA";
-const description = "Un workflow de cinco pasos para transformar una transcripción en decisiones, tareas y dudas sin inventar acuerdos ni compromisos.";
+const description = "Un método de cinco pasos para pasar una transcripción a decisiones, tareas y dudas con IA, y cómo revisar que la IA no invente acuerdos ni compromisos.";
 const pubDate = "2026-07-11";
 const modifiedDate = "2026-11-09";
 const readingTime = "7 min";
@@ -28,6 +28,11 @@ const conversionCtaStrategy = "diagnostic_only";
     "https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf",
     "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
     "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+    "https://fathom.ai/",
+    "https://fathom.ai/pricing",
+    "https://help.fathom.video/en/articles/296192",
+    "https://www.granola.ai/",
+    "https://docs.granola.ai/help-center/customising-granola/multi-language",
   ]}
 >
   <Articulo slug="ia-resumir-reuniones-tareas-revisables">
@@ -107,11 +112,11 @@ Transcripción:
     <FiguraArticulo src="/img/blog/ia-resumir-reuniones-tareas-revisables/prueba-20-minutos-resumen-reunion-ia.webp" alt="Cuadro de la prueba de 20 minutos: 5 minutos para preparar la transcripción, 10 para ejecutar el prompt y comparar, y 5 para marcar cada fila como correcta, incompleta o inventada" width={1200} height={599} />
 
     <h2>Practica con una transcripción pública</h2>
-    <p>Si prefieres no empezar con una reunión de tu trabajo, puedes practicar con una <a href="https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf" target="_blank" rel="noopener noreferrer">transcripción pública de la Planning Inspectorate</a> del Reino Unido: una audiencia de una hora, en inglés, sobre la variante A46 de Newark (3 de diciembre de 2024). Al final, uno de los responsables lee en voz alta siete «action points», cada uno dirigido a alguien, y después se recuerda que todo lo pedido se entrega en la siguiente fecha límite, el 13 de diciembre de 2024. Pásala por el prompt y comprueba:</p>
+    <p>Si prefieres no empezar con una reunión de tu trabajo, puedes practicar con una <a href="https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf" target="_blank" rel="noopener noreferrer">transcripción pública de la Planning Inspectorate</a> del Reino Unido: una audiencia de algo más de una hora, en inglés, sobre la variante A46 de Newark (3 de diciembre de 2024). Al final, uno de los responsables lee en voz alta siete «action points», cada uno dirigido a alguien, y después se recuerda que todo lo pedido se entrega en la siguiente fecha límite, el 13 de diciembre de 2024. Pásala por el prompt y comprueba:</p>
     <ol>
       <li>Si el borrador recoge las siete tareas y a quién va dirigida cada una.</li>
       <li>Si el 13 de diciembre aparece como plazo común (una nota), y no como una octava tarea.</li>
-      <li>Si deja fuera lo que no es una tarea del acta: al final se mencionan una conversación privada entre dos asistentes y un asunto que se deja para otra audiencia.</li>
+      <li>Si deja fuera lo que no es una tarea del acta: al final se mencionan una conversación privada entre dos asistentes, un asunto que se deja para otra audiencia y una petición sobre unos planos que el promotor responde que no va a cambiar.</li>
     </ol>
     <p>El propio documento avisa de que se hizo con un programa de voz a texto con IA y de que puede tener errores: es el tipo de texto con el que vas a trabajar. Que salga bien con este ejemplo no garantiza que cualquier reunión real quede bien a la primera; las grabaciones con varias personas hablando a la vez, mal audio o acuerdos que se sobrentienden necesitan más revisión humana.</p>
 
@@ -128,7 +133,9 @@ Transcripción:
     <ul>
       <li><a href="https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR010065-000822-TRANSCRIPT_A46_CAH2_SESSION2_2024-12-03.pdf" target="_blank" rel="noopener noreferrer">Transcripción pública de la Planning Inspectorate</a> (audiencia sobre la variante A46 de Newark, 3 de diciembre de 2024): hecha con un programa de voz a texto con IA, termina con siete «action points» y un plazo común. Sirve para practicar.</li>
       <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener noreferrer">Perfil de riesgos de IA generativa de NIST</a>, como referencia para revisar errores, confabulaciones y dependencia excesiva de la salida.</li>
-      <li><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/" target="_blank" rel="noopener noreferrer">Guía de la ICO sobre IA y protección de datos</a>, para decidir qué información sensible no debe entrar en una herramienta no aprobada.</li>
+      <li><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/" target="_blank" rel="noopener noreferrer">Guía de la ICO sobre IA y protección de datos</a>: la ICO es el regulador de protección de datos del Reino Unido y su guía aplica la ley británica. Sirve como referencia general para decidir qué información sensible no debe entrar en una herramienta no aprobada; en España y en cada país de Latinoamérica rige su propia ley.</li>
+      <li><a href="https://fathom.ai/" target="_blank" rel="noopener noreferrer">Fathom</a>, <a href="https://fathom.ai/pricing" target="_blank" rel="noopener noreferrer">sus precios</a> y <a href="https://help.fathom.video/en/articles/296192" target="_blank" rel="noopener noreferrer">sus idiomas</a>: Zoom, Google Meet y Microsoft Teams, grabaciones y transcripciones ilimitadas en el plan gratis, y español.</li>
+      <li><a href="https://www.granola.ai/" target="_blank" rel="noopener noreferrer">Granola</a> y <a href="https://docs.granola.ai/help-center/customising-granola/multi-language" target="_blank" rel="noopener noreferrer">sus idiomas</a>: usa el audio del ordenador sin meter un bot y transcribe en español.</li>
     </ul>
 
     <h2>Convierte otra tarea repetitiva en un workflow</h2>

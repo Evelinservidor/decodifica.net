@@ -44,6 +44,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://lmstudio.ai/app-terms",
     "https://ollama.com/pricing",
     "https://docs.ollama.com/macos",
+    "https://docs.ollama.com/quickstart",
+    "https://raw.githubusercontent.com/ollama/ollama/main/LICENSE",
   ]}
 >
   <Articulo slug="lm-studio-que-es-como-usar">
@@ -58,7 +60,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>LM Studio lo desarrolla Element Labs, Inc. Su propia documentación resume lo que permite hacer:</p>
     <ul class="space-y-2">
       <li><strong>Buscar y descargar modelos abiertos</strong> desde Hugging Face sin salir de la aplicación.</li>
-      <li><strong>Chatear con ellos</strong> en una interfaz parecida a la de ChatGPT.</li>
+      <li><strong>Chatear con ellos</strong> en una interfaz de chat sencilla.</li>
       <li><strong>Adjuntar documentos</strong> (<code>.docx</code>, <code>.pdf</code> y <code>.txt</code>) y hacerles preguntas, también sin conexión.</li>
       <li><strong>Conectar servidores MCP</strong> para que el modelo local use herramientas externas.</li>
       <li><strong>Servir el modelo a otras aplicaciones</strong> con una API compatible con la de OpenAI, en tu ordenador o en tu red local.</li>
@@ -66,13 +68,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Para qué tiene sentido: trabajar con textos que no quieres subir a un servicio en la nube (contratos, notas de clientes, datos de salud), usar IA sin conexión o probar modelos abiertos antes de decidir si te merece la pena pagar una suscripción. Si lo que buscas es la mejor calidad posible sin pensar en el hardware, un asistente en la nube seguirá siendo más cómodo: el modelo local solo va tan rápido como tu ordenador.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">LM Studio y LM Studio Bionic: no son lo mismo</h2>
-    <p>Si entras hoy en lmstudio.ai, lo primero que verás es <strong>LM Studio Bionic</strong>. La documentación aclara que Bionic es "una aplicación nueva y separada de LM Studio": un agente pensado para trabajar con documentos, programar y automatizar tareas usando modelos abiertos. Una sesión de Bionic puede usar tres tipos de modelo:</p>
+    <p>Si entras hoy en lmstudio.ai, lo primero que verás es <strong>LM Studio Bionic</strong>. La documentación aclara que Bionic es "una aplicación nueva y separada de LM Studio": un agente para programar, investigar y trabajar con documentos y archivos usando modelos abiertos. Una sesión de Bionic puede usar tres tipos de modelo:</p>
     <ul class="space-y-2">
       <li><strong>Locales</strong>, que corren en tu ordenador.</li>
       <li><strong>En la nube de LM Studio</strong> (alojada en EE. UU.), con modelos abiertos grandes como Kimi K3, GLM 5.3 o DeepSeek V4 Flash. LM Studio afirma que su nube no guarda tus peticiones ni las respuestas (lo llama <em>Zero Data Retention</em>).</li>
       <li><strong>Remotos</strong>, ejecutados en otro equipo tuyo a través de LM Link.</li>
     </ul>
-    <p>La aplicación clásica, LM Studio, se sigue descargando desde la misma página de descargas y es la que explica esta guía. LM Studio recomienda seguir usándola para la configuración avanzada de los modelos. Lo que ha cambiado desde octubre:</p>
+    <p>La aplicación clásica, LM Studio, se sigue descargando desde la misma página de descargas y es la que explica esta guía. LM Studio dice que puedes seguir usándola para la configuración avanzada de los modelos. Lo nuevo de Bionic en los últimos meses:</p>
     <ul class="space-y-2">
       <li><strong>Pueden abrirse a la vez.</strong> Desde Bionic 1.1.8 (12 de octubre de 2026), si tienes LM Studio 0.4.26 o posterior abierto, Bionic lo usa para ejecutar los modelos locales.</li>
       <li><strong>Bionic está en español</strong> desde la versión 1.1.3 (15 de septiembre de 2026).</li>
@@ -87,7 +89,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={576}
       caption="Página de descargas de lmstudio.ai (captura de octubre de 2026; sigue igual el 9 de noviembre de 2026)."
     />
-    <p><strong>Precios (consultados el 9 de noviembre de 2026):</strong> el plan gratuito incluye el agente Bionic, los modelos locales (con llama.cpp y MLX), la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Bionic+ cuesta 20 dólares al mes y añade los modelos en la nube y la búsqueda web completa; Pro cuesta 100 dólares al mes con cinco veces más uso. Para usar modelos en tu propio ordenador no necesitas pagar nada.</p>
+    <p><strong>Precios (consultados el 9 de noviembre de 2026):</strong> el plan gratuito incluye el agente Bionic, los modelos locales (con llama.cpp y MLX), la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Bionic+ cuesta 20 dólares al mes y añade los modelos en la nube y la búsqueda web completa; Pro cuesta 100 dólares al mes con cinco veces más uso. Sus condiciones avisan de que se pagan también los impuestos que correspondan, y el uso que pase de lo incluido en el plan se paga con créditos. Para usar modelos en tu propio ordenador no necesitas pagar nada.</p>
 
     <FiguraArticulo
       src="/img/blog/lm-studio-que-es-como-usar/precios-lm-studio.webp"
@@ -110,7 +112,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         <tbody>
           <tr class="border-b border-dark-700">
             <td class="py-3 pr-4 font-semibold text-white">Mac</td>
-            <td class="py-3 pr-4">Chip Apple Silicon (M1 a M4) y macOS 14 o posterior. Se recomiendan 16 GB de RAM; con 8 GB funciona si usas modelos pequeños. Los Mac con procesador Intel no están soportados.</td>
+            <td class="py-3 pr-4">Chip Apple Silicon (la página de requisitos cita de M1 a M4) y macOS 14 o posterior. Se recomiendan 16 GB de RAM; con 8 GB puede funcionar si te quedas en modelos pequeños y contextos modestos. Los Mac con procesador Intel no están soportados.</td>
           </tr>
           <tr class="border-b border-dark-700">
             <td class="py-3 pr-4 font-semibold text-white">Windows</td>
@@ -152,19 +154,20 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </ul>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Usarlo desde otras aplicaciones</h3>
-    <p>LM Studio puede funcionar como servidor en tu ordenador o en tu red local (por defecto, en el puerto 1234), con puntos de acceso que imitan a los de OpenAI y también al de Anthropic (<code>/v1/messages</code>). En la práctica, muchas herramientas pensadas para ChatGPT o Claude pueden usar tu modelo local en su lugar. Su documentación tiene guías para Claude Code, Codex, Hermes Agent y OpenClaw; con Claude Code, por ejemplo, basta con arrancar el servidor y darle dos variables (<code>ANTHROPIC_BASE_URL=http://localhost:1234</code> y <code>ANTHROPIC_AUTH_TOKEN=lmstudio</code>). Para servidores sin pantalla existe <strong>llmster</strong>, la versión sin interfaz gráfica.</p>
+    <p>LM Studio puede funcionar como servidor en tu ordenador o en tu red local (por defecto, en el puerto 1234), con puntos de acceso que imitan a los de OpenAI y también al de Anthropic (<code>/v1/messages</code>). En la práctica, muchas herramientas pensadas para ChatGPT o Claude pueden usar tu modelo local en su lugar. Su documentación tiene guías para Claude Code, Codex, Hermes Agent y OpenClaw. Con Claude Code, por ejemplo, arrancas el servidor, le das tres variables de entorno (<code>ANTHROPIC_BASE_URL=http://localhost:1234</code>, <code>ANTHROPIC_AUTH_TOKEN=lmstudio</code> y <code>CLAUDE_CODE_ATTRIBUTION_HEADER=0</code>) y eliges el modelo con <code>--model</code>; la guía recomienda un modelo con más de unos 25.000 tokens de contexto, porque Claude Code gasta mucho. Para servidores sin pantalla existe <strong>llmster</strong>, la versión sin interfaz gráfica.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">LM Studio o Ollama: cuál elegir</h2>
-    <p>Es la comparación más buscada junto a LM Studio. Los dos ejecutan modelos abiertos en tu ordenador, son gratis para usarlos en local y tienen una nube de pago opcional. Lo esencial:</p>
+    <p>Los dos ejecutan modelos abiertos en tu ordenador, son gratis para usarlos en local y tienen una nube de pago opcional. Lo esencial:</p>
     <ul class="space-y-2">
       <li><strong>LM Studio</strong> está pensado para usarse con el ratón (buscador de modelos, chat, documentos y ajustes en una ventana que se puede poner en español) y funciona en Windows con procesador ARM. No admite los Mac con Intel.</li>
-      <li><strong><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama</a></strong> es de código abierto (MIT), funciona en Mac con Intel (solo con el procesador) y está muy orientado a conectarse con otras aplicaciones y agentes de programación desde la terminal.</li>
+      <li><strong><a href="/blog/ollama-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">Ollama</a></strong> es de código abierto (MIT), funciona en Mac con Intel (solo con el procesador) y se maneja con órdenes en la terminal; con una sola (<code>ollama launch</code>) abre Claude Code, Codex u OpenCode con un modelo local.</li>
     </ul>
     <p>La comparación punto por punto, con los datos oficiales de los dos (ordenadores, idioma, documentos, voz, precios de la nube y licencias), está en <a href="/blog/ollama-o-lm-studio/" class="text-brand-400 hover:text-brand-300">Ollama o LM Studio: cuál es mejor según tu ordenador</a>.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Límites que conviene tener claros</h2>
     <ul class="space-y-2">
-      <li><strong>No es ChatGPT en tu ordenador.</strong> Los modelos que caben en un portátil son más pequeños que los que usan los servicios en la nube, y lo notarás en tareas complejas.</li>
+      <li><strong>Tu ordenador pone el límite.</strong> Con 8 GB, LM Studio aconseja quedarse en modelos pequeños, y la propia documentación de Bionic propone pasar a modelos en la nube «para tareas más pesadas».</li>
+      <li><strong>Países con sanciones.</strong> Sus condiciones de uso excluyen a quien viva en un país con sanciones territoriales de EE. UU. (no dan la lista).</li>
       <li><strong>La privacidad depende de qué uses.</strong> Lo local se queda en tu equipo; la nube de Bionic y la búsqueda web no son locales, aunque LM Studio diga que no guarda los datos. La propia empresa avisa de que la búsqueda web tiene sus propios riesgos y de que el contenido de internet debe tratarse como no fiable.</li>
       <li><strong>Cada modelo tiene su licencia.</strong> LM Studio es la aplicación; el modelo que descargas tiene sus propias condiciones, que se pueden consultar en su página de Hugging Face.</li>
       <li><strong>Ocupa espacio.</strong> Cada modelo es un archivo grande. Puedes cambiar la carpeta donde se guardan desde "My Models".</li>
@@ -176,7 +179,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       items={[
         {
           q: "¿LM Studio es gratis?",
-          a: "Sí, para usar modelos en tu ordenador. El plan Free cuesta 0 $ e incluye el agente Bionic, los modelos locales, la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Solo se paga la nube: Bionic+ a 20 dólares al mes y Pro a 100 dólares al mes (consultado el 9 de noviembre de 2026). Su licencia permite el uso personal y el uso interno en empresas.",
+          a: "Sí, para usar modelos en tu ordenador. El plan Free cuesta 0 $ e incluye el agente Bionic, los modelos locales, la transcripción de voz sin conexión, LM Link para hasta 5 dispositivos y búsqueda web limitada. Solo se paga la nube: Bionic+ a 20 dólares al mes y Pro a 100 dólares al mes, más impuestos (consultado el 9 de noviembre de 2026). Su licencia permite el uso personal y el uso interno en empresas.",
         },
         {
           q: "¿Qué diferencia hay entre LM Studio y LM Studio Bionic?",
@@ -212,8 +215,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://lmstudio.ai/changelog/lmstudio-v0.4.28" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio 0.4.28</a>: versión del 31 de octubre de 2026.</li>
       <li>Notas de versión de Bionic: <a href="https://lmstudio.ai/changelog/bionic-v1.1.3" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">1.1.3</a> (español), <a href="https://lmstudio.ai/changelog/bionic-v1.1.8" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">1.1.8</a> (convivencia con LM Studio) y <a href="https://lmstudio.ai/changelog/bionic-v1.1.10" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">1.1.10</a> (lectura en voz alta en Windows y Linux); <a href="https://lmstudio.ai/docs/bionic/voice-input" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Voice Input in Bionic</a>: dictado con Voxtral.</li>
       <li><a href="https://lmstudio.ai/docs/integrations" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio: Integrations</a> y <a href="https://lmstudio.ai/docs/developer/anthropic-compat" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Anthropic-compatible endpoint</a>: Claude Code, Codex, puerto 1234 y variables.</li>
-      <li><a href="https://lmstudio.ai/app-terms" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio App Terms of Service</a>: licencia de uso personal e interno.</li>
-      <li><a href="https://ollama.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama: Pricing</a> y <a href="https://docs.ollama.com/macos" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: macOS</a>: planes y Mac con Intel.</li>
+      <li><a href="https://lmstudio.ai/app-terms" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">LM Studio App Terms of Service</a>: licencia de uso personal e interno, impuestos y países con sanciones.</li>
+      <li><a href="https://ollama.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama: Pricing</a>, <a href="https://docs.ollama.com/macos" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: macOS</a>, <a href="https://docs.ollama.com/quickstart" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Quickstart</a> y <a href="https://raw.githubusercontent.com/ollama/ollama/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">licencia MIT</a>: planes, Mac con Intel, <code>ollama launch</code> y licencia.</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
