@@ -1,5 +1,41 @@
 [
   {
+    "fecha": "2026-11-10",
+    "titulo": "¿Audio largo? A texto gratis",
+    "serie": "cual-uso",
+    "numero_serie": 1,
+    "resumen": "Lo que nadie explica: la app de Gemini y Gemini Notebook suenan igual, pero no son lo mismo. En la versión gratis, la app de Gemini solo admite 10 minutos de audio en total. Gemini Notebook, que es el antiguo NotebookLM (Google le cambió el",
+    "fuentes": [
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/14903178?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/notebooklm/answer/16215270?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/notebooklm/answer/16269187?hl=es"
+      },
+      {
+        "nombre": "blog.google",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
+      },
+      {
+        "nombre": "support.apple.com",
+        "url": "https://support.apple.com/es-es/guide/iphone/iphbe11247b5/ios"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1782083199749825",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3mzxge2s72s24"
+    }
+  },
+  {
     "fecha": "2026-11-09",
     "titulo": "Claude gratis: no te repitas",
     "serie": "gratis-y-util",
