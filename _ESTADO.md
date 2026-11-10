@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 9 de noviembre de 2026 (agente semanal).
+Última actualización: 10 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -216,3 +216,5 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Pendiente de Jordi: «Solicitar indexación» de Claude, Ollama, LM Studio y n8n (tercera semana que se pide).
   - Pendiente: la guía de la ICO (fuente de reuniones) no abre desde aquí (Cloudflare); medir la descripción de Claude Skills hacia el 07-12.
   - Semana que viene (semana 5): grupo A, «Claude Code sin saber programar: primeros pasos» y mejora de `claude-emails-sonar-humanos` (fuera de Google). El 07-12, herramienta del mes de diciembre: «Planes gratis de IA: qué te dan hoy».
+- **10-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-10`, pull request #49 (espera a Jordi). Novedad: Claude Fable 5.2 (09-11-2026), añadida como sección a la guía `claude-ia-que-es-gratis` (no está en el plan gratis; en Pro, créditos de uso salvo la semana del 9 al 16-11, incluido hasta el 50 % del límite semanal; Max y Ultra, incluido hasta el 50 % y de 1 a 3 reinicios hasta el 08-03-2027; captura, esquema, pregunta frecuente; `modifiedDate` 10-11). Frase desfasada de `alternativas-fable-5` cambiada por una línea fechada con enlace. Nota: `docs/novedades/2026-11-10.md`; reel: `docs/redes/2026-11-10.md`.
+  - Pendiente: desde el 17-11, pasar a pasado (o quitar) la oferta de Pro en la sección y en la pregunta frecuente.
