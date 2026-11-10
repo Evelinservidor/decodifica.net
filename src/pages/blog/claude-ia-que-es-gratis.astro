@@ -8,10 +8,10 @@ import Caja from '../../components/Caja.astro';
 const title = "Claude en español: guía completa, gratis y planes";
 const description = "Cómo usar Claude en español: qué incluye gratis, cuánto cuestan Pro y Max, Proyectos, memoria, cómo pedirle las cosas y qué hace con tus datos.";
 const pubDate = "2026-10-12";
-const modifiedDate = "2026-11-06";
+const modifiedDate = "2026-11-10";
 const readingTime = "13 min";
 const tema = "chatbots";
-const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "claude finanzas personales", "anthropic"];
+const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "claude finanzas personales", "claude fable 5.2", "anthropic"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -44,11 +44,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
     "https://support.claude.com/en/articles/18185620-use-personal-finance-with-claude",
     "https://support.claude.com/en/articles/12138966-release-notes",
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "https://www.anthropic.com/claude/fable",
+    "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
+    "https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers",
+    "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
   ]}
 >
   <Articulo slug="claude-ia-que-es-gratis">
 
-    <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso cada cinco horas y otro semanal. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code; Max cuesta 100 y Ultra, 200.</p>
+    <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso que se renueva cada cinco horas. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code; Max cuesta 100 y Ultra, 200.</p>
 
     <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (la novedad de Claude Duet, el 23 de octubre; los precios y los planes, el 2 de noviembre; Finanzas personales, el 6 de noviembre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
 
@@ -62,7 +67,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Hay que tener al menos 18 años y estar en un país donde Claude esté disponible.</p>
 
     <h2>¿Está disponible en mi país?</h2>
-    <p>En la lista oficial de países (consultada en octubre de 2026) están, entre otros, <strong>España, México, Argentina, Colombia, Perú, Chile, Ecuador, Bolivia, Uruguay, Paraguay, Guatemala y República Dominicana</strong>. <strong>Venezuela y Cuba no aparecen</strong> en esa lista, así que desde allí no se puede usar de forma oficial. Si tu país no está entre los que citamos, búscalo en la página <a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" target="_blank" rel="noopener noreferrer">Where can I access Claude?</a>.</p>
+    <p>En la lista oficial de países (consultada en octubre de 2026) están, entre otros, <strong>España, México, Argentina, Colombia, Perú, Chile, Ecuador, Bolivia, Uruguay, Paraguay, Guatemala y República Dominicana</strong>. <strong>Venezuela, Cuba y Nicaragua no aparecen</strong> en esa lista (comprobado de nuevo el 10 de noviembre de 2026), así que desde allí no se puede usar de forma oficial. Si tu país no está entre los que citamos, búscalo en la página <a href="https://support.claude.com/en/articles/8461763-where-can-i-access-claude" target="_blank" rel="noopener noreferrer">Where can I access Claude?</a>.</p>
 
     <h2>Cómo poner Claude en español</h2>
     <p>Puedes escribirle en español desde el primer mensaje: el centro de ayuda dice que Claude funciona bien en los idiomas más comunes, además del inglés. Para poner también los menús en español:</p>
@@ -98,7 +103,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
 
     <h2>Los límites del plan gratis y cómo aprovecharlos</h2>
-    <p>El plan gratuito tiene un <strong>límite de uso por sesión que se renueva cada cinco horas</strong> y, según la página de precios, otro semanal; la cantidad de mensajes que caben varía según la demanda del momento. No hay un número fijo de mensajes porque no todos gastan lo mismo. Según la guía oficial, gastan más:</p>
+    <p>El plan gratuito tiene un <strong>límite de uso por sesión que se renueva cada cinco horas</strong> y, según la tarjeta del plan en la página de precios, otro semanal (aunque las preguntas frecuentes de esa misma página dicen que el semanal es de los planes de pago); la cantidad de mensajes que caben varía según la demanda del momento. No hay un número fijo de mensajes porque no todos gastan lo mismo. Según la guía oficial, gastan más:</p>
     <ul>
       <li>los mensajes largos y los archivos grandes;</li>
       <li>lo larga que sea la conversación;</li>
@@ -115,7 +120,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <Caja tipo="ojo">Pagar no quita los límites. Pro y Max también tienen un límite por sesión de cinco horas y otro semanal; Ultra no tiene el de cinco horas (en cuentas verificadas), pero sí el semanal. En los ajustes de uso ves cuánto llevas gastado de cada uno.</Caja>
 
     <h2>Cuánto cuesta Claude: planes de pago</h2>
-    <p>Precios en dólares estadounidenses, consultados el 2 de noviembre de 2026. La página de precios avisa de que no incluyen los impuestos que correspondan: el precio final para tu país lo verás al pagar.</p>
+    <p>Precios en dólares estadounidenses, consultados de nuevo el 10 de noviembre de 2026. La página de precios avisa de que no incluyen los impuestos que correspondan: el precio final para tu país lo verás al pagar.</p>
     <div>
       <table>
         <thead>
@@ -163,6 +168,46 @@ const pillarLabel = "Pilar 2: Tips productividad";
       caption="Página de precios de claude.com (captura del 2 de noviembre de 2026)."
     />
     <p>Antes de pagar, ten en cuenta que <strong>la suscripción no incluye la API</strong> (salvo los créditos de Max, Ultra y Team): si quieres usar Claude desde tus propios programas, se paga aparte. Una forma sencilla de decidir: usa el plan gratis una semana con tus tareas reales. Si chocas con el límite casi todos los días o necesitas Claude Code, Pro tiene sentido; si no, no.</p>
+
+    <h2>Claude Fable 5.2: qué es y quién puede usarlo</h2>
+    <Caja tipo="nota"><strong>Novedad del 9 de noviembre de 2026.</strong> Datos del anuncio de Anthropic, de la página oficial de Fable, de la página de precios y del centro de ayuda de Claude, consultados el 10 de noviembre de 2026. La oferta de lanzamiento dura poco: abajo tienes las fechas.</Caja>
+    <p><strong>Respuesta corta:</strong> Claude Fable 5.2 es el modelo más potente de Anthropic para trabajo técnico difícil (programación, análisis de datos, ciencia). Pasa por delante de Fable 5.1 como el modelo más capaz de Anthropic, es hasta un 30 % más rápido y su precio en la API baja de 10 a 8 dólares por millón de tokens de entrada (y de 50 a 40 los de salida). <strong>No está en el plan gratis.</strong> En Pro se paga aparte con créditos de uso, salvo <strong>del 9 al 16 de noviembre de 2026</strong>, cuando va incluido hasta la mitad del límite semanal; en Max y Ultra va incluido siempre hasta esa mitad. El anuncio no lo limita a ningún país.</p>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-fable-5-2-anuncio.webp"
+      alt="Anuncio «Claude Fable 5.2 and Mythos 5.2» en anthropic.com, fechado el 9 de noviembre de 2026, con su índice: introducción, rendimiento, ciencia e ingeniería, seguridad y disponibilidad"
+      width={1200}
+      height={754}
+      caption="Anuncio de Fable 5.2 y Mythos 5.2 en anthropic.com (captura del 10 de noviembre de 2026)."
+    />
+    <h3>Qué cambia</h3>
+    <ul>
+      <li><strong>Mejor en programación, razonamiento e imágenes</strong> que Fable 5.1, según Anthropic, y supera a Opus 5.5 en casi todas sus pruebas (son pruebas de la propia empresa).</li>
+      <li><strong>Más rápido y más claro:</strong> responde hasta un 30 % más rápido que Fable 5.1, y quienes lo probaron antes del lanzamiento dicen que se explica con más claridad. Con el esfuerzo «Medium», el que viene por defecto en las aplicaciones de Claude y en Claude Code, resuelve tareas difíciles gastando menos que Fable 5.1.</li>
+      <li><strong>Menos bloqueos:</strong> Fable lleva filtros que cortan las peticiones de ciberseguridad ofensiva y de investigación biológica; cuando bloquea una, responde otro modelo (Opus 4.8 u Opus 5). En sus primeras pruebas, Anthropic vio un 55 % menos de bloqueos que con Fable 5.1.</li>
+      <li><strong>Mythos 5.2</strong> es el mismo modelo sin esos filtros. No es para el público: piden acceso a Anthropic profesionales de ciberseguridad y equipos de ciencias de la vida, y las empresas con Claude Enterprise lo usan a través de Claude Security.</li>
+    </ul>
+    <p>Para casi todo lo demás, la propia Anthropic recomienda empezar con <strong>Opus 5.5</strong> y subir a Fable solo para los trabajos técnicos más largos y complicados. Para escribir correos, resumir o preguntar dudas no hace falta.</p>
+    <h3>Cuánto cuesta en cada plan</h3>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-fable-5-2-planes.webp"
+      alt="Esquema de Claude Fable 5.2 por plan: Free sin Fable; Pro a 20 dólares al mes con Fable por créditos de uso y, del 9 al 16 de noviembre de 2026, incluido hasta el 50 % del límite semanal; Max y Ultra a 100 y 200 dólares con Fable incluido hasta el 50 % del límite semanal y de 1 a 3 reinicios de Fable"
+      width={1200}
+      height={650}
+    />
+    <ul>
+      <li><strong>Free:</strong> sin Fable. Si no te sale en la lista de modelos, el centro de ayuda lo explica así: Fable no está en el plan gratis.</li>
+      <li><strong>Pro y puestos estándar de Team:</strong> Fable funciona con <strong>créditos de uso</strong>, que se compran aparte y se cobran a precio de API, no con el límite de tu plan. Oferta de lanzamiento: <strong>del 9 de noviembre al 16 de noviembre de 2026 a las 23:59, hora de California</strong> (el 17 de noviembre a las 8:59 en España peninsular, la 1:59 en Ciudad de México, las 2:59 en Bogotá y Lima y las 4:59 en Buenos Aires y Santiago), Fable entra en tu plan hasta el 50 % de tu límite semanal sin pagar más; pasado ese 50 %, se cobra de los créditos de uso. Si ya pagabas antes de las 10:00 (hora de California) del 9 de noviembre, tienes además <strong>un reinicio de Fable</strong> que caduca ese mismo día 16.</li>
+      <li><strong>Max (100 $/mes) y Ultra (200 $/mes):</strong> Fable va incluido siempre hasta la mitad del límite semanal. Con el lanzamiento reciben de <strong>1 a 3 reinicios de Fable</strong> según cuánto tiempo lleven pagando (menos de seis meses, uno; de seis a doce, dos; más de un año, tres), que caducan el 8 de marzo de 2027. Como en Pro, los reinicios son solo para quien ya pagaba antes de las 10:00 (hora de California) del 9 de noviembre.</li>
+    </ul>
+    <p>Un <strong>reinicio de Fable</strong> te devuelve lo que hayas gastado en Fable de tu límite semanal y rellena entero el límite de cinco horas. No sube tus límites y, una vez usado, no se puede deshacer. En la API (para programadores), Fable 5.2 cuesta 8 dólares por millón de tokens de entrada y 40 por millón de salida.</p>
+    <Caja tipo="ojo">Fable gasta tu límite más deprisa que los demás modelos de Claude. En Pro, cuando gastes ese 50 % o acabe la semana de la oferta, cada mensaje con Fable se cobra de tus créditos de uso si los tienes activados: si no quieres gastar, vuelve a Opus o Sonnet en el selector de modelos.</Caja>
+    <h3>¿Cómo probarlo?</h3>
+    <ol>
+      <li>Abre Claude en la web, en la aplicación de escritorio o en el móvil con una cuenta Pro, Max o Ultra.</li>
+      <li>En el selector de modelos, elige <strong>«Fable 5.2»</strong>. Tu modelo por defecto no cambia: hay que elegir Fable en el selector cuando lo quieras usar.</li>
+      <li>Mira cuánto llevas gastado en <strong>Settings &gt; Usage</strong>. Ahí también están tus reinicios: en «Limit resets», pulsa «Reset for free» cuando lo necesites.</li>
+    </ol>
+    <p>En Claude Code hace falta la versión 2.1.321 o posterior. Anthropic no dice nada sobre el español en el anuncio de Fable 5.2: escríbele como al resto de modelos de Claude, y si quieres una prueba justa, dale la misma tarea técnica a Opus 5.5 y a Fable 5.2 y compara cuál te ahorra más correcciones. Las condiciones de la oferta están también en español en el <a href="https://support.claude.com/es/articles/17506494-ofertas-de-lanzamiento-de-claude-fable-5-2" target="_blank" rel="noopener noreferrer">centro de ayuda de Claude</a>. Si buscas modelos que no dependan de Anthropic, mira <a href="/blog/alternativas-fable-5/">las alternativas abiertas y locales a Fable</a>.</p>
 
     <h2>Qué puedes hacer con Claude además de chatear</h2>
     <h3>Proyectos</h3>
@@ -263,7 +308,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       items={[
         {
           q: "¿Claude es gratis de verdad?",
-          a: "Sí: el plan Free cuesta 0 dólares e incluye Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills. Tiene un límite de uso que se renueva cada cinco horas y otro semanal.",
+          a: "Sí: el plan Free cuesta 0 dólares e incluye Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills. Tiene un límite de uso que se renueva cada cinco horas (la página de precios habla también de uno semanal, pero no lo deja claro para el plan gratis).",
         },
         {
           q: "¿Claude habla español?",
@@ -271,15 +316,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
         },
         {
           q: "¿Cuántos mensajes puedo mandar gratis?",
-          a: "No hay un número fijo: depende de la demanda del momento y de cuánto pese cada mensaje (longitud, archivos, búsquedas, código). El límite se renueva cada cinco horas (hay además uno semanal) y Claude avisa cuando lo alcanzas.",
+          a: "No hay un número fijo: depende de la demanda del momento y de cuánto pese cada mensaje (longitud, archivos, búsquedas, código). El límite se renueva cada cinco horas y Claude avisa cuando lo alcanzas.",
         },
         {
           q: "¿Cuánto cuesta Claude Pro?",
-          a: "20 dólares al mes, o 17 al mes pagando el año (200 por adelantado), según la página de precios consultada el 2 de noviembre de 2026. Los precios no incluyen impuestos: el precio final para tu país lo verás al pagar.",
+          a: "20 dólares al mes, o 17 al mes pagando el año (200 por adelantado), según la página de precios consultada el 10 de noviembre de 2026. Los precios no incluyen impuestos: el precio final para tu país lo verás al pagar.",
         },
         {
-          q: "¿Puedo usar Claude en Venezuela o Cuba?",
-          a: "Ninguno de los dos aparece en la lista oficial de países disponibles (consultada en octubre de 2026), así que no se puede usar de forma oficial desde allí.",
+          q: "¿Puedo usar Claude en Venezuela, Cuba o Nicaragua?",
+          a: "Ninguno de los tres aparece en la lista oficial de países disponibles (comprobada el 10 de noviembre de 2026), así que no se puede usar de forma oficial desde allí.",
         },
         {
           q: "¿Qué es Claude Duet y se puede usar en España?",
@@ -289,11 +334,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
           q: "¿Puedo conectar mi banco a Claude desde España o Latinoamérica?",
           a: "Todavía no. La función Finanzas personales (Personal Finance), presentada el 5 de noviembre de 2026, es una beta solo para Estados Unidos y para los planes Pro, Max y Ultra. Conecta las cuentas a través de Plaid con acceso de solo lectura: Claude ve saldos y movimientos, pero no puede mover dinero.",
         },
+        {
+          q: "¿Puedo usar Claude Fable 5.2 gratis?",
+          a: "No. Fable 5.2, presentado el 9 de noviembre de 2026, no está en el plan Free. En Pro se paga aparte con créditos de uso, salvo del 9 al 16 de noviembre de 2026, cuando va incluido hasta el 50 % del límite semanal. En Max y Ultra va incluido siempre hasta ese 50 %.",
+        },
       ]}
     />
 
     <h2 id="fuentes">Fuentes</h2>
-    <p>Consultadas el 19 de octubre de 2026; las tres de Claude Duet, el 23 de octubre de 2026; la página de precios (planes Individual y Team) y la de buenas prácticas de uso, el 2 de noviembre de 2026; las tres de Finanzas personales, el 6 de noviembre de 2026.</p>
+    <p>Consultadas el 19 de octubre de 2026; las tres de Claude Duet, el 23 de octubre de 2026; la página de precios (planes Individual y Team) y la de buenas prácticas de uso, el 2 de noviembre de 2026; las tres de Finanzas personales, el 6 de noviembre de 2026; la página de precios (de nuevo) y las cinco de Claude Fable 5.2, el 10 de noviembre de 2026.</p>
     <ul>
       <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: Pricing</a>: planes, precios, modelos y funciones de cada uno.</li>
       <li><a href="https://claude.com/download" target="_blank" rel="noopener noreferrer">Descargar Claude</a>: aplicaciones para Mac, Windows y Linux (beta), consultada el 2 de noviembre de 2026.</li>
@@ -313,6 +362,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://claude.com/resources/articles/introducing-personal-finance-in-claude" target="_blank" rel="noopener noreferrer">Introducing Personal Finance in Claude (anuncio de Anthropic, 05-11-2026)</a>: qué hace, acceso de solo lectura, Plaid y disponibilidad.</li>
       <li><a href="https://support.claude.com/en/articles/18185620-use-personal-finance-with-claude" target="_blank" rel="noopener noreferrer">Use Personal Finance in Claude (centro de ayuda)</a>: planes, dispositivos, pasos, qué datos lee, límite de 16 bancos y uso de los datos.</li>
       <li><a href="https://support.claude.com/en/articles/12138966-release-notes" target="_blank" rel="noopener noreferrer">Notas de versión de Claude</a>: entrada del 5 de noviembre de 2026 (Pro, Max y Ultra, solo en EE. UU.).</li>
+      <li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Introducing Claude Fable 5.2 and Claude Mythos 5.2 (anuncio de Anthropic, 09-11-2026)</a>: qué mejora, velocidad, filtros, Mythos, precio en la API y oferta de lanzamiento.</li>
+      <li><a href="https://www.anthropic.com/claude/fable" target="_blank" rel="noopener noreferrer">Claude Fable (página oficial)</a>: planes que lo incluyen y precio de la API frente a Fable 5.1.</li>
+      <li><a href="https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan" target="_blank" rel="noopener noreferrer">Claude Fable models on your plan (centro de ayuda)</a>: cómo funciona Fable en cada plan, dónde se elige y versión de Claude Code.</li>
+      <li><a href="https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers" target="_blank" rel="noopener noreferrer">Claude Fable 5.2 launch offers (centro de ayuda)</a>: semana incluida en Pro, reinicios de Fable, fechas y cómo usarlos (hay versión en español).</li>
+      <li><a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer">Manage usage credits (centro de ayuda)</a>: qué son los créditos de uso y cómo se activan.</li>
     </ul>
 
     <h2>Guías de este tema</h2>
