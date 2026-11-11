@@ -1,5 +1,37 @@
 [
   {
+    "fecha": "2026-11-11",
+    "titulo": "Claude Fable 5.2: ¿es gratis?",
+    "serie": "lo-de-la-semana",
+    "numero_serie": 1,
+    "resumen": "El anuncio está en inglés y reparte lo de los planes entre el anuncio y dos páginas de ayuda. El vídeo lo resume en español, plan por plan: Free no lo tiene; Pro lo tiene incluido solo hasta el 16 de noviembre y después con créditos de uso;",
+    "fuentes": [
+      {
+        "nombre": "anthropic.com",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/es/articles/17506494-ofertas-de-lanzamiento-de-claude-fable-5-2"
+      },
+      {
+        "nombre": "claude.com",
+        "url": "https://claude.com/pricing"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/2069363783720665",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3mzzwx72uxy2r"
+    }
+  },
+  {
     "fecha": "2026-11-10",
     "titulo": "¿Audio largo? A texto gratis",
     "serie": "cual-uso",
