@@ -10,7 +10,7 @@
   "deepseek": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 30 },
   "gemini": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
   "microsoft-copilot": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
-  "mistral-le-chat": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 30 },
+  "mistral-le-chat": { "verifiedAt": "2026-11-12", "reviewCadenceDays": 30 },
   "huggingchat": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 30 },
   "cursor": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
   "github-copilot": { "verifiedAt": "2026-07-14", "reviewCadenceDays": 14 },
