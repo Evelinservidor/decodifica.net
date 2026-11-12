@@ -61,7 +61,7 @@ const specs: ExpandedSpec[] = [
     bestFor: 'Cuando quieres un asistente con plan gratis que aloja tus datos en la Unión Europea por defecto, o comparar sus respuestas con ChatGPT, Claude o Gemini.',
     avoidIf: 'Necesitas una integración concreta que no aparece en la documentación o vas a asumir cumplimiento por ubicación.',
     tags: ['europa', 'modelos', 'documentos', 'comparación'], officialUrl: 'https://mistral.ai/products/vibe/',
-    idealFor: ['Probar redacción y resumen en español.', 'Comparar respuestas de varios proveedores.', 'Usar un asistente gratis con los datos alojados en la Unión Europea.'],
+    idealFor: ['Probar redacción y resumen con tus propios textos.', 'Comparar respuestas de varios proveedores.', 'Usar un asistente gratis con los datos alojados en la Unión Europea.'],
     notFor: ['Inferir privacidad sin revisar el plan.', 'Aceptar citas o datos sin abrir fuentes.', 'Sustituir controles corporativos.'],
     workflow: ['Elige una tarea pequeña.', 'Usa el mismo input que en otro asistente.', 'Compara precisión y edición.', 'Conserva solo el flujo reproducible.'],
     alternatives: ['ChatGPT', 'Claude', 'Gemini', 'DeepSeek'],
@@ -73,15 +73,17 @@ const specs: ExpandedSpec[] = [
       { label: 'Cómo desactivar el entrenamiento (centro de ayuda)', href: 'https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training' },
       { label: '¿Dónde se guardan mis datos? (centro de ayuda)', href: 'https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data' },
       { label: 'Vibe by Mistral en Google Play', href: 'https://play.google.com/store/apps/details?id=ai.mistral.chat' },
+      { label: 'DeepSeek: app de chat gratis (página de descargas)', href: 'https://www.deepseek.com/en/download/' },
+      { label: 'Política de privacidad de DeepSeek (datos en China)', href: 'https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html' },
     ],
     priceNotes: [
       'Plan Free (consultado el 12-11-2026): chat con sus últimos modelos, mensajes y búsquedas web limitados, sesiones de código limitadas, generación y edición básica de imágenes y más de 100 conectores. Mistral no publica cuántos mensajes da exactamente.',
-      'Pro: 14,99 $ al mes sin impuestos (la página de precios deja elegir euros y país). Hasta 6 veces más mensajes y 5 veces más búsquedas web que Free, hasta 40 veces más imágenes, código «todo el día» (con un límite de uso razonable) y creación de hojas de cálculo y presentaciones. Estudiantes verificados: 5,99 $ al mes durante un máximo de 12 meses, si no han usado antes Vibe ni Le Chat.',
+      'Pro: 14,99 $ al mes sin impuestos, sujeto a un límite de uso razonable (la página de precios muestra el precio en euros solo para los países de la Unión Europea y el Reino Unido; desde Latinoamérica, toma la cifra en dólares y súmale los impuestos de tu país). Hasta 6 veces más mensajes y 5 veces más búsquedas web que Free, hasta 40 veces más imágenes, código «todo el día» y creación de hojas de cálculo y presentaciones. Estudiantes verificados de educación superior: 5,99 $ al mes durante un máximo de 12 meses, si no han usado antes Vibe ni Le Chat.',
       'Team: 24,99 $ por usuario al mes, con límites más altos y hasta 30 GB de almacenamiento por usuario. Enterprise: precio a medida.',
     ],
     privacyNotes: [
       'Por defecto, tus datos se alojan en la Unión Europea. Según la función que uses, pueden salir temporalmente de la UE hacia los proveedores que Mistral lista en su Trust Center.',
-      'En los planes individuales, Mistral usa tus conversaciones y los documentos que subes para entrenar sus modelos salvo que lo desactives. En la web: panel de administración → Vibe → Privacy → desactiva «Allow your interactions to be used to train our models». En la app del móvil: Settings → Data & Account Controls → desmarca «Enable data sharing».',
+      'En Vibe (Free, Pro y también Team), Mistral usa tus conversaciones y los documentos que subes para entrenar sus modelos salvo que lo desactives; en Team, el administrador puede desactivarlo para toda la organización, y en Enterprise viene desactivado. En la web: panel de administración → Vibe → Privacy → desactiva «Allow your interactions to be used to train our models». En la app del móvil: Settings → Data & Account Controls → desmarca «Enable data sharing».',
       'Si valoras una respuesta con el pulgar arriba o abajo y añades un comentario, Mistral puede usar esa conversación para mejorar sus modelos aunque hayas desactivado el entrenamiento.',
     ],
     faq: [
@@ -91,7 +93,7 @@ const specs: ExpandedSpec[] = [
       },
       {
         q: '¿Mistral Vibe es gratis?',
-        a: 'Sí, tiene plan Free: chat con sus últimos modelos, búsqueda web, imágenes básicas y sesiones de código, con límites que Mistral no detalla en cifras. Pro cuesta 14,99 $ al mes sin impuestos (5,99 $ para estudiantes verificados, durante un máximo de 12 meses) y da hasta 6 veces más mensajes. Precios de su web, consultados el 12-11-2026.',
+        a: 'Sí, tiene plan Free: chat con sus últimos modelos, búsqueda web, imágenes básicas y sesiones de código, con límites que Mistral no detalla en cifras. Pro cuesta 14,99 $ al mes sin impuestos (5,99 $ para estudiantes verificados de educación superior, durante un máximo de 12 meses) y da hasta 6 veces más mensajes. Precios de su web, consultados el 12-11-2026.',
       },
       {
         q: '¿Mistral Vibe funciona en español?',
@@ -99,15 +101,15 @@ const specs: ExpandedSpec[] = [
       },
       {
         q: '¿Hay app de Mistral Vibe para el móvil?',
-        a: 'Sí, para iPhone y Android: en Google Play aparece como «Vibe by Mistral (ex-Le Chat)», de Mistral AI. También se usa en el navegador y, para programar, en la terminal y como extensión de VS Code y JetBrains.',
+        a: 'Sí, para iPhone y Android: en Google Play aparece como «Vibe by Mistral (ex-Le Chat)», de Mistral AI. También se usa en el navegador y, para programar, en la terminal y como complemento de VS Code y JetBrains.',
       },
       {
         q: '¿Mistral usa mis conversaciones para entrenar su IA?',
-        a: 'Sí, por defecto en los planes individuales, pero se puede desactivar: en la web, en el panel de administración → Vibe → Privacy; en el móvil, en Settings → Data & Account Controls, desmarcando «Enable data sharing». En Enterprise viene desactivado. Aunque lo desactives, si valoras una respuesta con el pulgar y un comentario, pueden usar esa conversación.',
+        a: 'Sí, por defecto, salvo en Enterprise (allí viene desactivado). Se puede desactivar: en la web, en el panel de administración → Vibe → Privacy; en el móvil, en Settings → Data & Account Controls, desmarcando «Enable data sharing». En Team lo puede desactivar el administrador para todos. Aunque lo desactives, si valoras una respuesta con el pulgar y un comentario, pueden usar esa conversación.',
       },
       {
         q: '¿Mistral Vibe o DeepSeek?',
-        a: 'Los dos tienen plan gratis. La diferencia que más pesa es dónde van tus datos: Mistral los aloja por defecto en la Unión Europea y DeepSeek, según su política de privacidad, en China. Lo contamos en <a href="/blog/deepseek-app-oficial-espanol/">DeepSeek en español: cómo usarlo gratis</a>, y comparamos siete opciones en <a href="/blog/alternativas-gratis-chatgpt-2026/">alternativas gratis a ChatGPT</a>.',
+        a: 'Los dos tienen plan gratis. La diferencia que más pesa es dónde van tus datos: Mistral los aloja por defecto en la Unión Europea y DeepSeek, según su política de privacidad, en China. Lo contamos en <a href="/blog/deepseek-app-oficial-espanol/">DeepSeek en español: cómo usarlo gratis</a>, y tienes siete opciones con sus datos oficiales en <a href="/blog/alternativas-gratis-chatgpt-2026/">alternativas gratis a ChatGPT</a>.',
       },
     ],
   },
