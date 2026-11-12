@@ -174,4 +174,13 @@ se usan en la propia web, gratis, sin registro y sin IA por detrás, con datos o
   herramienta, no como páginas sueltas.
 
 ## Ideas para más adelante (no escribir sin que entren en un grupo)
-- (vacío)
+- Idea (12-11-2026, 🌐 especialista, a partir de lo que vio 📣 Redes en Bluesky): **«Cómo quitar o apagar la IA que no
+  pediste»** (Gemini en Gmail, el modo IA y los resúmenes de IA de Google, Meta AI en WhatsApp, Chrome, el móvil).
+  No cabe en A-D: haría falta un grupo nuevo y eso lo decide Jordi. Datos: el autocompletado de Google (12-11-2026, España
+  y México) da 10 de 10 sugerencias para «desactivar ia de google» (chrome, android, pc, lens, fotos, modo ia, búsqueda),
+  «desactivar meta ai whatsapp» (españa, android, iphone, samsung, botón, círculo, business) y «como quitar la ia de»
+  (whatsapp, google, móvil/celular, chrome, pinterest, instagram); también «quitar gemini de gmail». En Bluesky en español,
+  4 publicaciones en 48 h pidiendo quitarla y 0 preguntando qué IA usar (📣 Redes, 11-11). Encaja con la casa: pasos
+  oficiales, honesto, sin vender nada. Antes de escribir: mirar los diez primeros (si solo salen medios grandes y la
+  ayuda oficial, empezar por la pieza más concreta, p. ej. «quitar el círculo de Meta AI en WhatsApp», y no por la
+  general); y comprobar en la ayuda oficial de cada empresa qué se puede apagar de verdad hoy (lo que no se puede, decirlo).
