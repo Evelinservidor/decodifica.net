@@ -1,5 +1,41 @@
 [
   {
+    "fecha": "2026-11-12",
+    "titulo": "Pregúntale a tu PDF GRATIS",
+    "serie": "cual-uso",
+    "numero_serie": 2,
+    "resumen": "Comparamos las dos opciones por el caso de uso. Gemini Notebook va mejor con varios documentos: hasta 50 fuentes por cuaderno en el plan estándar, y responde con citas a tu documento. ChatGPT va mejor para un PDF suelto, pero sin pagar solo",
+    "fuentes": [
+      {
+        "nombre": "blog.google",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/notebooklm/answer/16164461?hl=en"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/notebooklm/answer/16213268?hl=en"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/notebooklm/answer/16269187?hl=en"
+      },
+      {
+        "nombre": "help.openai.com",
+        "url": "https://help.openai.com/en/articles/8555545-file-uploads-faq"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1971570550486087",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n24haqv4sr2e"
+    }
+  },
+  {
     "fecha": "2026-11-11",
     "titulo": "Claude Fable 5.2: ¿es gratis?",
     "serie": "lo-de-la-semana",
