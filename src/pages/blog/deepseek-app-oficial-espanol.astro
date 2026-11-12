@@ -39,6 +39,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://qwen.ai/privacypolicy",
     "https://www.moonshot.ai/",
     "https://www.kimi.ai/blog/kimi-k3-1-pro",
+    "https://www.kimi.ai/user/agreement/userPrivacy?version=v2",
     "https://www.kimi.com/user/agreement/en/userPrivacy?version=v2",
     "https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312",
     "https://docs.z.ai/legal-agreement/privacy-policy",
@@ -49,7 +50,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
   <Articulo slug="deepseek-app-oficial-espanol">
 
 
-    <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las tres apps aparecen con español entre sus idiomas o con ficha en español en las tiendas. La diferencia importante está en otro sitio: DeepSeek y Kimi dicen en su política de privacidad que guardan tus datos en China; Qwen, en Singapur. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (las de DeepSeek y Kimi, comprobadas de nuevo el 12 de noviembre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
+    <p><strong>En resumen:</strong> DeepSeek, Qwen y Kimi se pueden usar sin pagar desde el navegador o desde su app oficial, y las apps de DeepSeek y Kimi tienen el español entre sus idiomas en las tiendas. La diferencia importante está en otro sitio: DeepSeek dice en su política de privacidad que guarda tus datos en China; Qwen, en Singapur; y Kimi, para quien vive fuera de China, que pueden salir de tu país, sin decir adónde. Esta guía reúne lo que dicen las webs, tiendas y políticas oficiales (las de DeepSeek y Kimi, comprobadas de nuevo el 12 de noviembre de 2026), cómo instalar la app correcta, tres prompts para probarlos y los casos en los que es mejor no usarlos.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Resumen rápido: qué ofrece cada uno hoy</h2>
     <div class="not-prose overflow-x-auto">
@@ -59,7 +60,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
             <th class="py-2 pr-4">Asistente</th>
             <th class="py-2 pr-4">Dónde usarlo</th>
             <th class="py-2 pr-4">Modelo que destaca su web</th>
-            <th class="py-2">Datos guardados en</th>
+            <th class="py-2">Dónde acaban tus datos</th>
           </tr>
         </thead>
         <tbody>
@@ -79,13 +80,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
             <td class="py-2 pr-4">Kimi</td>
             <td class="py-2 pr-4">kimi.com y app</td>
             <td class="py-2 pr-4">Kimi K3.1 Pro</td>
-            <td class="py-2">República Popular China</td>
+            <td class="py-2">Pueden salir de tu país; no dice adónde</td>
           </tr>
           <tr>
             <td class="py-2 pr-4">GLM (Z.ai)</td>
             <td class="py-2 pr-4">chat.z.ai</td>
             <td class="py-2 pr-4">GLM-5.3-Flash</td>
-            <td class="py-2">Por lo general, Singapur</td>
+            <td class="py-2">Los trata, por lo general, en Singapur</td>
           </tr>
         </tbody>
       </table>
@@ -113,7 +114,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>En las tiendas hay apps con nombres parecidos que no son de DeepSeek. Estas son las comprobaciones que separan la oficial de una copia:</p>
     <ol>
       <li><strong>iPhone y iPad:</strong> entra desde este enlace directo a <a href="https://apps.apple.com/app/deepseek-ai-assistant/id6737597349" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek - AI Assistant en el App Store</a>. El vendedor debe ser <em>Hangzhou DeepSeek Artificial Intelligence Co., Ltd</em>. Requiere iOS 15.0 o posterior y no muestra compras dentro de la app.</li>
-      <li><strong>Android:</strong> usa el enlace a <a href="https://play.google.com/store/apps/details?id=com.deepseek.chat" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek - Asistente de AI en Google Play</a>. El identificador del paquete que aparece en la URL es <code>com.deepseek.chat</code> y el desarrollador figura como DeepSeek, con más de 50 millones de descargas.</li>
+      <li><strong>Android:</strong> usa el enlace a <a href="https://play.google.com/store/apps/details?id=com.deepseek.chat" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">DeepSeek - Asistente de AI en Google Play</a>. El identificador del paquete que aparece en la URL es <code>com.deepseek.chat</code> y el desarrollador figura como DeepSeek, con más de 100 millones de descargas.</li>
       <li><strong>Desde la web oficial:</strong> deepseek.com muestra un código QR ("Scan to get DeepSeek App") que lleva a la descarga. Es la vía más segura si no te fías del resultado de búsqueda de la tienda.</li>
       <li><strong>Señales de copia:</strong> otro nombre de desarrollador, suscripciones caras en la primera pantalla o permisos que no encajan con un chat (contactos, SMS). La app oficial de DeepSeek no lista compras integradas en el App Store.</li>
     </ol>
@@ -124,7 +125,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       height={655}
     />
 
-    <p>Lo mismo vale para Qwen: en una búsqueda de "qwen chat" en el App Store de EE. UU. del 6 de octubre de 2026 aparecían apps de terceros con nombres parecidos. Para Qwen, entra a la app desde el botón de descarga de <a href="https://chat.qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a> en lugar de buscar por nombre.</p>
+    <p>Lo mismo vale para Qwen: en una búsqueda de "qwen chat" en el App Store de EE. UU. del 6 de octubre de 2026 aparecían apps de terceros con nombres parecidos. Para Qwen, entra a la app desde la web oficial (<a href="https://qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">qwen.ai</a>) en lugar de buscar por nombre.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qwen Chat: el asistente de Alibaba</h2>
     <p>Qwen es la familia de modelos del equipo Qwen de Alibaba. El asistente está en <a href="https://chat.qwen.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">chat.qwen.ai</a>, que el repositorio oficial de Qwen3.8 llama ahora Qwen Studio y describe como "free to use, open to all" (gratis y abierto a todos). También hay app móvil y cliente de escritorio, según la política de privacidad.</p>
@@ -148,16 +149,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Privacidad: dónde acaban tus datos</h2>
     <p>Esto es lo que dice cada política oficial sobre la ubicación de los datos y el entrenamiento de modelos:</p>
     <ul class="space-y-3">
-      <li><strong>DeepSeek</strong> (<a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política actualizada el 10 de febrero de 2026</a>): "we directly collect, process and store your Personal Data in People's Republic of China" (recogemos, tratamos y almacenamos tus datos personales en la República Popular China). Recoge texto, voz, prompts, archivos subidos, fotos e historial de chat, y los usa también "to train and improve our technology". La política reconoce el derecho a oponerte a que se usen tus datos para entrenar los modelos.</li>
+      <li><strong>DeepSeek</strong> (<a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política actualizada el 10 de febrero de 2026</a>): "we directly collect, process and store your Personal Data in People's Republic of China" (recogemos, tratamos y almacenamos tus datos personales en la República Popular China). Recoge texto, voz, prompts, archivos subidos, fotos e historial de chat, y los usa también "to train and improve our technology". La política dice que, según dónde vivas, puedes tener derecho a oponerte a que se usen tus datos para entrenar los modelos.</li>
       <li><strong>Qwen</strong> (<a href="https://qwen.ai/privacypolicy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política en vigor desde el 7 de septiembre de 2026</a>): el servicio lo opera NTH Power Global Tech Singapore Pte. Ltd. y dice: "We collect, process, and store your personal data in Singapore". La infraestructura es de Alibaba Cloud (Singapore). Puede usar contenido "de-identified" (desidentificado) para entrenar modelos, pero no tu texto original. Y pide expresamente no subir datos sensibles, como historiales médicos, documentos de identidad o cuentas financieras.</li>
-      <li><strong>Kimi</strong> (<a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política en vigor desde el 31 de agosto de 2026</a>): "We store your personal information within the territory of the People's Republic of China". Usa el contenido desidentificado para optimizar sus modelos. Para que dejen de usar el tuyo, hay que pedirlo al servicio de atención al cliente, que verifica tu identidad antes.</li>
+      <li><strong>Kimi</strong> (<a href="https://www.kimi.ai/user/agreement/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política para quien vive fuera de China continental, actualizada el 5 de noviembre de 2026</a>): la da NOVASCENT PRIVATE LIMITED (Moonshot AI) y dice que tus datos "may be transferred to and stored on servers located outside of your country of residence" (pueden enviarse y guardarse en servidores fuera de tu país), sin decir en cuál. Usa lo que escribes y subes para "training and optimizing" sus modelos, por interés legítimo o con tu consentimiento según tu país. La <a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política de kimi.com</a>, que dice que los guarda en China, es ahora solo para quien vive en China continental.</li>
       <li><strong>Z.ai</strong> (<a href="https://docs.z.ai/legal-agreement/privacy-policy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">política de usuarios individuales</a>): la opera una sociedad de Singapur y "your personal data is generally processed in Singapore".</li>
     </ul>
     <p><strong>Qué no subir a ninguno de ellos:</strong> contraseñas o claves de API, documentos de identidad, datos de salud, extractos bancarios, datos personales de clientes o empleados, contratos con cláusula de confidencialidad y código o documentos internos de tu empresa. Si necesitas que analicen un documento, quita antes nombres, correos, teléfonos y cifras que identifiquen a alguien.</p>
 
     <FiguraArticulo
       src="/img/blog/deepseek-app-oficial-espanol/donde-se-guardan-tus-datos.webp"
-      alt="Cuadro resumen de dónde guarda los datos cada servicio: DeepSeek y Kimi en China, Qwen en Singapur y Z.ai por lo general en Singapur"
+      alt="Cuadro resumen de dónde acaban tus datos con cada servicio: DeepSeek en China, Qwen en Singapur, Kimi fuera de tu país sin decir dónde y Z.ai los trata por lo general en Singapur"
       width={1200}
       height={529}
     />
@@ -207,7 +208,7 @@ Tarea 3: [...]
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo que se puede aprender del caso Coinbase</h2>
     <p>El 27 de junio de 2026, Brian Armstrong, director general de Coinbase, <a href="https://x.com/brian_armstrong/status/2070670644577280109" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">explicó en X</a> cómo habían recortado "casi a la mitad" su gasto en IA mientras el uso de tokens seguía creciendo. <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">The Decoder</a> recogió la noticia al día siguiente. Lo que cuenta el propio Armstrong:</p>
     <ul class="space-y-2">
-      <li><strong>Modelos por defecto más baratos:</strong> están "experimentando" con modelos de pesos abiertos como GLM 5.2 y Kimi 2.7 como opción por defecto de su pasarela de modelos. Los ingenieros pueden seguir eligiendo el que quieran, y el 91 % nunca llegaba a su límite de uso.</li>
+      <li><strong>Modelos por defecto más baratos:</strong> están "experimentando" con modelos de pesos abiertos como GLM 5.2 y Kimi 2.7 como opción por defecto de su pasarela de modelos. Los ingenieros pueden seguir eligiendo el que quieran, y el 91 % de la plantilla nunca llegaba a su límite de uso.</li>
       <li><strong>Enrutado:</strong> en sus herramientas internas envían cada prompt al modelo más adecuado según el precio y la caché. Por ejemplo, un modelo de frontera para planificar y otro más barato para ejecutar.</li>
       <li><strong>Caché:</strong> la tasa de aciertos de caché en LibreChat pasó del 5 % al 60 % "once properly implemented" (cuando la implementaron bien).</li>
       <li><strong>Contexto corto:</strong> abrir sesiones nuevas al cambiar de tarea, limitar los archivos que se cargan y desconectar las herramientas que no se usan.</li>
@@ -216,7 +217,7 @@ Tarea 3: [...]
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo no usarlos</h2>
     <ul class="space-y-2">
-      <li><strong>Con datos personales de terceros:</strong> si trabajas con datos de clientes, pacientes o alumnos, enviarlos a un servicio que los guarda en China o Singapur puede chocar con las obligaciones de protección de datos de tu país o con los contratos de tu empresa. Consúltalo antes con quien lleve la privacidad o el cumplimiento normativo.</li>
+      <li><strong>Con datos personales de terceros:</strong> si trabajas con datos de clientes, pacientes o alumnos, enviarlos a un servicio que los guarda en China, en Singapur o en un país que no te dicen puede chocar con las obligaciones de protección de datos de tu país o con los contratos de tu empresa. Consúltalo antes con quien lleve la privacidad o el cumplimiento normativo.</li>
       <li><strong>Cuando tu organización tiene una lista de herramientas aprobadas</strong> y estas no están en ella.</li>
       <li><strong>Con información confidencial o regulada:</strong> secretos comerciales, documentación legal en curso, datos financieros no publicados.</li>
       <li><strong>Cuando necesitas una fuente verificable</strong> y no vas a contrastar la respuesta. Esto vale para cualquier asistente de IA.</li>
@@ -240,7 +241,7 @@ Tarea 3: [...]
       },
       {
         q: "¿DeepSeek es seguro? ¿Es chino?",
-        a: "Sí, es chino: la app la publica Hangzhou DeepSeek Artificial Intelligence Co., Ltd., y su política dice que guarda y trata tus datos en la República Popular China y que puede usar tus conversaciones para entrenar sus modelos (te puedes oponer). Para usarlo con tranquilidad, instala la app oficial (no una copia), no subas datos personales ni confidenciales y no lo uses con información de clientes sin permiso de tu organización. Si prefieres que tus datos se queden en Europa, <a href=\"/herramientas/mistral-le-chat/\">Mistral Vibe</a> los aloja en la Unión Europea por defecto."
+        a: "Sí, es chino: la app la publica Hangzhou DeepSeek Artificial Intelligence Co., Ltd., y su política dice que guarda y trata tus datos en la República Popular China y que puede usar tus conversaciones para entrenar sus modelos (según dónde vivas, puedes oponerte). Para usarlo con tranquilidad, instala la app oficial (no una copia), no subas datos personales ni confidenciales y no lo uses con información de clientes sin permiso de tu organización. Si prefieres que tus datos se queden en Europa, <a href=\"/herramientas/mistral-le-chat/\">Mistral Vibe</a> los aloja en la Unión Europea por defecto (según su centro de ayuda, algunas funciones pueden sacarlos temporalmente)."
       },
     ]} />
 
@@ -261,7 +262,7 @@ Tarea 3: [...]
       <li><a href="https://qwen.ai/privacypolicy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Qwen</a></li>
       <li><a href="https://www.moonshot.ai/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Moonshot AI, web oficial (Kimi K3.1 Pro y Kimi K3)</a></li>
       <li><a href="https://www.kimi.ai/blog/kimi-k3-1-pro" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Kimi K3.1 Pro, anuncio oficial</a></li>
-      <li><a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Kimi</a></li>
+      <li><a href="https://www.kimi.ai/user/agreement/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Kimi fuera de China continental</a> y <a href="https://www.kimi.com/user/agreement/en/userPrivacy?version=v2" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">la de China continental</a></li>
       <li><a href="https://apps.apple.com/app/kimi-kimi-k3-is-live/id6474233312" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Kimi en el App Store</a></li>
       <li><a href="https://docs.z.ai/legal-agreement/privacy-policy" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Política de privacidad de Z.ai</a></li>
       <li><a href="https://x.com/brian_armstrong/status/2070670644577280109" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Brian Armstrong (Coinbase) en X, 27 de junio de 2026</a></li>

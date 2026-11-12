@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 10 de noviembre de 2026 (agente de novedades).
+Última actualización: 12 de noviembre de 2026 (agente de los jueves).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -218,3 +218,7 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Semana que viene (semana 5): grupo A, «Claude Code sin saber programar: primeros pasos» y mejora de `claude-emails-sonar-humanos` (fuera de Google). El 07-12, herramienta del mes de diciembre: «Planes gratis de IA: qué te dan hoy».
 - **10-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-10`, pull request #49 (espera a Jordi). Novedad: Claude Fable 5.2 (09-11-2026), añadida como sección a la guía `claude-ia-que-es-gratis` (no está en el plan gratis; en Pro, créditos de uso salvo la semana del 9 al 16-11, incluido hasta el 50 % del límite semanal; Max y Ultra, incluido hasta el 50 % y de 1 a 3 reinicios hasta el 08-03-2027; captura, esquema, pregunta frecuente; `modifiedDate` 10-11). Frase desfasada de `alternativas-fable-5` cambiada por una línea fechada con enlace. Nota: `docs/novedades/2026-11-10.md`; reel: `docs/redes/2026-11-10.md`.
   - Pendiente: desde el 17-11, pasar a pasado (o quitar) la oferta de Pro en la sección y en la pregunta frecuente.
+- **12-11-2026 (agente de los jueves):** rama `agente/jueves-2026-11-12`, pull request propio, fusionado por el agente si pasa preflight y build (permiso de Jordi del 06-11-2026 para los jueves). Títulos, descripciones, preguntas frecuentes y enlaces en IA para presentaciones (nuevo título «IA para presentaciones: cuáles son gratis y cuál elegir»; plan gratis de SlidesAI cambiado a 200 créditos al mes; Gamma Plus 1.500 créditos; fuera frases de prueba propia que quedaban), DeepSeek en español (título de Jordi sin tocar; 4 preguntas frecuentes, V4.1-Flash-1017, DeepSeek Harness, Kimi K3.1 Pro; la política de Kimi para fuera de China ya no dice «China») y ficha de Mistral (ahora «Mistral Vibe (antes Le Chat)»: precios, privacidad, 6 preguntas). Juez de fuentes pasado en las tres. Repaso: `docs/repaso-jueves/2026-11-12.md`.
+  - Medir hacia el 21-12-2026, solo si Google ha vuelto a leer las páginas (presentaciones no se lee desde el 31-07).
+  - Posible empeoramiento: NotebookLM vs Perplexity tras el título del 07-10 (61 → 22 apariciones en 28 días). Qwen Code y Gamma vs Canva, leídas por Google el 06-11: medir desde el informe del 16-11.
+  - Pendiente: reescritura de IA para presentaciones un lunes (relleno, Canva sin comprobar); revisar la ficha de Kimi (dice «servidores en China» según su ayuda; la política para fuera de China ya no lo dice).
