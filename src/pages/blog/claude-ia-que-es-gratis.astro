@@ -8,10 +8,10 @@ import Caja from '../../components/Caja.astro';
 const title = "Claude en español: guía completa, gratis y planes";
 const description = "Cómo usar Claude en español: qué incluye gratis, cuánto cuestan Pro y Max, Proyectos, memoria, cómo pedirle las cosas y qué hace con tus datos.";
 const pubDate = "2026-10-12";
-const modifiedDate = "2026-11-10";
-const readingTime = "13 min";
+const modifiedDate = "2026-11-13";
+const readingTime = "15 min";
 const tema = "chatbots";
-const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "claude finanzas personales", "claude fable 5.2", "anthropic"];
+const tags = ["claude en español", "claude gratis", "claude ia", "claude precios", "claude duet", "claude finanzas personales", "claude fable 5.2", "claude sheets", "claude whiteboards", "anthropic"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -49,13 +49,17 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
     "https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers",
     "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+    "https://claude.com/resources/articles/sheets-whiteboards-data",
+    "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+    "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards",
+    "https://claude.com/resources/articles/interactive-connectors-full-tool",
   ]}
 >
   <Articulo slug="claude-ia-que-es-gratis">
 
     <p><strong>En resumen:</strong> Claude es el asistente de IA de Anthropic y se puede usar gratis en español desde claude.ai, el ordenador o el móvil. El plan gratuito incluye los modelos Sonnet y Haiku, hasta 5 Proyectos, memoria, conectores y Skills, con un límite de uso que se renueva cada cinco horas. Pro cuesta 20 dólares al mes (17 pagando el año) y añade más uso, los modelos Opus y Claude Code; Max cuesta 100 y Ultra, 200.</p>
 
-    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (la novedad de Claude Duet, el 23 de octubre; los precios y los planes, el 2 de noviembre; Finanzas personales, el 6 de noviembre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
+    <p>Esta es la guía principal de Decodifica sobre Claude para quien no programa: qué es, cómo ponerlo en español, qué trae cada plan y cómo sacarle partido. Al final tienes las guías concretas de este tema. Los datos salen de la página de precios, del centro de ayuda oficial y de la política de privacidad de Anthropic, consultados el 19 de octubre de 2026 (la novedad de Claude Duet, el 23 de octubre; los precios y los planes, el 2 de noviembre; Finanzas personales, el 6 de noviembre; Fable 5.2, el 10 de noviembre; Sheets y Whiteboards, el 13 de noviembre). Los planes cambian a menudo: si algo no coincide con lo que ves, manda la página oficial.</p>
 
     <h2>Qué es Claude y quién lo hace</h2>
     <p>Claude es un modelo de lenguaje creado por <strong>Anthropic</strong>. Como ChatGPT o Gemini, conversa contigo: responde preguntas, resume y escribe textos, analiza documentos que le subes y crea archivos. Se usa en tres sitios:</p>
@@ -216,9 +220,52 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h3>Memoria y chats de incógnito</h3>
     <p>La memoria viene activada por defecto en Free, Pro, Max y Ultra: Claude guarda temas sueltos de lo que habláis y los usa en conversaciones nuevas. Se cambia en <strong>Settings &gt; Your Claude</strong> (en el diseño antiguo, <strong>Settings &gt; Memory</strong>), donde puedes pausarla o borrarla entera. Si no quieres que una conversación se guarde, abre un <strong>chat de incógnito</strong> (el icono del fantasma), disponible también gratis. Buscar en tus conversaciones anteriores es solo de los planes de pago.</p>
     <h3>Conectores</h3>
-    <p>Los conectores enlazan Claude con otras aplicaciones y fuentes de datos para que pueda leerlas o trabajar con ellas. Se gestionan en <strong>Customize &gt; Connectors</strong>. Los conectores propios (los que añades tú con una dirección de servidor) están en todos los planes, pero en el gratuito solo se permite uno.</p>
+    <p>Los conectores enlazan Claude con otras aplicaciones y fuentes de datos para que pueda leerlas o trabajar con ellas. Se gestionan en <strong>Customize &gt; Connectors</strong>. Los conectores propios (los que añades tú con una dirección de servidor) están en todos los planes, pero en el gratuito solo se permite uno. Desde el 10 de noviembre de 2026, algunos conectores (Asana, Canva, Dropbox, Notion, Box, Atlassian, Adobe y otros) se pueden abrir como aplicación completa al lado del chat, y Claude puede hacer cambios dentro de ellos mientras tú miras. Llega poco a poco a todos los planes, en la web y en la aplicación de escritorio, cuando tu cuenta pase al Claude nuevo, el que junta el chat y Cowork.</p>
     <h3>Skills</h3>
     <p>Una Skill es un paquete de instrucciones que Claude usa cuando hace falta, para que haga siempre igual una tarea que repites. Están también en el plan gratuito. Cómo instalarlas y crear la tuya: <a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>.</p>
+
+    <h2>Claude Sheets y Whiteboards: hojas de cálculo y pizarras</h2>
+    <Caja tipo="nota"><strong>Novedad del 10 de noviembre de 2026.</strong> Datos del anuncio de Anthropic, de la página de precios y del centro de ayuda de Claude, consultados el 13 de noviembre de 2026. Las dos funciones están en beta y pueden cambiar.</Caja>
+    <p><strong>Respuesta corta:</strong> desde el 10 de noviembre de 2026, Claude puede crear <strong>hojas de cálculo (Claude Sheets)</strong> y <strong>pizarras para ordenar ideas (Claude Whiteboards)</strong> dentro de la propia conversación, y tú puedes editarlas a la vez que Claude o compartirlas. <strong>No están en el plan gratis:</strong> son para Pro (20 dólares al mes, 17 pagando el año), Max, Ultra, Team y Enterprise, y gastan del límite de uso de tu plan como el resto de lo que haces con Claude. Ni el anuncio ni el centro de ayuda las limitan a un país, a diferencia de Duet o de Finanzas personales.</p>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-sheets-whiteboards-anuncio.webp"
+      alt="Anuncio «Introducing Claude Whiteboards, Claude Sheets, and Claude Data» en claude.com, fechado el 10 de noviembre de 2026, en la categoría de novedades de producto"
+      width={1200}
+      height={754}
+      caption="Anuncio de Claude Sheets, Whiteboards y Data en claude.com (captura del 13 de noviembre de 2026)."
+    />
+    <h3>Qué hace Claude Sheets</h3>
+    <p>Le pides una hoja («un presupuesto de casa por meses», «un control de facturas con la fecha de cobro») y Claude la construye con pestañas, fórmulas, formato condicional, desplegables, casillas y gráficos. Las fórmulas quedan en las celdas, así que puedes ver de dónde sale cada número. Cada cambio que hace Claude se marca en la hoja al aparecer, y el historial de versiones te deja volver a una versión anterior.</p>
+    <ul>
+      <li><strong>Trae tus datos:</strong> importa un CSV, un archivo de Excel o una hoja de Google Sheets, o pega las celdas directamente.</li>
+      <li><strong>Sácalos cuando quieras:</strong> exporta a <strong>.xlsx</strong> (Excel) o <strong>CSV</strong>.</li>
+      <li><strong>Pregunta sobre una parte:</strong> selecciona unas celdas y pregúntale, por ejemplo, por qué un total ha subido respecto al mes anterior.</li>
+      <li><strong>Trabajo en equipo:</strong> las hojas empiezan siendo privadas; con «Share» invitas a otras personas, que editan las mismas celdas a la vez que tú y que Claude.</li>
+    </ul>
+    <FiguraArticulo
+      src="/img/blog/claude-ia-que-es-gratis/claude-sheets-que-hace.webp"
+      alt="Esquema de Claude Sheets en beta. Ya lo hace (Pro, Max, Ultra, Team y Enterprise): pestañas y fórmulas con 144 funciones, formato condicional, desplegables y casillas, gráficos de barras, líneas y tarta, importar CSV, Excel y Google Sheets, exportar a .xlsx o CSV, hasta 100.000 celdas. Todavía no: tablas dinámicas, buscar y reemplazar y vistas de filtro, macros, VBA y Power Query, exportar a PDF, datos en directo de las apps conectadas, y no está en el plan gratis"
+      width={1200}
+      height={714}
+    />
+    <p>Es una hoja sencilla, no un Excel completo. En la beta, cada hoja admite hasta <strong>100.000 celdas</strong> y 144 funciones, y todavía <strong>no tiene</strong> tablas dinámicas, buscar y reemplazar, vistas de filtro, ordenar por varias columnas ni exportar a PDF; las macros, VBA y Power Query de Excel no funcionan. Tampoco puede tomar datos en directo de las aplicaciones que tengas conectadas a Claude. Se usa en la web y en la aplicación de escritorio; en el móvil, solo para consultarla. Si tu archivo ya vive en Excel y quieres que la IA te ayude allí, mira <a href="/blog/ia-mejora-excel/">cómo usar la IA en Excel</a>.</p>
+    <h3>Qué hace Claude Whiteboards</h3>
+    <p>Es una pizarra compartida para pensar antes de tener nada claro: planear un lanzamiento o una mudanza, poner en orden las opciones de una decisión o repasar cómo fue un proyecto. Tú hablas, escribes o dibujas y Claude lo ordena en grupos, pasos y flechas. Puedes <strong>dictarle en español</strong> con el micrófono del cuadro de texto: el dictado sigue el idioma de tu navegador, y el español está en la lista oficial.</p>
+    <ul>
+      <li><strong>Reordenar y completar:</strong> pídele que agrupe por temas, que lo convierta en un calendario o que te diga qué falta entre dos pasos (sus sugerencias aparecen en la pizarra para que las revises).</li>
+      <li><strong>Preguntar por una zona:</strong> arrastra un recuadro sobre una parte de la pizarra y pregúntale solo por eso.</li>
+      <li><strong>Compartir:</strong> con «Share» invitas por correo, también a personas de fuera de tu organización (en Team y Enterprise, si el administrador lo permite).</li>
+      <li><strong>Pasar a otra cosa:</strong> cuando lo tengas claro, Claude convierte la pizarra en un documento o una presentación. También se puede guardar como imagen PNG o mandar a Lucid, Miro o Zoho Vani.</li>
+    </ul>
+    <p>Funciona en la web, en la aplicación de escritorio y en el móvil. En la beta, Claude trabaja solo con lo que hay en la pizarra (no mira tus conectores) y no se puede importar una pizarra desde un archivo. El mismo día, Claude Dashboards pasó a llamarse <strong>Claude Data</strong>: está pensado para que los equipos pregunten a los datos de su empresa y necesita conectar una fuente de datos, como un almacén de datos o un CRM.</p>
+    <Caja tipo="ojo">Las hojas y las pizarras gastan de tu límite de uso como cualquier otra conversación. Y como es una beta, revisa las fórmulas de lo importante (impuestos, nóminas, facturas) antes de fiarte del resultado.</Caja>
+    <h3>¿Cómo probarlo?</h3>
+    <ol>
+      <li>Entra en Claude (web o aplicación de escritorio) con una cuenta Pro, Max o Ultra. En Team viene activado; en Enterprise lo activa el administrador en <strong>Organization settings &gt; Artifacts</strong>.</li>
+      <li>En cualquier chat, pídelo en español. Por ejemplo: «Hazme una hoja para controlar los gastos de casa por meses, con categorías, lo que queda de presupuesto y un gráfico» o «Abre una pizarra para planear la mudanza: tareas, fechas y quién hace cada cosa».</li>
+      <li>También puedes ir a la pestaña <strong>Artifacts</strong> y elegir la casilla «Sheets» o «Whiteboard».</li>
+      <li>Todo lo que crees se guarda en esa pestaña. Para llevarte una hoja a Excel, expórtala a .xlsx.</li>
+    </ol>
 
     <h2>Claude Duet: qué es y si se puede usar en España</h2>
     <Caja tipo="nota"><strong>Novedad del 21 de octubre de 2026.</strong> Datos del anuncio de Anthropic y de su centro de ayuda, consultados el 23 de octubre de 2026. Es una versión de prueba y puede cambiar.</Caja>
@@ -338,11 +385,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
           q: "¿Puedo usar Claude Fable 5.2 gratis?",
           a: "No. Fable 5.2, presentado el 9 de noviembre de 2026, no está en el plan Free. En Pro se paga aparte con créditos de uso, salvo del 9 al 16 de noviembre de 2026, cuando va incluido hasta el 50 % del límite semanal. En Max y Ultra va incluido siempre hasta ese 50 %.",
         },
+        {
+          q: "¿Claude puede hacer hojas de cálculo? ¿Es gratis?",
+          a: "Sí, con Claude Sheets, presentado el 10 de noviembre de 2026 en beta: Claude crea la hoja con fórmulas, formato y gráficos, la editáis a la vez y se exporta a Excel (.xlsx) o CSV. No está en el plan gratis: es para Pro, Max, Ultra, Team y Enterprise, y gasta del límite de uso del plan. Junto a ella llegó Claude Whiteboards, una pizarra compartida con las mismas condiciones.",
+        },
       ]}
     />
 
     <h2 id="fuentes">Fuentes</h2>
-    <p>Consultadas el 19 de octubre de 2026; las tres de Claude Duet, el 23 de octubre de 2026; la página de precios (planes Individual y Team) y la de buenas prácticas de uso, el 2 de noviembre de 2026; las tres de Finanzas personales, el 6 de noviembre de 2026; la página de precios (de nuevo) y las cinco de Claude Fable 5.2, el 10 de noviembre de 2026.</p>
+    <p>Consultadas el 19 de octubre de 2026; las tres de Claude Duet, el 23 de octubre de 2026; la página de precios (planes Individual y Team) y la de buenas prácticas de uso, el 2 de noviembre de 2026; las tres de Finanzas personales, el 6 de noviembre de 2026; la página de precios (de nuevo) y las cinco de Claude Fable 5.2, el 10 de noviembre de 2026; la página de precios (de nuevo) y las cuatro de Claude Sheets, Whiteboards y los conectores interactivos, el 13 de noviembre de 2026.</p>
     <ul>
       <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: Pricing</a>: planes, precios, modelos y funciones de cada uno.</li>
       <li><a href="https://claude.com/download" target="_blank" rel="noopener noreferrer">Descargar Claude</a>: aplicaciones para Mac, Windows y Linux (beta), consultada el 2 de noviembre de 2026.</li>
@@ -367,6 +418,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan" target="_blank" rel="noopener noreferrer">Claude Fable models on your plan (centro de ayuda)</a>: cómo funciona Fable en cada plan, dónde se elige y versión de Claude Code.</li>
       <li><a href="https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers" target="_blank" rel="noopener noreferrer">Claude Fable 5.2 launch offers (centro de ayuda)</a>: semana incluida en Pro, reinicios de Fable, fechas y cómo usarlos (hay versión en español).</li>
       <li><a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer">Manage usage credits (centro de ayuda)</a>: qué son los créditos de uso y cómo se activan.</li>
+      <li><a href="https://claude.com/resources/articles/sheets-whiteboards-data" target="_blank" rel="noopener noreferrer">Introducing Claude Whiteboards, Claude Sheets, and Claude Data (anuncio de Anthropic, 10-11-2026)</a>: qué son, en qué planes están y el cambio de nombre de Dashboards a Claude Data.</li>
+      <li><a href="https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets" target="_blank" rel="noopener noreferrer">Get started with Claude Sheets (centro de ayuda)</a>: planes, cómo crear una hoja, importar y exportar, compartir, uso y limitaciones de la beta.</li>
+      <li><a href="https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards" target="_blank" rel="noopener noreferrer">Get started with Claude Whiteboards (centro de ayuda)</a>: planes, dispositivos, dictado en español, compartir, exportar y limitaciones de la beta.</li>
+      <li><a href="https://claude.com/resources/articles/interactive-connectors-full-tool" target="_blank" rel="noopener noreferrer">Your apps can now open in Claude (anuncio de Anthropic, 10-11-2026)</a>: conectores que se abren como aplicación completa junto al chat, en todos los planes.</li>
     </ul>
 
     <h2>Guías de este tema</h2>
