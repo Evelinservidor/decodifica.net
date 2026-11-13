@@ -1,5 +1,37 @@
 [
   {
+    "fecha": "2026-11-13",
+    "titulo": "¿Una botella de agua por pregunta?",
+    "serie": "mito-o-realidad",
+    "numero_serie": 1,
+    "resumen": "Hemos ido al estudio de 2023 del que sale la famosa frase. Lo que dice es que GPT-3 «bebe» una botella de 500 ml por cada 10 a 50 respuestas, no por cada una. Además, la cifra cambia según el centro de datos: en su tabla va de unas 10 respu",
+    "fuentes": [
+      {
+        "nombre": "arxiv.org",
+        "url": "https://arxiv.org/abs/2304.03271"
+      },
+      {
+        "nombre": "arxiv.org",
+        "url": "https://arxiv.org/html/2304.03271v5"
+      },
+      {
+        "nombre": "cloud.google.com",
+        "url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference"
+      },
+      {
+        "nombre": "blog.samaltman.com",
+        "url": "https://blog.samaltman.com/the-gentle-singularity"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1147513194630347",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n26xqjqwq52i"
+    }
+  },
+  {
     "fecha": "2026-11-12",
     "titulo": "Pregúntale a tu PDF GRATIS",
     "serie": "cual-uso",
