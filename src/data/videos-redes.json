@@ -1,5 +1,53 @@
 [
   {
+    "fecha": "2026-11-14",
+    "titulo": "Que tu chat no entrene la IA",
+    "serie": "mito-o-realidad",
+    "numero_serie": 2,
+    "resumen": "Lo que casi nadie explica es que apagarlo solo vale desde ese momento. ChatGPT habla de «conversaciones nuevas», Gemini de «chats futuros», y Claude avisa de que lo que ya entró en un entrenamiento se queda. Con el interruptor apagado tambi",
+    "fuentes": [
+      {
+        "nombre": "privacy.claude.com",
+        "url": "https://privacy.claude.com/es/articles/12109829"
+      },
+      {
+        "nombre": "privacy.claude.com",
+        "url": "https://privacy.claude.com/en/articles/10023580"
+      },
+      {
+        "nombre": "privacy.claude.com",
+        "url": "https://privacy.claude.com/es/articles/10023555"
+      },
+      {
+        "nombre": "help.openai.com",
+        "url": "https://help.openai.com/es-es/articles/7730893"
+      },
+      {
+        "nombre": "help.openai.com",
+        "url": "https://help.openai.com/es-es/articles/8983130"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/13594961?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/13594961?hl=es-419"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/13278892?hl=es-419"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1628997208549985",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2biceku2x2x"
+    }
+  },
+  {
     "fecha": "2026-11-13",
     "titulo": "¿Una botella de agua por pregunta?",
     "serie": "mito-o-realidad",
