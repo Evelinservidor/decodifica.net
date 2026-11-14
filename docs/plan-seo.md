@@ -104,6 +104,32 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Un asistente con un móvil viejo (contado con capturas y datos de Jordi)
   - [ ] Avisos de casa al móvil sin servicios de pago
 
+## Grupo E · Quitar la IA que no pediste — PRUEBA (abierto el 14-11-2026)
+- Lo abrió el 🌐 especialista el 14-11-2026 con permiso de Jordi («sí, si lo dicen vuestros datos», 13-11). Datos: el
+  autocompletado de Google (12-11, España y México) llena las 10 sugerencias de «desactivar ia de google», «desactivar
+  meta ai whatsapp» y «como quitar la ia de» (whatsapp, google, móvil, chrome, pinterest, instagram); en Bluesky en
+  español, 4 publicaciones en 48 h pidiendo quitarla (📣 Redes, 11-11).
+- **Lo que hay arriba (mirado el 14-11-2026):** medios grandes (Xataka, Hipertextual, OCU, Infobae, El Cronista, La
+  Nación, Diario de Cuyo con 7 notas casi iguales) y blogs. Se contradicen: muchos titulan «cómo desactivar» Meta AI en
+  WhatsApp cuando no hay forma oficial de quitarla (solo archivar o borrar el chat); en Google no hay interruptor para
+  los resúmenes de IA (solo la pestaña «Web» o el parámetro udm=14); en Gmail apagar las «funciones inteligentes» quita
+  también cosas viejas; Pinterest y DuckDuckGo sí tienen ajustes (verás «menos» IA; noai.duckduckgo.com).
+- **En qué les ganamos:** una sola página con una tabla por aplicación —**se puede apagar / solo se puede reducir u
+  ocultar / no se puede**— con el enlace a la ayuda OFICIAL de cada empresa y la fecha de consulta; sin «por qué te
+  conviene hacerlo ya» (sin miedo ni sensacionalismo). La repasa el repaso del día 20 (los menús cambian).
+- **Es una prueba de 1 pieza:** no quita turno a A y B. El lunes 23-11-2026 (o el siguiente lunes libre) el pilar ocupa
+  el hueco del artículo nuevo; la mejora de esa semana sigue en su grupo.
+- **Cómo se decide si sigue** (lo mide el 🌐 especialista con `latest_28d.json`): a las 4 semanas de entrar en Google,
+  ≥ 100 apariciones en 28 días → se abren los apoyos de la cola; < 30 → se cierra el grupo y la página se queda como está.
+  En medio, 4 semanas más.
+- **Cola:**
+  - [ ] Pilar: «Cómo quitar la IA de WhatsApp, Gmail, Google, Chrome y más: qué se puede apagar de verdad» (tabla de
+    arriba; Meta AI en WhatsApp/Instagram, Gemini en Gmail y Android, resúmenes y modo IA de Google, Chrome, Pinterest,
+    DuckDuckGo; solo lo que confirme la ayuda oficial, y lo que no se puede, decirlo)
+  - [ ] Apoyo (solo si la prueba sale bien): Meta AI en WhatsApp: qué se puede quitar, ocultar o borrar (círculo, chats,
+    grupos, WhatsApp Business)
+  - [ ] Apoyo (ídem): Google sin IA: buscar sin resúmenes ni modo IA en el móvil y en el ordenador
+
 ## Fuera de los grupos (no se escribe nada nuevo)
 - Oficina (Excel, presentaciones, reuniones, pendientes): ganan los que venden. Solo lo cuida el agente de los jueves.
 - IA china, «IA gratis», crear apps, novedades sueltas: caducan en semanas. Se cuida lo que ya tiene apariciones.
@@ -174,13 +200,4 @@ se usan en la propia web, gratis, sin registro y sin IA por detrás, con datos o
   herramienta, no como páginas sueltas.
 
 ## Ideas para más adelante (no escribir sin que entren en un grupo)
-- Idea (12-11-2026, 🌐 especialista, a partir de lo que vio 📣 Redes en Bluesky): **«Cómo quitar o apagar la IA que no
-  pediste»** (Gemini en Gmail, el modo IA y los resúmenes de IA de Google, Meta AI en WhatsApp, Chrome, el móvil).
-  No cabe en A-D: haría falta un grupo nuevo y eso lo decide Jordi. Datos: el autocompletado de Google (12-11-2026, España
-  y México) da 10 de 10 sugerencias para «desactivar ia de google» (chrome, android, pc, lens, fotos, modo ia, búsqueda),
-  «desactivar meta ai whatsapp» (españa, android, iphone, samsung, botón, círculo, business) y «como quitar la ia de»
-  (whatsapp, google, móvil/celular, chrome, pinterest, instagram); también «quitar gemini de gmail». En Bluesky en español,
-  4 publicaciones en 48 h pidiendo quitarla y 0 preguntando qué IA usar (📣 Redes, 11-11). Encaja con la casa: pasos
-  oficiales, honesto, sin vender nada. Antes de escribir: mirar los diez primeros (si solo salen medios grandes y la
-  ayuda oficial, empezar por la pieza más concreta, p. ej. «quitar el círculo de Meta AI en WhatsApp», y no por la
-  general); y comprobar en la ayuda oficial de cada empresa qué se puede apagar de verdad hoy (lo que no se puede, decirlo).
+- ~~Idea «quitar la IA que no pediste» (12-11-2026)~~ → es el **Grupo E** desde el 14-11-2026.
