@@ -122,6 +122,8 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Cómo se decide si sigue** (lo mide el 🌐 especialista con `latest_28d.json`): a las 4 semanas de entrar en Google,
   ≥ 100 apariciones en 28 días → se abren los apoyos de la cola; < 30 → se cierra el grupo y la página se queda como está.
   En medio, 4 semanas más.
+- **Fuentes para el pilar:** `docs/grupo-e-fuentes.md` (15-11-2026): ayuda oficial por aplicación, punto de partida;
+  comprobar cada fila el día de escribir.
 - **Cola:**
   - [ ] Pilar: «Cómo quitar la IA de WhatsApp, Gmail, Google, Chrome y más: qué se puede apagar de verdad» (tabla de
     arriba; Meta AI en WhatsApp/Instagram, Gemini en Gmail y Android, resúmenes y modo IA de Google, Chrome, Pinterest,
