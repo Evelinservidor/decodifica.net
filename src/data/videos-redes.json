@@ -1,5 +1,33 @@
 [
   {
+    "fecha": "2026-11-15",
+    "titulo": "Subtítulos a tu vídeo GRATIS",
+    "serie": "gratis-y-util",
+    "numero_serie": 2,
+    "resumen": "El límite real del plan gratis, que casi nadie cuenta: los subtítulos no tienen tope según la web de Clipchamp, pero hace falta cuenta personal de Microsoft, solo admite un idioma por vídeo, el archivo de subtítulos solo se baja en .srt y l",
+    "fuentes": [
+      {
+        "nombre": "clipchamp.com",
+        "url": "https://clipchamp.com/es/subtitle-generator/"
+      },
+      {
+        "nombre": "clipchamp.com",
+        "url": "https://clipchamp.com/es/pricing/"
+      },
+      {
+        "nombre": "clipchamp.com",
+        "url": "https://clipchamp.com/es/blog/clipchamps-auto-captioning-feature/"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1776186510113994",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2dyt4iuja2a"
+    }
+  },
+  {
     "fecha": "2026-11-14",
     "titulo": "Que tu chat no entrene la IA",
     "serie": "mito-o-realidad",
