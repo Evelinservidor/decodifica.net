@@ -36,14 +36,17 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Pilar:** `/blog/claude-ia-que-es-gratis/`, que se convertirá en «Claude en español: guía completa (gratis, planes y
   cómo usarlo)». Su dirección no cambia.
 - **Apoyos que ya hay:** ✔ `/blog/claude-skills-1000-gratis/` (la página más fuerte de la web; su dirección no se toca;
-  revisada el 02-11-2026) · ✔ `/blog/claude-emails-sonar-humanos/` (revisado el 19-10-2026) · ✔ `/blog/alternativas-fable-5/` ·
-  ✔ `/herramientas/chatgpt-vs-claude/` · ✔ `/blog/prompts-para-claude/` (02-11-2026)
+  revisada el 02-11-2026) · ✔ `/blog/claude-emails-sonar-humanos/` (revisado el 19-10-2026 y el 16-11-2026: conector de Gmail) ·
+  ✔ `/blog/alternativas-fable-5/` (revisado el 16-11-2026) · ✔ `/herramientas/chatgpt-vs-claude/` ·
+  ✔ `/blog/prompts-para-claude/` (02-11-2026) · ✔ `/blog/claude-code-sin-saber-programar/` (16-11-2026)
 - **Cola de apoyos nuevos** (en este orden; antes de escribir, comprobar en la web oficial que la función existe hoy y
   cómo se llama):
   - [x] ✔ (19-10-2026) Pilar: rehacer `/blog/claude-ia-que-es-gratis/` como guía completa («Claude en español: guía completa, gratis y planes»)
   - [x] ✔ (02-11-2026) Prompts para Claude con ejemplos → `/blog/prompts-para-claude/` («Prompts para Claude: ejemplos y
     cómo darle instrucciones»; seis prompts, instrucciones de cuenta, Proyecto y Skill). Mejora de la semana: Claude Skills.
-  - [ ] Claude Code sin saber programar: primeros pasos
+  - [x] ✔ (16-11-2026) Claude Code sin saber programar → `/blog/claude-code-sin-saber-programar/` («Claude Code sin saber
+    programar: primeros pasos»; app de escritorio sin terminal, plan, primer proyecto, modos de permiso, Cowork y la
+    terminal). Mejora de la semana: emails con Claude (conector de Gmail, tú/usted/vos, preguntas frecuentes).
   - [ ] Límites del plan gratis de Claude y cómo aprovecharlos
   - [ ] Proyectos de Claude: qué son y para qué sirven
   - [ ] Claude vs Gemini: cuál elegir según para qué
@@ -52,7 +55,11 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
   - [ ] Idea (19-10-2026): Memoria de Claude y chats de incógnito: qué recuerda y cómo borrarlo (el centro de ayuda lo explica con detalle; hoy es solo un apartado del pilar)
   - [ ] Idea (02-11-2026): Claude Design, Slides y Docs: qué son y qué se puede hacer gratis (la página de precios los
     incluye en el plan Free; el autocompletado de España y México sugiere «prompts para claude design»). Antes, comprobar
-    que hay ayuda oficial con pasos.
+    que hay ayuda oficial con pasos. (13-11-2026: Sheets y Whiteboards ya tienen ayuda oficial con pasos, pero no están
+    en Free.)
+  - [ ] Idea (16-11-2026): Claude Cowork: qué es, cuánto cuesta y para qué sirve sin programar. El autocompletado de
+    España y México sugiere «claude cowork es gratis», «precio», «descargar», «para qué sirve», «en español» y «claude
+    cowork vs claude code». Hoy es un apartado de la guía de Claude Code; el centro de ayuda tiene una guía con pasos.
 
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
 - **Pilar:** ✔ `/blog/ia-local-sin-internet/` «IA local en español: cómo usar IA en tu PC sin internet» (qué programa

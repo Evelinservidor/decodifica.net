@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
+
+const title = "Claude Code sin saber programar: primeros pasos";
+const description = "Cómo usar Claude Code sin saber programar y sin terminal, desde la app de Claude: qué plan necesitas, tu primer proyecto paso a paso y cuándo conviene Cowork.";
+const pubDate = "2026-11-16";
+const modifiedDate = "2026-11-16";
+const readingTime = "10 min";
+const tema = "chatbots";
+const tags = ["claude code", "claude code sin saber programar", "claude code para principiantes", "claude cowork", "claude code es gratis", "anthropic"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/claude-code-sin-saber-programar.jpg"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+  citations={[
+    "https://code.claude.com/docs/en/overview",
+    "https://code.claude.com/docs/en/desktop-quickstart",
+    "https://code.claude.com/docs/en/desktop",
+    "https://code.claude.com/docs/en/terminal-guide",
+    "https://code.claude.com/docs/en/permission-modes",
+    "https://code.claude.com/docs/en/checkpointing",
+    "https://code.claude.com/docs/en/security",
+    "https://code.claude.com/docs/en/data-usage",
+    "https://code.claude.com/docs/en/setup",
+    "https://code.claude.com/docs/en/desktop-linux",
+    "https://code.claude.com/docs/en/memory",
+    "https://code.claude.com/docs/en/settings-reference",
+    "https://code.claude.com/docs/en/web-quickstart",
+    "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+    "https://claude.com/pricing",
+    "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+    "https://docs.ollama.com/integrations/claude-code",
+    "https://docs.ollama.com/context-length",
+    "https://lmstudio.ai/docs/integrations/claude-code",
+    "https://ollama.com/download",
+  ]}
+>
+  <Articulo slug="claude-code-sin-saber-programar">
+
+    <p><strong>En resumen:</strong> sí se puede usar Claude Code sin saber programar: la aplicación de escritorio de Claude (Mac, Windows y Linux en beta) lo trae en la pestaña <strong>Code</strong>, sin terminal y sin instalar nada más. Le pides en español lo que quieres, trabaja en una carpeta de tu ordenador y, en modo <strong>Manual</strong>, te enseña cada cambio antes de hacerlo. No está en el plan gratis: hace falta Pro (17 $ al mes con pago anual o 20 $ mes a mes) o superior. Si lo que quieres son documentos, hojas de cálculo o presentaciones, y no un programa, Anthropic tiene para eso <strong>Cowork</strong>.</p>
+
+    <p>Esta guía forma parte de <a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>, donde están los planes, los límites y los países donde se puede usar. Los datos salen de la documentación oficial de Claude Code, del centro de ayuda de Claude y de la página de precios, consultados el 16 de noviembre de 2026.</p>
+
+    <h2>Qué es Claude Code y en qué se diferencia del chat</h2>
+    <p>Anthropic lo define como una herramienta de programación «agéntica»: <strong>lee los archivos de un proyecto, los edita, ejecuta órdenes</strong> y comprueba si lo que ha hecho funciona. En el chat de Claude tú copias y pegas; con Claude Code, Claude trabaja directamente en una carpeta de tu ordenador y crea o cambia los archivos él mismo.</p>
+    <p>Funciona en varios sitios: la terminal, los editores VS Code y JetBrains, la aplicación de escritorio y el navegador (<code>claude.ai/code</code>). Para quien no programa, la puerta de entrada es la <strong>aplicación de escritorio</strong>: la propia documentación dice que permite «saltarse la terminal por completo» y que no hace falta instalar Node.js ni la versión de terminal, porque la app ya incluye Claude Code. La versión del navegador trabaja sobre un repositorio de GitHub, así que para empezar es menos práctica.</p>
+    <p>Lo que se le puede pedir, según la documentación: crear algo nuevo describiéndolo con palabras, arreglar un fallo pegando el mensaje de error o contando qué pasa, y preguntar cómo funciona un proyecto que ya existe. Para alguien que empieza, eso se traduce en cosas pequeñas: una página web de un solo archivo, una calculadora o un formulario que funcione en el navegador, o que te explique qué hace un programa que te han pasado.</p>
+
+    <h2>¿Claude Code o Cowork?</h2>
+    <p>Antes de pagar nada, conviene saber que Anthropic tiene otra herramienta pensada justo para quien no programa. Según su centro de ayuda, <strong>Cowork lleva las capacidades de Claude Code «al trabajo más allá del código»</strong>, sin terminal: ordenar archivos, investigar y resumir, preparar informes, hojas de Excel con fórmulas que funcionan y presentaciones. Se pide desde el mismo sitio que el chat y, como sus sesiones corren en la nube, sigue trabajando aunque cierres el portátil; eso sí, si la tarea usa archivos de tu ordenador, la aplicación de escritorio tiene que estar abierta para que Claude llegue a ellos.</p>
+    <ul>
+      <li><strong>Elige Claude Code</strong> si el resultado que quieres es un programa: una web, un script, una pequeña aplicación, o arreglar o entender código que ya tienes.</li>
+      <li><strong>Elige Cowork</strong> si el resultado es un documento, una hoja de cálculo, una presentación o una carpeta ordenada.</li>
+    </ul>
+    <p>Los dos están en los planes de pago (Pro, Max, Ultra, Team y Enterprise) y ninguno en el gratis.</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-code-sin-saber-programar/claude-code-o-cowork.webp"
+      alt="Comparativa entre Claude Code, para crear o cambiar programas desde la pestaña Code en una carpeta de tu ordenador, y Cowork, para documentos, Excel y presentaciones que sigue trabajando en la nube; ninguno está en el plan gratis y los dos empiezan en Pro"
+      width={1200}
+      height={738}
+    />
+
+    <h2>Qué necesitas antes de empezar</h2>
+    <ul>
+      <li><strong>Un plan de pago.</strong> La guía oficial de la app pide Pro, Max, Ultra, Team o Enterprise; si abres la pestaña Code con una cuenta gratis, te pedirá cambiar de plan. Pro cuesta 17 $ al mes con pago anual (200 $ por adelantado) o 20 $ mes a mes; Max, 100 $, y Ultra, 200 $ al mes. Los precios de la web no incluyen impuestos.</li>
+      <li><strong>Saber que el uso es compartido.</strong> Claude Code gasta del mismo límite que tus chats: si trabajas mucho con él, te quedará menos para el chat esa misma semana. Según la página de precios, Pro da más uso que el plan gratis, con límites que se renuevan cada cinco horas y cada semana.</li>
+      <li><strong>Un ordenador compatible.</strong> La aplicación está para Mac (con chip Apple o Intel), Windows (x64 y ARM64) y, en beta, para Ubuntu 22.04 o posterior y Debian 12 o posterior. Claude Code pide al menos macOS 13, Windows 10 versión 1809, 4 GB de memoria y conexión a internet.</li>
+      <li><strong>Estar en un país donde Claude funciona.</strong> La lista y los países de habla hispana que no están en ella, en <a href="/blog/claude-ia-que-es-gratis/#esta-disponible-en-mi-pais">la guía principal</a>.</li>
+    </ul>
+    <FiguraArticulo
+      src="/img/blog/claude-code-sin-saber-programar/guia-oficial-app-escritorio-claude-code.webp"
+      alt="Captura de la guía oficial «Get started with the desktop app» de Claude Code: la app permite trabajar sin terminal, Claude Code está en la pestaña Code y requiere una suscripción Pro, Max, Ultra, Team o Enterprise; descargas para macOS, Windows y Linux en beta"
+      width={1200}
+      height={885}
+      caption="La guía oficial de la aplicación de escritorio (code.claude.com, consultada el 16 de noviembre de 2026)."
+    />
+
+    <p>Hay otra vía, la de pagar por uso con una cuenta de la consola de Anthropic (créditos de la API), que la página de precios propone para sesiones de programación intensas. Para empezar es más sencillo el plan Pro: precio fijo y sin configurar nada.</p>
+
+    <h2>Tus primeros pasos en la app, sin terminal</h2>
+    <p>Son los pasos de la guía oficial «Get started with the desktop app», explicados para quien no ha programado nunca:</p>
+    <ol>
+      <li><strong>Instala la aplicación de Claude e inicia sesión</strong> con tu cuenta. Las descargas están en la guía oficial y en la web de Claude.</li>
+      <li><strong>Abre la pestaña Code</strong>, arriba en la barra lateral. Si solo ves iconos, pasa el ratón por encima para ver el nombre.</li>
+      <li><strong>Elige dónde trabaja.</strong> En la fila de debajo del cuadro de texto, el primer botón es el entorno: elige el primero del grupo <strong>Local</strong> (tu ordenador). Al lado, en el botón de la carpeta, pulsa <strong>Open folder…</strong> y elige la carpeta. Para la primera vez, crea una carpeta nueva y vacía solo para practicar.</li>
+      <li><strong>Mira el modo de permisos antes del primer mensaje</strong> y elige <strong>Manual</strong>: Claude te enseñará cada cambio y esperará a que lo apruebes. La app recuerda el modo de cada carpeta, así que compruébalo siempre al empezar.</li>
+      <li><strong>Escribe lo que quieres</strong>, en español y con detalle (abajo tienes un ejemplo).</li>
+      <li><strong>Revisa y decide.</strong> En modo Manual verás qué va a cambiar, con botones para aprobar o rechazar cada cambio. Si ves que va por mal camino, pulsa el botón de parar o escribe la corrección y pulsa Intro: no hace falta esperar a que termine.</li>
+    </ol>
+
+    <FiguraArticulo
+      src="/img/blog/claude-code-sin-saber-programar/primer-proyecto-claude-code.webp"
+      alt="Seis pasos para la primera sesión en la pestaña Code: instalar la app de Claude e iniciar sesión, abrir la pestaña Code, elegir Local y una carpeta nueva, poner el modo Manual o Plan, pedir el resultado en español y revisar los cambios"
+      width={1200}
+      height={817}
+    />
+
+    <p>La guía oficial también sugiere elegir el modelo en el selector que hay en esa misma fila, a la derecha. Si no sabes cuál, deja el que viene puesto: se puede cambiar en cualquier momento.</p>
+
+    <h2>Un primer proyecto sin riesgo: una página web de un solo archivo</h2>
+    <p>La documentación recomienda empezar por algo pequeño. Una página web en un único archivo es buena prueba: no hay que instalar nada para verla, el resultado se entiende a simple vista y, como la carpeta es nueva, no hay nada que estropear. Un ejemplo de lo que puedes escribirle:</p>
+    <blockquote>
+      <p>Quiero una página web sencilla para presentar mi taller de cerámica. Hazla en un solo archivo, index.html, en español: mi nombre arriba, tres huecos para fotos (de momento, recuadros grises con el texto «Foto»), el horario de martes a sábado de 10 a 14 y un enlace para escribirme por correo. Que se vea bien en el móvil. No instales nada. Antes de crear el archivo, explícame en pocas líneas qué vas a hacer.</p>
+    </blockquote>
+    <p>Qué tiene este prompt: dice qué quieres y para qué, da los datos concretos, pone límites («un solo archivo», «no instales nada») y le pide que explique el plan antes de actuar. Si prefieres que no cambie ningún archivo hasta que des el visto bueno, usa el modo <strong>Plan</strong>: Claude lee los archivos (y puede ejecutar órdenes para explorar) y propone cómo hacer la tarea sin editar tus archivos. Cuando el plan te convenza, cambia a Manual para que lo haga.</p>
+    <p>Cuando haya terminado, haz clic en la ruta del archivo <code>index.html</code> que aparece en el chat y la página se abrirá en el panel <strong>Browser</strong> de la propia app. A partir de ahí, pide cambios de uno en uno («pon los colores en tonos tierra», «el horario, en una tabla») y míralos antes de pedir el siguiente.</p>
+    <Caja tipo="consejo">Pídele al principio: «Explícame cada cambio en una frase, sin jerga». Si quieres que lo recuerde cada vez que abras esa carpeta, pídele que lo guarde en un archivo <code>CLAUDE.md</code>: es el archivo de instrucciones que Claude Code lee al empezar cada sesión en ese proyecto (la guía oficial pone como ejemplo «Create a CLAUDE.md with instructions for this codebase»).</Caja>
+
+    <h2>Los modos de permiso, explicados sin jerga</h2>
+    <p>El modo decide cuánto puede hacer Claude sin preguntarte. Se cambia en cualquier momento en el selector de debajo del cuadro de texto:</p>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Modo</th>
+            <th>Qué hace</th>
+            <th>Cuándo usarlo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Manual</strong></td>
+            <td>Pregunta antes de editar archivos o ejecutar órdenes. Ves cada cambio y lo aceptas o lo rechazas.</td>
+            <td>Mientras aprendes, siempre.</td>
+          </tr>
+          <tr>
+            <td><strong>Plan</strong></td>
+            <td>Lee los archivos y puede ejecutar órdenes para explorar, pero propone un plan sin editar tus archivos.</td>
+            <td>Antes de un cambio grande, para ver por dónde va a ir.</td>
+          </tr>
+          <tr>
+            <td><strong>Accept edits</strong> (aceptar ediciones)</td>
+            <td>Aplica sin preguntar los cambios en los archivos y las órdenes básicas de archivos dentro de la carpeta (crear, mover, copiar y también borrar); para el resto, sigue preguntando. Después revisas los cambios.</td>
+            <td>Cuando ya te fías del tipo de cambios que hace.</td>
+          </tr>
+          <tr>
+            <td><strong>Auto</strong></td>
+            <td>Trabaja sin preguntarte; otro modelo revisa en segundo plano las acciones y bloquea las que considera peligrosas.</td>
+            <td>Cuando tengas experiencia. No sustituye tu revisión.</td>
+          </tr>
+          <tr>
+            <td><strong>Bypass permissions</strong> (saltar permisos)</td>
+            <td>No pregunta casi nada. Hay que activarlo aparte en los ajustes.</td>
+            <td>Nunca en tu ordenador: la documentación lo reserva para entornos aislados.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>En versiones anteriores de la app, estos modos se llamaban Ask permissions, Auto accept edits y Plan mode.</p>
+
+    <h2>Cómo no perder el control de tus archivos</h2>
+    <p>La documentación de seguridad de Claude Code lo dice claro: <strong>eres tú quien debe revisar el código y las órdenes que propone antes de aprobarlos</strong>. Sin saber programar no podrás revisar cada línea, así que la protección está en cómo trabajas:</p>
+    <ul>
+      <li><strong>Una carpeta de prueba o una copia.</strong> En modo Manual, Claude Code pregunta antes de leer o escribir fuera de la carpeta que abriste. Pero ojo: una orden que tú apruebes puede escribir en cualquier sitio al que tenga acceso tu usuario. Si no entiendes una orden, recházala y pregúntale qué hace.</li>
+      <li><strong>Manual mientras aprendes</strong> y nunca «Bypass permissions».</li>
+      <li><strong>Deshacer.</strong> En la terminal, <code>/rewind</code> (o <code>/undo</code>) devuelve los archivos al punto que elijas. Tiene límites: no deshace lo que cambió una orden ejecutada en un archivo que Claude no había editado antes con sus propias herramientas, y Anthropic avisa de que no sustituye a un control de versiones como Git. Por eso la copia de seguridad sigue siendo lo más seguro.</li>
+      <li><strong>Cuidado con lo que lee de fuera.</strong> Un texto de una web o un archivo puede llevar instrucciones escondidas para engañar a la IA (lo que se llama <em>prompt injection</em>). Claude Code no aprueba solo las órdenes que descargan cosas de internet: en Manual, te pregunta.</li>
+      <li><strong>Para algo serio, que lo revise alguien que sepa.</strong> Una web con pagos, datos de clientes o algo que vas a publicar para otras personas no es un proyecto para aprobar a ciegas.</li>
+    </ul>
+
+    <Caja tipo="ojo">Privacidad: en los planes Free, Pro, Max y Ultra, Anthropic usa tus conversaciones para entrenar modelos solo si tienes activado ese ajuste, y eso incluye lo que haces con Claude Code. Con el ajuste activado, guarda los datos 5 años; sin él, 30 días. Se cambia en <strong>claude.ai/settings/data-privacy-controls</strong>. Además, Claude Code guarda en tu ordenador, sin cifrar, el texto de las sesiones (en la carpeta <code>~/.claude/projects/</code>) para poder retomarlas; las de la aplicación de escritorio no se borran solas a los 30 días, como las de la terminal.</Caja>
+
+    <h2>Si te animas con la terminal</h2>
+    <p>La app basta para empezar, pero Anthropic tiene una guía para quien no ha abierto nunca una terminal y dice que se puede usar Claude Code así «aunque nunca hayas usado una terminal». En resumen:</p>
+    <ul>
+      <li><strong>Mac:</strong> pulsa Cmd + Espacio, escribe <em>Terminal</em> y pulsa Intro. Pega <code>curl -fsSL https://claude.ai/install.sh | bash</code> y espera: no muestra el avance de la descarga.</li>
+      <li><strong>Windows:</strong> abre PowerShell y pega <code>irm https://claude.ai/install.ps1 | iex</code>. La guía recomienda instalar antes Git para Windows (aceptando las opciones que vienen marcadas), aunque es opcional.</li>
+      <li>Después, escribe <code>claude</code> en la carpeta de tu proyecto e inicia sesión en la ventana del navegador que se abre. <code>Esc</code> interrumpe a Claude y <code>exit</code> cierra Claude Code.</li>
+      <li><strong>Ojo con el modo:</strong> desde la versión 2.1.283, la terminal empieza en modo <strong>Auto</strong>, no en Manual. Pulsa Mayúsculas + Tab una vez y abajo pondrá «manual mode on».</li>
+    </ul>
+    <p>Desde la terminal también puedes conectar Claude Code a modelos abiertos con <a href="/blog/ollama-que-es-como-usar/">Ollama</a> o <a href="/blog/lm-studio-que-es-como-usar/">LM Studio</a>, como explican las guías de los dos programas (la app usa por defecto los modelos de Anthropic; cambiarlo pide configurar un servidor intermedio). Ollama lo hace con una orden, <code>ollama launch claude</code>, y para herramientas de programación recomienda un contexto (la memoria de trabajo del modelo) de al menos 64.000 tokens; según su documentación, cuanto más contexto, más memoria de la tarjeta gráfica hace falta. Cuál de los dos elegir, en <a href="/blog/ollama-o-lm-studio/">Ollama o LM Studio</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Se puede usar Claude Code sin saber programar?",
+          a: "Sí. La aplicación de escritorio de Claude lo incluye en la pestaña Code, sin terminal: describes en español lo que quieres y Claude crea o cambia los archivos de la carpeta que elijas. En modo Manual te enseña cada cambio antes de hacerlo. Lo que no puede hacer por ti es responsabilizarse del resultado: para algo importante, que lo revise alguien que sepa.",
+        },
+        {
+          q: "¿Claude Code es gratis?",
+          a: "No con el plan gratuito de Claude: según la página de precios (noviembre de 2026), Claude Code está en Pro, Max y Ultra y en los planes de empresa. Pro cuesta 17 $ al mes con pago anual o 20 $ mes a mes, sin impuestos. También se puede pagar por uso con una cuenta de la consola de Anthropic. Otra vía, desde la terminal, es conectarlo a un modelo abierto con Ollama o LM Studio: entonces no usas los modelos de Anthropic. Si el modelo funciona en tu ordenador, hace falta mucha memoria; los modelos en la nube de Ollama necesitan créditos o un plan de pago.",
+        },
+        {
+          q: "¿Qué diferencia hay entre Claude Code y Cowork?",
+          a: "Los dos usan la misma tecnología de agente. Claude Code está pensado para crear o cambiar programas en una carpeta de tu ordenador. Cowork, para trabajo que no es programar: ordenar archivos, investigar, informes, Excel con fórmulas y presentaciones; se pide desde el mismo sitio que el chat y sigue trabajando en la nube aunque cierres. Los dos son de los planes de pago.",
+        },
+        {
+          q: "¿Claude Code entiende español?",
+          a: "Según el centro de ayuda de Claude, Claude conversa en el idioma en el que le escribes. Para asegurarte de que Claude Code conteste siempre en español, díselo al empezar o guárdalo en el archivo CLAUDE.md de tu proyecto. Su documentación tiene además un ajuste, language, para fijar el idioma de las respuestas.",
+        },
+        {
+          q: "¿Puede estropear mi ordenador o borrar mis archivos?",
+          a: "Trabaja en la carpeta que abres y, en modo Manual, pide permiso antes de editar, ejecutar órdenes o tocar archivos fuera de esa carpeta. Pero una orden que tú apruebes puede llegar a cualquier archivo de tu usuario. Practica en una carpeta nueva o con copias, usa el modo Manual y no actives «Bypass permissions».",
+        },
+        {
+          q: "¿Puedo usar Claude Code desde el móvil?",
+          a: "Solo como mando a distancia: la app de Claude para iOS y Android tiene una pestaña Code para seguir y dirigir sesiones en la nube (que trabajan sobre un repositorio de GitHub) o las que tienes abiertas en tu ordenador, pero el código no se ejecuta en el teléfono. Para empezar sin saber programar, mejor la aplicación de escritorio.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 16 de noviembre de 2026.</p>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer">Claude Code overview</a>: qué es, dónde funciona (terminal, editores, escritorio y web), qué se le puede pedir y qué cuenta hace falta.</li>
+      <li><a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener noreferrer">Get started with the desktop app</a>: planes necesarios, descargas, pestaña Code, entorno Local, carpeta, modelo, modos de permiso y primeros pasos.</li>
+      <li><a href="https://code.claude.com/docs/en/desktop" target="_blank" rel="noopener noreferrer">Use Claude Code Desktop</a>: tabla de modos de permiso, panel Browser, revisión de cambios y diferencias con la terminal.</li>
+      <li><a href="https://code.claude.com/docs/en/terminal-guide" target="_blank" rel="noopener noreferrer">Terminal guide for new users</a>: instalar Claude Code sin haber usado nunca una terminal, en Mac, Linux y Windows.</li>
+      <li><a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer">Permission modes</a>: cómo se cambian los modos y qué modo se recuerda en cada carpeta.</li>
+      <li><a href="https://code.claude.com/docs/en/checkpointing" target="_blank" rel="noopener noreferrer">Checkpointing</a>: <code>/rewind</code>, <code>/undo</code> y sus límites.</li>
+      <li><a href="https://code.claude.com/docs/en/security" target="_blank" rel="noopener noreferrer">Security</a>: responsabilidad de revisar, límite de la carpeta de trabajo y protección frente a <em>prompt injection</em>.</li>
+      <li><a href="https://code.claude.com/docs/en/data-usage" target="_blank" rel="noopener noreferrer">Data usage</a>: entrenamiento, plazos de conservación y copias locales de las sesiones.</li>
+      <li><a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Advanced setup</a>: requisitos del sistema de Claude Code (los de la terminal) y <a href="https://code.claude.com/docs/en/desktop-linux" target="_blank" rel="noopener noreferrer">Claude Desktop on Linux</a>: Ubuntu 22.04 o Debian 12 para la app.</li>
+      <li><a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener noreferrer">How Claude remembers your project</a>: qué es el archivo CLAUDE.md.</li>
+      <li><a href="https://code.claude.com/docs/en/settings-reference" target="_blank" rel="noopener noreferrer">Settings reference</a>: el ajuste <code>language</code> para el idioma de las respuestas.</li>
+      <li><a href="https://code.claude.com/docs/en/web-quickstart" target="_blank" rel="noopener noreferrer">Get started with Claude Code in the cloud</a> y <a href="https://code.claude.com/docs/en/mobile" target="_blank" rel="noopener noreferrer">Claude Code on mobile</a>: sesiones en la nube con GitHub y uso desde el móvil.</li>
+      <li><a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener noreferrer">Get started with Claude Cowork</a> (centro de ayuda de Claude): qué es Cowork, en qué planes y qué puede hacer.</li>
+      <li><a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer">Claude: planes y precios</a>: qué planes incluyen Claude Code, precios y límites de uso compartidos.</li>
+      <li><a href="https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" target="_blank" rel="noopener noreferrer">How to use Claude in your preferred language</a> (centro de ayuda): Claude conversa en el idioma que usas.</li>
+      <li><a href="https://docs.ollama.com/integrations/claude-code" target="_blank" rel="noopener noreferrer">Ollama: Claude Code</a> y <a href="https://docs.ollama.com/context-length" target="_blank" rel="noopener noreferrer">Context length</a>: <code>ollama launch claude</code>, el contexto recomendado y la memoria que pide. <a href="https://lmstudio.ai/docs/integrations/claude-code" target="_blank" rel="noopener noreferrer">LM Studio: Claude Code</a>: cómo conectarlo con LM Studio. <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama: descarga</a>: los modelos en la nube necesitan créditos o un plan de pago.</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>: planes, límites, países, privacidad y todas las guías de este tema.</li>
+      <li><a href="/blog/prompts-para-claude/">Prompts para Claude</a>: cómo pedirle las cosas y dónde guardar tus instrucciones.</li>
+      <li><a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>: procedimientos que Claude, también Claude Code, carga cuando los necesita.</li>
+      <li><a href="/blog/ollama-o-lm-studio/">Ollama o LM Studio</a>: si quieres probar Claude Code con un modelo que funciona en tu ordenador.</li>
+    </ul>
+
+  </Articulo>
+
+</BaseLayout>
