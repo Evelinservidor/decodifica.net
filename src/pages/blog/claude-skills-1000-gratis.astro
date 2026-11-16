@@ -152,6 +152,7 @@ const pillarLabel = "Pilar 1: Apps web";
       <li>Para instalar las del repositorio oficial como plugin, ejecuta <code>/plugin marketplace add anthropics/skills</code> y después <code>/plugin install document-skills@anthropic-agent-skills</code> o <code>/plugin install example-skills@anthropic-agent-skills</code>.</li>
       <li>Claude Code la carga sola cuando encaja, o puedes llamarla escribiendo <code>/nombre-de-la-skill</code>.</li>
     </ol>
+    <p>Si nunca has usado Claude Code, empieza por <a href="/blog/claude-code-sin-saber-programar/" class="text-brand-400 hover:text-brand-300">Claude Code sin saber programar</a>: se usa desde la aplicación de escritorio de Claude, sin terminal.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">En la API</h3>
     <p>Las Skills se usan junto con la herramienta de ejecución de código: indicas el <code>skill_id</code> en el parámetro <code>container</code>. Las de Anthropic se llaman <code>pptx</code>, <code>xlsx</code>, <code>docx</code> y <code>pdf</code>; las tuyas se suben con los endpoints <code>/v1/skills</code>. En la API se ejecutan en un contenedor sin acceso a internet y sin poder instalar paquetes nuevos.</p>
