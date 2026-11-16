@@ -2,14 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
 
 const title = "Claude para escribir emails que no suenen a robot";
 const description = "Cómo darle a Claude tu tono, tu relación con el destinatario y un correo de ejemplo para que escriba emails claros y naturales. Con plantillas copiables.";
 const pubDate = "2026-06-19";
-const modifiedDate = "2026-10-19";
-const readingTime = "8 min";
+const modifiedDate = "2026-11-16";
+const readingTime = "9 min";
 const tema = "oficina";
-const tags = ["emails con ia", "claude prompts", "productividad email"];
+const tags = ["emails con ia", "claude prompts", "claude gmail", "escribir correos con claude", "productividad email"];
 const pillar = "tips-productividad";
 const pillarLabel = "Pilar 2: Tips productividad";
 ---
@@ -26,41 +28,24 @@ const pillarLabel = "Pilar 2: Tips productividad";
   citations={[
     "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
     "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features",
+    "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+    "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
   ]}
 >
   <Articulo slug="claude-emails-sonar-humanos">
 
 
-    <p><strong>En resumen:</strong> los emails suenan a robot cuando le pides a Claude «escribe un email profesional» sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo de cada petición y ejemplos, que según Anthropic son «una de las formas más fiables» de guiar el tono.</p>
+    <p><strong>En resumen:</strong> los emails suenan a robot cuando le pides a Claude «escribe un email profesional» sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo de cada petición y ejemplos, que según Anthropic son «una de las formas más fiables» de guiar el tono. Si usas Gmail, el conector oficial deja que Claude lea el hilo y te prepare la respuesta sin copiar y pegar, y por defecto te pide permiso antes de enviar nada.</p>
     <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía completa de Claude en español</a> (qué incluye gratis, planes, Proyectos y memoria). Si repites siempre las mismas normas, mira también <a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>.</p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Cuándo usar Claude para emails</h2>
-    <p>
-      No todos los correos necesitan IA. Tiene sentido usar Claude en estos casos, y no en el último:
-    </p>
-
-    <div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Email delicado</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Rechazo o negociación</h3>
-        <p class="mt-2 text-sm text-dark-200">Cuando necesitas sonar firme sin sonar borde, Claude ayuda a quitar fricción sin perder claridad.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Email importante</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Cliente, jefe o proveedor</h3>
-        <p class="mt-2 text-sm text-dark-200">Útil si quieres revisar tono, estructura y siguiente paso antes de enviar.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">Email repetido</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Seguimiento y recordatorios</h3>
-        <p class="mt-2 text-sm text-dark-200">Sirve para convertir notas sueltas en mensajes claros sin empezar de cero cada vez.</p>
-      </div>
-      <div class="rounded-2xl border border-dark-600 bg-dark-800 p-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-400">No lo uses</p>
-        <h3 class="mt-2 font-display text-xl font-bold text-white">Correos simples</h3>
-        <p class="mt-2 text-sm text-dark-200">Si basta con "ok, gracias" o "te llamo mañana", escribirlo tú es más rápido.</p>
-      </div>
-    </div>
+    <h2>Cuándo usar Claude para emails</h2>
+    <p>No todos los correos necesitan IA. Estos son los casos en los que compensa preparar el contexto, y uno en el que no:</p>
+    <ul>
+      <li><strong>Correos delicados:</strong> un rechazo, una negociación o una queja, cuando quieres sonar firme sin sonar borde.</li>
+      <li><strong>Correos importantes:</strong> a un cliente, a tu jefa o a un proveedor, para revisar el tono, el orden y el siguiente paso antes de enviar.</li>
+      <li><strong>Correos que repites:</strong> seguimientos y recordatorios, para pasar notas sueltas a un mensaje claro sin empezar de cero.</li>
+      <li><strong>No compensa en los correos simples:</strong> si basta con «ok, gracias» o «te llamo mañana», escribirlo tú es más rápido.</li>
+    </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El problema con "escribe un email"</h2>
     <p>
@@ -161,6 +146,16 @@ Mi borrador de puntos clave: [lista de 3-5 ideas desordenadas, sin forma]
 Reglas: no suenes a plantilla, no uses frases hechas, no te disculpes más de una vez. Si rechazas algo, sé firme y ofrece alternativa concreta.</pre>
     </div>
 
+    <h2>Tú, usted o vos: dile qué español escribe</h2>
+    <p>Un correo puede sonar a robot solo por el trato. Si no se lo dices, Claude no sabe si en tu empresa os habláis de tú o de usted, ni si quien lo lee es de Madrid, de Ciudad de México o de Buenos Aires. Añádelo al prompt o a tus instrucciones fijas, en una línea:</p>
+    <ul>
+      <li>«Escribe en español de España, de tú, con el vocabulario de una oficina de Madrid.»</li>
+      <li>«Escribe en español de México, de usted: es la primera vez que le escribo.»</li>
+      <li>«Escribe en español de Argentina, tratando de vos, como le escribiría a un compañero.»</li>
+      <li>«Escribe en un español neutro que se entienda en cualquier país de Latinoamérica.»</li>
+    </ul>
+    <p>Es la misma idea que el resto del método: cuanto más preciso es el contexto, menos tienes que corregir después.</p>
+
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo: pedir un aumento</h2>
     <p>
       Aplicando el método, el prompt quedaría así:
@@ -205,6 +200,16 @@ Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente reno
     <p>
       La segunda versión funciona mejor porque pide algo concreto, reduce ambigüedad y suena como una persona que necesita avanzar, no como una plantilla.
     </p>
+
+    <h2>Responder desde tu Gmail sin copiar y pegar</h2>
+    <p>Si tu correo es Gmail, Claude puede leer el hilo al que quieres contestar con el <strong>conector oficial de Gmail</strong>. Según el centro de ayuda (noviembre de 2026), los conectores de Google Workspace están para todos los usuarios de Claude en la web y en la aplicación de escritorio, también en el plan gratis.</p>
+    <ol>
+      <li>Ve a <strong>Customize &gt; Connectors</strong>, pulsa el «+» que hay junto a «Connectors», busca <strong>Gmail</strong> y conéctalo con tu cuenta de Google.</li>
+      <li>En el chat, pídeselo con tus datos y tus normas, por ejemplo: «Busca el último correo de Laura sobre la factura de octubre y prepárame un borrador de respuesta con mi estilo: de tú, máximo 100 palabras y una fecha concreta para el pago. No lo envíes».</li>
+      <li>Claude busca y lee el correo, te dice en qué mensajes se ha basado (con enlace al original cuando lo hay) y redacta el borrador. Revísalo y corrige lo que haga falta, como con cualquier otro borrador.</li>
+    </ol>
+    <p>Lo que puede hacer el conector, según la ayuda: buscar y leer correos, redactar borradores, ver los borradores guardados, ordenar con etiquetas y <strong>enviar, responder y reenviar</strong>. Por defecto, Claude te pide permiso antes de cada envío. En las cuentas de empresa (planes Team y Enterprise), quien administra la cuenta tiene que activar antes el conector y decide si esos envíos pueden hacerse sin preguntar. Dos límites: de los adjuntos solo ve el nombre y los datos del archivo, no el contenido, y algunos filtros avanzados de Gmail pueden no funcionar.</p>
+    <Caja tipo="ojo">Privacidad: Anthropic dice que no entrena sus modelos con los datos de los conectores de Gmail, Calendar y Drive. Pero si en tu cuenta (Free, Pro, Max o Ultra) tienes activado que tus chats sirvan para entrenar, lo que copies de tus correos en el chat y las respuestas de Claude que incluyan datos de ellos sí pueden usarse. Si escribes sobre otras personas, quita los datos que no hagan falta.</Caja>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">3 plantillas copiables para empezar</h2>
     <p>
@@ -267,72 +272,52 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
       El email debe terminar con algo que la otra persona pueda hacer: una pregunta, una propuesta de hora, un enlace o un siguiente paso concreto. Mejor que "espero tu respuesta".
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Y si el destinatario ya sabe que uso IA?</h3>
-    <p>
-      Da igual. La pregunta no es si usas IA, sino si el email es claro, profesional y humano. Si cumple eso, nadie se queja de la herramienta.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Funciona con GPT en vez de Claude?</h3>
-    <p>
-      Sí. Dar contexto, objetivo y un ejemplo funciona con cualquier asistente; lo que cambia es dónde guardas las instrucciones fijas. Si dudas cuál usar, prueba el mismo prompt en dos y quédate con el borrador que menos tengas que corregir.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Debo leer el email antes de enviarlo?</h3>
-    <p>
-      Siempre. La IA te da un borrador, tú le das el toque final. Lee en voz alta: si suena a ti, envía. Si no, itera.
-    </p>
-
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">¿Cuánto tarda esto vs. escribirlo yo?</h3>
-    <p>
-      Depende de tus correos. La forma de saberlo es medirlo: cronometra tres correos escritos a mano y tres con este método (contando la revisión). Configurar las instrucciones fijas solo se hace una vez; lo que tienes que repetir es el contexto de cada correo.
-    </p>
+    <h2>Preguntas frecuentes</h2>
+    <FaqSection
+      items={[
+        {
+          q: "¿Puede Claude enviar el correo por mí?",
+          a: "Sí, si conectas Gmail: el conector oficial puede enviar, responder y reenviar correos, y por defecto te pide permiso antes de cada uno. Aun así, lo más seguro es pedirle un borrador, leerlo y enviarlo cuando estés conforme.",
+        },
+        {
+          q: "¿Sirve todo esto en el plan gratis de Claude?",
+          a: "Sí. Las instrucciones de tu cuenta, los Proyectos (hasta cinco en el plan gratis) y el conector de Gmail están también en el plan Free, según el centro de ayuda de Claude (noviembre de 2026). Lo que cambia en los planes de pago es cuánto uso tienes.",
+        },
+        {
+          q: "¿Funciona con ChatGPT u otra IA en vez de Claude?",
+          a: "Sí. Dar contexto, objetivo y un ejemplo funciona con cualquier asistente; lo que cambia es dónde guardas las instrucciones fijas y qué conectores tiene. Si dudas cuál usar, prueba el mismo prompt en dos y quédate con el borrador que menos tengas que corregir.",
+        },
+        {
+          q: "¿Debo leer el email antes de enviarlo?",
+          a: "Siempre. La IA te da un borrador y tú decides. Léelo en voz alta: si suena a ti y los datos son correctos (nombres, cifras, fechas), envíalo; si no, dile qué falla y pide otra versión.",
+        },
+        {
+          q: "¿Ahorro tiempo frente a escribirlo yo?",
+          a: "Depende de tus correos. La forma de saberlo es medirlo: cronometra tres correos escritos a mano y tres con este método, contando la revisión. Las instrucciones fijas se configuran una sola vez; lo que repites es el contexto de cada correo.",
+        },
+      ]}
+    />
 
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
     <p>
-      Consultadas el 19 de octubre de 2026.
+      Consultadas el 16 de noviembre de 2026.
     </p>
     <ul class="space-y-2">
       <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: instrucciones claras, contexto y uso de ejemplos.</li>
       <li><a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Understanding Claude's personalization features (centro de ayuda)</a>: instrucciones de cuenta, de Proyecto y Skills.</li>
+      <li><a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use Google Workspace connectors (centro de ayuda)</a>: qué hace el conector de Gmail, permisos antes de enviar, límites con los adjuntos y privacidad.</li>
+      <li><a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use connectors to extend Claude's capabilities (centro de ayuda)</a>: dónde se añaden los conectores (Customize &gt; Connectors).</li>
     </ul>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Lo esencial</h2>
-    <p>
-      Con un prompt vago, Claude escribe correos genéricos. Con tu tono, la relación con el destinatario, el objetivo y un ejemplo, escribe borradores <strong>tan buenos como el contexto que le des</strong>. Revísalos siempre antes de enviarlos.
-    </p>
-    <p>
-      Si quieres más prompts listos para copiar y pegar, tienes un PDF gratuito en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">recursos</a>.
-    </p>
-
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué leer después</h2>
-    <p>
-      Si quieres convertir esto en un sistema de comunicación y productividad, seguiría por aquí:
-    </p>
+    <h2>Sigue leyendo</h2>
     <ul>
-      <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Claude en español: guía completa</a>, para elegir plan y ver qué trae cada uno.</li>
-      <li><a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>, para guardar tus normas de escritura y no repetirlas en cada email.</li>
-      <li><a href="/blog/prompts-para-claude/" class="text-brand-400 hover:text-brand-300">Prompts para Claude</a>, con seis ejemplos para copiar (CV, entrevista, estudiar, resúmenes) y dónde guardar tus instrucciones.</li>
-      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">IAs para organizar Gmail, Calendar y Notion</a>, si quieres conectar correos con tareas reales.</li>
-      <li><a href="/blog/notebooklm-guia-2026/" class="text-brand-400 hover:text-brand-300">NotebookLM</a>, si antes de escribir necesitas resumir documentos largos o reuniones.</li>
-      <li><a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">Alternativas gratis a ChatGPT</a>, si quieres comparar qué IA usar para escribir.</li>
-      <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
+      <li><a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>, para elegir plan, ver qué trae cada uno y cómo funcionan los conectores.</li>
+      <li><a href="/blog/prompts-para-claude/">Prompts para Claude</a>, con seis ejemplos para copiar (CV, entrevista, estudiar, resúmenes) y dónde guardar tus instrucciones.</li>
+      <li><a href="/blog/claude-skills-1000-gratis/">Claude Skills gratis</a>, para guardar tus normas de escritura y no repetirlas en cada email.</li>
+      <li><a href="/herramientas/chatgpt-vs-claude/">ChatGPT vs Claude</a>, si dudas qué herramienta abrir para escribir.</li>
+      <li><a href="/blog/ia-organiza-pendientes/">IAs para organizar Gmail, Calendar y Notion</a>, si quieres conectar correos con tareas reales.</li>
+      <li><a href="/herramientas/generador-prompts/">Generador de prompts gratis</a>, si prefieres montar la petición rellenando casillas.</li>
     </ul>
-    <p>
-      ¿Lo pruebas y me cuentas qué tal? Responde a <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
-    </p>
-    <p>— Jordi</p>
-
-    <section class="not-prose mt-10 rounded-lg border border-dark-600 bg-dark-800 p-6">
-      <h2 class="font-display text-2xl font-bold text-white">Antes de elegir IA para escribir</h2>
-      <ul class="mt-4 space-y-3 text-sm leading-6">
-        <li><a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">Guía de Claude en español</a>, para revisar cuándo usarlo para texto largo y documentos.</li>
-        <li><a href="/herramientas/chatgpt-vs-claude/" class="text-brand-400 hover:text-brand-300">ChatGPT vs Claude</a>, si dudas qué herramienta abrir para escribir.</li>
-        <li><a href="/herramientas/generador-prompts/" class="text-brand-400 hover:text-brand-300">Generador de prompts gratis</a>, si quieres que te ayude a montar la petición paso a paso.</li>
-      </ul>
-    </section>
-
 
   </Articulo>
 
