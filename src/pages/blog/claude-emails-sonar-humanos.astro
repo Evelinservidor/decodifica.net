@@ -30,13 +30,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features",
     "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
     "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+    "https://claude.com/pricing",
   ]}
 >
   <Articulo slug="claude-emails-sonar-humanos">
 
 
-    <p><strong>En resumen:</strong> los emails suenan a robot cuando le pides a Claude «escribe un email profesional» sin más. Lo que cambia el resultado es darle contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo que recomienda la guía de prompts de Anthropic: instrucciones claras, el motivo de cada petición y ejemplos, que según Anthropic son «una de las formas más fiables» de guiar el tono. Si usas Gmail, el conector oficial deja que Claude lea el hilo y te prepare la respuesta sin copiar y pegar, y por defecto te pide permiso antes de enviar nada.</p>
-    <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía completa de Claude en español</a> (qué incluye gratis, planes, Proyectos y memoria). Si repites siempre las mismas normas, mira también <a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">Claude Skills gratis</a>.</p>
+    <p><strong>En resumen:</strong> un email suena a plantilla cuando la petición no lleva contexto, porque Claude no sabe cómo escribes tú ni a quién. La guía de prompts de Anthropic pide darle ese contexto: cómo escribes tú, qué relación tienes con quien lo va a leer, qué quieres conseguir y, si puedes, un correo tuyo anterior como ejemplo. Es lo que recomienda esa guía: instrucciones claras, el motivo de cada petición y ejemplos, que según Anthropic son «una de las formas más fiables» de guiar el tono. Si usas Gmail, el conector oficial deja que Claude lea el hilo y te prepare la respuesta sin copiar y pegar, y por defecto te pide permiso antes de enviar nada.</p>
+    <p>Esta guía forma parte de nuestra <a href="/blog/claude-ia-que-es-gratis/" class="text-brand-400 hover:text-brand-300">guía completa de Claude en español</a> (qué incluye gratis, planes, Proyectos y memoria). Si repites siempre las mismas normas, mira también <a href="/blog/claude-skills-1000-gratis/" class="text-brand-400 hover:text-brand-300">la guía de Claude Skills</a>.</p>
 
     <h2>Cuándo usar Claude para emails</h2>
     <p>No todos los correos necesitan IA. Estos son los casos en los que compensa preparar el contexto, y uno en el que no:</p>
@@ -49,17 +50,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El problema con "escribe un email"</h2>
     <p>
-      Si abres Claude y escribes literalmente "escribe un email profesional para pedir un aumento", obtienes esto:
+      Si le pides solo «escribe un email profesional para pedir un aumento», Claude no sabe nada de ti, de tu jefa ni de por qué lo pides. El resultado suele parecerse a esto (redactado como ejemplo, no copiado de una conversación):
     </p>
     <blockquote class="border-l-4 border-dark-600 pl-4 italic text-dark-300 my-4">
       "Estimado [nombre],<br/>
       Me dirijo a usted para solicitar formalmente una revisión de mi compensación económica. Considero que mi desempeño durante el último año ha sido excepcional..."
     </blockquote>
     <p>
-      ¿Te suena? Es correcto, pero podría haberlo escrito cualquiera para cualquier jefe. Y casi nadie escribe así a alguien con quien trabaja a diario.
-    </p>
-    <p>
-      El problema no es Claude: <strong>sin contexto, rellena con un tono "profesional genérico"</strong>. La guía de Anthropic lo explica con una comparación útil: trata a Claude como a una persona brillante recién llegada que no conoce tus costumbres; cuanto más preciso seas, mejor será el resultado.
+      Podría haberlo escrito cualquiera para cualquier jefe. La guía de Anthropic lo explica con una comparación: trata a Claude como a una persona brillante recién llegada que no conoce tus costumbres; <strong>cuanto más preciso seas, mejor será el resultado</strong>.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">El método en 4 pasos</h2>
@@ -82,10 +80,10 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <FiguraArticulo
       src="/img/blog/claude-emails-sonar-humanos/instrucciones-para-claude-ajustes.webp"
-      alt="Captura del centro de ayuda de Claude con los pasos para fijar las Instructions for Claude: pulsar tus iniciales, abrir Settings y escribir las instrucciones"
+      alt="Captura del centro de ayuda de Claude en español con los pasos para fijar tus instrucciones: hacer clic en tus iniciales, seleccionar Configuración y luego Tu Claude, y escribirlas en Instrucciones"
       width={1200}
       height={791}
-      caption="Artículo de ayuda oficial sobre la personalización de Claude en support.claude.com (captura de octubre de 2026)."
+      caption="Artículo de ayuda oficial sobre la personalización de Claude en support.claude.com (captura del 16 de noviembre de 2026)."
     />
     <p>
       Si no quieres configurar nada, pega el texto como primer mensaje del chat. Un ejemplo para adaptar:
@@ -118,7 +116,7 @@ Contexto: Acabo de cerrar un proyecto grande que lideré. Quiero pedir aumento d
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Paso 3: Pega un email anterior que te gustó</h3>
     <p>
-      Es el paso que más cambia el resultado. Anthropic describe los ejemplos como "una de las formas más fiables" de orientar el formato, el tono y la estructura de lo que escribe Claude. Pega un correo tuyo con el que quedaste contento y dile "usa este tono, esta estructura y esta longitud, pero adáptalo al contexto nuevo". Antes de pegarlo, quita los datos personales de terceros que no hagan falta.
+      Anthropic describe los ejemplos como "una de las formas más fiables" de orientar el formato, el tono y la estructura de lo que escribe Claude. Pega un correo tuyo con el que quedaste contento y dile "usa este tono, esta estructura y esta longitud, pero adáptalo al contexto nuevo". Antes de pegarlo, quita los datos personales de terceros que no hagan falta.
     </p>
 
     <FiguraArticulo
@@ -137,7 +135,7 @@ Contexto: Acabo de cerrar un proyecto grande que lideré. Quiero pedir aumento d
       <pre class="whitespace-pre-wrap">Necesito escribir un email.
 
 Destinatario: [nombre y cargo]
-Relación: [qué confianza hay, cómo os tratáis]
+Relación: [qué confianza hay; de tú, de usted o de vos]
 Objetivo: [qué quiero conseguir con el email, en una frase]
 Mi borrador de puntos clave: [lista de 3-5 ideas desordenadas, sin forma]
 
@@ -154,7 +152,6 @@ Reglas: no suenes a plantilla, no uses frases hechas, no te disculpes más de un
       <li>«Escribe en español de Argentina, tratando de vos, como le escribiría a un compañero.»</li>
       <li>«Escribe en un español neutro que se entienda en cualquier país de Latinoamérica.»</li>
     </ul>
-    <p>Es la misma idea que el resto del método: cuanto más preciso es el contexto, menos tienes que corregir después.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ejemplo: pedir un aumento</h2>
     <p>
@@ -181,34 +178,34 @@ Puntos: proyecto cerrado en plazo, equipo de 4 personas coordinado, cliente reno
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Antes y después: de email robótico a email humano</h2>
     <p>
-      Este es el cambio que buscas. No es hacer el texto más largo; es hacerlo más específico y más tuyo.
+      Un ejemplo del cambio, escrito a una sola persona para que valga en cualquier país (redactado como ejemplo):
     </p>
     <div class="not-prose my-8 grid gap-4 md:grid-cols-2">
       <div class="rounded-2xl border border-red-500/20 bg-red-950/20 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-red-300">Antes</p>
         <p class="mt-3 text-sm text-dark-100">
-          Estimado equipo, me dirijo a vosotros para solicitar una actualización sobre el estado del proyecto. Agradecería que pudierais proporcionarme información a la mayor brevedad posible.
+          Estimada Marta: me dirijo a usted para solicitar una actualización sobre el estado del proyecto. Agradecería que pudiera proporcionarme información a la mayor brevedad posible.
         </p>
       </div>
       <div class="rounded-2xl border border-brand-500/20 bg-brand-950/30 p-5">
         <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">Después</p>
         <p class="mt-3 text-sm text-dark-100">
-          Hola equipo, ¿me pasáis hoy una actualización rápida del proyecto? Me sirve con tres puntos: qué está hecho, qué bloquea y qué fecha veis realista para el siguiente hito.
+          Hola, Marta: ¿me pasas hoy una actualización rápida del proyecto? Me sirve con tres puntos: qué está hecho, qué lo bloquea y qué fecha ves realista para el siguiente paso.
         </p>
       </div>
     </div>
     <p>
-      La segunda versión funciona mejor porque pide algo concreto, reduce ambigüedad y suena como una persona que necesita avanzar, no como una plantilla.
+      La segunda dice exactamente qué necesita y en qué formato. Es lo que pide la guía de Anthropic: concretar el formato y las condiciones de lo que quieres.
     </p>
 
     <h2>Responder desde tu Gmail sin copiar y pegar</h2>
     <p>Si tu correo es Gmail, Claude puede leer el hilo al que quieres contestar con el <strong>conector oficial de Gmail</strong>. Según el centro de ayuda (noviembre de 2026), los conectores de Google Workspace están para todos los usuarios de Claude en la web y en la aplicación de escritorio, también en el plan gratis.</p>
     <ol>
-      <li>Ve a <strong>Customize &gt; Connectors</strong>, pulsa el «+» que hay junto a «Connectors», busca <strong>Gmail</strong> y conéctalo con tu cuenta de Google.</li>
+      <li>Ve a <strong>Personalizar &gt; Conectores</strong> (en inglés, <em>Customize &gt; Connectors</em>), pulsa el «+» que hay junto a «Conectores», busca <strong>Gmail</strong> y conéctalo con tu cuenta de Google.</li>
       <li>En el chat, pídeselo con tus datos y tus normas, por ejemplo: «Busca el último correo de Laura sobre la factura de octubre y prepárame un borrador de respuesta con mi estilo: de tú, máximo 100 palabras y una fecha concreta para el pago. No lo envíes».</li>
       <li>Claude busca y lee el correo, te dice en qué mensajes se ha basado (con enlace al original cuando lo hay) y redacta el borrador. Revísalo y corrige lo que haga falta, como con cualquier otro borrador.</li>
     </ol>
-    <p>Lo que puede hacer el conector, según la ayuda: buscar y leer correos, redactar borradores, ver los borradores guardados, ordenar con etiquetas y <strong>enviar, responder y reenviar</strong>. Por defecto, Claude te pide permiso antes de cada envío. En las cuentas de empresa (planes Team y Enterprise), quien administra la cuenta tiene que activar antes el conector y decide si esos envíos pueden hacerse sin preguntar. Dos límites: de los adjuntos solo ve el nombre y los datos del archivo, no el contenido, y algunos filtros avanzados de Gmail pueden no funcionar.</p>
+    <p>Lo que puede hacer el conector, según la ayuda: buscar y leer correos, redactar borradores, ver los borradores guardados, ordenar con etiquetas y <strong>enviar, responder y reenviar</strong>. Por defecto, Claude te pide permiso antes de cada envío. En las cuentas de empresa (planes Team y Enterprise), quien administra la cuenta tiene que activar antes el conector y decide si esos envíos pueden hacerse sin preguntar. Dos límites: de los adjuntos solo ve los datos del archivo (metadatos), no el contenido, y algunos filtros avanzados de Gmail pueden no funcionar.</p>
     <Caja tipo="ojo">Privacidad: Anthropic dice que no entrena sus modelos con los datos de los conectores de Gmail, Calendar y Drive. Pero si en tu cuenta (Free, Pro, Max o Ultra) tienes activado que tus chats sirvan para entrenar, lo que copies de tus correos en el chat y las respuestas de Claude que incluyan datos de ellos sí pueden usarse. Si escribes sobre otras personas, quita los datos que no hagan falta.</Caja>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">3 plantillas copiables para empezar</h2>
@@ -281,11 +278,11 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
         },
         {
           q: "¿Sirve todo esto en el plan gratis de Claude?",
-          a: "Sí. Las instrucciones de tu cuenta, los Proyectos (hasta cinco en el plan gratis) y el conector de Gmail están también en el plan Free, según el centro de ayuda de Claude (noviembre de 2026). Lo que cambia en los planes de pago es cuánto uso tienes.",
+          a: "Casi todo. Según la página de precios y el centro de ayuda (noviembre de 2026), el plan Free incluye las preferencias de tu cuenta, hasta cinco Proyectos y el conector de Gmail, que está para todos los usuarios. La duda son las instrucciones de cada Proyecto: la ayuda se contradice sobre si son solo de pago. Si no te aparecen, usa las de tu cuenta o pega tus normas al empezar el chat.",
         },
         {
           q: "¿Funciona con ChatGPT u otra IA en vez de Claude?",
-          a: "Sí. Dar contexto, objetivo y un ejemplo funciona con cualquier asistente; lo que cambia es dónde guardas las instrucciones fijas y qué conectores tiene. Si dudas cuál usar, prueba el mismo prompt en dos y quédate con el borrador que menos tengas que corregir.",
+          a: "Las recomendaciones de este artículo salen de la guía de Anthropic para Claude. Otras IA tienen sus propias guías y guardan las instrucciones fijas en otros sitios, pero puedes usar el mismo prompt. Si dudas cuál usar, prueba el mismo prompt en dos y quédate con el borrador que menos tengas que corregir.",
         },
         {
           q: "¿Debo leer el email antes de enviarlo?",
@@ -306,7 +303,8 @@ Reglas: primer párrafo con el motivo, lista corta de lo que necesito, cierre co
       <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Prompting best practices (documentación de Anthropic)</a>: instrucciones claras, contexto y uso de ejemplos.</li>
       <li><a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Understanding Claude's personalization features (centro de ayuda)</a>: instrucciones de cuenta, de Proyecto y Skills.</li>
       <li><a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use Google Workspace connectors (centro de ayuda)</a>: qué hace el conector de Gmail, permisos antes de enviar, límites con los adjuntos y privacidad.</li>
-      <li><a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use connectors to extend Claude's capabilities (centro de ayuda)</a>: dónde se añaden los conectores (Customize &gt; Connectors).</li>
+      <li><a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Use connectors to extend Claude's capabilities (centro de ayuda)</a>: dónde se añaden los conectores (Personalizar &gt; Conectores).</li>
+      <li><a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Claude: planes y precios</a>: qué incluye el plan Free (preferencias de usuario, Proyectos, conectores).</li>
     </ul>
 
     <h2>Sigue leyendo</h2>
