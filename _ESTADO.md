@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 12 de noviembre de 2026 (agente de los jueves).
+Última actualización: 16 de noviembre de 2026 (agente semanal).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -224,3 +224,26 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Pendiente: reescritura de IA para presentaciones un lunes (relleno, Canva sin comprobar); revisar la ficha de Kimi (dice «servidores en China» según su ayuda; la política para fuera de China ya no lo dice).
 - **13-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-13`, pull request propio (espera a Jordi). Novedad: Claude Sheets y Claude Whiteboards (10-11-2026, beta en Pro, Max, Ultra, Team y Enterprise; no en Free), añadidas como sección a la guía `claude-ia-que-es-gratis` (respuesta corta, captura del anuncio, esquema «qué hace y qué todavía no», cómo probarlo, pregunta frecuente; frase sobre los conectores que se abren como aplicación completa; `modifiedDate` 13-11) con enlace desde `ia-mejora-excel`. Nota: `docs/novedades/2026-11-13.md`; reel: `docs/redes/2026-11-13.md`.
   - Sigue pendiente: desde el 17-11, pasar a pasado la oferta de Fable en Pro.
+- **16-11-2026 (semana 5 del plan SEO, grupo A):** rama `agente/2026-11-16`, pull request #56 (espera a Jordi). El
+  informe de Search Console llegó tarde otra vez (corrió de 12:49 a 12:58 UTC); se usó el de hoy. Nuevo:
+  `claude-code-sin-saber-programar` («Claude Code sin saber programar: primeros pasos»; app de escritorio sin terminal,
+  plan Pro o superior, primer proyecto de un solo archivo, modos de permiso, cómo no perder el control, Cowork y la
+  terminal; portada y 3 imágenes), enlazado desde la guía de Claude (apartado nuevo «Claude Code y Cowork»), Claude Skills
+  y Prompts para Claude. Mejora: `claude-emails-sonar-humanos` (conector de Gmail, tú/usted/vos, preguntas frecuentes con
+  FAQPage, captura y esquema con la ruta nueva). Artículo antiguo: `alternativas-fable-5` (salió de Google; modelos al
+  día y enlaces al grupo B). Guía de Claude: la oferta de Fable 5.2 en Pro (9-16 nov.) contada con fechas, ya no hay que
+  tocarla el 17-11. Títulos: ninguno. Juez de fuentes en las cuatro páginas. Informe: `docs/informes/2026-11-16.md`;
+  reel: `docs/redes/2026-11-16.md`.
+  - Google: semana 884 apariciones y 5 clics (antes 663 y 9); 28 días 2.509 y 20; **61 de 72 páginas en Google** (meta
+    de noviembre, 58, cumplida). Entraron la guía de Claude, Ollama, LM Studio, n8n, emails, Qwen3-ASR y «Cómo elegir»
+    (leídas por Google el 09-11 entre las 20:30 y las 20:35 UTC); salieron `alternativas-fable-5` y
+    `deepseek-app-oficial-espanol`.
+  - Pendiente de Jordi: decir si pidió la indexación el 09-11; «Solicitar indexación» de `prompts-para-claude` y de la
+    calculadora de IA local (14 días fuera) y, al publicar, del artículo nuevo y de `alternativas-fable-5`.
+  - Hecho de paso (juez de fuentes): Duet con la invitación nueva y sus reinicios de límite (hasta el 15-12), privacidad
+    según la política y fechas de consulta al día en la guía de Claude.
+  - Pendiente: versión nueva de Proyectos en beta, sin leer. Propuesta para el jueves 19-11: título de la guía de IA
+    local con «sin internet» al principio si sigue sin clics.
+  - Semana que viene (semana 6): pilar del grupo E («Cómo quitar la IA de WhatsApp, Gmail, Google, Chrome y más») en el
+    hueco del artículo nuevo y mejora del grupo B (propuesta: guía de Ollama, entró en Google en la posición 25). Grupo A
+    sigue el 30-11 con «Límites del plan gratis de Claude». El 07-12, herramienta del mes «Planes gratis de IA».
