@@ -1,5 +1,37 @@
 [
   {
+    "fecha": "2026-11-16",
+    "titulo": "Gemini gratis: audio 10 min, vídeo 5",
+    "serie": "gratis-y-util",
+    "numero_serie": 3,
+    "resumen": "Una comparación de límites: lo que admite Gemini sin plan de pago frente a Google AI Pro, y lo que Google no publica. La ayuda de Google da minutos de audio y vídeo, pero para los prompts diarios solo dice «límites estándar». Tampoco da una",
+    "fuentes": [
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/14903178?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/16275805?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/15719111?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/gemini/answer/13575153?hl=es"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1518717656749785",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2gj7nlbby2l"
+    }
+  },
+  {
     "fecha": "2026-11-15",
     "titulo": "Subtítulos a tu vídeo GRATIS",
     "serie": "gratis-y-util",
