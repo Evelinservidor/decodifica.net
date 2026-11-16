@@ -133,6 +133,8 @@ dinero y riesgos. **Fase 1: del 9 al 30 de noviembre.**
 Si en el paso 4 Google dice que la creación de claves está bloqueada por una política de la organización, la alternativa es pasar la app OAuth a «producción» (https://console.cloud.google.com/auth/audience → **Publicar app**) y regenerar `GSC_REFRESH_TOKEN`.
 
 ## Decisiones de Jordi
+- (16-11-2026) La indexación del 09-11 la pidió Jordi a mano en Search Console y funcionó (siete páginas dentro esa
+  tarde). Él indexa a mano `prompts-para-claude`.
 - (26-10-2026) Emergent: noindex al artículo `crear-app-web-ias-chinas-open-source` (Google ya lo había sacado de su índice). Bloque «Empieza aquí» con los tres pilares en la portada y en `/blog/`: sí. Ambos en el pull request de la rama `seo/emergent-noindex-empieza-aqui`.
 - (14-10-2026) Cloudflare sigue bloqueando los robots de entrenamiento (GPTBot, ClaudeBot); los de búsqueda de IA pueden entrar. El correo hola@decodifica.net funciona.
 - (07-10-2026) Nicho: **opción 2, solo IA práctica**. La «casa autosuficiente» (solar aislada, baterías, domótica, IA en casa) queda como propuesta para más adelante, posiblemente en una **web nueva aparte**. Datos en `docs/fase-2-nichos.md`.
@@ -224,7 +226,7 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Pendiente: reescritura de IA para presentaciones un lunes (relleno, Canva sin comprobar); revisar la ficha de Kimi (dice «servidores en China» según su ayuda; la política para fuera de China ya no lo dice).
 - **13-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-13`, pull request propio (espera a Jordi). Novedad: Claude Sheets y Claude Whiteboards (10-11-2026, beta en Pro, Max, Ultra, Team y Enterprise; no en Free), añadidas como sección a la guía `claude-ia-que-es-gratis` (respuesta corta, captura del anuncio, esquema «qué hace y qué todavía no», cómo probarlo, pregunta frecuente; frase sobre los conectores que se abren como aplicación completa; `modifiedDate` 13-11) con enlace desde `ia-mejora-excel`. Nota: `docs/novedades/2026-11-13.md`; reel: `docs/redes/2026-11-13.md`.
   - Sigue pendiente: desde el 17-11, pasar a pasado la oferta de Fable en Pro.
-- **16-11-2026 (semana 5 del plan SEO, grupo A):** rama `agente/2026-11-16`, pull request #56 (espera a Jordi). El
+- **16-11-2026 (semana 5 del plan SEO, grupo A):** rama `agente/2026-11-16`, pull request #56, aprobado por Jordi el 16-11-2026 («me parece bien todo, haz tú el pull») y fusionado por el agente. El
   informe de Search Console llegó tarde otra vez (corrió de 12:49 a 12:58 UTC); se usó el de hoy. Nuevo:
   `claude-code-sin-saber-programar` («Claude Code sin saber programar: primeros pasos»; app de escritorio sin terminal,
   plan Pro o superior, primer proyecto de un solo archivo, modos de permiso, cómo no perder el control, Cowork y la
@@ -238,8 +240,9 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
     de noviembre, 58, cumplida). Entraron la guía de Claude, Ollama, LM Studio, n8n, emails, Qwen3-ASR y «Cómo elegir»
     (leídas por Google el 09-11 entre las 20:30 y las 20:35 UTC); salieron `alternativas-fable-5` y
     `deepseek-app-oficial-espanol`.
-  - Pendiente de Jordi: decir si pidió la indexación el 09-11; «Solicitar indexación» de `prompts-para-claude` y de la
-    calculadora de IA local (14 días fuera) y, al publicar, del artículo nuevo y de `alternativas-fable-5`.
+  - Respuesta de Jordi (16-11): **la indexación del 09-11 la pidió él a mano** (las siete páginas entraron esa tarde: pedirla
+    a mano funciona). `prompts-para-claude` la indexa él a mano. Quedan por pedir, si quiere: la calculadora de IA local
+    (14 días fuera) y, ya publicados, el artículo nuevo y `alternativas-fable-5`.
   - Hecho de paso (juez de fuentes): Duet con la invitación nueva y sus reinicios de límite (hasta el 15-12), privacidad
     según la política y fechas de consulta al día en la guía de Claude.
   - Pendiente: versión nueva de Proyectos en beta, sin leer. Propuesta para el jueves 19-11: título de la guía de IA
