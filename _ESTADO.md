@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 16 de noviembre de 2026 (agente semanal).
+Última actualización: 17 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -250,3 +250,8 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   - Semana que viene (semana 6): pilar del grupo E («Cómo quitar la IA de WhatsApp, Gmail, Google, Chrome y más») en el
     hueco del artículo nuevo y mejora del grupo B (propuesta: guía de Ollama, entró en Google en la posición 25). Grupo A
     sigue el 30-11 con «Límites del plan gratis de Claude». El 07-12, herramienta del mes «Planes gratis de IA».
+- **17-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-17`, solo la nota `docs/novedades/2026-11-17.md`
+  (sin artículo: nada oficial, para el público y dentro de los grupos del plan entre el 13-11 y el 17-11). Guion de reel
+  de Gemini 4 Hydrogen (12-11; gratis en la app solo con la selección automática) en `docs/redes/2026-11-17.md`. Para el
+  lunes: una línea de Bionic 1.2.1 (LM Link, 16-11) si se toca LM Studio; para el pilar del grupo E, la ayuda de Google
+  sigue diciendo que los resúmenes de IA no se pueden desactivar (comprobado el 17-11).
