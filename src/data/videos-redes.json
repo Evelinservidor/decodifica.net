@@ -1,5 +1,29 @@
 [
   {
+    "fecha": "2026-11-17",
+    "titulo": "Que tu móvil te lea en voz alta",
+    "serie": "cual-uso",
+    "numero_serie": 3,
+    "resumen": "Comparación: Seleccionar para pronunciar (Android) lee lo que elijas en la pantalla y puede seguir en segundo plano, pero Google avisa de que puede no funcionar con todos los navegadores del móvil. Leer en voz alta (Edge) está pensado para ",
+    "fuentes": [
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/accessibility/android/answer/7349565?hl=es-419"
+      },
+      {
+        "nombre": "explore.microsoft.com",
+        "url": "https://explore.microsoft.com/es-es/edge/features/read-aloud"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/2212223752658864",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2izpx5ydb2s"
+    }
+  },
+  {
     "fecha": "2026-11-16",
     "titulo": "Gemini gratis: audio 10 min, vídeo 5",
     "serie": "gratis-y-util",
