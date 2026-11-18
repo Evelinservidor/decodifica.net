@@ -1,5 +1,33 @@
 [
   {
+    "fecha": "2026-11-18",
+    "titulo": "Claude ya hace hojas de cálculo",
+    "serie": "lo-de-la-semana",
+    "numero_serie": 2,
+    "resumen": "El anuncio habla de una hoja sencilla, pero no detalla lo que todavía no hace. El vídeo lo dice en pantalla: no está en el plan gratis (solo Pro, Max, Ultra, Team y Enterprise, y en beta), se exporta a Excel o CSV y aún no tiene tablas diná",
+    "fuentes": [
+      {
+        "nombre": "claude.com",
+        "url": "https://claude.com/blog/sheets-whiteboards-data"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets"
+      },
+      {
+        "nombre": "support.claude.com",
+        "url": "https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1155439367237927",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2lkgpabsj2u"
+    }
+  },
+  {
     "fecha": "2026-11-17",
     "titulo": "Que tu móvil te lea en voz alta",
     "serie": "cual-uso",
