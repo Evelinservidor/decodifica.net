@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 17 de noviembre de 2026 (agente de novedades).
+Última actualización: 19 de noviembre de 2026 (agente de los jueves).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -255,3 +255,11 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   de Gemini 4 Hydrogen (12-11; gratis en la app solo con la selección automática) en `docs/redes/2026-11-17.md`. Para el
   lunes: una línea de Bionic 1.2.1 (LM Link, 16-11) si se toca LM Studio; para el pilar del grupo E, la ayuda de Google
   sigue diciendo que los resúmenes de IA no se pueden desactivar (comprobado el 17-11).
+- **19-11-2026 (agente de los jueves):** rama `agente/jueves-2026-11-19`, pull request propio, fusionado por el agente si
+  pasa preflight y build (permiso de Jordi del 06-11-2026 para los jueves). Un solo artículo: n8n (99 apariciones, 1 clic,
+  posición 22,1; todas de la semana en que entró en Google). Título «¿n8n es gratis o de pago? Qué es y cuánto cuesta»,
+  descripción con la respuesta y las cifras, 5 preguntas frecuentes, precios comprobados de nuevo (sin cambios) y enlaces
+  con Hermes Agent y organizar pendientes. Qwen Code no se toca: su título del 22-10 lleva solo una semana a la vista de
+  Google. Repaso: `docs/repaso-jueves/2026-11-19.md`.
+  - Medir el 30-11 y el 07-12. Jueves 03-12: primera candidata, IA local sin internet.
+  - Vigilar IA para presentaciones (posición 6,8 → 18,2 en una semana; Google no la lee desde el 31-07, no es por el título).
