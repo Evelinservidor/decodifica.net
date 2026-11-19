@@ -1,5 +1,37 @@
 [
   {
+    "fecha": "2026-11-19",
+    "titulo": "¿PDF en otro idioma? Tradúcelo gratis",
+    "serie": "gratis-y-util",
+    "numero_serie": 4,
+    "resumen": "Comparamos lo que dice la ayuda de Google según el dispositivo. En ordenador hay una pestaña Documentos con límite de 10 MB y 300 páginas. En móvil esa opción no sale: la ayuda solo propone copiar el texto y pegarlo en la app. También señal",
+    "fuentes": [
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/translate/answer/2534559?hl=es"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/translate/answer/2534559?hl=es&co=GENIE.Platform%3DDesktop"
+      },
+      {
+        "nombre": "support.google.com",
+        "url": "https://support.google.com/translate/answer/2534559?hl=es&co=GENIE.Platform%3DiOS"
+      },
+      {
+        "nombre": "translate.google.com",
+        "url": "https://translate.google.com/about/"
+      }
+    ],
+    "guia": null,
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/3015630278784577",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2o2oabseb2y"
+    }
+  },
+  {
     "fecha": "2026-11-18",
     "titulo": "Claude ya hace hojas de cálculo",
     "serie": "lo-de-la-semana",
