@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
-const title = "n8n: qué es, si es gratis y cómo empezar";
-const description = "Qué es n8n y para qué sirve, cuándo es gratis (edición Community) y cuándo se paga (n8n Cloud), qué permite su licencia y cómo crear tu primer flujo.";
+const title = "¿n8n es gratis o de pago? Qué es y cuánto cuesta";
+const description = "n8n es gratis si lo instalas tú (edición Community). En la nube se paga: prueba de 14 días sin tarjeta y planes desde 20 € al mes. Qué es y cómo empezar.";
 const pubDate = "2026-10-07";
-const modifiedDate = "2026-10-07";
+const modifiedDate = "2026-11-19";
 const readingTime = "8 min";
 const tema = "automatizar";
 const tags = ["n8n", "automatización", "agentes de ia", "workflows", "n8n gratis"];
@@ -37,7 +38,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <p><strong>En resumen:</strong> n8n es una herramienta para automatizar tareas conectando aplicaciones entre sí (correo, hojas de cálculo, CRM, modelos de IA) mediante flujos que se dibujan como cajas unidas por flechas. Es gratis si lo instalas tú en tu ordenador o servidor (edición Community); si prefieres que lo aloje n8n, hay una prueba gratuita de 14 días y después los planes empiezan en 20 euros al mes pagando el año.</p>
 
-    <p>Los datos de esta guía salen de la página de precios, la documentación y la licencia oficiales de n8n, consultadas el 7 de octubre de 2026.</p>
+    <p>Los datos de esta guía salen de la página de precios, la documentación y la licencia oficiales de n8n, consultadas el 7 de octubre de 2026 y comprobadas de nuevo el 19 de noviembre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es n8n y para qué sirve</h2>
     <p>Un flujo de n8n (<em>workflow</em>) es una cadena de pasos llamados <strong>nodos</strong>. El primero es el <strong>disparador</strong>: lo que pone el flujo en marcha, ya sea a mano, a una hora fija o cuando llega un aviso de otra aplicación. Los siguientes nodos leen datos, los transforman, toman decisiones (si pasa esto, haz aquello) y envían el resultado a otro sitio.</p>
@@ -74,7 +75,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p>Lo que no es gratis es tu tiempo: n8n avisa de que instalarlo por tu cuenta exige saber configurar servidores y contenedores, mantenerlos y protegerlos, y lo recomienda solo para personas con experiencia. Un error puede suponer perder datos o dejar el servicio expuesto.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Alojado por n8n (n8n Cloud): de pago, con prueba gratuita</h3>
-    <p>La prueba gratuita dura 14 días, no pide tarjeta e incluye funciones del plan Pro, con estos límites: 1.000 ejecuciones, 5 ejecuciones a la vez, un máximo de 180 segundos por ejecución y un proyecto de equipo. Después, estos son los planes (precios consultados en octubre de 2026, pagando el año; el pago anual ahorra un 17 % frente al mensual):</p>
+    <p>La prueba gratuita dura 14 días, no pide tarjeta e incluye funciones del plan Pro, con estos límites: 1.000 ejecuciones, 5 ejecuciones a la vez, un máximo de 180 segundos por ejecución y un proyecto de equipo. Después, estos son los planes (precios consultados en noviembre de 2026, pagando el año; el pago anual ahorra un 17 % frente al mensual):</p>
     <div class="not-prose my-8 overflow-x-auto">
       <table class="w-full text-left text-sm text-dark-200">
         <thead>
@@ -157,8 +158,32 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </ul>
     <p>Si quieres ver un ejemplo de flujo con IA que deja tareas revisables, mira <a href="/blog/ia-resumir-reuniones-tareas-revisables/" class="text-brand-400 hover:text-brand-300">cómo convertir una reunión en tareas revisables con IA</a>.</p>
 
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Preguntas frecuentes</h2>
+    <FaqSection items={[
+      {
+        q: "¿n8n es gratis o se paga?",
+        a: "Las dos cosas. La edición Community, que instalas tú en tu ordenador o servidor, es gratis sin límite de tiempo. n8n Cloud, donde n8n lo aloja por ti, es de pago después de una prueba gratuita de 14 días.",
+      },
+      {
+        q: "¿Se puede usar n8n Cloud gratis para siempre?",
+        a: "No. n8n Cloud solo tiene la prueba de 14 días, sin tarjeta, con un límite de 1.000 ejecuciones. Para seguir gratis hay que instalarlo por tu cuenta (edición Community).",
+      },
+      {
+        q: "¿Cuánto cuesta n8n al mes?",
+        a: "En la nube, el plan Starter cuesta 20 € al mes con 2.500 ejecuciones y el Pro 50 € al mes con 10.000, pagando el año (precios consultados en noviembre de 2026). El pago anual ahorra un 17 % frente al mensual.",
+      },
+      {
+        q: "¿Qué es una ejecución en n8n?",
+        a: "Cada vez que un flujo se ejecuta de principio a fin. Cuenta como una sola ejecución, tenga dos pasos o cincuenta: n8n no cobra por paso ni por usuario.",
+      },
+      {
+        q: "¿Puedo usar n8n gratis en mi empresa?",
+        a: "Sí, para automatizar tareas internas de tu propia empresa: la licencia de n8n (Sustainable Use License) lo permite. Lo que no permite es venderlo como servicio a terceros. Si vas a cobrar a clientes por flujos hechos con n8n, lee la licencia completa antes.",
+      },
+    ]} />
+
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
-    <p>Consultadas el 7 de octubre de 2026.</p>
+    <p>Consultadas el 7 de octubre de 2026; precios, ediciones, licencia e instalación comprobados de nuevo el 19 de noviembre de 2026.</p>
     <ul class="space-y-2">
       <li><a href="https://n8n.io/pricing/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n: Plans and Pricing</a>: precios, ejecuciones, límites de la prueba gratuita y funciones por plan.</li>
       <li><a href="https://docs.n8n.io/choose-n8n/" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">n8n Docs: Choose how to use n8n</a>: nube frente a instalación propia y duración de la prueba.</li>
@@ -171,6 +196,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
+      <li><a href="/blog/ia-organiza-pendientes/" class="text-brand-400 hover:text-brand-300">La mejor IA para organizar tareas y correos</a>: cinco comparadas, si prefieres no montar flujos.</li>
+      <li><a href="/blog/2026-07-17-hermes-agent-chino/" class="text-brand-400 hover:text-brand-300">Hermes Agent</a>, un agente de IA de código abierto que decide los pasos por sí mismo, en lugar de seguir un flujo fijo.</li>
       <li><a href="/blog/crear-agente-voz-ia-sin-programar/" class="text-brand-400 hover:text-brand-300">Cómo crear un agente de voz con IA sin programar</a>, otro caso de automatización con IA.</li>
       <li><a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: IA local en tu ordenador</a>, si quieres usar modelos que no salgan de tu equipo.</li>
       <li><a href="/blog/como-elegir-herramienta-ia/" class="text-brand-400 hover:text-brand-300">Cómo elegir una herramienta de IA sin perder tiempo</a>.</li>
