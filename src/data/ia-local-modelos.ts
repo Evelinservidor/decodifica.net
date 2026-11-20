@@ -9,7 +9,7 @@
  * orientativa y usa siempre la cifra más alta del rango, para no prometer de más.
  */
 
-export const consultado = '2026-11-02';
+export const consultado = '2026-11-20';
 
 export interface ModeloLocal {
   familia: 'Gemma 4' | 'Qwen 3.5';
