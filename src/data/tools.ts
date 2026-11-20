@@ -61,6 +61,7 @@ export type Tool = {
 const coreTools: Tool[] = [
   {
     slug: 'chatgpt',
+    platforms: ['Web', 'iPhone', 'Android'],
     name: 'ChatGPT',
     summary: 'Asistente general para escribir, idear, resumir, programar y convertir tareas abiertas en borradores accionables.',
     metaDescription: 'Ficha práctica de ChatGPT: cuando usarlo, cuando evitarlo, precio por categoría, privacidad, dificultad y alternativas.',
@@ -174,8 +175,9 @@ const coreTools: Tool[] = [
   {
     slug: 'notebooklm',
     name: 'NotebookLM',
+    seoTitle: 'NotebookLM (Gemini Notebook): qué es, límites y si es gratis',
     summary: 'Herramienta de Google (desde julio de 2026 se llama Gemini Notebook) para trabajar con fuentes propias: PDFs, webs, vídeos, notas y materiales de estudio.',
-    metaDescription: 'Ficha práctica de NotebookLM: cuando usarlo con fuentes propias, privacidad, dificultad, límites y alternativas.',
+    metaDescription: 'NotebookLM ahora se llama Gemini Notebook. Qué hace con tus PDF y notas, cuánto da gratis (100 cuadernos y 50 fuentes) y cuándo conviene más Perplexity.',
     useCase: 'Investigación',
     price: 'Freemium',
     privacy: 'Media',
@@ -529,6 +531,7 @@ const coreTools: Tool[] = [
   },
   {
     slug: 'deepseek',
+    platforms: ['Web', 'iPhone', 'Android'],
     name: 'DeepSeek',
     summary: 'Asistente y modelos de IA con foco en coste bajo, razonamiento y opciones para uso por app o API.',
     metaDescription: 'Ficha práctica de DeepSeek: cuando usarlo, privacidad, precio por categoría, API y alternativas.',
