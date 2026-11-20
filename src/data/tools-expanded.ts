@@ -128,7 +128,8 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'cursor', name: 'Cursor', useCase: 'Código',
-    summary: 'Editor de código con IA para comprender repositorios, proponer cambios y trabajar con agentes supervisados.',
+    summary: 'Editor de código con IA para comprender repositorios, proponer cambios y trabajar con agentes supervisados. Desde agosto de 2026 es de SpaceX; su plan Plus solo da modelos Grok.',
+    platforms: ['macOS', 'Windows', 'Linux', 'Terminal (CLI)', 'Web'],
     bestFor: 'Cuando quieres IA dentro del editor y puedes revisar diffs, ejecutar tests y controlar permisos.',
     avoidIf: 'No utilizas control de versiones o vas a aceptar cambios amplios sin revisión.',
     tags: ['código', 'editor', 'agentes', 'repositorios'], officialUrl: 'https://www.cursor.com/', difficulty: 'Media',
@@ -136,11 +137,12 @@ const specs: ExpandedSpec[] = [
     notFor: ['Producción sin rama.', 'Secretos dentro del prompt.', 'Cambios automáticos sin diff.'],
     workflow: ['Crea una rama.', 'Limita archivos y objetivo.', 'Revisa el plan y el diff.', 'Ejecuta tests antes de aceptar.'],
     alternatives: ['GitHub Copilot', 'Qwen Code', 'Claude Code'],
-    sources: [{ label: 'Cursor oficial', href: 'https://www.cursor.com/' }, { label: 'Precios de Cursor', href: 'https://www.cursor.com/pricing' }],
+    sources: [{ label: 'Cursor oficial', href: 'https://www.cursor.com/' }, { label: 'Precios de Cursor', href: 'https://www.cursor.com/pricing' }, { label: 'Cursor pasa a ser parte de SpaceX (blog de Cursor)', href: 'https://cursor.com/blog/joining-spacex' }, { label: 'Descargar Cursor', href: 'https://cursor.com/download' }],
   },
   {
     slug: 'github-copilot', name: 'GitHub Copilot', useCase: 'Código',
-    summary: 'Asistente de programación de GitHub integrado en editores, repositorios y flujos de desarrollo.',
+    summary: 'Asistente de programación de GitHub integrado en editores, repositorios y flujos de desarrollo. Tiene plan gratis (2.000 sugerencias de código al mes).',
+    platforms: ['GitHub', 'VS Code', 'Visual Studio', 'JetBrains', 'Xcode', 'Neovim'],
     bestFor: 'Cuando tu equipo ya trabaja con GitHub y necesita ayuda contextual sin abandonar su flujo.',
     avoidIf: 'No puedes revisar licencias, sugerencias, permisos y cambios antes de integrarlos.',
     tags: ['github', 'código', 'editor', 'agentes'], officialUrl: 'https://github.com/features/copilot', difficulty: 'Media',
@@ -250,7 +252,7 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'quadratic', name: 'Quadratic', useCase: 'Hojas de cálculo',
-    summary: 'Hoja de cálculo que combina cuadrícula, fórmulas, código, datos y asistencia de IA.',
+    summary: 'Hoja de cálculo que combina cuadrícula, fórmulas, Python, SQL y asistencia de IA; ahora también tiene editores de documentos y presentaciones.',
     bestFor: 'Cuando Excel se queda corto y quieres cruzar análisis, Python o SQL en una misma hoja.',
     avoidIf: 'Solo necesitas fórmulas básicas o no puedes validar cada transformación de datos.',
     tags: ['excel', 'datos', 'python', 'sql'], officialUrl: 'https://www.quadratichq.com/', difficulty: 'Media',
@@ -298,7 +300,7 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'notion-ai', name: 'Notion AI', useCase: 'Organización',
-    summary: 'Funciones de IA dentro de Notion para buscar, redactar, resumir y trabajar con espacios de conocimiento.',
+    summary: 'Funciones de IA dentro de Notion para buscar, redactar, resumir y trabajar con espacios de conocimiento. En los planes Free y Plus solo hay una prueba; la IA completa empieza en Business.',
     bestFor: 'Cuando notas, proyectos y documentación ya viven dentro de Notion.',
     avoidIf: 'Tu información está en otros sistemas o no has revisado permisos del workspace.',
     tags: ['notion', 'documentos', 'proyectos', 'búsqueda'], officialUrl: 'https://www.notion.com/product/ai',
@@ -322,7 +324,8 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'motion', name: 'Motion', useCase: 'Planificación',
-    summary: 'Gestor de tareas y calendario que reorganiza automáticamente el trabajo pendiente.',
+    summary: 'Gestor de tareas y calendario que reorganiza automáticamente el trabajo pendiente. Es de pago (desde 19 $ al mes), con prueba gratis.',
+    price: 'De pago (prueba gratis)', platforms: ['Web', 'Ordenador', 'iPhone', 'Android'],
     bestFor: 'Cuando tienes muchas tareas con fecha y quieres que el calendario proponga un orden.',
     avoidIf: 'Tu trabajo cambia de forma difícil de expresar o no quieres que una herramienta reprograme bloques.',
     tags: ['calendario', 'tareas', 'proyectos', 'planificación'], officialUrl: 'https://www.usemotion.com/',

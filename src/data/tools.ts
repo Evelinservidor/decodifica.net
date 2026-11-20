@@ -61,6 +61,7 @@ export type Tool = {
 const coreTools: Tool[] = [
   {
     slug: 'chatgpt',
+    platforms: ['Web', 'iPhone', 'Android'],
     name: 'ChatGPT',
     summary: 'Asistente general para escribir, idear, resumir, programar y convertir tareas abiertas en borradores accionables.',
     metaDescription: 'Ficha práctica de ChatGPT: cuando usarlo, cuando evitarlo, precio por categoría, privacidad, dificultad y alternativas.',
@@ -530,6 +531,7 @@ const coreTools: Tool[] = [
   },
   {
     slug: 'deepseek',
+    platforms: ['Web', 'iPhone', 'Android'],
     name: 'DeepSeek',
     summary: 'Asistente y modelos de IA con foco en coste bajo, razonamiento y opciones para uso por app o API.',
     metaDescription: 'Ficha práctica de DeepSeek: cuando usarlo, privacidad, precio por categoría, API y alternativas.',
