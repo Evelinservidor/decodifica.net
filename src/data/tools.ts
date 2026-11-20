@@ -217,7 +217,7 @@ const coreTools: Tool[] = [
       ],
       priceNotes: [
         'Sin plan de pago: hasta 100 cuadernos y 50 fuentes por cuaderno; el uso se renueva cada 5 horas hasta un límite semanal (ayuda de Google, consultada en noviembre de 2026).',
-        'Google AI Plus sube a 200 cuadernos y 100 fuentes; AI Pro, a 500 y 300. Google avisa de que los límites pueden cambiar.',
+        'Google AI Plus sube a 200 cuadernos y 100 fuentes; AI Pro, a 500 y 300 (solo en los países donde se venden esos planes). Google avisa de que los límites pueden cambiar.',
       ],
       alternatives: ['Perplexity para investigar en web', 'Claude para redactar con contexto', 'ChatGPT para uso general'],
       sources: [

@@ -29,7 +29,7 @@ export const toolComparisons: ToolComparison[] = [
     left: 'manus',
     right: 'chatgpt',
     verdict: 'Manus está pensado para encargarle una tarea de varias etapas y recibir el resultado terminado (un informe, una web, unas diapositivas), trabajando por su cuenta en un entorno en la nube. ChatGPT encaja mejor cuando quieres ir paso a paso en una conversación, con tus archivos y apps dentro de un asistente general; para pedirle un entregable completo tiene el modo Work. Manus tiene plan gratis con 300 créditos al día (hasta 1.500 al mes) y sus planes de pago empiezan en 20 $ al mes (consultado el 20-11-2026).',
-    chooseLeft: ['La tarea tiene etapas y un entregable claro (informe, web, presentación).', 'Puedes revisar el plan y las acciones antes de dar el resultado por bueno.', 'Necesitas que investigue muchas fuentes a la vez o que siga trabajando sin ti.'],
+    chooseLeft: ['La tarea tiene etapas y un entregable claro (informe, web, presentación).', 'Puedes revisar el plan y las acciones antes de dar el resultado por bueno.', 'Necesitas que siga trabajando sin ti (investigar cientos de fuentes a la vez, «Wide Research», es del plan Pro).'],
     chooseRight: ['Ya pagas y trabajas en ChatGPT.', 'Prefieres ir paso a paso y corregir sobre la marcha.', 'Quieres más control de la conversación.'],
     sharedRisks: ['Concede el mínimo acceso.', 'Nada irreversible sin confirmación.', 'Revisa fuentes y acciones.'],
     relatedLinks: [
@@ -53,7 +53,7 @@ export const toolComparisons: ToolComparison[] = [
     faq: [
       {
         q: '¿Manus es gratis?',
-        a: 'Tiene un plan gratis: Manus 2.0 Lite en modo agente, 300 créditos que se recargan cada día (con un tope de 1.500 al mes), una tarea a la vez y 2 tareas programadas; al registrarte te dan además 1.000 créditos. Los planes de pago empiezan en 20 $ al mes (4.000 créditos) y 40 $ (8.000), con un 17 % menos si pagas el año; los planes más altos, en manus.im/pricing. Consultado el 20-11-2026 en su centro de ayuda.',
+        a: 'Tiene un plan gratis con Manus 2.0 Lite: 300 créditos que se recargan cada día (con un tope de 1.500 al mes) y 2 tareas programadas; al registrarte te dan además 1.000 créditos. Los planes de pago empiezan en 20 $ al mes (4.000 créditos) y 40 $ (8.000), con un 17 % menos si pagas el año; los planes más altos, en manus.im/pricing. Consultado el 20-11-2026 en su centro de ayuda.',
       },
       {
         q: '¿Qué es mejor, Manus o ChatGPT?',
