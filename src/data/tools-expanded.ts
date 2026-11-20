@@ -370,7 +370,7 @@ const specs: ExpandedSpec[] = [
       },
       {
         q: '¿Granola funciona en español?',
-        a: 'Sí para transcribir y resumir: el español está entre los 31 idiomas del ordenador (Mac y Windows) y los 17 del móvil. En el ordenador, activa «Multi-language» en Settings → Preferences → Language y pon el idioma del resumen en «Auto» para que las notas salgan en español. Los menús y botones de la aplicación, en cambio, solo están en inglés.',
+        a: 'Sí para transcribir y resumir: el español está entre los 31 idiomas del ordenador (Mac y Windows) y los 17 del móvil. En el ordenador, ve a Settings → Preferences → Language y pon en «Auto» el idioma de la transcripción y el del resumen para que las notas salgan en español. Los menús y botones de la aplicación, en cambio, solo están en inglés.',
       },
       {
         q: '¿Granola funciona en Windows y Android?',
@@ -392,6 +392,7 @@ const specs: ExpandedSpec[] = [
     seoTitle: 'Fathom AI en español: qué es, si es gratis y precios',
     metaDescription: 'Fathom graba y resume tus reuniones de Zoom, Meet y Teams. Qué da gratis (grabaciones ilimitadas), cuánto cuesta, si funciona en español y qué hace con tus datos.',
     language: 'Transcribe en 38 idiomas, entre ellos el español; resúmenes en español en Premium y planes de equipo',
+    platforms: ['Web (Zoom, Google Meet y Teams)', 'iPhone', 'Mac (grabar sin bot, en beta)'],
     bestFor: 'Cuando necesitas un registro revisable de videollamadas y seguimiento posterior.',
     avoidIf: 'No existe consentimiento o la política de la reunión impide grabación y procesamiento externo.',
     tags: ['reuniones', 'transcripción', 'acciones', 'videollamadas'], officialUrl: 'https://www.fathom.ai/',
@@ -454,15 +455,15 @@ const specs: ExpandedSpec[] = [
   },
   {
     slug: 'ollama', name: 'Ollama', useCase: 'Modelos locales',
-    summary: 'Runtime para descargar y ejecutar modelos compatibles en un equipo local mediante aplicación, terminal o API.',
+    summary: 'Programa para descargar y ejecutar modelos abiertos en tu ordenador (aplicación, terminal o API). Usarlo en local es gratis; también vende planes para usar modelos en su nube.',
     bestFor: 'Cuando necesitas experimentar con modelos locales y puedes gestionar hardware, actualizaciones y seguridad.',
     avoidIf: 'Esperas la comodidad de un servicio gestionado o tu equipo no tiene recursos suficientes para el modelo.',
-    tags: ['local', 'open-source', 'modelos', 'privacidad'], officialUrl: 'https://ollama.com/', price: 'Gratis', privacy: 'Alta', difficulty: 'Media', platforms: ['Windows', 'macOS', 'Linux'],
+    tags: ['local', 'open-source', 'modelos', 'privacidad'], officialUrl: 'https://ollama.com/', price: 'Freemium', privacy: 'Alta', difficulty: 'Media', platforms: ['Windows', 'macOS', 'Linux'],
     idealFor: ['Pruebas locales con datos controlados.', 'Comparar modelos compatibles.', 'Integrar una API local en prototipos.'],
-    notFor: ['Asumir que local equivale a seguro.', 'Modelos mayores que el hardware disponible.', 'Producción sin monitorización.'],
+    notFor: ['Asumir que local equivale a seguro.', 'Modelos mayores que el hardware disponible.', 'Datos sensibles en los modelos de la nube: la privacidad «Alta» es para el uso en local.'],
     workflow: ['Comprueba requisitos.', 'Descarga un modelo pequeño.', 'Prueba una tarea no sensible.', 'Mide calidad, memoria y tiempo.'],
     alternatives: ['LM Studio', 'HuggingChat', 'Mistral Le Chat'],
-    sources: [{ label: 'Ollama oficial', href: 'https://ollama.com/' }, { label: 'Documentación de Ollama', href: 'https://github.com/ollama/ollama' }],
+    sources: [{ label: 'Ollama oficial', href: 'https://ollama.com/' }, { label: 'Documentación de Ollama', href: 'https://docs.ollama.com/' }, { label: 'Planes de Ollama (local gratis; nube de pago desde 20 $ al mes)', href: 'https://ollama.com/pricing' }, { label: 'Código de Ollama (licencia MIT)', href: 'https://github.com/ollama/ollama' }],
   },
 ];
 
