@@ -4,11 +4,12 @@ import Articulo from '../../components/Articulo.astro';
 import ReviewMethodology from '../../components/ReviewMethodology.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
 
 const title = "IA para presentaciones: cuáles son gratis y cuál elegir";
 const description = "Gamma, Canva, SlidesAI, Plus AI y Beautiful.ai: cuáles tienen plan gratis, cuáles trabajan dentro de PowerPoint o Google Slides y cuál usar si partes de un PDF.";
 const pubDate = "2026-06-24";
-const modifiedDate = "2026-11-12";
+const modifiedDate = "2026-11-20";
 const tags = ["ia para presentaciones", "ia para presentaciones gratis", "ia para presentaciones powerpoint", "gamma app", "slidesai", "plus ai", "crear presentaciones con ia"];
 const readingTime = "11 min";
 const tema = "oficina";
@@ -28,6 +29,8 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://gamma.app/pricing",
     "https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma",
     "https://help.gamma.app/en/articles/7838093-how-do-i-create-a-new-presentation-document-or-webpage-in-gamma",
+    "https://help.gamma.app/en/articles/15002203-how-do-i-create-with-agent-in-gamma",
+    "https://help.gamma.app/en/articles/11016396-what-are-slides-in-gamma-and-how-do-they-work",
     "https://help.gamma.app/en/articles/11047840-how-can-i-import-slides-or-content-into-gamma",
     "https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language",
     "https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription",
@@ -127,7 +130,7 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">2. Beautiful.ai — Para cuando ya tienes el contenido y solo quieres diseño</h3>
     <p>
-      Beautiful.ai es un <strong>editor de presentaciones con diseño automático</strong>: tú escribes los textos o pegas las imágenes, y el sistema reorganiza la diapositiva aplicando reglas de diseño (alineación, jerarquía, contraste, espacio en blanco). Sus planes incluyen además generación de contenido con IA sin límite, un asistente de escritura, generación de imágenes y presentaciones en más de 100 idiomas, según su página de precios.
+      Beautiful.ai es un <strong>editor de presentaciones con diseño automático</strong>: tú escribes los textos o pegas las imágenes, y el sistema reorganiza la diapositiva aplicando reglas de diseño (alineación, jerarquía, contraste, espacio en blanco). Según su página de precios, el plan Pro incluye además generación de contenido con IA sin límite, y el plan Team añade crear presentaciones en más de 100 idiomas y traducir diapositivas.
     </p>
     <p>
       El caso de uso ideal: tienes un documento Word con la información que quieres presentar, lo pegas diapositiva por diapositiva en Beautiful.ai, y la herramienta te lo convierte en algo presentable. Donde más ayuda el diseño automático es en gráficos de datos, listas largas y comparativas.
@@ -227,23 +230,24 @@ const pillarLabel = "Pilar 1: Apps web";
       El error típico es obsesionarse con el diseño antes de arreglar la historia. Primero estructura, luego diseño. La IA acelera la maqueta, pero la claridad sigue saliendo de ti.
     </p>
 
-    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primera presentación con Gamma en 5 minutos</h2>
+    <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tutorial paso a paso: tu primera presentación con Gamma</h2>
     <p>
-      El tutorial usa Gamma porque es la única que cumple la promesa "desde el prompt hasta el export".  Necesitas: una cuenta de correo para registrarte en gamma.app y una idea de qué quieres contar.
+      El tutorial usa Gamma porque hace todo el recorrido, de la idea al archivo exportado. Desde Gamma 5, crear una presentación es una conversación con su agente: le dices qué quieres, contesta con unas preguntas, te enseña un plan y, cuando lo apruebas, la monta entera. Necesitas una cuenta (gamma.app, con Google o con correo) y una idea de qué quieres contar. Pasos según la ayuda oficial de Gamma, consultada en noviembre de 2026.
     </p>
     <FiguraArticulo
       src="/img/blog/ia-crea-presentaciones-completas/tutorial-gamma-pasos.webp"
-      alt="Esquema en cinco pasos para crear una presentación con Gamma: crear la cuenta gratuita, escribir el prompt con contexto, elegir plantilla y generar, revisar cada diapositiva y exportar"
+      alt="Esquema en seis pasos para crear una presentación con el agente de Gamma: describir lo que quieres, elegir el modo, contestar las preguntas, aprobar el plan, dejar que la construya y pedir los cambios en el chat"
       width={1200}
-      height={717}
+      height={870}
     />
-    <p><strong>Paso 1. Crea la cuenta.</strong> Ve a gamma.app y regístrate con Google o con correo. La cuenta gratuita te da 400 créditos de inicio, que no se recargan: cuántas presentaciones salen depende de su tamaño y de cuántas veces regeneres.</p>
-    <p><strong>Paso 2. Define el tema.</strong> Desde Gamma 5, crear empieza con una conversación: le dices al asistente qué quieres hacer, contestas unas preguntas y lo monta entero. Si prefieres los pasos de siempre, pulsa «Use classic generator» en el panel principal, haz clic en "Crear nuevo" y elige "Presentación". Te aparecerá un cuadro de texto para el prompt. Escribe con contexto: audiencia, tono, número de diapositivas, puntos obligatorios. Por ejemplo: "Presentación de diez diapositivas en tono profesional pero cercano para una junta directiva de una pyme, sobre los beneficios de adoptar un modelo de trabajo híbrido. Debe incluir datos de productividad, ejemplos de empresas similares y un cierre con CTA para aprobar un piloto de tres meses".</p>
-    <p><strong>Paso 3. Elige la plantilla y genera.</strong> Gamma te ofrece varias plantillas base (oscura, clara, corporativa, creativa). Elige una que encaje con tu audiencia. Pulsa "Generar" y tendrás las diapositivas con título, contenido y diseño.</p>
-    <p><strong>Paso 4. Revisa el contenido.</strong> Gamma no es perfecta. Lee cada diapositiva con ojos críticos: ¿el titular refleja el contenido? ¿los puntos son específicos o genéricos? ¿el gráfico aporta información o solo decora? Esta es la parte que más tiempo consume, pero sigue siendo más rápida que empezar de cero. Tienes que dedicar al menos cinco minutos a esta fase.</p>
-    <p><strong>Paso 5. Edita lo que no te convenza.</strong> Haz clic en cualquier elemento para editarlo directamente. Si una diapositiva entera no funciona, bórrala. Si necesitas una nueva en un punto concreto, usa el botón "+" para insertar una generada por IA en esa posición. Si quieres cambiar el tono de todo el documento, selecciona un párrafo y dile a Gamma en lenguaje natural: "Haz esto más formal" o "Convierte esto en una lista de tres puntos".</p>
-    <p><strong>Paso 6. Exporta.</strong> Cuando estés conforme, exporta a PowerPoint (.pptx), a PDF o a un enlace compartible. En el plan gratis, los PDF y PPTX exportados llevan la marca «Made by Gamma»; con cualquier plan de pago (Plus, Pro o Ultra) desaparece de las exportaciones siguientes.</p>
-    <p><strong>Paso 7. Itera con la audiencia.</strong> El verdadero superpoder de Gamma es que puedes volver sobre la misma presentación una semana después, pedirle que reordene las diapositivas, que añada una sección sobre datos nuevos, que genere una versión más corta para un pitch de cinco minutos. Es un documento vivo, no un archivo muerto.</p>
+    <p><strong>Paso 1. Describe lo que quieres.</strong> En la pantalla de inicio, escribe en la barra de instrucciones qué presentación necesitas. Basta una frase, pero cuanto más contexto, mejor: audiencia, tono, número de diapositivas y puntos obligatorios. También puedes pegar tus notas, adjuntar archivos o elegir una plantilla. Por ejemplo: "Presentación de diez diapositivas en tono profesional pero cercano para la junta directiva de una pyme, sobre los beneficios del trabajo híbrido. Con datos de productividad y un cierre que pida aprobar un piloto de tres meses". Si ya tienes el texto, pégalo y pide que respete tus palabras: Gamma empieza una diapositiva nueva donde pongas tres guiones (---).</p>
+    <p><strong>Paso 2. Elige el modo.</strong> Antes de generar, el selector de modo ofrece tres: <strong>Plan</strong> (el que viene por defecto: pregunta y te enseña el plan antes de construir), <strong>Express</strong> (se salta las preguntas y saca un primer borrador directamente) y <strong>Research</strong> (investiga en la web antes de escribir; gasta más créditos y es solo para Pro o superior). Para la primera vez, Plan.</p>
+    <p><strong>Paso 3. Contesta las preguntas.</strong> El agente hace unas pocas preguntas sobre tu objetivo, tu público y lo que más importa. Cada una tiene opciones para tocar, un hueco para escribir y la opción «Decide for me» si prefieres que elija él.</p>
+    <p><strong>Paso 4. Revisa el plan y dale el visto bueno.</strong> Con tus respuestas, el agente prepara un plan: la historia que va a contar, el estilo y el aspecto. Cámbialo si algo no encaja; no empieza a construir hasta que lo apruebas. Es el mejor momento para corregir el rumbo, antes de gastar créditos en diapositivas.</p>
+    <p><strong>Paso 5. Deja que la construya.</strong> El agente investiga, escribe, diseña y genera las imágenes, y va contando lo que hace. Las diapositivas aparecen en una cuadrícula a medida que se crean. En el plan gratis, cada generación hace como mucho 10 diapositivas (en los de pago, hasta 100).</p>
+    <p><strong>Paso 6. Revisa y pide los cambios en el chat.</strong> Lee cada diapositiva con ojos críticos: ¿el titular refleja el contenido? ¿los puntos son concretos o genéricos? ¿la imagen aporta o solo decora? Lo que no te convenza, díselo al agente con tus palabras ("la diapositiva 4 tiene demasiado texto, hazla más visual", "pon el tono más formal"): cambia solo lo que pides. También puedes editar a mano cualquier elemento.</p>
+    <p><strong>Paso 7. Exporta.</strong> Desde el menú de exportar: PDF, PNG, PowerPoint (.pptx) o Google Slides. En el plan gratis, lo exportado lleva la marca «Made by Gamma»; con cualquier plan de pago (Plus, Pro o Ultra) desaparece de las exportaciones siguientes.</p>
+    <Caja tipo="nota">¿Prefieres el método de antes? Gamma mantiene el generador clásico: pulsa «Use classic generator» arriba en la pantalla de inicio, junto a «New from blank», y elige cómo empezar (generar, pegar texto o importar un archivo).</Caja>
     <p>
       Tiempo total: entre quince y treinta minutos para una primera versión presentable. La parte difícil no es la herramienta, es decidir qué quieres contar y cómo estructurarlo. Ahí es donde se nota la diferencia entre un resultado útil y un resultado que tienes que rehacer.
     </p>
@@ -311,11 +315,11 @@ const pillarLabel = "Pilar 1: Apps web";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes verificadas</h2>
     <p>
-      Todos los datos de precios, planes, funciones y disponibilidad de este artículo están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026 y revisadas el 20 de octubre y el 12 de noviembre de 2026:
+      Todos los datos de precios, planes, funciones y disponibilidad de este artículo están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026 y revisadas el 20 de octubre, el 12 de noviembre y el 20 de noviembre de 2026 (el tutorial de Gamma y las cifras de Gamma, Beautiful.ai, SlidesAI y Plus AI; los precios de Canva no se pudieron leer):
     </p>
     <ul>
       <li><strong>Gamma pricing</strong> — planes Free, Plus y Pro, sistema de créditos y límites de uso: <a href="https://gamma.app/pricing" class="text-brand-400 hover:text-brand-300">gamma.app/pricing</a>; créditos (<a href="https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), planes y descuento anual (<a href="https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), plan Business (<a href="https://help.gamma.app/en/articles/11594955-what-options-does-gamma-offer-for-business" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>) y exportar con la marca «Made by Gamma» (<a href="https://help.gamma.app/en/articles/8022861-what-s-the-easiest-way-to-export-my-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>)</li>
-      <li><strong>Gamma: crear e importar</strong> — cómo se crea en Gamma 5 y el generador clásico (<a href="https://help.gamma.app/en/articles/7838093-how-do-i-create-a-new-presentation-document-or-webpage-in-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), qué archivos importa (<a href="https://help.gamma.app/en/articles/11047840-how-can-i-import-slides-or-content-into-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>) y en qué idioma se muestra (<a href="https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>)</li>
+      <li><strong>Gamma: crear e importar</strong> — cómo se crea con el agente de Gamma (<a href="https://help.gamma.app/en/articles/15002203-how-do-i-create-with-agent-in-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), el generador clásico (<a href="https://help.gamma.app/en/articles/7838093-how-do-i-create-a-new-presentation-document-or-webpage-in-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), cuántas diapositivas por generación (<a href="https://help.gamma.app/en/articles/11016396-what-are-slides-in-gamma-and-how-do-they-work" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>), qué archivos importa (<a href="https://help.gamma.app/en/articles/11047840-how-can-i-import-slides-or-content-into-gamma" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>) y en qué idioma se muestra (<a href="https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language" class="text-brand-400 hover:text-brand-300">help.gamma.app</a>)</li>
       <li><strong>Gamma features y guía oficial</strong> — funciones, integraciones, plantillas y casos de uso: <a href="https://gamma.app/" class="text-brand-400 hover:text-brand-300">gamma.app</a> y <a href="https://gamma.app/explore/content/guides/guide-to-choosing-the-most-effective-ai-presentation-tool" class="text-brand-400 hover:text-brand-300">gamma.app/explore</a></li>
       <li><strong>Gamma Imagine (imágenes IA)</strong> — guía oficial del lienzo de diseño y sus funciones de generación y edición: <a href="https://help.gamma.app/en/articles/13928852-what-is-imagine-and-how-do-i-design-with-it" class="text-brand-400 hover:text-brand-300">help.gamma.app</a></li>
       <li><strong>Beautiful.ai pricing</strong> — plan Pro a 14,50 dólares al mes (anual), plan Team a 40 dólares por usuario (anual), prueba de 14 días, funciones de Smart Slides: <a href="https://www.beautiful.ai/pricing" class="text-brand-400 hover:text-brand-300">beautiful.ai/pricing</a></li>

@@ -174,7 +174,7 @@ const coreTools: Tool[] = [
   {
     slug: 'notebooklm',
     name: 'NotebookLM',
-    summary: 'Herramienta de Google para trabajar con fuentes propias: PDFs, webs, vídeos, notas y materiales de estudio.',
+    summary: 'Herramienta de Google (desde julio de 2026 se llama Gemini Notebook) para trabajar con fuentes propias: PDFs, webs, vídeos, notas y materiales de estudio.',
     metaDescription: 'Ficha práctica de NotebookLM: cuando usarlo con fuentes propias, privacidad, dificultad, límites y alternativas.',
     useCase: 'Investigación',
     price: 'Freemium',
@@ -183,7 +183,7 @@ const coreTools: Tool[] = [
     bestFor: 'Cuando quieres preguntar a tus propias fuentes y mantener la respuesta anclada al material que has subido.',
     avoidIf: 'Necesitas automatizar acciones fuera del cuaderno o trabajar con información muy confidencial sin revisar condiciones.',
     tags: ['fuentes', 'investigación', 'estudio', 'resumen'],
-    officialUrl: 'https://notebooklm.google/',
+    officialUrl: 'https://notebook.google/',
     relatedLinks: [
       { label: 'NotebookLM vs Perplexity', href: '/herramientas/notebooklm-vs-perplexity/' },
       { label: 'Herramientas para investigar con fuentes', href: '/herramientas/casos/para-investigar/' },
@@ -216,13 +216,15 @@ const coreTools: Tool[] = [
         'Anonimiza documentos cuando el valor esta en el contenido y no en los datos personales.',
       ],
       priceNotes: [
-        'La herramienta tiene acceso gratuito y opciones ampliadas según el ecosistema de Google.',
-        'Los límites de cuadernos, fuentes y funciones pueden cambiar.',
+        'Sin plan de pago: hasta 100 cuadernos y 50 fuentes por cuaderno; el uso se renueva cada 5 horas hasta un límite semanal (ayuda de Google, consultada en noviembre de 2026).',
+        'Google AI Plus sube a 200 cuadernos y 100 fuentes; AI Pro, a 500 y 300. Google avisa de que los límites pueden cambiar.',
       ],
       alternatives: ['Perplexity para investigar en web', 'Claude para redactar con contexto', 'ChatGPT para uso general'],
       sources: [
-        { label: 'Web oficial de NotebookLM', href: 'https://notebooklm.google/' },
-        { label: 'NotebookLM para estudiantes', href: 'https://notebooklm.google/students' },
+        { label: 'Web oficial de Gemini Notebook (antes NotebookLM)', href: 'https://notebook.google/' },
+        { label: 'NotebookLM para estudiantes', href: 'https://notebook.google/students' },
+        { label: 'Google: NotebookLM pasa a llamarse Gemini Notebook', href: 'https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/' },
+        { label: 'Planes y límites de Gemini Notebook', href: 'https://support.google.com/gemininotebook/answer/16213268?hl=es' },
       ],
     },
   },
@@ -277,7 +279,7 @@ const coreTools: Tool[] = [
       ],
       alternatives: ['NotebookLM para fuentes propias', 'ChatGPT para sintetizar y escribir', 'Claude para documentos largos', 'Google para búsqueda manual'],
       sources: [
-        { label: 'Planes oficiales de Perplexity', href: 'https://www.perplexity.ai/enterprise/pricing' },
+        { label: 'Planes oficiales de Perplexity', href: 'https://www.perplexity.ai/hub/pricing' },
         { label: 'Perplexity Pro', href: 'https://www.perplexity.ai/pro' },
         { label: 'FAQ de precios Enterprise', href: 'https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions.html' },
       ],

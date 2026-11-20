@@ -25,10 +25,10 @@ export const toolComparisons: ToolComparison[] = [
     title: 'Manus vs ChatGPT',
     seoTitle: 'Manus vs ChatGPT: cuál es mejor y cuánto cuesta Manus',
     description: 'Manus o ChatGPT para tareas de varios pasos: en qué se diferencian, cuándo conviene cada uno, cuánto cuesta Manus (tiene plan gratis) y qué revisar antes de delegar.',
-    modifiedDate: '2026-10-22',
+    modifiedDate: '2026-11-20',
     left: 'manus',
     right: 'chatgpt',
-    verdict: 'Manus está pensado para encargarle una tarea de varias etapas y recibir el resultado terminado (un informe, una web, unas diapositivas), trabajando por su cuenta en un entorno en la nube. ChatGPT encaja mejor cuando quieres ir paso a paso en una conversación, con tus archivos y apps dentro de un asistente general; para pedirle un entregable completo tiene el modo Work. Manus tiene plan gratis con 300 créditos al día y sus planes de pago empiezan en 20 $ al mes (consultado el 22-10-2026).',
+    verdict: 'Manus está pensado para encargarle una tarea de varias etapas y recibir el resultado terminado (un informe, una web, unas diapositivas), trabajando por su cuenta en un entorno en la nube. ChatGPT encaja mejor cuando quieres ir paso a paso en una conversación, con tus archivos y apps dentro de un asistente general; para pedirle un entregable completo tiene el modo Work. Manus tiene plan gratis con 300 créditos al día (hasta 1.500 al mes) y sus planes de pago empiezan en 20 $ al mes (consultado el 20-11-2026).',
     chooseLeft: ['La tarea tiene etapas y un entregable claro (informe, web, presentación).', 'Puedes revisar el plan y las acciones antes de dar el resultado por bueno.', 'Necesitas que investigue muchas fuentes a la vez o que siga trabajando sin ti.'],
     chooseRight: ['Ya pagas y trabajas en ChatGPT.', 'Prefieres ir paso a paso y corregir sobre la marcha.', 'Quieres más control de la conversación.'],
     sharedRisks: ['Concede el mínimo acceso.', 'Nada irreversible sin confirmación.', 'Revisa fuentes y acciones.'],
@@ -43,13 +43,17 @@ export const toolComparisons: ToolComparison[] = [
       { label: 'Manus: precios de cada plan (centro de ayuda)', href: 'https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus' },
       { label: 'Manus: créditos gratis al registrarse y cada día (centro de ayuda)', href: 'https://help.manus.im/en/articles/11813668-are-there-any-discounts-or-special-offers' },
       { label: 'Manus vs ChatGPT, según Manus', href: 'https://manus.im/compare/vs-chatgpt' },
+      { label: 'Manus: reglas de los créditos y tope mensual del plan gratis (centro de ayuda)', href: 'https://help.manus.im/en/articles/11711097-what-are-the-rules-for-credits-consumption-and-how-can-i-obtain-them' },
       { label: 'Manus Joins Meta for Next Era of Innovation (blog de Manus)', href: 'https://manus.im/blog/manus-joins-meta-for-next-era-of-innovation' },
+      { label: 'A note to our users: la separación de Meta (blog de Manus)', href: 'https://manus.im/blog/a-note-to-our-users' },
+      { label: 'Manus Resumes Independent Operations (blog de Manus)', href: 'https://manus.im/blog/manus-resumes-independent-operations' },
+      { label: 'Apps de Manus para ordenador y móvil', href: 'https://manus.im/download' },
       { label: 'ChatGPT Work (OpenAI)', href: 'https://openai.com/chatgpt-work/' },
     ],
     faq: [
       {
         q: '¿Manus es gratis?',
-        a: 'Tiene un plan gratis: incluye el modo chat y Manus 2.0 Lite en modo agente, 300 créditos que se recargan cada día, una tarea a la vez y 2 tareas programadas; al registrarte te dan además 1.000 créditos. Los planes de pago cuestan 20 $ al mes (4.000 créditos), 40 $ (8.000) y 200 $ (40.000), con un 17 % menos si pagas el año. Consultado el 22-10-2026 en su web y su centro de ayuda.',
+        a: 'Tiene un plan gratis: Manus 2.0 Lite en modo agente, 300 créditos que se recargan cada día (con un tope de 1.500 al mes), una tarea a la vez y 2 tareas programadas; al registrarte te dan además 1.000 créditos. Los planes de pago empiezan en 20 $ al mes (4.000 créditos) y 40 $ (8.000), con un 17 % menos si pagas el año; los planes más altos, en manus.im/pricing. Consultado el 20-11-2026 en su centro de ayuda.',
       },
       {
         q: '¿Qué es mejor, Manus o ChatGPT?',
@@ -57,7 +61,7 @@ export const toolComparisons: ToolComparison[] = [
       },
       {
         q: '¿Manus es de Meta?',
-        a: 'Sí. Manus anunció el 29 de diciembre de 2025 que se une a Meta. En ese mismo anuncio dijo que seguiría vendiendo y gestionando sus suscripciones desde su web y su app.',
+        a: 'Ya no. Meta compró Manus el 29 de diciembre de 2025, pero Manus se separó después: el 1 de septiembre de 2026 anunció que vuelve a funcionar como empresa independiente, dirigida por su equipo fundador. Las suscripciones se siguen gestionando desde su web y su app.',
       },
       {
         q: '¿Manus está en español?',

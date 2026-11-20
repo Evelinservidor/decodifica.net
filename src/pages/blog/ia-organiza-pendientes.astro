@@ -7,7 +7,7 @@ import ReviewMethodology from '../../components/ReviewMethodology.astro';
 const title = "Mejor IA para organizar tareas y correos: 5 comparadas";
 const description = "Gemini, Copilot, ChatGPT, Claude y Manus comparadas para organizar correos, reuniones y tareas. Qué conecta cada una, qué permisos dar y cómo empezar.";
 const pubDate = "2026-06-26";
-const modifiedDate = "2026-10-20";
+const modifiedDate = "2026-11-20";
 const tags = ["ia organiza pendientes", "ia para gestión de tareas", "conectores ia", "manus ai", "chatgpt apps", "claude mcp", "gemini workspace", "microsoft copilot"];
 const readingTime = "11 min";
 const tema = "oficina";
@@ -25,6 +25,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
   keywords={tags}
   citations={[
     "https://manus.im/",
+    "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+    "https://help.manus.im/en/articles/11711097-what-are-the-rules-for-credits-consumption-and-how-can-i-obtain-them",
+    "https://manus.im/docs/integrations/connectors",
+    "https://manus.im/blog/manus-resumes-independent-operations",
+    "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+    "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+    "https://claude.com/pricing",
+    "https://workspace.google.com/intl/es/pricing",
+    "https://support.google.com/gemini/answer/15229592",
+    "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
     "https://chatgpt.com/features/apps/",
     "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt",
     "https://help.openai.com/en/articles/6825453",
@@ -36,7 +46,6 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://www.notion.com/help/notion-mcp",
     "https://www.anthropic.com/news/model-context-protocol",
     "https://workspace.google.com/solutions/ai/",
-    "https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/",
     "https://www.microsoft.com/en-us/microsoft-365-copilot",
     "https://decodifica.net/contacto/",
   ]}
@@ -49,11 +58,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <section class="respuesta-rapida" aria-label="Respuesta rápida">
       <p class="respuesta-rapida-titulo">Respuesta rápida · En resumen</p>
       <ul>
-        <li><strong>Manus</strong>: el agente IA más versátil. Conectores oficiales a Gmail, Calendar y Notion. Le pides algo como "revisa mis últimos doce correos, detecta reuniones, créalas en el calendario y deja el resumen en Notion" y lo hace. Ahora parte de Meta.</li>
+        <li><strong>Manus</strong>: el agente IA más versátil. Conectores oficiales a Gmail, Calendar y Notion. Le pides algo como "revisa mis últimos doce correos, detecta reuniones, créalas en el calendario y deja el resumen en Notion" y lo hace. Plan gratis con créditos diarios; de pago desde 20 $ al mes.</li>
         <li><strong>ChatGPT apps</strong>: si ya pagas ChatGPT Plus, conecta con Gmail, Google Calendar, Google Drive, Notion, GitHub y más desde Configuración → Plugins. Leer está claro; crear eventos o páginas depende del plan y de la app (ver el ejemplo de flujo).</li>
-        <li><strong>Claude con MCP</strong>: el estándar abierto de Anthropic. Cualquier herramienta puede publicar un conector MCP. La opción más flexible técnicamente.</li>
+        <li><strong>Claude</strong>: conectores oficiales de Gmail, Google Calendar y Google Drive en todos los planes, también el gratis, y además MCP, el estándar abierto de Anthropic para conectar cualquier otra herramienta.</li>
         <li><strong>Gemini en Google Workspace</strong>: si vives en Gmail, Calendar, Drive y Docs, Gemini ya está ahí. Sin dar acceso a servicios externos.</li>
-        <li><strong>Microsoft Copilot 365</strong>: si pagas Microsoft 365, Copilot vive en Outlook, Teams, Calendar y OneDrive. La opción natural para empresas con Microsoft.</li>
+        <li><strong>Microsoft 365 Copilot</strong>: si tu empresa paga Microsoft 365, Copilot vive en Outlook, Teams, Word, Excel y PowerPoint. Copilot Chat viene sin coste extra; el Copilot completo cuesta desde 21 $ por usuario al mes en pymes.</li>
       </ul>
     </section>
 
@@ -86,7 +95,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     </div>
 
     <p>
-      Mi regla práctica: empieza por la IA que ya estás pagando y limita permisos al mínimo. Si con eso resuelves el 70% de la semana, no necesitas montar un sistema más complejo.
+      Una regla práctica: empieza por la IA que ya estás pagando y limita permisos al mínimo. Si con eso resuelves el 70% de la semana, no necesitas montar un sistema más complejo.
     </p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Por qué copiar y pegar entre cinco apps te cuesta el domingo</h2>
@@ -105,9 +114,9 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <FiguraArticulo
       src="/img/blog/ia-organiza-pendientes/que-conecta-cada-ia.webp"
-      alt="Cuadro resumen de con qué apps conecta cada IA: Manus, ChatGPT apps, Claude con MCP, Gemini en Workspace y Copilot 365"
+      alt="Cuadro resumen de con qué apps conecta cada IA: Manus, ChatGPT, Claude, Gemini en Workspace y Microsoft 365 Copilot"
       width={1200}
-      height={604}
+      height={700}
     />
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Las cinco IAs que de verdad se enchufan a tu trabajo</h2>
@@ -116,18 +125,18 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La comparación se organiza por caso de uso, permisos y documentación disponible; no presupone que una herramienta sea la mejor para todos los flujos.
     </p>
 
-    <h3 class="font-display text-xl font-bold mt-6 mb-3">1. Manus — el agente IA más versátil, ahora parte de Meta</h3>
+    <h3 class="font-display text-xl font-bold mt-6 mb-3">1. Manus — el agente IA más versátil</h3>
     <p>
-      Manus es un agente IA nacido del equipo Monica.im que, en 2026, pasó a formar parte de Meta. Su diferencia frente al resto es que <strong>no espera a que tú le pegues la información, se conecta a tus herramientas y trabaja con datos reales</strong>. Los conectores oficiales de Manus se vinculan a Gmail, Google Calendar, Notion y a cualquier aplicación que tenga un conector compatible. Es, en la práctica, un agente que vive dentro de tu sistema de trabajo.
+      Manus es un agente IA. Meta lo compró el 29 de diciembre de 2025, pero el 1 de septiembre de 2026 Manus anunció que vuelve a funcionar como empresa independiente. Su diferencia frente al resto es que <strong>no espera a que tú le pegues la información, se conecta a tus herramientas y trabaja con datos reales</strong>. Los conectores oficiales de Manus se vinculan a Gmail, Google Calendar, Notion, Slack y cientos de aplicaciones más (su lista pasa de 400 conectores, aunque avisa de que no todos aparecen en todas las cuentas y planes). Es, en la práctica, un agente que vive dentro de tu sistema de trabajo.
     </p>
     <p>
-      El caso de uso ideal es el que más tiempo te ahorra: el domingo de preparación de semana. Le pides a Manus algo como "revisa mis últimos doce correos, detecta cuáles son reuniones pendientes, crea los eventos necesarios en el calendario y deja un resumen organizado en Notion", y Manus empieza a trabajar. Revisa los correos uno por uno, identifica reuniones con fecha y hora, extrae los asistentes, crea los eventos en Calendar con los enlaces correctos y deja una nota estructurada en Notion con el resumen de cada reunión. Lo que a ti te costaría una hora, a Manus le cuesta tres minutos.
+      El caso de uso ideal es el que más tiempo te ahorra: el domingo de preparación de semana. Le pides a Manus algo como "revisa mis últimos doce correos, detecta cuáles son reuniones pendientes, crea los eventos necesarios en el calendario y deja un resumen organizado en Notion", y Manus empieza a trabajar. Revisa los correos uno por uno, identifica reuniones con fecha y hora, extrae los asistentes, crea los eventos en Calendar con los enlaces correctos y deja una nota estructurada en Notion con el resumen de cada reunión. Revisa siempre lo que ha creado antes de dar la semana por montada.
     </p>
     <p>
       La diferencia clave respecto al resto: Manus no es un chat esperando tu input, es un agente conectado a tu sistema. Puede leer contexto de varias apps a la vez, mantener la coherencia entre ellas y actualizar el estado en cada una. Encaja sobre todo con freelancers, pequeños equipos y profesionales que trabajan a diario con cinco o seis aplicaciones.
     </p>
     <p>
-      Pricing: hay un plan gratuito con tareas limitadas y planes de pago por uso a partir de unos 39 dólares al mes en el momento de escribir esto. Consulta la web oficial porque los precios cambian con cada release.
+      Precio: el plan gratis da 300 créditos al día (con un tope de 1.500 al mes), una tarea a la vez y solo el modelo Manus 2.0 Lite. Los planes de pago empiezan en <strong>20 dólares al mes</strong> (4.000 créditos; un 17 % menos pagando el año) y hay otro de 40 dólares con 8.000 créditos. Consultado en noviembre de 2026 en la ayuda de Manus.
     </p>
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">2. ChatGPT apps — si ya pagas ChatGPT Plus, ya lo tienes</h3>
@@ -146,16 +155,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">3. Claude con MCP — el estándar abierto que cualquier app puede implementar</h3>
     <p>
-      Anthropic presentó el Model Context Protocol (MCP) en noviembre de 2024 como un estándar abierto para que cualquier modelo de lenguaje pueda conectarse con herramientas externas. La idea es sencilla: en lugar de que cada IA implemente conectores a mano para cada aplicación, cualquier herramienta puede publicar un servidor MCP y Claude puede conectarse a él automáticamente. Hoy hay servidores MCP oficiales y no oficiales para Notion, Gmail, HubSpot, Slack, GitHub, Google Drive y cientos de aplicaciones más.
+      Para Gmail, Google Calendar y Google Drive ya no hace falta MCP: Claude tiene <strong>conectores oficiales en todos los planes</strong>, también el gratis. Puede buscar y leer correos, redactarlos y enviarlos, y crear, cambiar o borrar eventos del calendario; fuera del modo automático, pide tu aprobación antes de enviar un correo. Para el resto de apps está MCP: Anthropic presentó el Model Context Protocol (MCP) en noviembre de 2024 como un estándar abierto para que cualquier modelo de lenguaje pueda conectarse con herramientas externas. La idea es sencilla: en lugar de que cada IA implemente conectores a mano para cada aplicación, cualquier herramienta puede publicar un servidor MCP y Claude puede conectarse a él automáticamente. Hoy hay servidores MCP oficiales y no oficiales para Notion, Gmail, HubSpot, Slack, GitHub, Google Drive y cientos de aplicaciones más.
     </p>
     <p>
       El caso de uso ideal: necesitas flexibilidad máxima y te gusta la tecnología. Si la app con la que trabajas tiene un servidor MCP (público o interno de tu empresa), Claude se conecta sin que tengas que configurar nada raro. Es la opción más versátil a largo plazo, porque el estándar está creciendo y cada semana aparecen nuevos servidores MCP.
     </p>
     <p>
-      Pricing: Claude con MCP está disponible en <strong>todas las cuentas Claude.ai, incluyendo el plan gratuito</strong>, con límites de uso más generosos en los planes Pro a 20 dólares al mes y Team a 30 dólares por usuario al mes.
+      Precio: los conectores están en <strong>todas las cuentas de Claude, incluido el plan gratis</strong> (en el gratis solo puedes añadir un conector MCP propio). Pro cuesta 20 dólares al mes (17 pagando el año) y Team, 25 dólares por usuario al mes (20 pagando el año). Consultado en noviembre de 2026.
     </p>
     <p>
-      Novedad del 21 de octubre de 2026: Anthropic presentó Claude Duet, una aplicación que te resume cada mañana el correo y el calendario y hace encargos pidiendo permiso antes de enviar o pagar. De momento es solo para cuentas Pro y Max de Estados Unidos, con lista de espera: qué hace y cuándo se podrá usar, en <a href="/blog/claude-ia-que-es-gratis/#claude-duet-que-es-y-si-se-puede-usar-en-espana" class="text-brand-400 hover:text-brand-300">la guía de Claude en español</a>.
+      Novedad del 21 de octubre de 2026: Anthropic presentó Claude Duet, una aplicación que te resume cada mañana el correo y el calendario y hace encargos pidiendo permiso antes de enviar o pagar. De momento es solo para cuentas Pro, Max y Ultra de Estados Unidos, con lista de espera o invitación: qué hace y cuándo se podrá usar, en <a href="/blog/claude-ia-que-es-gratis/#claude-duet-que-es-y-si-se-puede-usar-en-espana" class="text-brand-400 hover:text-brand-300">la guía de Claude en español</a>.
     </p>
     <p>
       La pega: configurar un servidor MCP no oficial requiere ciertos conocimientos técnicos. Si no te apetece tocar archivos de configuración, esta no es tu opción. Si te interesa el detalle, hay guías paso a paso en la documentación oficial de Anthropic.
@@ -163,13 +172,13 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">4. Gemini en Google Workspace — si vives en Google, ya está ahí</h3>
     <p>
-      Si pagas Google Workspace, Gemini ya viene integrado con Gmail, Calendar, Drive, Docs, Sheets y Slides. No necesitas instalar nada ni aprender una herramienta nueva. La ventaja principal es que todo se queda dentro de tu ecosistema de Google, sin dar acceso a servicios externos ni a tus datos personales fuera de Workspace. Google fue muy claro en su comunicado de marzo de 2026: "los datos de tu empresa no se usan para entrenar modelos de Gemini ni para anuncios".
+      Si pagas Google Workspace, Gemini ya viene integrado con Gmail, Calendar, Drive, Docs, Sheets y Slides. No necesitas instalar nada ni aprender una herramienta nueva. La ventaja principal es que todo se queda dentro de tu ecosistema de Google, sin dar acceso a servicios externos ni a tus datos personales fuera de Workspace. Google lo dice en su página de IA de Workspace: tus datos «no se usan para entrenar modelos de Gemini ni para segmentar anuncios».
     </p>
     <p>
-      El caso de uso ideal: vives en Gmail,Calendar, Drive y Docs. Gemini puede leer tus correos, encontrar documentos relevantes, crear entradas de calendario, resumir hilos de Docs y moverte información entre las apps de Google. La integración es nativa y rápida, sin intermediarios.
+      El caso de uso ideal: vives en Gmail, Calendar, Drive y Docs. Gemini puede leer tus correos, encontrar documentos relevantes, crear entradas de calendario, resumir hilos de Docs y moverte información entre las apps de Google. La integración es nativa y rápida, sin intermediarios.
     </p>
     <p>
-      Pricing: Gemini está incluido en <strong>Google Workspace Business Standard</strong> (13,60 euros al mes por usuario con compromiso anual), en <strong>Business Plus</strong> y en planes superiores. Hay una versión personal en gemini.google.com con límites gratuitos.
+      Precio: Business Starter ya trae el asistente de Gemini en Gmail; desde <strong>Business Standard</strong> está también en Docs, Sheets, Slides, Drive, Meet y Chat. Google muestra el precio según tu país (en Estados Unidos, Standard cuesta 14 dólares por usuario al mes); míralo en su página de precios. Con una cuenta personal, la app de Gemini también puede conectarse a tu Gmail, Calendar, Drive, Tasks y Keep. Consultado en noviembre de 2026.
     </p>
     <p>
       La pega: Gemini está optimizado para el ecosistema Google. Si trabajas con Notion, Slack o Trello, la integración es limitada o nula. Para esos casos, Manus o Claude con MCP cubren mejor el hueco.
@@ -177,16 +186,16 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h3 class="font-display text-xl font-bold mt-6 mb-3">5. Microsoft Copilot 365 — la opción natural para empresas con Microsoft</h3>
     <p>
-      Si tu empresa paga Microsoft 365, Copilot está integrado en Outlook, Calendar, Teams y OneDrive. Es la opción más natural para empresas que ya tienen todo su trabajo en el ecosistema Microsoft. Puede leer correos, agendar reuniones, resumir hilos de Teams y editar documentos de Word o Excel sin que tengas que salir de la app en la que ya estás.
+      Si tu empresa paga Microsoft 365, Copilot está integrado en Word, Excel, PowerPoint, Outlook y Teams. Es la opción más natural para empresas que ya tienen todo su trabajo en el ecosistema Microsoft. Puede leer correos, agendar reuniones, resumir hilos de Teams y editar documentos de Word o Excel sin que tengas que salir de la app en la que ya estás.
     </p>
     <p>
-      El caso de uso ideal: trabajas en una empresa grande, todo el flujo está en Microsoft, y necesitas una IA que no te obligue a cambiar de ecosistema. Copilot es "seguro por diseño", como dice Microsoft: hereda los permisos de tu cuenta de Microsoft 365, las etiquetas de sensibilidad y las políticas de retención, así que solo ves lo que te corresponde ver.
+      El caso de uso ideal: trabajas en una empresa grande, todo el flujo está en Microsoft, y necesitas una IA que no te obligue a cambiar de ecosistema. Microsoft dice que está «diseñado para ser seguro y privado» y construido sobre Microsoft 365; antes de activarlo, que el responsable de informática revise qué datos podrá ver.
     </p>
     <p>
-      Pricing: <strong>Microsoft 365 Copilot cuesta 30 dólares por usuario al mes</strong> como add-on a planes Microsoft 365 elegibles. Para empresas hay planes Copilot Chat (con coste reducido) y Copilot Enterprise con precios personalizados.
+      Precio: <strong>Copilot Chat</strong> viene sin coste extra con una suscripción de Microsoft 365 compatible. El Copilot completo cuesta <strong>30 dólares por usuario al mes</strong> (pago anual) en empresas grandes y <strong>21 dólares</strong> en pymes con Microsoft 365 Copilot Business (18 dólares en promoción hasta el 31-12-2026, el primer año). Necesita una licencia de Teams aparte. Consultado en noviembre de 2026.
     </p>
     <p>
-      La pega: el precio por usuario es alto si lo comparas con alternativas como Manus o con el Gemini de Workspace. Para un equipo grande, el coste se justifica por la integración nativa y la seguridad empresarial. Para un profesional solo o un equipo pequeño, hay opciones más asequibles con la misma funcionalidad básica.
+      La pega: el Copilot completo se paga aparte por cada usuario, encima de Microsoft 365. Si estás solo o tu equipo no usa Microsoft a diario, ChatGPT, Claude o Gemini te salen más a cuenta.
     </p>
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Tabla comparativa honesta</h2>
     <p>
@@ -204,15 +213,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
           </tr>
         </thead>
         <tbody class="text-dark-200">
-          <tr class="border-b border-dark-700"><td class="p-2">Manus</td><td class="p-2">Gmail, Calendar, Notion, Slack, + apps con conector</td><td class="p-2">Sí (tareas limitadas)</td><td class="p-2">Agente que trabaja solo, freelance, multi-app</td><td class="p-2">Depende de la calidad de los conectores disponibles</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Manus</td><td class="p-2">Gmail, Calendar, Notion, Slack, + apps con conector</td><td class="p-2">Sí (300 créditos al día, tope de 1.500 al mes)</td><td class="p-2">Agente que trabaja solo, freelance, multi-app</td><td class="p-2">Depende de la calidad de los conectores disponibles</td></tr>
           <tr class="border-b border-dark-700"><td class="p-2">ChatGPT apps</td><td class="p-2">Gmail, Calendar, Drive, Notion, SharePoint, GitHub, HubSpot</td><td class="p-2">No confirmado (sí en Plus y superiores)</td><td class="p-2">Usuarios de ChatGPT Plus que ya viven ahí</td><td class="p-2">Crear eventos o páginas no está confirmado en todos los planes</td></tr>
-          <tr class="border-b border-dark-700"><td class="p-2">Claude MCP</td><td class="p-2">Cualquier app con servidor MCP (Notion, Gmail, HubSpot, Slack, +)</td><td class="p-2">Sí (con límites)</td><td class="p-2">Flexibilidad máxima, devs, equipos técnicos</td><td class="p-2">Configurar MCP propio requiere algo de pericia</td></tr>
+          <tr class="border-b border-dark-700"><td class="p-2">Claude</td><td class="p-2">Gmail, Calendar y Drive (oficiales) + cualquier app con servidor MCP</td><td class="p-2">Sí (con límites; un solo conector MCP propio)</td><td class="p-2">Flexibilidad máxima, devs, equipos técnicos</td><td class="p-2">Configurar MCP propio requiere algo de pericia</td></tr>
           <tr class="border-b border-dark-700"><td class="p-2">Gemini Workspace</td><td class="p-2">Gmail, Calendar, Drive, Docs, Sheets, Slides</td><td class="p-2">No (incluido en Workspace de pago)</td><td class="p-2">Empresas y profesionales en ecosistema Google</td><td class="p-2">Solo funciona bien con apps de Google</td></tr>
-          <tr><td class="p-2">Microsoft Copilot</td><td class="p-2">Outlook, Calendar, Teams, OneDrive</td><td class="p-2">No (solo M365 de pago)</td><td class="p-2">Empresas grandes con Microsoft 365</td><td class="p-2">30 USD/usuario/mes, caro para equipos pequeños</td></tr>
+          <tr><td class="p-2">Microsoft 365 Copilot</td><td class="p-2">Outlook, Teams, Word, Excel, PowerPoint</td><td class="p-2">Copilot Chat sin coste extra con Microsoft 365</td><td class="p-2">Empresas con Microsoft 365</td><td class="p-2">Completo: 21-30 USD/usuario/mes aparte</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="text-sm text-dark-300 mt-2">Precios y disponibilidad verificados en las páginas oficiales de cada proveedor en junio de 2026. Los planes cambian con cada release, consulta la web antes de comprar.</p>
+    <p class="text-sm text-dark-300 mt-2">Precios y disponibilidad consultados en las páginas oficiales de cada proveedor en noviembre de 2026 (ChatGPT, en octubre). Los planes cambian: consulta la web antes de comprar.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Matriz rápida: privacidad, dificultad y utilidad</h2>
     <p>
@@ -362,15 +371,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Fuentes verificadas</h2>
     <p>
-      Todos los datos de planes, funciones, precios y disponibilidad están extraídos de las páginas oficiales de cada producto, consultadas en junio de 2026; lo de ChatGPT se revisó de nuevo el 20 de octubre de 2026:
+      Todos los datos de planes, funciones, precios y disponibilidad están extraídos de las páginas oficiales de cada producto, consultadas el 20 de noviembre de 2026; lo de ChatGPT, el 20 de octubre de 2026:
     </p>
     <ul>
-      <li><strong>Manus</strong> — agente IA con conectores a Gmail, Calendar y Notion, ahora parte de Meta: <a href="https://manus.im/" class="text-brand-400 hover:text-brand-300">manus.im</a></li>
+      <li><strong>Manus</strong> — <a href="https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus" class="text-brand-400 hover:text-brand-300">planes y precios</a>, <a href="https://help.manus.im/en/articles/11711097-what-are-the-rules-for-credits-consumption-and-how-can-i-obtain-them" class="text-brand-400 hover:text-brand-300">tope de créditos gratis</a>, <a href="https://manus.im/docs/integrations/connectors" class="text-brand-400 hover:text-brand-300">conectores</a>, <a href="https://manus.im/blog/a-note-to-our-users" class="text-brand-400 hover:text-brand-300">compra por Meta y separación</a> y <a href="https://manus.im/blog/manus-resumes-independent-operations" class="text-brand-400 hover:text-brand-300">vuelta a empresa independiente</a></li>
       <li><strong>ChatGPT apps</strong> (consultado el 20 de octubre de 2026) — apps conectadas y menú Plugins: <a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt" class="text-brand-400 hover:text-brand-300">help.openai.com</a>; Gmail, Calendar y Contacts en Plus y Pro: <a href="https://help.openai.com/en/articles/6825453" class="text-brand-400 hover:text-brand-300">notas de versión</a>; escritura en calendarios en Business, Enterprise y Edu: <a href="https://help.openai.com/en/articles/11391654" class="text-brand-400 hover:text-brand-300">notas de Business</a>; tarjetas de aprobación y permisos: <a href="https://help.openai.com/en/articles/20001495" class="text-brand-400 hover:text-brand-300">help.openai.com</a>; Notion: <a href="https://help.openai.com/en/articles/12532955" class="text-brand-400 hover:text-brand-300">help.openai.com</a>; servidores MCP propios: <a href="https://help.openai.com/en/articles/12584461" class="text-brand-400 hover:text-brand-300">help.openai.com</a>; precio de Plus: <a href="https://help.openai.com/en/articles/6950777" class="text-brand-400 hover:text-brand-300">help.openai.com</a></li>
       <li><strong>Notion MCP</strong> — ChatGPT puede leer y escribir en páginas de Notion a través de MCP: <a href="https://www.notion.com/help/notion-mcp" class="text-brand-400 hover:text-brand-300">notion.com/help/notion-mcp</a></li>
-      <li><strong>Claude con MCP</strong> — anuncio oficial del Model Context Protocol como estándar abierto: <a href="https://www.anthropic.com/news/model-context-protocol" class="text-brand-400 hover:text-brand-300">anthropic.com/news/model-context-protocol</a></li>
-      <li><strong>Gemini en Google Workspace</strong> — funciones de IA en Gmail, Calendar, Drive, Docs, Sheets y Slides: <a href="https://workspace.google.com/solutions/ai/" class="text-brand-400 hover:text-brand-300">workspace.google.com/solutions/ai</a> y <a href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" class="text-brand-400 hover:text-brand-300">blog.google (marzo 2026)</a></li>
-      <li><strong>Microsoft 365 Copilot</strong> — funciones, planes y precios de Copilot en Outlook, Teams y OneDrive: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot" class="text-brand-400 hover:text-brand-300">microsoft.com/microsoft-365-copilot</a></li>
+      <li><strong>Claude</strong> — conectores de Gmail, Calendar y Drive: <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" class="text-brand-400 hover:text-brand-300">support.claude.com</a>; conectores MCP propios: <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" class="text-brand-400 hover:text-brand-300">support.claude.com</a>; precios: <a href="https://claude.com/pricing" class="text-brand-400 hover:text-brand-300">claude.com/pricing</a>; Claude Duet: <a href="https://support.claude.com/en/articles/17631495-get-started-with-claude-duet" class="text-brand-400 hover:text-brand-300">support.claude.com</a>; anuncio del Model Context Protocol: <a href="https://www.anthropic.com/news/model-context-protocol" class="text-brand-400 hover:text-brand-300">anthropic.com</a></li>
+      <li><strong>Gemini en Google Workspace</strong> — funciones de IA en Gmail, Calendar, Drive, Docs, Sheets y Slides: <a href="https://workspace.google.com/solutions/ai/" class="text-brand-400 hover:text-brand-300">workspace.google.com/solutions/ai</a>; planes: <a href="https://workspace.google.com/intl/es/pricing" class="text-brand-400 hover:text-brand-300">precios de Workspace</a>; Gemini con tu cuenta personal: <a href="https://support.google.com/gemini/answer/15229592" class="text-brand-400 hover:text-brand-300">ayuda de Gemini</a></li>
+      <li><strong>Microsoft 365 Copilot</strong> — funciones y Copilot Chat: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/enterprise" class="text-brand-400 hover:text-brand-300">microsoft.com</a>; precios: <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing" class="text-brand-400 hover:text-brand-300">microsoft.com/microsoft-365-copilot/pricing</a></li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conclusión</h2>
@@ -381,7 +390,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       La idea de fondo: la IA no te hace mejor profesional, te hace más rápido. La parte difícil sigue siendo decidir qué quieres esta semana, qué proyectos priorizar y qué compromisos mantener. Si no tienes claro eso, ninguna herramienta te va a salvar. Si lo tienes claro, te ahorras las tardes de domingo.
     </p>
     <p>
-      Si quieres profundizar más, te he preparado un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
+      Si quieres profundizar más, hay un PDF gratuito con 50 prompts y trucos de IA para el día a día: cubre productividad, escritura, código y aprendizaje. Lo tienes en <a href="/recursos/" class="text-brand-400 hover:text-brand-300">/recursos</a>.
     </p>
     <p>
       Y si antes de meterte con conectores quieres comparar las IAs de texto gratuitas que mejor funcionan en 2026, échale un vistazo al <a href="/blog/alternativas-gratis-chatgpt-2026/" class="text-brand-400 hover:text-brand-300">análisis de las 5 mejores alternativas a ChatGPT gratis</a> que publicamos hace una semana, o al <a href="/blog/claude-emails-sonar-humanos/" class="text-brand-400 hover:text-brand-300">setup de Claude para emails que suenan humanos</a> si quieres empezar por la parte de comunicación.
@@ -399,7 +408,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="/recursos/" class="text-brand-400 hover:text-brand-300">Recursos gratuitos de Decodifica</a>, para prompts y workflows copiables.</li>
     </ul>
     <p>
-      ¿Quieres que profundice en alguna de las cinco herramientas? ¿O que monte un tutorial específico de Claude con MCP paso a paso? Déjamelo en comentarios o escríbeme a <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
+      ¿Quieres más detalle de alguna de las cinco herramientas o un tutorial de Claude con MCP paso a paso? Escribe a Decodifica desde <a href="/contacto/" class="text-brand-400 hover:text-brand-300">contacto</a>.
     </p>
     <p>
       — Jordi
