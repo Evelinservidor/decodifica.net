@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-20",
+    "titulo": "¿Dónde acaba lo que le escribes a DeepSeek? Su propia política lo dice",
+    "serie": "corto",
+    "numero_serie": 1,
+    "resumen": "¿Dónde acaba lo que le escribes a DeepSeek? Su propia política lo dice",
+    "fuentes": [],
+    "guia": "/blog/deepseek-app-oficial-espanol/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/2573941840099128",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2qm52gjks2t"
+    }
+  },
+  {
     "fecha": "2026-11-19",
     "titulo": "¿PDF en otro idioma? Tradúcelo gratis",
     "serie": "gratis-y-util",
