@@ -167,7 +167,7 @@ const specs: ExpandedSpec[] = [
     summary: 'Agente general para investigar, organizar información y ejecutar tareas conectadas en varias etapas.',
     bestFor: 'Cuando una tarea necesita varios pasos y puedes revisar el plan, las fuentes y la salida.',
     avoidIf: 'Vas a conceder acceso amplio sin revisar permisos o esperas autonomía infalible.',
-    tags: ['agentes', 'investigación', 'automatización', 'conectores'], officialUrl: 'https://manus.im/', difficulty: 'Media',
+    tags: ['agentes', 'investigación', 'automatización', 'conectores'], officialUrl: 'https://manus.im/', difficulty: 'Media', platforms: ['Web', 'macOS', 'Windows', 'iPhone y iPad', 'Android'],
     idealFor: ['Investigaciones con entregable.', 'Tareas de varias etapas.', 'Prototipos de automatización supervisada.'],
     notFor: ['Credenciales innecesarias.', 'Acciones irreversibles.', 'Decisiones sin trazabilidad.'],
     workflow: ['Define entregable y límites.', 'Revisa el plan.', 'Concede el mínimo acceso.', 'Verifica fuentes y acciones.'],
