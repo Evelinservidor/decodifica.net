@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 19 de noviembre de 2026 (agente de los jueves).
+Última actualización: 20 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -263,3 +263,9 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   Google. Repaso: `docs/repaso-jueves/2026-11-19.md`.
   - Medir el 30-11 y el 07-12. Jueves 03-12: primera candidata, IA local sin internet.
   - Vigilar IA para presentaciones (posición 6,8 → 18,2 en una semana; Google no la lee desde el 31-07, no es por el título).
+- **20-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-20`, solo la nota `docs/novedades/2026-11-20.md`
+  (sin artículo: nada oficial, grande y dentro de los grupos del plan entre el 16-11 y el 20-11). Guion de reel del
+  dictado en directo de ChatGPT (18-11; todos los planes, en todo el mundo, sin el límite de 10 minutos) en
+  `docs/redes/2026-11-20.md`. Para el lunes (pilar del grupo E): nada oficial nuevo para apagar los resúmenes de IA de
+  Google ni Meta AI en WhatsApp; si se toca la app de escritorio en la guía de Claude, una línea del canal «Stable» o
+  «Latest» (17-11).
