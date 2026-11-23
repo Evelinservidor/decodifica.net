@@ -34,6 +34,14 @@ export const pilares: Pilar[] = [
     href: '/herramientas/generador-prompts/',
     color: 'naranja',
   },
+  {
+    grupo: 'Quitar la IA',
+    titulo: 'Qué IA se puede quitar de verdad',
+    texto: 'WhatsApp, Gmail, Google, Chrome y Android: qué se apaga y qué no.',
+    href: '/blog/como-quitar-la-ia/',
+    slug: 'como-quitar-la-ia',
+    color: 'noche',
+  },
 ];
 
 export const slugsPilar = new Set(pilares.flatMap((pilar) => (pilar.slug ? [pilar.slug] : [])));

@@ -33,3 +33,4 @@ Iconos descargados de la web oficial de cada herramienta con `scripts/imagenes/l
 - `claude.png`: https://claude.ai
 - `openai.png`: https://github.com/openai (avatar de la cuenta oficial de OpenAI en GitHub; openai.com y chatgpt.com bloquean la descarga automática)
 - `anythingllm.png`: https://anythingllm.com
+- `whatsapp.png`: https://www.whatsapp.com/
