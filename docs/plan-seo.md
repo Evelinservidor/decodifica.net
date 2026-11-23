@@ -75,9 +75,9 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
     Mejora de la semana: la guía de LM Studio (0.4.28, Bionic, API de Anthropic, preguntas frecuentes).
   - [ ] Qué ordenador hace falta para la IA local (memoria y tarjeta gráfica, con las cifras oficiales de cada modelo)
   - [ ] Chatear con tus PDF sin subirlos a internet (AnythingLLM; aquí se fusiona la ficha `/herramientas/anythingllm/`)
-  - [ ] Pasar audio a texto en tu ordenador (Whisper y similares). Nota (23-11-2026): Ollama ya tiene `lfm3-audio`
-    (transcribe en 18 idiomas, también en Windows y Linux desde la 0.40.13) y Qwen3-ASR tiene demo local
-    (`qwen-asr-demo`): hay material oficial para comparar opciones sin programar mucho.
+  - [ ] Pasar audio a texto en tu ordenador (Whisper y similares). Nota (23-11-2026): Qwen3-ASR tiene demo local
+    (`qwen-asr-demo`). `lfm3-audio` de Ollama dice transcribir en 18 idiomas, pero Ollama no explica aún cómo pasarle
+    audio: comprobarlo antes de escribir.
   - [ ] Modelos que funcionan bien en español en local (con datos publicados; nunca «lo hemos probado» sin prueba de Jordi)
   - [ ] Idea (26-10-2026): IA sin internet en el móvil (Google AI Edge Gallery, AnythingLLM Mobile). El autocompletado de
     Google en España y México sugiere «ia local android», «ia sin internet apk» e «ia sin internet para celular»; hoy es

@@ -4,7 +4,7 @@ import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 
 const title = "Qwen3-ASR: transcribir audio en español con marcas de tiempo";
-const description = "Qwen3-ASR transcribe audio en español con marcas por palabra: qué dice la documentación oficial, límites de la demo web y cómo evaluarlo antes de usarlo.";
+const description = "Qwen3-ASR pasa audio a texto en español y marca cuándo suena cada palabra: sus modelos, la demo oficial, cómo instalarlo y cómo comprobar si te sirve.";
 const pubDate = "2026-07-30";
 const modifiedDate = "2026-11-23";
 const readingTime = "5 min";
@@ -28,12 +28,11 @@ const pillarLabel = "Pilar 1: Apps web";
     "https://huggingface.co/Qwen/Qwen3-ASR-1.7B",
     "https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B",
     "https://huggingface.co/spaces/Qwen/Qwen3-ASR",
-    "https://ollama.com/library/lfm3-audio",
   ]}
 >
   <Articulo slug="2026-08-01-qwen3-asr-transcribe-espanol">
 
-    <p><strong>En resumen:</strong> Qwen3-ASR es una familia de modelos abiertos de Qwen (licencia Apache 2.0) que pasa audio a texto en 30 idiomas, entre ellos el español, y 22 dialectos del chino. Su compañero Qwen3-ForcedAligner-0.6B añade la marca de tiempo de cada palabra en audios de hasta 5 minutos, útil para subtítulos y edición. Se puede probar gratis en la demo oficial de Hugging Face (tu audio se sube a un servidor) o instalar en tu ordenador con el paquete de Python <code>qwen-asr</code>, que pide algo de soltura técnica.</p>
+    <p><strong>En resumen:</strong> Qwen3-ASR es una familia de modelos abiertos de Qwen (licencia Apache 2.0) que pasa audio a texto en 30 idiomas, entre ellos el español, y 22 dialectos del chino. Su compañero Qwen3-ForcedAligner-0.6B añade la marca de tiempo de cada palabra en audios de hasta 5 minutos, útil para subtítulos y edición. Se puede probar en la demo oficial de Hugging Face (tu audio se sube a un servidor) o instalar en tu ordenador con el paquete de Python <code>qwen-asr</code>, que pide algo de soltura técnica.</p>
 
     <p>Esta guía forma parte de nuestra <a href="/blog/ia-local-sin-internet/">guía de IA local en español</a>: qué programa elegir, qué ordenador hace falta y qué se puede hacer sin internet. Datos de la ficha oficial en Hugging Face y del anuncio de Qwen, comprobados el 23 de noviembre de 2026.</p>
 
@@ -55,7 +54,7 @@ const pillarLabel = "Pilar 1: Apps web";
     />
 
     <h2>Probarlo sin instalar nada: la demo oficial</h2>
-    <p>La demo está en el espacio oficial de Qwen en Hugging Face (<a href="https://huggingface.co/spaces/Qwen/Qwen3-ASR" target="_blank" rel="noopener noreferrer">huggingface.co/spaces/Qwen/Qwen3-ASR</a>). Subes un audio, dejas el idioma en automático y, si quieres las marcas por palabra, activas los <em>timestamps</em>. Es gratis, pero el archivo se procesa en un servidor, no en tu ordenador: no subas grabaciones con datos de otras personas sin su permiso.</p>
+    <p>La demo está en el espacio oficial de Qwen en Hugging Face (<a href="https://huggingface.co/spaces/Qwen/Qwen3-ASR" target="_blank" rel="noopener noreferrer">huggingface.co/spaces/Qwen/Qwen3-ASR</a>). Subes un audio, dejas el idioma en automático y, si quieres las marcas por palabra, activas los <em>timestamps</em>. El archivo se procesa en un servidor compartido de Hugging Face (ZeroGPU), no en tu ordenador: no subas grabaciones con datos de otras personas sin su permiso.</p>
 
     <FiguraArticulo
       src="/img/blog/2026-08-01-qwen3-asr-transcribe-espanol/demo-oficial-qwen3-asr.webp"
@@ -66,13 +65,12 @@ const pillarLabel = "Pilar 1: Apps web";
     />
 
     <h2>Usarlo en tu ordenador</h2>
-    <p>La ficha oficial explica dos caminos, los dos con Python:</p>
+    <p>La ficha oficial explica varias formas, todas con Python o Docker. Las dos más sencillas:</p>
     <ol>
       <li><strong>Instalar el paquete:</strong> <code>pip install -U qwen-asr</code>. Los pesos del modelo se descargan solos la primera vez que lo cargas.</li>
       <li><strong>Abrir una ventana en el navegador:</strong> el paquete trae <code>qwen-asr-demo</code>, que monta en tu equipo una interfaz parecida a la demo de Hugging Face (<code>qwen-asr-demo --help</code> enseña las opciones, también la de activar las marcas de tiempo).</li>
     </ol>
-    <p>Qwen recomienda una tarjeta gráfica y FlashAttention 2 para gastar menos memoria con audios largos. Para que vaya más rápido o transcriba en directo mientras hablas existe el modo vLLM (<code>pip install -U "qwen-asr[vllm]"</code>), pero en directo no da marcas de tiempo. También hay una imagen oficial de Docker.</p>
-    <p>Si no quieres tocar Python, <a href="/blog/ollama-que-es-como-usar/">Ollama</a> tiene otro modelo pequeño, <code>lfm3-audio</code> (de Liquid AI, no de Qwen), que según su ficha transcribe en 18 idiomas, español incluido, y funciona en Mac, Windows y Linux. Su ficha no habla de marcas de tiempo por palabra.</p>
+    <p>Qwen recomienda FlashAttention 2 para gastar menos memoria de la tarjeta gráfica con audios largos. Para que vaya más rápido o transcriba en directo mientras hablas existe el modo vLLM (<code>pip install -U "qwen-asr[vllm]"</code>), pero en directo no da marcas de tiempo. También hay una imagen oficial de Docker.</p>
 
     <h2>Cómo comprobar si la transcripción te sirve</h2>
     <p>Antes de confiarle algo largo, haz una prueba con un audio cuyo contenido conozcas:</p>
@@ -98,13 +96,12 @@ const pillarLabel = "Pilar 1: Apps web";
       <li><a href="https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B" target="_blank" rel="noopener noreferrer">Qwen3-ForcedAligner-0.6B</a>: marcas de tiempo en 11 idiomas y hasta 5 minutos.</li>
       <li><a href="https://qwen.ai/blog?id=qwen3asr" target="_blank" rel="noopener noreferrer">Anuncio de Qwen3-ASR</a>.</li>
       <li><a href="https://huggingface.co/spaces/Qwen/Qwen3-ASR" target="_blank" rel="noopener noreferrer">Demo oficial de Qwen3-ASR</a>.</li>
-      <li><a href="https://ollama.com/library/lfm3-audio" target="_blank" rel="noopener noreferrer">Ollama: lfm3-audio</a>: la alternativa sin Python.</li>
     </ul>
 
     <h2>Sigue leyendo</h2>
     <ul>
       <li><a href="/blog/ia-local-sin-internet/">IA local en español: cómo usar IA en tu PC sin internet</a>, la guía principal de este tema.</li>
-      <li><a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usar modelos de IA en local</a>, con modelos que leen en voz alta y transcriben.</li>
+      <li><a href="/blog/ollama-que-es-como-usar/">Ollama: qué es y cómo usar modelos de IA en local</a>, con modelos que leen textos en voz alta.</li>
       <li><a href="/blog/ia-resumir-reuniones-tareas-revisables/">Cómo convertir una reunión en tareas revisables con IA</a>, para llevar una transcripción a una lista de tareas.</li>
       <li><a href="/herramientas/ia-local-mi-ordenador/">¿Qué IA local puede mover tu ordenador?</a>, para saber qué modelos caben en tu equipo.</li>
     </ul>

@@ -153,13 +153,14 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Windows y Linux: lfm3-audio</h3>
-    <p>Si no tienes un Mac con chip Apple, la opción que da Ollama es <strong><code>lfm3-audio</code></strong>, un modelo pequeño de Liquid AI (2.000 millones de parámetros; ocupa de 1,7 a 2,1 GB). Según su ficha, entiende texto o audio y responde con texto, voz o las dos cosas, y <strong>transcribe, lee en voz alta y traduce en 18 idiomas, entre ellos el español</strong>. Funciona en Windows y Linux desde la versión 0.40.13 de Ollama. Se descarga con <code>ollama run lfm3-audio</code>.</p>
+    <p>Si no tienes un Mac con chip Apple, la opción que da Ollama es <strong><code>lfm3-audio</code></strong>, un modelo pequeño de Liquid AI (2.000 millones de parámetros; ocupa de 1,7 a 2,1 GB). Las notas de la versión 0.40.13 de Ollama dicen que sus modelos LFM3, «incluida la conversión de texto a voz de lfm3-audio», funcionan ya en Windows y Linux. La ficha del modelo dice que habla 18 idiomas, entre ellos el español. Se descarga con <code>ollama run lfm3-audio</code>.</p>
+    <p>Su ficha describe también que transcribe y traduce audio, pero la propia página de Ollama lo lista solo con entrada de texto y no explica cómo pasarle un archivo de audio: de momento, no cuentes con él para transcribir dentro de Ollama.</p>
     <p>Dos avisos de su propia ficha: no se recomienda para tareas complejas de varios pasos por su tamaño, y tiene su licencia propia (LFM Open License v1.0), distinta de la de Ollama. La guía de voz de Ollama, de momento, solo explica Phonon: con <code>lfm3-audio</code> no hay instrucciones oficiales paso a paso para guardar el audio.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Lo que conviene saber antes</h3>
     <ul class="space-y-2">
       <li><strong>Licencia:</strong> el modelo en español (y los de francés, alemán, portugués y el multilingüe) tiene licencia CC BY-NC 4.0, que <strong>no permite el uso comercial</strong>. Solo el modelo pequeño en inglés (<code>phonon</code>) es Apache 2.0. Si quieres usar la voz en algo con lo que ganas dinero, revisa antes la licencia.</li>
-      <li><strong>Phonon solo habla:</strong> convierte texto en voz; no entiende lo que le dices ni conversa. Para pasar audio a texto, <code>lfm3-audio</code> lo hace dentro de Ollama; fuera de Ollama están Whisper o <a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR</a>; las dos aparecen en <a href="/blog/ia-local-sin-internet/">la guía de IA local</a>.</li>
+      <li><strong>Phonon solo habla:</strong> convierte texto en voz; no entiende lo que le dices ni conversa. Para pasar audio a texto necesitas otra herramienta, como Whisper o <a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR</a>; las dos aparecen en <a href="/blog/ia-local-sin-internet/">la guía de IA local</a>.</li>
       <li><strong>Escribe para leer:</strong> según la documentación, convierte en palabras los precios, números, símbolos, correos y direcciones web antes de leerlos («4,59 $» se lee como cantidad), pero lee las horas y las fechas en cifras tal cual, así que mejor «24 de octubre» que «24/10». La ficha avisa de que los títulos con formato pueden leerse en voz alta.</li>
       <li><strong>Límite por petición:</strong> 4.096 caracteres por petición a la API; desde la terminal, <code>ollama run</code> parte solo los textos largos por párrafos y frases.</li>
     </ul>
@@ -222,7 +223,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
         },
         {
           q: "¿Ollama habla español?",
-          a: "Los modelos que descarga entienden y escriben en español (cada uno a su nivel). Para leer en voz alta hay un modelo de Phonon en español, solo para Mac con chip Apple, y lfm3-audio, que habla y transcribe en español también en Windows y Linux. La documentación oficial de Ollama está en inglés.",
+          a: "Los modelos que descarga entienden y escriben en español (cada uno a su nivel). Para leer en voz alta hay un modelo de Phonon en español, solo para Mac con chip Apple, y lfm3-audio, que lee en voz alta en español también en Windows y Linux. La documentación oficial de Ollama está en inglés.",
         },
       ]}
     />
@@ -242,7 +243,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://ollama.com/blog/speech-models" target="_blank" rel="noopener noreferrer">Speech models in Ollama (anuncio de Ollama, 24-10-2026)</a>: Phonon, idiomas, licencias, solo macOS por ahora y versión 0.40.11.</li>
       <li><a href="https://docs.ollama.com/capabilities/speech" target="_blank" rel="noopener noreferrer">Ollama Docs: Speech</a>: órdenes, voces, guardar en WAV, API y límites.</li>
       <li><a href="https://ollama.com/library/phonon" target="_blank" rel="noopener noreferrer">Ollama: phonon</a>: modelos por idioma, tamaños, memoria, licencias y requisito de Apple Silicon.</li>
-      <li><a href="https://ollama.com/library/lfm3-audio" target="_blank" rel="noopener noreferrer">Ollama: lfm3-audio</a> y <a href="https://github.com/ollama/ollama/releases/tag/v0.40.13" target="_blank" rel="noopener noreferrer">Ollama v0.40.13</a>: modelo de voz y transcripción en 18 idiomas, en Windows y Linux.</li>
+      <li><a href="https://ollama.com/library/lfm3-audio" target="_blank" rel="noopener noreferrer">Ollama: lfm3-audio</a> y <a href="https://github.com/ollama/ollama/releases/tag/v0.40.13" target="_blank" rel="noopener noreferrer">Ollama v0.40.13</a>: modelo de voz en 18 idiomas, con texto a voz en Windows y Linux desde la 0.40.13.</li>
       <li><a href="https://github.com/ollama/ollama/releases/tag/v0.40.11" target="_blank" rel="noopener noreferrer">Ollama v0.40.11 en GitHub</a>: versión del 24-10-2026 que añade la voz en macOS.</li>
       <li><a href="https://huggingface.co/gradium/phonon-40m-es" target="_blank" rel="noopener noreferrer">Gradium: phonon-40m Spanish</a> y <a href="https://huggingface.co/gradium/phonon-voices" target="_blank" rel="noopener noreferrer">catálogo de voces</a>: modelo en español, licencia y las 25 voces de España y México.</li>
       <li><a href="https://raw.githubusercontent.com/ollama/ollama/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Licencia de Ollama (MIT)</a>.</li>
