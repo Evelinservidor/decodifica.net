@@ -64,9 +64,9 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 ## Grupo B · IA en tu ordenador (local y privada) — CRECER
 - **Pilar:** ✔ `/blog/ia-local-sin-internet/` «IA local en español: cómo usar IA en tu PC sin internet» (qué programa
   elegir según tu ordenador, qué se puede hacer y qué no, privacidad). Publicado el 26-10-2026.
-- **Apoyos que ya hay:** ✔ `/blog/ollama-que-es-como-usar/` · ✔ `/blog/lm-studio-que-es-como-usar/` (revisada el 09-11-2026) ·
+- **Apoyos que ya hay:** ✔ `/blog/ollama-que-es-como-usar/` (revisada el 23-11-2026: lfm3-audio, preguntas frecuentes) · ✔ `/blog/lm-studio-que-es-como-usar/` (revisada el 09-11-2026) ·
   ✔ `/blog/ollama-o-lm-studio/` (09-11-2026) ·
-  ✔ `/blog/2026-07-25-ia-local-oculta-datos/` · ✔ `/blog/2026-08-01-qwen3-asr-transcribe-espanol/` ·
+  ✔ `/blog/2026-07-25-ia-local-oculta-datos/` · ✔ `/blog/2026-08-01-qwen3-asr-transcribe-espanol/` (reescrito el 23-11-2026) ·
   ✔ `/blog/odysseus-pewdiepie-ia-gratis/` · ✔ `/blog/2026-07-17-hermes-agent-chino/` (revisado el 26-10-2026)
 - **Cola:**
   - [x] ✔ (26-10-2026) Pilar: «IA local en español» → `/blog/ia-local-sin-internet/` (la ficha `/herramientas/anythingllm/` se puso al día el mismo día: título, datos y preguntas)
@@ -75,7 +75,9 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
     Mejora de la semana: la guía de LM Studio (0.4.28, Bionic, API de Anthropic, preguntas frecuentes).
   - [ ] Qué ordenador hace falta para la IA local (memoria y tarjeta gráfica, con las cifras oficiales de cada modelo)
   - [ ] Chatear con tus PDF sin subirlos a internet (AnythingLLM; aquí se fusiona la ficha `/herramientas/anythingllm/`)
-  - [ ] Pasar audio a texto en tu ordenador (Whisper y similares)
+  - [ ] Pasar audio a texto en tu ordenador (Whisper y similares). Nota (23-11-2026): Ollama ya tiene `lfm3-audio`
+    (transcribe en 18 idiomas, también en Windows y Linux desde la 0.40.13) y Qwen3-ASR tiene demo local
+    (`qwen-asr-demo`): hay material oficial para comparar opciones sin programar mucho.
   - [ ] Modelos que funcionan bien en español en local (con datos publicados; nunca «lo hemos probado» sin prueba de Jordi)
   - [ ] Idea (26-10-2026): IA sin internet en el móvil (Google AI Edge Gallery, AnythingLLM Mobile). El autocompletado de
     Google en España y México sugiere «ia local android», «ia sin internet apk» e «ia sin internet para celular»; hoy es
@@ -132,9 +134,10 @@ la propuesta del 18-10-2026 (Search Console, planificador de Google Ads y 28 bú
 - **Fuentes para el pilar:** `docs/grupo-e-fuentes.md` (15-11-2026): ayuda oficial por aplicación, punto de partida;
   comprobar cada fila el día de escribir.
 - **Cola:**
-  - [ ] Pilar: «Cómo quitar la IA de WhatsApp, Gmail, Google, Chrome y más: qué se puede apagar de verdad» (tabla de
-    arriba; Meta AI en WhatsApp/Instagram, Gemini en Gmail y Android, resúmenes y modo IA de Google, Chrome, Pinterest,
-    DuckDuckGo; solo lo que confirme la ayuda oficial, y lo que no se puede, decirlo)
+  - [x] ✔ (23-11-2026) Pilar → `/blog/como-quitar-la-ia/` («Cómo quitar la IA de WhatsApp, Google y Gmail»; tabla
+    se puede / solo reducir / no se puede, con la ayuda oficial de WhatsApp, Instagram, Gmail, Google, Chrome, Android,
+    Pinterest y DuckDuckGo). Añadido a «Empieza aquí» (`src/lib/pilares.ts`). La prueba de 4 semanas cuenta desde que
+    entre en Google.
   - [ ] Apoyo (solo si la prueba sale bien): Meta AI en WhatsApp: qué se puede quitar, ocultar o borrar (círculo, chats,
     grupos, WhatsApp Business)
   - [ ] Apoyo (ídem): Google sin IA: buscar sin resúmenes ni modo IA en el móvil y en el ordenador
