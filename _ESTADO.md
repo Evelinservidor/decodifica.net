@@ -269,3 +269,15 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   `docs/redes/2026-11-20.md`. Para el lunes (pilar del grupo E): nada oficial nuevo para apagar los resúmenes de IA de
   Google ni Meta AI en WhatsApp; si se toca la app de escritorio en la guía de Claude, una línea del canal «Stable» o
   «Latest» (17-11).
+- **23-11-2026 (semana 6 del plan SEO, grupos E y B):** rama `agente/2026-11-23`, pull request @@PR@@ (espera a Jordi).
+  Pilar del grupo E nuevo: `como-quitar-la-ia` («Cómo quitar la IA de WhatsApp, Google y Gmail»; tabla se puede / solo
+  reducir / no se puede con la ayuda oficial; portada y 3 imágenes), añadido a «Empieza aquí» (4 pilares; el bloque pasa
+  a 4 columnas / 2×2). Mejora del grupo B: guía de Ollama al día (lfm3-audio con voz en Windows y Linux, precios fuera de
+  horas punta, preguntas frecuentes). Artículo antiguo: Qwen3-ASR reescrito (título de 60 caracteres). Títulos: ninguno.
+  Informe: `docs/informes/2026-11-23.md`; redes: `docs/redes/2026-11-23.md`.
+  - **El informe de Google del lunes no se generó** (la tarea programada no arrancó; vigilada de 12:53 a 13:53 UTC): se
+    usaron los datos del 16-11. Si se lanza a mano (Actions › Weekly GSC Report › Run workflow), lo usa el jueves.
+  - Pendiente: medir el grupo E a las 4 semanas de entrar en Google; comprobar si `lfm3-audio` transcribe dentro de
+    Ollama antes de escribir «Pasar audio a texto en tu ordenador»; Ollama: controlador NVIDIA 570 y región de la nube
+    (puntos menores del juez). Semana que viene: grupo A («Límites del plan gratis de Claude») y mejora de la guía de
+    Claude; 07-12, herramienta del mes «Planes gratis de IA».
