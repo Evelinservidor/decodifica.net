@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-23",
+    "titulo": "¿Una página web sin saber programar? Sí, pero ojo con un botón",
+    "serie": "corto",
+    "numero_serie": 3,
+    "resumen": "¿Una página web sin saber programar? Sí, pero ojo con un botón",
+    "fuentes": [],
+    "guia": "/blog/claude-code-sin-saber-programar/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1148702364674031",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n2y4qukgwq2p"
+    }
+  },
+  {
     "fecha": "2026-11-21",
     "titulo": "¿Se te acabó ChatGPT gratis? Hay siete más, y no son iguales",
     "serie": "corto",
