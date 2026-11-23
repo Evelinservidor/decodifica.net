@@ -1,8 +1,8 @@
-# GSC Summary (90 days) — 2026-11-16
+# GSC Summary (90 days) — 2026-11-23
 
-_Current: 2026-08-16 → 2026-11-13  |  Previous: 2026-05-18 → 2026-08-15_
+_Current: 2026-08-23 → 2026-11-20  |  Previous: 2026-05-25 → 2026-08-22_
 Sites: 1 requested, 1 fetched OK
 
 | Site | Clicks | Clicks Δ | Impressions | Impr Δ | CTR | Avg Pos |
 |---|---|---|---|---|---|---|
-| sc-domain:decodifica.net | 47 | +45 | 5305 | +4659 | 0.9% | 8.8 |
+| sc-domain:decodifica.net | 63 | +60 | 6776 | +5932 | 0.9% | 9.4 |

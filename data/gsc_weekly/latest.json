@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16",
+  "fetched_at": "2026-11-23",
   "days": 7,
   "sites_requested": [
     "sc-domain:decodifica.net",
@@ -17,32 +17,839 @@
       "site": "sc-domain:decodifica.net",
       "period": {
         "current": {
-          "start": "2026-11-07",
-          "end": "2026-11-13"
+          "start": "2026-11-14",
+          "end": "2026-11-20"
         },
         "previous": {
-          "start": "2026-10-31",
-          "end": "2026-11-06"
+          "start": "2026-11-07",
+          "end": "2026-11-13"
         }
       },
       "totals": {
         "current": {
+          "clicks": 17,
+          "impressions": 1669,
+          "position_impressions_sum": 18870.0
+        },
+        "previous": {
           "clicks": 5,
           "impressions": 884,
           "position_impressions_sum": 9932.0
         },
-        "previous": {
-          "clicks": 9,
-          "impressions": 663,
-          "position_impressions_sum": 5626.0
-        },
-        "ctr_current": 0.5656108597285068,
-        "ctr_previous": 1.3574660633484164,
-        "avg_position_current": 11.235294117647058,
-        "avg_position_previous": 8.485671191553545
+        "ctr_current": 1.018573996405033,
+        "ctr_previous": 0.5656108597285068,
+        "avg_position_current": 11.306171360095865,
+        "avg_position_previous": 11.235294117647058
       },
       "queries": {
         "current": [
+          {
+            "query": "n8n es gratis?",
+            "clicks": 1,
+            "impressions": 8,
+            "ctr": 0.125,
+            "position": 9.125
+          },
+          {
+            "query": "ollama",
+            "clicks": 1,
+            "impressions": 25,
+            "ctr": 0.04,
+            "position": 31.48
+          },
+          {
+            "query": "skills claude",
+            "clicks": 1,
+            "impressions": 5,
+            "ctr": 0.2,
+            "position": 71.6
+          },
+          {
+            "query": ".claude/skills",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 77
+          },
+          {
+            "query": "ayudame con un promt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "bionic ia local",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "claude code como usar",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "claude guia skills",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 83.5
+          },
+          {
+            "query": "claude skills",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 75.25
+          },
+          {
+            "query": "claude skills free plan",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "codifica",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 31
+          },
+          {
+            "query": "como descargar skills para claude",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "como lm",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 13.5
+          },
+          {
+            "query": "como usar ia sin internet",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "como usar lm studio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "como usar n8n gratis",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10.5
+          },
+          {
+            "query": "creador de prompts gratis",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "query": "cual es el mejor modelo para separar la voz de canciones qwen3-asr 1.7b?",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 8.8
+          },
+          {
+            "query": "decodifica",
+            "clicks": 0,
+            "impressions": 53,
+            "ctr": 0,
+            "position": 5.867924528301887
+          },
+          {
+            "query": "descargar skills claude",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 12
+          },
+          {
+            "query": "elegir optimizador ia",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 99.75
+          },
+          {
+            "query": "es gratuito o de pago?",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "query": "generador de prompts",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "generador de prompts para ia gratis",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "query": "generador de prompts sin registrar",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "query": "gui ollama",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "query": "haz un prompt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "hazme un prompt",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "ia en local",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "query": "ia lm studio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "ia local",
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 82.89473684210526
+          },
+          {
+            "query": "ia local para pc",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 43
+          },
+          {
+            "query": "ia local pc",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "query": "ia local sin internet",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 7.5
+          },
+          {
+            "query": "ia offline para pc",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 7.25
+          },
+          {
+            "query": "ias que hacen presentaciones",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "instalar skill en claude code",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 67
+          },
+          {
+            "query": "inteligencia artificial local",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 80
+          },
+          {
+            "query": "l m",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 34
+          },
+          {
+            "query": "las skills de claude son gratis",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "lm",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 23.5
+          },
+          {
+            "query": "lm estudio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "lm estudio ia",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "lm stud",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 17
+          },
+          {
+            "query": "lm studio",
+            "clicks": 0,
+            "impressions": 50,
+            "ctr": 0,
+            "position": 13.84
+          },
+          {
+            "query": "lm studio clásico",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "lm studio desktop",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "lm studio en español",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9.5
+          },
+          {
+            "query": "lm studio español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "lm studio ia",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 5.5
+          },
+          {
+            "query": "lm studio ia local",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "query": "lm studio local",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9.5
+          },
+          {
+            "query": "lm studio que es",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "lm studio tutorial",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 21
+          },
+          {
+            "query": "lm sturio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "lmestudio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "query": "lmstudio",
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0,
+            "position": 15.75
+          },
+          {
+            "query": "lmstudio que es",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "lmstudio.ai",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6.5
+          },
+          {
+            "query": "lmstudio.ia",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 9.5
+          },
+          {
+            "query": "modelo de ia local",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 29
+          },
+          {
+            "query": "n8n",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 72.66666666666667
+          },
+          {
+            "query": "n8n ai gratis",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 8.571428571428571
+          },
+          {
+            "query": "n8n cloud gratis",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9.666666666666666
+          },
+          {
+            "query": "n8n crear cuenta",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "query": "n8n es de pago",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "query": "n8n es de pago?",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "n8n es gratis",
+            "clicks": 0,
+            "impressions": 50,
+            "ctr": 0,
+            "position": 11.12
+          },
+          {
+            "query": "n8n es gratis o se paga",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 9.176470588235293
+          },
+          {
+            "query": "n8n españa",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 62.857142857142854
+          },
+          {
+            "query": "n8n español",
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0,
+            "position": 79.8
+          },
+          {
+            "query": "n8n gratis",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "n8n gratis en español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "n8n kit digital",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 31
+          },
+          {
+            "query": "n8n precio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 87
+          },
+          {
+            "query": "n8n que es",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 73
+          },
+          {
+            "query": "n8n qué es",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 89
+          },
+          {
+            "query": "no me lo estas dando",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 5
+          },
+          {
+            "query": "no sale",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "query": "odysseus ai",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 22
+          },
+          {
+            "query": "odysseus pewdiepie",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 56
+          },
+          {
+            "query": "ollama en español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 22
+          },
+          {
+            "query": "ollama español",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 16
+          },
+          {
+            "query": "ollama modelos",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 25
+          },
+          {
+            "query": "ollama.",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 20
+          },
+          {
+            "query": "ollama/ollama",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 22
+          },
+          {
+            "query": "ollama:",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 26
+          },
+          {
+            "query": "ollana ia",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "para que sirve lm studio",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9.5
+          },
+          {
+            "query": "para windows",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 14
+          },
+          {
+            "query": "pewdiepie odysseus",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 10.333333333333334
+          },
+          {
+            "query": "pewdiepie odysseus how to install",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "query": "que es claude",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 3
+          },
+          {
+            "query": "que es llm studio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "que es lm",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "que es lm studio",
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 7.666666666666667
+          },
+          {
+            "query": "que es lm studio bionic",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "que es lm studio y para que sirve",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "query": "que es lm studio?",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "que es lmstudio",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "query": "que es n8n es gratis",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 8.5
+          },
+          {
+            "query": "que es ollama",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 24
+          },
+          {
+            "query": "que esten en español",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "qué es lm studio",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "query": "qué especificaciones necesita una laptop para trabajar con ia local",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 47
+          },
+          {
+            "query": "sin fuentes",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 2
+          },
+          {
+            "query": "skill claude",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 76
+          },
+          {
+            "query": "skill claude gratis",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 11
+          },
+          {
+            "query": "skills claude descargar",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 15
+          },
+          {
+            "query": "son gratuitos?",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "query": "tutorial de lm studio",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 22
+          },
+          {
+            "query": "usar ia local",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "query": "virality predictor claude",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 19
+          },
+          {
+            "query": "webs gratuitas",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 3
+          },
+          {
+            "query": "workflows reuniones",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          }
+        ],
+        "previous": [
           {
             "query": "claude skills",
             "clicks": 0,
@@ -456,231 +1263,104 @@
             "ctr": 0,
             "position": 22.5
           }
-        ],
-        "previous": [
-          {
-            "query": "ia offline para pc",
-            "clicks": 1,
-            "impressions": 2,
-            "ctr": 0.5,
-            "position": 9
-          },
-          {
-            "query": "claude skill",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 75
-          },
-          {
-            "query": "claude-skills",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 83
-          },
-          {
-            "query": "como usar ia localmente",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 11
-          },
-          {
-            "query": "creador de prompts",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 89
-          },
-          {
-            "query": "cómo hacerlo?",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 4
-          },
-          {
-            "query": "decodifica",
-            "clicks": 0,
-            "impressions": 55,
-            "ctr": 0,
-            "position": 5.8
-          },
-          {
-            "query": "decofica",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 4
-          },
-          {
-            "query": "descargar",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 11
-          },
-          {
-            "query": "descargar skills claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 10
-          },
-          {
-            "query": "es posible tener una ia en mi pc local que me consuma pocos recursos pero que me ayude con todo lo que tengo en la pc?",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "query": "fun claude skills",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 61
-          },
-          {
-            "query": "generador de prompt",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 26
-          },
-          {
-            "query": "generador de prompts",
-            "clicks": 0,
-            "impressions": 7,
-            "ctr": 0,
-            "position": 89
-          },
-          {
-            "query": "generador de prompts sin registrar",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 10.5
-          },
-          {
-            "query": "generadores de prompts gratis",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "query": "ia local",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 77.5
-          },
-          {
-            "query": "instalar skills claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 20
-          },
-          {
-            "query": "instalar skills en claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 11
-          },
-          {
-            "query": "inteligencia artificial local",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 77
-          },
-          {
-            "query": "las skills de claude son gratis",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 7.5
-          },
-          {
-            "query": "q significa",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 2
-          },
-          {
-            "query": "skill de claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 96
-          },
-          {
-            "query": "skills claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 14
-          },
-          {
-            "query": "skills claude gratis",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 21
-          },
-          {
-            "query": "skills descargar",
-            "clicks": 0,
-            "impressions": 5,
-            "ctr": 0,
-            "position": 3.2
-          },
-          {
-            "query": "skills gratuitas claude",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 10
-          }
         ]
       },
       "query_pages": [
         {
-          "query": "claude skills",
-          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 80
+          "query": "n8n es gratis?",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 1,
+          "impressions": 8,
+          "ctr": 0.125,
+          "position": 9.125
         },
         {
-          "query": "claude skills free",
+          "query": "ollama",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 1,
+          "impressions": 25,
+          "ctr": 0.04,
+          "position": 31.48
+        },
+        {
+          "query": "skills claude",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 1,
+          "impressions": 5,
+          "ctr": 0.2,
+          "position": 71.6
+        },
+        {
+          "query": ".claude/skills",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 3,
           "ctr": 0,
           "position": 77
         },
         {
-          "query": "claude skills on free plan",
+          "query": "ayudame con un promt",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "bionic ia local",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "query": "claude code como usar",
+          "page": "https://decodifica.net/blog/claude-code-sin-saber-programar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "query": "claude guia skills",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 83.5
+        },
+        {
+          "query": "claude skills",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 75.25
+        },
+        {
+          "query": "claude skills free plan",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 7
+          "position": 1
         },
         {
-          "query": "claude spanish",
-          "page": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
+          "query": "codifica",
+          "page": "https://decodifica.net/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 31
+        },
+        {
+          "query": "como descargar skills para claude",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 5
+          "position": 1
         },
         {
           "query": "como lm",
@@ -688,55 +1368,79 @@
           "clicks": 0,
           "impressions": 2,
           "ctr": 0,
-          "position": 10
+          "position": 13.5
         },
         {
-          "query": "como usar n8n gratis",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "query": "como usar ia sin internet",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
           "position": 11
         },
         {
-          "query": "como √© cagar ai",
-          "page": "https://decodifica.net/blog/",
+          "query": "como usar lm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 28
+          "position": 11
         },
         {
-          "query": "dame las instrucciones en español",
-          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "query": "como usar n8n gratis",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 10.5
+        },
+        {
+          "query": "creador de prompts gratis",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 10
+          "position": 17
+        },
+        {
+          "query": "cual es el mejor modelo para separar la voz de canciones qwen3-asr 1.7b?",
+          "page": "https://decodifica.net/blog/2026-08-01-qwen3-asr-transcribe-espanol/",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 8.8
         },
         {
           "query": "decodifica",
           "page": "https://decodifica.net/",
           "clicks": 0,
-          "impressions": 56,
+          "impressions": 44,
           "ctr": 0,
-          "position": 5.142857142857143
+          "position": 5.590909090909091
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/aviso-legal/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 36.5
+        },
+        {
+          "query": "decodifica",
+          "page": "https://decodifica.net/newsletter/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 77
         },
         {
           "query": "decodifica",
           "page": "https://decodifica.net/sobre/",
           "clicks": 0,
-          "impressions": 20,
+          "impressions": 26,
           "ctr": 0,
-          "position": 8
-        },
-        {
-          "query": "decofica",
-          "page": "https://decodifica.net/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 6
+          "position": 8.038461538461538
         },
         {
           "query": "descargar skills claude",
@@ -744,75 +1448,83 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 5
+          "position": 12
         },
         {
-          "query": "docs ollama",
-          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "query": "elegir optimizador ia",
+          "page": "https://decodifica.net/blog/como-elegir-herramienta-ia/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 99.75
+        },
+        {
+          "query": "es gratuito o de pago?",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 29
+          "position": 6
         },
         {
-          "query": "donde descargar skills de claude",
-          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "query": "generador de prompts",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "generador de prompts para ia gratis",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "query": "generador de prompts sin registrar",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
           "position": 13
         },
         {
-          "query": "es de paga o gratuito",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "query": "gui ollama",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 7
+          "position": 13
         },
         {
-          "query": "es gratis?",
-          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 10
-        },
-        {
-          "query": "generador de prompt",
+          "query": "haz un prompt",
           "page": "https://decodifica.net/herramientas/generador-prompts/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 69
+          "position": 9
         },
         {
-          "query": "generador de prompts",
-          "page": "https://decodifica.net/herramientas/generador-prompts/",
-          "clicks": 0,
-          "impressions": 7,
-          "ctr": 0,
-          "position": 62.42857142857143
-        },
-        {
-          "query": "generador de prompts gratis",
+          "query": "hazme un prompt",
           "page": "https://decodifica.net/herramientas/generador-prompts/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 8
+          "position": 11
         },
         {
-          "query": "generador de prompts sin registrar",
-          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "query": "ia en local",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
           "clicks": 0,
           "impressions": 2,
           "ctr": 0,
-          "position": 8
+          "position": 1
         },
         {
-          "query": "help deep scanner app",
-          "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+          "query": "ia lm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
@@ -822,145 +1534,337 @@
           "query": "ia local",
           "page": "https://decodifica.net/blog/ia-local-sin-internet/",
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 19,
           "ctr": 0,
-          "position": 89.33333333333333
+          "position": 82.89473684210526
+        },
+        {
+          "query": "ia local para pc",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 43
+        },
+        {
+          "query": "ia local pc",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "ia local sin internet",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 7.5
         },
         {
           "query": "ia offline para pc",
           "page": "https://decodifica.net/blog/ia-local-sin-internet/",
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 8,
           "ctr": 0,
-          "position": 8.5
+          "position": 7.25
+        },
+        {
+          "query": "ias que hacen presentaciones",
+          "page": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "query": "instalar skill en claude code",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 67
         },
         {
           "query": "inteligencia artificial local",
           "page": "https://decodifica.net/blog/ia-local-sin-internet/",
           "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 80
+        },
+        {
+          "query": "l m",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 81
+          "position": 34
         },
         {
           "query": "las skills de claude son gratis",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
-          "impressions": 6,
+          "impressions": 1,
           "ctr": 0,
-          "position": 6.166666666666667
+          "position": 8
+        },
+        {
+          "query": "lm",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 23.5
         },
         {
           "query": "lm estudio",
           "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "lm estudio ia",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
           "impressions": 2,
           "ctr": 0,
-          "position": 72.5
+          "position": 8
+        },
+        {
+          "query": "lm stud",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 17
         },
         {
           "query": "lm studio",
           "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 50,
           "ctr": 0,
-          "position": 19.4
+          "position": 13.84
         },
         {
-          "query": "lm studio que es",
+          "query": "lm studio clásico",
           "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 11
-        },
-        {
-          "query": "lm studio tutorial",
-          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 25
-        },
-        {
-          "query": "lm studios",
-          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "position": 6
-        },
-        {
-          "query": "lmstudio",
-          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 7
-        },
-        {
-          "query": "n8n",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
-          "clicks": 0,
-          "impressions": 7,
-          "ctr": 0,
-          "position": 74.14285714285714
-        },
-        {
-          "query": "n8n ai gratis",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
           "position": 10
         },
         {
-          "query": "n8n cloud gratis",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "query": "lm studio desktop",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
-          "ctr": 0,
-          "position": 10
-        },
-        {
-          "query": "n8n es de paga?",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 10.5
-        },
-        {
-          "query": "n8n es gratis",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
-          "clicks": 0,
-          "impressions": 14,
-          "ctr": 0,
-          "position": 9.928571428571429
-        },
-        {
-          "query": "n8n es gratis o se paga",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
-          "clicks": 0,
-          "impressions": 8,
           "ctr": 0,
           "position": 9
         },
         {
-          "query": "n8n es gratis?",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "query": "lm studio en español",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 2,
           "ctr": 0,
           "position": 9.5
         },
         {
+          "query": "lm studio español",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "lm studio ia",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 5.5
+        },
+        {
+          "query": "lm studio ia local",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 7
+        },
+        {
+          "query": "lm studio local",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 9.5
+        },
+        {
+          "query": "lm studio que es",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "lm studio tutorial",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 21
+        },
+        {
+          "query": "lm sturio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "lmestudio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 14
+        },
+        {
+          "query": "lmstudio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 15.75
+        },
+        {
+          "query": "lmstudio que es",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "lmstudio.ai",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 6.5
+        },
+        {
+          "query": "lmstudio.ia",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 9.5
+        },
+        {
+          "query": "modelo de ia local",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 29
+        },
+        {
+          "query": "n8n",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 72.66666666666667
+        },
+        {
+          "query": "n8n ai gratis",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 8.571428571428571
+        },
+        {
+          "query": "n8n cloud gratis",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9.666666666666666
+        },
+        {
+          "query": "n8n crear cuenta",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 13
+        },
+        {
+          "query": "n8n es de pago",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "query": "n8n es de pago?",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "query": "n8n es gratis",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 50,
+          "ctr": 0,
+          "position": 11.12
+        },
+        {
+          "query": "n8n es gratis o se paga",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 9.176470588235293
+        },
+        {
           "query": "n8n españa",
           "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
-          "impressions": 6,
+          "impressions": 7,
           "ctr": 0,
-          "position": 75.83333333333333
+          "position": 62.857142857142854
+        },
+        {
+          "query": "n8n español",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 79.8
+        },
+        {
+          "query": "n8n gratis",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9
         },
         {
           "query": "n8n gratis en español",
@@ -968,23 +1872,31 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 1
+          "position": 11
         },
         {
           "query": "n8n kit digital",
           "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 31
+        },
+        {
+          "query": "n8n precio",
+          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 18
+          "position": 87
         },
         {
           "query": "n8n que es",
           "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
-          "impressions": 5,
+          "impressions": 7,
           "ctr": 0,
-          "position": 66.6
+          "position": 73
         },
         {
           "query": "n8n qué es",
@@ -992,15 +1904,31 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 24
+          "position": 89
         },
         {
-          "query": "odysseus",
+          "query": "no me lo estas dando",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "query": "no sale",
+          "page": "https://decodifica.net/blog/claude-code-sin-saber-programar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "odysseus ai",
           "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
           "clicks": 0,
-          "impressions": 4,
+          "impressions": 3,
           "ctr": 0,
-          "position": 8.25
+          "position": 22
         },
         {
           "query": "odysseus pewdiepie",
@@ -1008,47 +1936,127 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 11
+          "position": 56
         },
         {
-          "query": "odyssey pewdiepie",
+          "query": "ollama en español",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "query": "ollama español",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 16
+        },
+        {
+          "query": "ollama modelos",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 25
+        },
+        {
+          "query": "ollama.",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 20
+        },
+        {
+          "query": "ollama/ollama",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "query": "ollama:",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 26
+        },
+        {
+          "query": "ollana ia",
+          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "query": "para que sirve lm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 9.5
+        },
+        {
+          "query": "para windows",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 14
+        },
+        {
+          "query": "pewdiepie odysseus",
+          "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 10.333333333333334
+        },
+        {
+          "query": "pewdiepie odysseus how to install",
           "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 49
+          "position": 7
         },
         {
-          "query": "ollama",
-          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
-          "clicks": 0,
-          "impressions": 7,
-          "ctr": 0,
-          "position": 50
-        },
-        {
-          "query": "ollama ia",
-          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "query": "que es claude",
+          "page": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 18
+          "position": 3
         },
         {
-          "query": "ollama que es",
-          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "query": "que es llm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 32
+          "position": 10
         },
         {
-          "query": "ollama.com",
-          "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+          "query": "que es lm",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 8
+          "position": 10
+        },
+        {
+          "query": "que es lm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 7.666666666666667
         },
         {
           "query": "que es lm studio bionic",
@@ -1056,83 +2064,542 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 8
+          "position": 9
         },
         {
           "query": "que es lm studio y para que sirve",
           "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
-          "position": 8
+          "position": 10
         },
         {
-          "query": "que es n8n",
-          "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+          "query": "que es lm studio?",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "query": "que es lmstudio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
           "impressions": 2,
           "ctr": 0,
-          "position": 92.5
+          "position": 8.5
         },
         {
           "query": "que es n8n es gratis",
           "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 4,
           "ctr": 0,
-          "position": 10
+          "position": 8.5
         },
         {
           "query": "que es ollama",
           "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 3,
           "ctr": 0,
-          "position": 25.5
+          "position": 24
+        },
+        {
+          "query": "que esten en español",
+          "page": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "qué es lm studio",
+          "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "qué especificaciones necesita una laptop para trabajar con ia local",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 47
+        },
+        {
+          "query": "sin fuentes",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "skill claude",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 76
         },
         {
           "query": "skill claude gratis",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0,
           "position": 11
         },
         {
-          "query": "skill gratis claude",
+          "query": "skills claude descargar",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
           "impressions": 1,
           "ctr": 0,
-          "position": 10
+          "position": 15
         },
         {
-          "query": "skills claude",
+          "query": "son gratuitos?",
           "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
-          "position": 82
+          "position": 8
         },
         {
           "query": "tutorial de lm studio",
           "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
           "ctr": 0,
-          "position": 20.666666666666668
+          "position": 22
+        },
+        {
+          "query": "usar ia local",
+          "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "virality predictor claude",
+          "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 19
+        },
+        {
+          "query": "webs gratuitas",
+          "page": "https://decodifica.net/herramientas/generador-prompts/",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
         },
         {
           "query": "workflows reuniones",
           "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0,
-          "position": 22.5
+          "position": 21
         }
       ],
       "pages": {
         "current": [
+          {
+            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
+            "clicks": 5,
+            "impressions": 368,
+            "ctr": 0.01358695652173913,
+            "position": 10.983695652173912
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-local-sin-internet/",
+            "clicks": 2,
+            "impressions": 247,
+            "ctr": 0.008097165991902834,
+            "position": 13.603238866396762
+          },
+          {
+            "page": "https://decodifica.net/blog/prompts-para-claude/",
+            "clicks": 2,
+            "impressions": 51,
+            "ctr": 0.0392156862745098,
+            "position": 5.7254901960784315
+          },
+          {
+            "page": "https://decodifica.net/herramientas/qwen-code/",
+            "clicks": 2,
+            "impressions": 40,
+            "ctr": 0.05,
+            "position": 6.05
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/",
+            "clicks": 1,
+            "impressions": 8,
+            "ctr": 0.125,
+            "position": 3.5
+          },
+          {
+            "page": "https://decodifica.net/blog/n8n-que-es-gratis/",
+            "clicks": 1,
+            "impressions": 207,
+            "ctr": 0.004830917874396135,
+            "position": 16.574879227053138
+          },
+          {
+            "page": "https://decodifica.net/blog/ollama-que-es-como-usar/",
+            "clicks": 1,
+            "impressions": 71,
+            "ctr": 0.014084507042253521,
+            "position": 19.014084507042252
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-documentos-pdf/",
+            "clicks": 1,
+            "impressions": 1,
+            "ctr": 1,
+            "position": 21
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm-vs-perplexity/",
+            "clicks": 1,
+            "impressions": 7,
+            "ctr": 0.14285714285714285,
+            "position": 3.142857142857143
+          },
+          {
+            "page": "https://decodifica.net/herramientas/notebooklm/",
+            "clicks": 1,
+            "impressions": 1,
+            "ctr": 1,
+            "position": 1
+          },
+          {
+            "page": "https://decodifica.net/",
+            "clicks": 0,
+            "impressions": 68,
+            "ctr": 0,
+            "position": 6.573529411764706
+          },
+          {
+            "page": "https://decodifica.net/aviso-legal/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 36.5
+          },
+          {
+            "page": "https://decodifica.net/blog/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-17-hermes-agent-chino/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 5.5
+          },
+          {
+            "page": "https://decodifica.net/blog/2026-08-01-qwen3-asr-transcribe-espanol/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 7.666666666666667
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-fable-5/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 9.333333333333334
+          },
+          {
+            "page": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/blog/chatgpt-work-archivos-a-entregables/",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 7.9
+          },
+          {
+            "page": "https://decodifica.net/blog/claude-code-sin-saber-programar/",
+            "clicks": 0,
+            "impressions": 57,
+            "ctr": 0,
+            "position": 5.649122807017544
+          },
+          {
+            "page": "https://decodifica.net/blog/claude-emails-sonar-humanos/",
+            "clicks": 0,
+            "impressions": 23,
+            "ctr": 0,
+            "position": 6.130434782608695
+          },
+          {
+            "page": "https://decodifica.net/blog/claude-ia-que-es-gratis/",
+            "clicks": 0,
+            "impressions": 44,
+            "ctr": 0,
+            "position": 7.090909090909091
+          },
+          {
+            "page": "https://decodifica.net/blog/como-elegir-herramienta-ia/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 46.55555555555556
+          },
+          {
+            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 7.555555555555555
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
+            "clicks": 0,
+            "impressions": 20,
+            "ctr": 0,
+            "position": 7.9
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 7.384615384615385
+          },
+          {
+            "page": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 21.5
+          },
+          {
+            "page": "https://decodifica.net/blog/lm-studio-que-es-como-usar/",
+            "clicks": 0,
+            "impressions": 267,
+            "ctr": 0,
+            "position": 10.423220973782772
+          },
+          {
+            "page": "https://decodifica.net/blog/odysseus-pewdiepie-ia-gratis/",
+            "clicks": 0,
+            "impressions": 16,
+            "ctr": 0,
+            "position": 14.625
+          },
+          {
+            "page": "https://decodifica.net/herramientas/anythingllm/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 4.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/beautiful-ai/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/casos/para-organizar-trabajo/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 43
+          },
+          {
+            "page": "https://decodifica.net/herramientas/chatgpt-vs-claude/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparador/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 7.333333333333333
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/kimi-vs-glm/",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 9
+          },
+          {
+            "page": "https://decodifica.net/herramientas/comparativas/microsoft-copilot-vs-gemini-workspace/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 6
+          },
+          {
+            "page": "https://decodifica.net/herramientas/elevenlabs/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/evaluador/",
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "page": "https://decodifica.net/herramientas/fathom/",
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0,
+            "position": 4.666666666666666
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 7.076923076923077
+          },
+          {
+            "page": "https://decodifica.net/herramientas/gemini/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "page": "https://decodifica.net/herramientas/generador-prompts/",
+            "clicks": 0,
+            "impressions": 40,
+            "ctr": 0,
+            "position": 7.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/glm/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/granola/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/hermes-agent/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/huggingchat/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "page": "https://decodifica.net/herramientas/ia-local-mi-ordenador/",
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0,
+            "position": 7.571428571428571
+          },
+          {
+            "page": "https://decodifica.net/herramientas/kimi/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 7
+          },
+          {
+            "page": "https://decodifica.net/herramientas/manus/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 7.5
+          },
+          {
+            "page": "https://decodifica.net/herramientas/plus-ai/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 8
+          },
+          {
+            "page": "https://decodifica.net/herramientas/preflight-datos/",
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0,
+            "position": 1
+          },
+          {
+            "page": "https://decodifica.net/lead-magnets/claude-skills-desde-cero.pdf",
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0,
+            "position": 13
+          },
+          {
+            "page": "https://decodifica.net/newsletter/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 77
+          },
+          {
+            "page": "https://decodifica.net/sobre/",
+            "clicks": 0,
+            "impressions": 29,
+            "ctr": 0,
+            "position": 7.862068965517241
+          },
+          {
+            "page": "https://decodifica.net/workflows/reunion-a-decisiones-y-tareas/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0,
+            "position": 21
+          }
+        ],
+        "previous": [
           {
             "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
             "clicks": 3,
@@ -1504,416 +2971,113 @@
             "ctr": 0,
             "position": 8
           }
-        ],
-        "previous": [
-          {
-            "page": "https://decodifica.net/blog/ia-local-sin-internet/",
-            "clicks": 4,
-            "impressions": 178,
-            "ctr": 0.02247191011235955,
-            "position": 6.977528089887641
-          },
-          {
-            "page": "https://decodifica.net/blog/claude-skills-1000-gratis/",
-            "clicks": 2,
-            "impressions": 262,
-            "ctr": 0.007633587786259542,
-            "position": 8.240458015267176
-          },
-          {
-            "page": "https://decodifica.net/herramientas/generador-prompts/",
-            "clicks": 2,
-            "impressions": 22,
-            "ctr": 0.09090909090909091,
-            "position": 37.90909090909091
-          },
-          {
-            "page": "https://decodifica.net/lead-magnets/claude-skills-desde-cero.pdf",
-            "clicks": 1,
-            "impressions": 4,
-            "ctr": 0.25,
-            "position": 36
-          },
-          {
-            "page": "https://decodifica.net/",
-            "clicks": 0,
-            "impressions": 59,
-            "ctr": 0,
-            "position": 4.186440677966102
-          },
-          {
-            "page": "https://decodifica.net/aviso-legal/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 10.5
-          },
-          {
-            "page": "https://decodifica.net/blog/",
-            "clicks": 0,
-            "impressions": 6,
-            "ctr": 0,
-            "position": 3.3333333333333335
-          },
-          {
-            "page": "https://decodifica.net/blog/2026-07-16-prompts-secretos-web/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 6
-          },
-          {
-            "page": "https://decodifica.net/blog/2026-07-17-hermes-agent-chino/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 7
-          },
-          {
-            "page": "https://decodifica.net/blog/2026-07-26-arena-ai-modelos-gratis/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 4.333333333333334
-          },
-          {
-            "page": "https://decodifica.net/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/blog/2026-08-05-kimi-k3-investigacion-visual/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 4
-          },
-          {
-            "page": "https://decodifica.net/blog/alternativas-fable-5/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 3.5
-          },
-          {
-            "page": "https://decodifica.net/blog/alternativas-gratis-chatgpt-2026/",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 2.5
-          },
-          {
-            "page": "https://decodifica.net/blog/deepseek-app-oficial-espanol/",
-            "clicks": 0,
-            "impressions": 24,
-            "ctr": 0,
-            "position": 8.833333333333332
-          },
-          {
-            "page": "https://decodifica.net/blog/ia-crea-presentaciones-completas/",
-            "clicks": 0,
-            "impressions": 15,
-            "ctr": 0,
-            "position": 6.8
-          },
-          {
-            "page": "https://decodifica.net/blog/ia-mejora-excel/",
-            "clicks": 0,
-            "impressions": 5,
-            "ctr": 0,
-            "position": 5.6
-          },
-          {
-            "page": "https://decodifica.net/blog/ia-organiza-pendientes/",
-            "clicks": 0,
-            "impressions": 16,
-            "ctr": 0,
-            "position": 8.1875
-          },
-          {
-            "page": "https://decodifica.net/blog/ia-resumir-reuniones-tareas-revisables/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 3
-          },
-          {
-            "page": "https://decodifica.net/blog/notebooklm-google-openai/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 6.5
-          },
-          {
-            "page": "https://decodifica.net/contacto/",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/cookies/",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 7
-          },
-          {
-            "page": "https://decodifica.net/empieza/",
-            "clicks": 0,
-            "impressions": 5,
-            "ctr": 0,
-            "position": 5.8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/alternativas-elevenlabs/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/anythingllm/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 10
-          },
-          {
-            "page": "https://decodifica.net/herramientas/casos/para-excel-hojas-calculo/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/claude/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "page": "https://decodifica.net/herramientas/comparador/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 7.666666666666667
-          },
-          {
-            "page": "https://decodifica.net/herramientas/comparativas/kimi-vs-glm/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "page": "https://decodifica.net/herramientas/cursor/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 10
-          },
-          {
-            "page": "https://decodifica.net/herramientas/gamma-vs-canva-ai/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/gamma/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/gemini/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/glm/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 5.5
-          },
-          {
-            "page": "https://decodifica.net/herramientas/granola/",
-            "clicks": 0,
-            "impressions": 2,
-            "ctr": 0,
-            "position": 9.5
-          },
-          {
-            "page": "https://decodifica.net/herramientas/hermes-agent/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 10
-          },
-          {
-            "page": "https://decodifica.net/herramientas/huggingchat/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 8
-          },
-          {
-            "page": "https://decodifica.net/herramientas/kimi/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "page": "https://decodifica.net/herramientas/microsoft-copilot/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "page": "https://decodifica.net/herramientas/mistral-le-chat/",
-            "clicks": 0,
-            "impressions": 5,
-            "ctr": 0,
-            "position": 4.2
-          },
-          {
-            "page": "https://decodifica.net/herramientas/motion/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 9
-          },
-          {
-            "page": "https://decodifica.net/herramientas/notebooklm-vs-perplexity/",
-            "clicks": 0,
-            "impressions": 3,
-            "ctr": 0,
-            "position": 6.333333333333333
-          },
-          {
-            "page": "https://decodifica.net/herramientas/plus-ai/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 6
-          },
-          {
-            "page": "https://decodifica.net/herramientas/slidesai/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 7
-          },
-          {
-            "page": "https://decodifica.net/newsletter/",
-            "clicks": 0,
-            "impressions": 4,
-            "ctr": 0,
-            "position": 4
-          },
-          {
-            "page": "https://decodifica.net/privacidad/",
-            "clicks": 0,
-            "impressions": 5,
-            "ctr": 0,
-            "position": 5.2
-          },
-          {
-            "page": "https://decodifica.net/sobre/",
-            "clicks": 0,
-            "impressions": 44,
-            "ctr": 0,
-            "position": 6.818181818181818
-          },
-          {
-            "page": "https://decodifica.net/workflows/verificar-formula-hoja-calculo/",
-            "clicks": 0,
-            "impressions": 1,
-            "ctr": 0,
-            "position": 10
-          }
         ]
       },
       "countries": [
         {
           "country": "esp",
-          "clicks": 2,
-          "impressions": 236
+          "clicks": 4,
+          "impressions": 531
+        },
+        {
+          "country": "mex",
+          "clicks": 4,
+          "impressions": 209
+        },
+        {
+          "country": "bol",
+          "clicks": 3,
+          "impressions": 33
         },
         {
           "country": "col",
           "clicks": 1,
-          "impressions": 71
+          "impressions": 136
         },
         {
           "country": "cub",
           "clicks": 1,
-          "impressions": 21
+          "impressions": 30
         },
         {
-          "country": "mex",
+          "country": "ecu",
           "clicks": 1,
-          "impressions": 135
+          "impressions": 76
+        },
+        {
+          "country": "gtm",
+          "clicks": 1,
+          "impressions": 19
+        },
+        {
+          "country": "per",
+          "clicks": 1,
+          "impressions": 147
+        },
+        {
+          "country": "ven",
+          "clicks": 1,
+          "impressions": 49
         },
         {
           "country": "and",
           "clicks": 0,
-          "impressions": 1
+          "impressions": 4
         },
         {
           "country": "arg",
           "clicks": 0,
-          "impressions": 46
+          "impressions": 100
         },
         {
-          "country": "bgd",
+          "country": "aut",
           "clicks": 0,
-          "impressions": 2
+          "impressions": 1
         },
         {
-          "country": "bol",
+          "country": "bel",
           "clicks": 0,
-          "impressions": 16
+          "impressions": 1
+        },
+        {
+          "country": "bgr",
+          "clicks": 0,
+          "impressions": 1
         },
         {
           "country": "bra",
+          "clicks": 0,
+          "impressions": 4
+        },
+        {
+          "country": "btn",
           "clicks": 0,
           "impressions": 1
         },
         {
           "country": "can",
           "clicks": 0,
-          "impressions": 2
+          "impressions": 3
         },
         {
           "country": "che",
           "clicks": 0,
-          "impressions": 2
+          "impressions": 4
         },
         {
           "country": "chl",
           "clicks": 0,
-          "impressions": 45
+          "impressions": 116
         },
         {
-          "country": "chn",
+          "country": "civ",
           "clicks": 0,
           "impressions": 1
         },
         {
           "country": "cri",
           "clicks": 0,
-          "impressions": 7
+          "impressions": 17
         },
         {
           "country": "deu",
@@ -1923,17 +3087,12 @@
         {
           "country": "dom",
           "clicks": 0,
-          "impressions": 23
-        },
-        {
-          "country": "ecu",
-          "clicks": 0,
-          "impressions": 41
+          "impressions": 36
         },
         {
           "country": "fra",
           "clicks": 0,
-          "impressions": 3
+          "impressions": 1
         },
         {
           "country": "gbr",
@@ -1941,29 +3100,34 @@
           "impressions": 1
         },
         {
-          "country": "gtm",
+          "country": "guy",
           "clicks": 0,
-          "impressions": 14
+          "impressions": 1
+        },
+        {
+          "country": "hnd",
+          "clicks": 0,
+          "impressions": 9
+        },
+        {
+          "country": "hrv",
+          "clicks": 0,
+          "impressions": 1
+        },
+        {
+          "country": "hun",
+          "clicks": 0,
+          "impressions": 1
         },
         {
           "country": "idn",
           "clicks": 0,
-          "impressions": 1
+          "impressions": 4
         },
         {
           "country": "ind",
           "clicks": 0,
-          "impressions": 1
-        },
-        {
-          "country": "irl",
-          "clicks": 0,
-          "impressions": 1
-        },
-        {
-          "country": "irn",
-          "clicks": 0,
-          "impressions": 1
+          "impressions": 4
         },
         {
           "country": "ita",
@@ -1971,17 +3135,12 @@
           "impressions": 2
         },
         {
-          "country": "kor",
+          "country": "jpn",
           "clicks": 0,
-          "impressions": 1
+          "impressions": 2
         },
         {
-          "country": "mar",
-          "clicks": 0,
-          "impressions": 3
-        },
-        {
-          "country": "mys",
+          "country": "ken",
           "clicks": 0,
           "impressions": 1
         },
@@ -1993,32 +3152,42 @@
         {
           "country": "nld",
           "clicks": 0,
-          "impressions": 1
+          "impressions": 3
         },
         {
-          "country": "npl",
+          "country": "nor",
           "clicks": 0,
           "impressions": 1
         },
         {
           "country": "pan",
           "clicks": 0,
-          "impressions": 6
+          "impressions": 22
         },
         {
-          "country": "per",
+          "country": "pol",
           "clicks": 0,
-          "impressions": 92
+          "impressions": 1
         },
         {
           "country": "pri",
+          "clicks": 0,
+          "impressions": 5
+        },
+        {
+          "country": "prt",
           "clicks": 0,
           "impressions": 3
         },
         {
           "country": "pry",
           "clicks": 0,
-          "impressions": 5
+          "impressions": 16
+        },
+        {
+          "country": "rou",
+          "clicks": 0,
+          "impressions": 1
         },
         {
           "country": "rus",
@@ -2033,12 +3202,7 @@
         {
           "country": "slv",
           "clicks": 0,
-          "impressions": 8
-        },
-        {
-          "country": "swe",
-          "clicks": 0,
-          "impressions": 1
+          "impressions": 7
         },
         {
           "country": "tur",
@@ -2046,80 +3210,90 @@
           "impressions": 1
         },
         {
+          "country": "ukr",
+          "clicks": 0,
+          "impressions": 2
+        },
+        {
           "country": "ury",
           "clicks": 0,
-          "impressions": 7
+          "impressions": 13
         },
         {
           "country": "usa",
           "clicks": 0,
-          "impressions": 21
+          "impressions": 33
         },
         {
-          "country": "ven",
+          "country": "vnm",
           "clicks": 0,
-          "impressions": 46
+          "impressions": 1
+        },
+        {
+          "country": "zaf",
+          "clicks": 0,
+          "impressions": 1
         }
       ],
       "devices": [
         {
           "device": "DESKTOP",
-          "clicks": 4,
-          "impressions": 569
+          "clicks": 13,
+          "impressions": 1166
         },
         {
           "device": "MOBILE",
-          "clicks": 1,
-          "impressions": 303
+          "clicks": 4,
+          "impressions": 495
         },
         {
           "device": "TABLET",
           "clicks": 0,
-          "impressions": 12
+          "impressions": 8
         }
       ],
       "daily": [
         {
-          "date": "2026-11-07",
-          "clicks": 0,
-          "impressions": 68,
-          "position": 11.602941176470589
+          "date": "2026-11-14",
+          "clicks": 3,
+          "impressions": 171,
+          "position": 16.619883040935672
         },
         {
-          "date": "2026-11-08",
-          "clicks": 1,
-          "impressions": 89,
-          "position": 10.202247191011235
-        },
-        {
-          "date": "2026-11-09",
-          "clicks": 0,
-          "impressions": 108,
-          "position": 6.435185185185185
-        },
-        {
-          "date": "2026-11-10",
-          "clicks": 0,
-          "impressions": 155,
-          "position": 7.980645161290322
-        },
-        {
-          "date": "2026-11-11",
+          "date": "2026-11-15",
           "clicks": 2,
-          "impressions": 146,
-          "position": 12.691780821917808
+          "impressions": 150,
+          "position": 14.84
         },
         {
-          "date": "2026-11-12",
+          "date": "2026-11-16",
           "clicks": 1,
-          "impressions": 163,
-          "position": 11.104294478527608
+          "impressions": 181,
+          "position": 11.602209944751381
         },
         {
-          "date": "2026-11-13",
+          "date": "2026-11-17",
+          "clicks": 2,
+          "impressions": 252,
+          "position": 11
+        },
+        {
+          "date": "2026-11-18",
           "clicks": 1,
-          "impressions": 155,
-          "position": 17.032258064516128
+          "impressions": 270,
+          "position": 10.12962962962963
+        },
+        {
+          "date": "2026-11-19",
+          "clicks": 2,
+          "impressions": 307,
+          "position": 9.436482084690553
+        },
+        {
+          "date": "2026-11-20",
+          "clicks": 6,
+          "impressions": 338,
+          "position": 9.757396449704142
         }
       ]
     },
@@ -2136,12 +3310,12 @@
       "site": "https://jc-automation-n8n.blogspot.com/",
       "period": {
         "current": {
-          "start": "2026-11-07",
-          "end": "2026-11-13"
+          "start": "2026-11-14",
+          "end": "2026-11-20"
         },
         "previous": {
-          "start": "2026-10-31",
-          "end": "2026-11-06"
+          "start": "2026-11-07",
+          "end": "2026-11-13"
         }
       },
       "totals": {
@@ -2173,43 +3347,43 @@
       "devices": [],
       "daily": [
         {
-          "date": "2026-11-07",
+          "date": "2026-11-14",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-08",
+          "date": "2026-11-15",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-09",
+          "date": "2026-11-16",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-10",
+          "date": "2026-11-17",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-11",
+          "date": "2026-11-18",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-12",
+          "date": "2026-11-19",
           "clicks": 0,
           "impressions": 0,
           "position": 0
         },
         {
-          "date": "2026-11-13",
+          "date": "2026-11-20",
           "clicks": 0,
           "impressions": 0,
           "position": 0
