@@ -269,7 +269,7 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
   `docs/redes/2026-11-20.md`. Para el lunes (pilar del grupo E): nada oficial nuevo para apagar los resúmenes de IA de
   Google ni Meta AI en WhatsApp; si se toca la app de escritorio en la guía de Claude, una línea del canal «Stable» o
   «Latest» (17-11).
-- **23-11-2026 (semana 6 del plan SEO, grupos E y B):** rama `agente/2026-11-23`, pull request @@PR@@ (espera a Jordi).
+- **23-11-2026 (semana 6 del plan SEO, grupos E y B):** rama `agente/2026-11-23`, pull request #66 (espera a Jordi).
   Pilar del grupo E nuevo: `como-quitar-la-ia` («Cómo quitar la IA de WhatsApp, Google y Gmail»; tabla se puede / solo
   reducir / no se puede con la ayuda oficial; portada y 3 imágenes), añadido a «Empieza aquí» (4 pilares; el bloque pasa
   a 4 columnas / 2×2). Mejora del grupo B: guía de Ollama al día (lfm3-audio con voz en Windows y Linux, precios fuera de
