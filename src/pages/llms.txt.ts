@@ -48,7 +48,7 @@ export const GET: APIRoute = () => {
     '',
     link('Quiénes somos y cómo trabajamos', '/sobre/', 'quién está detrás, cómo se comprueban los datos y cómo pedir una corrección.'),
     link('Contacto', '/contacto/', `correcciones y consultas: ${siteConfig.author.publicEmailLabel}.`),
-    link('Newsletter', '/newsletter/', 'resumen semanal de guías y herramientas.'),
+    link('Newsletter', '/newsletter/', 'resumen de guías y herramientas, sin fecha fija.'),
     '',
     '## Optional',
     '',
