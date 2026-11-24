@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-24",
+    "titulo": "¿Pegas tus facturas en ChatGPT? Tápale esto antes",
+    "serie": "corto",
+    "numero_serie": 4,
+    "resumen": "¿Pegas tus facturas en ChatGPT? Tápale esto antes",
+    "fuentes": [],
+    "guia": "/blog/2026-07-25-ia-local-oculta-datos/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1711563523922422",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n32n753om52l"
+    }
+  },
+  {
     "fecha": "2026-11-23",
     "titulo": "¿Una página web sin saber programar? Sí, pero ojo con un botón",
     "serie": "corto",
