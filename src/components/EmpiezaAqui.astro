@@ -30,7 +30,13 @@ const { track } = Astro.props;
 
   @media (min-width: 760px) {
     .pilares {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .pilares {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 

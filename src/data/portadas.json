@@ -410,5 +410,16 @@
     "etiqueta": "Primeros pasos",
     "fondo": "azul",
     "alt": "Logo de Claude, la IA de Anthropic, en una ficha sobre fondo azul"
+  },
+  "como-quitar-la-ia": {
+    "plantilla": "herramienta",
+    "logos": [
+      "whatsapp",
+      "gemini"
+    ],
+    "gancho": "Qué IA se *apaga* de verdad",
+    "etiqueta": "Ayuda oficial",
+    "fondo": "noche",
+    "alt": "Logos de WhatsApp y Gemini sobre fondo oscuro: guía de qué IA se puede quitar en WhatsApp, Gmail, Google y Chrome"
   }
 }

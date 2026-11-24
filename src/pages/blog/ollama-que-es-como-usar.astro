@@ -3,11 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Articulo from '../../components/Articulo.astro';
 import FiguraArticulo from '../../components/FiguraArticulo.astro';
 import Caja from '../../components/Caja.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
 const title = "Ollama: qué es y cómo usar modelos de IA en local";
 const description = "Qué es Ollama, qué ordenador necesitas, las órdenes básicas, cómo hacer que lea textos en voz alta en español, precios de la nube y diferencias con LM Studio.";
 const pubDate = "2026-10-12";
-const modifiedDate = "2026-10-27";
+const modifiedDate = "2026-11-23";
 const readingTime = "10 min";
 const tema = "local";
 const tags = ["ollama", "ia local", "modelos abiertos", "lm studio", "gemma 4", "ollama voz", "phonon", "texto a voz"];
@@ -39,6 +40,8 @@ const pillarLabel = "Pilar 2: Tips productividad";
     "https://ollama.com/blog/speech-models",
     "https://docs.ollama.com/capabilities/speech",
     "https://ollama.com/library/phonon",
+    "https://ollama.com/library/lfm3-audio",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.13",
     "https://github.com/ollama/ollama/releases/tag/v0.40.11",
     "https://huggingface.co/gradium/phonon-40m-es",
     "https://huggingface.co/gradium/phonon-voices",
@@ -49,15 +52,11 @@ const pillarLabel = "Pilar 2: Tips productividad";
 >
   <Articulo slug="ollama-que-es-como-usar">
 
-    <p><strong>En resumen:</strong> Ollama es un programa gratuito y de código abierto (licencia MIT) para Mac, Windows y Linux que descarga modelos de IA abiertos, como Gemma, Qwen o DeepSeek, y los ejecuta en tu ordenador. Se maneja con órdenes cortas como <code>ollama run gemma4</code>, se conecta con otras aplicaciones y agentes de programación y, si tu equipo no da para más, ofrece también modelos en su propia nube. Desde el 24 de octubre de 2026 también lee textos en voz alta, con un modelo en español, pero de momento solo en los Mac con chip Apple.</p>
+    <p><strong>En resumen:</strong> Ollama es un programa gratuito y de código abierto (licencia MIT) para Mac, Windows y Linux que descarga modelos de IA abiertos, como Gemma, Qwen o DeepSeek, y los ejecuta en tu ordenador. Se maneja con órdenes cortas como <code>ollama run gemma4</code>, se conecta con otras aplicaciones y agentes de programación y, si tu equipo no da para más, ofrece también modelos en su propia nube. También puede leer textos en voz alta en español: con Phonon, solo en los Mac con chip Apple; con el modelo <code>lfm3-audio</code>, también en Windows y Linux.</p>
 
     <p>Esta guía forma parte de nuestra <a href="/blog/ia-local-sin-internet/" class="text-brand-400 hover:text-brand-300">guía de IA local en español</a>: qué programa elegir, qué ordenador hace falta y qué se puede hacer sin internet.</p>
 
-    <p>Los datos de esta guía salen de la documentación oficial de Ollama, su página de precios y su licencia, consultadas el 12 de octubre de 2026 y comprobadas de nuevo el 27 de octubre de 2026.</p>
-
-    <Caja tipo="nota" titulo="Novedad del 24 de octubre de 2026">
-      <p>Ollama ya convierte texto en voz con el modelo Phonon, que tiene versión en español. Funciona en Mac con chip Apple; Windows y Linux, «pronto», sin fecha. Te explicamos cómo usarlo en <a href="#leer-en-voz-alta">Ollama ya lee textos en voz alta</a>.</p>
-    </Caja>
+    <p>Los datos de esta guía salen de la documentación oficial de Ollama, su página de precios y su licencia, consultadas el 12 de octubre de 2026 y comprobadas de nuevo el 23 de noviembre de 2026.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Qué es Ollama y para qué sirve</h2>
     <p>Ollama hace dos cosas: descarga y ejecuta modelos de IA en tu equipo, y los ofrece a otras aplicaciones mediante un servidor local (en la dirección <code>http://localhost:11434</code>). Es útil si quieres:</p>
@@ -132,15 +131,15 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Un ajuste importante: el contexto</h3>
     <p>El contexto es la memoria de trabajo del modelo. Ollama lo fija según la memoria de tu tarjeta gráfica: con menos de 24 GB, unos 4.000 tokens; entre 24 y 48 GB, 32.000; con 48 GB o más, 256.000. Si le pegas un documento largo con el contexto pequeño, el modelo puede perder el principio. Se amplía en la aplicación, con el control de longitud de contexto de los ajustes, o al arrancar el servidor con la variable <code>OLLAMA_CONTEXT_LENGTH</code> (por ejemplo, <code>OLLAMA_CONTEXT_LENGTH=64000 ollama serve</code>). Un contexto mayor necesita más memoria; <code>ollama ps</code> te dice cuánto contexto tiene el modelo cargado y si cabe entero en la gráfica.</p>
 
-    <h2 id="leer-en-voz-alta" class="font-display text-3xl font-bold mt-12 mb-6">Ollama ya lee textos en voz alta (también en español)</h2>
-    <p><strong>Novedad del 24 de octubre de 2026.</strong> Ollama puede convertir texto en voz con <strong>Phonon</strong>, una familia de modelos pequeños de la empresa Gradium. Lo hace en tu ordenador, sin cuenta y gratis, y empieza a sonar mientras genera el audio. Hay un modelo para español (<code>phonon:40m-es</code>), pero de momento <strong>solo funciona en Mac con chip Apple (serie M)</strong>: Ollama dice que Windows y Linux llegarán «pronto», sin dar fecha.</p>
+    <h2 id="leer-en-voz-alta" class="font-display text-3xl font-bold mt-12 mb-6">Ollama lee textos en voz alta (también en español)</h2>
+    <p>Desde el 24 de octubre de 2026, Ollama puede convertir texto en voz con <strong>Phonon</strong>, una familia de modelos pequeños de la empresa Gradium. Lo hace en tu ordenador y gratis, y empieza a sonar mientras genera el audio. Hay un modelo para español (<code>phonon:40m-es</code>), pero de momento <strong>solo funciona en Mac con chip Apple (serie M)</strong>: Ollama dice que Windows y Linux llegarán «pronto», sin dar fecha.</p>
 
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Cómo probarlo en español</h3>
     <ol class="space-y-2">
       <li><strong>Actualiza Ollama.</strong> El anuncio pide la versión 0.40.11 o posterior, publicada el 24 de octubre de 2026 (<a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">ollama.com/download</a>).</li>
       <li><strong>Descarga el modelo en español:</strong> <code>ollama pull phonon:40m-es</code>. Ocupa unos 129 MB y, según su ficha, usa unos 141 MB de memoria.</li>
       <li><strong>Hazlo hablar:</strong> <code>ollama run phonon:40m-es "Hola, esto es una prueba de voz."</code>. Suena por los altavoces del Mac. Si escribes solo <code>ollama run phonon:40m-es</code>, cada línea que teclees se lee al pulsar Intro; <code>/bye</code> para salir.</li>
-      <li><strong>Elige una voz</strong> con <code>--voice</code>, por ejemplo <code>--voice Iker</code>. El catálogo oficial de Gradium tiene 25 voces en español, de España (como Lucía-Sol o Iker) y de México (como Regina o Lalo). <code>ollama show phonon:40m-es</code> enseña las que trae el modelo; si pides una que no está, Ollama responde con un error y la lista de voces disponibles.</li>
+      <li><strong>Elige una voz</strong> con <code>--voice</code>, seguido del nombre de la voz. El catálogo oficial de Gradium tiene 25 voces en español, de España (como Lucía-Sol o Iker) y de México (como Regina o Lalo). <code>ollama show phonon:40m-es</code> enseña las que trae el modelo; si pides una que no está, Ollama responde con un error y la lista de voces disponibles.</li>
       <li><strong>Guárdalo en un archivo:</strong> <code>ollama run phonon:40m-es "Texto que quieres guardar." &gt; voz.wav</code>. Sale un WAV mono a 24 kHz.</li>
     </ol>
     <p>También puede leer en voz alta lo que responde otro modelo, pasándole su respuesta con una barra vertical: <code>ollama run gemma4 --hidethinking "Dame dos consejos para dormir mejor" | ollama run phonon:40m-es</code>. Empieza a hablar tras la primera frase, sin esperar a que acabe la respuesta. Para programadores, funciona con la ruta <code>/v1/audio/speech</code>, compatible con la de OpenAI.</p>
@@ -153,27 +152,32 @@ const pillarLabel = "Pilar 2: Tips productividad";
       caption="Modelos de Phonon por idioma en ollama.com/library/phonon (captura del 27 de octubre de 2026)."
     />
 
+    <h3 class="font-display text-2xl font-bold mt-8 mb-3">En Windows y Linux: lfm3-audio</h3>
+    <p>Si no tienes un Mac con chip Apple, la opción que da Ollama es <strong><code>lfm3-audio</code></strong>, un modelo pequeño de Liquid AI (2.000 millones de parámetros; ocupa de 1,7 a 2,1 GB). Las notas de la versión 0.40.13 de Ollama dicen que sus modelos LFM3, «incluida la conversión de texto a voz de lfm3-audio», funcionan ya en Windows y Linux. La ficha del modelo dice que habla 18 idiomas, entre ellos el español. Se descarga con <code>ollama run lfm3-audio</code>.</p>
+    <p>Su ficha describe también que transcribe y traduce audio, pero la propia página de Ollama lo lista solo con entrada de texto y no explica cómo pasarle un archivo de audio: de momento, no cuentes con él para transcribir dentro de Ollama.</p>
+    <p>Dos avisos de su propia ficha: no se recomienda para tareas complejas de varios pasos por su tamaño, y tiene su licencia propia (LFM Open License v1.0), distinta de la de Ollama. La guía de voz de Ollama, de momento, solo explica Phonon: con <code>lfm3-audio</code> no hay instrucciones oficiales paso a paso para guardar el audio.</p>
+
     <h3 class="font-display text-2xl font-bold mt-8 mb-3">Lo que conviene saber antes</h3>
     <ul class="space-y-2">
       <li><strong>Licencia:</strong> el modelo en español (y los de francés, alemán, portugués y el multilingüe) tiene licencia CC BY-NC 4.0, que <strong>no permite el uso comercial</strong>. Solo el modelo pequeño en inglés (<code>phonon</code>) es Apache 2.0. Si quieres usar la voz en algo con lo que ganas dinero, revisa antes la licencia.</li>
-      <li><strong>Solo habla:</strong> Phonon convierte texto en voz; no entiende lo que le dices ni conversa. Para pasar audio a texto necesitas otra herramienta, como Whisper o <a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR</a>; las dos aparecen en <a href="/blog/ia-local-sin-internet/">la guía de IA local</a>.</li>
-      <li><strong>Escribe para leer:</strong> según la documentación, deletrea precios, números y direcciones, pero lee las horas y las fechas en cifras tal cual, así que mejor «24 de octubre» que «24/10». La ficha avisa de que los títulos con formato pueden leerse en voz alta.</li>
+      <li><strong>Phonon solo habla:</strong> convierte texto en voz; no entiende lo que le dices ni conversa. Para pasar audio a texto necesitas otra herramienta, como Whisper o <a href="/blog/2026-08-01-qwen3-asr-transcribe-espanol/">Qwen3-ASR</a>; las dos aparecen en <a href="/blog/ia-local-sin-internet/">la guía de IA local</a>.</li>
+      <li><strong>Escribe para leer:</strong> según la documentación, convierte en palabras los precios, números, símbolos, correos y direcciones web antes de leerlos («4,59 $» se lee como cantidad), pero lee las horas y las fechas en cifras tal cual, así que mejor «24 de octubre» que «24/10». La ficha avisa de que los títulos con formato pueden leerse en voz alta.</li>
       <li><strong>Límite por petición:</strong> 4.096 caracteres por petición a la API; desde la terminal, <code>ollama run</code> parte solo los textos largos por párrafos y frases.</li>
     </ul>
     <p>Ollama no ha publicado pruebas de calidad de la voz en español: la comparación de su anuncio está hecha en inglés. Escucha unas frases tuyas antes de usarlo para algo largo.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Conectarlo con otras aplicaciones</h2>
     <ul class="space-y-2">
-      <li><strong>Aplicaciones de escritorio (Mac):</strong> en Ollama, abre <strong>Apps</strong> y conecta Claude o ChatGPT; después eliges el modelo en <strong>Settings &gt; Apps</strong>.</li>
+      <li><strong>Aplicaciones de escritorio (Mac):</strong> en Ollama, abre <strong>Apps</strong> y conecta Claude o ChatGPT; después eliges el modelo en <strong>Settings &gt; Apps</strong>. En ChatGPT, los modelos de Ollama solo se usan en el modo Codex: el chat normal y la voz siguen yendo por la conexión habitual de ChatGPT.</li>
       <li><strong>Agentes de programación:</strong> desde la carpeta de tu proyecto, <code>ollama launch claude</code> abre Claude Code con un modelo de Ollama (y ofrece instalarlo si no lo tienes). También existen <code>ollama launch codex</code> y <code>ollama launch opencode</code>.</li>
       <li><strong>Tus propios programas:</strong> Ollama tiene su API y, además, una parte compatible con las de OpenAI y Anthropic, así que muchas herramientas pensadas para ellas pueden apuntar a tu Ollama.</li>
     </ul>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Modelos en la nube y precios</h2>
-    <p>Además de lo local, Ollama ofrece modelos que se ejecutan en sus servidores, rápidos en cualquier ordenador y sin descargar nada. En la aplicación se reconocen porque su nombre termina en <code>:cloud</code> (por ejemplo, <code>gemma4:cloud</code>). Precios consultados el 27 de octubre de 2026:</p>
+    <p>Además de lo local, Ollama ofrece modelos que se ejecutan en sus servidores, rápidos en cualquier ordenador y sin descargar nada. En la aplicación se reconocen porque su nombre termina en <code>:cloud</code> (por ejemplo, <code>gemma4:cloud</code>). Precios consultados el 23 de noviembre de 2026 (los mismos que publicamos el 27 de octubre):</p>
     <ul class="space-y-2">
-      <li><strong>Pago por uso (0 $):</strong> los modelos locales, gratis y sin suscripción; los de la nube se pagan por lo que uses (el precio va por millón de tokens y cambia según el modelo).</li>
-      <li><strong>Pro (20 $/mes, o 200 $ al año):</strong> 60 $ de créditos al mes, modelos más grandes y varios modelos a la vez.</li>
+      <li><strong>Pago por uso (0 $):</strong> los modelos locales, gratis y sin suscripción; los de la nube se pagan por lo que uses (el precio va por millón de tokens y cambia según el modelo) y con hasta 3 peticiones a la vez. Algunos modelos cuestan la mitad fuera de horas punta: entre semana antes de las 12:00 y después de las 18:00 (hora UTC) y todo el fin de semana.</li>
+      <li><strong>Pro (20 $/mes, o 200 $ al año, que salen a 16,67 $ al mes):</strong> 60 $ de créditos al mes y acceso a los modelos «pro» más grandes.</li>
       <li><strong>Max (100 $/mes):</strong> 300 $ de créditos al mes y hasta 10 peticiones simultáneas.</li>
       <li><strong>Team (500 $/mes, en acceso anticipado):</strong> usuarios ilimitados y 1.000 $ de créditos al mes para todo el equipo.</li>
     </ul>
@@ -188,9 +192,9 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <p><strong>Privacidad en la nube:</strong> Ollama dice que procesa tus mensajes para responder, pero que no los guarda ni los registra y que no los usa para entrenar modelos. Si prefieres que nada salga de tu equipo, puedes desactivar las funciones en la nube poniendo <code>"disable_ollama_cloud": true</code> en el archivo <code>~/.ollama/server.json</code>; perderás los modelos en la nube y la búsqueda web.</p>
 
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Ollama o LM Studio</h2>
-    <p>Las dos ejecutan modelos abiertos en tu ordenador y las dos tienen modelos en la nube de pago. Las diferencias prácticas, según su documentación oficial:</p>
+    <p>Las dos ejecutan modelos abiertos en tu ordenador. Las diferencias prácticas, según su documentación oficial:</p>
     <ul class="space-y-2">
-      <li><strong>Forma de uso:</strong> Ollama se apoya mucho en la terminal y en conectarse con otras aplicaciones; LM Studio es una ventana con buscador de modelos, chat y documentos, con la interfaz en español. Lo explicamos en <a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: qué es y cómo usar IA local</a>.</li>
+      <li><strong>Forma de uso:</strong> Ollama se apoya mucho en la terminal y en conectarse con otras aplicaciones; LM Studio es una ventana con buscador de modelos, chat y documentos (idiomas, nube y precios, en la comparativa de abajo). Lo explicamos en <a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: qué es y cómo usar IA local</a>.</li>
       <li><strong>Mac con Intel:</strong> Ollama funciona (solo con el procesador); LM Studio no los admite.</li>
       <li><strong>Licencia:</strong> Ollama es de código abierto (MIT); LM Studio es gratuito pero su código no es abierto, y su licencia permite uso personal y uso interno en empresas.</li>
     </ul>
@@ -203,8 +207,29 @@ const pillarLabel = "Pilar 2: Tips productividad";
     />
     <p>Si nunca has abierto una terminal, empieza por LM Studio. Si quieres conectar el modelo con un agente de programación o con tus propios programas, Ollama lo pone más fácil. La comparación completa (Windows con ARM, idioma, documentos, voz, nube y licencias) está en <a href="/blog/ollama-o-lm-studio/" class="text-brand-400 hover:text-brand-300">Ollama o LM Studio: cuál es mejor según tu ordenador</a>.</p>
 
+    <FaqSection
+      items={[
+        {
+          q: "¿Ollama es gratis?",
+          a: "Sí para usar modelos en tu ordenador: el programa es gratuito y de código abierto (licencia MIT) y los modelos locales no tienen suscripción. Lo que se paga son los modelos en su nube: por uso, o con los planes Pro (20 $ al mes), Max (100 $ al mes) y Team (500 $ al mes), según su página de precios (noviembre de 2026).",
+        },
+        {
+          q: "¿Ollama funciona sin internet?",
+          a: "Sí con los modelos locales, una vez descargados: la descarga sí necesita conexión. Los modelos que acaban en :cloud y la búsqueda web funcionan en los servidores de Ollama y necesitan internet. Si quieres que nada salga de tu equipo, puedes desactivar la nube con \"disable_ollama_cloud\": true en ~/.ollama/server.json.",
+        },
+        {
+          q: "¿Qué ordenador necesito para Ollama?",
+          a: "Mac con macOS Sonoma (14) o posterior, Windows 10 22H2 o posterior, o Linux; al menos 4 GB libres para el programa y bastantes más para los modelos. La memoria decide qué modelos puedes mover: la calculadora <a href=\"/herramientas/ia-local-mi-ordenador/\">¿Qué IA local puede mover tu ordenador?</a> te lo dice con tus datos.",
+        },
+        {
+          q: "¿Ollama habla español?",
+          a: "Los modelos que descarga entienden y escriben en español (cada uno a su nivel). Para leer en voz alta hay un modelo de Phonon en español, solo para Mac con chip Apple, y lfm3-audio, que lee en voz alta en español también en Windows y Linux. La documentación oficial de Ollama está en inglés.",
+        },
+      ]}
+    />
+
     <h2 id="fuentes" class="font-display text-3xl font-bold mt-12 mb-6">Fuentes</h2>
-    <p>Consultadas el 12 de octubre de 2026; precios, requisitos, contexto y lo de la voz, el 27 de octubre de 2026.</p>
+    <p>Consultadas el 12 de octubre de 2026; precios, requisitos, contexto, privacidad y lo de la voz, comprobados de nuevo el 23 de noviembre de 2026.</p>
     <ul class="space-y-2">
       <li><a href="https://docs.ollama.com/quickstart" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: Quickstart</a>: primeros pasos, conexión con aplicaciones y agentes.</li>
       <li><a href="https://docs.ollama.com/cli" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Ollama Docs: CLI Reference</a>: órdenes run, pull, ls, ps, stop y rm.</li>
@@ -218,6 +243,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
       <li><a href="https://ollama.com/blog/speech-models" target="_blank" rel="noopener noreferrer">Speech models in Ollama (anuncio de Ollama, 24-10-2026)</a>: Phonon, idiomas, licencias, solo macOS por ahora y versión 0.40.11.</li>
       <li><a href="https://docs.ollama.com/capabilities/speech" target="_blank" rel="noopener noreferrer">Ollama Docs: Speech</a>: órdenes, voces, guardar en WAV, API y límites.</li>
       <li><a href="https://ollama.com/library/phonon" target="_blank" rel="noopener noreferrer">Ollama: phonon</a>: modelos por idioma, tamaños, memoria, licencias y requisito de Apple Silicon.</li>
+      <li><a href="https://ollama.com/library/lfm3-audio" target="_blank" rel="noopener noreferrer">Ollama: lfm3-audio</a> y <a href="https://github.com/ollama/ollama/releases/tag/v0.40.13" target="_blank" rel="noopener noreferrer">Ollama v0.40.13</a>: modelo de voz en 18 idiomas, con texto a voz en Windows y Linux desde la 0.40.13.</li>
       <li><a href="https://github.com/ollama/ollama/releases/tag/v0.40.11" target="_blank" rel="noopener noreferrer">Ollama v0.40.11 en GitHub</a>: versión del 24-10-2026 que añade la voz en macOS.</li>
       <li><a href="https://huggingface.co/gradium/phonon-40m-es" target="_blank" rel="noopener noreferrer">Gradium: phonon-40m Spanish</a> y <a href="https://huggingface.co/gradium/phonon-voices" target="_blank" rel="noopener noreferrer">catálogo de voces</a>: modelo en español, licencia y las 25 voces de España y México.</li>
       <li><a href="https://raw.githubusercontent.com/ollama/ollama/main/LICENSE" class="text-brand-400 hover:text-brand-300" target="_blank" rel="noopener noreferrer">Licencia de Ollama (MIT)</a>.</li>
@@ -227,6 +253,7 @@ const pillarLabel = "Pilar 2: Tips productividad";
     <h2 class="font-display text-3xl font-bold mt-12 mb-6">Sigue leyendo</h2>
     <ul class="space-y-2">
       <li><a href="/blog/ia-local-sin-internet/" class="text-brand-400 hover:text-brand-300">IA local en español: cómo usar IA en tu PC sin internet</a>, la guía principal de este tema.</li>
+      <li><a href="/herramientas/ia-local-mi-ordenador/" class="text-brand-400 hover:text-brand-300">¿Qué IA local puede mover tu ordenador?</a>, la calculadora para elegir el tamaño de modelo.</li>
       <li><a href="/blog/lm-studio-que-es-como-usar/" class="text-brand-400 hover:text-brand-300">LM Studio: qué es y cómo usar IA local en tu ordenador</a>.</li>
       <li><a href="/blog/ollama-o-lm-studio/" class="text-brand-400 hover:text-brand-300">Ollama o LM Studio: cuál es mejor según tu ordenador</a>, para elegir entre los dos.</li>
       <li><a href="/blog/alternativas-fable-5/" class="text-brand-400 hover:text-brand-300">Alternativas a Claude Fable 5: modelos abiertos y locales</a>, para elegir qué modelo descargar.</li>
