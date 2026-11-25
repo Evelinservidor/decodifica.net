@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-25",
+    "titulo": "¿Tu correo con IA suena a robot? Es lo que le pides",
+    "serie": "corto",
+    "numero_serie": 5,
+    "resumen": "¿Tu correo con IA suena a robot? Es lo que le pides",
+    "fuentes": [],
+    "guia": "/blog/claude-emails-sonar-humanos/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1169876372388532",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n355r3bedr2x"
+    }
+  },
+  {
     "fecha": "2026-11-24",
     "titulo": "¿Pegas tus facturas en ChatGPT? Tápale esto antes",
     "serie": "corto",
