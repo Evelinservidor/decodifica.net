@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-26",
+    "titulo": "¿Le hablas a ChatGPT? El 11 de diciembre te cambia la voz",
+    "serie": "corto",
+    "numero_serie": 6,
+    "resumen": "¿Le hablas a ChatGPT? El 11 de diciembre te cambia la voz",
+    "fuentes": [],
+    "guia": "/blog/gpt-live-voz-chatgpt/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/2143307393223286",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n37osgwlxl2x"
+    }
+  },
+  {
     "fecha": "2026-11-25",
     "titulo": "¿Tu correo con IA suena a robot? Es lo que le pides",
     "serie": "corto",
