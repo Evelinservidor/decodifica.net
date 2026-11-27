@@ -1,5 +1,20 @@
 [
   {
+    "fecha": "2026-11-27",
+    "titulo": "¿Vas manejando y quieres un café? Pídeselo al mapa",
+    "serie": "corto",
+    "numero_serie": 7,
+    "resumen": "¿Vas manejando y quieres un café? Pídeselo al mapa",
+    "fuentes": [],
+    "guia": "/blog/2026-07-31-google-maps-gemini-paradas-ruta/",
+    "enlaces": {
+      "facebook": "https://www.facebook.com/reel/1935590937236560",
+      "instagram": null,
+      "tiktok": null,
+      "bluesky": "https://bsky.app/profile/jc-ia.bsky.social/post/3n3c6n3g4pl2x"
+    }
+  },
+  {
     "fecha": "2026-11-26",
     "titulo": "¿Le hablas a ChatGPT? El 11 de diciembre te cambia la voz",
     "serie": "corto",
