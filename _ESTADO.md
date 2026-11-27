@@ -1,6 +1,6 @@
 # Estado del relanzamiento de Decodifica
 
-Última actualización: 20 de noviembre de 2026 (agente de novedades).
+Última actualización: 27 de noviembre de 2026 (agente de novedades).
 Este archivo sirve para que cualquier sesión siguiente sepa qué está hecho, qué falta y qué ha decidido Jordi. Actualízalo al terminar cada bloque de trabajo.
 
 Repositorios:
@@ -281,3 +281,10 @@ Rama `agente/para-las-ia`. Reglas nuevas para los agentes en `docs/AGENTE-SEMANA
     Ollama antes de escribir «Pasar audio a texto en tu ordenador»; Ollama: controlador NVIDIA 570 y región de la nube
     (puntos menores del juez). Semana que viene: grupo A («Límites del plan gratis de Claude») y mejora de la guía de
     Claude; 07-12, herramienta del mes «Planes gratis de IA».
+- **27-11-2026 (agente de novedades):** rama `agente/novedad-2026-11-27`, pull request propio (espera a Jordi).
+  Novedad: instalar artefactos de Claude como apps de Mac o Windows (24-11-2026, beta en todos los planes, también Free).
+  Artículo nuevo del grupo A: `claude-instalar-artefacto-como-app` («Crear apps con Claude para Mac y Windows, también
+  gratis»; pasos, permisos, límites de la beta, 3 imágenes, portada `novedad`), enlazado desde la guía de Claude. Nota:
+  `docs/novedades/2026-11-27.md`; reel: `docs/redes/2026-11-27.md`. Para el lunes: el resumen mensual («Reflect») salió
+  de beta el 24-11 (Free incluido, con memoria activada): cabe una línea en la guía de Claude. Repaso mensual: si la
+  función deja la beta, quitar «beta» del artículo; pasados 30 días, portada `herramienta`.

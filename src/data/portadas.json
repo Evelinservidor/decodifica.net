@@ -421,5 +421,15 @@
     "etiqueta": "Ayuda oficial",
     "fondo": "noche",
     "alt": "Logos de WhatsApp y Gemini sobre fondo oscuro: guía de qué IA se puede quitar en WhatsApp, Gmail, Google y Chrome"
+  },
+  "claude-instalar-artefacto-como-app": {
+    "plantilla": "novedad",
+    "logos": [
+      "claude"
+    ],
+    "gancho": "Tu app, *pidiéndola en el chat*",
+    "etiqueta": "Beta gratis",
+    "fondo": "azul",
+    "alt": "Logo de Claude con la etiqueta NUEVO: guía para instalar como app de Mac o Windows lo que Claude crea en el chat"
   }
 }

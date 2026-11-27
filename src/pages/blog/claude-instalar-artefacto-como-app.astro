@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Articulo from '../../components/Articulo.astro';
+import FiguraArticulo from '../../components/FiguraArticulo.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Caja from '../../components/Caja.astro';
+
+const title = "Crear apps con Claude para Mac y Windows, también gratis";
+const description = "Desde el 24-11-2026, Claude instala como app de Mac o Windows lo que crea en el chat, también en el plan gratis (beta): pasos, permisos y límites.";
+const pubDate = "2026-11-27";
+const modifiedDate = "2026-11-27";
+const readingTime = "6 min";
+const tema = "chatbots";
+const tags = ["claude", "crear apps con claude", "artefactos de claude", "instalar como aplicación", "claude desktop", "claude gratis", "anthropic"];
+const pillar = "tips-productividad";
+const pillarLabel = "Pilar 2: Tips productividad";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/og/blog/claude-instalar-artefacto-como-app.jpg"
+  type="article"
+  pubDate={pubDate}
+  modifiedDate={modifiedDate}
+  section={pillarLabel}
+  keywords={tags}
+  citations={[
+    "https://support.claude.com/en/articles/12138966-release-notes",
+    "https://support.claude.com/es/articles/18516354-instalar-un-artefacto-como-una-aplicacion",
+    "https://support.claude.com/es/articles/17153992-que-son-los-artefactos-y-como-los-uso",
+    "https://support.claude.com/es/articles/10065433-instalar-claude-desktop",
+    "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+    "https://claude.com/download",
+  ]}
+>
+  <Articulo slug="claude-instalar-artefacto-como-app">
+
+    <p><strong>En resumen:</strong> desde el <strong>24 de noviembre de 2026</strong>, la aplicación de escritorio de Claude puede instalar como una app de verdad (con su ventana, su icono y su sitio en el menú Inicio o en Aplicaciones) lo que Claude te crea en un chat: un temporizador, un recordatorio, un renombrador de fotos. Está en <strong>beta en todos los planes, también el gratis</strong>, y solo en Mac y Windows (no en Linux, el navegador ni el móvil). Se hace con el botón <strong>«Instalar como aplicación»</strong> del artefacto, y cada app te pide permiso antes de tocar nada de tu ordenador.</p>
+
+    <p>Esta guía forma parte de <a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>, donde están los planes, los límites y los países donde se puede usar. Los datos salen de las notas de versión y del centro de ayuda oficial de Claude, consultados el 27 de noviembre de 2026.</p>
+
+    <h2>Qué ha cambiado el 24 de noviembre</h2>
+    <p>Claude ya hacía <strong>artefactos</strong>: lo que te crea en un chat y se abre al lado de la conversación (un documento, una presentación, un panel o una pequeña herramienta interactiva). Según la ayuda oficial, se pueden crear en todos los planes, también en Free. Hasta ahora esa herramienta vivía dentro de Claude.</p>
+    <p>Las notas de versión del 24 de noviembre de 2026 anuncian que ahora puedes <strong>instalar un artefacto como una app</strong> en tu Mac o en tu PC con Windows. La ayuda lo explica así: tiene su propia ventana e icono, se abre como cualquier otra aplicación y, si tú lo permites, puede trabajar con el sistema: enviar notificaciones, poner un icono en la barra de menú, leer archivos o abrir programas.</p>
+    <p>Sigue siendo el mismo artefacto: si tú (u otra persona que pueda editarlo) lo cambias en Claude, la app cambia también. Y para abrirla necesitas <strong>conexión a internet y la sesión iniciada en Claude Desktop</strong>: no es un programa que funcione por su cuenta.</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-instalar-artefacto-como-app/ayuda-oficial.webp"
+      alt="Captura del artículo de ayuda de Claude en español «Instalar un artefacto como una aplicación»: se está implementando en beta en los planes Free, Pro, Max, Ultra, Team y Enterprise y necesita Claude para Mac o Windows, versión 6.28899.0 o posterior"
+      width={1200}
+      height={791}
+      caption="La ayuda oficial de Claude en español (support.claude.com), consultada el 27 de noviembre de 2026."
+    />
+
+    <h2>¿Es gratis y dónde funciona?</h2>
+    <div>
+      <table>
+        <thead>
+          <tr><th>Pregunta</th><th>Respuesta (ayuda oficial, 27-11-2026)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Planes</td><td>Free, Pro, Max, Ultra, Team y Enterprise, en beta y llegando poco a poco.</td></tr>
+          <tr><td>Dónde</td><td>Claude para Mac o para Windows, versión 6.28899.0 o posterior. No en Linux, la web ni el móvil.</td></tr>
+          <tr><td>Coste</td><td>Crear la app y lo que la app le pide a Claude cuentan para los límites de uso de tu plan.</td></tr>
+          <tr><td>En el trabajo</td><td>En Team viene activado, pero el «acceso completo» lo tiene que activar un administrador. En Enterprise está apagado hasta que lo active un propietario.</td></tr>
+          <tr><td>Idioma</td><td>Claude conversa en el idioma en que le escribes, y su interfaz tiene español de España y de Latinoamérica. La ayuda de esta función está en español.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Dos detalles del plan gratis, según la tabla de la ayuda de artefactos: en Free <strong>no se pueden conectar tus aplicaciones</strong> (la ayuda pone de ejemplo Asana, Google Calendar o Slack) a un artefacto ni <strong>guardar datos</strong> en él; eso empieza en Pro. Así que en Free tiene sentido para apps sencillas: un temporizador, un recordatorio, una calculadora. Y los artefactos necesitan que esté activado <strong>«Crear y editar archivos»</strong> (o «ejecución de código en la nube y creación de archivos», según la versión) en <strong>Configuración &gt; Capacidades</strong>; en Team y Enterprise, en Organización &gt; Capacidades.</p>
+
+    <h2>Cómo crear e instalar tu primera app</h2>
+    <ol>
+      <li><strong>Instala o actualiza Claude Desktop.</strong> Se descarga gratis en <a href="https://claude.com/download" target="_blank" rel="noopener noreferrer">claude.com/download</a> (pide macOS 13 o superior, o Windows 10 o superior). Si ya la tienes y no ves la opción, en Mac ve a <strong>Claude &gt; Buscar actualizaciones</strong>; en Windows, al botón de menú (☰) &gt; <strong>Ayuda &gt; Buscar actualizaciones</strong>.</li>
+      <li><strong>Pídela en un chat.</strong> Los ejemplos de la ayuda oficial: «Crea un temporizador Pomodoro que viva en mi barra de menú», «Crea una pequeña aplicación Mac que me recuerde estirarme cada hora» o «Crea una aplicación Windows que renombre las fotos en una carpeta por fecha».</li>
+      <li><strong>Abre el artefacto</strong> en la ventana principal de Claude Desktop.</li>
+      <li><strong>Pulsa «Instalar como aplicación»</strong> en el menú del título del artefacto o con clic derecho (también está en <strong>Compartir</strong>) y confirma con <strong>«Instalar»</strong>. Claude siempre te pide esa confirmación.</li>
+    </ol>
+    <p>Después la encuentras en la carpeta <strong>Claude Apps</strong>: en Mac, dentro de la carpeta Aplicaciones de tu carpeta de inicio (la de tu usuario, no la general) y en Spotlight; en Windows, en el menú Inicio y con un acceso directo en el escritorio. También desde Claude Desktop, en <strong>Archivo &gt; Aplicaciones</strong> (en Windows, Archivo está en el botón de menú ☰).</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-instalar-artefacto-como-app/pasos-instalar.webp"
+      alt="Esquema en cuatro pasos: pedir la app en un chat, abrir el artefacto en Claude Desktop, elegir «Instalar como aplicación» y confirmar con «Instalar»; aparece en Claude Apps en Mac o en Inicio en Windows"
+      width={1200}
+      height={617}
+      caption="Los pasos de la ayuda oficial de Claude, consultada el 27 de noviembre de 2026."
+    />
+
+    <Caja tipo="nota">«Agregar al Dock», «Agregar acceso directo» o «Agregar a la pantalla de inicio» del navegador no hacen lo mismo: solo crean un acceso directo, sin notificaciones ni barra de menú. La app de verdad solo se instala desde Claude Desktop.</Caja>
+
+    <h2>Qué permisos te pide y cuál no conviene dar</h2>
+    <p>Una app instalada tiene que preguntarte antes de usar cada una de estas funciones, y tú respondes «Permitir» o «No permitir»:</p>
+
+    <FiguraArticulo
+      src="/img/blog/claude-instalar-artefacto-como-app/permisos.webp"
+      alt="Cuadro de los cinco permisos de una app de Claude: notificaciones, atajos de teclado, flotar sobre otras ventanas, icono en la barra de menú o bandeja, y acceso completo para ejecutar programas y cambiar o borrar archivos"
+      width={1200}
+      height={663}
+      caption="Resumen de la tabla de permisos de la ayuda oficial de Claude (27-11-2026)."
+    />
+
+    <p>Un «Permitir» vale para <strong>una versión</strong> de la app: si la cambias (aunque sea tú), vuelve a preguntar. Un «No permitir» se queda hasta que lo cambies. Ojo: si la app carga código de otra web, ese código puede cambiar sin que te vuelva a preguntar. Para revisar los permisos: en Mac, con la app abierta, su nombre en la barra de menú &gt; <strong>Permisos</strong>; en Windows, clic derecho en la barra de título (o Alt+Espacio) &gt; <strong>Permisos</strong>.</p>
+
+    <Caja tipo="ojo">El permiso de <strong>acceso completo</strong> deja a la app ejecutar cualquier programa y leer, cambiar o borrar tus archivos sin preguntar. La ayuda avisa de que Anthropic <strong>no revisa</strong> las apps antes de que las instales: dalo solo a una app que hayas hecho tú y para algo que lo necesite de verdad (como renombrar fotos de una carpeta). En los planes personales, Claude no suele dejar pedir acceso completo a una app que haya escrito otra persona. Quitarlo después no deshace lo que la app ya haya cambiado.</Caja>
+
+    <h2>Límites de la beta</h2>
+    <ul>
+      <li><strong>No se pueden instalar</strong> los artefactos hechos con una plantilla (Docs, Slides o Sheets), los artefactos antiguos ni los «artefactos en vivo» de Cowork.</li>
+      <li>Una app con icono en la barra de menú o en la bandeja <strong>sigue funcionando al cerrar su ventana</strong>: en Mac se cierra con Cmd+Q o desde el Dock; en Windows, con «Salir» en el menú del icono.</li>
+      <li><strong>Para desinstalarla:</strong> Claude Desktop &gt; Archivo (en Windows, dentro del botón ☰) &gt; Aplicaciones &gt; la app &gt; <strong>Desinstalar</strong>. En Mac va a la Papelera; en Windows se borran sus accesos directos. El artefacto sigue en Claude.</li>
+      <li>Si te la ha compartido otra persona y deja de compartirla, los programas que abrió la app se paran (puede tardar hasta unos 20 minutos, o más si Claude está sin conexión) y, al abrirla, Claude suele ofrecerte desinstalarla.</li>
+      <li>En Claude para docentes y en centros de primaria y secundaria (K-12), el acceso completo no está disponible y la instalación de apps puede estar desactivada.</li>
+    </ul>
+
+    <FaqSection
+      items={[
+        {
+          q: "¿Necesito saber programar para crear una app con Claude?",
+          a: "No. Se pide con palabras en un chat y Claude escribe el código del artefacto. Lo que sí necesitas es la aplicación de escritorio de Claude en Mac o Windows para instalarla. Si quieres proyectos más grandes en una carpeta de tu ordenador, eso es Claude Code, que no está en el plan gratis.",
+        },
+        {
+          q: "¿La app funciona sin internet?",
+          a: "No. Según la ayuda oficial, para abrir una app instalada hace falta estar en línea y con la sesión iniciada en Claude Desktop. Si buscas IA que funcione sin conexión, eso son los modelos que se ejecutan en tu propio ordenador.",
+        },
+        {
+          q: "¿Por qué no me sale «Instalar como aplicación»?",
+          a: "Puede que tu Claude Desktop no esté al día (hace falta la versión 6.28899.0 o posterior), que la beta aún no te haya llegado, que el artefacto venga de una plantilla (Docs, Slides o Sheets) o, en una cuenta de empresa, que el propietario no lo haya activado. Tampoco aparece en la web ni en el móvil.",
+        },
+      ]}
+    />
+
+    <h2 id="fuentes">Fuentes</h2>
+    <p>Consultadas el 27 de noviembre de 2026.</p>
+    <ul>
+      <li><a href="https://support.claude.com/en/articles/12138966-release-notes" target="_blank" rel="noopener noreferrer">Notas de versión de Claude</a>: el 24 de noviembre de 2026, «Install artifacts as apps (beta)».</li>
+      <li><a href="https://support.claude.com/es/articles/18516354-instalar-un-artefacto-como-una-aplicacion" target="_blank" rel="noopener noreferrer">Instalar un artefacto como una aplicación</a> (ayuda oficial en español): planes, versión mínima, pasos, permisos, desinstalación, límites de uso y limitaciones de la beta.</li>
+      <li><a href="https://support.claude.com/es/articles/17153992-que-son-los-artefactos-y-como-los-uso" target="_blank" rel="noopener noreferrer">¿Qué son los artefactos y cómo los uso?</a>: qué es un artefacto, qué se puede hacer en cada plan y el ajuste de Capacidades que necesitan.</li>
+      <li><a href="https://support.claude.com/es/articles/10065433-instalar-claude-desktop" target="_blank" rel="noopener noreferrer">Instalar Claude Desktop</a>: sistemas compatibles y requisitos (macOS 13, Windows 10).</li>
+      <li><a href="https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language" target="_blank" rel="noopener noreferrer">How to use Claude in your preferred language</a>: idiomas de la interfaz (español de España y de Latinoamérica) y que Claude responde en el idioma que usas.</li>
+      <li><a href="https://claude.com/download" target="_blank" rel="noopener noreferrer">Descargar Claude</a>: la aplicación de escritorio para Mac y Windows, en todos los planes.</li>
+    </ul>
+
+    <h2>Sigue leyendo</h2>
+    <ul>
+      <li><a href="/blog/claude-ia-que-es-gratis/">Claude en español: guía completa</a>: planes, límites del plan gratis, países y todas las guías de este tema.</li>
+      <li><a href="/blog/prompts-para-claude/">Prompts para Claude</a>: cómo pedirle las cosas para que la app salga como la quieres.</li>
+      <li><a href="/blog/claude-code-sin-saber-programar/">Claude Code sin saber programar</a>: el siguiente paso si quieres proyectos más grandes en tu ordenador.</li>
+      <li><a href="/blog/ia-local-sin-internet/">IA sin internet</a>: si lo que buscas es IA que funcione sin conexión.</li>
+    </ul>
+
+  </Articulo>
+
+</BaseLayout>
